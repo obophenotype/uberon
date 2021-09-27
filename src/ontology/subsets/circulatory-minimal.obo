@@ -74,24 +74,6 @@ def: "A specialized endothelial cell that senses extracellular signals and guide
 is_a: CL:0000071 ! blood vessel endothelial cell
 
 [Term]
-id: CL:0000706
-name: choroid plexus epithelial cell
-namespace: cell
-alt_id: CL:1000430
-def: "Specialized ependymal cell that produces the cerebrospinal fluid from the blood and secretes it into the lumen of the brain and spinal chord." []
-synonym: "epithelial cell of choroid plexus" EXACT []
-xref: FMA:70549
-relationship: part_of UBERON:0001886 ! choroid plexus
-
-[Term]
-id: CL:0000708
-name: leptomeningeal cell
-namespace: cell
-def: "Stromal cell that forms the internal covering of the vertebrate brain and produces ECM for this and the choroid plexus." []
-synonym: "leptomemingeal cell" RELATED []
-relationship: part_of UBERON:0003210 ! blood-cerebrospinal fluid barrier
-
-[Term]
 id: CL:0000746
 name: cardiac muscle cell
 namespace: cell
@@ -107,14 +89,6 @@ xref: BTO:0001539
 xref: CALOHA:TS-0115
 xref: FMA:14067
 is_a: CL:0002494 ! cardiocyte
-
-[Term]
-id: CL:0000881
-name: perivascular macrophage
-namespace: cell
-def: "A central nervous system macrophage found in small blood vessels in the brain. Markers include CD14+CD16+CD163+." []
-comment: Markers: Human/monkey, mice: CD163. Human: CD14+CD16+CD163+.
-relationship: part_of UBERON:0001981 ! blood vessel
 
 [Term]
 id: CL:0002068
@@ -182,7 +156,6 @@ namespace: cell
 def: "A specialised myocyte that lies between the sinoatrial node and the atrioventricular node and is involved in the conduction of electrical signals." []
 xref: FMA:223275
 is_a: CL:0002086 ! specialized cardiac myocyte
-relationship: part_of UBERON:0009966 ! internodal tract
 created_by: tmeehan
 creation_date: 2010-08-23T11:24:11Z
 
@@ -245,20 +218,6 @@ xref: FMA:83109
 is_a: CL:0002098 ! regular cardiac myocyte
 created_by: tmeehan
 creation_date: 2010-08-23T11:41:13Z
-
-[Term]
-id: CL:0002138
-name: endothelial cell of lymphatic vessel
-namespace: cell
-alt_id: CL:1000421
-def: "A endothelial cell of a lymphatic vessel. The border of the oak leaf-shaped endothelial cell of initial lymphatics are joined by specialized buttons. The discontinuous feature of buttons distinguishes them from zippers in collecting lymphatics, but both types of junctions are composed of proteins typical of adherens junctions and tight junctions found in the endothelium of blood vessels. Buttons seal the sides of flaps of the oak leaf-shaped endothelial cell, leaving open the tips of flaps as routes for fluid entry without disassembly and reformation of intercellular junctions." []
-synonym: "LEC" EXACT []
-synonym: "lymphatic endothelial cell" EXACT []
-xref: BTO:0004167
-xref: FMA:68458
-relationship: part_of UBERON:0001473 ! lymphatic vessel
-created_by: tmeehan
-creation_date: 2010-08-24T02:05:28Z
 
 [Term]
 id: CL:0002144
@@ -367,7 +326,6 @@ name: thoracic aorta endothelial cell
 namespace: cell
 def: "An endothelial cell that is part of the thoracic endothelium." []
 is_a: CL:0002544 ! aortic endothelial cell
-relationship: part_of UBERON:0001515 ! thoracic aorta
 created_by: tmeehan
 creation_date: 2011-02-28T03:59:09Z
 
@@ -393,24 +351,6 @@ created_by: tmeehan
 creation_date: 2011-02-28T04:57:44Z
 
 [Term]
-id: CL:0002549
-name: fibroblast of choroid plexus
-namespace: cell
-def: "A fibroblast that is part of the choroid plexus." []
-relationship: part_of UBERON:0001886 ! choroid plexus
-created_by: tmeehan
-creation_date: 2011-02-28T05:01:39Z
-
-[Term]
-id: CL:0002554
-name: fibroblast of lymphatic vessel
-namespace: cell
-def: "A fibroblast of the lymphatic system." []
-relationship: part_of UBERON:0001473 ! lymphatic vessel
-created_by: tmeehan
-creation_date: 2011-02-28T05:16:18Z
-
-[Term]
 id: CL:0002557
 name: fibroblast of pulmonary artery
 namespace: cell
@@ -434,7 +374,6 @@ name: smooth muscle cell of the umbilical vein
 namespace: cell
 def: "A smooth muscle cell of the umbilical vein." []
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-relationship: part_of UBERON:0002066 ! umbilical vein
 created_by: tmeehan
 creation_date: 2011-03-06T05:00:51Z
 
@@ -475,7 +414,6 @@ namespace: cell
 def: "A smooth muscle cell of the coronary artery." []
 is_a: CL:0002494 ! cardiocyte
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-relationship: part_of UBERON:0001621 ! coronary artery
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:34Z
 
@@ -485,7 +423,6 @@ name: smooth muscle cell of the internal thoracic artery
 namespace: cell
 def: "A smooth muscle of the internal thoracic artery." []
 is_a: CL:0002595 ! smooth muscle cell of the subclavian artery
-relationship: part_of UBERON:0002456 ! internal thoracic artery
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:41Z
 
@@ -495,7 +432,6 @@ name: smooth muscle cell of the umbilical artery
 namespace: cell
 def: "A smooth muscle cell of the umbilical artery." []
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-relationship: part_of UBERON:0001310 ! umbilical artery
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:48Z
 
@@ -505,7 +441,6 @@ name: smooth muscle cell of the subclavian artery
 namespace: cell
 def: "A smooth muscle cell of the subclavian artery." []
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-relationship: part_of UBERON:0001533 ! subclavian artery
 created_by: tmeehan
 creation_date: 2011-03-06T05:01:52Z
 
@@ -526,7 +461,6 @@ namespace: cell
 def: "An endothelial cell of the umbilical vein." []
 xref: BTO:0004296
 is_a: CL:0002543 ! vein endothelial cell
-relationship: part_of UBERON:0002066 ! umbilical vein
 created_by: tmeehan
 creation_date: 2011-03-14T11:36:51Z
 
@@ -588,7 +522,6 @@ id: CL:0008022
 name: endocardial cushion cell
 def: "A mesenchymal cell of the endocardial cushion.   These cells develop via an epithelial to mesenchymal transition when endocardial cells break cell-to-cell contacts and migrate into the cardiac jelly. Cells from this population form the heart septa and valves." []
 is_a: CL:0002494 ! cardiocyte
-relationship: part_of UBERON:0002062 ! endocardial cushion
 
 [Term]
 id: CL:0008035
@@ -599,31 +532,19 @@ created_by: dos
 creation_date: 2020-02-29T17:37:00Z
 
 [Term]
-id: CL:0010002
-name: epithelial cell of umbilical artery
-def: "An epithelial cell that is part_of a umbilical artery." []
-synonym: "umbilical artery epithelial cell" EXACT []
-relationship: part_of UBERON:0001310 ! umbilical artery
-created_by: GOC:cjm
-
-[Term]
-id: CL:0010005
-name: atrioventricular bundle cell
-def: "A specialized cardiomyocyte that transmit signals from the AV node to the cardiac Purkinje fibers." []
-synonym: "AV bundle cell" EXACT []
-is_a: CL:0010007 ! His-Purkinje system cell
-relationship: part_of UBERON:0002353 ! bundle of His
+id: CL:0009049
+name: smooth muscle cell of high endothelial venule of lymph node
+def: "A layer of smooth muscle cells that forms the outer layer of the high endothelial venule of lymph node and pumps to allow flow of lymph fluid carrying lymphocytes." []
+synonym: "high endothelial venule of lymph node smooth muscle cell" EXACT []
+synonym: "high endothelial venule smooth muscle cell" BROAD []
+is_a: CL:0019018 ! blood vessel smooth muscle cell
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0010006
 name: cardiac blood vessel endothelial cell
 is_a: CL:0000071 ! blood vessel endothelial cell
 is_a: CL:0010008 ! cardiac endothelial cell
-
-[Term]
-id: CL:0010007
-name: His-Purkinje system cell
-relationship: part_of UBERON:0004146 ! His-Purkinje system
 
 [Term]
 id: CL:0010008
@@ -657,7 +578,6 @@ name: lymphatic vessel smooth muscle cell
 def: "A smooth muscle cell that is part of any lymphatic vessel." []
 synonym: "smooth muscle cell of lymphatic vessel" EXACT []
 is_a: CL:0000359 ! vascular associated smooth muscle cell
-relationship: part_of UBERON:0001473 ! lymphatic vessel
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
 property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:29:51Z xsd:dateTime
 
@@ -688,11 +608,6 @@ synonym: "pericentral LSEC" EXACT []
 is_a: CL:1000398 ! endothelial cell of hepatic sinusoid
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
 property_value: http://purl.org/dc/elements/1.1/date 2020-09-10T12:38:29Z xsd:dateTime
-
-[Term]
-id: CL:1000147
-name: heart valve cell
-relationship: part_of UBERON:0000948 ! heart
 
 [Term]
 id: CL:1000287
@@ -858,7 +773,6 @@ namespace: cell
 def: "A transitional myocyte that is part of the left branch of atrioventricular bundle." []
 xref: FMA:263170
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000371
@@ -867,7 +781,6 @@ namespace: cell
 def: "A transitional myocyte that is part of the right branch of atrioventricular bundle." []
 xref: FMA:263172
 is_a: CL:1000481 ! transitional myocyte of atrioventricular bundle
-relationship: part_of UBERON:0005987 ! right bundle branch
 
 [Term]
 id: CL:1000372
@@ -900,9 +813,7 @@ namespace: cell
 def: "A myocardial endocrine cell that is part of the septal division of left branch of atrioventricular bundle." []
 xref: FMA:263180
 is_a: CL:0002074 ! myocardial endocrine cell
-is_a: CL:0010005 ! atrioventricular bundle cell
 is_a: CL:2000046 ! ventricular cardiac muscle cell
-relationship: part_of UBERON:0005986 ! left bundle branch
 
 [Term]
 id: CL:1000376
@@ -922,7 +833,6 @@ def: "An endothelial cell that is part of the venous sinus of red pulp of spleen
 comment: todo - add logical definition to UBERON:0009967
 xref: FMA:62817
 is_a: CL:0002651 ! endothelial cell of venous sinus of spleen
-relationship: part_of UBERON:0009967 ! spleen venous sinus
 
 [Term]
 id: CL:1000398
@@ -935,7 +845,6 @@ synonym: "LSEC" EXACT []
 xref: BTO:000125
 xref: FMA:62911
 is_a: CL:0002262 ! endothelial cell of sinusoid
-relationship: part_of UBERON:0001281 ! hepatic sinusoid
 
 [Term]
 id: CL:1000409
@@ -1045,7 +954,6 @@ def: "A transitional myocyte that is part of the atrioventricular bundle." []
 xref: FMA:83388
 xref: FMA:83885
 is_a: CL:0002073 ! transitional myocyte
-is_a: CL:0010005 ! atrioventricular bundle cell
 is_a: CL:2000046 ! ventricular cardiac muscle cell
 
 [Term]
@@ -1074,32 +982,7 @@ namespace: cell
 def: "A Purkinje myocyte that is part of the atrioventricular bundle." []
 xref: FMA:83393
 is_a: CL:0002068 ! Purkinje myocyte
-is_a: CL:0010005 ! atrioventricular bundle cell
 is_a: CL:2000046 ! ventricular cardiac muscle cell
-
-[Term]
-id: CL:1000742
-name: glomerular mesangial cell
-namespace: cell
-def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." []
-synonym: "intraglomerular mesangial cell" EXACT []
-xref: KUPO:0001032
-relationship: part_of UBERON:0002320 ! glomerular mesangium
-
-[Term]
-id: CL:1000854
-name: kidney blood vessel cell
-namespace: cell
-xref: KUPO:0001014
-relationship: part_of UBERON:0003517 ! kidney blood vessel
-
-[Term]
-id: CL:1000891
-name: kidney arterial blood vessel cell
-namespace: cell
-xref: KUPO:0001029
-is_a: CL:1000854 ! kidney blood vessel cell
-relationship: part_of UBERON:0003644 ! kidney arterial blood vessel
 
 [Term]
 id: CL:1000892
@@ -1107,16 +990,6 @@ name: kidney capillary endothelial cell
 namespace: cell
 xref: KUPO:0001030
 is_a: CL:0000071 ! blood vessel endothelial cell
-is_a: CL:1000854 ! kidney blood vessel cell
-relationship: part_of UBERON:0003527 ! kidney capillary
-
-[Term]
-id: CL:1000893
-name: kidney venous blood vessel cell
-namespace: cell
-xref: KUPO:0001031
-is_a: CL:1000854 ! kidney blood vessel cell
-relationship: part_of UBERON:0001140 ! renal vein
 
 [Term]
 id: CL:1001005
@@ -1125,23 +998,6 @@ namespace: cell
 xref: KUPO:0001037
 is_a: CL:0002144 ! capillary endothelial cell
 is_a: CL:1000892 ! kidney capillary endothelial cell
-relationship: part_of UBERON:0004294 ! glomerular capillary endothelium
-
-[Term]
-id: CL:1001006
-name: kidney afferent arteriole cell
-namespace: cell
-xref: KUPO:0001038
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0004639 ! renal afferent arteriole
-
-[Term]
-id: CL:1001009
-name: kidney efferent arteriole cell
-namespace: cell
-xref: KUPO:0001041
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0004640 ! renal efferent arteriole
 
 [Term]
 id: CL:1001033
@@ -1149,7 +1005,6 @@ name: peritubular capillary endothelial cell
 namespace: cell
 xref: KUPO:0001065
 is_a: CL:1000892 ! kidney capillary endothelial cell
-relationship: part_of UBERON:0005272 ! peritubular capillary
 
 [Term]
 id: CL:1001036
@@ -1158,24 +1013,6 @@ namespace: cell
 xref: KUPO:0001068
 is_a: CL:0002543 ! vein endothelial cell
 is_a: CL:1000892 ! kidney capillary endothelial cell
-is_a: CL:1000893 ! kidney venous blood vessel cell
-relationship: part_of UBERON:0004726 ! vasa recta
-
-[Term]
-id: CL:1001045
-name: kidney cortex artery cell
-namespace: cell
-xref: KUPO:0001077
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0005268 ! renal cortex artery
-
-[Term]
-id: CL:1001052
-name: kidney cortex vein cell
-namespace: cell
-xref: KUPO:0001084
-is_a: CL:1000893 ! kidney venous blood vessel cell
-relationship: part_of UBERON:0005269 ! renal cortex vein
 
 [Term]
 id: CL:1001064
@@ -1184,7 +1021,6 @@ namespace: cell
 comment: Note that the source of this term is KUPO:0001096 (artery smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001096
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
 id: CL:1001066
@@ -1193,7 +1029,6 @@ namespace: cell
 comment: Note that the source of this term is KUPO:0001098 (arteriole smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001098
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-is_a: CL:1000891 ! kidney arterial blood vessel cell
 
 [Term]
 id: CL:1001068
@@ -1202,7 +1037,6 @@ namespace: cell
 comment: Note that the source of this term is KUPO:0001068 (venous system smooth muscle cell), which we believe actually denotes the kidney specific structure.
 xref: KUPO:0001100
 is_a: CL:0019018 ! blood vessel smooth muscle cell
-is_a: CL:1000893 ! kidney venous blood vessel cell
 
 [Term]
 id: CL:1001096
@@ -1210,7 +1044,6 @@ name: kidney afferent arteriole endothelial cell
 namespace: cell
 xref: KUPO:0001039
 is_a: CL:1000412 ! endothelial cell of arteriole
-is_a: CL:1001006 ! kidney afferent arteriole cell
 is_a: CL:1001216 ! interlobulary artery endothelial cell
 
 [Term]
@@ -1218,7 +1051,6 @@ id: CL:1001097
 name: kidney afferent arteriole smooth muscle cell
 namespace: cell
 xref: KUPO:0001040
-is_a: CL:1001006 ! kidney afferent arteriole cell
 is_a: CL:1001066 ! kidney arteriole smooth muscle cell
 is_a: CL:1001217 ! interlobulary artery smooth muscle cell
 
@@ -1228,14 +1060,12 @@ name: kidney efferent arteriole endothelial cell
 namespace: cell
 xref: KUPO:0001042
 is_a: CL:1000412 ! endothelial cell of arteriole
-is_a: CL:1001009 ! kidney efferent arteriole cell
 
 [Term]
 id: CL:1001100
 name: kidney efferent arteriole smooth muscle cell
 namespace: cell
 xref: KUPO:0001043
-is_a: CL:1001009 ! kidney efferent arteriole cell
 is_a: CL:1001066 ! kidney arteriole smooth muscle cell
 
 [Term]
@@ -1244,7 +1074,6 @@ name: kidney outer medulla peritubular capillary cell
 namespace: cell
 xref: KUPO:0001066
 is_a: CL:1001033 ! peritubular capillary endothelial cell
-relationship: part_of UBERON:0006341 ! outer renal medulla peritubular capillary
 
 [Term]
 id: CL:1001124
@@ -1252,7 +1081,6 @@ name: kidney cortex peritubular capillary cell
 namespace: cell
 xref: KUPO:0001067
 is_a: CL:1001033 ! peritubular capillary endothelial cell
-relationship: part_of UBERON:0006851 ! renal cortex peritubular capillary
 
 [Term]
 id: CL:1001126
@@ -1260,7 +1088,6 @@ name: inner renal medulla vasa recta cell
 namespace: cell
 xref: KUPO:0001069
 is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0004776 ! inner renal medulla vasa recta
 
 [Term]
 id: CL:1001127
@@ -1268,7 +1095,6 @@ name: outer renal medulla vasa recta cell
 namespace: cell
 xref: KUPO:0001070
 is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0004775 ! outer renal medulla vasa recta
 
 [Term]
 id: CL:1001131
@@ -1276,39 +1102,6 @@ name: vasa recta ascending limb cell
 namespace: cell
 xref: KUPO:0001074
 is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0009091 ! vasa recta ascending limb
-
-[Term]
-id: CL:1001135
-name: arcuate artery cell
-namespace: cell
-xref: KUPO:0001078
-is_a: CL:1001045 ! kidney cortex artery cell
-relationship: part_of UBERON:0001552 ! kidney arcuate artery
-
-[Term]
-id: CL:1001138
-name: interlobular artery cell
-namespace: cell
-xref: KUPO:0001081
-is_a: CL:1001045 ! kidney cortex artery cell
-relationship: part_of UBERON:0004723 ! interlobular artery
-
-[Term]
-id: CL:1001142
-name: arcuate vein cell
-namespace: cell
-xref: KUPO:0001085
-is_a: CL:1001052 ! kidney cortex vein cell
-relationship: part_of UBERON:0004719 ! kidney arcuate vein
-
-[Term]
-id: CL:1001145
-name: interlobular vein cell
-namespace: cell
-xref: KUPO:0001088
-is_a: CL:1001052 ! kidney cortex vein cell
-relationship: part_of UBERON:0005168 ! renal interlobular vein
 
 [Term]
 id: CL:1001209
@@ -1317,7 +1110,6 @@ namespace: cell
 xref: KUPO:0001075
 is_a: CL:1001126 ! inner renal medulla vasa recta cell
 is_a: CL:1001131 ! vasa recta ascending limb cell
-relationship: part_of UBERON:0009092 ! inner medulla vasa recta ascending limb
 
 [Term]
 id: CL:1001210
@@ -1326,7 +1118,6 @@ namespace: cell
 xref: KUPO:0001076
 is_a: CL:1001127 ! outer renal medulla vasa recta cell
 is_a: CL:1001131 ! vasa recta ascending limb cell
-relationship: part_of UBERON:0009093 ! outer medulla vasa recta ascending limb
 
 [Term]
 id: CL:1001213
@@ -1334,7 +1125,6 @@ name: arcuate artery endothelial cell
 namespace: cell
 xref: KUPO:0001079
 is_a: CL:1000413 ! endothelial cell of artery
-is_a: CL:1001135 ! arcuate artery cell
 
 [Term]
 id: CL:1001214
@@ -1342,7 +1132,6 @@ name: arcuate artery smooth muscle cell
 namespace: cell
 xref: KUPO:0001080
 is_a: CL:1001064 ! kidney artery smooth muscle cell
-is_a: CL:1001135 ! arcuate artery cell
 
 [Term]
 id: CL:1001216
@@ -1350,7 +1139,6 @@ name: interlobulary artery endothelial cell
 namespace: cell
 xref: KUPO:0001082
 is_a: CL:1000413 ! endothelial cell of artery
-is_a: CL:1001138 ! interlobular artery cell
 
 [Term]
 id: CL:1001217
@@ -1358,7 +1146,6 @@ name: interlobulary artery smooth muscle cell
 namespace: cell
 xref: KUPO:0001083
 is_a: CL:1001064 ! kidney artery smooth muscle cell
-is_a: CL:1001138 ! interlobular artery cell
 
 [Term]
 id: CL:1001220
@@ -1366,7 +1153,6 @@ name: arcuate vein endothelial cell
 namespace: cell
 xref: KUPO:0001086
 is_a: CL:0002543 ! vein endothelial cell
-is_a: CL:1001142 ! arcuate vein cell
 
 [Term]
 id: CL:1001221
@@ -1374,7 +1160,6 @@ name: arcuate vein smooth muscle cell
 namespace: cell
 xref: KUPO:0001087
 is_a: CL:1001068 ! kidney venous system smooth muscle cell
-is_a: CL:1001142 ! arcuate vein cell
 
 [Term]
 id: CL:1001223
@@ -1382,7 +1167,6 @@ name: interlobulary vein endothelial cell
 namespace: cell
 xref: KUPO:0001089
 is_a: CL:0002543 ! vein endothelial cell
-is_a: CL:1001145 ! interlobular vein cell
 
 [Term]
 id: CL:1001224
@@ -1390,7 +1174,6 @@ name: interlobulary vein smooth muscle cell
 namespace: cell
 xref: KUPO:0001090
 is_a: CL:1001068 ! kidney venous system smooth muscle cell
-is_a: CL:1001145 ! interlobular vein cell
 
 [Term]
 id: CL:1001285
@@ -1398,7 +1181,6 @@ name: vasa recta descending limb cell
 namespace: cell
 xref: KUPO:0001071
 is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0009202 ! vasa recta descending limb
 
 [Term]
 id: CL:1001286
@@ -1407,7 +1189,6 @@ namespace: cell
 xref: KUPO:0001072
 is_a: CL:1001126 ! inner renal medulla vasa recta cell
 is_a: CL:1001285 ! vasa recta descending limb cell
-relationship: part_of UBERON:0009089 ! inner medulla vasa recta descending limb
 
 [Term]
 id: CL:1001287
@@ -1416,7 +1197,6 @@ namespace: cell
 xref: KUPO:0001073
 is_a: CL:1001127 ! outer renal medulla vasa recta cell
 is_a: CL:1001285 ! vasa recta descending limb cell
-relationship: part_of UBERON:0009090 ! outer medulla vasa recta descending limb
 
 [Term]
 id: CL:1001567
@@ -1441,7 +1221,6 @@ name: microvascular endothelial cell
 namespace: cell
 def: "Any blood vessel endothelial cell that is part of a microvascular endothelium." []
 is_a: CL:0000071 ! blood vessel endothelial cell
-relationship: part_of UBERON:0008339 ! microvascular endothelium
 created_by: TermGenie
 creation_date: 2014-06-04T15:07:42Z
 
@@ -1455,21 +1234,11 @@ created_by: TermGenie
 creation_date: 2014-06-04T15:12:06Z
 
 [Term]
-id: CL:2000011
-name: dermis lymphatic vessel endothelial cell
-namespace: cell
-def: "Any endothelial cell of lymphatic vessel that is part of a dermis." []
-is_a: CL:0002138 ! endothelial cell of lymphatic vessel
-created_by: TermGenie
-creation_date: 2014-06-04T15:15:08Z
-
-[Term]
 id: CL:2000016
 name: lung microvascular endothelial cell
 namespace: cell
 def: "Any lung endothelial cell that is part of a microvascular endothelium." []
 is_a: CL:1001567 ! lung endothelial cell
-relationship: part_of UBERON:0008339 ! microvascular endothelium
 created_by: TermGenie
 creation_date: 2014-06-04T16:00:56Z
 
@@ -1480,7 +1249,6 @@ namespace: cell
 def: "Any endothelial cell of artery that is part of a coronary artery." []
 is_a: CL:0010006 ! cardiac blood vessel endothelial cell
 is_a: CL:1000413 ! endothelial cell of artery
-relationship: part_of UBERON:0001621 ! coronary artery
 created_by: TermGenie
 creation_date: 2014-06-04T17:08:47Z
 
@@ -1501,16 +1269,6 @@ def: "Any microvascular endothelial cell that is part of a urinary bladder." []
 is_a: CL:2000008 ! microvascular endothelial cell
 created_by: TermGenie
 creation_date: 2014-07-09T00:04:47Z
-
-[Term]
-id: CL:2000041
-name: dermis microvascular lymphatic vessel endothelial cell
-namespace: cell
-def: "Any dermis lymphatic vessel endothelial cell that is part of a microvascular endothelium." []
-is_a: CL:2000011 ! dermis lymphatic vessel endothelial cell
-relationship: part_of UBERON:0008339 ! microvascular endothelium
-created_by: TermGenie
-creation_date: 2014-07-09T00:09:54Z
 
 [Term]
 id: CL:2000044
@@ -1648,7 +1406,6 @@ name: endometrial microvascular endothelial cells
 namespace: cell
 def: "Any microvascular endothelial cell that is part of a endometrial blood vessel." []
 is_a: CL:2000008 ! microvascular endothelial cell
-relationship: part_of UBERON:0015172 ! endometrial blood vessel
 created_by: TermGenie
 creation_date: 2015-03-31T21:02:36Z
 
@@ -1823,7 +1580,7 @@ property_value: seeAlso EHDAA2:0001330
 id: UBERON:0000946
 name: cardial valve
 namespace: uberon
-def: "A membranous fold of the heart that prevents reflux of fluid" [MESH:A07.541.510, MP:0000285, PMID:7926784]
+def: "A membranous fold of the heart that prevents reflux of fluid." [MESH:A07.541.510, MP:0000285, PMID:7926784]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -1860,7 +1617,7 @@ property_value: UBPROP:0000013 "Rector et al: One might be tempted to define 'he
 id: UBERON:0000947
 name: aorta
 namespace: uberon
-def: "The main trunk of the systemic arterial system that carries blood from the heart to all the organs and other structures of the body, bringing oxygenated blood to all parts of the body in the systemic circulation" [http://orcid.org/0000-0002-6601-2165, ISBN:0-683-40008-8, MESH:A07.231.114.056, MP:0000272, Wikipedia:Aorta]
+def: "The main trunk of the systemic arterial system that carries blood from the heart to all the organs and other structures of the body, bringing oxygenated blood to all parts of the body in the systemic circulation." [http://orcid.org/0000-0002-6601-2165, ISBN:0-683-40008-8, MESH:A07.231.114.056, MP:0000272, Wikipedia:Aorta]
 subset: efo_slim
 subset: grouping_class
 subset: pheno_slim
@@ -1955,7 +1712,7 @@ property_value: UBPROP:0000007 "cardiac" xsd:string
 id: UBERON:0000985
 name: axillary vein
 namespace: uberon
-def: "Vein that drains the axilla" [http://orcid.org/0000-0002-6601-2165]
+def: "Vein that drains the axilla." [http://orcid.org/0000-0002-6601-2165]
 subset: uberon_slim
 synonym: "subcostal vein" RELATED []
 synonym: "vena axillaris" EXACT LATIN [Wikipedia:Axillary_vein]
@@ -1978,7 +1735,7 @@ property_value: UBPROP:0000008 "In human anatomy, the axillary vein is a large b
 id: UBERON:0001009
 name: circulatory system
 namespace: uberon
-def: "organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
+def: "Organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
 subset: uberon_slim
 synonym: "systema cardiovasculare" RELATED LATIN [Wikipedia:Circulatory_system]
 xref: AAO:0000959
@@ -2045,7 +1802,7 @@ is_a: BFO:0000004 ! independent continuant
 id: UBERON:0001070
 name: external carotid artery
 namespace: uberon
-def: "A terminal branch of the left or right common carotid artery which supplies oxygenated blood to to the throat, neck glands, tongue, face, mouth, ear, scalp and dura mater of the meninges[MP]" [MGI:anna]
+def: "A terminal branch of the left or right common carotid artery which supplies oxygenated blood to to the throat, neck glands, tongue, face, mouth, ear, scalp and dura mater of the meninges[MP]." [MGI:anna]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -2191,7 +1948,7 @@ relationship: part_of UBERON:0004784 {source="https://github.com/obophenotype/ub
 id: UBERON:0001082
 name: epicardium of ventricle
 namespace: uberon
-def: "An epicardial layer that lines a cardiac ventricle" [http://orcid.org/0000-0002-6601-2165]
+def: "An epicardial layer that lines a cardiac ventricle." [http://orcid.org/0000-0002-6601-2165]
 subset: vertebrate_core
 synonym: "cardiac ventricle epicardium" EXACT [OBOL:automatic]
 synonym: "ventricular epicardium" EXACT []
@@ -2442,7 +2199,7 @@ property_value: UBPROP:0000012 "in EHDAA2, the renal vein is part of the kidney"
 id: UBERON:0001141
 name: right renal vein
 namespace: uberon
-def: "A renal vein that drains the right kidney" [http://orcid.org/0000-0002-6601-2165]
+def: "A renal vein that drains the right kidney." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 xref: EMAPA:37381 {source="MA:th"}
 xref: FMA:14335
@@ -2458,7 +2215,7 @@ property_value: UBPROP:0000001 "A vein that drains blood from the right kidney i
 id: UBERON:0001142
 name: left renal vein
 namespace: uberon
-def: "A renal vein that drains the left kidney" [http://orcid.org/0000-0002-6601-2165]
+def: "A renal vein that drains the left kidney." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 xref: EMAPA:37166 {source="MA:th"}
 xref: FMA:14336
@@ -2687,7 +2444,7 @@ property_value: UBPROP:0000001 "The renal arteries normally arise off the side o
 id: UBERON:0001185
 name: right renal artery
 namespace: uberon
-def: "Renal artery that supplies the right kidney" [https://orcid.org/0000-0002-6601-2165]
+def: "Renal artery that supplies the right kidney." [https://orcid.org/0000-0002-6601-2165]
 comment: The right [renal artery] passes behind the inferior vena cava, the right renal vein, the head of the pancreas, and the descending part of the duodenum[WP]
 subset: pheno_slim
 subset: uberon_slim
@@ -2707,7 +2464,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/da/G
 id: UBERON:0001186
 name: left renal artery
 namespace: uberon
-def: "Renal artery that supplies the left kidney" [https://orcid.org/0000-0002-6601-2165]
+def: "Renal artery that supplies the left kidney." [https://orcid.org/0000-0002-6601-2165]
 comment: The left [renal artery] is somewhat higher than the right; it lies behind the left renal vein, the body of the pancreas and the splenic vein, and is crossed by the inferior mesenteric vein[WP]
 subset: pheno_slim
 synonym: "left renal arterial tree" EXACT []
@@ -3080,7 +2837,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/33/G
 id: UBERON:0001226
 name: major calyx
 namespace: uberon
-def: "portion of the urinary collecting system within the kidney that drains several minor calyces" [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "Portion of the urinary collecting system within the kidney that drains several minor calyces." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
 comment: major calyx collects urine from several renal papillae; all major calyces unite to form the renal pelvis
 subset: uberon_slim
 synonym: "calices renales majores" EXACT LATIN [Wikipedia:Major_calyx]
@@ -3099,7 +2856,7 @@ property_value: depicted:by Kidney:PioM.png xsd:anyURI
 id: UBERON:0001227
 name: minor calyx
 namespace: uberon
-def: "portion of the urinary collecting system within the kidney that drains one renal papilla" [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "Portion of the urinary collecting system within the kidney that drains one renal papilla." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
 comment: one renal papilla projects into the lumen of one minor calyx; several minor calyces unite to form a major calyx
 subset: uberon_slim
 synonym: "calices renales minores" EXACT LATIN [Wikipedia:Minor_calyx]
@@ -3667,7 +3424,7 @@ property_value: IAO:0000116 "TODO - check NCITA class" xsd:string
 id: UBERON:0001394
 name: axillary artery
 namespace: uberon
-def: "Artery that supplies the axilla" [http://orcid.org/0000-0002-6601-2165]
+def: "Artery that supplies the axilla." [http://orcid.org/0000-0002-6601-2165]
 subset: uberon_slim
 synonym: "arteria axillaris" EXACT LATIN [Wikipedia:Axillary_artery]
 synonym: "axillary part of subclavian artery" EXACT [FMA:22654]
@@ -3786,7 +3543,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/92/G
 id: UBERON:0001404
 name: radial artery
 namespace: uberon
-def: "branch of the brachial artery beginning below the elbow and extending down the forearm around the wrist and into the palm." [https://www.vocabulary.com/dictionary/arteria%20radialis]
+def: "Branch of the brachial artery beginning below the elbow and extending down the forearm around the wrist and into the palm." [https://www.vocabulary.com/dictionary/arteria%20radialis]
 subset: uberon_slim
 synonym: "arteria radialis" RELATED LATIN [Wikipedia:Radial_artery]
 xref: EMAPA:37112 {source="MA:th"}
@@ -3927,7 +3684,7 @@ property_value: IAO:0000116 "Merged median cubital and basilic veins on basis of
 id: UBERON:0001420
 name: subscapular vein
 namespace: uberon
-def: "a vein formed by the confluence of the thoracodorsal and circumflex scapular veins and accompanying the subscapular artery to drain into the axillary vein." [http://www.medilexicon.com/medicaldictionary.php?t=97509]
+def: "A vein formed by the confluence of the thoracodorsal and circumflex scapular veins and accompanying the subscapular artery to drain into the axillary vein." [http://www.medilexicon.com/medicaldictionary.php?t=97509]
 synonym: "vena subscapularis" EXACT LATIN []
 xref: EMAPA:37190 {source="MA:th"}
 xref: FMA:23113
@@ -4033,7 +3790,7 @@ property_value: UBPROP:0000003 "Tetrapods have evolved distinct lymphatic system
 id: UBERON:0001496
 name: ascending aorta
 namespace: uberon
-def: "The ascending aorta is the portion of the aorta in a two-pass circulatory system that lies between the heart and the arch of aorta[GO]. A portion of the aorta commencing at the upper part of the base of the left ventricle, on a level with the lower border of the third costal cartilage behind the left half of the sternum; it passes obliquely upward, forward, and to the right, in the direction of the heart's axis, as high as the upper border of the second right costal cartilage, describing a slight curve in its course, and being situated, about 6 cm behind the posterior surface of the sternum. The total length is about 5 cm in length [Wikipedia]" [GO:0035905, Wikipedia:Ascending_aorta]
+def: "The ascending aorta is the portion of the aorta in a two-pass circulatory system that lies between the heart and the arch of aorta[GO]. A portion of the aorta commencing at the upper part of the base of the left ventricle, on a level with the lower border of the third costal cartilage behind the left half of the sternum; it passes obliquely upward, forward, and to the right, in the direction of the heart's axis, as high as the upper border of the second right costal cartilage, describing a slight curve in its course, and being situated, about 6 cm behind the posterior surface of the sternum. The total length is about 5 cm in length [Wikipedia]." [GO:0035905, Wikipedia:Ascending_aorta]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "aorta ascendens" RELATED LATIN [Wikipedia:Ascending_aorta]
@@ -4058,7 +3815,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e6/G
 id: UBERON:0001508
 name: arch of aorta
 namespace: uberon
-def: "the convex portion of the aorta between the ascending and descending parts of the aorta; branches from it include the brachiocephalic trunk, the left common carotid artery, and the left subclavian artery; the brachiocephalic trunk further splits to form the right subclavian artery and the right common carotid artery" [ISBN:0-683-40008-8, MP:0004113]
+def: "The convex portion of the aorta between the ascending and descending parts of the aorta; branches from it include the brachiocephalic trunk, the left common carotid artery, and the left subclavian artery; the brachiocephalic trunk further splits to form the right subclavian artery and the right common carotid artery." [ISBN:0-683-40008-8, MP:0004113]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "aortic arch" RELATED [FMA:3768]
@@ -4111,7 +3868,7 @@ property_value: UBPROP:0000011 "results from fusion of left and right dorsal aor
 id: UBERON:0001515
 name: thoracic aorta
 namespace: uberon
-def: "the part of the aorta that extends from the origin at the heart to the diaphragm, and from which arises numerous branches that supply oxygenated blood to the chest cage and the organs within the chest" [http://www.medterms.com, MP:0010468]
+def: "The part of the aorta that extends from the origin at the heart to the diaphragm, and from which arises numerous branches that supply oxygenated blood to the chest cage and the organs within the chest." [http://www.medterms.com, MP:0010468]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -4173,7 +3930,7 @@ property_value: IAO:0000116 "Many of the branches of the abdominal aorta in mamm
 id: UBERON:0001529
 name: brachiocephalic artery
 namespace: uberon
-def: "the short first aortic arch branch and divides into the right subclavian artery and the right common carotid artery" [MGI:csmith, MP:0010663]
+def: "The short first aortic arch branch and divides into the right subclavian artery and the right common carotid artery." [MGI:csmith, MP:0010663]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -4256,7 +4013,7 @@ property_value: UBPROP:0000012 "placement of the MA class here is not strictly c
 id: UBERON:0001532
 name: internal carotid artery
 namespace: uberon
-def: "A terminal branch of the left or right common carotid artery which supplies oxygenated blood to the brain and eyes[MP]" [MGI:anna]
+def: "A terminal branch of the left or right common carotid artery which supplies oxygenated blood to the brain and eyes[MP]." [MGI:anna]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -4297,7 +4054,7 @@ property_value: UBPROP:0000001 "One of the major arteries of the head, it is the
 id: UBERON:0001533
 name: subclavian artery
 namespace: uberon
-def: "One of two laterally paired arteries that supplies the pectoral appendages, usually branching from the dorsal aorta" [https://orcid.org/0000-0002-6601-2165, ISBN:0073040584]
+def: "One of two laterally paired arteries that supplies the pectoral appendages, usually branching from the dorsal aorta." [https://orcid.org/0000-0002-6601-2165, ISBN:0073040584]
 subset: pheno_slim
 subset: uberon_slim
 subset: unverified_taxonomic_grouping
@@ -4335,7 +4092,7 @@ property_value: UBPROP:0000001 "The pectoral (subclavian) arteries originate fro
 id: UBERON:0001534
 name: right subclavian artery
 namespace: uberon
-def: "The subclavian artery that supplies the right pectoral appendage" [http://orcid.org/0000-0002-6601-2165]
+def: "The subclavian artery that supplies the right pectoral appendage." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "arteria subclavia dextra" EXACT LATIN [FMA:3953, FMA:TA]
@@ -4358,7 +4115,7 @@ property_value: UBPROP:0000011 "proximal part arises from right 4th aortic arch 
 id: UBERON:0001535
 name: vertebral artery
 namespace: uberon
-def: "the first branch of the left and right subclavian arteries that merge to form the single midline basilar artery; branches of the vertebral arteries supply the musculature of the neck" [ISBN:0-683-40008-8, MP:0011513]
+def: "The first branch of the left and right subclavian arteries that merge to form the single midline basilar artery; branches of the vertebral arteries supply the musculature of the neck." [ISBN:0-683-40008-8, MP:0011513]
 comment: The two vertebral arteries and the basilar artery are sometimes together called the vertebrobasilar system, which supplies blood to the posterior part of circle of Willis and anastomoses with blood supplied to the anterior part of the circle of Willis from the carotid arteries. [WP,unvetted]
 subset: pheno_slim
 subset: uberon_slim
@@ -4592,7 +4349,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/62/G
 id: UBERON:0001548
 name: lateral marginal vein
 namespace: uberon
-def: "a continuation of the Dorsal venous arch of the foot and is the origin of the short saphenous vein" [Wikipedia:Lateral_marginal_vein]
+def: "A continuation of the Dorsal venous arch of the foot and is the origin of the short saphenous vein." [Wikipedia:Lateral_marginal_vein]
 synonym: "lateral marginal vein of foot" EXACT []
 synonym: "vena marginalis lateralis" EXACT []
 synonym: "vena marginalis lateralis pedis" EXACT LATIN [FMA:44359, FMA:TA]
@@ -4624,7 +4381,7 @@ relationship: part_of UBERON:0008783 ! dorsal venous arch
 id: UBERON:0001550
 name: medial marginal vein
 namespace: uberon
-def: "a continuation of the Dorsal venous arch of the foot and is the origin of the long saphenous vein" [Wikipedia:Medial_marginal_vein]
+def: "A continuation of the Dorsal venous arch of the foot and is the origin of the long saphenous vein." [Wikipedia:Medial_marginal_vein]
 synonym: "medial marginal vein of foot" EXACT []
 synonym: "vena marginalis medialis" EXACT []
 synonym: "vena marginalis medialis pedis" EXACT LATIN [FMA:44420, FMA:TA]
@@ -4701,7 +4458,7 @@ is_a: UBERON:0004573 ! systemic artery
 id: UBERON:0001584
 name: left subclavian artery
 namespace: uberon
-def: "The subclavian artery that supplies the left pectoral appendage" [http://orcid.org/0000-0002-6601-2165]
+def: "The subclavian artery that supplies the left pectoral appendage." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "arteria subclavia (sinistra)" EXACT LATIN [FMA:4694, FMA:TA]
@@ -5270,7 +5027,7 @@ property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/2e/
 id: UBERON:0001625
 name: right coronary artery
 namespace: uberon
-def: "Coronary artery which runs along the right side of the heart and predominantly supplies the mycocardium of the right side of the heart[Wikipedia,modified]" [http://orcid.org/0000-0002-6601-2165, Wikipedia:Right_coronary_artery]
+def: "Coronary artery which runs along the right side of the heart and predominantly supplies the mycocardium of the right side of the heart[Wikipedia,modified]." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Right_coronary_artery]
 subset: uberon_slim
 synonym: "arteria coronaria dextra" RELATED LATIN [Wikipedia:Right_coronary_artery]
 synonym: "right coronary arterial tree" RELATED []
@@ -5289,7 +5046,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/4/46/G
 id: UBERON:0001626
 name: left coronary artery
 namespace: uberon
-def: "Coronary artery which runs along the left side of the heart and predominantly supplies the mycocardium of the left side of the heart[Wikipedia,modified]" [http://orcid.org/0000-0002-6601-2165, Wikipedia:Left_coronary_artery]
+def: "Coronary artery which runs along the left side of the heart and predominantly supplies the mycocardium of the left side of the heart[Wikipedia,modified]." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Left_coronary_artery]
 subset: uberon_slim
 synonym: "arteria coronaria sinistra" RELATED LATIN [Wikipedia:Left_coronary_artery]
 synonym: "left coronary arterial tree" RELATED []
@@ -5685,7 +5442,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/G
 id: UBERON:0001641
 name: transverse sinus
 namespace: uberon
-def: "one of the dural venous sinuses and drains the superior sagittal sinus the occipital sinus and the straight sinus, and empties into the sigmoid sinus which in turn reaches the jugular bulb." [http://radiopaedia.org/articles/transverse-sinus]
+def: "One of the dural venous sinuses and drains the superior sagittal sinus the occipital sinus and the straight sinus, and empties into the sigmoid sinus which in turn reaches the jugular bulb." [http://radiopaedia.org/articles/transverse-sinus]
 subset: uberon_slim
 synonym: "groove for right and left transverse sinuses" RELATED [Wikipedia:Transverse_sinuses]
 synonym: "lateral sinus" RELATED [FMA:50763]
@@ -5887,7 +5644,7 @@ relationship: part_of UBERON:0001656 ! retromandibular vein
 id: UBERON:0001659
 name: transverse facial vein
 namespace: uberon
-def: "a tributary of the superficial temporal or retromandibular veins, anastomosing with the facial vein." [http://medical-dictionary.thefreedictionary.com/transverse+facial+vein]
+def: "A tributary of the superficial temporal or retromandibular veins, anastomosing with the facial vein." [http://medical-dictionary.thefreedictionary.com/transverse+facial+vein]
 subset: uberon_slim
 xref: EMAPA:37200 {source="MA:th"}
 xref: FMA:50938
@@ -6110,7 +5867,7 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0001776
 name: optic choroid
 namespace: uberon
-def: "vascular layer containing connective tissue, of the eye lying between the retina and the sclera. The choroid provides oxygen and nourishment to the outer layers of the retina. Along with the ciliary body and iris, the choroid forms the uveal tract[WP]." [Wikipedia:Choroid]
+def: "Vascular layer containing connective tissue, of the eye lying between the retina and the sclera. The choroid provides oxygen and nourishment to the outer layers of the retina. Along with the ciliary body and iris, the choroid forms the uveal tract[WP]." [Wikipedia:Choroid]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -6327,7 +6084,7 @@ property_value: UBPROP:0000003 "Vertebrates and a very few invertebrates such as
 id: UBERON:0001979
 name: venule
 namespace: uberon
-def: "One of the minute vessels that collect deoxygenated blood from the capillary plexuses returns it to the veins" [MESH:A07.231.432.952, MP:0004125]
+def: "One of the minute vessels that collect deoxygenated blood from the capillary plexuses returns it to the veins." [MESH:A07.231.432.952, MP:0004125]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -6688,7 +6445,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/61/G
 id: UBERON:0002057
 name: phrenic artery
 namespace: uberon
-def: "An artery that supplies the diaphragm" [https://orcid.org/0000-0002-6601-2165]
+def: "An artery that supplies the diaphragm." [https://orcid.org/0000-0002-6601-2165]
 subset: uberon_slim
 xref: EMAPA:37108 {source="MA:th"}
 xref: FMA:69330
@@ -6855,7 +6612,7 @@ property_value: UBPROP:0000008 "Paired in gnathostomes; with only a vestige of t
 id: UBERON:0002065
 name: posterior cardinal vein
 namespace: uberon
-def: "One of two paired cardinal veins that return blood from the body of the embryo[Kardong]" [ISBN:0073040584, Wikipedia:Posterior_cardinal_vein]
+def: "One of two paired cardinal veins that return blood from the body of the embryo[Kardong]." [ISBN:0073040584, Wikipedia:Posterior_cardinal_vein]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -7217,7 +6974,7 @@ property_value: UBPROP:0000003 "The tetrapod clade develops a complete atrial se
 id: UBERON:0002086
 name: sinoatrial valve
 namespace: uberon
-def: "A valve at the opening of the sinus venosus into the primordial atrium[TFD,modified]" [http://medical-dictionary.thefreedictionary.com/sinoatrial+valve]
+def: "A valve at the opening of the sinus venosus into the primordial atrium[TFD,modified]." [http://medical-dictionary.thefreedictionary.com/sinoatrial+valve]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "sinoatrial valves" RELATED PLURAL [ZFA:0000680]
@@ -7283,7 +7040,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e9/G
 id: UBERON:0002089
 name: thoracodorsal vein
 namespace: uberon
-def: "companion vein of the thoracodorsal artery, draining the apical part of the latissimus dorsi and merging with the circumflex scapular vein to form a subscapular vein" [http://www.medilexicon.com/medicaldictionary.php?t=97559]
+def: "Companion vein of the thoracodorsal artery, draining the apical part of the latissimus dorsi and merging with the circumflex scapular vein to form a subscapular vein." [http://www.medilexicon.com/medicaldictionary.php?t=97559]
 xref: EMAPA:37198 {source="MA:th"}
 xref: FMA:71213
 xref: MA:0002238
@@ -7294,7 +7051,7 @@ relationship: part_of UBERON:0000985 ! axillary vein
 id: UBERON:0002094
 name: interventricular septum
 namespace: uberon
-def: "Cardiac septum which separates the right ventricle from the left ventricle.[FMA]" [FMA:7133]
+def: "Cardiac septum which separates the right ventricle from the left ventricle.[FMA]." [FMA:7133]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -7490,7 +7247,7 @@ property_value: UBPROP:0000012 "FMA part_ofs changed to connects" xsd:string {ex
 id: UBERON:0002137
 name: aortic valve
 namespace: uberon
-def: "Cardiac valve which has as its parts the anterior, right posterior and left posterior cusps, attached to the fibrous ring of aortic valve.[FMA]" [FMA:FMA, Wikipedia:Aortic_valve]
+def: "Cardiac valve which has as its parts the anterior, right posterior and left posterior cusps, attached to the fibrous ring of aortic valve.[FMA]." [FMA:FMA, Wikipedia:Aortic_valve]
 comment: Human variation: It is normally tricuspid (with three leaflets), although in 1% of the population it is found to be congenitally bicuspid (two leaflets)
 subset: efo_slim
 subset: pheno_slim
@@ -7521,7 +7278,7 @@ property_value: UBPROP:0000001 "The valve between the left ventricle of the hear
 id: UBERON:0002146
 name: pulmonary valve
 namespace: uberon
-def: "the semilunar valve of the heart that lies between the right ventricle and the pulmonary artery." [Wikipedia:Pulmonary_valve]
+def: "The semilunar valve of the heart that lies between the right ventricle and the pulmonary artery." [Wikipedia:Pulmonary_valve]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "pulmonic valve" EXACT []
@@ -7682,7 +7439,7 @@ property_value: UBPROP:0000012 "not part of the eye in ZFA. Note this changed to
 id: UBERON:0002243
 name: cutaneous vein
 namespace: uberon
-def: "one of a number of veins in the subcutaneous tissue that empty into deep veins" [http://www.thefreedictionary.com/cutaneous+vein]
+def: "One of a number of veins in the subcutaneous tissue that empty into deep veins." [http://www.thefreedictionary.com/cutaneous+vein]
 xref: EMAPA:37506 {source="MA:th"}
 xref: FMA:76720
 xref: MA:0002098
@@ -7714,7 +7471,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/7e/G
 id: UBERON:0002249
 name: median artery
 namespace: uberon
-def: "An artery found in the forearm, between the radial artery and ulnar artery. It runs with the median nerve and supplies the same structures as that nerve. It may be unilateral or bilater" [Wikipedia:Median_artery]
+def: "An artery found in the forearm, between the radial artery and ulnar artery. It runs with the median nerve and supplies the same structures as that nerve. It may be unilateral or bilater." [Wikipedia:Median_artery]
 xref: EMAPA:37103 {source="MA:th"}
 xref: FMA:77142
 xref: MA:0001999
@@ -7779,7 +7536,7 @@ property_value: UBPROP:0000008 "In humans, Usually fully regressed before birth,
 id: UBERON:0002288
 name: choroid plexus of third ventricle
 namespace: uberon
-def: "Part of choroid plexus contained in the third ventricle" [NLX:18606]
+def: "Part of choroid plexus contained in the third ventricle." [NLX:18606]
 subset: vertebrate_core
 synonym: "3rd ventricle choroid plexus" RELATED []
 synonym: "chorioid plexus of cerebral hemisphere of third ventricle" EXACT [OBOL:automatic]
@@ -7808,7 +7565,7 @@ is_a: UBERON:0001886 ! choroid plexus
 id: UBERON:0002290
 name: choroid plexus of fourth ventricle
 namespace: uberon
-def: "Choroid plexus of the fourth ventricle" [NLX:27388]
+def: "Choroid plexus of the fourth ventricle." [NLX:27388]
 subset: vertebrate_core
 synonym: "4th ventricle choroid plexus" RELATED []
 synonym: "chorioid plexus of cerebral hemisphere of fourth ventricle" EXACT [OBOL:automatic]
@@ -7838,7 +7595,7 @@ is_a: UBERON:0006694 ! cerebellum vasculature
 id: UBERON:0002302
 name: myocardium of atrium
 namespace: uberon
-def: "the atrial part of middle layer of the heart, comprised of involuntary muscle" [ISBN:0-683-40008-8, MP:0010493]
+def: "The atrial part of middle layer of the heart, comprised of involuntary muscle." [ISBN:0-683-40008-8, MP:0010493]
 subset: efo_slim
 subset: pheno_slim
 subset: vertebrate_core
@@ -7861,7 +7618,7 @@ property_value: UBPROP:0000003 "As noted, the hearts of birds and mammals have f
 id: UBERON:0002307
 name: choroid plexus of lateral ventricle
 namespace: uberon
-def: "Part of choroid plexus contained in the lateral ventricle" [NLX:32548]
+def: "Part of choroid plexus contained in the lateral ventricle." [NLX:32548]
 subset: vertebrate_core
 synonym: "chorioid plexus of cerebral hemisphere of lateral ventricle" EXACT [OBOL:automatic]
 synonym: "chorioid plexus of lateral ventricle" EXACT []
@@ -7947,7 +7704,7 @@ relationship: part_of UBERON:0001515 ! thoracic aorta
 id: UBERON:0002348
 name: epicardium
 namespace: uberon
-def: "a region of the serous membrane that forms the innermost layer of the pericardium and the outer surface of the heart." [http://orcid.org/0000-0002-6601-2165]
+def: "A region of the serous membrane that forms the innermost layer of the pericardium and the outer surface of the heart." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -7977,7 +7734,7 @@ property_value: UBPROP:0000009 "The visceral pericardium apparently produces the
 id: UBERON:0002349
 name: myocardium
 namespace: uberon
-def: "the middle layer of the heart, comprised mainly of striated cardiac muscle fibers" [ISBN:0-683-40008-8, MP:0005329]
+def: "The middle layer of the heart, comprised mainly of striated cardiac muscle fibers." [ISBN:0-683-40008-8, MP:0005329]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -8023,7 +7780,7 @@ property_value: UBPROP:0000007 "myocardial" xsd:string
 id: UBERON:0002350
 name: conducting system of heart
 namespace: uberon
-def: "The cardiac conduction system consists of specialized cardiomyocytes that regulate the frequency of heart beat[GO]" [GO:0003161]
+def: "The cardiac conduction system consists of specialized cardiomyocytes that regulate the frequency of heart beat[GO]." [GO:0003161]
 subset: efo_slim
 subset: pheno_slim
 subset: vertebrate_core
@@ -8145,7 +7902,7 @@ property_value: UBPROP:0000003 "Three major adaptations, or 'novel cardiac compo
 id: UBERON:0002353
 name: bundle of His
 namespace: uberon
-def: "A part of the His-Purkinje system that transmits signals from the AV node to the cardiac Purkinje fibers[GO]" [GO:0003166, GOC:mtg_heart]
+def: "A part of the His-Purkinje system that transmits signals from the AV node to the cardiac Purkinje fibers[GO]." [GO:0003166, GOC:mtg_heart]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "A-V bundle" RELATED [EMAPA:35152]
@@ -8181,7 +7938,7 @@ id: UBERON:0002354
 name: cardiac Purkinje fiber
 namespace: uberon
 alt_id: UBERON:0004147
-def: "The cardiac Purkinje fiber is part of the cardiac conduction system that receives signals from the bundle of His and innervates the ventricular cardiac muscle" [GO:0003165]
+def: "The cardiac Purkinje fiber is part of the cardiac conduction system that receives signals from the bundle of His and innervates the ventricular cardiac muscle." [GO:0003165]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "cardiac Purkinje fiber" EXACT [BTO:0001735, GO:0003165]
@@ -8224,7 +7981,7 @@ relationship: part_of UBERON:0002406 {source="FMA"} ! pericardial sac
 id: UBERON:0002359
 name: fibrous pericardium
 namespace: uberon
-def: "Membrane organ which is attached to the pericardial sac proper and the central tendon of diaphragm and is continuous with the pretracheal fascia.[FMA]" [FMA:9586]
+def: "Membrane organ which is attached to the pericardial sac proper and the central tendon of diaphragm and is continuous with the pretracheal fascia.[FMA]." [FMA:9586]
 subset: organ_slim
 subset: uberon_slim
 synonym: "fibrous portion of pericardium" EXACT []
@@ -8271,7 +8028,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/19/I
 id: UBERON:0002406
 name: pericardial sac
 namespace: uberon
-def: "a double-walled sac containing the heart and the roots of the great vessels." [https://github.com/obophenotype/uberon/issues/86, Wikipedia:Pericardium]
+def: "A double-walled sac containing the heart and the roots of the great vessels." [https://github.com/obophenotype/uberon/issues/86, Wikipedia:Pericardium]
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "pericardium" RELATED []
@@ -8467,7 +8224,7 @@ id: UBERON:0002457
 name: intersomitic artery
 namespace: uberon
 alt_id: UBERON:0006001
-def: "The small branching sprouts of the dorsal aorta that grow across the medial surface of the somite, turn right angles to grow over that surface and then fuse with other sprouts and form the vertebral arteries adjacent to the neural tube; the intersomitic arteries supply the body wall and persist in the adult as the posterior intercostal, subcostal and the lumbar arteries" [MP:0010662]
+def: "The small branching sprouts of the dorsal aorta that grow across the medial surface of the somite, turn right angles to grow over that surface and then fuse with other sprouts and form the vertebral arteries adjacent to the neural tube; the intersomitic arteries supply the body wall and persist in the adult as the posterior intercostal, subcostal and the lumbar arteries." [MP:0010662]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "intersegmental arteries" RELATED PLURAL [ZFA:0001061]
@@ -8547,7 +8304,7 @@ property_value: UBPROP:0000202 FMA:70911
 id: UBERON:0002493
 name: uterine artery
 namespace: uberon
-def: "the branch of the internal iliac artery that supplies the uterus and the upper part of the vagina" [MGI:monikat, MP:0003995]
+def: "The branch of the internal iliac artery that supplies the uterus and the upper part of the vagina." [MGI:monikat, MP:0003995]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "arteria uterina" RELATED LATIN [Wikipedia:Uterine_artery]
@@ -8564,7 +8321,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/ae/G
 id: UBERON:0002494
 name: papillary muscle of heart
 namespace: uberon
-def: "one of the group of myocardial bundles which terminate in the chordae tendineae that attach to the cusps of the atrioventricular valves; each ventricle has an anterior and a posterior papillary muscle; the right ventricle sometimes has a septal papillary muscle" [MGI:anna, MP:0004058]
+def: "One of the group of myocardial bundles which terminate in the chordae tendineae that attach to the cusps of the atrioventricular valves; each ventricle has an anterior and a posterior papillary muscle; the right ventricle sometimes has a septal papillary muscle." [MGI:anna, MP:0004058]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "musculus papillaris" RELATED LATIN [Wikipedia:Papillary_muscle]
@@ -8606,7 +8363,7 @@ relationship: part_of UBERON:0018231 ! labyrinthine artery
 id: UBERON:0002511
 name: trabecula carnea
 namespace: uberon
-def: "the supporting bundles of muscular fibers lining the walls of the ventricles of the heart" [MGI:monikat, MP:0004067]
+def: "The supporting bundles of muscular fibers lining the walls of the ventricles of the heart." [MGI:monikat, MP:0004067]
 subset: pheno_slim
 synonym: "cardiac trabecula" RELATED [GO:0060347]
 synonym: "columnae carneae" RELATED LATIN [Wikipedia:Trabeculae_carneae]
@@ -8745,7 +8502,7 @@ property_value: UBPROP:0000003 "In primitive vertebrates, the basic early embryo
 id: UBERON:0003088
 name: caudal vein
 namespace: uberon
-def: "Vein in the tail returning blood from the trunk and tail to the heart, leads directly into the posterial cardinal vein in the posterior trunk. Kimmel et al, 1995.[ZFIN]" [ZFIN:curator]
+def: "Vein in the tail returning blood from the trunk and tail to the heart, leads directly into the posterial cardinal vein in the posterior trunk. Kimmel et al, 1995.[ZFIN]." [ZFIN:curator]
 subset: efo_slim
 subset: uberon_slim
 synonym: "CV" RELATED []
@@ -8783,7 +8540,7 @@ id: UBERON:0003118
 name: pharyngeal arch artery 1
 namespace: uberon
 alt_id: UBERON:0004371
-def: "The vessels formed within the first pair of branchial arches in embryogenesis" [MP:0010355]
+def: "The vessels formed within the first pair of branchial arches in embryogenesis." [MP:0010355]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "1st aortic arch artery" RELATED [EMAPA:16685]
@@ -8814,7 +8571,7 @@ id: UBERON:0003119
 name: pharyngeal arch artery 2
 namespace: uberon
 alt_id: UBERON:0004372
-def: "The vessels formed within the second pair of branchial arches in embryogenesis" [MP:0010356]
+def: "The vessels formed within the second pair of branchial arches in embryogenesis." [MP:0010356]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "2nd aortic arch artery" RELATED [EMAPA:16686]
@@ -8845,7 +8602,7 @@ id: UBERON:0003120
 name: pharyngeal arch artery 3
 namespace: uberon
 alt_id: UBERON:0004352
-def: "The vessels formed within the third pair of branchial arches in embryogenesis" [MP:0006356]
+def: "The vessels formed within the third pair of branchial arches in embryogenesis." [MP:0006356]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "3rd aortic arch artery" RELATED [EMAPA:16687]
@@ -8876,7 +8633,7 @@ id: UBERON:0003121
 name: pharyngeal arch artery 4
 namespace: uberon
 alt_id: UBERON:0004350
-def: "The vessels formed within the fourth pair of branchial arches in embryogenesis" [MP:0006354]
+def: "The vessels formed within the fourth pair of branchial arches in embryogenesis." [MP:0006354]
 comment: proximal right subclavian
 subset: pheno_slim
 subset: vertebrate_core
@@ -8930,7 +8687,7 @@ id: UBERON:0003123
 name: pharyngeal arch artery 6
 namespace: uberon
 alt_id: UBERON:0004351
-def: "The vessels formed within the sixth pair of branchial arches in embryogenesis" [MP:0006355]
+def: "The vessels formed within the sixth pair of branchial arches in embryogenesis." [MP:0006355]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "6th aortic arch artery" RELATED [EMAPA:17005]
@@ -8961,7 +8718,7 @@ property_value: UBPROP:0000011 "the distal left sixth arch becomes the ductus ar
 id: UBERON:0003210
 name: blood-cerebrospinal fluid barrier
 namespace: uberon
-def: "barrier in the choroid plexus located in the lateral, third, and fourth brain ventricles that controls the entrance of substances into the cerebrospinal fluid from the blood[MP]." [MP:0006088]
+def: "Barrier in the choroid plexus located in the lateral, third, and fourth brain ventricles that controls the entrance of substances into the cerebrospinal fluid from the blood[MP]." [MP:0006088]
 subset: pheno_slim
 synonym: "blood-CSF barrier" EXACT [MP:0006088]
 relationship: part_of UBERON:0001886 ! choroid plexus
@@ -10105,7 +9862,7 @@ is_a: UBERON:0003517 ! kidney blood vessel
 id: UBERON:0003707
 name: sinus of Valsalva
 namespace: uberon
-def: "one of the anatomic dilations of the ascending aorta, which occurs just above the aortic valve." [Wikipedia:Aortic_sinus]
+def: "One of the anatomic dilations of the ascending aorta, which occurs just above the aortic valve." [Wikipedia:Aortic_sinus]
 subset: pheno_slim
 synonym: "aortic sinus" EXACT [MP:0010483]
 synonym: "Petit sinus" EXACT [MP:0010483]
@@ -10148,7 +9905,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/9c/G
 id: UBERON:0003709
 name: circle of Willis
 namespace: uberon
-def: "A circle of arteries that supply blood to the brain. The Circle of Willis comprises the following arteries: Anterior cerebral artery (left and right); Anterior communicating artery; Internal carotid artery (left and right); Posterior cerebral artery (left and right); Posterior communicating artery (left and right).The basilar artery and middle cerebral arteries, supplying the brain, are also considered part of the circle" [Wikipedia:Circle_of_Willis]
+def: "A circle of arteries that supply blood to the brain. The Circle of Willis comprises the following arteries: Anterior cerebral artery (left and right); Anterior communicating artery; Internal carotid artery (left and right); Posterior cerebral artery (left and right); Posterior communicating artery (left and right).The basilar artery and middle cerebral arteries, supplying the brain, are also considered part of the circle." [Wikipedia:Circle_of_Willis]
 subset: pheno_slim
 synonym: "arterial circle" BROAD [Wikipedia:Circle_of_Willis]
 synonym: "arterial circle of Willis" EXACT []
@@ -10287,7 +10044,7 @@ is_a: UBERON:0003513 ! trunk blood vessel
 id: UBERON:0003847
 name: thyroid artery
 namespace: uberon
-def: "A artery that supplies a thyroid gland." [OBOL:automatic]
+def: "An artery that supplies a thyroid gland." [OBOL:automatic]
 xref: AAO:0010490
 xref: EHDAA2:0002029
 xref: EHDAA:7372
@@ -10384,7 +10141,7 @@ property_value: UBPROP:0000012 "EHDAA2 represents lumen" xsd:string {external_on
 id: UBERON:0003909
 name: sinusoid
 namespace: uberon
-def: "small blood vessel similar to a capillary but with a fenestrated endothelium. Sinusoids are found in the liver, lymphoid tissue, endocrine organs, and hematopoietic organs such as the bone marrow and the spleen. Sinusoids found within terminal villi of the placenta are not comparable to these; they possess a continuous endothelium and complete basal lamina[WP]." [Wikipedia:Sinusoid_(blood_vessel)]
+def: "Small blood vessel similar to a capillary but with a fenestrated endothelium. Sinusoids are found in the liver, lymphoid tissue, endocrine organs, and hematopoietic organs such as the bone marrow and the spleen. Sinusoids found within terminal villi of the placenta are not comparable to these; they possess a continuous endothelium and complete basal lamina[WP]." [Wikipedia:Sinusoid_(blood_vessel)]
 subset: vertebrate_core
 synonym: "endothelium of irregular blood filled space" RELATED []
 synonym: "sinusoidal blood vessel" EXACT []
@@ -10406,7 +10163,7 @@ property_value: UBPROP:0000012 "some sources give discontinuous capillary as syn
 id: UBERON:0003910
 name: splenic sinusoid
 namespace: uberon
-def: "wide vessels in the spleen that drain into trabecular veins[WP]." [Wikipedia:Red_pulp#Sinusoids]
+def: "Wide vessels in the spleen that drain into trabecular veins[WP]." [Wikipedia:Red_pulp#Sinusoids]
 synonym: "sinusoid of red pulp of spleen" RELATED [FMA:63199]
 synonym: "sinusoidal blood vessel of spleen" EXACT [OBOL:automatic]
 xref: FMA:63199
@@ -10441,7 +10198,7 @@ property_value: UBPROP:0000010 "The CP epithelial layer is continuous with the e
 id: UBERON:0003920
 name: venous blood vessel
 namespace: uberon
-def: "A blood vessel that carries blood from the capillaries toward the heart" [http://www.thefreedictionary.com/venous+blood+vessel]
+def: "A blood vessel that carries blood from the capillaries toward the heart." [http://www.thefreedictionary.com/venous+blood+vessel]
 comment: Compare to: vein
 synonym: "segment of venous tree organ" EXACT [FMA:86188]
 synonym: "venous tree organ segment" EXACT [FMA:86188]
@@ -10499,7 +10256,7 @@ property_value: UBPROP:0000011 "Bruch's membrane is present by midterm in fetal 
 id: UBERON:0003970
 name: placental labyrinth vasculature
 namespace: uberon
-def: "blood vessels of the layer of the placenta where embryonic and maternal blood vessels interdigitate" [MP:0008803]
+def: "Blood vessels of the layer of the placenta where embryonic and maternal blood vessels interdigitate." [MP:0008803]
 subset: pheno_slim
 synonym: "placental labyrinth vascular network" EXACT []
 synonym: "placental vasculature" RELATED [OBOL:automatic]
@@ -10524,7 +10281,7 @@ property_value: UBPROP:0000013 "we use the term CA for the anterior chamber if i
 id: UBERON:0004019
 name: baroreceptor
 namespace: uberon
-def: "The sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure" [MP:0004118]
+def: "The sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure." [MP:0004118]
 comment: WP classifies as mechanoreceptor
 subset: pheno_slim
 synonym: "baroceptor" RELATED [Wikipedia:Baroreceptor]
@@ -10543,7 +10300,7 @@ property_value: seeAlso https://github.com/obophenotype/uberon/issues/510 xsd:an
 id: UBERON:0004029
 name: canal of Schlemm
 namespace: uberon
-def: "The vascular structure encircling the anterior chamber of the eye, through which the aqueous humor is returned to the blood circulation" [MP:0005204, Wikipedia:Schlemm's_canal]
+def: "The vascular structure encircling the anterior chamber of the eye, through which the aqueous humor is returned to the blood circulation." [MP:0005204, Wikipedia:Schlemm's_canal]
 subset: pheno_slim
 synonym: "Schlemm's canal" EXACT []
 synonym: "scleral sinus" EXACT [FMA:51873]
@@ -10565,7 +10322,7 @@ relationship: part_of UBERON:0003712 ! cavernous sinus
 id: UBERON:0004030
 name: aqueous vein
 namespace: uberon
-def: "A vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)" [MP:0005207]
+def: "A vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)." [MP:0005207]
 comment: a mixture of episcleral venous blood and aqueous humor mix in this combined channel[http://www.atlasophthalmology.com]
 subset: pheno_slim
 xref: EMAPA:37428 {source="MA:th"}
@@ -10669,7 +10426,7 @@ property_value: UBPROP:0000001 "The layer of the myocardium composed of projecti
 id: UBERON:0004125
 name: myocardial compact layer
 namespace: uberon
-def: "outer dense layer of the myocardium uniting the epicardium and myocardium[MP]." [MP:0004056]
+def: "Outer dense layer of the myocardium uniting the epicardium and myocardium[MP]." [MP:0004056]
 subset: pheno_slim
 synonym: "compact subepicardial layer" EXACT [MP:0004056]
 synonym: "compact subepicardial myocardium" RELATED [MP:0004056]
@@ -10724,7 +10481,7 @@ property_value: UBPROP:0000001 "The outer layer the ventricular myocardium, musc
 id: UBERON:0004142
 name: outflow tract septum
 namespace: uberon
-def: "The outflow tract septum is a partition in the outflow tract" [GO:0003148]
+def: "The outflow tract septum is a partition in the outflow tract." [GO:0003148]
 xref: XAO:0004141
 is_a: UBERON:0002099 ! cardiac septum
 relationship: part_of UBERON:0004145 ! outflow tract
@@ -10733,7 +10490,7 @@ relationship: part_of UBERON:0004145 ! outflow tract
 id: UBERON:0004145
 name: outflow tract
 namespace: uberon
-def: "The outflow tract is the portion of the heart through which blood flows into the arteries" [GO:0003151]
+def: "The outflow tract is the portion of the heart through which blood flows into the arteries." [GO:0003151]
 subset: pheno_slim
 synonym: "arterial (outflow) pole" RELATED [PMID:20735616]
 synonym: "cardiac outflow tract" EXACT [PMID:20735616]
@@ -10752,7 +10509,7 @@ property_value: UBPROP:0000008 "Depending on the species, attached at the cardia
 id: UBERON:0004146
 name: His-Purkinje system
 namespace: uberon
-def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles" [GO:0003164, https://github.com/geneontology/go-ontology/issues/12451]
+def: "The His-Purkinje system receives signals from the AV node and is composed of the fibers that regulate cardiac muscle contraction in the ventricles." [GO:0003164, https://github.com/geneontology/go-ontology/issues/12451]
 synonym: "His-Purkinji network" EXACT []
 synonym: "HPS" EXACT ABBREVIATION []
 synonym: "VCS" EXACT []
@@ -10767,7 +10524,7 @@ property_value: UBPROP:0000001 "the intraventricular conduction system from the 
 id: UBERON:0004148
 name: cardiac vein
 namespace: uberon
-def: "Vein of heart that drains the myocardium" [http://orcid.org/0000-0002-6601-2165]
+def: "Vein of heart that drains the myocardium." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 synonym: "cardiac vein" EXACT [FMA:12846]
 synonym: "coronary vein" EXACT [ZFA:0005814]
@@ -10819,7 +10576,7 @@ property_value: IAO:0000116 "TODO - development" xsd:string
 id: UBERON:0004151
 name: cardiac chamber
 namespace: uberon
-def: "A cardiac chamber surrounds an enclosed cavity within the heart" [GO:0003205]
+def: "A cardiac chamber surrounds an enclosed cavity within the heart." [GO:0003205]
 comment: generic enough to cover FBbt:00003156 heart chamber but this is a cavity. GO defines it as the cavity. TODO - move subclasses. Note this also includes sinus venosus
 synonym: "chamber of heart" EXACT []
 synonym: "heart chamber" EXACT []
@@ -10910,7 +10667,7 @@ is_a: UBERON:0002085 ! interatrial septum
 id: UBERON:0004160
 name: proepicardium
 namespace: uberon
-def: "An embryonic group of progenitor cells that forms from an outpouching of the septum transversum near the venous pole of the heart and gives rise to the epicardium" [GO:0003342, http://en.wiktionary.org/wiki/proepicardium]
+def: "An embryonic group of progenitor cells that forms from an outpouching of the septum transversum near the venous pole of the heart and gives rise to the epicardium." [GO:0003342, http://en.wiktionary.org/wiki/proepicardium]
 synonym: "proepicardial cluster" EXACT [ZFA:0005808]
 synonym: "proepicardial organ" EXACT [ZFIN:ZDB-PUB-080218-16]
 xref: EMAPA:36025
@@ -10923,7 +10680,7 @@ property_value: UBPROP:0000008 "Proepicardial clusters in Zebrafish form on the 
 id: UBERON:0004162
 name: pulmonary myocardium
 namespace: uberon
-def: "The pulmonary myocardium is the myocardial tissue present in the pulmonary vein" [GO:0003350]
+def: "The pulmonary myocardium is the myocardial tissue present in the pulmonary vein." [GO:0003350]
 relationship: part_of UBERON:0002016 ! pulmonary vein
 relationship: part_of UBERON:0002349 ! myocardium
 
@@ -10931,7 +10688,7 @@ relationship: part_of UBERON:0002349 ! myocardium
 id: UBERON:0004178
 name: aorta smooth muscle tissue
 namespace: uberon
-def: "the nonstriated, involuntary muscle tissue located in the wall of the aorta" [MGI:csmith, MP:0009865]
+def: "The nonstriated, involuntary muscle tissue located in the wall of the aorta." [MGI:csmith, MP:0009865]
 subset: efo_slim
 subset: pheno_slim
 synonym: "aorta non-striated muscle" EXACT [OBOL:automatic]
@@ -10952,7 +10709,7 @@ relationship: part_of UBERON:0000947 ! aorta
 id: UBERON:0004183
 name: placental labyrinth blood vessel
 namespace: uberon
-def: "The embryonic vessels grow through the layer to come in close contact with the maternal blood supply" [GO:0060716]
+def: "The embryonic vessels grow through the layer to come in close contact with the maternal blood supply." [GO:0060716]
 synonym: "blood vessel of labyrinthine layer" EXACT [OBOL:automatic]
 synonym: "blood vessel of labyrinthine layer of placenta" EXACT [OBOL:automatic]
 synonym: "blood vessel of placenta labyrinth" EXACT [OBOL:automatic]
@@ -10966,7 +10723,7 @@ relationship: part_of UBERON:0003970 ! placental labyrinth vasculature
 id: UBERON:0004189
 name: glomerular endothelium
 namespace: uberon
-def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus" [GO:0072011]
+def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus." [GO:0072011]
 synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 xref: BTO:0004631
@@ -10977,7 +10734,7 @@ relationship: part_of UBERON:0004190 ! renal glomerulus vasculature
 id: UBERON:0004190
 name: renal glomerulus vasculature
 namespace: uberon
-def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
+def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus." [GO:0072012]
 synonym: "glomerulus vasculature" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vascular network" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vasculature" EXACT [OBOL:automatic]
@@ -10989,7 +10746,7 @@ is_a: UBERON:0006544 ! kidney vasculature
 id: UBERON:0004212
 name: glomerular capillary
 namespace: uberon
-def: "the small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus" [MGI:csmith, MP:0011320]
+def: "The small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus." [MGI:csmith, MP:0011320]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "blood capillary of renal glomerulus" EXACT [OBOL:automatic]
@@ -11057,7 +10814,7 @@ id: UBERON:0004237
 name: blood vessel smooth muscle
 namespace: uberon
 alt_id: UBERON:0010508
-def: "smooth muscle found within, and composing the majority of the wall of blood vessels." [Wikipedia:Vascular_smooth_muscle]
+def: "Smooth muscle found within, and composing the majority of the wall of blood vessels." [Wikipedia:Vascular_smooth_muscle]
 subset: pheno_slim
 synonym: "blood vessel involuntary muscle" EXACT [OBOL:automatic]
 synonym: "blood vessel non-striated muscle" EXACT [OBOL:automatic]
@@ -11329,7 +11086,7 @@ relationship: part_of UBERON:0003504 ! respiratory system blood vessel
 id: UBERON:0004344
 name: cardinal vein
 namespace: uberon
-def: "Any of the four veins in the developing vertebrate embryo which run along each side of the vertebral column" [MP:0004783]
+def: "Any of the four veins in the developing vertebrate embryo which run along each side of the vertebral column." [MP:0004783]
 subset: pheno_slim
 synonym: "cardinal sinus" RELATED [BTO:0004385]
 synonym: "cardinal vein system" RELATED [EHDAA2:0000213]
@@ -11353,7 +11110,7 @@ id: UBERON:0004363
 name: pharyngeal arch artery
 namespace: uberon
 alt_id: UBERON:0004342
-def: "One of a series of paired embryological vascular structures formed within a pharyngeal arch; in the adult, some of these vessels give rise to the great vessels[MP]" [MP:0002672]
+def: "One of a series of paired embryological vascular structures formed within a pharyngeal arch; in the adult, some of these vessels give rise to the great vessels[MP]." [MP:0002672]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -11400,7 +11157,7 @@ property_value: UBPROP:0000011 "The third, fourth, and sixth arches, along with 
 id: UBERON:0004365
 name: vitelline blood vessel
 namespace: uberon
-def: "blood vessel that is connected to the yolk sac." [http://orcid.org/0000-0002-6601-2165]
+def: "Blood vessel that is connected to the yolk sac." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 xref: EMAPA:36494
 is_a: UBERON:0001981 ! blood vessel
@@ -11410,7 +11167,7 @@ relationship: part_of UBERON:0004374 ! vitelline vasculature
 id: UBERON:0004374
 name: vitelline vasculature
 namespace: uberon
-def: "vascular network that is connected to the yolk sac." [http://orcid.org/0000-0002-6601-2165]
+def: "Vascular network that is connected to the yolk sac." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 synonym: "omphalomesenteric system" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "vitelline bloos vessel system" RELATED [https://orcid.org/0000-0002-6601-2165]
@@ -11825,7 +11582,7 @@ relationship: part_of UBERON:0004571 ! systemic arterial system
 id: UBERON:0004581
 name: systemic venous system
 namespace: uberon
-def: "The part of the venous system that drains the general body tissues[Kardong]" [ISBN:0073040584, Wikipedia:Systemic_venous_system]
+def: "The part of the venous system that drains the general body tissues[Kardong]." [ISBN:0073040584, Wikipedia:Systemic_venous_system]
 synonym: "systemic venous circulatory system" EXACT [FMA:45626]
 xref: FMA:45626
 xref: Wikipedia:Systemic_venous_system
@@ -11857,7 +11614,7 @@ property_value: UBPROP:0000003 "The appearance of Chordata and subsequently the 
 id: UBERON:0004638
 name: blood vessel endothelium
 namespace: uberon
-def: "An endothelium that lines the blood vasculature. Other endothelia may line lymph vessels, the heart" [https://orcid.org/0000-0002-6601-2165]
+def: "An endothelium that lines the blood vasculature. Other endothelia may line lymph vessels, the heart." [https://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: vertebrate_core
 xref: BTO:0000766
@@ -11875,7 +11632,7 @@ relationship: part_of UBERON:0001981 ! blood vessel
 id: UBERON:0004639
 name: renal afferent arteriole
 namespace: uberon
-def: "the blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism" [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
+def: "The blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism." [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "afferent arteriole" EXACT [MA:0002579]
@@ -11902,7 +11659,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0004640
 name: renal efferent arteriole
 namespace: uberon
-def: "the blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule" [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
+def: "The blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule." [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "arteriola glomerularis efferens capsulae renalis" RELATED LATIN [Wikipedia:Efferent_arteriole]
@@ -11959,7 +11716,7 @@ relationship: part_of UBERON:0000947 ! aorta
 id: UBERON:0004664
 name: aorta tunica adventitia
 namespace: uberon
-def: "the outermost layer of the aorta wall, containing connective tissue and collagen and elastic fibers" [ISBN:0-683-40008-8, MP:0009871]
+def: "The outermost layer of the aorta wall, containing connective tissue and collagen and elastic fibers." [ISBN:0-683-40008-8, MP:0009871]
 subset: pheno_slim
 synonym: "tunica adventitia of aorta" EXACT [FMA:14283]
 xref: EMAPA:35136
@@ -11975,7 +11732,7 @@ id: UBERON:0004666
 name: interventricular septum membranous part
 namespace: uberon
 alt_id: UBERON:0004143
-def: "The membranous portion of the wall between the two lower chambers of the heart" [MP:0008823]
+def: "The membranous portion of the wall between the two lower chambers of the heart." [MP:0008823]
 subset: pheno_slim
 synonym: "cardiac ventricular membranous septum" EXACT [http://orcid.org/0000-0002-6601-2165]
 synonym: "membranous interventricular septum" EXACT [FMA:7135]
@@ -12003,7 +11760,7 @@ id: UBERON:0004667
 name: interventricular septum muscular part
 namespace: uberon
 alt_id: UBERON:0004144
-def: "The muscular portion of the wall between the two lower chambers of the heart" [http://orcid.org/0000-0002-6601-2165, Wikipedia:Interventricular_septum#Portions]
+def: "The muscular portion of the wall between the two lower chambers of the heart." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Interventricular_septum#Portions]
 subset: pheno_slim
 synonym: "cardiac ventricular muscular septum" EXACT [http://orcid.org/0000-0002-6601-2165]
 synonym: "muscular interventricular septum" EXACT [FMA:7134]
@@ -12155,7 +11912,7 @@ relationship: part_of UBERON:0003504 ! respiratory system blood vessel
 id: UBERON:0004706
 name: bulbus cordis
 namespace: uberon
-def: "a transient fetal dilation of the distal (or cranial) heart tube located where the arterial trunk joins the ventral roots of the aortic arches" [ISBN:0-683-40008-8, MP:0010568]
+def: "A transient fetal dilation of the distal (or cranial) heart tube located where the arterial trunk joins the ventral roots of the aortic arches." [ISBN:0-683-40008-8, MP:0010568]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "primitive right ventricle endocardium" EXACT [EHDAA2:0000197, JB:def]
@@ -12439,7 +12196,7 @@ relationship: part_of UBERON:0003504 {source="https://github.com/obophenotype/ub
 id: UBERON:0004851
 name: aorta endothelium
 namespace: uberon
-def: "the thin layer of flat cells that line the aorta and form a barrier between circulating blood in the lumen and the rest of the vessel wall" [MGI:csmith, MP:0009864]
+def: "The thin layer of flat cells that line the aorta and form a barrier between circulating blood in the lumen and the rest of the vessel wall." [MGI:csmith, MP:0009864]
 subset: efo_slim
 subset: pheno_slim
 synonym: "adult aorta endothelium" EXACT [OBOL:automatic]
@@ -12528,7 +12285,7 @@ property_value: RO:0002174 NCBITaxon:10090 {source="PMID:16624319"}
 id: UBERON:0004889
 name: lobar bronchus vasculature
 namespace: uberon
-def: "Vasculature that is composed of the tubule structures that carry blood or lymph in the lungs" [LG:0012616]
+def: "Vasculature that is composed of the tubule structures that carry blood or lymph in the lungs." [LG:0012616]
 is_a: UBERON:0000102 ! lung vasculature
 
 [Term]
@@ -12678,7 +12435,7 @@ is_a: UBERON:0004212 ! glomerular capillary
 id: UBERON:0005168
 name: renal interlobular vein
 namespace: uberon
-def: "Any of the veins that parallel the interlobular arteries, receiving blood from the peritubular capillary plexus and empty into the arcuate veins" [ISBN:0-683-40008-8, MP:0011326]
+def: "Any of the veins that parallel the interlobular arteries, receiving blood from the peritubular capillary plexus and empty into the arcuate veins." [ISBN:0-683-40008-8, MP:0011326]
 subset: pheno_slim
 synonym: "interlobular vein" EXACT [MA:0002594]
 synonym: "interlobular veins of kidney" RELATED [FMA:71634]
@@ -12853,7 +12610,7 @@ is_a: UBERON:0003644 ! kidney arterial blood vessel
 id: UBERON:0005269
 name: renal cortex vein
 namespace: uberon
-def: "Artery that receives blood from the renal cortex[MP, modified]" [MGI:csmith]
+def: "Artery that receives blood from the renal cortex[MP, modified]." [MGI:csmith]
 subset: pheno_slim
 synonym: "kidney cortex vein" RELATED [MP:0011322]
 synonym: "renal cortex venous system" RELATED [MA:0002592]
@@ -12866,7 +12623,7 @@ is_a: UBERON:0014401 ! renal venous blood vessel
 id: UBERON:0005272
 name: peritubular capillary
 namespace: uberon
-def: "the tiny blood vessels that receive blood from the efferent arterioles of the glomerulus, and interact with superficial cortical nephrons allowing reabsorption and secretion between blood and the inner lumen of the nephron; peritubular capillaries are situated around the tubule and are at low pressure" [MGI:csmith, MP:0011321]
+def: "The tiny blood vessels that receive blood from the efferent arterioles of the glomerulus, and interact with superficial cortical nephrons allowing reabsorption and secretion between blood and the inner lumen of the nephron; peritubular capillaries are situated around the tubule and are at low pressure." [MGI:csmith, MP:0011321]
 subset: pheno_slim
 xref: EMAPA:36558
 xref: MA:0002588
@@ -13024,7 +12781,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/7/73/A
 id: UBERON:0005432
 name: aortic sac
 namespace: uberon
-def: "The dilated structure that is lined by endothelial cells and located at the arterial pole of the heart just above (distal to) the truncus arteriosus in mammalian embryos; it is the primordial vascular channel from which the aortic arches (and eventually the dorsal aortae) arise; the aortic sac is homologous to the ventral aorta of gill-bearing vertebrates" [MP:0012510]
+def: "The dilated structure that is lined by endothelial cells and located at the arterial pole of the heart just above (distal to) the truncus arteriosus in mammalian embryos; it is the primordial vascular channel from which the aortic arches (and eventually the dorsal aortae) arise; the aortic sac is homologous to the ventral aorta of gill-bearing vertebrates." [MP:0012510]
 subset: pheno_slim
 synonym: "saccus aorticus" EXACT LATIN []
 xref: EHDAA2:0004145
@@ -13065,7 +12822,7 @@ property_value: UBPROP:0000008 "In dogs, it is located to the left and often ven
 id: UBERON:0005436
 name: common hepatic artery
 namespace: uberon
-def: "In anatomy, the common hepatic artery is a short blood vessel that supplies oxygenated blood to the liver, pylorus (a part of the stomach), duodenum (a part of the small intestine) and pancreas. It arises from the celiac artery and has the following branches:" [Wikipedia:Common_hepatic_artery]
+def: "In anatomy, the common hepatic artery is a short blood vessel that supplies oxygenated blood to the liver, pylorus (a part of the stomach), duodenum (a part of the small intestine) and pancreas. It arises from the celiac artery and has the following branches:." [Wikipedia:Common_hepatic_artery]
 synonym: "arteria hepatica communis" RELATED LATIN [Wikipedia:Common_hepatic_artery]
 synonym: "common hepatic" RELATED [Wikipedia:Common_hepatic_artery]
 xref: EHDAA2:0000308
@@ -13084,7 +12841,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/65/G
 id: UBERON:0005438
 name: coronary sinus
 namespace: uberon
-def: "the short trunk that recieves most of the cardiac veins carrying the blood from the myocardium and delivers it to the right atrium, with the sinoatrial connection occurring between the inferior vena cava and the atrioventricular orifice" [ISBN:0-683-40008-8, MP:0010436]
+def: "The short trunk that recieves most of the cardiac veins carrying the blood from the myocardium and delivers it to the right atrium, with the sinoatrial connection occurring between the inferior vena cava and the atrioventricular orifice." [ISBN:0-683-40008-8, MP:0010436]
 subset: pheno_slim
 synonym: "sinus coronarius" EXACT []
 synonym: "sinus coronarius" RELATED LATIN [Wikipedia:Coronary_sinus]
@@ -13107,7 +12864,7 @@ property_value: UBPROP:0000010 "The sinus, before entering the auricle, is consi
 id: UBERON:0005440
 name: ductus arteriosus
 namespace: uberon
-def: "A fetal blood vessel connecting the pulmonary artery with the descending aorta[MESH]. In the developing fetus, the ductus arteriosus is a shunt connecting the pulmonary artery to the aortic arch. It allows most of the blood from the right ventricle to bypass the fetus' fluid-filled lungs, protecting the lungs from being overworked and allowing the left ventricle to strengthen. There are two other fetal shunts, the ductus venosus and the foramen ovale[MP]. the fetal vessel that connects the left pulmonary artery with the descending aorta; the ductus arteriosus normally regresses into a fibrous cord, the ligamentum arteriousum after birth[MP]" [MESH:A07.541.278.395, MP:0010564, Wikipedia:Ductus_arteriosus]
+def: "A fetal blood vessel connecting the pulmonary artery with the descending aorta[MESH]. In the developing fetus, the ductus arteriosus is a shunt connecting the pulmonary artery to the aortic arch. It allows most of the blood from the right ventricle to bypass the fetus' fluid-filled lungs, protecting the lungs from being overworked and allowing the left ventricle to strengthen. There are two other fetal shunts, the ductus venosus and the foramen ovale[MP]. the fetal vessel that connects the left pulmonary artery with the descending aorta; the ductus arteriosus normally regresses into a fibrous cord, the ligamentum arteriousum after birth[MP]." [MESH:A07.541.278.395, MP:0010564, Wikipedia:Ductus_arteriosus]
 subset: efo_slim
 subset: pheno_slim
 synonym: "arterial canal" RELATED [MP:0010564]
@@ -13255,7 +13012,7 @@ property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Model
 id: UBERON:0005475
 name: sigmoid sinus
 namespace: uberon
-def: "A portion of the lateral venous sinus, bulging prominently into the mastoid cavity, that serves as a principal conduit by which blood leaves the cranium[EPIC]. The sigmoid is drained by the internal jugular vein" [http://palaeos.com/vertebrates/glossary/glossaryS.html, Wikipedia:Sigmoid_sinus]
+def: "A portion of the lateral venous sinus, bulging prominently into the mastoid cavity, that serves as a principal conduit by which blood leaves the cranium[EPIC]. The sigmoid is drained by the internal jugular vein." [http://palaeos.com/vertebrates/glossary/glossaryS.html, Wikipedia:Sigmoid_sinus]
 synonym: "sulcus sigmoideus" RELATED LATIN [Wikipedia:Sigmoid_sinus]
 xref: EHDAA2:0001838
 xref: EHDAA:9880
@@ -13316,7 +13073,7 @@ property_value: UBPROP:0000003 "The mature AV (atrioventricular) valve of the ad
 id: UBERON:0005485
 name: valve of inferior vena cava
 namespace: uberon
-def: "the semicircular fold of endocardium located on the right atrium at the point of attachment of the inferior vena cava; during development this valve helps direct the flow of oxygen-rich blood through the right atrium into the left cardiac atrium via the foramen ovale (preventing blood flowing into the right ventricle)" [ISBN:0-683-40008-8, MP:0010490, Wikipedia:Valve_of_inferior_vena_cava]
+def: "The semicircular fold of endocardium located on the right atrium at the point of attachment of the inferior vena cava; during development this valve helps direct the flow of oxygen-rich blood through the right atrium into the left cardiac atrium via the foramen ovale (preventing blood flowing into the right ventricle)." [ISBN:0-683-40008-8, MP:0010490, Wikipedia:Valve_of_inferior_vena_cava]
 subset: pheno_slim
 synonym: "eustachean valve" EXACT [FMA:9240]
 synonym: "eustachian valve" EXACT [FMA:9240]
@@ -13367,7 +13124,7 @@ property_value: IAO:0000116 "the MA placement should be checked" xsd:string
 id: UBERON:0005487
 name: vitelline vein
 namespace: uberon
-def: "the paired veins that carry blood from the yolk sac back to the embryo" [MGI:csmith, MP:0010666]
+def: "The paired veins that carry blood from the yolk sac back to the embryo." [MGI:csmith, MP:0010666]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "embryonic vitelline vein" EXACT [VHOG:0000401]
@@ -13510,7 +13267,7 @@ relationship: part_of UBERON:0009141 {source="EHDAA2"} ! craniocervical region v
 id: UBERON:0005608
 name: hyoid artery
 namespace: uberon
-def: "The second arch becomes the hyoid artery, which is prominent in early development and normally persists as the caroticotympanic branch of the ICA[Padget]" [http://www.ajnr.org/cgi/content/full/21/3/572]
+def: "The second arch becomes the hyoid artery, which is prominent in early development and normally persists as the caroticotympanic branch of the ICA[Padget]." [http://www.ajnr.org/cgi/content/full/21/3/572]
 xref: EHDAA:3342
 xref: EMAPA:17308
 xref: FMA:49474
@@ -13523,7 +13280,7 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0005609
 name: iliac artery
 namespace: uberon
-def: "Any of the arteries that arise from a bifurcation of the aorta supplying the pelvic or abdomen. Examples: Common iliac artery, External iliac artery, Internal iliac artery" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Iliac_artery]
+def: "Any of the arteries that arise from a bifurcation of the aorta supplying the pelvic or abdomen. Examples: Common iliac artery, External iliac artery, Internal iliac artery." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Iliac_artery]
 subset: grouping_class
 xref: BTO:0004665
 xref: EHDAA:2551
@@ -13648,7 +13405,7 @@ property_value: UBPROP:0000008 "Normally regresses in humans" xsd:string {source
 id: UBERON:0005623
 name: semi-lunar valve
 namespace: uberon
-def: "the valves that gate the flow of blood from the ventricles into the aorta and pulmonary trunk" [MGI:pvb, MP:0002746]
+def: "The valves that gate the flow of blood from the ventricles into the aorta and pulmonary trunk." [MGI:pvb, MP:0002746]
 subset: pheno_slim
 synonym: "semilunar valve" EXACT [MA:0002790]
 synonym: "semilunar valves" EXACT PLURAL [MA:0002790]
@@ -13843,7 +13600,7 @@ relationship: part_of UBERON:0002081 ! cardiac atrium
 id: UBERON:0005953
 name: outflow part of right ventricle
 namespace: uberon
-def: "Anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminating in the pulmonary trunk" [MP:0010428]
+def: "Anteriosuperior, smooth-walled portion of the cavity of the right ventricle, beginning at the supraventricular crest and terminating in the pulmonary trunk." [MP:0010428]
 synonym: "arterial cone" RELATED [MP:0010428]
 synonym: "conus arteriosus" RELATED [MP:0010428]
 synonym: "conus arteriosus (infundibulum)" EXACT [FMA:7216]
@@ -13891,7 +13648,7 @@ relationship: part_of UBERON:0002084 ! heart left ventricle
 id: UBERON:0005965
 name: outflow part of right atrium
 namespace: uberon
-def: "Outflow part of atrium which consists of wall and cavity of the outflow part of right atrium and the tricuspid valve.[FMA]" [FMA:9550, FMA:FMA]
+def: "Outflow part of atrium which consists of wall and cavity of the outflow part of right atrium and the tricuspid valve.[FMA]." [FMA:9550, FMA:FMA]
 synonym: "main part of right atrium" EXACT [FMA:9550]
 synonym: "outflow tract of right atrium" EXACT [FMA:9550]
 xref: FMA:9550
@@ -13913,7 +13670,7 @@ relationship: part_of UBERON:0002079 ! left cardiac atrium
 id: UBERON:0005967
 name: conotruncal ridge
 namespace: uberon
-def: "One of the pair of spiral mesenchymal swellings in the primordial ventricular outflow tract, that eventually fuse to form the conotruncal septum, dividing the subvalvular outflow tract and contributing to the membranous interventricular septum[MP]" [MP:0010585, PMID:8823298]
+def: "One of the pair of spiral mesenchymal swellings in the primordial ventricular outflow tract, that eventually fuse to form the conotruncal septum, dividing the subvalvular outflow tract and contributing to the membranous interventricular septum[MP]." [MP:0010585, PMID:8823298]
 subset: pheno_slim
 synonym: "aortico-pulmonary spiral ridges" EXACT [MP:0010585]
 synonym: "bulbar ridge" EXACT [MP:0010585]
@@ -13934,14 +13691,14 @@ relationship: part_of UBERON:0005337 ! outflow tract of ventricle
 id: UBERON:0005973
 name: blood-inner ear barrier
 namespace: uberon
-def: "The function of the group of barriers and transport systems which regulate the transport of various substances from blood to inner ear tissue and maintain the microhomeostasis and functional integrity of the inner ear; the endothelial cells of the inner ear blood capillaries, linked to each other by tight junctions, represent the main component of the blood-inner ear barrier" [MP:0004999]
+def: "The function of the group of barriers and transport systems which regulate the transport of various substances from blood to inner ear tissue and maintain the microhomeostasis and functional integrity of the inner ear; the endothelial cells of the inner ear blood capillaries, linked to each other by tight junctions, represent the main component of the blood-inner ear barrier." [MP:0004999]
 is_a: UBERON:0003496 ! head blood vessel
 
 [Term]
 id: UBERON:0005979
 name: crista terminalis
 namespace: uberon
-def: "The vertical crest of the interior wall of the right atrium that lies to the right of the sinus of the vena cava and separates this from the remainder of the right atrium" [MP:0010495]
+def: "The vertical crest of the interior wall of the right atrium that lies to the right of the sinus of the vena cava and separates this from the remainder of the right atrium." [MP:0010495]
 subset: pheno_slim
 synonym: "crista terminalis atrii dextri" EXACT LATIN [FMA:9236, FMA:TA]
 synonym: "crista terminalis cordis" EXACT [FMA:9236]
@@ -13976,7 +13733,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/9/96/G
 id: UBERON:0005981
 name: vena cava sinus
 namespace: uberon
-def: "The portion of the cavity of the right atrium of the heart that receives the blood from the vena cavae and is separated from the rest of the atrium by the crista terminalis" [MP:0010497]
+def: "The portion of the cavity of the right atrium of the heart that receives the blood from the vena cavae and is separated from the rest of the atrium by the crista terminalis." [MP:0010497]
 subset: pheno_slim
 synonym: "cavity of inflow part of right atrium" EXACT [FMA:13246]
 synonym: "posterior right atrial cavity" EXACT [FMA:13246]
@@ -13988,7 +13745,7 @@ relationship: part_of UBERON:0002078 ! right cardiac atrium
 id: UBERON:0005982
 name: Bachmann's bundle
 namespace: uberon
-def: "The impulse conduction tract that originates in the sinoatrial node and transmits signal to the left atrium" [MP:0010517, Wikipedia:Bachmann's_bundle]
+def: "The impulse conduction tract that originates in the sinoatrial node and transmits signal to the left atrium." [MP:0010517, Wikipedia:Bachmann's_bundle]
 subset: pheno_slim
 synonym: "anterior interatrial band" EXACT [UBERON:gg]
 xref: EMAPA:37435 {source="MA:th"}
@@ -14003,7 +13760,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/05/C
 id: UBERON:0005983
 name: heart layer
 namespace: uberon
-def: "The laminar structure of the heart" [MP:0010545]
+def: "The laminar structure of the heart." [MP:0010545]
 subset: non_informative
 subset: pheno_slim
 relationship: part_of UBERON:0000948 ! heart
@@ -14012,7 +13769,7 @@ relationship: part_of UBERON:0000948 ! heart
 id: UBERON:0005984
 name: subendocardium layer
 namespace: uberon
-def: "The layer of loose fibrous tissue located between the endocardium and myocardium which contains the nerves and the impulse-conducting system (Purkinje fibers) of the heart" [MP:0010546]
+def: "The layer of loose fibrous tissue located between the endocardium and myocardium which contains the nerves and the impulse-conducting system (Purkinje fibers) of the heart." [MP:0010546]
 subset: pheno_slim
 xref: EMAPA:37968 {source="MA:th"}
 is_a: UBERON:0005983 ! heart layer
@@ -14021,7 +13778,7 @@ is_a: UBERON:0005983 ! heart layer
 id: UBERON:0005985
 name: coronary vessel
 namespace: uberon
-def: "Any of the arteries or veins that supply blood to the heart or return blood from the heart muscles to the circulation" [MP:0010551]
+def: "Any of the arteries or veins that supply blood to the heart or return blood from the heart muscles to the circulation." [MP:0010551]
 subset: pheno_slim
 xref: MESH:D003331
 xref: Wikipedia:Coronary_circulation
@@ -14083,7 +13840,7 @@ relationship: part_of UBERON:0004146 {source="https://github.com/obophenotype/ub
 id: UBERON:0005988
 name: atrium myocardial trabecula
 namespace: uberon
-def: "The supporting bundles of muscular fibers lining the walls of the atrial myocardium" [MP:0010581, ZFA:0005810]
+def: "The supporting bundles of muscular fibers lining the walls of the atrial myocardium." [MP:0010581, ZFA:0005810]
 subset: pheno_slim
 synonym: "atrial trabecula" EXACT []
 synonym: "atrium myocardial trabeculae" EXACT PLURAL [MP:0010581]
@@ -14099,7 +13856,7 @@ relationship: part_of UBERON:0004124 {source="ZFA"} ! myocardium trabecular laye
 id: UBERON:0005989
 name: atrioventricular septum
 namespace: uberon
-def: "The wall of the heart that separates the right atrium and left ventricle; and is located just above the septal cusp of the tricuspid valve" [MP:0010592]
+def: "The wall of the heart that separates the right atrium and left ventricle; and is located just above the septal cusp of the tricuspid valve." [MP:0010592]
 subset: pheno_slim
 synonym: "membranous atrioventricular septum" EXACT [FMA:7136]
 xref: EMAPA:37431 {source="MA:th"}
@@ -14112,7 +13869,7 @@ is_a: UBERON:0002099 ! cardiac septum
 id: UBERON:0005990
 name: aortic valve cusp
 namespace: uberon
-def: "The three fibrous triangular components and associated flap of the aortic valve" [MP:0010595]
+def: "The three fibrous triangular components and associated flap of the aortic valve." [MP:0010595]
 subset: pheno_slim
 synonym: "aortic semilunar valvule" EXACT [FMA:7251]
 synonym: "aortic valvular cusp" EXACT [FMA:7251]
@@ -14127,7 +13884,7 @@ relationship: part_of UBERON:0002137 ! aortic valve
 id: UBERON:0005991
 name: aortic valve anulus
 namespace: uberon
-def: "The fibrous ring of the aortic valve that attaches the cusps of aortic valve to the wall of left ventricle, and which consists of portions of the fibrous scallops of the posterior, right anterior and left anterior cusps" [MP:0010598]
+def: "The fibrous ring of the aortic valve that attaches the cusps of aortic valve to the wall of left ventricle, and which consists of portions of the fibrous scallops of the posterior, right anterior and left anterior cusps." [MP:0010598]
 subset: pheno_slim
 synonym: "anulus of aortic valve" EXACT [FMA:9502]
 synonym: "aortic anulus" EXACT [FMA:9502]
@@ -14142,7 +13899,7 @@ relationship: part_of UBERON:0002137 ! aortic valve
 id: UBERON:0005992
 name: pulmonary valve cusp
 namespace: uberon
-def: "The three fibrous triangular components and associated flap of the pulmonary valve" [MP:0010602]
+def: "The three fibrous triangular components and associated flap of the pulmonary valve." [MP:0010602]
 subset: pheno_slim
 synonym: "cusp of pulmonary valve" EXACT [FMA:7248]
 synonym: "pulmonary semilunar valvule" EXACT [FMA:7248]
@@ -14157,7 +13914,7 @@ relationship: part_of UBERON:0002146 ! pulmonary valve
 id: UBERON:0005993
 name: pulmonary valve anulus
 namespace: uberon
-def: "The fibrous ring of the pulmonary valve that attaches the cusps of pulmonary valve to the wall of right ventricle, and which consists of portions of the fibrous scallops of the anterior, right posterior and left posterior cusps" [MP:0010606]
+def: "The fibrous ring of the pulmonary valve that attaches the cusps of pulmonary valve to the wall of right ventricle, and which consists of portions of the fibrous scallops of the anterior, right posterior and left posterior cusps." [MP:0010606]
 subset: pheno_slim
 synonym: "anulus of pulmonary valve" EXACT [FMA:9503]
 synonym: "fibrous ring of pulmonary valve" EXACT [FMA:9503]
@@ -14172,7 +13929,7 @@ relationship: part_of UBERON:0002146 ! pulmonary valve
 id: UBERON:0005994
 name: chorda tendineae
 namespace: uberon
-def: "The tendinous strands that connect the papillary muscles on the wall of the ventricles to the leaflets of the atrioventricular valves; the chordae tendineae serve to prevent the AV valves from prolapsing back into the atria" [MP:0010608, Wikipedia:Chordae_tendineae]
+def: "The tendinous strands that connect the papillary muscles on the wall of the ventricles to the leaflets of the atrioventricular valves; the chordae tendineae serve to prevent the AV valves from prolapsing back into the atria." [MP:0010608, Wikipedia:Chordae_tendineae]
 subset: pheno_slim
 synonym: "chordae tendinea" RELATED PLURAL [FMA:12225]
 synonym: "chordae tendineae cordis" RELATED LATIN [Wikipedia:Chordae_tendineae]
@@ -14192,7 +13949,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6c/G
 id: UBERON:0005995
 name: mitral valve anulus
 namespace: uberon
-def: "The fibrous ring of the mitral valve that attaches the cusps of mitral valve to the heart, and which consists of portions of the fibrous scallops of the anterior and posterior cusps" [MP:0010613]
+def: "The fibrous ring of the mitral valve that attaches the cusps of mitral valve to the heart, and which consists of portions of the fibrous scallops of the anterior and posterior cusps." [MP:0010613]
 subset: pheno_slim
 synonym: "anulus of mitral valve" EXACT [FMA:9498]
 synonym: "fibrous ring of mitral valve" EXACT [FMA:9498]
@@ -14209,7 +13966,7 @@ relationship: part_of UBERON:0002135 ! mitral valve
 id: UBERON:0005996
 name: mitral valve cusp
 namespace: uberon
-def: "The two fibrous components and associated flaps of the mitral valve" [MP:0010614]
+def: "The two fibrous components and associated flaps of the mitral valve." [MP:0010614]
 subset: pheno_slim
 is_a: UBERON:0006009 ! cusp of cardiac valve
 relationship: part_of UBERON:0002135 ! mitral valve
@@ -14218,7 +13975,7 @@ relationship: part_of UBERON:0002135 ! mitral valve
 id: UBERON:0005997
 name: tricuspid valve anulus
 namespace: uberon
-def: "The fibrous ring of the tricuspid valve that attaches the cusps of tricuspid valve to the heart, and which consists of portions of the fibrous scallops of the anterior cusp (infundibular cusp), the posterior cusp (marginal cusp), and the septal cusp (medial cusp)" [MP:0010621]
+def: "The fibrous ring of the tricuspid valve that attaches the cusps of tricuspid valve to the heart, and which consists of portions of the fibrous scallops of the anterior cusp (infundibular cusp), the posterior cusp (marginal cusp), and the septal cusp (medial cusp)." [MP:0010621]
 subset: pheno_slim
 synonym: "anulus of tricuspid valve" EXACT [FMA:9500]
 synonym: "fibrous ring of tricuspid valve" EXACT [FMA:9500]
@@ -14233,7 +13990,7 @@ relationship: part_of UBERON:0002134 ! tricuspid valve
 id: UBERON:0005998
 name: tricuspid valve cusp
 namespace: uberon
-def: "The three fibrous triangular components and associated flaps of the tricuspid valve" [MP:0010622]
+def: "The three fibrous triangular components and associated flaps of the tricuspid valve." [MP:0010622]
 subset: pheno_slim
 synonym: "cuspis septalis (valva tricuspidalis)" EXACT LATIN [FMA:7240, FMA:TA]
 synonym: "cuspis septalis valvae atrioventricularis dextrae" EXACT LATIN [FMA:7240, FMA:TA]
@@ -14253,7 +14010,7 @@ property_value: IAO:0000116 "check whether we need to separate cusp/leaflet/valv
 id: UBERON:0006002
 name: vitelline artery
 namespace: uberon
-def: "The paired arteries that carry blood to the yolk sac from the dorsal aorta" [MP:0010664, Wikipedia:Vitelline_arteries]
+def: "The paired arteries that carry blood to the yolk sac from the dorsal aorta." [MP:0010664, Wikipedia:Vitelline_arteries]
 comment: Development notes:; the vitelline arteries give rise to the celiac artery, superior mesenteric artery, and inferior mesenteric artery in the adult[MP:0010664]
 subset: pheno_slim
 xref: EHDAA2:0002208
@@ -14269,7 +14026,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/55/G
 id: UBERON:0006008
 name: fibrous ring of heart
 namespace: uberon
-def: "A ring of ribrous tissue that surrounds the atrioventricular and arterial orifices" [http://orcid.org/0000-0002-6601-2165, Wikipedia:Fibrous_rings_of_heart]
+def: "A ring of ribrous tissue that surrounds the atrioventricular and arterial orifices." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Fibrous_rings_of_heart]
 synonym: "annulus fibrosus cordis" RELATED LATIN [Wikipedia:Fibrous_rings_of_heart]
 synonym: "anulus fibrosus cordis" RELATED [Wikipedia:Fibrous_rings_of_heart]
 synonym: "anulus fibrosus of heart" EXACT [FMA:9497]
@@ -14519,7 +14276,7 @@ is_a: UBERON:0006145 ! dorsal digital artery of pes
 id: UBERON:0006182
 name: mesonephric glomerular mesangium
 namespace: uberon
-def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus" [GO:0061247]
+def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus." [GO:0061247]
 is_a: UBERON:0002320 ! glomerular mesangium
 relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus vasculature
 
@@ -14534,7 +14291,7 @@ is_a: UBERON:0004212 ! glomerular capillary
 id: UBERON:0006197
 name: auricular vein
 namespace: uberon
-def: "Any vein serving the ear region" [http://www.thefreedictionary.com/auricular+vein]
+def: "Any vein serving the ear region." [http://www.thefreedictionary.com/auricular+vein]
 synonym: "vena auriculares" EXACT LATIN []
 synonym: "venae auriculares" EXACT LATIN []
 xref: EMAPA:37136 {source="MA:th"}
@@ -14625,7 +14382,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b9/G
 id: UBERON:0006212
 name: bulbo-ventricular groove
 namespace: uberon
-def: "depression at base of developing heart that contains a population of cardiomyocytes that migrate and contribute to the interventricular septum" [BGEE:ANiknejad, http://orcid.org/0000-0002-6601-2165, PMID:17064678]
+def: "Depression at base of developing heart that contains a population of cardiomyocytes that migrate and contribute to the interventricular septum." [BGEE:ANiknejad, http://orcid.org/0000-0002-6601-2165, PMID:17064678]
 subset: emapa_ehdaa2
 synonym: "bulbo-ventricular sulcus" EXACT [EMAPA:16693]
 synonym: "bulboventricular groove" EXACT [VHOG:0001405]
@@ -14677,7 +14434,7 @@ relationship: part_of UBERON:0009141 {source="EHDAA2"} ! craniocervical region v
 id: UBERON:0006296
 name: subcardinal vein
 namespace: uberon
-def: "A vein in the mammalian embryo or the adult of some lower vertebrates that is located on each side of the abdominal region ventromedial to the mesonephros and that in mammals participates in the formation of the inferior vena cava and the renal vein" [http://www.merriam-webster.com/medical/subcardinal%20vein, ISBN:0073040584]
+def: "A vein in the mammalian embryo or the adult of some lower vertebrates that is located on each side of the abdominal region ventromedial to the mesonephros and that in mammals participates in the formation of the inferior vena cava and the renal vein." [http://www.merriam-webster.com/medical/subcardinal%20vein, ISBN:0073040584]
 comment: TBD: part of cardinal system?
 xref: EHDAA:2631
 xref: EMAPA:16829
@@ -14691,7 +14448,7 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0006300
 name: supracardinal vein
 namespace: uberon
-def: "Either of two veins in the mammalian embryo and various adult lower vertebrate forms located in the thoracic and abdominal regions dorsolateral to and on either side of the descending aorta and giving rise to the azygos and hemiazygos veins and a part of the inferior vena cava[MW]. These veins drain the body wall via the segmental intercostal veins, thus taking over the function of the posterior cardinals[ISBN]" [http://www.merriam-webster.com/medical/supracardinal%20vein, ISBN:0443065837]
+def: "Either of two veins in the mammalian embryo and various adult lower vertebrate forms located in the thoracic and abdominal regions dorsolateral to and on either side of the descending aorta and giving rise to the azygos and hemiazygos veins and a part of the inferior vena cava[MW]. These veins drain the body wall via the segmental intercostal veins, thus taking over the function of the posterior cardinals[ISBN]." [http://www.merriam-webster.com/medical/supracardinal%20vein, ISBN:0443065837]
 subset: emapa_ehdaa2
 xref: EHDAA2:0001964
 xref: EHDAA:7492
@@ -14868,7 +14625,7 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0006358
 name: vasa hyaloidea propria
 namespace: uberon
-def: "The vasa hyaloidea propria and tunica vasculosa lentis are small branches of the hyaloid artery which fill the primary vitreous" [http://orcid.org/0000-0002-6601-2165]
+def: "The vasa hyaloidea propria and tunica vasculosa lentis are small branches of the hyaloid artery which fill the primary vitreous." [http://orcid.org/0000-0002-6601-2165]
 xref: EMAPA:18236
 xref: FMA:312395
 xref: MA:0001285
@@ -14956,7 +14713,7 @@ property_value: UBPROP:0000012 "in FMA this is part of the cardiovascular system
 id: UBERON:0006563
 name: tunica media of pulmonary trunk
 namespace: uberon
-def: "Tunica media of artery which is continuous with the myocardium of right ventricle.[FMA]" [FMA:85030, FMA:FMA]
+def: "Tunica media of artery which is continuous with the myocardium of right ventricle.[FMA]." [FMA:85030, FMA:FMA]
 xref: FMA:85030
 is_a: UBERON:0007239 ! tunica media of artery
 relationship: part_of UBERON:0002333 ! pulmonary trunk
@@ -15035,7 +14792,7 @@ relationship: part_of UBERON:0002084 ! heart left ventricle
 id: UBERON:0006615
 name: venous sinus
 namespace: uberon
-def: "A large vein or channel for the circulation of venous blood" [http://medical-dictionary.thefreedictionary.com/venous+sinus]
+def: "A large vein or channel for the circulation of venous blood." [http://medical-dictionary.thefreedictionary.com/venous+sinus]
 subset: pheno_slim
 synonym: "blood sinus" RELATED [ZFA:0007072]
 xref: MA:0000070
@@ -15075,7 +14832,7 @@ relationship: part_of UBERON:0002081 ! cardiac atrium
 id: UBERON:0006630
 name: left atrium auricular region
 namespace: uberon
-def: "A muscular pouch connected to the left atrium of the heart" [Wikipedia:Left_atrial_appendage]
+def: "A muscular pouch connected to the left atrium of the heart." [Wikipedia:Left_atrial_appendage]
 subset: pheno_slim
 synonym: "auricula sinistra" EXACT [Wikipedia:Right_atrial_appendage]
 synonym: "auricula sinistra" RELATED LATIN [Wikipedia:Left_atrial_appendage]
@@ -15278,7 +15035,7 @@ property_value: IAO:0000116 "TODO - add superclass" xsd:string
 id: UBERON:0006666
 name: great cerebral vein
 namespace: uberon
-def: "The great cerebral vein is one of the large blood vessels in the skull draining the cerebrum (brain)[WP,unvetted]" [Wikipedia:Great_cerebral_vein]
+def: "The great cerebral vein is one of the large blood vessels in the skull draining the cerebrum (brain)[WP,unvetted]." [Wikipedia:Great_cerebral_vein]
 synonym: "great cerebral vein" EXACT [FMA:50993]
 synonym: "great cerebral vein of Galen" EXACT [FMA:50993]
 synonym: "vein of Galen" EXACT [FMA:50993]
@@ -16080,7 +15837,7 @@ property_value: IAO:0000116 "TODO - check" xsd:string
 id: UBERON:0007352
 name: stria vascularis vasculature
 namespace: uberon
-def: "blood vessels supplying the stria vascularis in the cochlea of the inner ear." [MP:0004368]
+def: "Blood vessels supplying the stria vascularis in the cochlea of the inner ear." [MP:0004368]
 synonym: "stria vascularis blood vessel" RELATED [MP:0004368]
 synonym: "stria vascularis blood vessels" EXACT []
 is_a: UBERON:0002200 ! vasculature of head
@@ -16774,7 +16531,7 @@ relationship: part_of UBERON:0004581 {source="EHDAA2"} ! systemic venous system
 id: UBERON:0009149
 name: foramen primum
 namespace: uberon
-def: "opening in the septum primum between the two atria of the embryonic heart[TMD]." [http://medical-dictionary.thefreedictionary.com/foramen+primum, Wikipedia:Primary_interatrial_foramen]
+def: "Opening in the septum primum between the two atria of the embryonic heart[TMD]." [http://medical-dictionary.thefreedictionary.com/foramen+primum, Wikipedia:Primary_interatrial_foramen]
 synonym: "interatrial foramen primum" EXACT [Wikipedia:Primary_interatrial_foramen]
 synonym: "ostium primum" EXACT [http://medical-dictionary.thefreedictionary.com/foramen+primum]
 synonym: "primary interatrial foramen" EXACT [Wikipedia:Primary_interatrial_foramen]
@@ -16993,7 +16750,7 @@ property_value: UBPROP:0000001 "Endocardium of ventricle which is continuous wit
 id: UBERON:0009751
 name: cardiac mesenchyme
 namespace: uberon
-def: "The embryonic connective tissue made up of loosely aggregated mesenchymal cells, supported by interlaminar jelly, that gives rise to the developing cardiac structures" [MP:0011264]
+def: "The embryonic connective tissue made up of loosely aggregated mesenchymal cells, supported by interlaminar jelly, that gives rise to the developing cardiac structures." [MP:0011264]
 subset: pheno_slim
 synonym: "heart mesenchyme" EXACT [EMAPA:36438]
 xref: EHDAA2:0004162
@@ -17017,7 +16774,7 @@ property_value: UBPROP:0000008 "the left duct atrophies at metamorphosis in the 
 id: UBERON:0009771
 name: left anterior cardinal vein
 namespace: uberon
-def: "A anterior cardinal vein that is in_the_left_side_of a multicellular organism." [OBOL:automatic]
+def: "An anterior cardinal vein that is in_the_left_side_of a multicellular organism." [OBOL:automatic]
 synonym: "left precardinal vein" EXACT [FMA:70313]
 synonym: "precardinal vein left" EXACT [EHDAA2:0000127]
 xref: EHDAA2:0000127
@@ -17030,7 +16787,7 @@ property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Model
 id: UBERON:0009772
 name: right anterior cardinal vein
 namespace: uberon
-def: "A anterior cardinal vein that is in_the_right_side_of a multicellular organism." [OBOL:automatic]
+def: "An anterior cardinal vein that is in_the_right_side_of a multicellular organism." [OBOL:automatic]
 synonym: "precardinal vein right" EXACT [EHDAA2:0004537]
 synonym: "right precardinal vein" EXACT [FMA:70312]
 xref: EHDAA2:0004537
@@ -17176,7 +16933,7 @@ xref: Wikipedia:Hypophyseal_portal_system
 is_a: UBERON:0005806 ! portal system
 property_value: IAO:0000116 "we represent this structure strictly as a system of blood vessels (presumably in line with the FMA). It could also be extended to include neurons and fiber tracts, as per the MESH definition" xsd:string
 property_value: RO:0002161 NCBITaxon:32443 {source="ISBN:0471888893"}
-property_value: UBPROP:0000008 "in lampreys and teleost hormones enter the adenohypophysis by diffusion. ." xsd:string {source="WP"}
+property_value: UBPROP:0000008 "in lampreys and teleost hormones enter the adenohypophysis by diffusion." xsd:string {source="WP"}
 property_value: UBPROP:0000009 "One of the most important functions of the hypothalamus is to link the nervous system to the endocrine system via the pituitary gland (hypophysis). The hypothalamus is responsible for certain metabolic processes and other activities of the autonomic nervous system. It synthesizes and secretes certain neurohormones, often called hypothalamic-releasing hormones, and these in turn stimulate or inhibit the secretion of pituitary hormones. The hypothalamus controls body temperature, hunger, thirst, fatigue, sleep, and circadian cycles" xsd:string
 
 [Term]
@@ -17266,7 +17023,7 @@ relationship: part_of UBERON:0001981 ! blood vessel
 id: UBERON:0010172
 name: bulb of aorta
 namespace: uberon
-def: "The portion of the left ventricular outflow tract delineated by the sinotubular ridge superiorly and the bases of the valve leaflets inferiorly; it comprises the aortic sinuses, the aortic valve leaflets, the commissures, and the interleaflet triangles" [MP:0011572]
+def: "The portion of the left ventricular outflow tract delineated by the sinotubular ridge superiorly and the bases of the valve leaflets inferiorly; it comprises the aortic sinuses, the aortic valve leaflets, the commissures, and the interleaflet triangles." [MP:0011572]
 subset: pheno_slim
 synonym: "aorta bulb" EXACT [MP:0011575]
 synonym: "aortic bulb" EXACT [FMA:3740]
@@ -17285,7 +17042,7 @@ property_value: UBPROP:0000001 "The dilated first part of the aorta containing t
 id: UBERON:0010173
 name: sinotubular junction
 namespace: uberon
-def: "The point in the ascending aorta where the aortic sinuses end and the aorta becomes a tubular structure" [MP:0011572]
+def: "The point in the ascending aorta where the aortic sinuses end and the aorta becomes a tubular structure." [MP:0011572]
 subset: pheno_slim
 synonym: "sinotubular ridge" EXACT [MP:0011572]
 xref: EMAPA:37951 {source="MA:th"}
@@ -17295,7 +17052,7 @@ relationship: part_of UBERON:0001496 {source="MP"} ! ascending aorta
 id: UBERON:0010174
 name: Schweigger-Seidel sheath
 namespace: uberon
-def: "A phagocytic sleeve that is part of a sheathed arteriole of the spleen, and is sometimes referred to as a splenic ellipsoid. It is a spindle-shaped thickening in the walls of the second part of the arterial branches forming the penicilli in the spleen" [PMCID:PMC3204613, Wikipedia:Schweigger-Seidel_sheath]
+def: "A phagocytic sleeve that is part of a sheathed arteriole of the spleen, and is sometimes referred to as a splenic ellipsoid. It is a spindle-shaped thickening in the walls of the second part of the arterial branches forming the penicilli in the spleen." [PMCID:PMC3204613, Wikipedia:Schweigger-Seidel_sheath]
 xref: Wikipedia:Schweigger-Seidel_sheath
 relationship: part_of UBERON:0001980 ! arteriole
 
@@ -17361,7 +17118,7 @@ property_value: UBPROP:0000012 "part_of in EHDAA2. Only child in MA." xsd:string
 id: UBERON:0010190
 name: pair of dorsal aortae
 namespace: uberon
-def: "the paired arterial structures of the embryo that supplies each developing somite via efferent segmental arteries; the dorsal aortae articulate with the umbilical arteries, which return mixed blood to the villi of the chorion for reoxygenation" [ISBN:0-914294-08-3, MP:0004787]
+def: "The paired arterial structures of the embryo that supplies each developing somite via efferent segmental arteries; the dorsal aortae articulate with the umbilical arteries, which return mixed blood to the villi of the chorion for reoxygenation." [ISBN:0-914294-08-3, MP:0004787]
 subset: pheno_slim
 synonym: "paired dorsal aortae" EXACT [EHDAA2:0000410]
 xref: EHDAA2:0000410
@@ -17482,7 +17239,7 @@ property_value: IAO:0000116 "review this term, check taxon scope; note FMA has s
 id: UBERON:0010244
 name: choroid tapetum lucidum
 namespace: uberon
-def: "A tapetum lucidum that is part of the choroid. The choroidal tapetum lucidum lies immediately adjacent to the choriocapillaris and external to the retinal epithelium" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A tapetum lucidum that is part of the choroid. The choroidal tapetum lucidum lies immediately adjacent to the choriocapillaris and external to the retinal epithelium." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 synonym: "choroidal tapetum lucidum" EXACT []
 synonym: "tapetum choroideae" EXACT [BTO:0001828]
 xref: BTO:0001828
@@ -17495,7 +17252,7 @@ property_value: UBPROP:0000012 "we make the assumption that the BTO class belong
 id: UBERON:0010246
 name: choroidal guanine tapetum
 namespace: uberon
-def: "A choroid tapetum lucidum that is made of a palisade of cells containing stacks of flat hexagonal crystals of guanine" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A choroid tapetum lucidum that is made of a palisade of cells containing stacks of flat hexagonal crystals of guanine." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 xref: Wikipedia:Tapetum_lucidum#Classification
 is_a: UBERON:0010244 ! choroid tapetum lucidum
 property_value: RO:0002175 NCBITaxon:7778
@@ -17508,7 +17265,7 @@ property_value: UBPROP:0000008 "The elasmobranch tapetum in Squalus and Scyliorh
 id: UBERON:0010247
 name: choroidal tapetum cellulosum
 namespace: uberon
-def: "A choroid tapetum lucidum that consists of layers of cells containing organized, highly refractive crystals. These crystals are diverse in shape and makeup" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A choroid tapetum lucidum that consists of layers of cells containing organized, highly refractive crystals. These crystals are diverse in shape and makeup." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 comment: The choroidal stroma adjacent to the tapetum lucidum contains numerous small blood vessels that penetrate the tapetal layer to form a single-layered capillary network, known as the choriocapillaris, on the surface of the tapetum. The tapetum cellulosum is thus interposed between the large branching vessels in the choroid and the single layer of the choriocapillaris beneath the retinal epithelium[PMID:14738502]
 synonym: "choroid tapetum cellulosum" EXACT []
 xref: Wikipedia:Tapetum_lucidum#Classification
@@ -17617,7 +17374,7 @@ property_value: UBPROP:0000007 "mesocardial" xsd:string
 id: UBERON:0010279
 name: pericardial sinus
 namespace: uberon
-def: "There are two Pericardial sinuses: transverse and oblique. The cul-de-sac enclosed between the limbs of the inverted U of the venous mesocardium lies behind the left atrium and is known as the oblique sinus. . The passage between the venous and arterial mesocardiabi.e. , between the aorta and pulmonary artery in front and the superior vena cava behindbis termed the transverse sinus. Also, the sinus that forms in the pericardial cavity where the dorso-mesentary pericardium reside. Can be used to pass ligature during cardiac surgery." [Wikipedia:Pericardial_sinus]
+def: "There are two Pericardial sinuses: transverse and oblique. The cul-de-sac enclosed between the limbs of the inverted U of the venous mesocardium lies behind the left atrium and is known as the oblique sinus. The passage between the venous and arterial mesocardiabi.e. , between the aorta and pulmonary artery in front and the superior vena cava behindbis termed the transverse sinus. Also, the sinus that forms in the pericardial cavity where the dorso-mesentary pericardium reside. Can be used to pass ligature during cardiac surgery." [Wikipedia:Pericardial_sinus]
 synonym: "oblique pericardial" RELATED [Wikipedia:Pericardial_sinus]
 synonym: "oblique pericardial sinus" RELATED [Wikipedia:Pericardial_sinus]
 synonym: "oblique sinus" RELATED [Wikipedia:Pericardial_sinus]
@@ -17689,7 +17446,7 @@ relationship: part_of UBERON:0010366 ! conjunctival vasculature
 id: UBERON:0010370
 name: tibial vein
 namespace: uberon
-def: "One of the veins of the lower leg; empty into the popliteal vein" [http://www.thefreedictionary.com/tibial+vein]
+def: "One of the veins of the lower leg; empty into the popliteal vein." [http://www.thefreedictionary.com/tibial+vein]
 synonym: "vena tibialis" EXACT []
 xref: EMAPA:37199 {source="MA:th"}
 xref: MA:0002243
@@ -17702,7 +17459,7 @@ is_a: UBERON:0003503 ! leg blood vessel
 id: UBERON:0010396
 name: afferent lymphatic vessel
 namespace: uberon
-def: "Lymphatic vessel that enters the lymph node. The afferent lymph vessels enter at all parts of the periphery of the lymph node, and after branching and forming a dense plexus in the substance of the capsule, open into the lymph sinuses of the cortical part. In doing this they lose all their coats except their endothelial lining, which is continuous with a layer of similar cells lining the lymph paths" [MP:MP]
+def: "Lymphatic vessel that enters the lymph node. The afferent lymph vessels enter at all parts of the periphery of the lymph node, and after branching and forming a dense plexus in the substance of the capsule, open into the lymph sinuses of the cortical part. In doing this they lose all their coats except their endothelial lining, which is continuous with a layer of similar cells lining the lymph paths." [MP:MP]
 subset: pheno_slim
 synonym: "vasa afferentia lymphoglandula" EXACT [Wikipedia:Afferent_lymphatic_vessels]
 synonym: "vasa afferentia lymphoglandulae" EXACT [Wikipedia:Afferent_lymphatic_vessels]
@@ -17726,7 +17483,7 @@ is_a: UBERON:0001473 ! lymphatic vessel
 id: UBERON:0010399
 name: spleen trabecular artery
 namespace: uberon
-def: "one of the branches of the splenic artery[MP]" [MP:0002354, Wikipedia:Trabecular_arteries]
+def: "One of the branches of the splenic artery[MP]." [MP:0002354, Wikipedia:Trabecular_arteries]
 subset: pheno_slim
 synonym: "trabecular artery" RELATED []
 xref: MA:0000759
@@ -17742,7 +17499,7 @@ property_value: UBPROP:0000001 "When the splenic artery passes into the trabecul
 id: UBERON:0010400
 name: spleen trabecular vein
 namespace: uberon
-def: "one of the veins that feed the splenic vein" [MP:0002228, Wikipedia:Trabecular_veins]
+def: "One of the veins that feed the splenic vein." [MP:0002228, Wikipedia:Trabecular_veins]
 subset: pheno_slim
 synonym: "trabecular vein" RELATED [Wikipedia:Trabecular_veins]
 xref: MA:0000760
@@ -17756,7 +17513,7 @@ property_value: UBPROP:0000001 "The trabecular veins are the largest veins insid
 id: UBERON:0010401
 name: spleen central arteriole
 namespace: uberon
-def: "A blood vessel surrounded by the periarteriolar lymphoid sheath that connects the trabecular artery to the trabecular vein" [MP:MP]
+def: "A blood vessel surrounded by the periarteriolar lymphoid sheath that connects the trabecular artery to the trabecular vein." [MP:MP]
 subset: pheno_slim
 synonym: "central arteriole" BROAD []
 synonym: "follicular arteriole" EXACT [MP:0002361]
@@ -17834,7 +17591,7 @@ relationship: part_of UBERON:0006631 ! right atrium auricular region
 id: UBERON:0011191
 name: ophthalmic vein
 namespace: uberon
-def: "Ophthalmic veins are veins which drain the eye. More specifically, they can refer to: Superior ophthalmic vein Inferior ophthalmic vein" [Wikipedia:Ophthalmic_veins]
+def: "Ophthalmic veins are veins which drain the eye. More specifically, they can refer to: Superior ophthalmic vein Inferior ophthalmic vein." [Wikipedia:Ophthalmic_veins]
 synonym: "opthalmic vein" EXACT [EHDAA2:0004113]
 synonym: "vena ophthalmica" RELATED [Wikipedia:Ophthalmic_veins]
 xref: EHDAA2:0004113
@@ -18096,7 +17853,7 @@ relationship: part_of UBERON:0000948 ! heart
 id: UBERON:0011861
 name: aorta collagen fibril
 namespace: uberon
-def: "The connective tissue bundles in the extracellular matrix of aorta tissue that are composed of collagen, and play a role in tissue strength and elasticity" [MP:0011640]
+def: "The connective tissue bundles in the extracellular matrix of aorta tissue that are composed of collagen, and play a role in tissue strength and elasticity." [MP:0011640]
 subset: pheno_slim
 relationship: part_of UBERON:0004664 ! aorta tunica adventitia
 
@@ -18274,7 +18031,7 @@ is_a: UBERON:0012193 {source="cjm"} ! phrenic vein
 id: UBERON:0012239
 name: urinary bladder vasculature
 namespace: uberon
-def: "network of tubes that carries blood through the distensible musculomembranous organ that serves to collect and store urine excreted by the kidneys[MP]" [MP:MP]
+def: "Network of tubes that carries blood through the distensible musculomembranous organ that serves to collect and store urine excreted by the kidneys[MP]." [MP:MP]
 subset: pheno_slim
 synonym: "bladder vasculature" EXACT []
 synonym: "blood vessel of bladder" RELATED [EMAPA:28679]
@@ -18288,7 +18045,7 @@ is_a: UBERON:0006876 ! vasculature of organ
 id: UBERON:0012254
 name: abdominal aorta artery
 namespace: uberon
-def: "An artery that originates from the abdominal aorta" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Abdominal_aorta#Branches]
+def: "An artery that originates from the abdominal aorta." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Abdominal_aorta#Branches]
 subset: pheno_slim
 synonym: "abdominal artery" EXACT []
 synonym: "artery of abdomen" EXACT []
@@ -18357,7 +18114,7 @@ is_a: UBERON:0004722 ! deep cervical lymph node
 id: UBERON:0012318
 name: anterior ethmoidal artery
 namespace: uberon
-def: "The anterior ethmoidal artery, also anterior ethmoid artery is an artery of the head. Once branching from the ophthalmic artery, it accompanies the nasociliary nerve through the anterior ethmoidal canal to supply the anterior and middle ethmoidal cells, frontal sinus, and anterosuperior aspect of the lateral nasal wall[WP]" [Wikipedia:Anterior_ethmoidal_artery]
+def: "The anterior ethmoidal artery, also anterior ethmoid artery is an artery of the head. Once branching from the ophthalmic artery, it accompanies the nasociliary nerve through the anterior ethmoidal canal to supply the anterior and middle ethmoidal cells, frontal sinus, and anterosuperior aspect of the lateral nasal wall[WP]." [Wikipedia:Anterior_ethmoidal_artery]
 synonym: "a. ethmoidalis anterior" EXACT LATIN [Wikipedia:Anterior_ethmoidal_artery]
 synonym: "anterior ethmoid artery" RELATED [Wikipedia:Anterior_ethmoidal_artery]
 synonym: "anterior meningeal arteries" RELATED [Wikipedia:Anterior_ethmoidal_artery]
@@ -18385,7 +18142,7 @@ is_a: UBERON:0005193 ! ethmoidal artery
 id: UBERON:0012320
 name: cervical artery
 namespace: uberon
-def: "An artery of the neck" [https://orcid.org/0000-0002-6601-2165]
+def: "An artery of the neck." [https://orcid.org/0000-0002-6601-2165]
 xref: EMAPA:37075 {source="MA:th"}
 xref: NCIT:C52850
 xref: UMLS:C1707349 {source="ncithesaurus:Cervical_Artery"}
@@ -18461,7 +18218,7 @@ relationship: part_of UBERON:0003476 ! respiratory system venous blood vessel
 id: UBERON:0012441
 name: endothelium of peritubular capillary
 namespace: uberon
-def: "A endothelium that is part of a peritubular capillary." [OBOL:automatic]
+def: "An endothelium that is part of a peritubular capillary." [OBOL:automatic]
 synonym: "peritubular capillary endothelium" EXACT []
 synonym: "peritubular endothelium" BROAD []
 is_a: UBERON:0001915 ! endothelium of capillary
@@ -18508,7 +18265,7 @@ property_value: IAO:0000232 "this class groups all veins that are in the abdomen
 id: UBERON:0013127
 name: pulmonary venous system
 namespace: uberon
-def: "The part of the venous system that drains the lungs[Kardong]" [ISBN:0073040584, Wikipedia:Pulmonary_venous_system]
+def: "The part of the venous system that drains the lungs[Kardong]." [ISBN:0073040584, Wikipedia:Pulmonary_venous_system]
 synonym: "pulmonary venous circulatory system" EXACT []
 xref: Wikipedia:Pulmonary_venous_system
 is_a: UBERON:0002049 ! vasculature
@@ -18519,7 +18276,7 @@ property_value: UBPROP:0000001 "Pulmonary circulation is the half portion of the
 id: UBERON:0013132
 name: penicillar arteriole
 namespace: uberon
-def: "One of the small straight arteries of the red pulp of the spleen; a branch of the spleen central artery that supplies the red pulp[WP,modified]" [http://www.merriam-webster.com/medical/penicillus, https://orcid.org/0000-0002-6601-2165]
+def: "One of the small straight arteries of the red pulp of the spleen; a branch of the spleen central artery that supplies the red pulp[WP,modified]." [http://www.merriam-webster.com/medical/penicillus, https://orcid.org/0000-0002-6601-2165]
 synonym: "penicillar artery" RELATED []
 synonym: "penicilli" EXACT PLURAL [http://www.merriam-webster.com/medical/penicilli]
 synonym: "penicillus" EXACT [FMA:16038]
@@ -18553,7 +18310,6 @@ synonym: "labial vein of face" EXACT []
 synonym: "lip vein" EXACT [OBOL:automatic]
 synonym: "vena labialis" EXACT LATIN []
 xref: SCTID:367664002
-is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0003502 ! neck blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
@@ -18563,7 +18319,7 @@ relationship: part_of UBERON:0001653 ! facial vein
 id: UBERON:0013137
 name: external pudendal artery
 namespace: uberon
-def: "Either the superficial or deep external pudendal arteries" [Wikipedia:External_pudendal_artery]
+def: "Either the superficial or deep external pudendal arteries." [Wikipedia:External_pudendal_artery]
 xref: SCTID:244308005
 xref: Wikipedia:External_pudendal_artery
 is_a: UBERON:0007312 ! pudendal artery
@@ -18598,7 +18354,7 @@ relationship: part_of UBERON:0002049 {source="FMA"} ! vasculature
 id: UBERON:0013142
 name: soleal vein
 namespace: uberon
-def: "A vein that drains the soleus" [OBOL:automatic]
+def: "A vein that drains the soleus." [OBOL:automatic]
 synonym: "soleus vein" EXACT []
 synonym: "vein of soleus muscle" EXACT []
 synonym: "vena solealis" EXACT LATIN []
@@ -18609,7 +18365,7 @@ is_a: UBERON:0001551 {source="cjm"} ! vein of hindlimb zeugopod
 id: UBERON:0013143
 name: gastrocnemius vein
 namespace: uberon
-def: "A vein that drains the gastrocnemius" [OBOL:automatic]
+def: "A vein that drains the gastrocnemius." [OBOL:automatic]
 comment: divided in medial gastrocnemius vein (vena medialis gastrocnemii), lateral gastrocnemius vein (vena lateralis gastrocnemii), and intergemellar vein (Vena intergemellaris), the vein ascending between the two heads of the gastrocnemius[http://www.veinsurg.com/fr/biblio/echodoppler/echodoppler_11.php]
 synonym: "vein of gastrocnemius muscle" EXACT []
 synonym: "vena gastrocnemii" EXACT LATIN []
@@ -18817,7 +18573,7 @@ is_a: UBERON:0001981 ! blood vessel
 id: UBERON:0014399
 name: sinusoidal space
 namespace: uberon
-def: "A anatomical space that is enclosed by a sinusoid." [OBOL:automatic]
+def: "An anatomical space that is enclosed by a sinusoid." [OBOL:automatic]
 synonym: "lumen of sinusoid" EXACT [FMA:63133]
 synonym: "sinusoid lumen" EXACT [FMA:63133]
 xref: FMA:63133
@@ -19076,7 +18832,7 @@ relationship: part_of UBERON:0014699 {source="EHDAA2"} ! extraembryonic venous s
 id: UBERON:0014787
 name: left extraembryonic umbilical vein
 namespace: uberon
-def: "A extraembryonic umbilical vein that is in_the_left_side_of a multicellular organism." [OBOL:automatic]
+def: "An extraembryonic umbilical vein that is in_the_left_side_of a multicellular organism." [OBOL:automatic]
 synonym: "extraembryonic umbilical vein left" EXACT [EHDAA2:0000938]
 xref: EHDAA2:0000938
 is_a: UBERON:0014786 ! extraembryonic umbilical vein
@@ -19086,7 +18842,7 @@ property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Model
 id: UBERON:0014788
 name: right extraembryonic umbilical vein
 namespace: uberon
-def: "A extraembryonic umbilical vein that is in_the_right_side_of a multicellular organism." [OBOL:automatic]
+def: "An extraembryonic umbilical vein that is in_the_right_side_of a multicellular organism." [OBOL:automatic]
 synonym: "extraembryonic umbilical vein right" EXACT [EHDAA2:0001722]
 xref: EHDAA2:0001722
 is_a: UBERON:0014786 ! extraembryonic umbilical vein
@@ -19268,7 +19024,7 @@ relationship: part_of UBERON:0015128 ! subepicardial layer of epicardium
 id: UBERON:0015156
 name: terminal branch of ophthalmic artery
 namespace: uberon
-def: "The two terminal branches of the ophthalmic artery in humans are the dorsal nasal artery and the supratrochlear artery" [Wikipedia:Dorsal_nasal_artery, Wikipedia:Supratrochlear_artery]
+def: "The two terminal branches of the ophthalmic artery in humans are the dorsal nasal artery and the supratrochlear artery." [Wikipedia:Dorsal_nasal_artery, Wikipedia:Supratrochlear_artery]
 xref: FMA:51956
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
@@ -19359,7 +19115,7 @@ is_a: UBERON:0003496 ! head blood vessel
 id: UBERON:0015171
 name: uterine spiral artery
 namespace: uberon
-def: "A corkscrew-like artery in premenstrual or progestational endometrium; uterine spiral arteries play a vital role in supplying nutrients to the placenta and fetus, and are thus remodeled into highly dilated inelastic vessels by the action of invading trophoblast (physiological change)" [J:100668, J:117841, MGI:anna, MP:0012726]
+def: "A corkscrew-like artery in premenstrual or progestational endometrium; uterine spiral arteries play a vital role in supplying nutrients to the placenta and fetus, and are thus remodeled into highly dilated inelastic vessels by the action of invading trophoblast (physiological change)." [J:100668, J:117841, MGI:anna, MP:0012726]
 subset: pheno_slim
 synonym: "endometrial spiral arteriole" EXACT []
 synonym: "endometrial spiral artery" EXACT [BTO:0003371]
@@ -19420,7 +19176,7 @@ is_a: UBERON:0036269 ! penis blood vessel
 id: UBERON:0015177
 name: helicine artery
 namespace: uberon
-def: "Either the helicine artery of the penis or the helicine artery of the uterus" [Wikipedia:Helicine_arteries]
+def: "Either the helicine artery of the penis or the helicine artery of the uterus." [Wikipedia:Helicine_arteries]
 synonym: "helicine arteries" EXACT []
 xref: SCTID:279924008
 xref: Wikipedia:Helicine_arteries
@@ -19453,7 +19209,7 @@ property_value: UBPROP:0000010 "Lymph hearts consist of three tissue layers, a t
 id: UBERON:0015224
 name: interventricular foramen intermedium
 namespace: uberon
-def: "A anatomical conduit that is part of a ventricular septum intermedium." [OBOL:automatic]
+def: "An anatomical conduit that is part of a ventricular septum intermedium." [OBOL:automatic]
 synonym: "interventricular ostium intermedium" EXACT LATIN []
 relationship: part_of UBERON:0004153 ! ventricular septum intermedium
 
@@ -19461,7 +19217,7 @@ relationship: part_of UBERON:0004153 ! ventricular septum intermedium
 id: UBERON:0015225
 name: atrial foramen intermedium
 namespace: uberon
-def: "A anatomical conduit that is part of a atrial septum intermedium." [OBOL:automatic]
+def: "An anatomical conduit that is part of a atrial septum intermedium." [OBOL:automatic]
 synonym: "interatrial ostium intermedium" EXACT LATIN []
 synonym: "ostium intermedium" RELATED []
 relationship: part_of UBERON:0004159 ! atrial septum intermedium
@@ -19619,7 +19375,7 @@ is_a: UBERON:0015796 ! liver blood vessel
 id: UBERON:0015704
 name: sagittal sinus
 namespace: uberon
-def: "Either the inferior or superior sagittal sinus" [Wikipedia:Sagittal_sinus]
+def: "Either the inferior or superior sagittal sinus." [Wikipedia:Sagittal_sinus]
 xref: NCIT:C12513
 xref: SCTID:244400002
 xref: UMLS:C0447120
@@ -19772,7 +19528,7 @@ relationship: part_of UBERON:0002080 ! heart right ventricle
 id: UBERON:0016513
 name: cavity of left atrium
 namespace: uberon
-def: "luminal space of the left atrium of the heart." [http://orcid.org/0000-0002-6601-2165]
+def: "Luminal space of the left atrium of the heart." [http://orcid.org/0000-0002-6601-2165]
 synonym: "left atrial cavity" EXACT [FMA:FMA]
 synonym: "left atrium lumen" EXACT [EMAPA:26011]
 xref: EMAPA:26011
@@ -19784,7 +19540,7 @@ relationship: part_of UBERON:0002079 ! left cardiac atrium
 id: UBERON:0016514
 name: cavity of left ventricle
 namespace: uberon
-def: "luminal space of the left ventricle of the heart." [http://orcid.org/0000-0002-6601-2165]
+def: "Luminal space of the left ventricle of the heart." [http://orcid.org/0000-0002-6601-2165]
 synonym: "left ventricular cavity" EXACT [FMA:FMA]
 xref: EMAPA:26038
 xref: FMA:9466
@@ -19795,7 +19551,7 @@ relationship: part_of UBERON:0002084 ! heart left ventricle
 id: UBERON:0016522
 name: cavity of right atrium
 namespace: uberon
-def: "luminal space of the right atrium of the heart." [http://orcid.org/0000-0002-6601-2165]
+def: "Luminal space of the right atrium of the heart." [http://orcid.org/0000-0002-6601-2165]
 synonym: "right atrial cavity" EXACT [FMA:FMA]
 xref: EMAPA:26020
 xref: FMA:11359
@@ -19953,7 +19709,7 @@ is_a: UBERON:0005486 ! venous dural sinus
 id: UBERON:0017643
 name: external thoracic vein
 namespace: uberon
-def: "extension of the long thoracic vein that collects blood from the mammary glands" [ISBM13:978-0226870137]
+def: "Extension of the long thoracic vein that collects blood from the mammary glands." [ISBM13:978-0226870137]
 synonym: "external mammary vein" RELATED [ISBM13:978-0226870137]
 xref: EMAPA:37145 {source="MA:th"}
 xref: MA:0002236
@@ -20125,7 +19881,7 @@ is_a: UBERON:0001638 ! vein
 id: UBERON:0018335
 name: lateral dorsal aorta canal
 namespace: uberon
-def: "One of the branches of the dorsal aorta, after it enters the aortic canal" [PHENOSCAPE:Nizar]
+def: "One of the branches of the dorsal aorta, after it enters the aortic canal." [PHENOSCAPE:Nizar]
 xref: UBERONTEMP:6f18830d-27e9-4de6-a1a6-34253907bbfe
 is_a: UBERON:0003513 ! trunk blood vessel
 is_a: UBERON:0004573 ! systemic artery
@@ -20143,7 +19899,7 @@ is_a: UBERON:0004019 ! baroreceptor
 id: UBERON:0018393
 name: low-pressure baroreceptor
 namespace: uberon
-def: "found in large systemic veins, in pulmonary vessels, and in the walls of the right atrium and ventricles of the heart (the atrial volume receptors)." [Wikipedia:Baroreceptor#Low-pressure_baroreceptors]
+def: "Found in large systemic veins, in pulmonary vessels, and in the walls of the right atrium and ventricles of the heart (the atrial volume receptors)." [Wikipedia:Baroreceptor#Low-pressure_baroreceptors]
 is_a: UBERON:0004019 ! baroreceptor
 
 [Term]
@@ -20280,7 +20036,7 @@ is_a: UBERON:0001981 ! blood vessel
 id: UBERON:0034693
 name: cremasteric artery
 namespace: uberon
-def: "The cremasteric artery (external spermatic artery) is a branch of the Inferior epigastric artery which accompanies the spermatic cord, and supplies the Cremaster and other coverings of the cord, anastomosing with the testicular artery (internal spermatic artery in older texts). (In the female, the cremesteric artery is very small and accompanies the round ligament.)" [Wikipedia:Cremasteric_artery]
+def: "The cremasteric artery (external spermatic artery) is a branch of the Inferior epigastric artery which accompanies the spermatic cord, and supplies the Cremaster and other coverings of the cord, anastomosing with the testicular artery (internal spermatic artery in older texts). (In the female, the cremesteric artery is very small and accompanies the round ligament.)." [Wikipedia:Cremasteric_artery]
 synonym: "cremasteric part of inferior epigastric artery" EXACT [FMA:70192]
 synonym: "external spermatic artery" RELATED [Wikipedia:Cremasteric_artery]
 xref: FMA:70192
@@ -20446,7 +20202,7 @@ relationship: part_of UBERON:0006558 {source="VHOG"} ! lymphatic part of lymphoi
 id: UBERON:0034958
 name: retroperitoneal embryonic lymph sac
 namespace: uberon
-def: "An embryonic lymph sac that forms in the root of the mesentery on the posterior abdominal wall" [https://discovery.lifemapsc.com/library/review-of-medical-embryology/chapter-128-development-of-the-lymphatic-system, https://github.com/obophenotype/uberon/issues/1383]
+def: "An embryonic lymph sac that forms in the root of the mesentery on the posterior abdominal wall." [https://discovery.lifemapsc.com/library/review-of-medical-embryology/chapter-128-development-of-the-lymphatic-system, https://github.com/obophenotype/uberon/issues/1383]
 xref: NCIT:C34285
 xref: UMLS:C1514922
 is_a: UBERON:0034953 ! embryonic lymph sac
@@ -20469,7 +20225,7 @@ is_a: UBERON:0015202 ! lymph heart
 id: UBERON:0034961
 name: embryonic lymph heart
 namespace: uberon
-def: "A lymph heart that is part of an embryo" [http://orcid.org/0000-0002-6601-2165]
+def: "A lymph heart that is part of an embryo." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0015202 ! lymph heart
 property_value: UBPROP:0000008 "Avian embryos have a pair of lymph hearts that return lymph in ovo from the extraembryonic membranes (120). These hearts partially degenerate after hatching (9)[DOI:10.1152/japplphysiol.00201.2013]" xsd:string
 
@@ -20477,7 +20233,7 @@ property_value: UBPROP:0000008 "Avian embryos have a pair of lymph hearts that r
 id: UBERON:0034962
 name: copulatory lymph heart
 namespace: uberon
-def: "A lymph heart that assists in the return of lymph from the penis to the venous system" [http://orcid.org/0000-0002-6601-2165]
+def: "A lymph heart that assists in the return of lymph from the penis to the venous system." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0015202 ! lymph heart
 property_value: UBPROP:0000008 "Flightless ratite birds apparently use a lymphatic pressure mechanism, rather than a blood vascular mechanism, for penile erection[DOI:10.1152/japplphysiol.00201.2013]" xsd:string
 
@@ -20508,7 +20264,7 @@ is_a: UBERON:0018246 ! thyroid vein
 id: UBERON:0034971
 name: aortic body
 namespace: uberon
-def: "one of several small clusters of chemoreceptors, baroreceptors, and supporting cells located along the aortic arch." [Wikipedia:Aortic_body]
+def: "One of several small clusters of chemoreceptors, baroreceptors, and supporting cells located along the aortic arch." [Wikipedia:Aortic_body]
 synonym: "aortic bodies" RELATED PLURAL [Wikipedia:Aortic_body]
 synonym: "aortic glands" RELATED PLURAL [Wikipedia:Aortic_body]
 synonym: "Zuckerkandl's body" RELATED [Wikipedia:Aortic_body]
@@ -21338,19 +21094,21 @@ relationship: part_of UBERON:0035551 ! deep vasculature
 id: UBERON:0035553
 name: left cardiac chamber
 namespace: uberon
-def: "Any chamber of the left side of the heart" [http://orcid.org/0000-0002-6601-2165]
+def: "Any chamber of the left side of the heart." [http://orcid.org/0000-0002-6601-2165]
 xref: FMA:7166
 xref: SCTID:362008007
 is_a: UBERON:0004151 ! cardiac chamber
+relationship: part_of UBERON:0000948 ! heart
 
 [Term]
 id: UBERON:0035554
 name: right cardiac chamber
 namespace: uberon
-def: "Any chamber of the right side of the heart" [http://orcid.org/0000-0002-6601-2165]
+def: "Any chamber of the right side of the heart." [http://orcid.org/0000-0002-6601-2165]
 xref: FMA:7165
 xref: SCTID:362007002
 is_a: UBERON:0004151 ! cardiac chamber
+relationship: part_of UBERON:0000948 ! heart
 
 [Term]
 id: UBERON:0035608
@@ -21733,6 +21491,7 @@ name: anterior wall of left ventricle
 namespace: uberon
 xref: FMA:9560
 is_a: UBERON:0036285 ! wall of left ventricle
+relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0036285 {source="FMA"} ! wall of left ventricle
 
 [Term]
@@ -21742,6 +21501,7 @@ namespace: uberon
 def: "Region of wall of right ventricle which is continuous with the lateral and septal walls of right ventricle." [FMA:9553]
 xref: FMA:9553
 is_a: UBERON:0036286 ! wall of right ventricle
+relationship: part_of UBERON:0002080 ! heart right ventricle
 
 [Term]
 id: UBERON:0036290
@@ -21842,7 +21602,7 @@ relationship: part_of UBERON:0001530 {source="FMA"} ! common carotid artery plus
 id: UBERON:0037144
 name: wall of heart
 namespace: uberon
-def: "wall of organ which has as its parts the endocardium, myocardium , epicardium, and the cardiac septum, surrounded by the pericardial sac proper and is continuous with the walls of the systemic and pulmonary arterial and venous trees." [FMA:7274]
+def: "Wall of organ which has as its parts the endocardium, myocardium , epicardium, and the cardiac septum, surrounded by the pericardial sac proper and is continuous with the walls of the systemic and pulmonary arterial and venous trees." [FMA:7274]
 synonym: "cardiac wall" EXACT [FMA:7274]
 xref: FMA:7274
 relationship: part_of UBERON:0000948 {source="FMA"} ! heart
@@ -22027,6 +21787,161 @@ xref: FMA:61240
 is_a: UBERON:0012310 {source="FMA"} ! deep lateral cervical lymph node
 
 [Term]
+id: UBERON:0039169
+name: anterior intercostal artery
+namespace: uberon
+synonym: "intercostal branch of internal thoracic artery" EXACT [FMA:10641]
+xref: FMA:10641
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0002456 {source="FMA"} ! internal thoracic artery
+
+[Term]
+id: UBERON:0039170
+name: mammary branch of internal thoracic artery
+namespace: uberon
+synonym: "medial mammary branch of perforating branch of internal thoracic artery" EXACT [FMA:10648]
+xref: FMA:10648
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0002456 {source="FMA"} ! internal thoracic artery
+
+[Term]
+id: UBERON:0039185
+name: accessory vertebral vein
+namespace: uberon
+def: "A lower continuation of the vertebral vein and vertebral venous plexus that passes through the foramen of the transverse process of the 7th cervical vertebra and empties into the brachiocephalic vein." [https://www.imaios.com/en/e-Anatomy/Anatomical-Parts/Accessory-vertebral-vein]
+xref: FMA:14290
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0001588 ! vertebral vein
+relationship: part_of UBERON:0003711 ! brachiocephalic vein
+
+[Term]
+id: UBERON:0039186
+name: anterior vertebral vein
+namespace: uberon
+def: "A vein that commences in a plexus around the transverse processes of the upper cervical vertebræ, descends in company with the ascending cervical artery between the Scalenus anterior and Longus capitis muscles, and opens into the terminal part of the vertebral vein." [https://www.imaios.com/en/e-Anatomy/Anatomical-Parts/Anterior-vertebral-vein]
+xref: FMA:14296
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0001588 ! vertebral vein
+
+[Term]
+id: UBERON:0039187
+name: suprascapular vein
+namespace: uberon
+def: "The suprascapular vein is a vein running above the scapula. It empties into the external jugular vein." [https://en.wikipedia.org/wiki/Suprascapular_vei]
+xref: FMA:14319
+is_a: UBERON:0003502 ! neck blood vessel
+is_a: UBERON:0009141 ! craniocervical region vein
+relationship: part_of UBERON:0001101 ! external jugular vein
+
+[Term]
+id: UBERON:0039188
+name: superior laryngeal vein
+namespace: uberon
+def: "The superior laryngeal vein is a vein which drains the larynx into the superior thyroid vein." [https://en.wikipedia.org/wiki/Superior_laryngeal_vein]
+xref: FMA:14324
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0007157 ! superior thyroid vein
+
+[Term]
+id: UBERON:0039215
+name: appendicular artery
+namespace: uberon
+def: "An artery that commonly arises from the terminal branch of the ileocolic artery, or less commonly from the posterior cecal artery or an ileal artery.[1][2] It descends behind the termination of the ileum and enters the mesoappendix of the vermiform appendix. It runs near the free margin of the mesoappendix and ends in branches which supply the appendix." [https://en.wikipedia.org/wiki/Appendicular_artery]
+synonym: "appendiceal artery" EXACT [FMA:14818]
+xref: FMA:14818
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0001197 ! ileocolic artery
+
+[Term]
+id: UBERON:0039222
+name: cystic artery
+namespace: uberon
+def: "An artery that supplies oxygenated blood to the cystic duct." [http://orcid.org/0000-0002-6601-2165, https://en.wikipedia.org/wiki/Cystic_artery]
+synonym: "cholecystic artery" EXACT [FMA:14835]
+xref: FMA:14835
+is_a: UBERON:0001637 ! artery
+is_a: UBERON:0015796 ! liver blood vessel
+relationship: part_of UBERON:0015482 {source="FMA", source="Wikipedia"} ! right hepatic artery
+
+[Term]
+id: UBERON:0039228
+name: sigmoid vein
+namespace: uberon
+xref: FMA:15395
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0001215 ! inferior mesenteric vein
+
+[Term]
+id: UBERON:0039230
+name: prepyloric vein
+namespace: uberon
+def: "The prepyloric vein is the last connecting branch onto the right gastric vein, marking the end of the stomach, and draining the proximal part of the duodenum" [https://en.wikipedia.org/wiki/Right_gastric_vein#Structure]
+synonym: "Mayo's vein" EXACT [FMA:15404]
+xref: FMA:15404
+is_a: UBERON:0001638 ! vein
+
+[Term]
+id: UBERON:0039232
+name: conus artery
+namespace: uberon
+def: "The conus artery is generally considered to be the first branch of the right coronary artery (RCA) in the right sinus of Valsalva. However, one study has shown that in approximately 50% of humans, the conus artery arises from a discrete ostium in the right sinus of Valsalva." [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4805038]
+synonym: "second right coronary artery" EXACT [FMA:15736]
+synonym: "third coronary artery" EXACT [FMA:15736]
+xref: FMA:15736
+is_a: UBERON:0001621 {source="FMA"} ! coronary artery
+
+[Term]
+id: UBERON:0039256
+name: pubic vein
+namespace: uberon
+def: "vein ascending the posterior aspect of the body of the pubis to drain into the inferior epigastric vein; this vein frequently (about 20% of patients) serves as an accessory or replaced obturator vein." [https://medical-dictionary.thefreedictionary.com/pubic+vein]
+synonym: "accessory obturator vein" EXACT [FMA:21200, https://medical-dictionary.thefreedictionary.com/pubic+vein]
+synonym: "pubic branch" EXACT [FMA:21200]
+synonym: "pubic branch of inferior epigastric vein" EXACT [https://medical-dictionary.thefreedictionary.com/pubic+vein]
+xref: FMA:21200
+is_a: UBERON:0001638 ! vein
+relationship: part_of UBERON:0001316 ! external iliac vein
+
+[Term]
+id: UBERON:0039258
+name: external vertebral venous plexus
+namespace: uberon
+synonym: "plexus venosus vertebralis externus" EXACT [FMA:12851]
+xref: FMA:12851
+is_a: UBERON:0039259 ! vertebral venous plexus
+
+[Term]
+id: UBERON:0039259
+name: vertebral venous plexus
+namespace: uberon
+xref: FMA:18935
+is_a: UBERON:0001593 {source="FMA"} ! venous plexus
+
+[Term]
+id: UBERON:0039260
+name: thyrocervical artery
+namespace: uberon
+xref: FMA:70346
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0001533 {source="FMA"} ! subclavian artery
+
+[Term]
+id: UBERON:0039261
+name: pancreatic artery
+namespace: uberon
+xref: FMA:70471
+is_a: UBERON:0004573 ! systemic artery
+relationship: part_of UBERON:0001194 ! splenic artery
+
+[Term]
+id: UBERON:0039262
+name: segmental pulmonary artery
+namespace: uberon
+synonym: "segmental pulmonary arterial tree" EXACT [FMA:8755]
+xref: FMA:8755
+is_a: UBERON:0002012 {source="FMA"} ! pulmonary artery
+
+[Term]
 id: UBERON:2000039
 name: median axial vein
 namespace: uberon
@@ -22141,7 +22056,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2001052
 name: primordial hindbrain channel
 namespace: uberon
-def: "The paired vessels that run along the lateral walls of the hindbrain and drain into the anterior cardinal veins. Isogai et al. (2002)" [ZFIN:curator]
+def: "The paired vessels that run along the lateral walls of the hindbrain and drain into the anterior cardinal veins. Isogai et al. (2002)." [ZFIN:curator]
 synonym: "medial head vein" EXACT [TAO:0001052]
 synonym: "PHCB" EXACT [TAO:0001052]
 xref: ZFA:0001052
@@ -22191,7 +22106,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2001062
 name: presumptive mesencephalic artery
 namespace: uberon
-def: "precursor to mesencephalic artery" [http://orcid.org/0000-0002-6601-2165]
+def: "Precursor to mesencephalic artery." [http://orcid.org/0000-0002-6601-2165]
 subset: efo_slim
 synonym: "PMsA" EXACT [TAO:0001062]
 synonym: "primitive mesencephalic artery" EXACT [ZFA:0001062]
@@ -22262,7 +22177,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2005010
 name: mid cerebral vein
 namespace: uberon
-def: "The mesencephalic veins (MsV) enter the mid cerebral veins (MCeV) at the dorsal midline. THe MCeVs originate at the dorsal midline, proceede lateraly in a ventral direction to drain into the paired primordial midbrain channels (PHBC). ogai et al. 2001., Kimmel et al. 1993" [ZFIN:curator]
+def: "The mesencephalic veins (MsV) enter the mid cerebral veins (MCeV) at the dorsal midline. THe MCeVs originate at the dorsal midline, proceede lateraly in a ventral direction to drain into the paired primordial midbrain channels (PHBC). ogai et al. 2001., Kimmel et al. 1993." [ZFIN:curator]
 synonym: "MCeV" EXACT [TAO:0005010]
 synonym: "mid-cerebral vein" EXACT [TAO:0005010]
 synonym: "middle cerebral vein" EXACT [TAO:0005010]
@@ -22747,7 +22662,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2005080
 name: anterior mesenteric artery
 namespace: uberon
-def: "Unpaired artery departing from dorsal aorta, typically supplying the small intestine" [ISBN10:0073040584]
+def: "Unpaired artery departing from dorsal aorta, typically supplying the small intestine." [ISBN10:0073040584]
 synonym: "AMA" EXACT [TAO:0005080]
 synonym: "rostral mesenteric artery" EXACT [TAO:0005080]
 xref: ZFA:0005080
@@ -22812,7 +22727,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2005088
 name: posterior mesenteric artery
 namespace: uberon
-def: "Unpaired artery departing from dorsal aorta that typically supplies the large intestine" [ISBN10:0073040584]
+def: "Unpaired artery departing from dorsal aorta that typically supplies the large intestine." [ISBN10:0073040584]
 synonym: "caudal mesenteric artery" EXACT [TAO:0005088]
 synonym: "PMA" EXACT [TAO:0005088]
 xref: ZFA:0005088
@@ -22952,7 +22867,7 @@ property_value: UBPROP:0000001 "Blood vessel endothelium that has tight junction
 id: UBERON:2005260
 name: fenestrated capillary
 namespace: uberon
-def: "Capillary that has pores in the endothelial cells (60-80 nm in diameter) that are spanned by a diaphragm of radially oriented fibrils and allow small molecules and limited amounts of protein to diffuse" [Wikipedia:Capillary#Types, Wikipedia:Fenestra_(histology)]
+def: "Capillary that has pores in the endothelial cells (60-80 nm in diameter) that are spanned by a diaphragm of radially oriented fibrils and allow small molecules and limited amounts of protein to diffuse." [Wikipedia:Capillary#Types, Wikipedia:Fenestra_(histology)]
 synonym: "fenestrated blood vessel endothelium" BROAD [ZFA:0005260]
 synonym: "fenestrated capillary vessel" EXACT [FMA:63196]
 xref: FMA:63196
