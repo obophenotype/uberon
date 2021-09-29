@@ -33,1489 +33,6 @@ name: biological entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: CL:0000006
-name: neuronal receptor cell
-namespace: cell
-synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
-is_a: CL:0000197 ! sensory receptor cell
-
-[Term]
-id: CL:0000098
-name: sensory epithelial cell
-namespace: cell
-def: "A specialized epithelial cell involved in sensory perception. Restricted to special sense organs of the olfactory, gustatory, and vestibulocochlear receptor systems; contain sensory cells surrounded by supportive, non-receptive cells." []
-comment: The term "neuroepithelial cell" is used to describe both this cell type and neurecto-epithelial cell (CL:0000710).
-synonym: "neuroepithelial cell" BROAD []
-xref: BTO:0004301
-is_a: CL:0000197 ! sensory receptor cell
-
-[Term]
-id: CL:0000197
-name: sensory receptor cell
-namespace: cell
-def: "A cell that is capable of detection of a stimulus involved in sensory perception." []
-synonym: "receptor cell" EXACT []
-relationship: part_of UBERON:0001032 ! sensory system
-
-[Term]
-id: CL:0000198
-name: pain receptor cell
-namespace: cell
-def: "The peripheral receptor for pain. Includes receptors which are sensitive to painful mechanical stimuli, extreme heat or cold, and chemical stimuli. All mammalian nociceptors are free nerve endings." []
-comment: Editor note: request detection of stimulus involved in sensory perception of pain; add develops_from relationship
-synonym: "nociceptor" EXACT []
-synonym: "nocireceptor" EXACT []
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000202
-name: auditory hair cell
-namespace: cell
-alt_id: CL:0000201
-def: "A mechanoreceptor cell located in the inner ear that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system." []
-comment: In mammals these cells are located in the organ of Corti.
-synonym: "auditory receptor cell" EXACT []
-synonym: "cochlear hair cell" EXACT []
-synonym: "inner ear hair cell" RELATED []
-synonym: "inner ear receptor cell" RELATED []
-xref: FMA:62364
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0002491 ! auditory epithelial cell
-relationship: part_of UBERON:0002227 ! spiral organ of cochlea
-
-[Term]
-id: CL:0000203
-name: gravity sensitive cell
-namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000204
-name: acceleration receptive cell
-namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000205
-name: thermoreceptor cell
-namespace: cell
-def: "A cellular receptor which mediates the sense of temperature. Thermoreceptor cells in vertebrates are mostly located under the skin. In mammals there are separate types of thermoreceptors for cold and for warmth and pain receptor cells which detect cold or heat extreme enough to cause pain." []
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000207
-name: olfactory receptor cell
-namespace: cell
-synonym: "odorant receptor cell" EXACT []
-synonym: "olfactory receptor neuron" EXACT []
-synonym: "olfactory sensory neuron" EXACT []
-synonym: "Schultze's cell" EXACT []
-xref: BTO:0004185
-xref: FMA:67860
-xref: Wikipedia:Olfactory_receptor_neuron
-is_a: CL:0000006 ! neuronal receptor cell
-relationship: part_of UBERON:0005725 ! olfactory system
-
-[Term]
-id: CL:0000209
-name: taste receptor cell
-namespace: cell
-def: "A cell type found in the spherical or ovoid clusters of receptor cells found mainly in the epithelium of the tongue and constituting the end organs of the sense of taste." []
-synonym: "taste bud cell" EXACT []
-xref: FMA:67910
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-
-[Term]
-id: CL:0000210
-name: photoreceptor cell
-namespace: cell
-def: "A cell specialized to detect and transduce light." []
-xref: BTO:0001060
-xref: CALOHA:TS-0868
-xref: FBbt:00004211
-xref: FMA:86740
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000287
-name: eye photoreceptor cell
-namespace: cell
-is_a: CL:0000210 ! photoreceptor cell
-relationship: part_of UBERON:0000970 ! eye
-
-[Term]
-id: CL:0000315
-name: tears secreting cell
-namespace: cell
-def: "A cell secreting tears, the fluid secreted by the lacrimal glands. This fluid moistens the conjunctiva and cornea." []
-relationship: part_of UBERON:0001817 ! lacrimal gland
-
-[Term]
-id: CL:0000347
-name: scleral cell
-namespace: cell
-def: "A cell of the sclera of the eye." []
-relationship: part_of UBERON:0001773 ! sclera
-
-[Term]
-id: CL:0000348
-name: choroidal cell of the eye
-namespace: cell
-def: "A cell of the choroid of the eye." []
-relationship: part_of UBERON:0001776 ! optic choroid
-
-[Term]
-id: CL:0000376
-name: humidity receptor cell
-namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:0000488
-name: visible light photoreceptor cell
-namespace: cell
-def: "A photoreceptor cell that detects visible light." []
-is_a: CL:0000210 ! photoreceptor cell
-
-[Term]
-id: CL:0000489
-name: scotopic photoreceptor cell
-namespace: cell
-is_a: CL:0000210 ! photoreceptor cell
-
-[Term]
-id: CL:0000490
-name: photopic photoreceptor cell
-namespace: cell
-is_a: CL:0000488 ! visible light photoreceptor cell
-
-[Term]
-id: CL:0000494
-name: UV sensitive photoreceptor cell
-namespace: cell
-def: "A photoreceptor cell that detects ultraviolet light." []
-is_a: CL:0000210 ! photoreceptor cell
-
-[Term]
-id: CL:0000495
-name: blue sensitive photoreceptor cell
-namespace: cell
-def: "A photoreceptor cell that is sensitive to blue light." []
-is_a: CL:0000490 ! photopic photoreceptor cell
-
-[Term]
-id: CL:0000496
-name: green sensitive photoreceptor cell
-namespace: cell
-def: "A photoreceptor cell that is sensitive to green light." []
-is_a: CL:0000490 ! photopic photoreceptor cell
-
-[Term]
-id: CL:0000497
-name: red sensitive photoreceptor cell
-namespace: cell
-def: "A photoreceptor cell that is sensitive to red light." []
-is_a: CL:0000490 ! photopic photoreceptor cell
-
-[Term]
-id: CL:0000551
-name: unimodal nocireceptor
-namespace: cell
-is_a: CL:0000198 ! pain receptor cell
-
-[Term]
-id: CL:0000567
-name: polymodal nocireceptor
-namespace: cell
-is_a: CL:0000198 ! pain receptor cell
-
-[Term]
-id: CL:0000573
-name: retinal cone cell
-namespace: cell
-def: "One of the two photoreceptor cell types in the vertebrate retina. In cones the photopigment is in invaginations of the cell membrane of the outer segment. Cones are less sensitive to light than rods, but they provide vision with higher spatial and temporal acuity, and the combination of signals from cones with different pigments allows color vision." []
-xref: BTO:0001036
-xref: CALOHA:TS-0866
-xref: FMA:67748
-is_a: CL:0010009 ! camera-type eye photoreceptor cell
-
-[Term]
-id: CL:0000575
-name: corneal epithelial cell
-namespace: cell
-alt_id: CL:1000431
-def: "An epithelial cell of the cornea." []
-synonym: "epithelial cell of cornea" EXACT []
-xref: BTO:0004298
-xref: CALOHA:TS-0173
-xref: FMA:70551
-relationship: part_of UBERON:0000964 ! cornea
-
-[Term]
-id: CL:0000587
-name: cold sensing thermoreceptor cell
-namespace: cell
-def: "A thermoreceptor cell that detects reduced temperatures." []
-is_a: CL:0000205 ! thermoreceptor cell
-
-[Term]
-id: CL:0000589
-name: cochlear inner hair cell
-namespace: cell
-def: "A bulbous cell that is medially placed in one row in the organ of Corti. In contrast to the outer hair cells, the inner hair cells are fewer in number, have fewer sensory hairs, and are less differentiated." []
-synonym: "inner hair cell" BROAD []
-xref: BTO:0003667
-xref: FMA:62365
-is_a: CL:0000202 ! auditory hair cell
-
-[Term]
-id: CL:0000591
-name: warmth sensing thermoreceptor cell
-namespace: cell
-def: "A thermoreceptor cell that detects increased temperatures." []
-is_a: CL:0000205 ! thermoreceptor cell
-
-[Term]
-id: CL:0000601
-name: outer hair cell
-namespace: cell
-def: "A mechanoreceptor in the organ of Corti. In mammals the outer hair cells are arranged in three rows which are further from the modiolus than the single row of inner hair cells. The motile properties of the outer hair cells may contribute actively to tuning the sensitivity and frequency selectivity of the cochlea." []
-synonym: "cochlear outer hair cell" EXACT []
-xref: BTO:0003666
-xref: FMA:62366
-is_a: CL:0000202 ! auditory hair cell
-
-[Term]
-id: CL:0000602
-name: pressoreceptor cell
-namespace: cell
-def: "A receptor in the vascular system, particularly the aorta and carotid sinus, which is sensitive to stretch of the vessel walls." []
-is_a: CL:1000082 ! stretch receptor cell
-
-[Term]
-id: CL:0000604
-name: retinal rod cell
-namespace: cell
-def: "One of the two photoreceptor cell types of the vertebrate retina. In rods the photopigment is in stacks of membranous disks separate from the outer cell membrane. Rods are more sensitive to light than cones, but rod mediated vision has less spatial and temporal resolution than cone vision." []
-xref: BTO:0001024
-xref: CALOHA:TS-0870
-xref: FMA:67747
-is_a: CL:0010009 ! camera-type eye photoreceptor cell
-
-[Term]
-id: CL:0000633
-name: Hensen cell
-namespace: cell
-def: "A tall supporting cell that is arranged in rows adjacent to the last row of outer phalangeal cells. This cell type constitutes the outer border of the organ of Corti." []
-synonym: "cell of Hensen" EXACT []
-synonym: "external limiting cell of organ of Corti" EXACT []
-synonym: "Hensen's cell" EXACT []
-xref: FMA:79799
-is_a: CL:0002490 ! organ of Corti supporting cell
-
-[Term]
-id: CL:0000634
-name: Claudius cell
-namespace: cell
-def: "A cuboidal cell which along with Boettcher's cells form the floor of the external spiral sulcus, external to the organ of Corti." []
-synonym: "cell of Claudius" EXACT []
-synonym: "external supporting cell of Claudius" RELATED []
-synonym: "external supporting cell of vestibular epithelium" EXACT []
-xref: FMA:79802
-is_a: CL:0002315 ! supporting cell of cochlea
-
-[Term]
-id: CL:0000635
-name: Deiter's cell
-namespace: cell
-def: "The outer phalangeal cells of the organ of Corti. This cell holds the base of the hair cell in a cup-shaped depression." []
-synonym: "Deiters cell" EXACT []
-synonym: "outer phalangeal cell" EXACT []
-xref: FMA:75725
-is_a: CL:0002165 ! phalangeal cell
-
-[Term]
-id: CL:0000687
-name: R1 photoreceptor cell
-namespace: cell
-synonym: "R1 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000690
-name: R2 photoreceptor cell
-namespace: cell
-synonym: "R2 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000694
-name: R3 photoreceptor cell
-namespace: cell
-synonym: "R3 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000697
-name: R4 photoreceptor cell
-namespace: cell
-synonym: "R4 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000702
-name: R5 photoreceptor cell
-namespace: cell
-synonym: "R5 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000705
-name: R6 photoreceptor cell
-namespace: cell
-synonym: "R6 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000707
-name: R7 photoreceptor cell
-namespace: cell
-synonym: "R7 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
-is_a: CL:0000494 ! UV sensitive photoreceptor cell
-
-[Term]
-id: CL:0000709
-name: R8 photoreceptor cell
-namespace: cell
-synonym: "R8 cell" EXACT []
-is_a: CL:0000488 ! visible light photoreceptor cell
-is_a: CL:2000019 ! compound eye photoreceptor cell
-relationship: part_of UBERON:0000971 ! ommatidium
-
-[Term]
-id: CL:0000718
-name: compound eye cone cell
-namespace: cell
-synonym: "cone cell (sensu Endopterygota)" RELATED []
-relationship: part_of UBERON:0000018 ! compound eye
-
-[Term]
-id: CL:0000719
-name: posterior cone cell (sensu Endopterygota)
-namespace: cell
-is_a: CL:0000718 ! compound eye cone cell
-
-[Term]
-id: CL:0000720
-name: anterior cone cell (sensu Endopterygota)
-namespace: cell
-is_a: CL:0000718 ! compound eye cone cell
-
-[Term]
-id: CL:0000721
-name: equatorial cone cell (sensu Endopterygota)
-namespace: cell
-is_a: CL:0000718 ! compound eye cone cell
-
-[Term]
-id: CL:0000745
-name: retina horizontal cell
-namespace: cell
-def: "A neuron that laterally connects other neurons in the inner nuclear layer of the retina." []
-synonym: "horizontal cell" EXACT []
-xref: BTO:0004120
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0003902 ! retinal neural layer
-
-[Term]
-id: CL:0000748
-name: retinal bipolar neuron
-def: "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner plexiform layer." []
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0000966 ! retina
-
-[Term]
-id: CL:0000749
-name: ON-bipolar cell
-namespace: cell
-def: "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner half of the inner plexiform layer. These cells depolarize in response to light stimulation of their corresponding photoreceptors." []
-is_a: CL:0000748 ! retinal bipolar neuron
-
-[Term]
-id: CL:0000750
-name: OFF-bipolar cell
-namespace: cell
-def: "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the outer half of the inner plexiform layer. These cells depolatize in response to light to dark transition." []
-is_a: CL:0000748 ! retinal bipolar neuron
-
-[Term]
-id: CL:0000751
-name: rod bipolar cell
-namespace: cell
-def: "A bipolar neuron found in the retina that is synapsed by rod photoreceptor cells but not by cone photoreceptor cells.  These neurons depolarize in response to light." []
-xref: FMA:67750
-is_a: CL:0000748 ! retinal bipolar neuron
-
-[Term]
-id: CL:0000752
-name: cone retinal bipolar cell
-namespace: cell
-def: "A bipolar neuron found in the retina and having connections with cone photoreceptor cells and neurons in the inner plexiform layer." []
-is_a: CL:0000748 ! retinal bipolar neuron
-
-[Term]
-id: CL:0000753
-name: type 1 cone bipolar cell (sensu Mus)
-def: "An OFF-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the outer half of the inner plexiform layer. The cell body of these cells is in the middle of the inner plexiform layer. The dendritic tree is stout and the axon terminates in sublamina 1. The axonal terminal is wide and has only a few varicosities." []
-synonym: "DB1 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000754
-name: type 2 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An OFF-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the outer half of the inner plexiform layer. The dendritic tree is not well filled and the dendrites are more delicate than in type 1 cells. The axon terminal is bushier and exhibits a dense plexus of varicosities in the inner part of sublamina 1 (Ghosh et al., 2004).  It can be differentiated from other retinal bipolar neurons by its expression of marker genes: Neto1, Lhx3 and Irx-6 (Shekhar, 2016)." []
-synonym: "FMB cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000755
-name: type 3 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An OFF-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the outer half of the inner plexiform layer. The dendritic tree is delicate and the dendritic tips appear small when compared with type 1 cells. The axon terminal is stratified and restricted to sublamina 2 of the inner plexiform layer." []
-synonym: "DB2 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000756
-name: type 4 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An OFF-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the outer half of the inner plexiform layer. The cell has a diffuse axon terminal with varicosities in sublaminae 1 and 2 of the inner plexiform layer." []
-synonym: "DB3 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000757
-name: type 5 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An ON-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the inner half of the inner plexiform layer. The axon terminal is restricted to sublamina 3 of the inner plexiform layer. It is narrowly stratified and branched. The dendritic tree has many delicate branches." []
-synonym: "DB4 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000758
-name: type 6 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An ON-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the inner half of the inner plexiform layer. The cell has a loose, delicate axon terminal that opens in sublamina 3 of the inner plexiform layer and descends into sublamina 4." []
-synonym: "DB5 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000759
-name: type 7 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An ON-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the inner half of the inner plexiform layer. The axon terminal is narrowly stratified and are found just below a calretinin-expressing band in sublamina 4 of the inner plexiform layer." []
-synonym: "IMB cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000760
-name: type 8 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An ON-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the inner half of the inner plexiform layer. This cell has the widest dendritic field and the widest axon terminal of all retinal bipolar cells. The axon terminal is delicate and stratified through sublaminae 4 and 5 of the inner plexiform layer." []
-synonym: "DB6 cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000761
-name: type 9 cone bipolar cell (sensu Mus)
-namespace: cell
-def: "An ON-bipolar neuron found in the retina and having connections with cone photoreceptors cells and neurons in the inner half of the inner plexiform layer. The dendritic tree is wide and the dendritic convergence indicates cone selectivity. The axon terminal is sparsely branched and terminates in sublamina 5 of the inner plexiform layer." []
-synonym: "BB cone bipolar cell" EXACT []
-is_a: CL:0000752 ! cone retinal bipolar cell
-
-[Term]
-id: CL:0000847
-name: ciliated olfactory receptor neuron
-namespace: cell
-def: "An olfactory receptor cell in which the apical ending of the dendrite is a pronounced ciliated olfactory knob." []
-synonym: "ciliated olfactory sensory neuron" EXACT []
-synonym: "ciliated sensory neuron" EXACT []
-is_a: CL:0000207 ! olfactory receptor cell
-
-[Term]
-id: CL:0000848
-name: microvillous olfactory receptor neuron
-namespace: cell
-def: "An olfactory receptor cell in which the apical ending of the dendrite is a knob that bears numerous microvilli." []
-synonym: "microvillous olfactory sensory neuron" EXACT []
-synonym: "microvillous sensory neuron" RELATED []
-is_a: CL:0000207 ! olfactory receptor cell
-
-[Term]
-id: CL:0000849
-name: crypt olfactory receptor neuron
-namespace: cell
-def: "An olfactory receptor cell with short cilia growing in an invagination bordered by microvilli." []
-synonym: "crypt cell" EXACT []
-synonym: "crypt olfactory sensory neuron" EXACT []
-synonym: "crypt sensory neuron" EXACT []
-is_a: CL:0000207 ! olfactory receptor cell
-
-[Term]
-id: CL:0000851
-name: neuromast mantle cell
-namespace: cell
-def: "Neuromast mantle cell is a non-sensory cell. Neuromast mantle cells surround the neuromast support cells and neuromast hair cells, separating the neuromast from the epidermis, and secrete cupula in which the ciliary bundles of all the hair cells are embedded." []
-relationship: part_of UBERON:0008904 ! neuromast
-
-[Term]
-id: CL:0000852
-name: neuromast support cell
-namespace: cell
-def: "Neuromast support cell is a non-sensory cell of the neuromast that extend between the sensory hair cells from the basement membrane to the apical surface; neuromast support cells are surrounded by neuromast mantle cells." []
-relationship: part_of UBERON:0008904 ! neuromast
-
-[Term]
-id: CL:0000853
-name: olfactory epithelial support cell
-namespace: cell
-def: "Olfactory epithelial support cell is a columnar cell that extends from the epithelial free margin to the basement membrane of the olfactory epithelium. This cell type has a large, vertically, elongate, euchromatic nucleus, along with other nuclei, forms a layer superficial to the cell body of the receptor cell; sends long somewhat irregular microvilli into the mucus layer; at the base, with expanded end-feet containing numerous lamellated dense bodies resembling lipofuscin of neurons." []
-synonym: "olfactory sustentacular cell" EXACT []
-synonym: "supporting cell of olfactory epithelium" EXACT []
-synonym: "sustentaculocyte of olfactory epithelium" EXACT []
-xref: FMA:62302
-is_a: CL:0002169 ! basal cell of olfactory epithelium
-
-[Term]
-id: CL:0000856
-name: neuromast hair cell
-namespace: cell
-def: "Neuromast hair cell is a hair cell that acts as a sensory receptor of the neuromast; it is morphologically polarized as a result of the relative position of the single kinocilium and the clusters of stereocilia on its apical surface." []
-is_a: CL:0000006 ! neuronal receptor cell
-relationship: part_of UBERON:0008904 ! neuromast
-
-[Term]
-id: CL:0002084
-name: Boettcher cell
-namespace: cell
-def: "A Boettcher cell is a polyhedral cells on the basilar membrane of the cochlea, and is located beneath Claudius cells. A Boettcher cell is considered a supporting cell for the organ of Corti, and is present only in the lower turn of the cochlea. These cells interweave with each other, and project microvilli into the intercellular space. Because of their structural specialization, a Boettcher cell is believed to play a significant role in the function of the cochlea. They demonstrate high levels of calmodulin, and may be involved in mediating Ca(2+) regulation and ion transport." []
-synonym: "Boettcher's cell" EXACT []
-synonym: "Bottcher cell" EXACT []
-synonym: "Bottcher's cell" EXACT []
-is_a: CL:0002315 ! supporting cell of cochlea
-created_by: tmeehan
-creation_date: 2010-07-14T03:22:02Z
-
-[Term]
-id: CL:0002162
-name: internal epithelial cell of tympanic membrane
-namespace: cell
-def: "An extremely flattened cell type found on the inner side of the tympanic membrane. The surface of this cell type carries sparse pleomorphic microvilli that are more common near the junctional zones." []
-xref: FMA:70626
-relationship: part_of UBERON:0002364 ! tympanic membrane
-created_by: tmeehan
-creation_date: 2010-08-25T10:49:46Z
-
-[Term]
-id: CL:0002163
-name: internal pillar cell of cochlea
-namespace: cell
-def: "A rod-shpaed cell that forms a single row adjacent to and supporting the inner hair cells." []
-xref: FMA:75722
-xref: FMA:75726
-is_a: CL:1000191 ! pillar cell
-created_by: tmeehan
-creation_date: 2010-08-25T11:05:21Z
-
-[Term]
-id: CL:0002164
-name: external pillar cell of cochlea
-namespace: cell
-def: "A rod-shaped cell found in 3 or 4 rows that lie adjacent to and support the outer hair cells." []
-xref: FMA:75727
-is_a: CL:1000191 ! pillar cell
-created_by: tmeehan
-creation_date: 2010-08-25T11:05:23Z
-
-[Term]
-id: CL:0002165
-name: phalangeal cell
-namespace: cell
-def: "A supporting cell that is attached to the basement membrane and forms rows that support the hair cells." []
-xref: FMA:79800
-is_a: CL:0002490 ! organ of Corti supporting cell
-created_by: tmeehan
-creation_date: 2010-08-25T01:29:07Z
-
-[Term]
-id: CL:0002167
-name: olfactory epithelial cell
-namespace: cell
-def: "A specialized cell involved in sensory perception of smell." []
-xref: FMA:67870
-is_a: CL:0000098 ! sensory epithelial cell
-created_by: tmeehan
-creation_date: 2010-08-26T01:47:13Z
-
-[Term]
-id: CL:0002168
-name: border cell of cochlea
-namespace: cell
-def: "A border cell is a slender columnar cell on the medial portion of the basilar membrane." []
-xref: FMA:79798
-is_a: CL:0002315 ! supporting cell of cochlea
-created_by: tmeehan
-creation_date: 2010-08-25T01:47:12Z
-
-[Term]
-id: CL:0002169
-name: basal cell of olfactory epithelium
-namespace: cell
-alt_id: CL:1000395
-def: "An epithelial cell located on the basal lamina of the olfactory epithelium." []
-synonym: "horizontal basal call" BROAD []
-xref: FMA:62303
-is_a: CL:0002167 ! olfactory epithelial cell
-relationship: part_of UBERON:0001997 ! olfactory epithelium
-created_by: tmeehan
-creation_date: 2010-08-26T01:58:54Z
-
-[Term]
-id: CL:0002171
-name: globose cell of olfactory epithelium
-namespace: cell
-def: "A rounded or elliptical epithelial cell, with pale-staining open face nucleus and pale cytoplasm rich in free ribosomes and clusters of centrioles; form a distinct basal zone spaced slightly from the basal surface of the epithelium." []
-synonym: "blastema cell of olfactory epithelium" EXACT []
-xref: FMA:67874
-is_a: CL:0002169 ! basal cell of olfactory epithelium
-created_by: tmeehan
-creation_date: 2010-08-26T01:59:18Z
-
-[Term]
-id: CL:0002172
-name: interdental cell of cochlea
-namespace: cell
-def: "A long, spindle-shaped supporting cells arranged in parallel rows that secretes components of the tectorial membrane and potassium ions into the endolymph." []
-synonym: "interdental cell" EXACT []
-xref: FMA:79797
-is_a: CL:0002315 ! supporting cell of cochlea
-relationship: part_of UBERON:0002276 ! lamina of spiral limbus
-created_by: tmeehan
-creation_date: 2010-08-25T02:02:48Z
-
-[Term]
-id: CL:0002184
-name: basal proper cell of olfactory epithelium
-namespace: cell
-def: "A flat or angular epithelial cell with condensed nuclei and darkly staining cytoplasm containing numerous intermediate filaments inserted into desmosomes contacting surrounding supporting cells; lie in contact with the basal lamina of olfactory epithelium." []
-synonym: "horizontal basal cells" EXACT []
-xref: FMA:62304
-is_a: CL:0002169 ! basal cell of olfactory epithelium
-created_by: tmeehan
-creation_date: 2010-08-26T01:59:22Z
-
-[Term]
-id: CL:0002222
-name: vertebrate lens cell
-namespace: cell
-def: "A cell comprising the transparent, biconvex body separating the posterior chamber and vitreous body, and constituting part of the refracting mechanism of the mammalian eye." []
-xref: FMA:70950
-relationship: part_of UBERON:0000965 ! lens of camera-type eye
-created_by: tmeehan
-creation_date: 2010-09-07T10:38:03Z
-
-[Term]
-id: CL:0002223
-name: anterior lens cell
-namespace: cell
-def: "A cell of the transparent layer of simple cuboidal epithelium over the anterior surface of the lens; transform into lens fiber(s)." []
-xref: FMA:63181
-is_a: CL:0002224 ! lens epithelial cell
-created_by: tmeehan
-creation_date: 2010-09-07T10:45:45Z
-
-[Term]
-id: CL:0002224
-name: lens epithelial cell
-namespace: cell
-def: "A cell of the cuboidal epithelium that covers the lens. The cells of the lens epithelium regulate most of the homeostatic functions of the lens. As ions, nutrients, and liquid enter the lens from the aqueous humor, Na+/K+ ATPase pumps in the lens epithelial cells pump ions out of the lens to maintain appropriate lens osmolarity and volume, with equatorially positioned lens epithelium cells contributing most to this current. The activity of the Na+/K+ ATPases keeps water and current flowing through the lens from the poles and exiting through the equatorial regions. The cells of the lens epithelium also serve as the progenitors for new lens fibers. It constantly lays down fibers in the embryo, fetus, infant, and adult, and continues to lay down fibers for lifelong growth." []
-xref: FMA:67559
-is_a: CL:0002222 ! vertebrate lens cell
-relationship: part_of UBERON:0001803 ! epithelium of lens
-created_by: tmeehan
-creation_date: 2010-09-07T10:45:47Z
-
-[Term]
-id: CL:0002225
-name: secondary lens fiber
-namespace: cell
-def: "A lens fiber cell that develops from primary lens fiber; located towards the center of lens; cell organelles are normally degraded or in the process of being degraded." []
-synonym: "secondary lens fibre" EXACT []
-is_a: CL:0011004 ! lens fiber cell
-created_by: tmeehan
-creation_date: 2010-09-07T10:53:39Z
-
-[Term]
-id: CL:0002226
-name: non-nucleated secondary lens fiber
-namespace: cell
-def: "A secondary lens fiber cell that lacks a nucleus." []
-synonym: "non-nucleated secondary lens fibre" EXACT []
-xref: FMA:67561
-is_a: CL:0002225 ! secondary lens fiber
-created_by: tmeehan
-creation_date: 2010-09-07T11:15:23Z
-
-[Term]
-id: CL:0002227
-name: nucleated secondary lens fiber
-namespace: cell
-def: "A secondary fiber cell that contains a nucleus." []
-synonym: "nucleated secondary lens fibre" EXACT []
-xref: FMA:70949
-is_a: CL:0002225 ! secondary lens fiber
-created_by: tmeehan
-creation_date: 2010-09-07T11:15:26Z
-
-[Term]
-id: CL:0002228
-name: primary lens fiber
-namespace: cell
-def: "An elongating cell that rapidly obliterates the lumen of the lens vesicle. Subsequently, differentiation of this cell type at the lens equator leads to the formation of secondary fiber cells that come to overlie the primary fibers." []
-synonym: "primary lens fibre" EXACT []
-xref: FMA:70613
-is_a: CL:0011004 ! lens fiber cell
-created_by: tmeehan
-creation_date: 2010-09-07T11:19:01Z
-
-[Term]
-id: CL:0002243
-name: smooth muscle cell of sphincter of pupil
-namespace: cell
-def: "A circular smooth muscle cell of the iris, innervated by the ciliary nerves (parasympathetic), and acting to contract the pupil. This muscle cell derives from neuroectoderm. This smooth muscle cell results from transformation of epithelial cells to smooth muscle cells." []
-synonym: "smooth muscle fiber of sphincter of pupil" EXACT []
-synonym: "smooth muscle fibre of sphincter of pupil" RELATED []
-xref: FMA:70611
-relationship: part_of UBERON:0001607 ! sphincter pupillae
-created_by: tmeehan
-creation_date: 2010-09-08T08:53:42Z
-
-[Term]
-id: CL:0002285
-name: type III taste bud cell
-namespace: cell
-def: "A taste receptor cell that is characterized by morphologically identifiable synaptic contacts with the gustatory nerve fibers and expression of the synaptic membrane protein-25 (SNAP-25) and NCAM." []
-synonym: "taste bud basal cell" BROAD []
-synonym: "type 3 taste cell" EXACT []
-xref: FMA:67940
-is_a: CL:0000209 ! taste receptor cell
-created_by: tmeehan
-creation_date: 2010-09-13T10:57:21Z
-
-[Term]
-id: CL:0002286
-name: type II taste cell
-namespace: cell
-def: "A taste receptor cell that has a short microvilli, a projecting apical region, a large rounded nucleus, and expresses taste chemoreceptors thus making them the transducing cell for taste qualities." []
-synonym: "type 2 taste cell" EXACT []
-xref: FMA:62381
-is_a: CL:0000209 ! taste receptor cell
-created_by: tmeehan
-creation_date: 2010-09-13T10:57:26Z
-
-[Term]
-id: CL:0002287
-name: type IV taste receptor cell
-namespace: cell
-def: "A rounded, mitotically active stem cell which is the source of new cells of the taste bud; located basally." []
-comment: There is debate about the exact lineage of these cell types from this progenitor. See PMID:15738192.
-synonym: "taste bud basal cell" BROAD []
-synonym: "type 4 taste cell" EXACT []
-xref: FMA:62380
-is_a: CL:0000209 ! taste receptor cell
-created_by: tmeehan
-creation_date: 2010-09-13T10:57:29Z
-
-[Term]
-id: CL:0002288
-name: type V taste receptor cell
-namespace: cell
-def: "A cell type that forms the boundary with the surrounding epithelium." []
-xref: FMA:67941
-is_a: CL:0000209 ! taste receptor cell
-created_by: tmeehan
-creation_date: 2010-09-13T10:57:31Z
-
-[Term]
-id: CL:0002289
-name: type I taste bud cell
-namespace: cell
-def: "A densely staining taste receptor cell that contains many dense vacuoles in their apical regions which project into the apical space and bear microvilli. This cell type serves as a supporting cell by surrounding and isolating the other cell types from each other; secrete a dense amorphous material that surrounds the microvilli in the taste pore. This cell type expresses a glial glutumate transporter, GLAST." []
-synonym: "dark tongue cell" EXACT []
-synonym: "type I taste cell" EXACT []
-synonym: "type taste 1 cell" EXACT []
-xref: FMA:62356
-is_a: CL:0000209 ! taste receptor cell
-created_by: tmeehan
-creation_date: 2010-09-13T10:57:35Z
-
-[Term]
-id: CL:0002314
-name: external supporting cell of vestibular epithelium
-namespace: cell
-def: "An auditory epithelial support cell located in the vestibular epithelium that has many hallmarks of glial cells. This cell type express glial markers such as vimentin, S100, glutamate-aspartate transporter, low affinity neurotrophin receptor p75, glial fibrillary acidic protein, and proteolipid protein." []
-xref: FMA:75809
-is_a: CL:0002316 ! supporting cell of vestibular epithelium
-created_by: tmeehan
-creation_date: 2010-09-14T03:20:01Z
-
-[Term]
-id: CL:0002315
-name: supporting cell of cochlea
-namespace: cell
-def: "An epithelial supporting cell located in the cochlea." []
-xref: FMA:79796
-is_a: CL:0005014 ! auditory epithelial support cell
-relationship: part_of UBERON:0001844 ! cochlea
-created_by: tmeehan
-creation_date: 2010-09-14T03:31:38Z
-
-[Term]
-id: CL:0002316
-name: supporting cell of vestibular epithelium
-namespace: cell
-def: "A supporting cell of the vestibular epithelium." []
-xref: FMA:75607
-is_a: CL:0005014 ! auditory epithelial support cell
-relationship: part_of UBERON:0001862 ! vestibular labyrinth
-created_by: tmeehan
-creation_date: 2010-09-14T03:31:44Z
-
-[Term]
-id: CL:0002317
-name: external limiting cell of vestibular epithelium
-namespace: cell
-def: "An external limiting cell found in the vestibular epithelium." []
-xref: FMA:75808
-is_a: CL:0002316 ! supporting cell of vestibular epithelium
-created_by: tmeehan
-creation_date: 2010-09-14T03:33:50Z
-
-[Term]
-id: CL:0002363
-name: keratocyte
-namespace: cell
-def: "A keratocyte is a specialized fibroblastÂ residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisÂ cornealÂ layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate." []
-synonym: "corneal fibroblast" EXACT []
-synonym: "corneal keratocyte" EXACT []
-relationship: part_of UBERON:0001777 ! substantia propria of cornea
-created_by: tmeehan
-creation_date: 2010-09-22T01:57:40Z
-
-[Term]
-id: CL:0002367
-name: trabecular meshwork cell
-namespace: cell
-def: "A cell that lines the trabecular meshwork, which is an area of tissue in the eye located around the base of the cornea, near the ciliary body, and is responsible for draining the aqueous humor from the eye via the anterior chamber (the chamber on the front of the eye covered by the cornea). This cell may play a role in regulating intraocular pressure." []
-synonym: "trabeculocyte" EXACT []
-relationship: part_of UBERON:0005969 ! eye trabecular meshwork
-created_by: tmeehan
-creation_date: 2010-09-23T04:18:50Z
-
-[Term]
-id: CL:0002480
-name: nasal mucosa goblet cell
-namespace: cell
-def: "A goblet cell located in the nasal epithelium." []
-xref: MP:0002262
-relationship: part_of UBERON:0005384 ! nasal cavity epithelium
-created_by: tmeehan
-creation_date: 2010-12-03T03:03:02Z
-
-[Term]
-id: CL:0002485
-name: retinal melanocyte
-namespace: cell
-def: "A melanocyte of the retina. This cell type is distinct from pigmented retinal epithelium." []
-relationship: part_of UBERON:0000966 ! retina
-created_by: tmeehan
-creation_date: 2010-12-03T03:25:32Z
-
-[Term]
-id: CL:0002486
-name: strial intermediate cell
-namespace: cell
-def: "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ." []
-is_a: CL:0002491 ! auditory epithelial cell
-relationship: part_of UBERON:0002282 ! stria vascularis of cochlear duct
-created_by: tmeehan
-creation_date: 2010-12-03T03:29:15Z
-
-[Term]
-id: CL:0002490
-name: organ of Corti supporting cell
-namespace: cell
-def: "A supporting cell of the organ of Corti." []
-is_a: CL:0002315 ! supporting cell of cochlea
-relationship: part_of UBERON:0002227 ! spiral organ of cochlea
-created_by: tmeehan
-creation_date: 2010-12-06T03:09:01Z
-
-[Term]
-id: CL:0002491
-name: auditory epithelial cell
-namespace: cell
-def: "A specialized cell involved in auditory sensory perception." []
-is_a: CL:0000098 ! sensory epithelial cell
-created_by: tmeehan
-creation_date: 2010-12-06T03:18:43Z
-
-[Term]
-id: CL:0002492
-name: strial marginal cell
-namespace: cell
-def: "A polarized columnar cell that covesr the lateral surface of the cochlear duct, secretes potassium ions and forms a continuous sheet in contact with the endolymph; marginal cells form extensive interdigitations with the basal and intermediate cells in the normal adult stria." []
-is_a: CL:0002491 ! auditory epithelial cell
-created_by: tmeehan
-creation_date: 2010-12-06T03:20:41Z
-
-[Term]
-id: CL:0002493
-name: strial basal cell
-namespace: cell
-def: "A polarized cell that is juxtaposed to fibrocytes in the underlying spiral ligament. This cell type secretes potassium ions derived from fibrocytes through gap junctions." []
-comment: Basal cells form a multi-layered epithelial barrier that separates the extracellular spaces of the stria vascularis and the spiral ligament[PMID:18353863]
-is_a: CL:0002491 ! auditory epithelial cell
-relationship: part_of UBERON:0002282 ! stria vascularis of cochlear duct
-created_by: tmeehan
-creation_date: 2010-12-06T03:26:53Z
-
-[Term]
-id: CL:0002550
-name: fibroblast of the conjunctiva
-namespace: cell
-def: "A fibroblast that is part of the conjuctiva of the eye." []
-relationship: part_of UBERON:0001811 ! conjunctiva
-created_by: tmeehan
-creation_date: 2011-02-28T05:03:44Z
-
-[Term]
-id: CL:0002565
-name: iris pigment epithelial cell
-namespace: cell
-def: "A pigment cell located in the epithelium of the iris." []
-relationship: part_of UBERON:0002506 ! iris epithelium
-created_by: tmeehan
-creation_date: 2011-03-01T05:28:52Z
-
-[Term]
-id: CL:0002585
-name: retinal blood vessel endothelial cell
-namespace: cell
-def: "A blood vessel endothelial cell that is part of the retina." []
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0000966 ! retina
-created_by: tmeehan
-creation_date: 2011-03-06T03:28:27Z
-
-[Term]
-id: CL:0002586
-name: retinal pigment epithelial cell
-namespace: cell
-def: "An epithelial cell of the retinal pigmented epithelium." []
-xref: BTO:0004910
-xref: FMA:75802
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0001782 ! pigmented layer of retina
-created_by: tmeehan
-creation_date: 2011-03-06T03:37:09Z
-
-[Term]
-id: CL:0002665
-name: otic fibrocyte
-namespace: cell
-def: "A fibrocyte of the cochlea that has specialized structural and molecular adaptions." []
-relationship: part_of UBERON:0006725 ! spiral ligament
-created_by: tmeehan
-creation_date: 2011-07-11T03:35:01Z
-
-[Term]
-id: CL:0002666
-name: type 2 otic fibrocyte
-namespace: cell
-def: "An otic fibrocyte that underlies the spiral prominence and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." []
-synonym: "type II otic fibrocyte" EXACT []
-synonym: "type II spiral ligament fibrocyte" EXACT []
-is_a: CL:0002665 ! otic fibrocyte
-created_by: tmeehan
-creation_date: 2011-07-11T03:40:40Z
-
-[Term]
-id: CL:0002667
-name: type 5 otic fibrocyte
-namespace: cell
-def: "An otic fibrocyte that resides above the stria vasularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." []
-synonym: "type V otic fibrocyte" EXACT []
-synonym: "type V spiral ligament fibrocyte" EXACT []
-is_a: CL:0002665 ! otic fibrocyte
-created_by: tmeehan
-creation_date: 2011-07-11T03:40:42Z
-
-[Term]
-id: CL:0002668
-name: type 4 otic fibrocyte
-namespace: cell
-def: "An otic fibrocyte that is lateral to the basilar membrane and anchoris it to the lateral wall." []
-synonym: "type IV otic fibrocyte" EXACT []
-synonym: "type IV spiral ligament fibrocyte" EXACT []
-is_a: CL:0002665 ! otic fibrocyte
-created_by: tmeehan
-creation_date: 2011-07-11T03:40:46Z
-
-[Term]
-id: CL:0002669
-name: type 3 otic fibrocyte
-namespace: cell
-def: "An otic fibrocyte that lines the otic capsule." []
-synonym: "type III otic fibrocyte" EXACT []
-synonym: "type III spiral ligament fibrocyte" EXACT []
-is_a: CL:0002665 ! otic fibrocyte
-created_by: tmeehan
-creation_date: 2011-07-11T03:40:50Z
-
-[Term]
-id: CL:0002670
-name: type 1 otic fibrocyte
-namespace: cell
-def: "An otic fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph." []
-synonym: "type I otic fibrocyte" EXACT []
-synonym: "type I spiral ligament fibrocyte" EXACT []
-is_a: CL:0002665 ! otic fibrocyte
-created_by: tmeehan
-creation_date: 2011-07-11T03:39:27Z
-
-[Term]
-id: CL:0005008
-name: macular hair cell
-namespace: cell
-def: "An auditory hair cell located in the macula that is sensitive to auditory stimuli." []
-is_a: CL:0000202 ! auditory hair cell
-relationship: part_of UBERON:0000054 ! macula
-
-[Term]
-id: CL:0005014
-name: auditory epithelial support cell
-namespace: cell
-def: "A non-sensory cell that extends from the basement membrane to the apical surface of the auditory epithelium and provides support for auditory hair cells." []
-is_a: CL:0002491 ! auditory epithelial cell
-
-[Term]
-id: CL:0005015
-name: inner phalangeal cell
-namespace: cell
-def: "An auditory epithelial support cell that surrounds the nerve fibers and synapses of the auditory inner hair cells." []
-xref: FMA:79801
-is_a: CL:0002165 ! phalangeal cell
-
-[Term]
-id: CL:0007017
-name: Stiftchenzellen
-def: "An epidermal cell with apical microvilli or a single apical projection have synaptic associations with nerve fibres in the epidermis." []
-comment: Taxon specificity not yet fully known, but are known in anuran larvae but not in adults.
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-created_by: haendel
-
-[Term]
-id: CL:0008027
-name: rod bipolar cell (sensu Mus)
-def: "A bipolar neuron found in the retina that is synapsed by rod photoreceptor cells.  These neurons have axons that arborize and synapse to targets in inner plexiform layers 4 and 5 and depolarize in response to light." []
-is_a: CL:0000751 ! rod bipolar cell
-created_by: dos
-creation_date: 2017-06-29T11:05:22Z
-
-[Term]
-id: CL:0009001
-name: compound eye retinal cell
-def: "Any cell in the compound eye, a light sensing organ composed of ommatidia." []
-xref: GOC:pr
-xref: PMID:12021768
-
-[Term]
-id: CL:0009004
-name: retinal cell
-namespace: cell
-def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." []
-xref: PMID:10702418
-relationship: part_of UBERON:0005388 ! photoreceptor array
-
-[Term]
-id: CL:0010009
-name: camera-type eye photoreceptor cell
-synonym: "camera type eye photoreceptor cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
-relationship: part_of UBERON:0000019 ! camera-type eye
-
-[Term]
-id: CL:0011004
-name: lens fiber cell
-def: "A vetebrate lens cell that is any of the elongated, tightly packed cells that make up the bulk of the mature lens in a camera-type eye." []
-synonym: "lens fibre cell" EXACT []
-is_a: CL:0002222 ! vertebrate lens cell
-
-[Term]
-id: CL:0011104
-name: interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer." []
-comment: Need to MIREOT retinal inner nuclear layer (part of)
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0001791 ! inner nuclear layer of retina
-
-[Term]
-id: CL:0011105
-name: dopamanergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer, using dopamine." []
-comment: This type of cell is found in Danio rerio.
-is_a: CL:0011104 ! interplexiform cell
-
-[Term]
-id: CL:0011106
-name: GABAnergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer using GABA." []
-comment: This type of cell is found in many mammals.
-is_a: CL:0011104 ! interplexiform cell
-
-[Term]
-id: CL:0011107
-name: Muller cell
-def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." []
-synonym: "Muller glia" EXACT []
-synonym: "Müller cell" EXACT []
-is_a: CL:0009004 ! retinal cell
-relationship: part_of UBERON:0000966 ! retina
-
-[Term]
-id: CL:1000050
-name: lateral line nerve glial cell
-relationship: part_of UBERON:0008906 ! lateral line nerve
-
-[Term]
-id: CL:1000082
-name: stretch receptor cell
-namespace: cell
-is_a: CL:0000006 ! neuronal receptor cell
-
-[Term]
-id: CL:1000191
-name: pillar cell
-namespace: cell
-def: "A rod-like cell in the inner ear, having their heads joined and their bases on the basilar membrane widely separated so as to form a spiral tunnel known as the tunnel of Corti." []
-synonym: "cochlear pillar cell" RELATED []
-synonym: "pillar cell of cochlea" EXACT []
-synonym: "pillar cell of corti" EXACT []
-synonym: "rod cell of Corti" EXACT []
-xref: FMA:75722
-is_a: CL:0002490 ! organ of Corti supporting cell
-
-[Term]
-id: CL:1000236
-name: posterior lateral line nerve glial cell
-is_a: CL:1000050 ! lateral line nerve glial cell
-relationship: part_of UBERON:2000175 ! posterior lateral line nerve
-
-[Term]
-id: CL:1000239
-name: anterior lateral line nerve glial cell
-is_a: CL:1000050 ! lateral line nerve glial cell
-relationship: part_of UBERON:2000425 ! anterior lateral line nerve
-
-[Term]
-id: CL:1000378
-name: type 1 vestibular sensory cell of stato-acoustic epithelium
-namespace: cell
-def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." []
-xref: FMA:263186
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-
-[Term]
-id: CL:1000379
-name: type 1 vestibular sensory cell of epithelium of macula of utricle of membranous labyrinth
-namespace: cell
-def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." []
-xref: FMA:263188
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0003241 ! epithelium of utricle
-
-[Term]
-id: CL:1000380
-name: type 1 vestibular sensory cell of epithelium of macula of saccule of membranous labyrinth
-namespace: cell
-def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." []
-xref: FMA:263190
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0002212 ! macula of saccule of membranous labyrinth
-relationship: part_of UBERON:0003242 ! epithelium of saccule
-
-[Term]
-id: CL:1000381
-name: type 1 vestibular sensory cell of epithelium of crista of ampulla of semicircular duct of membranous labyrinth
-namespace: cell
-def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." []
-xref: FMA:263192
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
-
-[Term]
-id: CL:1000382
-name: type 2 vestibular sensory cell of stato-acoustic epithelium
-namespace: cell
-def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." []
-xref: FMA:263194
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-
-[Term]
-id: CL:1000383
-name: type 2 vestibular sensory cell of epithelium of macula of utricle of membranous labyrinth
-namespace: cell
-def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." []
-xref: FMA:263196
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0003241 ! epithelium of utricle
-
-[Term]
-id: CL:1000384
-name: type 2 vestibular sensory cell of epithelium of macula of saccule of membranous labyrinth
-namespace: cell
-def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." []
-xref: FMA:263198
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0002212 ! macula of saccule of membranous labyrinth
-relationship: part_of UBERON:0003242 ! epithelium of saccule
-
-[Term]
-id: CL:1000385
-name: type 2 vestibular sensory cell of epithelium of crista of ampulla of semicircular duct of membranous labyrinth
-namespace: cell
-def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." []
-xref: FMA:263200
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0000098 ! sensory epithelial cell
-relationship: part_of UBERON:0006935 ! crista ampullaris neuroepithelium
-
-[Term]
-id: CL:1000391
-name: melanocyte of eyelid
-namespace: cell
-def: "A melanocyte that is part of the eyelid." []
-synonym: "eyelid melanocyte" EXACT []
-synonym: "sebaceous gland of wolff" EXACT []
-xref: FMA:59175
-relationship: part_of UBERON:0001711 ! eyelid
-
-[Term]
-id: CL:1000432
-name: conjunctival epithelial cell
-namespace: cell
-def: "An epithelial cell that is part of the conjunctiva." []
-synonym: "epithelial cell of conjunctiva" EXACT []
-xref: FMA:70552
-relationship: part_of UBERON:0001811 ! conjunctiva
-
-[Term]
-id: CL:1000433
-name: epithelial cell of lacrimal canaliculus
-namespace: cell
-def: "An epithelial cell that is part of the lacrimal canaliculus." []
-xref: FMA:70553
-relationship: part_of UBERON:0001770 ! lacrimal canaliculus
-
-[Term]
-id: CL:1000434
-name: epithelial cell of external acoustic meatus
-namespace: cell
-def: "An epithelial cell that is part of the external acoustic meatus." []
-xref: FMA:70555
-relationship: part_of UBERON:0001352 ! external acoustic meatus
-
-[Term]
-id: CL:1000435
-name: epithelial cell of lacrimal duct
-namespace: cell
-def: "An epithelial cell that is part of the lacrimal duct." []
-xref: FMA:70559
-relationship: part_of UBERON:0001850 ! lacrimal drainage system
-
-[Term]
-id: CL:1000436
-name: epithelial cell of lacrimal sac
-namespace: cell
-def: "An epithelial cell that is part of the lacrimal sac." []
-xref: FMA:70560
-relationship: part_of UBERON:0001351 ! lacrimal sac
-
-[Term]
-id: CL:1000437
-name: epithelial cell of nasolacrimal duct
-namespace: cell
-def: "An epithelial cell that is part of the nasolacrimal duct." []
-xref: FMA:70561
-is_a: CL:1000435 ! epithelial cell of lacrimal duct
-relationship: part_of UBERON:0002392 ! nasolacrimal duct
-
-[Term]
-id: CL:1000443
-name: ciliary muscle cell
-namespace: cell
-def: "A smooth muscle cell that is part of the ciliary body." []
-synonym: "smooth muscle cell of ciliary body" EXACT []
-xref: FMA:70610
-relationship: part_of UBERON:0001775 ! ciliary body
-
-[Term]
-id: CL:1000444
-name: mesothelial cell of anterior chamber of eye
-namespace: cell
-def: "A mesothelial cell that is part of the anterior chamber of eyeball." []
-xref: FMA:70615
-relationship: part_of UBERON:0001766 ! anterior chamber of eyeball
-
-[Term]
-id: CL:1000445
-name: myoepithelial cell of dilator pupillae
-namespace: cell
-def: "A myoepithelial cell that is part of the dilatator pupillae." []
-xref: FMA:70619
-relationship: part_of UBERON:0001608 ! dilatator pupillae
-
-[Term]
-id: CL:1001561
-name: vomeronasal sensory neuron
-namespace: cl
-def: "Chemosensitive cells that innervate the vomernasal organ epithelium and are responsible for receiving and transmitting pheromone signals." []
-is_a: CL:0000006 ! neuronal receptor cell
-relationship: part_of UBERON:0002255 ! vomeronasal organ
-
-[Term]
-id: CL:2000019
-name: compound eye photoreceptor cell
-namespace: cell
-def: "Any photoreceptor cell that is part of a compound eye." []
-is_a: CL:0000287 ! eye photoreceptor cell
-relationship: part_of UBERON:0000018 ! compound eye
-created_by: TermGenie
-creation_date: 2014-06-24T23:16:45Z
-
-[Term]
-id: CL:2000034
-name: anterior lateral line neuromast hair cell
-namespace: cell
-def: "Any neuromast hair cell that is part of a anterior lateral line." []
-is_a: CL:0000856 ! neuromast hair cell
-relationship: part_of UBERON:2001470 ! anterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:44:37Z
-
-[Term]
-id: CL:2000035
-name: anterior lateral line neuromast mantle cell
-namespace: cell
-def: "Any neuromast mantle cell that is part of a anterior lateral line." []
-is_a: CL:0000851 ! neuromast mantle cell
-relationship: part_of UBERON:2001470 ! anterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:44:44Z
-
-[Term]
-id: CL:2000036
-name: anterior lateral line neuromast support cell
-namespace: cell
-def: "Any neuromast support cell that is part of a anterior lateral line." []
-is_a: CL:0000852 ! neuromast support cell
-relationship: part_of UBERON:2001470 ! anterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:44:51Z
-
-[Term]
-id: CL:2000037
-name: posterior lateral line neuromast hair cell
-namespace: cell
-def: "Any neuromast hair cell that is part of a posterior lateral line." []
-is_a: CL:0000856 ! neuromast hair cell
-relationship: part_of UBERON:0006334 ! posterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:44:57Z
-
-[Term]
-id: CL:2000038
-name: posterior lateral line neuromast mantle cell
-namespace: cell
-def: "Any neuromast mantle cell that is part of a posterior lateral line." []
-is_a: CL:0000851 ! neuromast mantle cell
-relationship: part_of UBERON:0006334 ! posterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:45:04Z
-
-[Term]
-id: CL:2000039
-name: posterior lateral line neuromast support cell
-namespace: cell
-def: "Any neuromast support cell that is part of a posterior lateral line." []
-is_a: CL:0000852 ! neuromast support cell
-relationship: part_of UBERON:0006334 ! posterior lateral line
-created_by: TermGenie
-creation_date: 2014-06-25T03:45:11Z
-
-[Term]
-id: CL:2000070
-name: optic choroid fibroblast
-namespace: cell
-def: "Any fibroblast that is part of a optic choroid." []
-comment: http://www.sciencellonline.com/site/productInformation.php?keyword=6620
-relationship: part_of UBERON:0001776 ! optic choroid
-created_by: TermGenie
-creation_date: 2014-10-07T18:50:43Z
-
-[Term]
-id: CL:2000084
-name: conjunctiva goblet cell
-namespace: cell
-def: "Any goblet cell that is part of a conjunctiva." []
-is_a: CL:1000432 ! conjunctival epithelial cell
-created_by: TermGenie
-creation_date: 2014-12-02T19:28:38Z
-
-[Term]
-id: CL:2000094
-name: nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa
-namespace: cell
-def: "Any epithelial cell of viscerocranial mucosa that is part of a nasal cavity respiratory epithelium." []
-relationship: part_of UBERON:0005385 ! nasal cavity respiratory epithelium
-created_by: TermGenie
-creation_date: 2015-03-31T22:25:17Z
-
-[Term]
 id: UBERON:0000003
 name: naris
 namespace: uberon
@@ -1596,7 +113,7 @@ relationship: part_of UBERON:0005726 ! chemosensory system
 id: UBERON:0000018
 name: compound eye
 namespace: uberon
-def: "A light sensing organ composed of ommatidia" [FB:gg, Wikipedia:Compound_eye]
+def: "A light sensing organ composed of ommatidia." [FB:gg, Wikipedia:Compound_eye]
 subset: organ_slim
 subset: uberon_slim
 synonym: "adult compound eye" RELATED []
@@ -1610,6 +127,7 @@ xref: FBbt:00004508
 xref: HAO:0000217
 xref: TGMA:0000024
 xref: Wikipedia:Compound_eye
+is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0015165 ! multi-unit eye
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/457 xsd:anyURI
 property_value: UBPROP:0000008 "The term compound eye is sometimes used for the multi-unit eyes of annelids, bivalves, echinoderms. We follow Richter et al and restrict this class to the arthropod structure for these structures" xsd:string {source="PMID:21062451"}
@@ -1693,7 +211,7 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/c
 id: UBERON:0000046
 name: stemma
 namespace: uberon
-def: "eye-spots which may be set into a pit to reduce the angles of light that enters and affects the eyespot, to allow the organism to deduce the angle of incoming light" [Wikipedia:Eye#Pit_eyes, Wikipedia:Stemma]
+def: "Eye-spots which may be set into a pit to reduce the angles of light that enters and affects the eyespot, to allow the organism to deduce the angle of incoming light." [Wikipedia:Eye#Pit_eyes, Wikipedia:Stemma]
 subset: uberon_slim
 synonym: "pit eye" EXACT [Wikipedia:Eye#Pit_eyes]
 xref: Wikipedia:Stemma
@@ -1725,7 +243,7 @@ is_a: UBERON:0000047 ! simple eye
 id: UBERON:0000049
 name: spherical lensed eye
 namespace: uberon
-def: "simple eye that consists of a lens of one refractive index" [Wikipedia:Eye#Spherical_lensed_eye]
+def: "Simple eye that consists of a lens of one refractive index." [Wikipedia:Eye#Spherical_lensed_eye]
 subset: grouping_class
 is_a: UBERON:0000047 ! simple eye
 
@@ -1733,7 +251,7 @@ is_a: UBERON:0000047 ! simple eye
 id: UBERON:0000050
 name: simple eye with multiple lenses
 namespace: uberon
-def: "simple eye that has two or more lenses. Some marine organisms bear more than one lens; for instance the copeopod Pontella has three. The outer has a parabolic surface, countering the effects of spherical aberration while allowing a sharp image to be formed. Copilla's eyes have two lenses, which move in and out like a telescope" [Wikipedia:Eye#Multiple_lenses]
+def: "Simple eye that has two or more lenses. Some marine organisms bear more than one lens; for instance the copeopod Pontella has three. The outer has a parabolic surface, countering the effects of spherical aberration while allowing a sharp image to be formed. Copilla's eyes have two lenses, which move in and out like a telescope." [Wikipedia:Eye#Multiple_lenses]
 subset: grouping_class
 subset: uberon_slim
 xref: Wikipedia:Eye#Multiple_lenses
@@ -1744,7 +262,7 @@ property_value: RO:0002161 NCBITaxon:7742
 id: UBERON:0000053
 name: macula lutea
 namespace: uberon
-def: "An oval area in the retina, usually located temporal to the posterior pole of the eye and slightly below the level of the optic disk. It is characterized by the presence of a yellow pigment diffusely permeating the inner layers, contains the fovea centralis in its center, and provides the best phototopic visual acuity. It is devoid of retinal blood vessels, except in its periphery, and receives nourishment from the choriocapillaris of the choroid. (From Cline et al., Dictionary of Visual Science, 4th ed)" [MESH:A09.371.729.522]
+def: "An oval area in the retina, usually located temporal to the posterior pole of the eye and slightly below the level of the optic disk. It is characterized by the presence of a yellow pigment diffusely permeating the inner layers, contains the fovea centralis in its center, and provides the best phototopic visual acuity. It is devoid of retinal blood vessels, except in its periphery, and receives nourishment from the choriocapillaris of the choroid. (From Cline et al., Dictionary of Visual Science, 4th ed)." [MESH:A09.371.729.522]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "macula" RELATED []
@@ -1838,7 +356,7 @@ creation_date: 2009-04-18T01:35:32Z
 id: UBERON:0000389
 name: lens cortex
 namespace: uberon
-def: "Tissue that surrounds the lens nucleus" [http://www.thefreedictionary.com/lens+cortex]
+def: "Tissue that surrounds the lens nucleus." [http://www.thefreedictionary.com/lens+cortex]
 synonym: "cortex of lens" EXACT [FMA:58970]
 xref: BTO:0001632
 xref: CALOHA:TS-0542
@@ -1897,7 +415,7 @@ id: UBERON:0000396
 name: vallate papilla
 namespace: uberon
 alt_id: UBERON:0002927
-def: "Any of the large papillae, which have multiple taste buds in the trough surrounding the papillae, located near the base and on the dorsal side of the tongue" [MGI:smb, MP:0006258]
+def: "Any of the large papillae, which have multiple taste buds in the trough surrounding the papillae, located near the base and on the dorsal side of the tongue." [MGI:smb, MP:0006258]
 subset: pheno_slim
 synonym: "circumvallate papilla" EXACT [MA:0001594]
 synonym: "circumvallate papilla of tongue" EXACT [FMA:54822]
@@ -2073,7 +591,7 @@ property_value: IAO:0000116 "this term should be ceded to the arthropod anatomy 
 id: UBERON:0000964
 name: cornea
 namespace: uberon
-def: "the transparent anterior portion of the fibrous coat of the eye that serves as the chief refractory structure" [ISBN:0-683-40008-8, MESH:A09.371.060.217, MP:0001312]
+def: "The transparent anterior portion of the fibrous coat of the eye that serves as the chief refractory structure." [ISBN:0-683-40008-8, MESH:A09.371.060.217, MP:0001312]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -2230,7 +748,6 @@ xref: MESH:D005123
 xref: MIAA:0000140
 xref: OpenCyc:Mx4rvViTvpwpEbGdrcN5Y29ycA
 xref: Wikipedia:Eye
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000020 ! sense organ
 relationship: part_of UBERON:0002104 ! visual system
 property_value: IAO:0000232 "This class encompasses a variety of light-detecting structures from different phyla with no implication of homology, from the compound insect eye to the vertebrate camera-type eye (distinct classes are provided for each)" xsd:string
@@ -2498,7 +1015,7 @@ property_value: UBPROP:0000012 "Wikipedia topic refers to the extrinsic auricula
 id: UBERON:0001595
 name: auricular muscle
 namespace: uberon
-def: "A muscle that is part of the pinna and is attached to the auricular cartilage" [http://orcid.org/0000-0002-6601-2165]
+def: "A muscle that is part of the pinna and is attached to the auricular cartilage." [http://orcid.org/0000-0002-6601-2165]
 synonym: "attolens aurem muscle" RELATED [Wikipedia:Auricular_muscles]
 synonym: "attrahens aurem muscle" RELATED [Wikipedia:Auricular_muscles]
 synonym: "auriclular" BROAD []
@@ -2524,7 +1041,7 @@ property_value: UBPROP:0000014 "In some mammals these muscles can adjust the dir
 id: UBERON:0001596
 name: intrinsic auricular muscle
 namespace: uberon
-def: "Auricular muscle attached only to the cartilage of the ear and not to the epicranial aponeurosis" [http://www.daviddarling.info/encyclopedia/A/auricle.html]
+def: "Auricular muscle attached only to the cartilage of the ear and not to the epicranial aponeurosis." [http://www.daviddarling.info/encyclopedia/A/auricle.html]
 xref: EMAPA:37528 {source="MA:th"}
 xref: FMA:48967
 xref: MA:0001231
@@ -3317,7 +1834,7 @@ property_value: UBPROP:0000008 "in humans, the cavity includes and starts at the
 id: UBERON:0001711
 name: eyelid
 namespace: uberon
-def: "A fold of skin that covers and protects part of the eyeball. Examples: upper eyelid, lower eyelid, nictitating membrane" [http://orcid.org/0000-0002-6601-2165]
+def: "A fold of skin that covers and protects part of the eyeball. Examples: upper eyelid, lower eyelid, nictitating membrane." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "blephara" RELATED PLURAL []
@@ -3668,7 +2185,7 @@ property_value: UBPROP:0000009 "The purpose of the pinna is to collect sound. It
 id: UBERON:0001766
 name: anterior chamber of eyeball
 namespace: uberon
-def: "the space in the eye, filled with aqueous humor, and bounded anteriorly by the cornea and a small portion of the sclera and posteriorly by a small portion of the ciliary body, the iris, and part of the crystalline lens" [MESH:A09.371.060.067, MP:0005205]
+def: "The space in the eye, filled with aqueous humor, and bounded anteriorly by the cornea and a small portion of the sclera and posteriorly by a small portion of the ciliary body, the iris, and part of the crystalline lens." [MESH:A09.371.060.067, MP:0005205]
 subset: pheno_slim
 synonym: "anterior chamber" EXACT [HP:0000593, MP:0010709]
 synonym: "anterior chamber of eye" EXACT []
@@ -3700,7 +2217,7 @@ property_value: UBPROP:0000012 "space in EHDAA2 - consider adding Cavity of ante
 id: UBERON:0001767
 name: posterior chamber of eyeball
 namespace: uberon
-def: "the ring-like space, filled with aqueous humor, between the iris/pupil anteriorly and the lens and ciliary body posteriorly" [ISBN:0-683-40008-8, MP:0005299]
+def: "The ring-like space, filled with aqueous humor, between the iris/pupil anteriorly and the lens and ciliary body posteriorly." [ISBN:0-683-40008-8, MP:0005299]
 comment: The posterior chamber should not be confused with vitreous chamber.
 subset: pheno_slim
 synonym: "c. posterior bulbi" RELATED LATIN [Wikipedia:Posterior_chamber_of_eyeball]
@@ -3725,7 +2242,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/55/G
 id: UBERON:0001768
 name: uvea
 namespace: uberon
-def: "the pigmented middle of the three concentric layers that make up an eye, consisting of the iris, ciliary body and choroid[WP,edited]." [MP:0005197, Wikipedia:Uvea]
+def: "The pigmented middle of the three concentric layers that make up an eye, consisting of the iris, ciliary body and choroid[WP,edited]." [MP:0005197, Wikipedia:Uvea]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "pars iridica retinae" RELATED [Wikipedia:Uvea]
@@ -3756,7 +2273,7 @@ property_value: UBPROP:0000007 "uveal" xsd:string
 id: UBERON:0001769
 name: iris
 namespace: uberon
-def: "the adjustable membrane, composed of the stroma and pigmented epithelium, located just in front of the crystalline lens within the eye" [ISBN:0-683-40008-8, MP:0001322]
+def: "The adjustable membrane, composed of the stroma and pigmented epithelium, located just in front of the crystalline lens within the eye." [ISBN:0-683-40008-8, MP:0001322]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -3810,7 +2327,7 @@ property_value: IAO:0000116 "TODO - resolve lacrimal canaliculus vs lacrimal duc
 id: UBERON:0001771
 name: pupil
 namespace: uberon
-def: "the central circular aperture of the iris through which light rays enter the eye" [ISBN:0-683-40008-8, MP:0001317]
+def: "The central circular aperture of the iris through which light rays enter the eye." [ISBN:0-683-40008-8, MP:0001317]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -3839,7 +2356,7 @@ property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably simil
 id: UBERON:0001772
 name: corneal epithelium
 namespace: uberon
-def: "the smooth stratified squamous epithelium that covers the outer surface of the cornea" [MESH:A09.371.060.217.325, MGI:smb, MP:0006000]
+def: "The smooth stratified squamous epithelium that covers the outer surface of the cornea." [MESH:A09.371.060.217.325, MGI:smb, MP:0006000]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -3923,7 +2440,7 @@ property_value: UBPROP:0000011 "Seko et al demonstrate chondrogenic potential an
 id: UBERON:0001775
 name: ciliary body
 namespace: uberon
-def: "the thickened portion of the vascular tunic, which lies between the choroid and the iris, composed of ciliary muscle and ciliary processes" [ISBN:0-683-40008-8, MP:0005099, Wikipedia:Ciliary_body]
+def: "The thickened portion of the vascular tunic, which lies between the choroid and the iris, composed of ciliary muscle and ciliary processes." [ISBN:0-683-40008-8, MP:0005099, Wikipedia:Ciliary_body]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -3956,7 +2473,7 @@ property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably simil
 id: UBERON:0001776
 name: optic choroid
 namespace: uberon
-def: "vascular layer containing connective tissue, of the eye lying between the retina and the sclera. The choroid provides oxygen and nourishment to the outer layers of the retina. Along with the ciliary body and iris, the choroid forms the uveal tract[WP]." [Wikipedia:Choroid]
+def: "Vascular layer containing connective tissue, of the eye lying between the retina and the sclera. The choroid provides oxygen and nourishment to the outer layers of the retina. Along with the ciliary body and iris, the choroid forms the uveal tract[WP]." [Wikipedia:Choroid]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -3995,7 +2512,7 @@ property_value: UBPROP:0000012 "MP treats posterior uvea and optic choroid as di
 id: UBERON:0001777
 name: substantia propria of cornea
 namespace: uberon
-def: "the lamellated connective tissue of the cornea between the Bowman and Descemet membranes" [ISBN:0-683-40008-8, MESH:A09.371.060.217.228, MP:0005300]
+def: "The lamellated connective tissue of the cornea between the Bowman and Descemet membranes." [ISBN:0-683-40008-8, MESH:A09.371.060.217.228, MP:0005300]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -4170,7 +2687,7 @@ property_value: UBPROP:0000003 "(...) we reach the inescapable conclusion that t
 id: UBERON:0001786
 name: fovea centralis
 namespace: uberon
-def: "A depression in the inner retinal surface within the macula lutea, the photoreceptor layer of which is entirely cones and which is specialized for maximum visual acuity" [http://orcid.org/0000-0002-6601-2165, Wikipedia:Fovea]
+def: "A depression in the inner retinal surface within the macula lutea, the photoreceptor layer of which is entirely cones and which is specialized for maximum visual acuity." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Fovea]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "centre of fovea" RELATED [BIRNLEX:2543]
@@ -4372,7 +2889,7 @@ property_value: UBPROP:0000003 "(...) an essentially similar sequence of events 
 id: UBERON:0001792
 name: ganglionic layer of retina
 namespace: uberon
-def: "Cytoarchitectural layer of retina that contains somata of retinal ganglion cells, bounded by the stratum opticum and the inner plexiform layer" [NLX:36500]
+def: "Cytoarchitectural layer of retina that contains somata of retinal ganglion cells, bounded by the stratum opticum and the inner plexiform layer." [NLX:36500]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -4414,7 +2931,7 @@ id: UBERON:0001793
 name: nerve fiber layer of retina
 namespace: uberon
 alt_id: UBERON:0005888
-def: "layer of the retina formed by expansion of the fibers of the optic nerve" [ISBN:0-914294-08-3, MGI:smb]
+def: "Layer of the retina formed by expansion of the fibers of the optic nerve." [ISBN:0-914294-08-3, MGI:smb]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "layer of nerve fibers of retina" EXACT []
@@ -4477,7 +2994,7 @@ property_value: UBPROP:0000001 "Membrane on the apical surface of the retina. Th
 id: UBERON:0001795
 name: inner plexiform layer of retina
 namespace: uberon
-def: "Cytoarchitectural layer of the retina that is made up of a dense reticulum of fibrils formed by interlaced dendrites of retinal ganglion cells and cells of the inner nuclear layer (adapted from Wikipedia)" [NLX:20558]
+def: "Cytoarchitectural layer of the retina that is made up of a dense reticulum of fibrils formed by interlaced dendrites of retinal ganglion cells and cells of the inner nuclear layer (adapted from Wikipedia)." [NLX:20558]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "inner plexiform layer" RELATED [BTO:0003175]
@@ -4550,7 +3067,7 @@ property_value: UBPROP:0000012 "FMA says A+P chambers, and MA states A chamber. 
 id: UBERON:0001797
 name: vitreous humor
 namespace: uberon
-def: "A transparent, semigelatinous substance that fills the cavity behind the crystalline lens of the eye and in front of the retina" [MP:0002699]
+def: "A transparent, semigelatinous substance that fills the cavity behind the crystalline lens of the eye and in front of the retina." [MP:0002699]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -4584,7 +3101,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/S
 id: UBERON:0001798
 name: vitreous body
 namespace: uberon
-def: "Gelatinous mucoid tissue that is composed of vitreous humor and fills the cavity behind the crystalline lens of the eye and in front of the retina[MP,modified]" [MP:0002699]
+def: "Gelatinous mucoid tissue that is composed of vitreous humor and fills the cavity behind the crystalline lens of the eye and in front of the retina[MP,modified]." [MP:0002699]
 subset: pheno_slim
 subset: uberon_slim
 xref: CALOHA:TS-0308
@@ -4627,7 +3144,7 @@ relationship: part_of UBERON:0001802 ! posterior segment of eyeball
 id: UBERON:0001801
 name: anterior segment of eyeball
 namespace: uberon
-def: "any of the parts of the eye that lie in front of, or ventral to, the lens (inclusive)" [ISBN:0-683-40008-8, MESH:A09.371.060, MP:0005193]
+def: "Any of the parts of the eye that lie in front of, or ventral to, the lens (inclusive)." [ISBN:0-683-40008-8, MESH:A09.371.060, MP:0005193]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "anterior eye segment" EXACT []
@@ -4653,7 +3170,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/ba/C
 id: UBERON:0001802
 name: posterior segment of eyeball
 namespace: uberon
-def: "any of the parts of the eye that lie in back of, or dorsal to, the lens (but not inclusive)" [ISBN:0-683-40008-8, MP:0005195]
+def: "Any of the parts of the eye that lie in back of, or dorsal to, the lens (but not inclusive)." [ISBN:0-683-40008-8, MP:0005195]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "eye posterior segment" EXACT []
@@ -4707,7 +3224,7 @@ property_value: IAO:0000232 "this class is the superclass of the anterior epithe
 id: UBERON:0001804
 name: capsule of lens
 namespace: uberon
-def: "the elastic, clear, membrane-like structure, that is outer most layer of the lens" [MGI:smb, MP:0003236, PMID:15483628]
+def: "The elastic, clear, membrane-like structure, that is outer most layer of the lens." [MGI:smb, MP:0003236, PMID:15483628]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -4734,7 +3251,7 @@ property_value: UBPROP:0000012 "FMA classifies this is a capsule and hence an or
 id: UBERON:0001811
 name: conjunctiva
 namespace: uberon
-def: "the mucous membrane that lines the inner surface of the eyelids and the front of the eyeball" [MESH:A09.371.060.200, MGI:csmith, MP:0001310]
+def: "The mucous membrane that lines the inner surface of the eyelids and the front of the eyeball." [MESH:A09.371.060.200, MGI:csmith, MP:0001310]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -5073,7 +3590,7 @@ property_value: UBPROP:0000009 "detects angular acceleration" xsd:string
 id: UBERON:0001844
 name: cochlea
 namespace: uberon
-def: "the spiral-shaped bony canal in the inner ear containing the hair cells that transduce sound. Its core component is the Organ of Corti, the sensory organ of hearing, which is distributed along the partition separating fluid chambers in the coiled tapered tube of the cochlea. [WP,modified]." [ISBN:0-683-40008-8, MP:0000031, Wikipedia:Cochlea]
+def: "The spiral-shaped bony canal in the inner ear containing the hair cells that transduce sound. Its core component is the Organ of Corti, the sensory organ of hearing, which is distributed along the partition separating fluid chambers in the coiled tapered tube of the cochlea. [WP,modified]." [ISBN:0-683-40008-8, MP:0000031, Wikipedia:Cochlea]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -5123,7 +3640,7 @@ property_value: UBPROP:0000012 "sources vary in connection to bony labyrinth" xs
 id: UBERON:0001845
 name: perilymph
 namespace: uberon
-def: "Transudate contained in the osseous labyrinth outside the membranous labyrinth.[FMA]" [FMA:FMA, Wikipedia:Perilymph]
+def: "Transudate contained in the osseous labyrinth outside the membranous labyrinth.[FMA]." [FMA:FMA, Wikipedia:Perilymph]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -5216,7 +3733,7 @@ property_value: UBPROP:0000010 "The earlobe is composed of tough areolar and adi
 id: UBERON:0001848
 name: auricular cartilage
 namespace: uberon
-def: "cartilage of the pinna and much of the external ear canal." [http://medical-dictionary.thefreedictionary.com/auricular+cartilage]
+def: "Cartilage of the pinna and much of the external ear canal." [http://medical-dictionary.thefreedictionary.com/auricular+cartilage]
 subset: pheno_slim
 synonym: "cartilage of pinna" EXACT [FMA:61013]
 synonym: "pinna cartilage" EXACT []
@@ -5232,7 +3749,7 @@ id: UBERON:0001849
 name: membranous labyrinth
 namespace: uberon
 alt_id: UBERON:0010113
-def: "Organ with organ cavity which consists of the vestibular labyrinth and the cochlear labyrinth. The membranous labyrinth is lodged within the bony labyrinth and has the same general form; it is, however, considerably smaller and is partly separated from the bony walls by a quantity of fluid, the perilymph.[FMA, WP]" [FMA:61022, Wikipedia:Membranous_labyrinth]
+def: "Organ with organ cavity which consists of the vestibular labyrinth and the cochlear labyrinth. The membranous labyrinth is lodged within the bony labyrinth and has the same general form; it is, however, considerably smaller and is partly separated from the bony walls by a quantity of fluid, the perilymph.[FMA, WP]." [FMA:61022, Wikipedia:Membranous_labyrinth]
 subset: organ_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -5278,7 +3795,7 @@ property_value: UBPROP:0000008 "chelonians lack a lacrimal duct, and lacrimal/ha
 id: UBERON:0001852
 name: endolymph
 namespace: uberon
-def: "Transudate contained within the membranous labyrinth.[FMA]" [FMA:61112, Wikipedia:Endolymph]
+def: "Transudate contained within the membranous labyrinth.[FMA]." [FMA:61112, Wikipedia:Endolymph]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -5304,7 +3821,7 @@ property_value: UBPROP:0000007 "otolymphic" xsd:string
 id: UBERON:0001853
 name: utricle of membranous labyrinth
 namespace: uberon
-def: "the larger of the two otolith organs in the vestibule" [ISBN:0-8036-0655-9, MGI:smb, MP:0006090, PMID:15363417, Wikipedia:Utricle_(ear)]
+def: "The larger of the two otolith organs in the vestibule." [ISBN:0-8036-0655-9, MGI:smb, MP:0006090, PMID:15363417, Wikipedia:Utricle_(ear)]
 comment: XAO/AAO to be checked - see https://github.com/seger/aao/issues/5; AAO has both utricle and utriculus; these are generally considered synonyms - e.g. http://www.fishbase.org/glossary/Glossary.php?q=utriculus
 subset: organ_slim
 subset: pheno_slim
@@ -5339,7 +3856,7 @@ property_value: UBPROP:0000003 "In gnathostomes, each membranous labyrinth has t
 id: UBERON:0001854
 name: saccule of membranous labyrinth
 namespace: uberon
-def: "the smaller of the two otolith organs in the vestibule" [ISBN:0-8036-0655-9, MGI:smb, MP:0006089, PMID:15363417, Wikipedia:Saccule]
+def: "The smaller of the two otolith organs in the vestibule." [ISBN:0-8036-0655-9, MGI:smb, MP:0006089, PMID:15363417, Wikipedia:Saccule]
 comment: XAO/AAO to be checked - see https://github.com/seger/aao/issues/5
 subset: organ_slim
 subset: pheno_slim
@@ -5416,7 +3933,7 @@ property_value: UBPROP:0000003 "In gnathostomes, each membranous labyrinth has t
 id: UBERON:0001856
 name: semicircular duct
 namespace: uberon
-def: "Any of the three loop-shaped membranous inner tubular parts of the semicircular canals that are about one-fourth the diameter of the corresponding outer bony canals, that communicate at each end with the utricle, and that have near one end an expanded ampulla containing an area of sensory epithelium" [http://dictionary.reference.com/browse/semicircular+duct]
+def: "Any of the three loop-shaped membranous inner tubular parts of the semicircular canals that are about one-fourth the diameter of the corresponding outer bony canals, that communicate at each end with the utricle, and that have near one end an expanded ampulla containing an area of sensory epithelium." [http://dictionary.reference.com/browse/semicircular+duct]
 synonym: "ductus semicirculares" RELATED PLURAL [FMA:71880, FMA:TA]
 synonym: "membranous semicircular canal" RELATED [MA:0000251]
 xref: EMAPA:32830
@@ -5484,7 +4001,7 @@ property_value: UBPROP:0000003 "Gnathostome ears have a horizontal semicircular 
 id: UBERON:0001860
 name: endolymphatic duct
 namespace: uberon
-def: "the small membranous canal, connecting with both saccule and utricle of the membranous labyrinth, passing through the aqueduct of vestibule, and terminating in the endolymphatic sac" [MGI:anna, MGI:smb, MP:0006011]
+def: "The small membranous canal, connecting with both saccule and utricle of the membranous labyrinth, passing through the aqueduct of vestibule, and terminating in the endolymphatic sac." [MGI:anna, MGI:smb, MP:0006011]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -5551,7 +4068,7 @@ relationship: part_of UBERON:0001849 ! membranous labyrinth
 id: UBERON:0001863
 name: scala vestibuli
 namespace: uberon
-def: "the division of the spiral canal of the cochlea lying on the apical side of the spiral lamina and vestibular membrane" [MGI:anna, MP:0003168]
+def: "The division of the spiral canal of the cochlea lying on the apical side of the spiral lamina and vestibular membrane." [MGI:anna, MP:0003168]
 subset: pheno_slim
 subset: uberon_slim
 xref: EMAPA:35753
@@ -5568,7 +4085,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/19/G
 id: UBERON:0001864
 name: scala tympani
 namespace: uberon
-def: "the division of the spiral canal of the cochlea lying on the basal side of the spiral lamina" [MGI:anna, MP:0003167]
+def: "The division of the spiral canal of the cochlea lying on the basal side of the spiral lamina." [MGI:anna, MP:0003167]
 subset: pheno_slim
 subset: uberon_slim
 xref: EMAPA:35752
@@ -5843,7 +4360,7 @@ property_value: UBPROP:0000012 "this is a 'set of anatomical planes' in FMA" xsd
 id: UBERON:0002128
 name: superior olivary complex
 namespace: uberon
-def: "A a collection of brainstem nuclei that functions in multiple aspects of hearing and is an important component of the ascending and descending auditory pathways of the auditory system." [ISBN:0-19-502694-2, Wikipedia:Superior_olivary_complex]
+def: "A collection of brainstem nuclei that functions in multiple aspects of hearing and is an important component of the ascending and descending auditory pathways of the auditory system." [ISBN:0-19-502694-2, Wikipedia:Superior_olivary_complex]
 subset: uberon_slim
 synonym: "nucleus olivaris superior" EXACT LATIN [FMA:72247, FMA:TA]
 synonym: "regio olivaris superioris" RELATED LATIN [NeuroNames:569]
@@ -5927,7 +4444,7 @@ property_value: UBPROP:0000012 "not part of the eye in ZFA. Note this changed to
 id: UBERON:0002212
 name: macula of saccule of membranous labyrinth
 namespace: uberon
-def: "the oval neuroepithelial sensory receptor in the anterior wall of the saccule; hair cells of the neuroepithelium support the statoconial membrane and have terminal arborizations of vestibular nerve fibers around their bodies" [MGI:anna, MP:0004330]
+def: "The oval neuroepithelial sensory receptor in the anterior wall of the saccule; hair cells of the neuroepithelium support the statoconial membrane and have terminal arborizations of vestibular nerve fibers around their bodies." [MGI:anna, MP:0004330]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -5961,7 +4478,7 @@ relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
 id: UBERON:0002214
 name: macula of utricle of membranous labyrinth
 namespace: uberon
-def: "the neuroepithelial sensory receptor in the inferolateral wall of the utricle; hair cells of the neuroepithelium support the statoconial membrane and have terminal arborizations of vestibular nerve fibers around their bodies; normally sensitive to linear acceleration in the longitudinal axis of the body and to gravitational influences" [MGI:anna, MP:0004333]
+def: "The neuroepithelial sensory receptor in the inferolateral wall of the utricle; hair cells of the neuroepithelium support the statoconial membrane and have terminal arborizations of vestibular nerve fibers around their bodies; normally sensitive to linear acceleration in the longitudinal axis of the body and to gravitational influences." [MGI:anna, MP:0004333]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -6158,7 +4675,7 @@ property_value: UBPROP:0000001 "Multicellular mucous glands of the olfactory epi
 id: UBERON:0002233
 name: tectorial membrane of cochlea
 namespace: uberon
-def: "The overlaying membrane of the cochlear duct, an extracellular matrix of the inner ear that contacts the stereocilia bundles of specialized sensory hair cells; sound induces movement of these hair cells relative to the tectorial membrane, deflects the stereocilia, and leads to fluctuations in hair cell membrane potential, transducing sound into electrical signals[MP,modified]" [J:77634, MGI:anna, MP:0003149]
+def: "The overlaying membrane of the cochlear duct, an extracellular matrix of the inner ear that contacts the stereocilia bundles of specialized sensory hair cells; sound induces movement of these hair cells relative to the tectorial membrane, deflects the stereocilia, and leads to fluctuations in hair cell membrane potential, transducing sound into electrical signals[MP,modified]." [J:77634, MGI:anna, MP:0003149]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "tectorial membrane" EXACT [MA:0001199]
@@ -6235,7 +4752,6 @@ xref: FBbt:00005158
 xref: FMA:77659
 xref: VHOG:0000287
 xref: XAO:0000273
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000020 ! sense organ
 property_value: IAO:0000116 "An olfactory organ overlaps with the olfactory system, because some parts of the nose (e.g. nasal skeleton) are parts of the skeletal system, which is spatially disjoint" xsd:string
 property_value: UBPROP:0000012 "fma general anatomical term. xao has no subtypes (but Johnstons organ develops from this). An olfactory organ overlaps with the olfactory system, because some parts of the nose (e.g. nasal skeleton) are parts of the skeletal system, which is spatially disjoint" xsd:string
@@ -6437,7 +4953,7 @@ property_value: UBPROP:0000012 "represented as a wall in FMA. MESH def implies p
 id: UBERON:0002295
 name: scala media
 namespace: uberon
-def: "the division of the spiral canal of the cochlea that contains the organ of Corti (the neuroepithelial receptor organ for hearing)" [MGI:anna, MP:0003169, PMID:1680563]
+def: "The division of the spiral canal of the cochlea that contains the organ of Corti (the neuroepithelial receptor organ for hearing)." [MGI:anna, MP:0003169, PMID:1680563]
 comment: located in between the scala tympani and the scala vestibuli, separated by the basilar membrane and Reissner's membrane (the vestibular membrane) respectively. Scala media houses the organ of Corti. [Wikipedia:Scala_media]
 subset: pheno_slim
 subset: uberon_slim
@@ -6491,7 +5007,7 @@ property_value: UBPROP:0000012 "most AOs consider this part of the middle ear, s
 id: UBERON:0002392
 name: nasolacrimal duct
 namespace: uberon
-def: "the paired channels leading from the lacrimal sacs to the inferior meatus of the nose, through which tears are conducted through the nasal cavity" [ISBN:0-683-40008-8, MP:0008969]
+def: "The paired channels leading from the lacrimal sacs to the inferior meatus of the nose, through which tears are conducted through the nasal cavity." [ISBN:0-683-40008-8, MP:0008969]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "d. nasolacrimalis" RELATED LATIN [Wikipedia:Nasolacrimal_duct]
@@ -6521,7 +5037,7 @@ property_value: UBPROP:0000010 "the nasolacrimal duct, the sac is lined by strat
 id: UBERON:0002393
 name: pharyngotympanic tube
 namespace: uberon
-def: "Organ with organ cavity which connects the cavity of the middle ear to the cavity of the pharynx. Examples: There are only two pharyngotympanic tubes, the right and the left pharyngotympanic tubes.[FMA]" [FMA:FMA, Wikipedia:Eustachian_tube]
+def: "Organ with organ cavity which connects the cavity of the middle ear to the cavity of the pharynx. Examples: There are only two pharyngotympanic tubes, the right and the left pharyngotympanic tubes.[FMA]." [FMA:FMA, Wikipedia:Eustachian_tube]
 subset: organ_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -6581,7 +5097,7 @@ relationship: part_of UBERON:0001776 ! optic choroid
 id: UBERON:0002444
 name: lens fiber
 namespace: uberon
-def: "A region of the lens consisting of packed elongated enucleate cells packed with crystallin" [http://orcid.org/0000-0002-6601-2165]
+def: "A region of the lens consisting of packed elongated enucleate cells packed with crystallin." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 synonym: "fibrae lentis" EXACT LATIN [FMA:76827, FMA:TA]
 synonym: "lens fibers" EXACT []
@@ -6610,7 +5126,7 @@ property_value: UBPROP:0000003 "(...) the line, or Y, or star sutures common to 
 id: UBERON:0002448
 name: fungiform papilla
 namespace: uberon
-def: "Any of the mushroom-shaped papillae, which have a single taste bud at the tip, located mostly on the dorsal anterior portion of the tongue" [MGI:smb, MP:0006257]
+def: "Any of the mushroom-shaped papillae, which have a single taste bud at the tip, located mostly on the dorsal anterior portion of the tongue." [MGI:smb, MP:0006257]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "fungiform papilla of tongue" EXACT [FMA:54821]
@@ -6663,7 +5179,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/31/G
 id: UBERON:0002468
 name: foliate papilla
 namespace: uberon
-def: "Any of the papillae located on the sides of the tongue" [ISBN:0-8036-0655-9, MGI:smb, MP:0006259]
+def: "Any of the papillae located on the sides of the tongue." [ISBN:0-8036-0655-9, MGI:smb, MP:0006259]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "foliate papilla of tongue" EXACT [FMA:54823]
@@ -6809,7 +5325,7 @@ relationship: part_of UBERON:0001769 {source="MA"} ! iris
 id: UBERON:0002518
 name: otolith organ
 namespace: uberon
-def: "the crystalline particles composed of calcium carbonate and a protein which adhere to the gelatinous membrane of the maculae of the utricle and saccule (otolithic membrane)" [ISBN:0-683-40008-8, MGI:llw2, MP:0002894]
+def: "The crystalline particles composed of calcium carbonate and a protein which adhere to the gelatinous membrane of the maculae of the utricle and saccule (otolithic membrane)." [ISBN:0-683-40008-8, MGI:llw2, MP:0002894]
 subset: efo_slim
 subset: organ_slim
 subset: pheno_slim
@@ -6837,7 +5353,7 @@ property_value: UBPROP:0000003 "In fishes, as in other vertebrates, the vestibul
 id: UBERON:0002519
 name: otolithic part of statoconial membrane
 namespace: uberon
-def: "The layer of the statoconial membrane that is composed of otoliths" [PMID:2482728]
+def: "The layer of the statoconial membrane that is composed of otoliths." [PMID:2482728]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "membrana statoconiorum" BROAD LATIN [FMA:75573, FMA:TA]
@@ -6855,7 +5371,7 @@ relationship: part_of UBERON:0016567 ! statoconial membrane
 id: UBERON:0002536
 name: arthropod sensillum
 namespace: uberon
-def: "Sense organ embedded in the integument and consisting of one or a cluster of sensory neurons and associated sensory structures, support cells and glial cells forming a single organised unit with a largely bona-fide boundary.[FBbt]" [FBbt:00007152, Wikipedia:Sensillum]
+def: "Sense organ embedded in the integument and consisting of one or a cluster of sensory neurons and associated sensory structures, support cells and glial cells forming a single organised unit with a largely bona-fide boundary.[FBbt]." [FBbt:00007152, Wikipedia:Sensillum]
 subset: efo_slim
 subset: uberon_slim
 synonym: "sensillum" EXACT [FBbt:00007152, HAO:0000933]
@@ -6947,7 +5463,7 @@ property_value: IAO:0000116 "In TA they are grouped in both the pons and medulla
 id: UBERON:0002689
 name: supraoptic crest
 namespace: uberon
-def: "one of the circumventricular organs of the brain. The OVLT is outside the blood brain barrier, and so neurons in this region can respond to factors that are present in the systemic circulation." [https://sourceforge.net/tracker/?func=detail&aid=3474225&group_id=76834&atid=1205376, Wikipedia:Organum_vasculosum_of_the_lamina_terminalis]
+def: "One of the circumventricular organs of the brain. The OVLT is outside the blood brain barrier, and so neurons in this region can respond to factors that are present in the systemic circulation." [https://sourceforge.net/tracker/?func=detail&aid=3474225&group_id=76834&atid=1205376, Wikipedia:Organum_vasculosum_of_the_lamina_terminalis]
 synonym: "olfactory ventricle (olfactory part of lateral ventricle)" RELATED [BAMS:OV]
 synonym: "organum vasculosum" RELATED [NeuroNames:383]
 synonym: "organum vasculosum lamina terminalis" EXACT LATIN [NLXANAT:100313]
@@ -6979,7 +5495,7 @@ property_value: UBPROP:0000012 "NIF has two classes here; Editor note: consider 
 id: UBERON:0002758
 name: dorsal nucleus of medial geniculate body
 namespace: uberon
-def: "Dorsal division of the medial geniculate nucleus, as first defined by Morest (1964) in the cat, but also described in the rat. It fills all but the medial edge of the posterior tip in cat, and joins the lateral thalamic nucleus anteriorly (http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1261345/?page=3)" [BIRNLEX:1608]
+def: "Dorsal division of the medial geniculate nucleus, as first defined by Morest (1964) in the cat, but also described in the rat. It fills all but the medial edge of the posterior tip in cat, and joins the lateral thalamic nucleus anteriorly (http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1261345/?page=3)." [BIRNLEX:1608]
 synonym: "DMG" BROAD ABBREVIATION [BIRNLEX:1608, NIFSTD:NeuroNames_abbrevSource]
 synonym: "dorsal medial geniculate nucleus" RELATED [BAMS:MGD]
 synonym: "dorsal nucleus of medial geniculate complex" EXACT [FMA:62216]
@@ -7245,7 +5761,7 @@ relationship: part_of UBERON:0002824 ! vestibular ganglion
 id: UBERON:0002827
 name: vestibulocochlear ganglion
 namespace: uberon
-def: "the group of neuron cell bodies associated with the eighth cranial nerve during embryogenesis; splits in later development to form the cochlear and vestibular ganglia" [MGI:smb, MP:0003703]
+def: "The group of neuron cell bodies associated with the eighth cranial nerve during embryogenesis; splits in later development to form the cochlear and vestibular ganglia." [MGI:smb, MP:0003703]
 subset: efo_slim
 subset: pheno_slim
 subset: vertebrate_core
@@ -7322,7 +5838,7 @@ relationship: part_of UBERON:0022434 {source="Wikipedia"} ! primary superior oli
 id: UBERON:0002971
 name: periolivary nucleus
 namespace: uberon
-def: "A nucleus of the superior olivary complex that surrounds the primary superior olivary nuclei" [Wikipedia:Superior_olivary_complex#Periolivary_nuclei]
+def: "A nucleus of the superior olivary complex that surrounds the primary superior olivary nuclei." [Wikipedia:Superior_olivary_complex#Periolivary_nuclei]
 synonym: "nuclei periolivares" EXACT LATIN [FMA:72475, FMA:TA]
 synonym: "nucleus periolivaris" RELATED LATIN [NeuroNames:574]
 synonym: "peri-olivary nuclei" EXACT [FMA:72475]
@@ -7399,7 +5915,7 @@ relationship: part_of UBERON:0001927 ! medial geniculate body
 id: UBERON:0003065
 name: ciliary marginal zone
 namespace: uberon
-def: "Region at the periphery of the retina where retinal stem cells are located. After 60 hpf, the CMZ is the source of most retinal growth.[Wehman et al, 2005]" [ZFIN:curator]
+def: "Region at the periphery of the retina where retinal stem cells are located. After 60 hpf, the CMZ is the source of most retinal growth.[Wehman et al, 2005]." [ZFIN:curator]
 subset: efo_slim
 subset: uberon_slim
 synonym: "circumferential germinal zone" RELATED []
@@ -7421,7 +5937,7 @@ property_value: UBPROP:0000003 "The retina of all vertebrates develops via simil
 id: UBERON:0003069
 name: otic placode
 namespace: uberon
-def: "A cranial placode which, once specified, invaginates to form an otic cup, which eventually separates from the surface ectoderm to form the otic vesicle or otocyst, a rounded structure without appar- ent polarity. As the otic placode invaginates into a cup neuroblasts delaminate from the anterior ventral aspect of the otic epithelium to give rise to neurons of the vestibulocochlear (statoacoustic) ganglion of cranial nerve VIII[NBK]" [NCBIBook:NBK53175, Wikipedia:Otic_placode]
+def: "A cranial placode which, once specified, invaginates to form an otic cup, which eventually separates from the surface ectoderm to form the otic vesicle or otocyst, a rounded structure without appar- ent polarity. As the otic placode invaginates into a cup neuroblasts delaminate from the anterior ventral aspect of the otic epithelium to give rise to neurons of the vestibulocochlear (statoacoustic) ganglion of cranial nerve VIII[NBK]." [NCBIBook:NBK53175, Wikipedia:Otic_placode]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -7899,7 +6415,7 @@ property_value: IAO:0000116 "TODO - add cell types" xsd:string
 id: UBERON:0003386
 name: smooth muscle of eye
 namespace: uberon
-def: "any of the striated muscles that move the eye and include: superior rectus, inferior rectus, medial rectus, lateral rectus, superior oblique, inferior oblique, retractor bulbi" [MGI:cwg, MP:0005247]
+def: "Any of the striated muscles that move the eye and include: superior rectus, inferior rectus, medial rectus, lateral rectus, superior oblique, inferior oblique, retractor bulbi." [MGI:cwg, MP:0005247]
 subset: pheno_slim
 synonym: "ocular smooth muscle" EXACT [MA:0001268]
 xref: EMAPA:18807
@@ -8266,7 +6782,7 @@ property_value: UBPROP:0000012 "MP defines this in a may more appropriate to som
 id: UBERON:0003950
 name: inner ear canal
 namespace: uberon
-def: "The tubular ducts of the inner ear" [MP:0002729]
+def: "The tubular ducts of the inner ear." [MP:0002729]
 subset: pheno_slim
 xref: EMAPA:37882 {source="MA:th"}
 is_a: CARO:0000000 ! anatomical entity
@@ -8276,7 +6792,7 @@ relationship: part_of UBERON:0001846 ! internal ear
 id: UBERON:0003951
 name: ocular fundus
 namespace: uberon
-def: "The posterior concave interior of the eye, consisting of the retina, the choroid, the posterior segment of the sclera, the optic disk, and blood vessels, visible by an ophthalmoscope" [MP:0002864, Wikipedia:Fundus_(eye)]
+def: "The posterior concave interior of the eye, consisting of the retina, the choroid, the posterior segment of the sclera, the optic disk, and blood vessels, visible by an ophthalmoscope." [MP:0002864, Wikipedia:Fundus_(eye)]
 subset: pheno_slim
 synonym: "eye fundus" EXACT []
 synonym: "fundus" EXACT [HP:0001098]
@@ -8298,7 +6814,7 @@ property_value: IAO:0000116 "TODO - check relationships" xsd:string
 id: UBERON:0003952
 name: anterior stroma of cornea
 namespace: uberon
-def: "The anterior segment of the lamellated connective tissue layer of the cornea" [MP:0003093]
+def: "The anterior segment of the lamellated connective tissue layer of the cornea." [MP:0003093]
 subset: pheno_slim
 synonym: "anterior stroma" BROAD [MP:0003093]
 synonym: "cornea anterior stroma" EXACT [MP:0003093]
@@ -8309,7 +6825,7 @@ relationship: part_of UBERON:0001777 ! substantia propria of cornea
 id: UBERON:0003953
 name: posterior stroma of cornea
 namespace: uberon
-def: "The posterior segment of the lamellated connective tissue layer of the cornea" [MP:0003094]
+def: "The posterior segment of the lamellated connective tissue layer of the cornea." [MP:0003094]
 subset: pheno_slim
 synonym: "cornea posterior stroma" EXACT [MP:0003094]
 synonym: "posterior stroma" BROAD [MP:0003094]
@@ -8320,7 +6836,7 @@ relationship: part_of UBERON:0001777 ! substantia propria of cornea
 id: UBERON:0003956
 name: aqueous drainage system
 namespace: uberon
-def: "The structures associated with drainage of the aqueous humor from the eye, that include the trabecular meshwork, Schlemm's canal, the uveoscleral network, and the aqueous veins" [MP:0005198]
+def: "The structures associated with drainage of the aqueous humor from the eye, that include the trabecular meshwork, Schlemm's canal, the uveoscleral network, and the aqueous veins." [MP:0005198]
 subset: pheno_slim
 xref: EMAPA:37427 {source="MA:th"}
 is_a: UBERON:0000467 ! anatomical system
@@ -8359,7 +6875,7 @@ property_value: UBPROP:0000011 "Bruch's membrane is present by midterm in fetal 
 id: UBERON:0003966
 name: gonial bone
 namespace: uberon
-def: "investing bone that lies on the surface of the malleus." [MP:0008380]
+def: "Investing bone that lies on the surface of the malleus." [MP:0008380]
 subset: pheno_slim
 synonym: "gonium" EXACT [MP:0008380]
 xref: EMAPA:37874 {source="MA:th"}
@@ -8370,7 +6886,7 @@ property_value: IAO:0000116 "To be revisted after a review of auditory ossicles"
 id: UBERON:0003976
 name: saccule duct
 namespace: uberon
-def: "The saccular portion of the utriculosaccular duct that normally extends from the sacculus to the endolymphatic duct" [MP:0009259]
+def: "The saccular portion of the utriculosaccular duct that normally extends from the sacculus to the endolymphatic duct." [MP:0009259]
 subset: pheno_slim
 synonym: "saccular duct" EXACT [MP:0009259]
 synonym: "saccular part of utriculosaccular duct" EXACT []
@@ -8383,7 +6899,7 @@ relationship: part_of UBERON:0011774 ! utriculosaccular duct
 id: UBERON:0003977
 name: utricle duct
 namespace: uberon
-def: "The utricular portion of the utriculosaccular duct that normally extends from the utriculus to the endolymphatic duct" [MP:0009260]
+def: "The utricular portion of the utriculosaccular duct that normally extends from the utriculus to the endolymphatic duct." [MP:0009260]
 subset: pheno_slim
 synonym: "utricular duct" EXACT [MP:0009260]
 synonym: "utricular part of utriculosaccular duct" EXACT []
@@ -8396,7 +6912,7 @@ relationship: part_of UBERON:0011774 ! utriculosaccular duct
 id: UBERON:0003979
 name: utricle valve
 namespace: uberon
-def: "The utriculo-endolymphatic (UE) valve which is located in the antero-inferior wall of the utricle at the orifice of the utricular duct and serves to regulate endolymph volume in the endolymphatic sac, the utricle and the canals" [MP:0009261]
+def: "The utriculo-endolymphatic (UE) valve which is located in the antero-inferior wall of the utricle at the orifice of the utricular duct and serves to regulate endolymph volume in the endolymphatic sac, the utricle and the canals." [MP:0009261]
 subset: pheno_slim
 relationship: part_of UBERON:0001853 ! utricle of membranous labyrinth
 
@@ -8416,7 +6932,7 @@ relationship: part_of UBERON:0001818 ! tarsal gland
 id: UBERON:0004012
 name: golgi tendon organ
 namespace: uberon
-def: "The sensory organ in muscle that is involved in regulating muscle tension" [MP:0000999]
+def: "The sensory organ in muscle that is involved in regulating muscle tension." [MP:0000999]
 subset: pheno_slim
 synonym: "neurotendinous ending" EXACT [FMA:83608]
 synonym: "neurotendinous organ of golgi" EXACT [FMA:83608]
@@ -8431,7 +6947,7 @@ is_a: UBERON:0000020 ! sense organ
 id: UBERON:0004019
 name: baroreceptor
 namespace: uberon
-def: "The sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure" [MP:0004118]
+def: "The sensory nerve endings in the wall of the atria of the heart, vena cava, aortic arch and carotid sinus that are sensitive to changes in blood pressure." [MP:0004118]
 comment: WP classifies as mechanoreceptor
 subset: pheno_slim
 synonym: "baroceptor" RELATED [Wikipedia:Baroreceptor]
@@ -8450,7 +6966,7 @@ property_value: seeAlso https://github.com/obophenotype/uberon/issues/510 xsd:an
 id: UBERON:0004029
 name: canal of Schlemm
 namespace: uberon
-def: "The vascular structure encircling the anterior chamber of the eye, through which the aqueous humor is returned to the blood circulation" [MP:0005204, Wikipedia:Schlemm's_canal]
+def: "The vascular structure encircling the anterior chamber of the eye, through which the aqueous humor is returned to the blood circulation." [MP:0005204, Wikipedia:Schlemm's_canal]
 subset: pheno_slim
 synonym: "Schlemm's canal" EXACT []
 synonym: "scleral sinus" EXACT [FMA:51873]
@@ -8470,7 +6986,7 @@ relationship: part_of UBERON:0003956 ! aqueous drainage system
 id: UBERON:0004030
 name: aqueous vein
 namespace: uberon
-def: "A vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)" [MP:0005207]
+def: "A vessel that receives aqueous humor from the sinus venosus sclerae (canal of Schlemm)." [MP:0005207]
 comment: a mixture of episcleral venous blood and aqueous humor mix in this combined channel[http://www.atlasophthalmology.com]
 subset: pheno_slim
 xref: EMAPA:37428 {source="MA:th"}
@@ -8481,7 +6997,7 @@ property_value: depicted:by http://www.atlasophthalmology.com/media/Aqeous+Vein+
 id: UBERON:0004043
 name: semicircular canal ampulla
 namespace: uberon
-def: "The spherical enlargement at the base of each semicircular canal where they connect with the utricle, containing the crista ampullaris which detects movement of the fluid within the canals" [MP:0008488, Wikipedia:Osseous_ampullae]
+def: "The spherical enlargement at the base of each semicircular canal where they connect with the utricle, containing the crista ampullaris which detects movement of the fluid within the canals." [MP:0008488, Wikipedia:Osseous_ampullae]
 subset: pheno_slim
 synonym: "ampullae osseae" RELATED LATIN [Wikipedia:Osseous_ampullae]
 synonym: "membraneous ampulla of the semicircular duct" RELATED [MP:0008488]
@@ -8507,7 +7023,7 @@ relationship: part_of UBERON:0000004 ! nose
 id: UBERON:0004106
 name: crus of ear
 namespace: uberon
-def: "horizontal piece of cartilage located outside the ear canal that divides the upper and lower parts of the ear." [HP:0009895]
+def: "Horizontal piece of cartilage located outside the ear canal that divides the upper and lower parts of the ear." [HP:0009895]
 subset: pheno_slim
 synonym: "crus helicis" EXACT LATIN [FMA:61024, FMA:TA]
 synonym: "crus of helical part of auricular cartilage" EXACT []
@@ -8555,7 +7071,7 @@ property_value: UBPROP:0000009 "attenuate low-frequency sounds, reduce masking o
 id: UBERON:0004114
 name: tympanic cavity
 namespace: uberon
-def: "small cavity surrounding the bones of the middle ear." [Wikipedia:Tympanic_cavity]
+def: "Small cavity surrounding the bones of the middle ear." [Wikipedia:Tympanic_cavity]
 synonym: "anatomical cavity of middle ear" EXACT [OBOL:automatic]
 synonym: "cavitas tympani" EXACT LATIN [Wikipedia:Tympanic_cavity]
 synonym: "cavitas tympanica" RELATED [BTO:0002098]
@@ -8732,7 +7248,7 @@ relationship: part_of UBERON:0000964 ! cornea
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/gkoutos
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/15 xsd:anyURI
-property_value: UBPROP:0000001 "Acellular anatomical structure composed of collagen, Descemet's membrane is secreted as a basement membrane of the corneal endothelium. Located between the stroma and the corneal endothelium, it is approximately 0.15 micrometer thick at 6 months post-fertilization.[ZFIN]" xsd:string {date_retrieved="2016-05-01", external_class="TAO:0002157", ontology="ZFIN", source="ORCiD:0000-0001-9114-8737", source="ZFIN:ZDB-PUB-061010-3"}
+property_value: UBPROP:0000001 "Acellular anatomical structure composed of collagen, Descemet's membrane is secreted as a basement membrane of the corneal endothelium. Located between the stroma and the corneal endothelium, it is approximately 0.15 micrometer thick at 6 months post-fertilization.[ZFIN]" xsd:string {date_retrieved="2016-05-01", external_class="TAO:0002157", ontology="ZFIN", source="ZFIN:ZDB-PUB-061010-3", source="https://orcid.org/0000-0001-9114-8737"}
 
 [Term]
 id: UBERON:0004370
@@ -9115,7 +7631,7 @@ property_value: RO:0002161 NCBITaxon:8782 {source="PMID:21622558", source="PMID:
 id: UBERON:0004868
 name: tapetum lucidum of camera-type eye
 namespace: uberon
-def: "A layer of tissue in the eye of many vertebrate animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors" [PMID:14738502, Wikipedia:Tapetum_lucidum]
+def: "A layer of tissue in the eye of many vertebrate animals, that lies immediately behind or sometimes within the retina. It reflects visible light back through the retina, increasing the light available to the photoreceptors." [PMID:14738502, Wikipedia:Tapetum_lucidum]
 synonym: "tapeta lucida" EXACT PLURAL []
 synonym: "tapetum lucidum" EXACT []
 xref: Wikipedia:Tapetum_lucidum
@@ -9131,7 +7647,7 @@ property_value: UBPROP:0000009 "It normally functions at low light levels to pro
 id: UBERON:0004904
 name: neuron projection bundle connecting eye with brain
 namespace: uberon
-def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila" [http://orcid.org/0000-0002-6601-2165]
+def: "A neuron projection bundle that connects the retina or its analog in the eye with the brain. This includes the vertebrate optic nerve (not truly a nerve) as well as analogous structures such as the Bolwig nerve in Drosophila." [http://orcid.org/0000-0002-6601-2165]
 comment: for the vertebrate-specific structure, see UBERON:0000941 (cranial nerve II)
 subset: grouping_class
 subset: pheno_slim
@@ -9233,7 +7749,7 @@ relationship: part_of UBERON:0001770 ! lacrimal canaliculus
 id: UBERON:0005042
 name: inner epithelial layer of tympanic membrane
 namespace: uberon
-def: "A portion of the tympanic cavity epithelium which makes up the outer (cuticular) layer of the tympanic membrane" [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
+def: "A portion of the tympanic cavity epithelium which makes up the outer (cuticular) layer of the tympanic membrane." [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
 synonym: "mucosa of tympanic membrane" EXACT [FMA:56844]
 synonym: "mucous layer of tympanic membrane" EXACT [FMA:56844]
 synonym: "mucous stratum of tympanic membrane" EXACT [FMA:56844]
@@ -9361,7 +7877,7 @@ relationship: part_of UBERON:0013399 ! blood vessel layer of choroid
 id: UBERON:0005342
 name: malleus head
 namespace: uberon
-def: "rounded portion of the malleus that articulates with the body of the incus[MP]." [MP:0008379]
+def: "Rounded portion of the malleus that articulates with the body of the incus[MP]." [MP:0008379]
 subset: pheno_slim
 synonym: "head of malleus" EXACT [FMA:52761]
 xref: FMA:52761
@@ -9478,7 +7994,7 @@ id: UBERON:0005410
 name: cartilaginous otic capsule
 namespace: uberon
 alt_id: UBERON:0010351
-def: "A otic capsule endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
+def: "An otic capsule endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 subset: vertebrate_core
 synonym: "auditory capsule" EXACT [ZFA:0001500]
 synonym: "otic capsule cartilage element" EXACT []
@@ -9499,7 +8015,7 @@ property_value: UBPROP:0000008 "In elasmobranchs, the otic capsule remains carti
 id: UBERON:0005411
 name: bony otic capsule
 namespace: uberon
-def: "the cartilage or bony capsule surrounding the inner ear mechanism" [ISBN:0-683-40008-8, MP:0000039]
+def: "The cartilage or bony capsule surrounding the inner ear mechanism." [ISBN:0-683-40008-8, MP:0000039]
 subset: pheno_slim
 synonym: "otic capsule bone" EXACT []
 xref: EMAPA:17596
@@ -9725,7 +8241,7 @@ property_value: UBPROP:0000001 "By the upgrowth of the surrounding parts the olf
 id: UBERON:0005908
 name: conjunctival sac
 namespace: uberon
-def: "A serous sac which is the aggregate of the conjunctiva plus the conjunctival space" [https://github.com/obophenotype/uberon/wiki/Serous-Membranes-Design-Pattern]
+def: "A serous sac which is the aggregate of the conjunctiva plus the conjunctival space." [https://github.com/obophenotype/uberon/wiki/Serous-Membranes-Design-Pattern]
 synonym: "conjunctiva serous sac" EXACT []
 synonym: "subbrillar sac" NARROW [NCBITaxon:8570]
 xref: EMAPA:18233
@@ -9774,7 +8290,7 @@ property_value: UBPROP:0000008 "Fish have two pairs of external nostrils." xsd:s
 id: UBERON:0005931
 name: primary choana
 namespace: uberon
-def: "initial opening of the nasal pits and olfactory sac of the embryo into the rostral part of the primordial oronasal cavity, before the formation of the secondary palate." [http://www.drugs.com/dict/primary-choana.html]
+def: "Initial opening of the nasal pits and olfactory sac of the embryo into the rostral part of the primordial oronasal cavity, before the formation of the secondary palate." [http://www.drugs.com/dict/primary-choana.html]
 xref: EHDAA:9087
 xref: EMAPA:17851
 xref: FMA:295944
@@ -9841,7 +8357,7 @@ relationship: part_of UBERON:0002227 ! spiral organ of cochlea
 id: UBERON:0005973
 name: blood-inner ear barrier
 namespace: uberon
-def: "The function of the group of barriers and transport systems which regulate the transport of various substances from blood to inner ear tissue and maintain the microhomeostasis and functional integrity of the inner ear; the endothelial cells of the inner ear blood capillaries, linked to each other by tight junctions, represent the main component of the blood-inner ear barrier" [MP:0004999]
+def: "The function of the group of barriers and transport systems which regulate the transport of various substances from blood to inner ear tissue and maintain the microhomeostasis and functional integrity of the inner ear; the endothelial cells of the inner ear blood capillaries, linked to each other by tight junctions, represent the main component of the blood-inner ear barrier." [MP:0004999]
 relationship: part_of UBERON:0001846 ! internal ear
 
 [Term]
@@ -9946,7 +8462,7 @@ relationship: part_of UBERON:0003269 {source="EHDAA2"} ! skeletal muscle tissue 
 id: UBERON:0006248
 name: incus pre-cartilage condensation
 namespace: uberon
-def: "A incus endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
+def: "An incus endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 subset: emapa_ehdaa2
 xref: EHDAA2:0000813
 xref: EHDAA:9024
@@ -9960,7 +8476,7 @@ property_value: IAO:0000116 "in EHDAA2 this develops from both mandibular and ma
 id: UBERON:0006253
 name: embryonic intraretinal space
 namespace: uberon
-def: "The space separating the outer pigment epithelium and the inner neural retina of the optic cup and of the retina" [VHOG:0000534]
+def: "The space separating the outer pigment epithelium and the inner neural retina of the optic cup and of the retina." [VHOG:0000534]
 subset: emapa_ehdaa2
 synonym: "intraretinal space" EXACT [EHDAA2:0000889]
 synonym: "intraretinal space of optic cup" EXACT [EMAPA:16676]
@@ -10032,7 +8548,7 @@ id: UBERON:0006273
 name: otic pit
 namespace: uberon
 alt_id: UBERON:0009123
-def: "the pair of depressions of thickened otic placode epithelium, that further develops into the otic vesicles" [ISBN:0-683-40008-8, MP:0011172]
+def: "The pair of depressions of thickened otic placode epithelium, that further develops into the otic vesicles." [ISBN:0-683-40008-8, MP:0011172]
 subset: emapa_ehdaa2
 subset: pheno_slim
 synonym: "otic cup" EXACT [NCBIBook:NBK53175]
@@ -10077,7 +8593,7 @@ property_value: UBPROP:0000011 "independent of the mesenchymal condensation that
 id: UBERON:0006311
 name: chamber of eyeball
 namespace: uberon
-def: "A segment of the eyeball that is filled with refractive media" [http://orcid.org/0000-0002-6601-2165]
+def: "A segment of the eyeball that is filled with refractive media." [http://orcid.org/0000-0002-6601-2165]
 synonym: "chamber of eye" RELATED [BTO:0002085]
 synonym: "eye chamber" EXACT [MA:0002459]
 synonym: "eyeball chamber" EXACT [FMA:58071]
@@ -10126,7 +8642,7 @@ property_value: UBPROP:0000012 "subclass of 'muscle layer' in FMA" xsd:string {e
 id: UBERON:0006320
 name: inferior oblique extraocular muscle
 namespace: uberon
-def: "thin, narrow muscle placed near the anterior margin of the floor of the orbit." [Wikipedia:Inferior_oblique_muscle]
+def: "Thin, narrow muscle placed near the anterior margin of the floor of the orbit." [Wikipedia:Inferior_oblique_muscle]
 comment: Taxon notes (via VHOG): "The ability to rotate the eyeball is common to all vertebrates with well-developed eyes, regardless of the habitat in which they live, so these [extrinsic ocular] muscles tend to be conservative. They change little during the course of evolution." Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective, Third Edition (2001) Orlando Fla.: Harcourt College Publishers, p.331
 subset: vertebrate_core
 synonym: "inferior oblique" EXACT [FMA:49040]
@@ -10244,7 +8760,7 @@ property_value: UBPROP:0000003 "The ability to rotate the eyeball is common to a
 id: UBERON:0006330
 name: anterior lingual gland
 namespace: uberon
-def: "the small glands located near the apex of the tongue on either side of the frenulum" [ISBN:0-683-40008-8, MP:0009518]
+def: "The small glands located near the apex of the tongue on either side of the frenulum." [ISBN:0-683-40008-8, MP:0009518]
 subset: pheno_slim
 synonym: "anterior lingual salivary gland" EXACT [FMA:59796]
 synonym: "Bauhin's glands" EXACT [Wikipedia:Anterior_lingual_glands]
@@ -10514,7 +9030,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/13/G
 id: UBERON:0006699
 name: foramen cecum of tongue
 namespace: uberon
-def: "The median pit on the dorsum of the posterior part of the tongue, from which the limbs of a V-shaped furrow run forward and outward; the foramen cecum is the point of attachment of the thyroglossal duct and is formed during the embryological descent of the thyroid gland" [https://github.com/obophenotype/uberon/issues/281, MP:0013234]
+def: "The median pit on the dorsum of the posterior part of the tongue, from which the limbs of a V-shaped furrow run forward and outward; the foramen cecum is the point of attachment of the thyroglossal duct and is formed during the embryological descent of the thyroid gland." [https://github.com/obophenotype/uberon/issues/281, MP:0013234]
 subset: pheno_slim
 synonym: "blind foramen of tongue" EXACT [MP:0013234]
 synonym: "cecal foramen of tongue" EXACT [MP:0013234]
@@ -10559,7 +9075,7 @@ property_value: UBPROP:0000008 "Conical in shape, with the cone extending inward
 id: UBERON:0006723
 name: cochlear modiolus
 namespace: uberon
-def: "the central cone shaped core of spongy bone about which turns the spiral canal" [ISBN:0-683-40008-8, MGI:anna, MP:0003309]
+def: "The central cone shaped core of spongy bone about which turns the spiral canal." [ISBN:0-683-40008-8, MGI:anna, MP:0003309]
 subset: organ_slim
 subset: pheno_slim
 synonym: "cochlea modiolus" EXACT [FMA:61278]
@@ -10671,7 +9187,7 @@ property_value: UBPROP:0000007 "canthal" xsd:string
 id: UBERON:0006761
 name: corneo-scleral junction
 namespace: uberon
-def: "the edge of the cornea where it joins the sclera; the limbus is a common site for the occurrence of corneal epithelial neoplasm" [MP:0013477]
+def: "The edge of the cornea where it joins the sclera; the limbus is a common site for the occurrence of corneal epithelial neoplasm." [MP:0013477]
 comment: This location has parts such as blood vessels etc. See PMC2868485, http://www.ncbi.nlm.nih.gov/pubmed/2695343
 subset: efo_slim
 subset: pheno_slim
@@ -10725,7 +9241,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/S
 id: UBERON:0006763
 name: epithelium of conjunctiva
 namespace: uberon
-def: "Layer of nonkeratinized squamous epithelium lining the conjunctiva, overlying scleral tissue" [http://orcid.org/0000-0002-6601-2165]
+def: "Layer of nonkeratinized squamous epithelium lining the conjunctiva, overlying scleral tissue." [http://orcid.org/0000-0002-6601-2165]
 subset: efo_slim
 subset: pheno_slim
 synonym: "conjunctiva epithelium" EXACT [FMA:62131]
@@ -10854,7 +9370,7 @@ relationship: part_of UBERON:0004721 {source="MA"} ! crista ampullaris
 id: UBERON:0006937
 name: inner ear epithelium
 namespace: uberon
-def: "the epithelial cell layer containing the sensory hair cells and their associated sensory nerve terminals" [MGI:csmith, MP:0003308]
+def: "The epithelial cell layer containing the sensory hair cells and their associated sensory nerve terminals." [MGI:csmith, MP:0003308]
 subset: pheno_slim
 xref: EMAPA:32883
 xref: MA:0001189
@@ -11006,7 +9522,7 @@ property_value: IAO:0000232 "this class exists largely for consistency with the 
 id: UBERON:0007250
 name: lingual tonsil
 namespace: uberon
-def: "the lymph tissue on the floor of the oropharyngeal passage, near the root of the tongue" [MGI:cwg, MP:0002385]
+def: "The lymph tissue on the floor of the oropharyngeal passage, near the root of the tongue." [MGI:cwg, MP:0002385]
 subset: pheno_slim
 synonym: "lingual tonsillar tissue" EXACT [MA:0000773]
 synonym: "tonsilla lingualis" RELATED LATIN [Wikipedia:Lingual_tonsils]
@@ -11094,7 +9610,7 @@ property_value: UBPROP:0000001 "Patches of thickened, pseudostratified epitheliu
 id: UBERON:0007352
 name: stria vascularis vasculature
 namespace: uberon
-def: "blood vessels supplying the stria vascularis in the cochlea of the inner ear." [MP:0004368]
+def: "Blood vessels supplying the stria vascularis in the cochlea of the inner ear." [MP:0004368]
 synonym: "stria vascularis blood vessel" RELATED [MP:0004368]
 synonym: "stria vascularis blood vessels" EXACT []
 is_a: CARO:0000000 ! anatomical entity
@@ -11172,7 +9688,7 @@ property_value: IAO:0000116 "check inferior/ventral" xsd:string
 id: UBERON:0007374
 name: incus cartilage element
 namespace: uberon
-def: "A incus endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
+def: "An incus endochondral element that is composed primarily of cartilage tissue." [OBOL:automatic]
 xref: EMAPA:18228
 is_a: UBERON:0015017 ! incus endochondral element
 is_a: UBERON:0035131 ! auditory ossicle cartilage element
@@ -11205,7 +9721,7 @@ property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/thumb
 id: UBERON:0007625
 name: pigment epithelium of eye
 namespace: uberon
-def: "epithelial layer of the retina, ciliary body, or iris composed of cells containing pigment granules." [MP:0005200]
+def: "Epithelial layer of the retina, ciliary body, or iris composed of cells containing pigment granules." [MP:0005200]
 subset: pheno_slim
 synonym: "eye pigment epithelium" RELATED [MESH:A09.371.670]
 xref: GAID:907
@@ -11311,7 +9827,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/e1/G
 id: UBERON:0007820
 name: accessory nasal cartilage
 namespace: uberon
-def: "small cartilages of the nose connecting the greater alar cartilage and lateral nasal cartilage." [Wikipedia:Accessory_nasal_cartilages]
+def: "Small cartilages of the nose connecting the greater alar cartilage and lateral nasal cartilage." [Wikipedia:Accessory_nasal_cartilages]
 synonym: "cartilago nasi accessoriae" RELATED LATIN [Wikipedia:Accessory_nasal_cartilage]
 xref: FMA:59510
 xref: SCTID:368124000
@@ -11377,7 +9893,7 @@ property_value: UBPROP:0000001 "Subdivision of face, the exterior of the nose, w
 id: UBERON:0007833
 name: osseus semicircular canal
 namespace: uberon
-def: "the organ of balance composed of three long bony tubes of the labyrinth" [MESH:A09.246.631.663, MGI:cwg, MP:0002428]
+def: "The organ of balance composed of three long bony tubes of the labyrinth." [MESH:A09.246.631.663, MGI:cwg, MP:0002428]
 subset: pheno_slim
 synonym: "osseous semicircular canal" EXACT [OBOL:automatic]
 xref: MA:0000250
@@ -11968,7 +10484,7 @@ property_value: UBPROP:0000012 "Also 1st arch maxillary mesenchyme in EHDAA2" xs
 id: UBERON:0009647
 name: tympanic membrane epithelium
 namespace: uberon
-def: "One of the two epithelia which make up the tympanic membrane (along with the fibrous layer)" [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
+def: "One of the two epithelia which make up the tympanic membrane (along with the fibrous layer)." [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
 synonym: "tympanic epithelium" EXACT [MA:0001224]
 synonym: "tympanic membrane epithelial layer" EXACT []
 xref: EMAPA:19064
@@ -11984,7 +10500,7 @@ relationship: part_of UBERON:0002364 ! tympanic membrane
 id: UBERON:0009648
 name: eyelid subcutaneous connective tissue
 namespace: uberon
-def: "A eyelid connective tissue that is part of a hypodermis." [OBOL:automatic]
+def: "An eyelid connective tissue that is part of a hypodermis." [OBOL:automatic]
 synonym: "superficial fascia of eyelid" RELATED [FMA:63975]
 xref: EMAPA:37533 {source="MA:th"}
 xref: FMA:63975
@@ -12021,7 +10537,7 @@ property_value: UBPROP:0000008 "In humans, the oronasal membrane ruptures during
 id: UBERON:0009692
 name: lumen of pharyngotympanic tube
 namespace: uberon
-def: "A organ cavity that is part of a pharyngotympanic tube." [OBOL:automatic]
+def: "An organ cavity that is part of a pharyngotympanic tube." [OBOL:automatic]
 synonym: "auditory tube lumen" EXACT [EHDAA2:0004118]
 synonym: "lumen of auditory tube" EXACT [FMA:60079]
 synonym: "lumen of eustachian tube" EXACT [FMA:60079]
@@ -12035,7 +10551,7 @@ property_value: IAO:0000116 "Check relationships for conformance with AAO and XA
 id: UBERON:0009716
 name: cupular organ
 namespace: uberon
-def: "Epithelial sense organ containing the cupula housing a gelatinous material elongated from the basement of the organ toward the atrial cavity. The basement of the cupular organ consists of two cell types: sensory cells and support cell" [DOI:10.2108/zsj.27.842]
+def: "Epithelial sense organ containing the cupula housing a gelatinous material elongated from the basement of the organ toward the atrial cavity. The basement of the cupular organ consists of two cell types: sensory cells and support cell." [DOI:10.2108/zsj.27.842]
 is_a: UBERON:0000020 ! sense organ
 property_value: UBPROP:0000008 "possible homologues of neuromasts in the inner ear (Bone & Ryan, 1978; Wada et al 1998). In the tunicate cupular organ, the sensory cell is a primary neuron sending an axon to the CNS. The sensory cilium is within a deep indentation of the cell and is surrounded by a collar of short microvilli." xsd:string
 
@@ -12187,7 +10703,7 @@ relationship: part_of UBERON:0009892 ! ascidian anterior sensory vesicle
 id: UBERON:0009954
 name: vomeronasal system
 namespace: uberon
-def: "A vertebrate nasal chemosensory system that is responsible for detecting intraspecific pheromonal cues as well as environmental odorants" [http://orcid.org/0000-0002-6601-2165]
+def: "A vertebrate nasal chemosensory system that is responsible for detecting intraspecific pheromonal cues as well as environmental odorants." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0005725 ! olfactory system
 property_value: IAO:0000116 "check relationship to olfactory system. Evolution: The morphological components of the VNS are found only in tetrapods, but the genetic components of the system have been found in teleost fish, in addition to tetrapods. In tetrapods, the VNS was thought to be the olfactory system for detecting pheromones, while the main olfactory system detected general odorants (Scalia and Winans 1975). However, experimental evidence suggests that there is not such a clear functional distinction (Restrepo et al. 2004; Baxi, Dorries, and Eisthen 2006; Spehr et al. 2006; Kelliher 2007). Sea lampreys produce unique bile acids which act as pheromones both in migration and mate finding (Li, Sorensen, and Gallaher 1995; Li et al. 2002; Siefkes and Li 2004). However, bile acids in teleost fish are known to require components of the main olfactory signal transduction pathway (Hansen et al. 2003), and interruption of the VNS signal transduction pathway had no effect on bile acid olfactory response (Hansen et al. 2003)[Grus - EVOLUTION OF THE VOMERONASAL SYSTEM VIEWED THROUGH SYSTEM-SPECIFIC GENES]" xsd:string
@@ -12247,7 +10763,7 @@ property_value: UBPROP:0000012 "check NCIT" xsd:string {external_ontology="NCIT"
 id: UBERON:0010033
 name: posterior part of tongue
 namespace: uberon
-def: "The Posterior tongue, or pharyngeal part, is the part of the tongue behind the terminal sulcus. At its root, it is directed backward, and connected with the hyoid bone by the Hyoglossi and Genioglossi muscles and the hyoglossal membrane; with the epiglottis by three folds (glossoepiglottic) of mucous membrane; with the soft palate by the glossopalatine arches; and with the pharynx by the Constrictores pharyngis superiores and the mucous membrane. It is derived primarily from the third pharyngeal arch. (The second arch has a substantial contribution during fetal development, but this later atrophies. The fourth arch may also contribute, depending upon how the boundaries of the tongue are defined.)" [Wikipedia:Posterior_tongue]
+def: "The Posterior tongue, or pharyngeal part, is the part of the tongue behind the terminal sulcus. At its root, it is directed backward, and connected with the hyoid bone by the Hyoglossi and Genioglossi muscles and the hyoglossal membrane; with the epiglottis by three folds (glossoepiglottic) of mucous membrane; with the soft palate by the glossopalatine arches; and with the pharynx by the Constrictores pharyngis superiores and the mucous membrane. It is derived primarily from the third pharyngeal arch. (The second arch has a substantial contribution during fetal development, but this later atrophies. The fourth arch may also contribute, depending upon how the boundaries of the tongue are defined.)." [Wikipedia:Posterior_tongue]
 synonym: "base of the tongue" RELATED [Wikipedia:Posterior_tongue]
 synonym: "base of tongue" EXACT [Wikipedia:Posterior_tongue]
 synonym: "pars posterior (dorsum linguae)" EXACT [FMA:54645]
@@ -12339,7 +10855,7 @@ relationship: part_of UBERON:0001691 {source="EHDAA2"} ! external ear
 id: UBERON:0010069
 name: outer epithelial layer of tympanic membrane
 namespace: uberon
-def: "A portion of the external acoustic meatus epithelium which makes up the outer (cuticular) layer of the tympanic membrane" [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
+def: "A portion of the external acoustic meatus epithelium which makes up the outer (cuticular) layer of the tympanic membrane." [https://orcid.org/0000-0002-6601-2165, PMID:11237469]
 synonym: "cuticular layer of tympanic membrane" EXACT [FMA:56819]
 synonym: "cuticular stratum of tympanic membrane" EXACT [FMA:56819]
 synonym: "outer cuticular layer of tympanic membrane" EXACT [FMA:56819]
@@ -12528,7 +11044,7 @@ property_value: UBPROP:0000202 FMA:264089
 id: UBERON:0010244
 name: choroid tapetum lucidum
 namespace: uberon
-def: "A tapetum lucidum that is part of the choroid. The choroidal tapetum lucidum lies immediately adjacent to the choriocapillaris and external to the retinal epithelium" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A tapetum lucidum that is part of the choroid. The choroidal tapetum lucidum lies immediately adjacent to the choriocapillaris and external to the retinal epithelium." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 synonym: "choroidal tapetum lucidum" EXACT []
 synonym: "tapetum choroideae" EXACT [BTO:0001828]
 xref: BTO:0001828
@@ -12542,7 +11058,7 @@ property_value: UBPROP:0000012 "we make the assumption that the BTO class belong
 id: UBERON:0010245
 name: retinal tapetum lucidum
 namespace: uberon
-def: "A tapetum lucidum that is part of the retina, within the cytoplasm of the retinal epithelium" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A tapetum lucidum that is part of the retina, within the cytoplasm of the retinal epithelium." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 xref: Wikipedia:Tapetum_lucidum#Classification
 is_a: UBERON:0004868 ! tapetum lucidum of camera-type eye
 relationship: part_of UBERON:0000966 ! retina
@@ -12560,7 +11076,7 @@ property_value: UBPROP:0000008 "the tapetum lucidum is an integral part of the p
 id: UBERON:0010246
 name: choroidal guanine tapetum
 namespace: uberon
-def: "A choroid tapetum lucidum that is made of a palisade of cells containing stacks of flat hexagonal crystals of guanine" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A choroid tapetum lucidum that is made of a palisade of cells containing stacks of flat hexagonal crystals of guanine." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 xref: Wikipedia:Tapetum_lucidum#Classification
 is_a: UBERON:0010244 ! choroid tapetum lucidum
 property_value: RO:0002175 NCBITaxon:7778
@@ -12573,7 +11089,7 @@ property_value: UBPROP:0000008 "The elasmobranch tapetum in Squalus and Scyliorh
 id: UBERON:0010247
 name: choroidal tapetum cellulosum
 namespace: uberon
-def: "A choroid tapetum lucidum that consists of layers of cells containing organized, highly refractive crystals. These crystals are diverse in shape and makeup" [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
+def: "A choroid tapetum lucidum that consists of layers of cells containing organized, highly refractive crystals. These crystals are diverse in shape and makeup." [https://orcid.org/0000-0002-6601-2165, PMID:14738502, Wikipedia:Tapetum_lucidum#Classification]
 comment: The choroidal stroma adjacent to the tapetum lucidum contains numerous small blood vessels that penetrate the tapetal layer to form a single-layered capillary network, known as the choriocapillaris, on the surface of the tapetum. The tapetum cellulosum is thus interposed between the large branching vessels in the choroid and the single layer of the choriocapillaris beneath the retinal epithelium[PMID:14738502]
 synonym: "choroid tapetum cellulosum" EXACT []
 xref: Wikipedia:Tapetum_lucidum#Classification
@@ -12825,7 +11341,7 @@ property_value: UBPROP:0000008 "The most extreme development of the palpebral is
 id: UBERON:0010310
 name: nictitating membrane lamina
 namespace: uberon
-def: "thin cartilage element that stiffens the nictitating membrane." [PMID:16496288]
+def: "Thin cartilage element that stiffens the nictitating membrane." [PMID:16496288]
 comment: Morphology notes: Generally, the cartilage consists of a long narrow appendix which is followed by a variable crossbar[PMID:11325064]
 synonym: "cartilago intercipiens" EXACT [PMID:16496288]
 synonym: "nictitating membrane cartilage" EXACT [PMID:11325064]
@@ -12837,7 +11353,7 @@ property_value: UBPROP:0000008 "these laminae may consist of purely hyaline cart
 id: UBERON:0010311
 name: scleral sesamoid bone
 namespace: uberon
-def: "A sesamoid bone that lies adjacent to the tendon of one of the muscles responsible for adducting the nictitating membrane (the pyramidal nictitating muscle)" [PMID:16496288]
+def: "A sesamoid bone that lies adjacent to the tendon of one of the muscles responsible for adducting the nictitating membrane (the pyramidal nictitating muscle)." [PMID:16496288]
 synonym: "scleral sesamoid" EXACT [PMID:16496288]
 synonym: "scleral sesamoid element" EXACT []
 synonym: "sesamoideum esclerae" EXACT [PMID:16496288]
@@ -12857,7 +11373,7 @@ relationship: part_of UBERON:0001711 ! eyelid
 id: UBERON:0010349
 name: otic capsule pre-cartilage condensation
 namespace: uberon
-def: "A otic capsule endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
+def: "An otic capsule endochondral element that is composed primarily of a pre-cartilage condensation." [OBOL:automatic]
 synonym: "otic capsule anlage" EXACT []
 xref: EHDAA2:0000833
 is_a: UBERON:0004637 ! otic capsule
@@ -12939,7 +11455,7 @@ property_value: UBPROP:0000202 FMA:76585
 id: UBERON:0010426
 name: oropharyngeal choana
 namespace: uberon
-def: "opening/conduit between the nasal cavity and the oropharynx via the roof of the mouth." [https://orcid.org/0000-0002-6601-2165]
+def: "Opening/conduit between the nasal cavity and the oropharynx via the roof of the mouth." [https://orcid.org/0000-0002-6601-2165]
 synonym: "apertura nasalis interna" RELATED [AAO:0000025]
 synonym: "choana of oropharynx" EXACT []
 synonym: "cleft palate" RELATED []
@@ -12986,7 +11502,7 @@ property_value: UBPROP:0000008 "In snakes, there is no eyelid and the brille is 
 id: UBERON:0010521
 name: electroreceptor organ
 namespace: uberon
-def: "An organ that is capable of detecting electrical stimulus" [http://orcid.org/0000-0002-6601-2165]
+def: "An organ that is capable of detecting electrical stimulus." [http://orcid.org/0000-0002-6601-2165]
 synonym: "electric sense organ" EXACT []
 synonym: "electroreception organ" EXACT []
 is_a: UBERON:0000020 ! sense organ
@@ -13086,7 +11602,7 @@ property_value: UBPROP:0000001 "Duct that contains perilymph[ZFA:0005461, ZFIN:c
 id: UBERON:0011078
 name: endolymphatic space
 namespace: uberon
-def: "endolymph-filled space contained by the membranous labyrinth." [http://medical-dictionary.thefreedictionary.com/endolymphatic+space]
+def: "Endolymph-filled space contained by the membranous labyrinth." [http://medical-dictionary.thefreedictionary.com/endolymphatic+space]
 xref: FMA:77823
 xref: SCTID:279856000
 is_a: CARO:0000000 ! anatomical entity
@@ -13120,7 +11636,7 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/m
 id: UBERON:0011186
 name: Krause's gland
 namespace: uberon
-def: "small, mucous accessory lacrimal glands that are found underneath the eyelid where the upper and lower conjuctivae meet. Their ducts unite into a rather long sinus which open into the fornix conjunctiva. There are approximately forty Krause glands in the region of the upper eyelid, and around 6 to 8 in the region of the lower lid. The function of these glands are to produce tears which are secreted onto the surface of the conjuctiva" [Wikipedia:Krause's_glands]
+def: "Small, mucous accessory lacrimal glands that are found underneath the eyelid where the upper and lower conjuctivae meet. Their ducts unite into a rather long sinus which open into the fornix conjunctiva. There are approximately forty Krause glands in the region of the upper eyelid, and around 6 to 8 in the region of the lower lid. The function of these glands are to produce tears which are secreted onto the surface of the conjuctiva." [Wikipedia:Krause's_glands]
 synonym: "accessory lacrimal gland" BROAD [FMA:59056]
 synonym: "conjunctival gland" BROAD [FMA:59056]
 synonym: "Krause gland" EXACT [FMA:59056]
@@ -13174,7 +11690,7 @@ property_value: UBPROP:0000008 "present in many moles, and are particularly comm
 id: UBERON:0011256
 name: rhinarium
 namespace: uberon
-def: "Moist, hairless, crenelated area around nostrils of some mammals" [http://anthro.palomar.edu/primate/glossary.htm, Wikipedia:Rhinarium]
+def: "Moist, hairless, crenelated area around nostrils of some mammals." [http://anthro.palomar.edu/primate/glossary.htm, Wikipedia:Rhinarium]
 xref: Wikipedia:Rhinarium
 relationship: part_of UBERON:0007827 ! external nose
 property_value: RO:0002161 NCBITaxon:9475
@@ -13207,7 +11723,7 @@ is_a: UBERON:0001583 ! extrinsic auricular muscle
 id: UBERON:0011599
 name: lenticular process of incus bone
 namespace: uberon
-def: "The long ventral process of the incus bone which articulates with the stapes" [http://palaeos.com/vertebrates/glossary/glossaryJL.html]
+def: "The long ventral process of the incus bone which articulates with the stapes." [http://palaeos.com/vertebrates/glossary/glossaryJL.html]
 synonym: "incus crus longum" EXACT [http://palaeos.com]
 synonym: "lenticular process" BROAD []
 synonym: "lenticular process of incus" EXACT [FMA:52775]
@@ -13269,7 +11785,7 @@ relationship: part_of UBERON:0001846 {source="MP"} ! internal ear
 id: UBERON:0011865
 name: corneal stroma collagen fibril
 namespace: uberon
-def: "The connective tissue bundles in the extracellular matrix of corneal stroma that are composed of collagen, and play a role in tissue strength and elasticity" [MP:0011650]
+def: "The connective tissue bundles in the extracellular matrix of corneal stroma that are composed of collagen, and play a role in tissue strength and elasticity." [MP:0011650]
 subset: pheno_slim
 relationship: part_of UBERON:0001777 ! substantia propria of cornea
 
@@ -13339,7 +11855,7 @@ property_value: UBPROP:0000012 "A line in FMA, a structure in MP" xsd:string {ex
 id: UBERON:0011922
 name: cochlear basement membrane
 namespace: uberon
-def: "The the continuous basement membrane found within the membranous labyrinth of the cochlea, known to extend from the limbus, down to the inner sulcus, across the basilar membrane, up to the external sulcus to the spiral prominence and radiating into the spiral ligament ensheathing the root cell processes" [MP:0004598]
+def: "The the continuous basement membrane found within the membranous labyrinth of the cochlea, known to extend from the limbus, down to the inner sulcus, across the basilar membrane, up to the external sulcus to the spiral prominence and radiating into the spiral ligament ensheathing the root cell processes." [MP:0004598]
 subset: pheno_slim
 synonym: "basement membrane of cochlear labyrinth" EXACT []
 synonym: "cochlea basement membrane" EXACT []
@@ -13350,7 +11866,7 @@ relationship: part_of UBERON:0002499 ! cochlear labyrinth
 id: UBERON:0011931
 name: nasal hair
 namespace: uberon
-def: "Hair in the nose" [Wikipedia:Nasal_hair]
+def: "Hair in the nose." [Wikipedia:Nasal_hair]
 subset: pheno_slim
 synonym: "hair of nose" EXACT [FMA:53670]
 synonym: "hair of vestibular part of nose" EXACT [FMA:53670]
@@ -13364,7 +11880,7 @@ relationship: part_of UBERON:0000004 ! nose
 id: UBERON:0012128
 name: nose tip
 namespace: uberon
-def: "Outermost point on an external nose or snout" [http://orcid.org/0000-0002-6601-2165, https://github.com/obophenotype/uberon/issues/109]
+def: "Outermost point on an external nose or snout." [http://orcid.org/0000-0002-6601-2165, https://github.com/obophenotype/uberon/issues/109]
 subset: pheno_slim
 synonym: "apex nasi" EXACT LATIN [FMA:TA]
 synonym: "apex of nose" EXACT [FMA:59518]
@@ -13453,7 +11969,7 @@ relationship: part_of UBERON:0008959 ! auditory bulla
 id: UBERON:0013190
 name: entotympanic bone
 namespace: uberon
-def: "Entotympanics are independent elements present in the auditory bullae of various eutherians" [DOI:10.1023/A\:1020538313412]
+def: "Entotympanics are independent elements present in the auditory bullae of various eutherians." [DOI:10.1023/A\:1020538313412]
 synonym: "entotyympanic" RELATED []
 relationship: part_of UBERON:0001756 ! middle ear
 
@@ -13521,7 +12037,7 @@ relationship: part_of UBERON:0001711 {source="ncithesaurus"} ! eyelid
 id: UBERON:0013226
 name: accessory lacrimal gland
 namespace: uberon
-def: "Serous gland with distended lumen. It includes the gland of Krause in the lacrimal sac and the gland of Wolfring on the inner surface of the upper eyelid. (NCI)" [ncithesaurus:Accessory_Lacrimal_Gland]
+def: "Serous gland with distended lumen. It includes the gland of Krause in the lacrimal sac and the gland of Wolfring on the inner surface of the upper eyelid. (NCI)." [ncithesaurus:Accessory_Lacrimal_Gland]
 synonym: "glandulae lacrimales accessoriae" EXACT LATIN []
 xref: FMA:320425
 xref: NCIT:C74586
@@ -13673,7 +12189,7 @@ relationship: part_of UBERON:0001723 ! tongue
 id: UBERON:0013477
 name: blowhole
 namespace: uberon
-def: "A hole at the top of a cetacean's head through which the animal breathes air" [Wikipedia:Blowhole_(anatomy)]
+def: "A hole at the top of a cetacean's head through which the animal breathes air." [Wikipedia:Blowhole_(anatomy)]
 synonym: "blowhole slit" NARROW []
 xref: Wikipedia:Blowhole_(anatomy)
 is_a: UBERON:0005928 ! external naris
@@ -13683,7 +12199,7 @@ property_value: UBPROP:0000008 "Baleen whales have two blowholes positioned in a
 id: UBERON:0013598
 name: accessory nucleus of optic tract
 namespace: uberon
-def: "One of a set of small groups of neuron cell bodies located along the trajectory of optic fibers in the mesencephalon. These consist of the posterior nucleus [TA] (nucleus posterior [TA]), medial nucleus [TA] (nucleus medialis [TA]), and lateral nucleus [TA] (nucleus lateralis [TA]), which are also called the posterior, medial, and lateral terminal nuclei. The connections of these nuclei, along with the nucleus of the optic tract, make up the accessory optic system that appears to be concerned with retinal slip in specific directions" [http://www.medilexicon.com/medicaldictionary.php?t=61308]
+def: "One of a set of small groups of neuron cell bodies located along the trajectory of optic fibers in the mesencephalon. These consist of the posterior nucleus [TA] (nucleus posterior [TA]), medial nucleus [TA] (nucleus medialis [TA]), and lateral nucleus [TA] (nucleus lateralis [TA]), which are also called the posterior, medial, and lateral terminal nuclei. The connections of these nuclei, along with the nucleus of the optic tract, make up the accessory optic system that appears to be concerned with retinal slip in specific directions." [http://www.medilexicon.com/medicaldictionary.php?t=61308]
 synonym: "nuclei accessorii tractus optici" EXACT LATIN []
 synonym: "nucleus of accessory optic system" EXACT []
 synonym: "terminal nucleus of accessory optic tract" EXACT [http://www.medilexicon.com/medicaldictionary.php?t=61308]
@@ -13790,7 +12306,7 @@ is_a: UBERON:0001726 ! papilla of tongue
 id: UBERON:0013679
 name: inner canthus of right eye
 namespace: uberon
-def: "A inner canthus that is part of a right eye." [OBOL:automatic]
+def: "An inner canthus that is part of a right eye." [OBOL:automatic]
 synonym: "medial angle of right eye" RELATED [FMA:59319]
 synonym: "medial canthus of right eye" RELATED [FMA:59319]
 synonym: "right inner canthus" EXACT []
@@ -13804,7 +12320,7 @@ relationship: part_of UBERON:0004549 ! right eye
 id: UBERON:0013680
 name: inner canthus of left eye
 namespace: uberon
-def: "A inner canthus that is part of a left eye." [OBOL:automatic]
+def: "An inner canthus that is part of a left eye." [OBOL:automatic]
 synonym: "left inner canthus" EXACT []
 synonym: "left medial canthus" EXACT []
 synonym: "left medial palpebral commissure" EXACT [FMA:59320]
@@ -14031,7 +12547,7 @@ is_a: UBERON:0035130 ! auditory ossicle endochondral element
 id: UBERON:0015017
 name: incus endochondral element
 namespace: uberon
-def: "A incus bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
+def: "An incus bone or its cartilage or pre-cartilage precursor." [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "incus element" EXACT [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 synonym: "incus skeletal element" BROAD [https://github.com/obophenotype/uberon/wiki/Modeling-endochondral-elements-Design-Pattern]
 is_a: UBERON:0035130 ! auditory ossicle endochondral element
@@ -14050,7 +12566,7 @@ is_a: UBERON:0035130 ! auditory ossicle endochondral element
 id: UBERON:0015120
 name: right outer canthus
 namespace: uberon
-def: "A outer canthus that is in_the_right_side_of a head." [OBOL:automatic]
+def: "An outer canthus that is in_the_right_side_of a head." [OBOL:automatic]
 synonym: "lateral angle of right eye" RELATED [FMA:59317]
 synonym: "lateral canthus of right eye" RELATED [FMA:59317]
 synonym: "right angle of eye" EXACT []
@@ -14064,7 +12580,7 @@ property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Model
 id: UBERON:0015121
 name: left outer canthus
 namespace: uberon
-def: "A outer canthus that is in_the_left_side_of a head." [OBOL:automatic]
+def: "An outer canthus that is in_the_left_side_of a head." [OBOL:automatic]
 synonym: "lateral angle of left eye" RELATED [FMA:59318]
 synonym: "lateral canthus of left eye" RELATED [FMA:59318]
 synonym: "left angle of eye" EXACT []
@@ -14099,7 +12615,7 @@ property_value: UBPROP:0000008 "Typically a single duct per gland, but Harderian
 id: UBERON:0015155
 name: conjunctival space
 namespace: uberon
-def: "A anatomical space that is enclosed by a conjunctiva." [OBOL:automatic]
+def: "An anatomical space that is enclosed by a conjunctiva." [OBOL:automatic]
 synonym: "cavity of conjunctival sac" EXACT [FMA:59083]
 synonym: "conjunctival sac cavity" EXACT [FMA:59083]
 synonym: "subbrillar space" NARROW [NCBITaxon:8570, PMID:7559104]
@@ -14114,7 +12630,7 @@ relationship: part_of UBERON:0005908 {source="FMA"} ! conjunctival sac
 id: UBERON:0015165
 name: multi-unit eye
 namespace: uberon
-def: "An eye consisting of multiple light-sensing organs" [http://orcid.org/0000-0002-6601-2165, PMID:21062451]
+def: "An eye consisting of multiple light-sensing organs." [http://orcid.org/0000-0002-6601-2165, PMID:21062451]
 is_a: UBERON:0000970 ! eye
 property_value: RO:0002161 NCBITaxon:7742
 property_value: RO:0002175 NCBITaxon:6340 {notes="present on tentacular crown", source="PMID:21062451"}
@@ -14142,7 +12658,7 @@ property_value: UBPROP:0000007 "tapetal" xsd:string
 id: UBERON:0015170
 name: nauplius eye
 namespace: uberon
-def: "An eye that consists of a cluster of three or four median eyes that form a single structural unit but are separated from one another by pigment layers" [PMID:21062451]
+def: "An eye that consists of a cluster of three or four median eyes that form a single structural unit but are separated from one another by pigment layers." [PMID:21062451]
 synonym: "four-partite eye" NARROW [PMID:21062451]
 synonym: "three-partite eye" NARROW [PMID:21062451]
 is_a: UBERON:0000970 ! eye
@@ -14229,7 +12745,7 @@ property_value: UBPROP:0000008 "This olfactory apparatus has been observed in ma
 id: UBERON:0015430
 name: levator auris longus muscle
 namespace: uberon
-def: "Muscle organ located on the dorsal surface of the head innervated by the facial nerve" [http://neurolex.org/wiki/Category\:Levator_auris_longus_muscle]
+def: "Muscle organ located on the dorsal surface of the head innervated by the facial nerve." [http://neurolex.org/wiki/Category\:Levator_auris_longus_muscle]
 synonym: "LAL" RELATED ABBREVIATION [http://neurolex.org/wiki/Category\:Levator_auris_longus_muscle]
 synonym: "levator auris longus" EXACT [MA:0002758]
 xref: EMAPA:36627
@@ -14281,7 +12797,7 @@ relationship: part_of UBERON:0002232 ! olfactory gland
 id: UBERON:0015785
 name: acinus of olfactory gland
 namespace: uberon
-def: "A acinus that is part of a olfactory gland." [OBOL:automatic]
+def: "An acinus that is part of a olfactory gland." [OBOL:automatic]
 synonym: "acinar part of olfactory gland" EXACT []
 synonym: "olfactory gland acinus" EXACT []
 relationship: part_of UBERON:0002232 ! olfactory gland
@@ -14309,7 +12825,7 @@ relationship: part_of UBERON:0000004 ! nose
 id: UBERON:0015807
 name: ear epithelium
 namespace: uberon
-def: "A epithelium that is part of a ear." [OBOL:automatic]
+def: "An epithelium that is part of a ear." [OBOL:automatic]
 xref: EMAPA:32800
 xref: MA:0003161
 is_a: UBERON:0019304 ! sensory organ epithelium
@@ -14319,7 +12835,7 @@ relationship: part_of UBERON:0001690 ! ear
 id: UBERON:0015808
 name: eye epithelium
 namespace: uberon
-def: "A epithelium that is part of a camera-type eye." [OBOL:automatic]
+def: "An epithelium that is part of a camera-type eye." [OBOL:automatic]
 xref: EMAPA:35957
 xref: MA:0003162
 is_a: UBERON:0007625 ! pigment epithelium of eye
@@ -14329,7 +12845,7 @@ relationship: part_of UBERON:0000019 ! camera-type eye
 id: UBERON:0015813
 name: middle ear epithelium
 namespace: uberon
-def: "A epithelium that is part of a middle ear." [OBOL:automatic]
+def: "An epithelium that is part of a middle ear." [OBOL:automatic]
 xref: EMAPA:35673
 xref: MA:0003169
 is_a: UBERON:0015807 ! ear epithelium
@@ -14339,7 +12855,7 @@ relationship: part_of UBERON:0001756 ! middle ear
 id: UBERON:0015814
 name: outer ear epithelium
 namespace: uberon
-def: "A epithelium that is part of a external ear." [OBOL:automatic]
+def: "An epithelium that is part of a external ear." [OBOL:automatic]
 xref: EMAPA:35956
 xref: MA:0003170
 is_a: UBERON:0015807 ! ear epithelium
@@ -14360,7 +12876,7 @@ relationship: part_of UBERON:0006203 {source="FMA"} ! conchal part of pinna
 id: UBERON:0016459
 name: posterior pole of lens
 namespace: uberon
-def: "the central point on the posterior surface of the lens." [http://www.medilexicon.com/medicaldictionary.php?t=70707]
+def: "The central point on the posterior surface of the lens." [http://www.medilexicon.com/medicaldictionary.php?t=70707]
 subset: pheno_slim
 synonym: "polus posterior (lens)" EXACT [FMA:58898]
 synonym: "polus posterior lentis" EXACT LATIN []
@@ -14416,7 +12932,7 @@ relationship: part_of UBERON:0001757 {source="FMA"} ! pinna
 id: UBERON:0016490
 name: auditory system
 namespace: uberon
-def: "is the sensory system for the sense of hearing." [NLXANAT:090817]
+def: "Is the sensory system for the sense of hearing." [NLXANAT:090817]
 xref: EMAPA:36002
 xref: FMA:7192
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2888
@@ -14490,7 +13006,7 @@ relationship: part_of UBERON:0016621 ! lunge feeding organ
 id: UBERON:0016637
 name: lateral periolivary nucleus
 namespace: uberon
-def: "Lateral component of the periolivary nucleus" [http://medical-dictionary.thefreedictionary.com/periolivary+nuclei]
+def: "Lateral component of the periolivary nucleus." [http://medical-dictionary.thefreedictionary.com/periolivary+nuclei]
 xref: DHBA:12465
 xref: FMA:226217
 is_a: UBERON:0002971 {source="cjm"} ! periolivary nucleus
@@ -14499,7 +13015,7 @@ is_a: UBERON:0002971 {source="cjm"} ! periolivary nucleus
 id: UBERON:0016843
 name: lateral nucleus of trapezoid body
 namespace: uberon
-def: "One of two potential parts of the trapezoid nucleus. Separated by an indistinct boundary, the other is the medial trapezoid nucleus ( Crosby-1962 ). The existence of the trapezoid nucleus in the human is disputed ( Bazwinsky-2003 )" [NeuroNames:2852]
+def: "One of two potential parts of the trapezoid nucleus. Separated by an indistinct boundary, the other is the medial trapezoid nucleus ( Crosby-1962 ). The existence of the trapezoid nucleus in the human is disputed ( Bazwinsky-2003 )." [NeuroNames:2852]
 synonym: "lateral nucleus of the trapezoid body" RELATED [NeuroNames:2852]
 synonym: "lateral trapezoid nucleus" RELATED [NeuroNames:2852]
 synonym: "LNTB" EXACT ABBREVIATION []
@@ -14523,7 +13039,7 @@ is_a: UBERON:0010521 ! electroreceptor organ
 id: UBERON:0018104
 name: parafoveal part of retina
 namespace: uberon
-def: "The intermediate belt surrounding the fovea centralis" [http://orcid.org/0000-0002-6601-2165]
+def: "The intermediate belt surrounding the fovea centralis." [http://orcid.org/0000-0002-6601-2165]
 synonym: "parafoveal belt" RELATED []
 synonym: "parafoveal retina" RELATED []
 xref: SCTID:264120002
@@ -14534,7 +13050,7 @@ property_value: UBPROP:0000010 "ganglion cell layer is composed of more than fiv
 id: UBERON:0018105
 name: perifoveal part of retina
 namespace: uberon
-def: "The outermost region surrounding the fovea centralis" [http://orcid.org/0000-0002-6601-2165]
+def: "The outermost region surrounding the fovea centralis." [http://orcid.org/0000-0002-6601-2165]
 synonym: "perifoveal belt" RELATED []
 synonym: "perifoveal retina" RELATED []
 xref: SCTID:280617008
@@ -14545,7 +13061,7 @@ property_value: UBPROP:0000010 "the ganglion cell layer contains two to four row
 id: UBERON:0018107
 name: foveola of retina
 namespace: uberon
-def: "A region of the fovea centralis that lies in the center of the fovea and contains only cone cells, and a cone-shaped zone of Müller cells" [http://orcid.org/0000-0002-6601-2165]
+def: "A region of the fovea centralis that lies in the center of the fovea and contains only cone cells, and a cone-shaped zone of Müller cells." [http://orcid.org/0000-0002-6601-2165]
 synonym: "foveola" RELATED []
 xref: SCTID:399857002
 xref: Wikipedia:Foveola
@@ -14704,7 +13220,7 @@ relationship: part_of UBERON:0001711 ! eyelid
 id: UBERON:0018323
 name: hyoid articular area
 namespace: uberon
-def: "Area on the otic capsule for the articulation of the hyoid" [PHENOSCAPE:alex]
+def: "Area on the otic capsule for the articulation of the hyoid." [PHENOSCAPE:alex]
 xref: UBERONTEMP:e1c1764a-61b5-4dce-8a59-7ca5a9de0a0b
 relationship: part_of UBERON:0004637 ! otic capsule
 
@@ -14720,7 +13236,7 @@ relationship: part_of UBERON:0004637 ! otic capsule
 id: UBERON:0018356
 name: rostral entotympanic element
 namespace: uberon
-def: "An entotympanic that arises in forward part of tympanic floor. It may be intimately fused witA cartilage of tube during development(MacPhee (1981: 62)) in contrast to a caudal entotympanic arising in the rear tympanic floor. From O'Leary et al. 2012" [PHENOSCAPE:Alex]
+def: "An entotympanic that arises in forward part of tympanic floor. It may be intimately fused witA cartilage of tube during development(MacPhee (1981: 62)) in contrast to a caudal entotympanic arising in the rear tympanic floor. From O'Leary et al. 2012." [PHENOSCAPE:Alex]
 xref: UBERONTEMP:c5825cfa-edc2-4717-8625-90ac3f8b6dd3
 is_a: UBERON:0013190 ! entotympanic bone
 
@@ -14737,7 +13253,7 @@ relationship: part_of UBERON:0001032 ! sensory system
 id: UBERON:0018369
 name: upper lateral line
 namespace: uberon
-def: "dorsal sensory canal line in fish, dorsal to ventral lateral lane" [PHENOSCAPE:Nizar]
+def: "Dorsal sensory canal line in fish, dorsal to ventral lateral lane." [PHENOSCAPE:Nizar]
 xref: UBERONTEMP:2e283d18-0137-43ce-948f-1704f1d0a0a7
 is_a: UBERON:0010202 ! lateral line
 property_value: IAO:0000116 "consider merging with UBERON:0003095 ! dorsal lateral line" xsd:string
@@ -14746,7 +13262,7 @@ property_value: IAO:0000116 "consider merging with UBERON:0003095 ! dorsal later
 id: UBERON:0018370
 name: ventral lateral line
 namespace: uberon
-def: "ventral sensory canal line in fish, ventral to dorsal lateral lane" [PHENOSCAPE:Wasila]
+def: "Ventral sensory canal line in fish, ventral to dorsal lateral lane." [PHENOSCAPE:Wasila]
 xref: UBERONTEMP:61c755ec-848e-4262-89e4-be2267041e64
 is_a: UBERON:0010202 ! lateral line
 
@@ -14754,7 +13270,7 @@ is_a: UBERON:0010202 ! lateral line
 id: UBERON:0018374
 name: sallet
 namespace: uberon
-def: "A unit of the tectoral membrane that is shaped like string of flat, pearls. Modified from Manley, Fey and Popper 2008 " [ISBN:9780387714691, PHENOSCAPE:Alex]
+def: "A unit of the tectoral membrane that is shaped like string of flat, pearls. Modified from Manley, Fey and Popper 2008 ." [ISBN:9780387714691, PHENOSCAPE:Alex]
 xref: UBERONTEMP:caa10252-5f7e-4a55-a72c-cf7986a89363
 relationship: part_of UBERON:0002233 ! tectorial membrane of cochlea
 property_value: RO:0002175 NCBITaxon:35033 {source="ISBN:9780387714691"}
@@ -14793,7 +13309,7 @@ is_a: UBERON:0004019 ! baroreceptor
 id: UBERON:0018393
 name: low-pressure baroreceptor
 namespace: uberon
-def: "found in large systemic veins, in pulmonary vessels, and in the walls of the right atrium and ventricles of the heart (the atrial volume receptors)." [Wikipedia:Baroreceptor#Low-pressure_baroreceptors]
+def: "Found in large systemic veins, in pulmonary vessels, and in the walls of the right atrium and ventricles of the heart (the atrial volume receptors)." [Wikipedia:Baroreceptor#Low-pressure_baroreceptors]
 is_a: UBERON:0004019 ! baroreceptor
 
 [Term]
@@ -14841,7 +13357,7 @@ relationship: part_of UBERON:0013190 ! entotympanic bone
 id: UBERON:0018663
 name: recessus basilaris
 namespace: uberon
-def: "An opening of the otic duct within the inner ear. The recessus basilaris can open to the saccule (in frogs) or the lagena (in salamanders and caecilians). The sensory epithelium of the recessus basilaris is the basilar papilla (or papilla basilaris). Reference: Lewis, E.R. and R.E. Lombard. 1988. The amphibian inner ear. Pp. 93-123 in Fritszch, B., et al. (eds.), The Evolution of the Amphibian Auditory System. Wiley & Sons. [curated by D. Blackburn]" [PHENOSCAPE:wd]
+def: "An opening of the otic duct within the inner ear. The recessus basilaris can open to the saccule (in frogs) or the lagena (in salamanders and caecilians). The sensory epithelium of the recessus basilaris is the basilar papilla (or papilla basilaris). Reference: Lewis, E.R. and R.E. Lombard. 1988. The amphibian inner ear. Pp. 93-123 in Fritszch, B., et al. (eds.), The Evolution of the Amphibian Auditory System. Wiley & Sons. [curated by D. Blackburn]." [PHENOSCAPE:wd]
 synonym: "basilar papillar recess" EXACT []
 relationship: part_of UBERON:0001846 ! internal ear
 property_value: RO:0002161 NCBITaxon:40674
@@ -14859,7 +13375,7 @@ relationship: part_of UBERON:0001726 ! papilla of tongue
 id: UBERON:0019207
 name: chorioretinal region
 namespace: uberon
-def: "The part of the eye that consists of both the retina and the optic choroid" [http://orcid.org/0000-0002-6601-2165, UBERON:drseb]
+def: "The part of the eye that consists of both the retina and the optic choroid." [http://orcid.org/0000-0002-6601-2165, UBERON:drseb]
 subset: pheno_slim
 synonym: "chorioretina" EXACT []
 synonym: "choroid and retina" EXACT []
@@ -14873,7 +13389,7 @@ relationship: part_of UBERON:0010230 ! eyeball of camera-type eye
 id: UBERON:0019208
 name: anterior pole of lens
 namespace: uberon
-def: "the central point on the anterior surface of the lens." [http://www.medilexicon.com/medicaldictionary.php]
+def: "The central point on the anterior surface of the lens." [http://www.medilexicon.com/medicaldictionary.php]
 synonym: "polus anterior (lens)" EXACT [FMA:58897]
 synonym: "polus anterior lentis" EXACT LATIN []
 xref: FMA:58897
@@ -14885,7 +13401,7 @@ is_a: UBERON:0019210 ! pole of lens
 id: UBERON:0019210
 name: pole of lens
 namespace: uberon
-def: "A central point or region on the anterior or posterior surface of the lens" [http://orcid.org/0000-0002-6601-2165]
+def: "A central point or region on the anterior or posterior surface of the lens." [http://orcid.org/0000-0002-6601-2165]
 synonym: "lens pole" EXACT []
 synonym: "lens zone" EXACT [FMA:58067]
 synonym: "zone of lens" RELATED [FMA:58067]
@@ -14964,7 +13480,7 @@ relationship: part_of UBERON:0007827 ! external nose
 id: UBERON:0019315
 name: meibum
 namespace: uberon
-def: "an oily substance that prevents evaporation of the eye's tear film" [PMID:20664693]
+def: "An oily substance that prevents evaporation of the eye's tear film." [PMID:20664693]
 synonym: "tarsal gland secretion" RELATED []
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000019 ! camera-type eye
@@ -15037,7 +13553,7 @@ relationship: part_of UBERON:0001691 ! external ear
 id: UBERON:0022284
 name: lacrimal gland bud
 namespace: uberon
-def: "the single bud-like invagination of the conjunctival fornix epithelium at the temporal aspect of the eye that signals lacrimal gland formation (Int Rev Cytol. 1996;168:1-80. Cell biology of the harderian gland)" [MGI:anna]
+def: "The single bud-like invagination of the conjunctival fornix epithelium at the temporal aspect of the eye that signals lacrimal gland formation (Int Rev Cytol. 1996;168:1-80. Cell biology of the harderian gland)." [MGI:anna]
 xref: EMAPA:35464
 is_a: UBERON:0015808 ! eye epithelium
 relationship: part_of UBERON:0001750 ! lacrimal apparatus
@@ -15125,7 +13641,7 @@ is_a: UBERON:0001726 {source="NIFSTD"} ! papilla of tongue
 id: UBERON:0028194
 name: spiral prominence of cochlear duct
 namespace: uberon
-def: "a projecting portion of the spiral ligament of the cochlea, bounding the lower edge of the stria vascularis and containing within it a blood vessel, the vas prominens." [http://medical-dictionary.thefreedictionary.com/spiral+prominence+of+cochlear+duct]
+def: "A projecting portion of the spiral ligament of the cochlea, bounding the lower edge of the stria vascularis and containing within it a blood vessel, the vas prominens." [http://medical-dictionary.thefreedictionary.com/spiral+prominence+of+cochlear+duct]
 synonym: "prominentia spiralis ductus cochlearis" EXACT LATIN [http://medical-dictionary.thefreedictionary.com/spiral+prominence+of+cochlear+duct]
 synonym: "spiral prominence" BROAD [EMAPA:35799, MA:0003003]
 synonym: "spiral prominence of cochlea" EXACT HUMAN_PREFERRED [BIRNLEX:2532]
@@ -15219,7 +13735,7 @@ is_a: UBERON:0034717 ! integumental taste bud
 id: UBERON:0034772
 name: margin of eyelid
 namespace: uberon
-def: "the confluence of the mucosal surface of the conjunctiva, the edge of the orbicularis, and the cutaneous epithelium." [MGI:anna]
+def: "The confluence of the mucosal surface of the conjunctiva, the edge of the orbicularis, and the cutaneous epithelium." [MGI:anna]
 synonym: "free margin of eyelid" EXACT []
 xref: EMAPA:37905 {source="MA:th"}
 xref: FMA:59356
@@ -15241,7 +13757,7 @@ property_value: UBPROP:0000008 "in humans, the ducts of posterior superficial li
 id: UBERON:0034935
 name: pars plicata of ciliary body
 namespace: uberon
-def: "Corrugated anterior region of ciliary body where ciliary processes arise" [http://orcid.org/0000-0002-6601-2165]
+def: "Corrugated anterior region of ciliary body where ciliary processes arise." [http://orcid.org/0000-0002-6601-2165]
 synonym: "ciliary crown" EXACT [FMA:58431]
 synonym: "corona ciliaris" EXACT [FMA:58431]
 xref: FMA:58431
@@ -15252,7 +13768,7 @@ relationship: part_of UBERON:0001775 {source="FMA"} ! ciliary body
 id: UBERON:0034936
 name: pars plana of ciliary body
 namespace: uberon
-def: "Flattened posterior region of ciliary body" [http://orcid.org/0000-0002-6601-2165]
+def: "Flattened posterior region of ciliary body." [http://orcid.org/0000-0002-6601-2165]
 synonym: "ciliary ring" EXACT [FMA:58480]
 synonym: "orbiculus ciliaris" EXACT [FMA:58480]
 xref: FMA:58480
@@ -15283,7 +13799,7 @@ relationship: part_of UBERON:0000003 ! naris
 id: UBERON:0035077
 name: lateral nasal gland
 namespace: uberon
-def: "Any of the lateral nasal glands (the largest nasal secretory glands in rodents) which surround the maxillary sinus located in the lateral wall adjacent to each nasal passage and are characterized by cytologic features similar to those described for the major serous salivary glands; secretory contents of the LNG drain into the nasal vestibule; the LNG is a major site for the synthesis and secretion of odorant-binding proteins that serve as odorant carriers in nasal mucus; it also, synthesizes large amounts of immunoglobulin A, which is important for immune defense of the upper respiratory tract, and testosterone and salivary androgen-binding proteins, which are likely important in olfaction and reproductive behavior" [MP:0013582]
+def: "Any of the lateral nasal glands (the largest nasal secretory glands in rodents) which surround the maxillary sinus located in the lateral wall adjacent to each nasal passage and are characterized by cytologic features similar to those described for the major serous salivary glands; secretory contents of the LNG drain into the nasal vestibule; the LNG is a major site for the synthesis and secretion of odorant-binding proteins that serve as odorant carriers in nasal mucus; it also, synthesizes large amounts of immunoglobulin A, which is important for immune defense of the upper respiratory tract, and testosterone and salivary androgen-binding proteins, which are likely important in olfaction and reproductive behavior." [MP:0013582]
 synonym: "glandula nasalis lateralis" EXACT LATIN [MP:0013582]
 synonym: "LNG" RELATED ABBREVIATION [MP:0013582]
 synonym: "Steno gland" EXACT [MP:0013582]
@@ -15637,7 +14153,7 @@ property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/s
 id: UBERON:1000022
 name: Zymbal's gland
 namespace: uberon
-def: "A multilobulated modified sebaceous gland that is located at the base of the external ear, lined by stratified squamous epithelium, and secretes into the auditory canal" [http://ctrgenpath.net/static/atlas/mousehistology/Windows/senses/zymbalgland.html, ISBN:0123813611, MP:0013384]
+def: "A multilobulated modified sebaceous gland that is located at the base of the external ear, lined by stratified squamous epithelium, and secretes into the auditory canal." [http://ctrgenpath.net/static/atlas/mousehistology/Windows/senses/zymbalgland.html, ISBN:0123813611, MP:0013384]
 synonym: "auditory sebaceous gland" RELATED [ISBN:0123813611]
 synonym: "gland of Zymbal" RELATED []
 synonym: "Zymbal gland" RELATED [MA:0002900]
@@ -15686,7 +14202,7 @@ relationship: part_of UBERON:0002540 ! lateral line system
 id: UBERON:2000125
 name: mandibular lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the mandibular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the mandibular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast mandibular" EXACT [TAO:0000125]
 synonym: "neuromasts mandibular" EXACT PLURAL [TAO:0000125]
 xref: ZFA:0000125
@@ -15699,7 +14215,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000136
 name: otic lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the otic lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the otic lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast otic" EXACT [TAO:0000136]
 synonym: "neuromasts otic" EXACT PLURAL [TAO:0000136]
 xref: ZFA:0000136
@@ -15712,7 +14228,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000168
 name: anterior macula
 namespace: uberon
-def: "Macula that is located in the developing anterior inner ear, and gives rise to the macula utricle. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
+def: "Macula that is located in the developing anterior inner ear, and gives rise to the macula utricle. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)." [ZFIN:curator]
 synonym: "am" EXACT [TAO:0000168]
 xref: ZFA:0000168
 is_a: UBERON:0000054 ! macula
@@ -15779,7 +14295,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000259
 name: mandibular lateral line
 namespace: uberon
-def: "One of eight distinct lateral lines in the 4-day larva consisting of 2 neuromast. One neuromast is positioned at the front edge of the jaw the second posteriorly on the mandible. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "One of eight distinct lateral lines in the 4-day larva consisting of 2 neuromast. One neuromast is positioned at the front edge of the jaw the second posteriorly on the mandible. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 xref: ZFA:0000259
 is_a: UBERON:2001470 ! anterior lateral line
 relationship: part_of UBERON:2001470 ! anterior lateral line
@@ -15823,7 +14339,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000424
 name: opercular lateral line
 namespace: uberon
-def: "One of eight distinct lateral lines in the 4-day larva positioned posteriorly to the second arch skeletal element. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "One of eight distinct lateral lines in the 4-day larva positioned posteriorly to the second arch skeletal element. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 xref: ZFA:0000424
 is_a: UBERON:2001470 ! anterior lateral line
 relationship: part_of UBERON:2001470 ! anterior lateral line
@@ -15846,7 +14362,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000464
 name: otic lateral line
 namespace: uberon
-def: "One of eight distinct lateral lines in the 4-day larva positioned anterior to the ear. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "One of eight distinct lateral lines in the 4-day larva positioned anterior to the ear. A sensory system on the surface of the fish, consisting of small sensory patches (neuromasts) distributed in discrete lines over the body surface. The lateral line system is stimulated by local water displacements and vibrations, and detects propulsion of the fish through the water, as well as facilitating shoaling, prey capture, and predator and obstacle avoidance. (See Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 xref: ZFA:0000464
 is_a: UBERON:2001470 ! anterior lateral line
 relationship: part_of UBERON:2001470 ! anterior lateral line
@@ -15879,7 +14395,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000558
 name: posterior macula
 namespace: uberon
-def: "Macula that is located in the developing posterior inner ear, and gives rise to the macula neglecta and the macula saccule. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)" [ZFIN:curator]
+def: "Macula that is located in the developing posterior inner ear, and gives rise to the macula neglecta and the macula saccule. (See Anatomical Atlas entry for sensory patches of the ear by T. Whitfield.)." [ZFIN:curator]
 synonym: "pm" EXACT [TAO:0000558]
 synonym: "posteromedial macula" EXACT [TAO:0000558]
 xref: ZFA:0000558
@@ -15903,7 +14419,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000813
 name: infraorbital lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the infraorbital lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the infraorbital lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast infraorbital" EXACT [TAO:0000813]
 synonym: "neuromasts infraorbital" EXACT PLURAL [TAO:0000813]
 xref: ZFA:0000813
@@ -15916,7 +14432,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000814
 name: opercular lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the opercular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the opercular lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast opercular" EXACT [TAO:0000814]
 synonym: "neuromasts opercular" EXACT PLURAL [TAO:0000814]
 xref: ZFA:0000814
@@ -15929,7 +14445,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2000939
 name: middle lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the middle lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the middle lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 subset: efo_slim
 synonym: "neuromast middle" EXACT [TAO:0000939]
 synonym: "neuromasts middle" EXACT PLURAL [TAO:0000939]
@@ -15943,7 +14459,7 @@ relationship: part_of UBERON:0003096 ! middle lateral line
 id: UBERON:2000940
 name: posterior lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the posterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the posterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast posterior" EXACT [TAO:0000940]
 synonym: "neuromasts posterior" EXACT PLURAL [TAO:0000940]
 xref: ZFA:0000940
@@ -16146,7 +14662,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2001472
 name: anterior lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the anterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the anterior lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast anterior" EXACT [TAO:0001472]
 xref: ZFA:0001472
 is_a: UBERON:0008904 ! neuromast
@@ -16414,7 +14930,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2002248
 name: supratemporal commissure
 namespace: uberon
-def: "Lateral line canal that that crosses the supratemporal region posterior to the openings of the endolymphatic ducts and connects the lateral canals of each side." [DOI: 10.1002/cne.900280102]
+def: "Lateral line canal that that crosses the supratemporal region posterior to the openings of the endolymphatic ducts and connects the lateral canals of each side." [DOI:10.1002/cne.900280102]
 comment: Not clear what the taxon constraints are here. The cited reference discusses two species of dogfish.
 is_a: UBERON:1500003 ! lateral line canal lumen
 created_by: teleost_anatomy_curators
@@ -16442,7 +14958,7 @@ created_by: teleost_anatomy_curators
 id: UBERON:2005113
 name: dorsal lateral line neuromast
 namespace: uberon
-def: "Neuromast that is part of the dorsal lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)" [ZFIN:curator]
+def: "Neuromast that is part of the dorsal lateral line. Kimmel et al, 1995. (Also see Anatomical Atlas entry for lateral line by T. Whitfield.)." [ZFIN:curator]
 synonym: "neuromast dorsal" EXACT [TAO:0005113]
 xref: TAO:0005113
 xref: ZFA:0005113
@@ -17648,7 +16164,7 @@ created_by: AD
 id: UBERON:4300005
 name: aphakic space
 namespace: uberon
-def: "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision. " [PHENOSCAPE]
+def: "The space in the pupil, which is not occupied by the lens. A rostral aphakic space may enhance the forward binocular field of vision." [PHENOSCAPE]
 xref: http://www.briancoad.com/Dictionary/Introduction%20and%20A-F.htm
 relationship: part_of UBERON:0000970 ! eye
 created_by: WD
