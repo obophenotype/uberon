@@ -1,7 +1,10 @@
-# UBERON Ontology Documentation
+# Uberon Ontology Documentation
 
-[//]: # "This file is meant to be edited by the ontology maintainer."
+![](images/uberon_logo.png)
 
-Welcome to the UBERON documentation!
+## Quick links:
 
-You can find descriptions of the standard ontology engineering workflows [here](odk-workflows/index.md).
+- [Uberon on Github](https://github.com/obophenotype/uberon)
+- [Issue Tracker](https://github.com/obophenotype/uberon)
+- [Browse Uberon on OLS](https://www.ebi.ac.uk/ols/ontologies/uberon)
+
