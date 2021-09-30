@@ -1835,7 +1835,7 @@ test: obocheck
 test_obsolete:
 	! grep "! obsolete" uberon-edit.obo
 
-#test: test_obsolete
+test: test_obsolete
 
 update_docs:
 	mkdocs build --config-file ../../mkdocs.yaml
