@@ -102,7 +102,8 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 
 # core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
 core.owl: $(OWLSRC)
-	owltools $(UCAT) $< -o -f ofn $@
+	owltools $(UCAT) $< -o -f ofn tmp/$@ &&\
+	$(ROBOT) merge -i tmp/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
 
 # A portion of uberon is maintained in a separate github repo - we merge that in here
 # as part of the release
@@ -157,7 +158,7 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	owltools $(UCAT) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
 	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
 	unmerge -i $(TMP_REFL) \
-	annotate -O $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+	$(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -166,7 +167,8 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 # merged.owl is now the flattening of ext.owl
 # TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
-	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
+	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o tmp/$@ &&\
+	$(ROBOT) merge -i tmp/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # strip imports and dangling references
 # owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
@@ -199,7 +201,8 @@ old-uberon.owl: ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
 
 basic.owl:  old-uberon.owl
-	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
+	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o tmp/$@ &&\
+	$(ROBOT) merge -i tmp/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
 
