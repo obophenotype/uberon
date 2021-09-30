@@ -66,7 +66,7 @@ $(CATALOG_DYNAMIC):
 .PHONY: update_dynamic_catalog
 update_dynamic_catalog:
 	echo "STRONG WARNING: You are updating the dynamic catalog. Note that this is done on the basis of a previous run of the pipeline, so all files are expected to be available. Do not do this if you dont know what you are doing."
-	$(SCRIPTSDIR)/make-catalog.pl uberon.owl ext.owl mirror/ncbitaxon.obo imports/*_import.owl mirror/ro.owl $(TMPDIR)/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
+	$(SCRIPTSDIR)/make-catalog.pl uberon.owl ext.owl mirror/ncbitaxon.obo imports/*_import.owl mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # STEP 0: checks
@@ -102,7 +102,8 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 
 # core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
 core.owl: $(OWLSRC)
-	owltools $(UCAT) $< -o -f ofn $@
+	owltools $(UCAT) $< -o -f ofn $(TMPDIR)/$@ &&\
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
 
 # A portion of uberon is maintained in a separate github repo - we merge that in here
 # as part of the release
@@ -157,7 +158,7 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	owltools $(UCAT) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
 	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
 	unmerge -i $(TMP_REFL) \
-	annotate -O $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+	$(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -166,7 +167,8 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 # merged.owl is now the flattening of ext.owl
 # TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
-	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
+	owltools $(UCAT) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # strip imports and dangling references
 # owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
@@ -199,7 +201,8 @@ old-uberon.owl: ext.owl
 	owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
 
 basic.owl:  old-uberon.owl
-	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@
+	owltools $(UCAT) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
 
@@ -228,6 +231,10 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 # merge BSPO into RO
+mirror/bspo.owl: mirror/bspo.trigger
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/bspo.owl
+
 mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
@@ -336,20 +343,20 @@ mirror/ehdaa2.owl:
 
 # FEDERATED ONTOLOGY MIRRORING
 # TODO removed disjoint axioms from poro, see https://github.com/obophenotype/uberon/issues/1799
-$(TMPDIR)/local-poro.owl:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@; fi
-$(TMPDIR)/local-cteno.owl:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
-$(TMPDIR)/local-ceph.owl:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+imports/local-poro.owl:
+	if [ $(IMP) = true ]; then owltools $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@; fi
+imports/local-cteno.owl:
+	if [ $(IMP) = true ]; then owltools $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+imports/local-ceph.owl:
+	if [ $(IMP) = true ]; then owltools $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
 
 # NON-ORTHOGONAL ONTOLOGY MIRRORING
 
 ## Map legacy OBO-format ObjectProperties to their BFO/RO intended equivalent
 ## TODO: many ontologies may have fixed their legacy properties
 ## TODO: Shouldnt bridge generation be a depenency for this goal? eg $(BRIDGEDIR)/uberon-bridge-to-caro.owl
-$(TMPDIR)/local-%.owl: mirror/%.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
+imports/local-%.owl: mirror/%.owl
+	if [ $(IMP) = true ]; then owltools $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
     --rename-entity $(URIBASE)/$*#develops_in $(URIBASE)/RO_0002203 \
     --rename-entity $(URIBASE)/$*#develops_from $(URIBASE)/RO_0002202 \
     --rename-entity $(URIBASE)/$*#preceded_by $(URIBASE)/RO_0002087 \
@@ -370,8 +377,8 @@ $(TMPDIR)/local-%.owl: mirror/%.owl
     --rename-entity $(URIBASE)/$*#constitutional_part_of $(URIBASE)/BFO_0000050\
     --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@; fi
 
-$(TMPDIR)/local-%.obo: $(TMPDIR)/local-%.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then owltools $< -o -f obo $@; fi
+imports/local-%.obo: imports/local-%.owl
+	if [ $(IMP) = true ]; then owltools $< -o -f obo $@; fi
 
 #seed.tsv: $(TMPDIR)/seed.owl
 #	owltools $(USECAT) --extract-
@@ -656,15 +663,15 @@ bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
 	OWLTOOLS_MEMORY=14G owltools   $(URIBASE)/bfo.owl --catalog-xml $(CATALOG_DYNAMIC) $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
-$(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(TMPDIR)/local-%.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
 	owltools  --catalog-xml $(CATALOG_DYNAMIC) $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 aaa:
 	make IMP=false PAT=false MIR=false $(REPORTDIR)/quick-bridge-check-caro.txt
 
 # A bridge check uses uberon (no TCs) plus external ontology and the bridge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(TMPDIR)/local-%.owl $(CATALOG_DYNAMIC)
-	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(TMPDIR)/local-$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies -o -f ofn $@
+$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
+	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< imports/local-$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: $(REPORTDIR)/bridge-check-%.owl
 $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
@@ -698,7 +705,7 @@ $(REPORTDIR)/full-bridge-check-wbbt.txt: | $(CATALOG_DYNAMIC)
 	OWLTOOLS_MEMORY=14G owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
 
 # As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
-$(REPORTDIR)/extra-full-bridge-check-%.txt: ext.owl $(TMPDIR)/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/extra-full-bridge-check-%.txt: ext.owl imports/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	owltools --no-debug --catalog-xml $(CATALOG_DYNAMIC) $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall says: worth fixing
@@ -926,7 +933,7 @@ subsets/immaterial.obo: merged.owl
 # TODO: use --make-subset-by-properties
 # note: requires symlink to cl directory
 $(TMPDIR)/cl-core.obo: $(SRC)
-	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
+	owltools $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-dangling --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
 #$(TMPDIR)/cl-core.obo: cell-ontology/cl.obo
 #	$(SCRIPTSDIR)/obo-grep.pl -r 'id: CL:' $< | grep -v ^intersection_of | grep -v ^disjoint | grep -v ^equivalent | grep -v ^owl-axioms | (obo-filter-relationships.pl -t part_of -t capable_of -t develops_from - && cat develops_from.obo part_of.obo has_part.obo capable_of.obo)  > $@
 
@@ -958,7 +965,7 @@ $(REPORTDIR)/%-cycles: %.obo
 	#blip-findall -i $< "subclass_cycle/2" -label > $@
 
 src-cycles:
-	OWLTOOLS_MEMORY=12G owltools $(UCAT) $(SRC) --list-cycles -f tmp/testcyles.tmp
+	OWLTOOLS_MEMORY=12G owltools $(UCAT) $(SRC) --list-cycles -f $(TMPDIR)/testcyles.tmp
 
 $(REPORTDIR)/%-allcycles: %.owl
 	owltools --no-debug $< --list-cycles -f > $@
@@ -1025,10 +1032,10 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 $(TMPDIR)/ext-weak.owl: ext.owl | $(TMPDIR)
 	owltools $(UCAT) $< --merge-imports-closure --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
 
-MBASE = $(TMPDIR)/ext-weak.owl $(BRIDGEDIR)/bridges $(TMPDIR)/local-ma.owl $(TMPDIR)/local-ehdaa2.owl $(TMPDIR)/local-emapa.owl $(TMPDIR)/local-xao.owl \
-	$(TMPDIR)/local-zfa.owl $(TMPDIR)/local-fbbt.owl $(TMPDIR)/local-fbdv.owl \
-	$(TMPDIR)/local-wbbt.owl $(TMPDIR)/local-wbls.owl $(TMPDIR)/local-ceph.owl \
-	$(TMPDIR)/local-cteno.owl $(TMPDIR)/local-poro.owl $(TMPDIR)/allen-mba.obo $(TMPDIR)/allen-pba.obo $(TMPDIR)/allen-hba.obo \
+MBASE = $(TMPDIR)/ext-weak.owl $(BRIDGEDIR)/bridges imports/local-ma.owl imports/local-ehdaa2.owl imports/local-emapa.owl imports/local-xao.owl \
+	imports/local-zfa.owl imports/local-fbbt.owl imports/local-fbdv.owl \
+	imports/local-wbbt.owl imports/local-wbls.owl imports/local-ceph.owl \
+	imports/local-cteno.owl imports/local-poro.owl $(TMPDIR)/allen-mba.obo $(TMPDIR)/allen-pba.obo $(TMPDIR)/allen-hba.obo \
 	$(TMPDIR)/allen-dmba.obo $(TMPDIR)/allen-dhba.obo uberon.owl
 
 # A subset of OPs will be turned into taxon GCIs
@@ -1720,9 +1727,9 @@ clean:
 	
 
 explain:
-	$(ROBOT) explain --input tmp/unreasoned-composite-metazoan.owl --reasoner ELK \
+	$(ROBOT) explain --input $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK \
   --axiom "'Nucleus raphe obscurus' EquivalentTo: 'nucleus raphe obscurus'" \
-  --explanation tmp/explanation.md
+  --explanation $(TMPDIR)/explanation.md
 
 #uberon_edit-xp-check basic-allcycles uberon_edit-obscheck.txt:
 #	echo "skipping $@"
@@ -1830,8 +1837,17 @@ test_obsolete:
 
 test: test_obsolete
 
+update_docs:
+	mkdocs build --config-file ../../mkdocs.yaml
+
 .PHONY: test_owlaxioms
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-#test: test_owlaxioms 
+test: test_owlaxioms 
+
+docs/releases.md: uberon-odk.yaml
+	echo "All the things to generate the release.md file and the sep. pages for each release."
+	# Amazing: only generate links to release artefacts if they truly exist:
+	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
+	# Use Github or obo purls (include switch that we can conficgue with ODK)
