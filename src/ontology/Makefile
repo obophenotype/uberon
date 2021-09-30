@@ -547,7 +547,7 @@ SPARQL_EXPORTS_ARGS = $(foreach V,$(SPARQL_EXPORTS),-s $(SPARQLDIR)/$(V).sparql 
 # This combines all into one single command
 
 .PHONY: all_reports_onestep
-all_reports_onestep: $(SRC)
+all_reports_onestep: $(SRC) | $(REPORTDIR)
 ifneq ($(SPARQL_EXPORTS_ARGS),)
 	$(ROBOT) query -f tsv -i $< $(SPARQL_EXPORTS_ARGS)
 endif
@@ -724,5 +724,7 @@ update_repo:
 	sh $(SCRIPTSDIR)/update_repo.sh
 	
 
+update_docs:
+	mkdocs gh-deploy --config-file ../../mkdocs.yaml
 
 include uberon.Makefile
