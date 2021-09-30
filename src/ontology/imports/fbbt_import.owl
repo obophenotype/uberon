@@ -20,9 +20,9 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/fbbt_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-07-25/imports/fbbt_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-07-27/imports/fbbt_import.owl"/>
         <dc:source rdf:resource="http://purl.obolibrary.org/obo/fbbt/releases/2021-07-09/fbbt.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-07-25</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-07-27</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -838,8 +838,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of</oboInOwl:shorthand>
         <rdfs:comment>Note that this relation was previously called &quot;inheres in&quot;, but was changed to be called &quot;characteristic of&quot; because BFO2 uses &quot;inheres in&quot; in a more restricted fashion. This relation differs from BFO2:inheres_in in two respects: (1) it does not impose a range constraint, and thus it allows qualities of processes, as well as of information entities, whereas BFO2 restricts inheres_in to only apply to independent continuants (2) it is declared functional, i.e. something can only be a characteristic of one thing.</rdfs:comment>
-        <rdfs:label xml:lang="en">characteristic of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">characteristic_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -864,9 +862,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_characteristic</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bearer_of</oboInOwl:shorthand>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_characteristic</oboInOwl:shorthand>
-        <rdfs:label>bearer of</rdfs:label>
-        <rdfs:label xml:lang="en">has characteristic</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_characteristic</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -883,7 +878,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000112 xml:lang="en">this investigator participates in this investigation</obo:IAO_0000112>
         <obo:IAO_0000115 xml:lang="en">a relation between a continuant and a process, in which the continuant is somehow involved in the process</obo:IAO_0000115>
         <obo:IAO_0000118 xml:lang="en">participates_in</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">participates in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -905,7 +899,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000116 xml:lang="en">Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">has_participant</obo:IAO_0000118>
         <dc:source>http://www.obofoundry.org/ro/#OBO_REL:has_participant</dc:source>
-        <rdfs:label xml:lang="en">has participant</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -922,7 +915,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">function_of</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">is function of</obo:IAO_0000118>
         <rdfs:comment>This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.</rdfs:comment>
-        <rdfs:label xml:lang="en">function of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -938,7 +930,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">is quality of</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">quality_of</obo:IAO_0000118>
         <rdfs:comment>This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.</rdfs:comment>
-        <rdfs:label xml:lang="en">quality of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -954,7 +945,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000118 xml:lang="en">is role of</obo:IAO_0000118>
         <obo:IAO_0000118 xml:lang="en">role_of</obo:IAO_0000118>
         <rdfs:comment>This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.</rdfs:comment>
-        <rdfs:label xml:lang="en">role of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -969,7 +959,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">has_function</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">has function</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -983,7 +972,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">has_quality</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">has quality</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -998,7 +986,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
         <obo:IAO_0000116 xml:lang="en">A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists.</obo:IAO_0000116>
         <obo:IAO_0000118 xml:lang="en">has_role</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">has role</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1011,7 +998,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence</obo:IAO_0000115>
-        <rdfs:label xml:lang="en">has disposition</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1023,7 +1009,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115>inverse of has disposition</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
         <rdfs:comment>This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.</rdfs:comment>
-        <rdfs:label xml:lang="en">disposition of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1044,7 +1029,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000118 xml:lang="en">contained_in</obo:IAO_0000118>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">contained in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1055,7 +1039,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000111 xml:lang="en">contains</obo:IAO_0000111>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">contains</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1072,8 +1055,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervated_by</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervated_by</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">innervated_by</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervated_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1086,7 +1067,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>A &apos;has regulatory component activity&apos; B if A and B are GO molecular functions (GO_0003674), A has_component B and A is regulated by B.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-24T09:30:46Z</oboInOwl:creation_date>
-        <rdfs:label>has regulatory component activity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1100,7 +1080,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-24T09:31:01Z</oboInOwl:creation_date>
         <rdfs:comment>By convention GO molecular functions are classified by their effector function.  Internal regulatory functions are treated as components.  For example, NMDA glutmate receptor activity is a cation channel activity with positive regulatory component &apos;glutamate binding&apos; and negative regulatory components including &apos;zinc binding&apos; and &apos;magnesium binding&apos;.</rdfs:comment>
-        <rdfs:label>has negative regulatory component activity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1114,7 +1093,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-24T09:31:17Z</oboInOwl:creation_date>
         <rdfs:comment>By convention GO molecular functions are classified by their effector function and internal regulatory functions are treated as components.  So, for example calmodulin has a protein binding activity that has positive regulatory component activity calcium binding activity. Receptor tyrosine kinase activity is a tyrosine kinase activity that has positive regulatory component &apos;ligand binding&apos;.</rdfs:comment>
-        <rdfs:label>has positive regulatory component activity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1126,7 +1104,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-24T09:44:33Z</oboInOwl:creation_date>
         <rdfs:comment>A &apos;has component activity&apos; B if A is A and B are molecular functions (GO_0003674) and A has_component B.</rdfs:comment>
-        <rdfs:label>has component activity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1140,7 +1117,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>w &apos;has process component&apos; p if p and w are processes,  w &apos;has part&apos; p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-24T09:49:21Z</oboInOwl:creation_date>
-        <rdfs:label>has component process</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1153,7 +1129,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-17T13:52:24Z</oboInOwl:creation_date>
         <rdfs:comment>Process(P2) is directly regulated by process(P1) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2.</rdfs:comment>
-        <rdfs:label>directly regulated by</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002022"/>
@@ -1172,7 +1147,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>Process(P2) is directly negatively regulated by process(P1) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P2 directly negatively regulated by P1.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-17T13:52:38Z</oboInOwl:creation_date>
-        <rdfs:label>directly negatively regulated by</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002023"/>
@@ -1191,7 +1165,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000115>Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-17T13:52:47Z</oboInOwl:creation_date>
-        <rdfs:label>directly positively regulated by</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002024"/>
@@ -1211,7 +1184,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dos</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-09-22T14:14:36Z</oboInOwl:creation_date>
         <rdfs:comment>This relation is designed for constructing compound molecular functions, typically in combination with one or more regulatory component activity relations.</rdfs:comment>
-        <rdfs:label>has effector activity</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002025"/>
@@ -1230,7 +1202,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000117>David Osumi-Sutherland</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <rdfs:comment xml:lang="en">X ends_after Y iff: end(Y) before_or_simultaneous_with end(X)</rdfs:comment>
-        <rdfs:label xml:lang="en">ends after</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1243,7 +1214,6 @@ range: spatial region or site (immaterial continuant)
         <obo:IAO_0000117>David Osumi-Sutherland</obo:IAO_0000117>
         <obo:IAO_0000118>starts_at_end_of</obo:IAO_0000118>
         <rdfs:comment xml:lang="en">X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</rdfs:comment>
-        <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1258,7 +1228,6 @@ range: spatial region or site (immaterial continuant)
         <obo:RO_0002575 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <rdfs:comment xml:lang="en">X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)</rdfs:comment>
-        <rdfs:label xml:lang="en">immediately precedes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1294,8 +1263,6 @@ range: spatial region or site (immaterial continuant)
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overlaps</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">overlaps</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">overlaps</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
@@ -1330,8 +1297,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervates</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervates</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">innervates</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">innervates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1352,8 +1317,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous_with</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous_with</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">continuous with</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continuous_with</rdfs:label>
         <rdfs:seeAlso>FMA:85972</rdfs:seeAlso>
     </owl:ObjectProperty>
     
@@ -1378,7 +1341,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000112>a &apos;toe distal phalanx bone&apos; that is connected to a &apos;toe medial phalanx bone&apos; (an interphalangeal joint *connects* these two bones).</obo:IAO_0000112>
         <obo:IAO_0000115>a is connected to b if and only if a and b are discrete structure, and there exists some connecting structure c, such that c connects a and b</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22293552"/>
-        <rdfs:label xml:lang="en">connected to</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern</rdfs:seeAlso>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern</rdfs:seeAlso>
     </owl:ObjectProperty>
@@ -1402,8 +1364,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to_part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to_part_of</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">attached to part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to_part_of</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002177"/>
@@ -1427,7 +1387,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000232 xml:lang="en">For use in recording has_part with a cardinality constraint, because OWL does not permit cardinality constraints to be used in combination with transitive object properties. In situations where you would want to say something like &apos;has part exactly 5 digit, you would instead use has_component exactly 5 digit.</obo:IAO_0000232>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">has component</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:Componency"/>
     </owl:ObjectProperty>
     
@@ -1452,8 +1411,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:shorthand>
         <rdfs:comment>This is the transitive form of the develops from relation</rdfs:comment>
-        <rdfs:label xml:lang="en">develops from</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1471,7 +1428,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117 xml:lang="en">David Osumi-Sutherland</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Terry Meehan</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">develops into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1509,8 +1465,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_directly_from</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_directly_from</oboInOwl:shorthand>
         <rdfs:comment>TODO - add child relations from DOS</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_directly_from</rdfs:label>
-        <rdfs:label xml:lang="en">directly develops from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1523,7 +1477,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>inverse of directly develops from</obo:IAO_0000115>
         <obo:IAO_0000118>developmental precursor of</obo:IAO_0000118>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">directly develops into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1562,8 +1515,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulates</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">regulates</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1586,8 +1537,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">negatively_regulates</oboInOwl:shorthand>
-        <rdfs:label>negatively regulates</rdfs:label>
-        <rdfs:label xml:lang="en">negatively regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1615,8 +1564,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">positively_regulates</oboInOwl:shorthand>
-        <rdfs:label>positively regulates</rdfs:label>
-        <rdfs:label xml:lang="en">positively regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1640,8 +1587,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">capable of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1662,8 +1607,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of_part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of_part_of</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">capable of part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">capable_of_part_of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/ro/docs/reflexivity/"/>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -1690,7 +1633,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <terms:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://docs.google.com/document/d/1kBv1ep_9g3sTR-SD3jqzFqhuwo9TPNF-l-9fUDbO6rM/edit?pli=1</terms:source>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <rdfs:comment>A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.</rdfs:comment>
-        <rdfs:label xml:lang="en">temporally related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1710,8 +1652,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:hasOBONamespace>fly_anatomy.ontology</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from_part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from_part_of</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">develops from part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from_part_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1730,7 +1670,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">has input</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1750,7 +1689,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115 xml:lang="en">x has developmental contribution from y iff x has some part z such that z develops from y</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">has developmental contribution from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1768,7 +1706,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>inverse of has developmental contribution from</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">developmentally contributes to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1786,7 +1723,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>In general you should not use this relation to make assertions - use one of the more specific relations below this one</obo:IAO_0000232>
         <rdfs:comment>This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from</rdfs:comment>
-        <rdfs:label xml:lang="en">developmentally preceded by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1802,7 +1738,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000112>A faulty traffic light (material entity) whose malfunctioning (a process) is causally upstream of a traffic collision (a process): the traffic light acts upstream of the collision.</obo:IAO_0000112>
         <obo:IAO_0000115>c acts upstream of p if and only if c enables some f that is involved in p&apos; and p&apos; occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p&apos; are processes.</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Acts_upstream_of"/>
     </owl:ObjectProperty>
     
@@ -1820,7 +1755,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>c acts upstream of or within p if c is enables f, and f is causally upstream of or within p. c is a material entity and p is an process.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>affects</oboInOwl:hasRelatedSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of or within</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within"/>
     </owl:ObjectProperty>
     
@@ -1833,7 +1767,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000115>Inverse of developmentally preceded by</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">developmentally succeeded by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1849,7 +1782,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000112>&apos;hypopharyngeal eminence&apos; SubClassOf &apos;part of precursor of&apos; some tongue</obo:IAO_0000112>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">part of developmental precursor of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1864,7 +1796,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <rdfs:comment>holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y</rdfs:comment>
-        <rdfs:label>causally upstream of, positive effect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1877,7 +1808,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:RO_0004050 rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <terms:creator>cjm</terms:creator>
         <rdfs:comment>holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y</rdfs:comment>
-        <rdfs:label>causally upstream of, negative effect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1900,7 +1830,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000118>inheres in part of</obo:IAO_0000118>
         <obo:IAO_0000119 rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20064205"/>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
-        <rdfs:label xml:lang="en">characteristic of part of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/ro/docs/reflexivity/"/>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -1922,7 +1851,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving parthood or connectivity relationships</obo:IAO_0000232>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
-        <rdfs:label xml:lang="en">mereotopologically related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1933,7 +1861,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>A relationship that holds between entities participating in some developmental process (GO:0032502)</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving organismal development</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">developmentally related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1961,7 +1888,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000232>This relation differs from the parent relation &apos;capable of&apos; in that the parent is weaker and only expresses a capability that may not be actually realized, whereas this relation is always realized.</obo:IAO_0000232>
         <obo:IAO_0000232>This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time.</obo:IAO_0000232>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label xml:lang="en">enables</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1972,7 +1898,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>This is a grouping relation that collects relations used for the purpose of connecting structure and function</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">functionally related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1988,7 +1913,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>this relation holds between c and p when c is part of some c&apos;, and c&apos; is capable of p.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">part of structure that is capable of</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002329"/>
@@ -2019,7 +1943,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>actively involved in</obo:IAO_0000118>
         <obo:IAO_0000118>enables part of</obo:IAO_0000118>
-        <rdfs:label xml:lang="en">involved in</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Involved_in"/>
     </owl:ObjectProperty>
     
@@ -2033,7 +1956,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>inverse of enables</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <rdfs:label xml:lang="en">enabled by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2049,7 +1971,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000589>regulated by (processual)</obo:IAO_0000589>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">regulated by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2061,7 +1982,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>inverse of negatively regulates</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">negatively regulated by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2073,7 +1993,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000115>inverse of positively regulates</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label xml:lang="en">positively regulated by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2087,7 +2006,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label xml:lang="en">input of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2106,8 +2024,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to</oboInOwl:shorthand>
-        <rdfs:label xml:lang="en">attached to</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">attached_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2121,7 +2037,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction).</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">has developmental potential involving</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2133,7 +2048,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">has potential to developmentally contribute to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2145,7 +2059,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">x has the potential to develop into y iff x develops into y or if x is capable of developing into y</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">has potential to develop into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2157,7 +2070,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115 xml:lang="en">x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">has potential to directly develop into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2171,7 +2083,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000115>inverse of upstream of</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">causally downstream of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2184,7 +2095,6 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002412"/>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label xml:lang="en">immediately causally downstream of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2211,7 +2121,6 @@ For the third, we consider the effect of the upstream process on the output(s) o
 Each of these 3 primitives can be composed to yield a cross-product of different relation types.</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000232>
-        <rdfs:label xml:lang="en">causally related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2227,7 +2136,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <rdfs:label xml:lang="en">causally upstream of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2241,7 +2149,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>p is immediately causally upstream of q iff both (a) p immediately precedes q and (b) p is causally upstream of q. In addition, the output of p  must be an input of q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:RO_0002575 rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
-        <rdfs:label xml:lang="en">immediately causally upstream of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2257,7 +2164,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>influences (processual)</obo:IAO_0000118>
         <oboInOwl:hasRelatedSynonym>affects</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>causally upstream of or within</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2271,7 +2177,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
-        <rdfs:label>causally downstream of or within</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2291,7 +2196,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>c involved in regulation of p if c is involved in some p&apos; and p&apos; regulates some p</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>involved in regulation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2311,7 +2215,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>c involved in regulation of p if c is involved in some p&apos; and p&apos; positively regulates some p</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:RO_0004049 rdf:resource="http://purl.obolibrary.org/obo/RO_0002428"/>
-        <rdfs:label>involved in positive regulation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2331,7 +2234,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>c involved in regulation of p if c is involved in some p&apos; and p&apos; negatively regulates some p</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:RO_0004050 rdf:resource="http://purl.obolibrary.org/obo/RO_0002428"/>
-        <rdfs:label>involved in negative regulation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2346,7 +2248,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000116>OWL does not allow defining object properties via a Union</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>involved in or reguates</obo:IAO_0000118>
-        <rdfs:label>involved in or involved in regulation of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2366,7 +2267,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000118>executes activity in</obo:IAO_0000118>
         <oboInOwl:hasExactSynonym>enables activity in</oboInOwl:hasExactSynonym>
         <rdfs:comment></rdfs:comment>
-        <rdfs:label>is active in</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002432"/>
@@ -2400,7 +2300,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000232>Note that this relationship type, and sub-relationship types may be redundant with process terms from other ontologies. For example, the symbiotic relationship hierarchy parallels GO. The relations are provided as a convenient shortcut. Consider using the more expressive processual form to capture your data. In the future, these relations will be linked to their cognate processes through rules.</obo:IAO_0000232>
         <oboInOwl:hasExactSynonym>in pairwise interaction with</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label>interacts with</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/ro/docs/interaction-relations/</rdfs:seeAlso>
         <skos:closeMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/MI_0914</skos:closeMatch>
     </owl:ObjectProperty>
@@ -2416,7 +2315,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>binds</obo:IAO_0000118>
         <obo:IAO_0000118>molecularly binds with</obo:IAO_0000118>
-        <rdfs:label>molecularly interacts with</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/ECO_0000353"/>
         <skos:closeMatch rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/MI_0915</skos:closeMatch>
     </owl:ObjectProperty>
@@ -2430,7 +2328,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000116>Axiomatization to GO to be added later</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>An interaction relation between x and y in which x catalyzes a reaction in which a phosphate group is added to y.</obo:IAO_0000118>
-        <rdfs:label>phosphorylates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2453,7 +2350,6 @@ A and B can be physically interacting but not necessarily. Immediately upstream 
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000117>Vasundra Touré</obo:IAO_0000117>
         <oboInOwl:hasExactSynonym>molecularly controls</oboInOwl:hasExactSynonym>
-        <rdfs:label>directly regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2475,7 +2371,6 @@ For example, A and B may be gene products and binding of B by A negatively regul
         <obo:IAO_0000117>Vasundra Touré</obo:IAO_0000117>
         <obo:IAO_0000118>directly inhibits</obo:IAO_0000118>
         <oboInOwl:hasExactSynonym>molecularly decreases activity of</oboInOwl:hasExactSynonym>
-        <rdfs:label>directly negatively regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2497,7 +2392,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000117>Vasundra Touré</obo:IAO_0000117>
         <obo:IAO_0000118>directly activates</obo:IAO_0000118>
         <oboInOwl:hasExactSynonym>molecularly increases activity of</oboInOwl:hasExactSynonym>
-        <rdfs:label>directly positively regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2507,7 +2401,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002464">
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>This property or its subproperties is not to be used directly. These properties exist as helper properties that are used to support OWL reasoning.</obo:IAO_0000232>
-        <rdfs:label>helper property (not for use in curation)</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2528,8 +2421,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed_primarily_of</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed_primarily_of</oboInOwl:shorthand>
-        <rdfs:label>composed primarily of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">composed_primarily_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2546,7 +2437,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
-        <rdfs:label>has part that occurs in</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002479"/>
@@ -2565,7 +2455,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002481">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002564"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>is kinase activity</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2577,7 +2466,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
         <obo:IAO_0000115>A relationship between a material entity and a process where the material entity has some causal role that influences the process</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>causal agent in process</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2592,7 +2480,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000232>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000232>
-        <rdfs:label>causal relation between processes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2601,7 +2488,6 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002502">
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>depends on</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BFO_0000169"/>
     </owl:ObjectProperty>
     
@@ -2617,7 +2503,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000232>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000232>
-        <rdfs:label>causal relation between entities</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2630,7 +2515,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>causally influenced by (entity-centric)</obo:IAO_0000589>
-        <rdfs:label>causally influenced by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2640,7 +2524,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002563">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002464"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>interaction relation helper property</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29"/>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/ro/docs/interaction-relations/</rdfs:seeAlso>
     </owl:ObjectProperty>
@@ -2652,7 +2535,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002564">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002563"/>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>molecular interaction relation helper property</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2678,7 +2560,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000117>Vasundra Touré</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>causally influences (entity-centric)</obo:IAO_0000589>
-        <rdfs:label>causally influences</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2692,7 +2573,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>A relation that holds between elements of a musculoskeletal system or its analogs.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000232>Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving the biomechanical processes.</obo:IAO_0000232>
-        <rdfs:label>biomechanically related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2710,7 +2590,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <rdfs:label>directly regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2727,7 +2606,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000112>gland SubClassOf &apos;has part structure that is capable of&apos; some &apos;secretion by cell&apos;</obo:IAO_0000112>
         <obo:IAO_0000115>s &apos;has part structure that is capable of&apos; p if and only if there exists some part x such that s &apos;has part&apos; x and x &apos;capable of&apos; p</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
-        <rdfs:label>has part structure that is capable of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2742,7 +2620,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000116>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>causal relation between material entity and a process</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2758,7 +2635,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000112>pyrethroid -&gt; growth</obo:IAO_0000112>
         <obo:IAO_0000115>Holds between c and p if and only if c is capable of some activity a, and a regulates p.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>capable of regulating</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2773,7 +2649,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>Holds between c and p if and only if c is capable of some activity a, and a negatively regulates p.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>capable of negatively regulating</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2789,7 +2664,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000112>renin -&gt; arteriolar smooth muscle contraction</obo:IAO_0000112>
         <obo:IAO_0000115>Holds between c and p if and only if c is capable of some activity a, and a positively regulates p.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>capable of positively regulating</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2800,7 +2674,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <obo:IAO_0000115>Inverse of &apos;causal agent in process&apos;</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
-        <rdfs:label>process has causal agent</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2817,7 +2690,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <rdfs:label>directly positively regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2834,7 +2706,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <rdfs:label>directly negatively regulates</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2850,7 +2721,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T23:20:13Z</oboInOwl:creation_date>
-        <rdfs:label>enables subfunction</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2867,7 +2737,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T23:49:30Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of or within, positive effect</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within,_positive_effect"/>
     </owl:ObjectProperty>
     
@@ -2885,7 +2754,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T23:49:51Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of or within, negative effect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2904,7 +2772,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T23:53:14Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of, positive effect</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Acts_upstream_of,_positive_effect"/>
     </owl:ObjectProperty>
     
@@ -2924,7 +2791,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-26T23:53:22Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
-        <rdfs:label>acts upstream of, negative effect</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://wiki.geneontology.org/index.php/Acts_upstream_of,_negative_effect"/>
     </owl:ObjectProperty>
     
@@ -2937,7 +2803,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:RO_0004050 rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-13T23:55:05Z</oboInOwl:creation_date>
-        <rdfs:label>causally upstream of or within, negative effect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2949,7 +2814,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:RO_0004049 rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-03-13T23:55:19Z</oboInOwl:creation_date>
-        <rdfs:label>causally upstream of or within, positive effect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2962,7 +2826,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <obo:IAO_0000115>The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B.</obo:IAO_0000115>
         <obo:IAO_0000117>Vasundra Touré</obo:IAO_0000117>
-        <rdfs:label>regulates activity of</rdfs:label>
     </owl:ObjectProperty>
     
 
