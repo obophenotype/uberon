@@ -14,6 +14,7 @@ subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
+subsetdef: location_grouping ""
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
@@ -91,7 +92,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0000125
 name: neural nucleus
 namespace: uberon
-def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NLX:28443]
+def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)." [NLX:28443]
 subset: cumbo
 synonym: "nervous system nucleus" EXACT []
 synonym: "neuraxis nucleus" EXACT [FMA:83686]
@@ -306,7 +307,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0002240
 name: spinal cord
 namespace: uberon
-def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)" [BIRNLEX:1709]
+def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)." [BIRNLEX:1709]
 subset: cumbo
 subset: efo_slim
 subset: major_organ
@@ -397,7 +398,7 @@ xref: ZFA:0000146
 id: UBERON:0007418
 name: neural decussation
 namespace: uberon
-def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" [NLX:144064]
+def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)." [NLX:144064]
 subset: cumbo
 synonym: "chiasm" BROAD []
 synonym: "chiasma" BROAD []
@@ -436,7 +437,7 @@ relationship: part_of UBERON:0000955 ! brain
 id: UBERON:0014778
 name: cell group
 namespace: uberon
-def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)" [NLX:532]
+def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)." [NLX:532]
 subset: cumbo
 subset: upper_level
 synonym: "group of cells" EXACT []
@@ -769,7 +770,7 @@ is_class_level: true
 id: never_in_taxon
 name: never_in_taxon
 namespace: uberon
-def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T." [PMID:20973947]
 xref: RO:0002161
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 is_metadata_tag: true
@@ -779,7 +780,7 @@ is_class_level: true
 id: paired_appendage_number
 name: paired_appendage number
 namespace: uberon
-def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage" [https://orcid.org/0000-0002-6601-2165]
+def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000109
 is_metadata_tag: true
 
@@ -794,7 +795,7 @@ is_transitive: true
 id: phalanx_number
 name: phalanx number
 namespace: uberon
-def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
+def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
 comment: Most land mammals including humans have a 2-3-3-3-3 formula in both the hands (or paws) and feet. Primitive reptiles typically had the formula 2-3-4-4-5, and this pattern, with some modification, remained in many later reptiles and in the mammal-like reptiles. The phalangeal formula in the flippers of cetaceans (marine mammals) is 2-12-8-1
 xref: UBPROP:0000105
 is_metadata_tag: true
@@ -811,7 +812,7 @@ is_metadata_tag: true
 id: preceding_element_is
 name: preceding element is
 namespace: uberon
-def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000101
 is_metadata_tag: true
 
@@ -819,7 +820,7 @@ is_metadata_tag: true
 id: present_in_taxon
 name: present_in_taxon
 namespace: uberon
-def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S." [https://orcid.org/0000-0002-6601-2165]
 synonym: "applicable for taxon" EXACT []
 xref: RO:0002175
 is_metadata_tag: true
@@ -845,7 +846,7 @@ is_metadata_tag: true
 id: repeated_element_number
 name: repeated element number
 namespace: uberon
-def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition" [https://orcid.org/0000-0002-6601-2165]
+def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition." [https://orcid.org/0000-0002-6601-2165]
 comment: The range is currently non-negative integer
 xref: UBPROP:0000102
 is_metadata_tag: true
@@ -916,7 +917,7 @@ is_metadata_tag: true
 id: tooth_number
 name: tooth number
 namespace: uberon
-def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw" []
+def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw." []
 xref: UBPROP:0000112
 is_metadata_tag: true
 

@@ -33,519 +33,6 @@ name: biological entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: CL:0000653
-name: glomerular visceral epithelial cell
-namespace: cell
-def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." []
-comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
-synonym: "epithelial cell of visceral layer of glomerular capsule" BROAD []
-synonym: "glomerular podocyte" EXACT []
-synonym: "podocyte" EXACT []
-xref: BTO:0002295
-xref: FMA:70967
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
-relationship: part_of UBERON:0005751 ! visceral layer of glomerular capsule
-
-[Term]
-id: CL:0002173
-name: extraglomerular mesangial cell
-namespace: cell
-def: "A cell that is a specialized type of pericyte providing structural support for the capillary loops of kidney. A flat, elongated cell with extensive fine cytoplasmic processes found outside the kidney glomerulus near the macula densa and bound laterally by afferent and efferent arterioles. Being phagocytic, this cell participates in the continuous turnover of the basal lamina by removing its outer portion containing residues of filtration, while the lamina is renewed on its inner surface by the endothelial cells." []
-synonym: "Goormaghtigh cell" EXACT []
-synonym: "lacis cell" RELATED []
-synonym: "polar cushion cells" EXACT []
-xref: FMA:84143
-xref: KUPO:0001033
-is_a: CL:1000746 ! glomerular cell
-relationship: part_of UBERON:0002321 ! extraglomerular mesangium
-created_by: tmeehan
-creation_date: 2010-08-25T02:20:55Z
-
-[Term]
-id: CL:0002188
-name: glomerular endothelial cell
-namespace: cell
-def: "An endothelial cell found in the glomerulus of the kidney. This cell is flattened, highly fenestrated, and plays a vital role in the formation of glomerular ultrafiltrate." []
-xref: BTO:0004632
-xref: FMA:70970
-is_a: CL:1000746 ! glomerular cell
-created_by: tmeehan
-creation_date: 2010-08-26T10:59:44Z
-
-[Term]
-id: CL:0002305
-name: epithelial cell of distal tubule
-namespace: cell
-def: "An epithelial cell of the distal convoluted tubule of the kidney that helps regulate systemic levels of potassium, sodium, calcium, and pH." []
-synonym: "kidney distal tubule epithelial cell" EXACT []
-xref: FMA:62125
-xref: FMA:70981
-xref: KUPO:0001055
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0004135 ! distal tubule
-
-[Term]
-id: CL:0002306
-name: epithelial cell of proximal tubule
-namespace: cell
-def: "An epithelial cell of the proximal tubule of the kidney." []
-synonym: "kidney proximal tubule epithelial cell" EXACT []
-xref: FMA:62125
-xref: FMA:70973
-xref: KUPO:0001044
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0004134 ! proximal tubule
-
-[Term]
-id: CL:0002307
-name: brush border cell of the proximal tubule
-namespace: cell
-def: "A brush border epithelial cell located in the proximal tubule of the kidney that detects fluid flow." []
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-created_by: tmeehan
-creation_date: 2010-09-14T11:29:20Z
-
-[Term]
-id: CL:0002523
-name: mesonephric glomerular visceral epithelial cell
-namespace: cell
-def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells in the mesonephros" []
-is_a: CL:0000653 ! glomerular visceral epithelial cell
-created_by: tmeehan
-creation_date: 2011-02-08T01:58:30Z
-
-[Term]
-id: CL:0002525
-name: metanephric glomerular visceral epithelial cell
-namespace: cell
-def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells in the metanephros." []
-is_a: CL:0000653 ! glomerular visceral epithelial cell
-created_by: tmeehan
-creation_date: 2011-02-08T02:02:13Z
-
-[Term]
-id: CL:1000022
-name: mesonephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005329 ! mesonephric nephron tubule
-
-[Term]
-id: CL:1000090
-name: pronephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005310 ! pronephric nephron tubule
-
-[Term]
-id: CL:1000123
-name: metanephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005146 ! metanephric nephron tubule
-
-[Term]
-id: CL:1000449
-name: epithelial cell of nephron
-namespace: cell
-def: "An epithelial cell that is part of the nephron." []
-xref: FMA:70965
-relationship: part_of UBERON:0001285 ! nephron
-
-[Term]
-id: CL:1000450
-name: epithelial cell of glomerular capsule
-namespace: cell
-def: "An epithelial cell that is part of the glomerular capsule." []
-synonym: "Bowmans capsule epithelial cell" EXACT []
-synonym: "epithelial cell of Bowman's capsule" EXACT []
-xref: FMA:70966
-xref: KUPO:0001034
-is_a: CL:1000510 ! kidney glomerular epithelial cell
-relationship: part_of UBERON:0001230 ! glomerular capsule
-
-[Term]
-id: CL:1000452
-name: parietal epithelial cell
-namespace: cell
-alt_id: CL:1000897
-def: "An epithelial cell that is part of the glomerular parietal epithelium." []
-synonym: "epithelial cell of parietal layer of glomerular capsule" EXACT []
-xref: FMA:70968
-xref: KUPO:0001035
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
-relationship: part_of UBERON:0005750 ! glomerular parietal epithelium
-
-[Term]
-id: CL:1000453
-name: epithelial cell of intermediate tubule
-namespace: cell
-def: "An epithelial cell that is part of the intermediate tubule." []
-xref: FMA:70980
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0004136 ! intermediate tubule
-
-[Term]
-id: CL:1000454
-name: kidney collecting duct epithelial cell
-namespace: cell
-def: "An epithelial cell that is part of the collecting duct of renal tubule." []
-synonym: "epithelial cell of renal collecting tubule" EXACT []
-xref: FMA:70982
-xref: KUPO:0001059
-is_a: CL:1001225 ! kidney collecting duct cell
-
-[Term]
-id: CL:1000494
-name: nephron tubule epithelial cell
-namespace: cell
-def: "An epithelial cell that is part of a nephron tubule." []
-comment: This needs to be further defined as a juxtamedullary nephron. Will request the juxtamedullary nephron tubule class from UBERON.
-synonym: "kidney tubule epithelial cell" EXACT []
-xref: FMA:86785
-xref: KUPO:0001022
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0004810 ! nephron tubule epithelium
-
-[Term]
-id: CL:1000507
-name: kidney tubule cell
-namespace: cell
-xref: KUPO:0001020
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001231 ! nephron tubule
-
-[Term]
-id: CL:1000510
-name: kidney glomerular epithelial cell
-namespace: cell
-xref: KUPO:0001023
-is_a: CL:1000746 ! glomerular cell
-relationship: part_of UBERON:0004188 ! glomerular epithelium
-
-[Term]
-id: CL:1000546
-name: kidney medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001060
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0005185 ! renal medulla collecting duct
-
-[Term]
-id: CL:1000547
-name: kidney inner medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001061
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004205 ! inner medullary collecting duct
-
-[Term]
-id: CL:1000548
-name: kidney outer medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001062
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004204 ! outer medullary collecting duct
-
-[Term]
-id: CL:1000549
-name: kidney cortex collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001063
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004203 ! cortical collecting duct
-
-[Term]
-id: CL:1000550
-name: kidney papillary duct principal epithelial cell
-namespace: cell
-xref: KUPO:0001064
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0005167 ! papillary duct
-
-[Term]
-id: CL:1000612
-name: kidney corpuscule cell
-namespace: cell
-xref: KUPO:0001021
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001229 ! renal corpuscle
-
-[Term]
-id: CL:1000615
-name: kidney cortex tubule cell
-namespace: cell
-xref: KUPO:0001024
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0006853 ! renal cortex tubule
-
-[Term]
-id: CL:1000714
-name: kidney cortex collecting duct principal cell
-namespace: cell
-xref: KUPO:0001130
-is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000715
-name: kidney cortex collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001131
-is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000716
-name: kidney outer medulla collecting duct principal cell
-namespace: cell
-xref: KUPO:0001132
-is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000717
-name: kidney outer medulla collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001133
-is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000718
-name: kidney inner medulla collecting duct principal cell
-namespace: cell
-xref: KUPO:0001134
-is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000719
-name: kidney inner medulla collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001135
-is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000720
-name: kidney papillary duct intercalated cell
-namespace: cell
-xref: KUPO:0001136
-is_a: CL:1000550 ! kidney papillary duct principal epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000721
-name: kidney papillary duct principal cell
-namespace: cell
-xref: KUPO:0001137
-is_a: CL:1000550 ! kidney papillary duct principal epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000742
-name: glomerular mesangial cell
-namespace: cell
-def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." []
-synonym: "intraglomerular mesangial cell" EXACT []
-xref: KUPO:0001032
-is_a: CL:1000746 ! glomerular cell
-relationship: part_of UBERON:0002320 ! glomerular mesangium
-
-[Term]
-id: CL:1000746
-name: glomerular cell
-namespace: cell
-xref: KUPO:0001036
-is_a: CL:1000612 ! kidney corpuscule cell
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
-id: CL:1000768
-name: kidney connecting tubule epithelial cell
-namespace: cell
-xref: KUPO:0001058
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0005097 ! renal connecting tubule
-
-[Term]
-id: CL:1000838
-name: kidney proximal convoluted tubule epithelial cell
-namespace: cell
-xref: KUPO:0001045
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-relationship: part_of UBERON:0001287 ! proximal convoluted tubule
-
-[Term]
-id: CL:1000839
-name: kidney proximal straight tubule epithelial cell
-namespace: cell
-xref: KUPO:0001046
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-is_a: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
-relationship: part_of UBERON:0001290 ! proximal straight tubule
-
-[Term]
-id: CL:1000849
-name: kidney distal convoluted tubule epithelial cell
-namespace: cell
-xref: KUPO:0001056
-is_a: CL:0002305 ! epithelial cell of distal tubule
-relationship: part_of UBERON:0001292 ! distal convoluted tubule
-
-[Term]
-id: CL:1000850
-name: macula densa epithelial cell
-namespace: cell
-xref: KUPO:0001057
-is_a: CL:0002305 ! epithelial cell of distal tubule
-relationship: part_of UBERON:0002335 ! macula densa
-
-[Term]
-id: CL:1000909
-name: kidney loop of Henle epithelial cell
-namespace: cell
-xref: KUPO:0001047
-is_a: CL:1000494 ! nephron tubule epithelial cell
-relationship: part_of UBERON:0001288 ! loop of Henle
-
-[Term]
-id: CL:1001005
-name: glomerular capillary endothelial cell
-namespace: cell
-xref: KUPO:0001037
-is_a: CL:0002188 ! glomerular endothelial cell
-is_a: CL:1000510 ! kidney glomerular epithelial cell
-relationship: part_of UBERON:0004294 ! glomerular capillary endothelium
-
-[Term]
-id: CL:1001006
-name: kidney afferent arteriole cell
-namespace: cell
-xref: KUPO:0001038
-is_a: CL:1000612 ! kidney corpuscule cell
-relationship: part_of UBERON:0004639 ! renal afferent arteriole
-
-[Term]
-id: CL:1001009
-name: kidney efferent arteriole cell
-namespace: cell
-xref: KUPO:0001041
-is_a: CL:1000612 ! kidney corpuscule cell
-relationship: part_of UBERON:0004640 ! renal efferent arteriole
-
-[Term]
-id: CL:1001016
-name: kidney loop of Henle ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001048
-is_a: CL:0002305 ! epithelial cell of distal tubule
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
-
-[Term]
-id: CL:1001021
-name: kidney loop of Henle descending limb epithelial cell
-namespace: cell
-xref: KUPO:0001053
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
-
-[Term]
-id: CL:1001096
-name: kidney afferent arteriole endothelial cell
-namespace: cell
-xref: KUPO:0001039
-is_a: CL:1001006 ! kidney afferent arteriole cell
-
-[Term]
-id: CL:1001097
-name: kidney afferent arteriole smooth muscle cell
-namespace: cell
-xref: KUPO:0001040
-is_a: CL:1001006 ! kidney afferent arteriole cell
-
-[Term]
-id: CL:1001099
-name: kidney efferent arteriole endothelial cell
-namespace: cell
-xref: KUPO:0001042
-is_a: CL:1001009 ! kidney efferent arteriole cell
-
-[Term]
-id: CL:1001100
-name: kidney efferent arteriole smooth muscle cell
-namespace: cell
-xref: KUPO:0001043
-is_a: CL:1001009 ! kidney efferent arteriole cell
-
-[Term]
-id: CL:1001106
-name: kidney loop of Henle thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001049
-is_a: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
-relationship: part_of UBERON:0001291 ! thick ascending limb of loop of Henle
-
-[Term]
-id: CL:1001107
-name: kidney loop of Henle thin ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001050
-is_a: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
-relationship: part_of UBERON:0004193 ! loop of Henle ascending limb thin segment
-
-[Term]
-id: CL:1001108
-name: kidney loop of Henle medullary thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001051
-is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
-relationship: part_of UBERON:0006376 ! premacula segment of distal straight tubule
-
-[Term]
-id: CL:1001109
-name: kidney loop of Henle cortical thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001052
-is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
-relationship: part_of UBERON:0006854 ! distal straight tubule postmacula segment
-
-[Term]
-id: CL:1001111
-name: kidney loop of Henle thin descending limb epithelial cell
-namespace: cell
-xref: KUPO:0001054
-is_a: CL:1000453 ! epithelial cell of intermediate tubule
-is_a: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
-relationship: part_of UBERON:0005096 ! descending thin limb
-
-[Term]
-id: CL:1001225
-name: kidney collecting duct cell
-namespace: cell
-xref: KUPO:0001012
-xref: Wikipedia:Kidney_collecting_duct_cell
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
-
-[Term]
-id: CL:1001431
-name: kidney collecting duct principal cell
-namespace: cell
-xref: KUPO:0001128
-is_a: CL:1000454 ! kidney collecting duct epithelial cell
-
-[Term]
-id: CL:1001432
-name: kidney collecting duct intercalated cell
-namespace: cell
-xref: http://en.wikipedia.org/wiki/Collecting_duct_system#Intercalated_cells
-xref: KUPO:0001129
-is_a: CL:1000454 ! kidney collecting duct epithelial cell
-
-[Term]
 id: UBERON:0000061
 name: anatomical structure
 namespace: uberon
@@ -683,7 +170,7 @@ is_a: BFO:0000004 ! independent continuant
 id: UBERON:0001229
 name: renal corpuscle
 namespace: uberon
-def: "the structure containing the glomerular capsule and the glomerulus that serves as the initial blood-filtering component of a nephron" [ISBN:0-683-40008-8, MP:0002827]
+def: "The structure containing the glomerular capsule and the glomerulus that serves as the initial blood-filtering component of a nephron." [ISBN:0-683-40008-8, MP:0002827]
 comment: Together, the Bowmans capsule and the glomerulus comprise the definitive renal corpuscle. http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron
 subset: pheno_slim
 subset: uberon_slim
@@ -719,7 +206,7 @@ property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]
 id: UBERON:0001230
 name: glomerular capsule
 namespace: uberon
-def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus" [MGI:pvb, MP:0002828, Wikipedia:Bowman%27s_capsule]
+def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus." [MGI:pvb, MP:0002828, Wikipedia:Bowman%27s_capsule]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -794,7 +281,7 @@ property_value: UBPROP:0000012 "note that in ISBN:0073040584 (Vertebrates, Kardo
 id: UBERON:0001232
 name: collecting duct of renal tubule
 namespace: uberon
-def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient" [GO:0072044, Wikipedia:Collecting_tubule]
+def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient." [GO:0072044, Wikipedia:Collecting_tubule]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -830,7 +317,7 @@ property_value: UBPROP:0000012 "in ISBN:0073040584 (Vertebrates, Kardong), the n
 id: UBERON:0001285
 name: nephron
 namespace: uberon
-def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]" [PMID:9268568, Wikipedia:Nephron]
+def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]." [PMID:9268568, Wikipedia:Nephron]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -863,7 +350,7 @@ property_value: UBPROP:0000008 "In the avian kidney, three types of nephron are 
 id: UBERON:0001286
 name: Bowman's space
 namespace: uberon
-def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]" [http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499, Wikipedia:Bowman's_space]
+def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]." [http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499, Wikipedia:Bowman's_space]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -934,7 +421,7 @@ property_value: UBPROP:0000001 "Renal tubule that connects to the renal corpuscl
 id: UBERON:0001288
 name: loop of Henle
 namespace: uberon
-def: "the section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine" [MGI:csmith, MP:0004755]
+def: "The section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine." [MGI:csmith, MP:0004755]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "ansa nephroni" EXACT LATIN [Wikipedia:Loop_of_Henle]
@@ -965,7 +452,7 @@ property_value: UBPROP:0000009 "The loop of Henle plays an important role in cre
 id: UBERON:0001289
 name: descending limb of loop of Henle
 namespace: uberon
-def: "the portion of the renal tubule that constitutes the proximal part of the loop of Henle, has low permeability to ions and urea, and is highly permeable to water; it consists of an initial short thick segment lined by low simple cuboidal epithelium and a long thin segment lined by simple squamous epithelium; however, this distinction is not as important physiologically as in the ascending limb, so often the two are treated as one structure" [MGI:anna, MP:0011341]
+def: "The portion of the renal tubule that constitutes the proximal part of the loop of Henle, has low permeability to ions and urea, and is highly permeable to water; it consists of an initial short thick segment lined by low simple cuboidal epithelium and a long thin segment lined by simple squamous epithelium; however, this distinction is not as important physiologically as in the ascending limb, so often the two are treated as one structure." [MGI:anna, MP:0011341]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "descending limb" BROAD []
@@ -1017,7 +504,7 @@ property_value: UBPROP:0000001 "Portion of the renal tubule which is just poster
 id: UBERON:0001291
 name: thick ascending limb of loop of Henle
 namespace: uberon
-def: "the distal sub-portion of the ascending loop of Henle which is lined by simple cuboidal epithelium and enters the renal cortex to empty a hypotonic filtrate into the distal convoluted tubule" [MGI:anna, MP:0011344]
+def: "The distal sub-portion of the ascending loop of Henle which is lined by simple cuboidal epithelium and enters the renal cortex to empty a hypotonic filtrate into the distal convoluted tubule." [MGI:anna, MP:0011344]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "ascending thick limb" EXACT []
@@ -1111,7 +598,7 @@ relationship: part_of UBERON:0004190 {source="GO"} ! renal glomerulus vasculatur
 id: UBERON:0002321
 name: extraglomerular mesangium
 namespace: uberon
-def: "the tissue comprised of mesangial cells that fill the triangular space between the macula densa and the afferent and efferent arterioles of the juxtaglomerular apparatus" [ISBN:0-683-40008-8, MP:0011340]
+def: "The tissue comprised of mesangial cells that fill the triangular space between the macula densa and the afferent and efferent arterioles of the juxtaglomerular apparatus." [ISBN:0-683-40008-8, MP:0011340]
 subset: pheno_slim
 xref: EMAPA:28278
 xref: FMA:84141
@@ -1161,24 +648,6 @@ relationship: part_of UBERON:0001292 {source="MA"} ! distal convoluted tubule
 relationship: part_of UBERON:0002335 {source="MA"} ! macula densa
 
 [Term]
-id: UBERON:0004032
-name: podocyte slit diaphragm
-namespace: uberon
-def: "The thin membrane that covers the podocyte filtration slit which allows small molecules such as water, glucose, and ionic salts to pass through while retaining larger macromolecules in the bloodstream" [MP:0008060]
-subset: pheno_slim
-relationship: part_of CL:0000653 ! glomerular visceral epithelial cell
-property_value: IAO:0000116 "TODO - submit to GO" xsd:string
-
-[Term]
-id: UBERON:0004033
-name: podocyte slit junction
-namespace: uberon
-def: "The gaps between the interdigitated foot processes of the podocyte" [MP:0008062]
-subset: pheno_slim
-relationship: part_of CL:0000653 ! glomerular visceral epithelial cell
-property_value: IAO:0000116 "TODO - submit to GO" xsd:string
-
-[Term]
 id: UBERON:0004134
 name: proximal tubule
 namespace: uberon
@@ -1199,7 +668,7 @@ property_value: IAO:0000116 "TODO - ensure definition works across species." xsd
 id: UBERON:0004135
 name: distal tubule
 namespace: uberon
-def: "The distal tubule is a nephron tubule that consists of the distal convoluted tubule and distal straight tubule segments" [GO:0072017]
+def: "The distal tubule is a nephron tubule that consists of the distal convoluted tubule and distal straight tubule segments." [GO:0072017]
 synonym: "kidney distal tubule" EXACT [MA:0002633]
 synonym: "renal distal tubule" EXACT []
 xref: BTO:0000482
@@ -1213,7 +682,7 @@ is_a: UBERON:0007685 ! region of nephron tubule
 id: UBERON:0004136
 name: intermediate tubule
 namespace: uberon
-def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules" [GO:0072018]
+def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules." [GO:0072018]
 synonym: "renal intermediate tubule" EXACT []
 synonym: "tubulus attenuatus" EXACT [FMA:17718]
 xref: FMA:17718
@@ -1242,7 +711,7 @@ property_value: IAO:0000116 "TODO - check - GO says outer, BTO says inner. Make 
 id: UBERON:0004189
 name: glomerular endothelium
 namespace: uberon
-def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus" [GO:0072011]
+def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus." [GO:0072011]
 synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 xref: BTO:0004631
@@ -1254,7 +723,7 @@ relationship: part_of UBERON:0004190 ! renal glomerulus vasculature
 id: UBERON:0004190
 name: renal glomerulus vasculature
 namespace: uberon
-def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
+def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus." [GO:0072012]
 synonym: "glomerulus vasculature" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vascular network" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vasculature" EXACT [OBOL:automatic]
@@ -1266,7 +735,7 @@ relationship: part_of UBERON:0000074 ! renal glomerulus
 id: UBERON:0004193
 name: loop of Henle ascending limb thin segment
 namespace: uberon
-def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water" [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
+def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water." [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
 subset: pheno_slim
 synonym: "ascending limb thin segment of loop of Henle" EXACT []
 synonym: "ascending thin limb" EXACT [FMA:17720]
@@ -1288,7 +757,7 @@ property_value: IAO:0000116 "check relationship to distal tubule" xsd:string
 id: UBERON:0004194
 name: long nephron
 namespace: uberon
-def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla" [GO:0072029]
+def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla." [GO:0072029]
 synonym: "juxtamedullary nephron" RELATED [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
 xref: FMA:272054
 xref: NCIT:C32892
@@ -1299,7 +768,7 @@ is_a: UBERON:0001285 ! nephron
 id: UBERON:0004195
 name: short nephron
 namespace: uberon
-def: "Short nephrons are associated with mid-cortical glomeruli, and have no short ascending limb, so the limb is situated in the outer medulla" [GO:0072030]
+def: "Short nephrons are associated with mid-cortical glomeruli, and have no short ascending limb, so the limb is situated in the outer medulla." [GO:0072030]
 xref: FMA:272051
 is_a: UBERON:0001285 ! nephron
 
@@ -1338,7 +807,7 @@ id: UBERON:0004203
 name: cortical collecting duct
 namespace: uberon
 alt_id: UBERON:0005267
-def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
+def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex." [GO:0072059]
 synonym: "kidney cortex collecting duct" EXACT [MA:0002600]
 synonym: "renal cortex collecting duct" RELATED [MA:0002600]
 xref: BTO:0002643
@@ -1352,7 +821,7 @@ id: UBERON:0004204
 name: outer medullary collecting duct
 namespace: uberon
 alt_id: UBERON:0005186
-def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
+def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla." [GO:0072060]
 synonym: "kidney outer medulla collecting duct" EXACT [MA:0002599]
 synonym: "outer renal medulla collecting duct" EXACT [MA:0002599]
 xref: EMAPA:28346
@@ -1364,7 +833,7 @@ id: UBERON:0004205
 name: inner medullary collecting duct
 namespace: uberon
 alt_id: UBERON:0005187
-def: "The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla" [GO:0072061]
+def: "The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla." [GO:0072061]
 synonym: "inner renal medulla collecting duct" EXACT [MA:0002598]
 synonym: "kidney inner medulla collecting duct" EXACT [MA:0002598]
 synonym: "papillary collecting duct" RELATED [MA:0002598]
@@ -1377,7 +846,7 @@ is_a: UBERON:0001232 ! collecting duct of renal tubule
 id: UBERON:0004206
 name: long descending thin limb bend
 namespace: uberon
-def: "The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment" [GO:0072065]
+def: "The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment." [GO:0072065]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -1385,7 +854,7 @@ relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 id: UBERON:0004207
 name: prebend segment of loop of Henle
 namespace: uberon
-def: "The prebend segment is a part of the descending thin limb that lies before the bend and exhibits robust sodium chloride reabsorption" [GO:0072066]
+def: "The prebend segment is a part of the descending thin limb that lies before the bend and exhibits robust sodium chloride reabsorption." [GO:0072066]
 synonym: "prebend segment" RELATED [GO:0072066]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
@@ -1395,7 +864,7 @@ relationship: part_of UBERON:0005096 {source="GO"} ! descending thin limb
 id: UBERON:0004211
 name: nephron epithelium
 namespace: uberon
-def: "The nephron epithelium is a tissue that covers the surface of a nephron" [GO:0072088]
+def: "The nephron epithelium is a tissue that covers the surface of a nephron." [GO:0072088]
 synonym: "epithelial tissue of nephron" EXACT [OBOL:automatic]
 synonym: "epithelium of nephron" EXACT [OBOL:automatic]
 synonym: "nephron epithelial tissue" EXACT [OBOL:automatic]
@@ -1405,7 +874,7 @@ relationship: part_of UBERON:0001285 ! nephron
 id: UBERON:0004212
 name: glomerular capillary
 namespace: uberon
-def: "the small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus" [MGI:csmith, MP:0011320]
+def: "The small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus." [MGI:csmith, MP:0011320]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "blood capillary of renal glomerulus" EXACT [OBOL:automatic]
@@ -1446,7 +915,7 @@ relationship: part_of UBERON:0004212 ! glomerular capillary
 id: UBERON:0004639
 name: renal afferent arteriole
 namespace: uberon
-def: "the blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism" [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
+def: "The blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism." [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "afferent arteriole" EXACT [MA:0002579]
@@ -1470,7 +939,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0004640
 name: renal efferent arteriole
 namespace: uberon
-def: "the blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule" [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
+def: "The blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule." [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "arteriola glomerularis efferens capsulae renalis" RELATED LATIN [Wikipedia:Efferent_arteriole]
@@ -1494,7 +963,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0004736
 name: metanephric glomerulus
 namespace: uberon
-def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
+def: "Glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
 synonym: "glomerulus of metanephros" EXACT []
 xref: VHOG:0001242
 is_a: UBERON:0000074 ! renal glomerulus
@@ -1539,7 +1008,7 @@ property_value: UBPROP:0000012 "GO treats glomus and pronephric glomerulus diffe
 id: UBERON:0004810
 name: nephron tubule epithelium
 namespace: uberon
-def: "the cellular avascular layer of the renal tubule luminar surfaces" [MGI:csmith, MP:0009640]
+def: "The cellular avascular layer of the renal tubule luminar surfaces." [MGI:csmith, MP:0009640]
 subset: pheno_slim
 synonym: "kidney tubule epithelium" EXACT [MA:0001681]
 xref: BTO:0005239
@@ -1946,7 +1415,7 @@ is_a: UBERON:0001232 ! collecting duct of renal tubule
 id: UBERON:0005185
 name: renal medulla collecting duct
 namespace: uberon
-def: "The portion of the collecting duct that resides in the renal medulla" [http://orcid.org/0000-0002-6601-2165]
+def: "The portion of the collecting duct that resides in the renal medulla." [http://orcid.org/0000-0002-6601-2165]
 synonym: "kidney medulla collecting duct" EXACT [MA:0002935]
 synonym: "medullary collecting duct" EXACT [EMAPA:28061]
 xref: BTO:0004536
@@ -2094,7 +1563,7 @@ property_value: UBPROP:0000011 "...Soon afterwards, endothelial cells invade to 
 id: UBERON:0005750
 name: glomerular parietal epithelium
 namespace: uberon
-def: "A single layer of simple squamous epithelium in the glomerular capsule. Does not function in filtration[UBERON]. outer layer of the glomerular capsule composed of a single layer of simple squamous epithelium[MP]" [https://orcid.org/0000-0002-6601-2165, MP:0011498]
+def: "A single layer of simple squamous epithelium in the glomerular capsule. Does not function in filtration[UBERON]. outer layer of the glomerular capsule composed of a single layer of simple squamous epithelium[MP]." [https://orcid.org/0000-0002-6601-2165, MP:0011498]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "Bowman's parietal epithelium" EXACT [MP:0011498]
@@ -2130,7 +1599,7 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 id: UBERON:0005751
 name: visceral layer of glomerular capsule
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]" [BTO:0001515, MP:0011497]
+def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
@@ -2153,7 +1622,7 @@ property_value: IAO:0000116 "TODO - check - the BTO class 'glomerular epithelium
 id: UBERON:0005777
 name: glomerular basement membrane
 namespace: uberon
-def: "the layer of extracellular matrix that lies between the endothelium of the glomerular capillaries and the podocytes of the inner or visceral layer of the Bowman capsule; it is a fusion of the endothelial cell and podocyte basal laminas and acts as a physical barrier and an ion-selective filter" [MGI:anna, MP:0011348]
+def: "The layer of extracellular matrix that lies between the endothelium of the glomerular capillaries and the podocytes of the inner or visceral layer of the Bowman capsule; it is a fusion of the endothelial cell and podocyte basal laminas and acts as a physical barrier and an ion-selective filter." [MGI:anna, MP:0011348]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "GBM" BROAD ABBREVIATION []
@@ -2242,7 +1711,7 @@ relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/ub
 id: UBERON:0006182
 name: mesonephric glomerular mesangium
 namespace: uberon
-def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus" [GO:0061247]
+def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus." [GO:0061247]
 is_a: UBERON:0002320 ! glomerular mesangium
 relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus vasculature
 
@@ -2259,7 +1728,7 @@ relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github
 id: UBERON:0006189
 name: mesonephric connecting tubule
 namespace: uberon
-def: "The mesonephric connecting tubule is a tubular segment of the mesonephric nephron; it connects the distal tubule to the collecting duct in the mesonephros" [GO:0061272]
+def: "The mesonephric connecting tubule is a tubular segment of the mesonephric nephron; it connects the distal tubule to the collecting duct in the mesonephros." [GO:0061272]
 is_a: UBERON:0005097 ! renal connecting tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
@@ -2268,7 +1737,7 @@ relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/ub
 id: UBERON:0006190
 name: mesonephric distal tubule
 namespace: uberon
-def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins at the macula densa and extends to the mesonephric connecting tubule" [GO:0061273]
+def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins at the macula densa and extends to the mesonephric connecting tubule." [GO:0061273]
 is_a: UBERON:0004135 ! distal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
@@ -2278,7 +1747,7 @@ property_value: UBPROP:0000012 "ZFA has terms for developing tubule" xsd:string 
 id: UBERON:0006192
 name: mesonephric proximal tubule
 namespace: uberon
-def: "The mesonephric proximal tubule extends from the capsule to the distal tubule" [GO:0061275]
+def: "The mesonephric proximal tubule extends from the capsule to the distal tubule." [GO:0061275]
 is_a: UBERON:0004134 ! proximal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
@@ -2543,7 +2012,7 @@ is_a: UBERON:0000061 ! anatomical structure
 id: UBERON:0012352
 name: mesangial matrix
 namespace: uberon
-def: "Extracellular matrix secreted by intraglomerular mesangial cells" [MP:0011338]
+def: "Extracellular matrix secreted by intraglomerular mesangial cells." [MP:0011338]
 subset: pheno_slim
 synonym: "extracellular mesangial matrix" EXACT [MP:0011338]
 xref: EMAPA:37907 {source="MA:th"}

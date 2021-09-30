@@ -23,1313 +23,6 @@ name: material entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: CL:0000474
-name: pericardial nephrocyte
-namespace: cell
-def: "An insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." []
-synonym: "pericardial cell" NARROW []
-xref: FBbt:00005058
-is_a: CL:0002520 ! nephrocyte
-
-[Term]
-id: CL:0000486
-name: garland cell
-namespace: cell
-def: "A large binucleate cell that forms a 'garland' around the anterior end of the proventriculus (cardia) at its junction with the esophagus in both adults and larvae flies. Each cell is surrounded by a basement membrane and there are numerous micro-invaginations (lacunae) extending from the surface into the cytoplasm. At the mouth of each lacuna is a doubled filament forming a specialised filtration system (diaphragm). The filtrate is endocytosed from the lacunae." []
-synonym: "garland nephrocyte" BROAD []
-xref: BTO:0004596
-xref: FBbt:00005059
-is_a: CL:0002520 ! nephrocyte
-
-[Term]
-id: CL:0000648
-name: kidney granular cell
-namespace: cell
-alt_id: CL:0000461
-def: "A smooth muscle cell that synthesizes, stores, and secretes the enzyme renin. This cell type are located in the wall of the afferent arteriole at the entrance to the glomerulus. While having a different origin than other kidney smooth muscle cells, this cell type expresses smooth muscle actin upon maturation." []
-synonym: "JG cell" EXACT []
-synonym: "juxtaglomerular cell" BROAD []
-synonym: "renin secreting cell" EXACT []
-xref: FMA:84138
-is_a: CL:1000618 ! juxtaglomerular complex cell
-
-[Term]
-id: CL:0000653
-name: glomerular visceral epithelial cell
-namespace: cell
-def: "A glomerular visceral epithelial cell is a specialized kidney epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells." []
-comment: GO has podocyte as a related synonym due to concern this may refer to more than one cell type. However, this did not turn up in my search. If podocyte does refer to more than one cell type, then we should classify the synonym to 'related'[tfm].
-synonym: "epithelial cell of visceral layer of glomerular capsule" BROAD []
-synonym: "glomerular podocyte" EXACT []
-synonym: "podocyte" EXACT []
-xref: BTO:0002295
-xref: FMA:70967
-is_a: CL:0002522 ! renal filtration cell
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
-relationship: part_of UBERON:0005751 ! visceral layer of glomerular capsule
-
-[Term]
-id: CL:0000731
-name: urothelial cell
-namespace: cell
-def: "A cell of a layer of transitional epithelium in the wall of the bladder, ureter, and renal pelvis, external to the lamina propria." []
-synonym: "bladder transitional cell" NARROW []
-synonym: "transitional epithelial cell of urinary bladder" NARROW []
-synonym: "urinary tract transitional epithelial cell" NARROW []
-xref: FMA:84127
-relationship: part_of UBERON:0000365 ! urothelium
-
-[Term]
-id: CL:0002173
-name: extraglomerular mesangial cell
-namespace: cell
-def: "A cell that is a specialized type of pericyte providing structural support for the capillary loops of kidney. A flat, elongated cell with extensive fine cytoplasmic processes found outside the kidney glomerulus near the macula densa and bound laterally by afferent and efferent arterioles. Being phagocytic, this cell participates in the continuous turnover of the basal lamina by removing its outer portion containing residues of filtration, while the lamina is renewed on its inner surface by the endothelial cells." []
-synonym: "Goormaghtigh cell" EXACT []
-synonym: "lacis cell" RELATED []
-synonym: "polar cushion cells" EXACT []
-xref: FMA:84143
-xref: KUPO:0001033
-is_a: CL:1000500 ! kidney interstitial cell
-is_a: CL:1000618 ! juxtaglomerular complex cell
-is_a: CL:1000746 ! glomerular cell
-is_a: CL:1001318 ! renal interstitial pericyte
-relationship: part_of UBERON:0002321 ! extraglomerular mesangium
-created_by: tmeehan
-creation_date: 2010-08-25T02:20:55Z
-
-[Term]
-id: CL:0002188
-name: glomerular endothelial cell
-namespace: cell
-def: "An endothelial cell found in the glomerulus of the kidney. This cell is flattened, highly fenestrated, and plays a vital role in the formation of glomerular ultrafiltrate." []
-xref: BTO:0004632
-xref: FMA:70970
-is_a: CL:1000746 ! glomerular cell
-created_by: tmeehan
-creation_date: 2010-08-26T10:59:44Z
-
-[Term]
-id: CL:0002201
-name: renal beta-intercalated cell
-namespace: cell
-def: "A renal intercalated cell that secretes base and reabsorbs acid in the coritcal collecting duct to mantain acid/base balance." []
-is_a: CL:0005010 ! renal intercalated cell
-created_by: tmeehan
-creation_date: 2010-09-02T01:43:55Z
-
-[Term]
-id: CL:0002305
-name: epithelial cell of distal tubule
-namespace: cell
-def: "An epithelial cell of the distal convoluted tubule of the kidney that helps regulate systemic levels of potassium, sodium, calcium, and pH." []
-synonym: "kidney distal tubule epithelial cell" EXACT []
-xref: FMA:62125
-xref: FMA:70981
-xref: KUPO:0001055
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0004135 ! distal tubule
-
-[Term]
-id: CL:0002306
-name: epithelial cell of proximal tubule
-namespace: cell
-def: "An epithelial cell of the proximal tubule of the kidney." []
-synonym: "kidney proximal tubule epithelial cell" EXACT []
-xref: FMA:62125
-xref: FMA:70973
-xref: KUPO:0001044
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0004134 ! proximal tubule
-
-[Term]
-id: CL:0002307
-name: brush border cell of the proximal tubule
-namespace: cell
-def: "A brush border epithelial cell located in the proximal tubule of the kidney that detects fluid flow." []
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-created_by: tmeehan
-creation_date: 2010-09-14T11:29:20Z
-
-[Term]
-id: CL:0002518
-name: kidney epithelial cell
-namespace: cell
-def: "An epithelial cell of the kidney." []
-xref: KUPO:0001019
-is_a: CL:1000497 ! kidney cell
-created_by: tmeehan
-creation_date: 2011-02-08T10:46:34Z
-
-[Term]
-id: CL:0002519
-name: interrenal epithelial cell
-namespace: cell
-def: "An interrenal epithelial kidney cell is an epithelial cell found in the anterior kidney of teleosts fish. This cell type is arranged in layers around the posterior cardinal vein and contains many mitochondria with tubulovesicular cristae. Interrenal chromaffin cells are interspersed among the tissue layer created by this cell type." []
-is_a: CL:0002518 ! kidney epithelial cell
-created_by: tmeehan
-creation_date: 2011-02-08T11:03:32Z
-
-[Term]
-id: CL:0002520
-name: nephrocyte
-namespace: cell
-def: "An insect excretory cell that regulates haemolymph composition by filtration and filtrate endocytosis." []
-xref: BTO:0004597
-xref: FMA:83807
-is_a: CL:0002522 ! renal filtration cell
-created_by: tmeehan
-creation_date: 2011-02-08T01:34:56Z
-
-[Term]
-id: CL:0002522
-name: renal filtration cell
-namespace: cell
-def: "A renal filtration cell is a specialized cell of the renal system that filter fluids by charge, size or both." []
-relationship: part_of UBERON:0001008 ! renal system
-created_by: tmeehan
-creation_date: 2011-02-08T01:37:59Z
-
-[Term]
-id: CL:0002523
-name: mesonephric glomerular visceral epithelial cell
-namespace: cell
-def: "A mesonephric glomerular visceral epithelial cell is a specialized epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells in the mesonephros" []
-is_a: CL:0000653 ! glomerular visceral epithelial cell
-relationship: part_of UBERON:0000080 ! mesonephros
-created_by: tmeehan
-creation_date: 2011-02-08T01:58:30Z
-
-[Term]
-id: CL:0002524
-name: disseminated nephrocyte
-namespace: cell
-def: "A disseminated nephrocyte is a nephrocyte that filters hemolymph and is found at scattered locations in the fat body or other tissues." []
-is_a: CL:0002520 ! nephrocyte
-created_by: tmeehan
-creation_date: 2011-02-08T02:07:33Z
-
-[Term]
-id: CL:0002525
-name: metanephric glomerular visceral epithelial cell
-namespace: cell
-def: "A metanephric glomerular visceral epithelial cell is a specialized epithelial cell that contains \"feet\" that interdigitate with the \"feet\" of other glomerular epithelial cells in the metanephros." []
-is_a: CL:0000653 ! glomerular visceral epithelial cell
-relationship: part_of UBERON:0000081 ! metanephros
-created_by: tmeehan
-creation_date: 2011-02-08T02:02:13Z
-
-[Term]
-id: CL:0002584
-name: renal cortical epithelial cell
-namespace: cell
-def: "An epithelial cell of the kidney cortex." []
-xref: KUPO:0001016
-is_a: CL:0002518 ! kidney epithelial cell
-is_a: CL:0002681 ! kidney cortical cell
-
-[Term]
-id: CL:0002597
-name: smooth muscle cell of bladder
-namespace: cell
-def: "A smooth muscle cell of the bladder." []
-xref: KUPO:0001122
-is_a: CL:1001319 ! bladder cell
-created_by: tmeehan
-creation_date: 2011-03-06T05:43:24Z
-
-[Term]
-id: CL:0002681
-name: kidney cortical cell
-namespace: cell
-is_a: CL:1000497 ! kidney cell
-relationship: part_of UBERON:0001225 ! cortex of kidney
-created_by: terryh
-creation_date: 2011-10-25T03:49:41Z
-
-[Term]
-id: CL:0005009
-name: renal principal cell
-namespace: cell
-def: "A cuboidal epithelial cell of the kidney which regulates sodium and potassium balance. The activity of sodium and potassium channels on the cells apical membrane is regulated by aldosterone and vasopressin. In mammals these cells are located in the renal collecting ducts." []
-is_a: CL:0002518 ! kidney epithelial cell
-
-[Term]
-id: CL:0005010
-name: renal intercalated cell
-namespace: cell
-def: "A cuboidal epithelial cell of the kidney that regulates acid/base balance." []
-synonym: "intercalated cell" EXACT []
-xref: FMA:86560
-is_a: CL:0002518 ! kidney epithelial cell
-
-[Term]
-id: CL:0005011
-name: renal alpha-intercalated cell
-namespace: cell
-def: "A cuboidal epithelial cell of the kidney which secretes acid and reabsorbs base to regulate acid/base balance." []
-is_a: CL:0005010 ! renal intercalated cell
-
-[Term]
-id: CL:0009019
-name: nephrogenic zone cell
-def: "A kidney cortical cell that is part of the nephrogenic zone." []
-subset: added_for_HCA
-synonym: "cortical nephrogenic niche cell" EXACT []
-synonym: "cortical nephrogenic zone cell" EXACT []
-is_a: CL:0002681 ! kidney cortical cell
-relationship: part_of UBERON:0009871 ! nephrogenic zone
-created_by: http://orcid.org/0000-0002-2825-0621
-
-[Term]
-id: CL:1000022
-name: mesonephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005329 ! mesonephric nephron tubule
-
-[Term]
-id: CL:1000090
-name: pronephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005310 ! pronephric nephron tubule
-
-[Term]
-id: CL:1000123
-name: metanephric nephron tubule epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0005146 ! metanephric nephron tubule
-
-[Term]
-id: CL:1000155
-name: Malpighian tubule stellate cell
-def: "A specialized epithelial secretory cell that moves chloride ions and water across the tubule epithelium." []
-synonym: "Malpighian tubule Type II cell" EXACT []
-xref: FBbt:00005797
-relationship: part_of UBERON:0001054 ! Malpighian tubule
-
-[Term]
-id: CL:1000182
-name: malpighian tubule tip cell
-relationship: part_of UBERON:0001054 ! Malpighian tubule
-
-[Term]
-id: CL:1000296
-name: epithelial cell of urethra
-namespace: cell
-def: "An epithelial cell that is part of the urethra." []
-xref: FMA:256165
-is_a: CL:1001320 ! urethra cell
-
-[Term]
-id: CL:1000308
-name: fibrocyte of adventitia of ureter
-namespace: cell
-def: "A fibrocyte that is part of the adventitia of ureter." []
-xref: FMA:261289
-is_a: CL:1000708 ! ureter adventitial cell
-
-[Term]
-id: CL:1000442
-name: urothelial cell of trigone of urinary bladder
-namespace: cell
-def: "An urothelial cell that is part of the trigone of urinary bladder." []
-synonym: "epithelial cell of vesical trigone" EXACT []
-xref: FMA:70598
-is_a: CL:0000731 ! urothelial cell
-is_a: CL:1001319 ! bladder cell
-relationship: part_of UBERON:0001257 ! trigone of urinary bladder
-
-[Term]
-id: CL:1000449
-name: epithelial cell of nephron
-namespace: cell
-def: "An epithelial cell that is part of the nephron." []
-xref: FMA:70965
-is_a: CL:0002518 ! kidney epithelial cell
-relationship: part_of UBERON:0001285 ! nephron
-
-[Term]
-id: CL:1000450
-name: epithelial cell of glomerular capsule
-namespace: cell
-def: "An epithelial cell that is part of the glomerular capsule." []
-synonym: "Bowmans capsule epithelial cell" EXACT []
-synonym: "epithelial cell of Bowman's capsule" EXACT []
-xref: FMA:70966
-xref: KUPO:0001034
-is_a: CL:1000510 ! kidney glomerular epithelial cell
-relationship: part_of UBERON:0001230 ! glomerular capsule
-
-[Term]
-id: CL:1000452
-name: parietal epithelial cell
-namespace: cell
-alt_id: CL:1000897
-def: "An epithelial cell that is part of the glomerular parietal epithelium." []
-synonym: "epithelial cell of parietal layer of glomerular capsule" EXACT []
-xref: FMA:70968
-xref: KUPO:0001035
-is_a: CL:1000450 ! epithelial cell of glomerular capsule
-relationship: part_of UBERON:0005750 ! glomerular parietal epithelium
-
-[Term]
-id: CL:1000453
-name: epithelial cell of intermediate tubule
-namespace: cell
-def: "An epithelial cell that is part of the intermediate tubule." []
-xref: FMA:70980
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0004136 ! intermediate tubule
-
-[Term]
-id: CL:1000454
-name: kidney collecting duct epithelial cell
-namespace: cell
-def: "An epithelial cell that is part of the collecting duct of renal tubule." []
-synonym: "epithelial cell of renal collecting tubule" EXACT []
-xref: FMA:70982
-xref: KUPO:0001059
-is_a: CL:1001225 ! kidney collecting duct cell
-
-[Term]
-id: CL:1000486
-name: basal cell of urothelium
-namespace: cell
-def: "A basal cell that is part of the urothelium." []
-xref: FMA:84150
-relationship: part_of UBERON:0000365 ! urothelium
-
-[Term]
-id: CL:1000494
-name: nephron tubule epithelial cell
-namespace: cell
-def: "An epithelial cell that is part of a nephron tubule." []
-comment: This needs to be further defined as a juxtamedullary nephron. Will request the juxtamedullary nephron tubule class from UBERON.
-synonym: "kidney tubule epithelial cell" EXACT []
-xref: FMA:86785
-xref: KUPO:0001022
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0004810 ! nephron tubule epithelium
-
-[Term]
-id: CL:1000497
-name: kidney cell
-namespace: cell
-xref: KUPO:0001010
-relationship: part_of UBERON:0002113 ! kidney
-
-[Term]
-id: CL:1000500
-name: kidney interstitial cell
-namespace: cell
-xref: KUPO:0001013
-is_a: CL:1000497 ! kidney cell
-relationship: part_of UBERON:0005215 ! kidney interstitium
-
-[Term]
-id: CL:1000504
-name: kidney medulla cell
-namespace: cell
-xref: KUPO:0001017
-is_a: CL:1000497 ! kidney cell
-relationship: part_of UBERON:0000362 ! renal medulla
-
-[Term]
-id: CL:1000505
-name: kidney pelvis cell
-namespace: cell
-xref: KUPO:0001018
-is_a: CL:1000497 ! kidney cell
-relationship: part_of UBERON:0001224 ! renal pelvis
-
-[Term]
-id: CL:1000507
-name: kidney tubule cell
-namespace: cell
-xref: KUPO:0001020
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001231 ! nephron tubule
-
-[Term]
-id: CL:1000510
-name: kidney glomerular epithelial cell
-namespace: cell
-xref: KUPO:0001023
-is_a: CL:1000746 ! glomerular cell
-relationship: part_of UBERON:0004188 ! glomerular epithelium
-
-[Term]
-id: CL:1000546
-name: kidney medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001060
-is_a: CL:1000504 ! kidney medulla cell
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0005185 ! renal medulla collecting duct
-
-[Term]
-id: CL:1000547
-name: kidney inner medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001061
-is_a: CL:1000617 ! kidney inner medulla cell
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004205 ! inner medullary collecting duct
-
-[Term]
-id: CL:1000548
-name: kidney outer medulla collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001062
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004204 ! outer medullary collecting duct
-
-[Term]
-id: CL:1000549
-name: kidney cortex collecting duct epithelial cell
-namespace: cell
-xref: KUPO:0001063
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0004203 ! cortical collecting duct
-
-[Term]
-id: CL:1000550
-name: kidney papillary duct principal epithelial cell
-namespace: cell
-xref: KUPO:0001064
-is_a: CL:1001225 ! kidney collecting duct cell
-relationship: part_of UBERON:0005167 ! papillary duct
-
-[Term]
-id: CL:1000596
-name: inner renal cortex cell
-namespace: cell
-xref: KUPO:0001111
-is_a: CL:0002681 ! kidney cortical cell
-relationship: part_of UBERON:0005271 ! juxtamedullary cortex
-
-[Term]
-id: CL:1000597
-name: papillary tips cell
-namespace: cell
-xref: KUPO:0001112
-is_a: CL:1000505 ! kidney pelvis cell
-is_a: CL:1000617 ! kidney inner medulla cell
-relationship: part_of UBERON:0009095 ! tip of renal papilla
-
-[Term]
-id: CL:1000600
-name: lower urinary tract cell
-namespace: cell
-xref: KUPO:0001115
-relationship: part_of UBERON:0001556 ! lower urinary tract
-
-[Term]
-id: CL:1000601
-name: ureteral cell
-namespace: cell
-xref: KUPO:0001116
-relationship: part_of UBERON:0000056 ! ureter
-
-[Term]
-id: CL:1000606
-name: kidney nerve cell
-namespace: cell
-xref: KUPO:0001015
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000612
-name: kidney corpuscule cell
-namespace: cell
-xref: KUPO:0001021
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001229 ! renal corpuscle
-
-[Term]
-id: CL:1000615
-name: kidney cortex tubule cell
-namespace: cell
-xref: KUPO:0001024
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000507 ! kidney tubule cell
-relationship: part_of UBERON:0006853 ! renal cortex tubule
-
-[Term]
-id: CL:1000616
-name: kidney outer medulla cell
-namespace: cell
-xref: KUPO:0001025
-is_a: CL:1000504 ! kidney medulla cell
-relationship: part_of UBERON:0001293 ! outer medulla of kidney
-
-[Term]
-id: CL:1000617
-name: kidney inner medulla cell
-namespace: cell
-xref: KUPO:0001026
-is_a: CL:1000504 ! kidney medulla cell
-relationship: part_of UBERON:0001294 ! inner medulla of kidney
-
-[Term]
-id: CL:1000618
-name: juxtaglomerular complex cell
-namespace: cell
-synonym: "juxtaglomerulus cell" EXACT []
-xref: KUPO:0001028
-is_a: CL:0002681 ! kidney cortical cell
-relationship: part_of UBERON:0002303 ! juxtaglomerular apparatus
-
-[Term]
-id: CL:1000681
-name: kidney cortex interstitial cell
-namespace: cell
-xref: KUPO:0001091
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000500 ! kidney interstitial cell
-relationship: part_of UBERON:0005270 ! renal cortex interstitium
-
-[Term]
-id: CL:1000682
-name: kidney medulla interstitial cell
-namespace: cell
-xref: KUPO:0001092
-is_a: CL:1000500 ! kidney interstitial cell
-is_a: CL:1000504 ! kidney medulla cell
-relationship: part_of UBERON:0005211 ! renal medulla interstitium
-
-[Term]
-id: CL:1000691
-name: kidney interstitial myofibroblast
-namespace: cell
-xref: KUPO:0001101
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000692
-name: kidney interstitial fibroblast
-namespace: cell
-xref: KUPO:0001102
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000693
-name: kidney interstitial fibrocyte
-namespace: cell
-xref: KUPO:0001103
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000695
-name: kidney interstitial alternatively activated macrophage
-namespace: cell
-xref: KUPO:0001106
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000696
-name: kidney interstitial inflammatory macrophage
-namespace: cell
-xref: KUPO:0001107
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000697
-name: kidney interstitial suppressor macrophage
-namespace: cell
-xref: KUPO:0001108
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000698
-name: kidney resident macrophage
-namespace: cell
-xref: KUPO:0001109
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000699
-name: kidney resident dendritic cell
-namespace: cell
-xref: KUPO:0001110
-is_a: CL:1000500 ! kidney interstitial cell
-
-[Term]
-id: CL:1000702
-name: kidney pelvis smooth muscle cell
-namespace: cell
-xref: KUPO:0001113
-is_a: CL:1000505 ! kidney pelvis cell
-relationship: part_of UBERON:0004227 ! kidney pelvis smooth muscle
-
-[Term]
-id: CL:1000703
-name: kidney pelvis urothelial cell
-namespace: cell
-xref: KUPO:0001114
-is_a: CL:0000731 ! urothelial cell
-is_a: CL:0002518 ! kidney epithelial cell
-is_a: CL:1000505 ! kidney pelvis cell
-relationship: part_of UBERON:0004788 ! kidney pelvis urothelium
-
-[Term]
-id: CL:1000706
-name: ureter urothelial cell
-namespace: cell
-xref: KUPO:0001117
-is_a: CL:0000731 ! urothelial cell
-is_a: CL:1000601 ! ureteral cell
-relationship: part_of UBERON:0001254 ! urothelium of ureter
-
-[Term]
-id: CL:1000708
-name: ureter adventitial cell
-namespace: cell
-xref: KUPO:0001119
-is_a: CL:1000601 ! ureteral cell
-relationship: part_of UBERON:0001252 ! adventitia of ureter
-
-[Term]
-id: CL:1000714
-name: kidney cortex collecting duct principal cell
-namespace: cell
-xref: KUPO:0001130
-is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000715
-name: kidney cortex collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001131
-is_a: CL:1000549 ! kidney cortex collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000716
-name: kidney outer medulla collecting duct principal cell
-namespace: cell
-xref: KUPO:0001132
-is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000717
-name: kidney outer medulla collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001133
-is_a: CL:1000548 ! kidney outer medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000718
-name: kidney inner medulla collecting duct principal cell
-namespace: cell
-xref: KUPO:0001134
-is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000719
-name: kidney inner medulla collecting duct intercalated cell
-namespace: cell
-xref: KUPO:0001135
-is_a: CL:1000547 ! kidney inner medulla collecting duct epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000720
-name: kidney papillary duct intercalated cell
-namespace: cell
-xref: KUPO:0001136
-is_a: CL:1000550 ! kidney papillary duct principal epithelial cell
-is_a: CL:1001432 ! kidney collecting duct intercalated cell
-
-[Term]
-id: CL:1000721
-name: kidney papillary duct principal cell
-namespace: cell
-xref: KUPO:0001137
-is_a: CL:1000550 ! kidney papillary duct principal epithelial cell
-is_a: CL:1001431 ! kidney collecting duct principal cell
-
-[Term]
-id: CL:1000742
-name: glomerular mesangial cell
-namespace: cell
-def: "Intraglomerular mesangial cells are specialized pericytes located among the glomerular capillaries within a renal corpuscle of a kidney." []
-synonym: "intraglomerular mesangial cell" EXACT []
-xref: KUPO:0001032
-is_a: CL:1000500 ! kidney interstitial cell
-is_a: CL:1000746 ! glomerular cell
-is_a: CL:1001318 ! renal interstitial pericyte
-relationship: part_of UBERON:0002320 ! glomerular mesangium
-
-[Term]
-id: CL:1000746
-name: glomerular cell
-namespace: cell
-xref: KUPO:0001036
-is_a: CL:1000612 ! kidney corpuscule cell
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
-id: CL:1000768
-name: kidney connecting tubule epithelial cell
-namespace: cell
-xref: KUPO:0001058
-is_a: CL:1000494 ! nephron tubule epithelial cell
-is_a: CL:1000615 ! kidney cortex tubule cell
-relationship: part_of UBERON:0005097 ! renal connecting tubule
-
-[Term]
-id: CL:1000803
-name: kidney inner medulla interstitial cell
-namespace: cell
-xref: KUPO:0001093
-is_a: CL:1000617 ! kidney inner medulla cell
-is_a: CL:1000682 ! kidney medulla interstitial cell
-relationship: part_of UBERON:0005214 ! inner renal medulla interstitium
-
-[Term]
-id: CL:1000804
-name: kidney outer medulla interstitial cell
-namespace: cell
-xref: KUPO:0001094
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1000682 ! kidney medulla interstitial cell
-relationship: part_of UBERON:0005213 ! outer renal medulla interstitium
-
-[Term]
-id: CL:1000838
-name: kidney proximal convoluted tubule epithelial cell
-namespace: cell
-xref: KUPO:0001045
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-relationship: part_of UBERON:0001287 ! proximal convoluted tubule
-
-[Term]
-id: CL:1000839
-name: kidney proximal straight tubule epithelial cell
-namespace: cell
-xref: KUPO:0001046
-is_a: CL:0002306 ! epithelial cell of proximal tubule
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
-relationship: part_of UBERON:0001290 ! proximal straight tubule
-
-[Term]
-id: CL:1000849
-name: kidney distal convoluted tubule epithelial cell
-namespace: cell
-xref: KUPO:0001056
-is_a: CL:0002305 ! epithelial cell of distal tubule
-relationship: part_of UBERON:0001292 ! distal convoluted tubule
-
-[Term]
-id: CL:1000850
-name: macula densa epithelial cell
-namespace: cell
-xref: KUPO:0001057
-is_a: CL:0002305 ! epithelial cell of distal tubule
-is_a: CL:1000618 ! juxtaglomerular complex cell
-relationship: part_of UBERON:0002335 ! macula densa
-
-[Term]
-id: CL:1000854
-name: kidney blood vessel cell
-namespace: cell
-xref: KUPO:0001014
-is_a: CL:0002584 ! renal cortical epithelial cell
-is_a: CL:1000504 ! kidney medulla cell
-relationship: part_of UBERON:0003517 ! kidney blood vessel
-
-[Term]
-id: CL:1000891
-name: kidney arterial blood vessel cell
-namespace: cell
-xref: KUPO:0001029
-is_a: CL:1000854 ! kidney blood vessel cell
-relationship: part_of UBERON:0003644 ! kidney arterial blood vessel
-
-[Term]
-id: CL:1000892
-name: kidney capillary endothelial cell
-namespace: cell
-xref: KUPO:0001030
-is_a: CL:1000854 ! kidney blood vessel cell
-relationship: part_of UBERON:0003527 ! kidney capillary
-
-[Term]
-id: CL:1000893
-name: kidney venous blood vessel cell
-namespace: cell
-xref: KUPO:0001031
-is_a: CL:1000854 ! kidney blood vessel cell
-
-[Term]
-id: CL:1000909
-name: kidney loop of Henle epithelial cell
-namespace: cell
-xref: KUPO:0001047
-is_a: CL:1000494 ! nephron tubule epithelial cell
-relationship: part_of UBERON:0001288 ! loop of Henle
-
-[Term]
-id: CL:1000979
-name: ureter smooth muscle cell
-namespace: cell
-xref: KUPO:0001118
-is_a: CL:1000601 ! ureteral cell
-relationship: part_of UBERON:0006855 ! muscular coat of ureter
-
-[Term]
-id: CL:1001005
-name: glomerular capillary endothelial cell
-namespace: cell
-xref: KUPO:0001037
-is_a: CL:0002188 ! glomerular endothelial cell
-is_a: CL:1000510 ! kidney glomerular epithelial cell
-is_a: CL:1000892 ! kidney capillary endothelial cell
-relationship: part_of UBERON:0004294 ! glomerular capillary endothelium
-
-[Term]
-id: CL:1001006
-name: kidney afferent arteriole cell
-namespace: cell
-xref: KUPO:0001038
-is_a: CL:1000612 ! kidney corpuscule cell
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0004639 ! renal afferent arteriole
-
-[Term]
-id: CL:1001009
-name: kidney efferent arteriole cell
-namespace: cell
-xref: KUPO:0001041
-is_a: CL:1000612 ! kidney corpuscule cell
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0004640 ! renal efferent arteriole
-
-[Term]
-id: CL:1001016
-name: kidney loop of Henle ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001048
-is_a: CL:0002305 ! epithelial cell of distal tubule
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
-
-[Term]
-id: CL:1001021
-name: kidney loop of Henle descending limb epithelial cell
-namespace: cell
-xref: KUPO:0001053
-is_a: CL:1000909 ! kidney loop of Henle epithelial cell
-relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
-
-[Term]
-id: CL:1001033
-name: peritubular capillary endothelial cell
-namespace: cell
-xref: KUPO:0001065
-is_a: CL:1000892 ! kidney capillary endothelial cell
-relationship: part_of UBERON:0005272 ! peritubular capillary
-
-[Term]
-id: CL:1001036
-name: vasa recta cell
-namespace: cell
-xref: KUPO:0001068
-is_a: CL:1000892 ! kidney capillary endothelial cell
-is_a: CL:1000893 ! kidney venous blood vessel cell
-
-[Term]
-id: CL:1001045
-name: kidney cortex artery cell
-namespace: cell
-xref: KUPO:0001077
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-relationship: part_of UBERON:0005268 ! renal cortex artery
-
-[Term]
-id: CL:1001052
-name: kidney cortex vein cell
-namespace: cell
-xref: KUPO:0001084
-is_a: CL:1000893 ! kidney venous blood vessel cell
-relationship: part_of UBERON:0005269 ! renal cortex vein
-
-[Term]
-id: CL:1001064
-name: kidney artery smooth muscle cell
-namespace: cell
-comment: Note that the source of this term is KUPO:0001096 (artery smooth muscle cell), which we believe actually denotes the kidney specific structure.
-xref: KUPO:0001096
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-
-[Term]
-id: CL:1001066
-name: kidney arteriole smooth muscle cell
-namespace: cell
-comment: Note that the source of this term is KUPO:0001098 (arteriole smooth muscle cell), which we believe actually denotes the kidney specific structure.
-xref: KUPO:0001098
-is_a: CL:1000891 ! kidney arterial blood vessel cell
-
-[Term]
-id: CL:1001068
-name: kidney venous system smooth muscle cell
-namespace: cell
-comment: Note that the source of this term is KUPO:0001068 (venous system smooth muscle cell), which we believe actually denotes the kidney specific structure.
-xref: KUPO:0001100
-is_a: CL:1000893 ! kidney venous blood vessel cell
-
-[Term]
-id: CL:1001096
-name: kidney afferent arteriole endothelial cell
-namespace: cell
-xref: KUPO:0001039
-is_a: CL:1001006 ! kidney afferent arteriole cell
-is_a: CL:1001216 ! interlobulary artery endothelial cell
-
-[Term]
-id: CL:1001097
-name: kidney afferent arteriole smooth muscle cell
-namespace: cell
-xref: KUPO:0001040
-is_a: CL:1001006 ! kidney afferent arteriole cell
-is_a: CL:1001066 ! kidney arteriole smooth muscle cell
-is_a: CL:1001217 ! interlobulary artery smooth muscle cell
-
-[Term]
-id: CL:1001099
-name: kidney efferent arteriole endothelial cell
-namespace: cell
-xref: KUPO:0001042
-is_a: CL:1001009 ! kidney efferent arteriole cell
-
-[Term]
-id: CL:1001100
-name: kidney efferent arteriole smooth muscle cell
-namespace: cell
-xref: KUPO:0001043
-is_a: CL:1001009 ! kidney efferent arteriole cell
-is_a: CL:1001066 ! kidney arteriole smooth muscle cell
-
-[Term]
-id: CL:1001106
-name: kidney loop of Henle thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001049
-is_a: CL:1000504 ! kidney medulla cell
-is_a: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
-relationship: part_of UBERON:0001291 ! thick ascending limb of loop of Henle
-
-[Term]
-id: CL:1001107
-name: kidney loop of Henle thin ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001050
-is_a: CL:1000617 ! kidney inner medulla cell
-is_a: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
-relationship: part_of UBERON:0004193 ! loop of Henle ascending limb thin segment
-
-[Term]
-id: CL:1001108
-name: kidney loop of Henle medullary thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001051
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
-relationship: part_of UBERON:0006376 ! premacula segment of distal straight tubule
-
-[Term]
-id: CL:1001109
-name: kidney loop of Henle cortical thick ascending limb epithelial cell
-namespace: cell
-xref: KUPO:0001052
-is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
-relationship: part_of UBERON:0006854 ! distal straight tubule postmacula segment
-
-[Term]
-id: CL:1001111
-name: kidney loop of Henle thin descending limb epithelial cell
-namespace: cell
-xref: KUPO:0001054
-is_a: CL:1000453 ! epithelial cell of intermediate tubule
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
-relationship: part_of UBERON:0005096 ! descending thin limb
-
-[Term]
-id: CL:1001123
-name: kidney outer medulla peritubular capillary cell
-namespace: cell
-xref: KUPO:0001066
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001033 ! peritubular capillary endothelial cell
-relationship: part_of UBERON:0006341 ! outer renal medulla peritubular capillary
-
-[Term]
-id: CL:1001124
-name: kidney cortex peritubular capillary cell
-namespace: cell
-xref: KUPO:0001067
-is_a: CL:1001033 ! peritubular capillary endothelial cell
-relationship: part_of UBERON:0006851 ! renal cortex peritubular capillary
-
-[Term]
-id: CL:1001126
-name: inner renal medulla vasa recta cell
-namespace: cell
-xref: KUPO:0001069
-is_a: CL:1000617 ! kidney inner medulla cell
-is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0004776 ! inner renal medulla vasa recta
-
-[Term]
-id: CL:1001127
-name: outer renal medulla vasa recta cell
-namespace: cell
-xref: KUPO:0001070
-is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001036 ! vasa recta cell
-relationship: part_of UBERON:0004775 ! outer renal medulla vasa recta
-
-[Term]
-id: CL:1001131
-name: vasa recta ascending limb cell
-namespace: cell
-xref: KUPO:0001074
-is_a: CL:1001036 ! vasa recta cell
-
-[Term]
-id: CL:1001135
-name: arcuate artery cell
-namespace: cell
-xref: KUPO:0001078
-is_a: CL:1001045 ! kidney cortex artery cell
-relationship: part_of UBERON:0001552 ! kidney arcuate artery
-
-[Term]
-id: CL:1001138
-name: interlobular artery cell
-namespace: cell
-xref: KUPO:0001081
-is_a: CL:1001045 ! kidney cortex artery cell
-relationship: part_of UBERON:0004723 ! interlobular artery
-
-[Term]
-id: CL:1001142
-name: arcuate vein cell
-namespace: cell
-xref: KUPO:0001085
-is_a: CL:1001052 ! kidney cortex vein cell
-relationship: part_of UBERON:0004719 ! kidney arcuate vein
-
-[Term]
-id: CL:1001145
-name: interlobular vein cell
-namespace: cell
-xref: KUPO:0001088
-is_a: CL:1001052 ! kidney cortex vein cell
-relationship: part_of UBERON:0005168 ! renal interlobular vein
-
-[Term]
-id: CL:1001209
-name: inner medulla vasa recta ascending limb cell
-namespace: cell
-xref: KUPO:0001075
-is_a: CL:1001126 ! inner renal medulla vasa recta cell
-is_a: CL:1001131 ! vasa recta ascending limb cell
-relationship: part_of UBERON:0009092 ! inner medulla vasa recta ascending limb
-
-[Term]
-id: CL:1001210
-name: outer medulla vasa recta ascending limb cell
-namespace: cell
-xref: KUPO:0001076
-is_a: CL:1001127 ! outer renal medulla vasa recta cell
-is_a: CL:1001131 ! vasa recta ascending limb cell
-relationship: part_of UBERON:0009093 ! outer medulla vasa recta ascending limb
-
-[Term]
-id: CL:1001213
-name: arcuate artery endothelial cell
-namespace: cell
-xref: KUPO:0001079
-is_a: CL:1001135 ! arcuate artery cell
-
-[Term]
-id: CL:1001214
-name: arcuate artery smooth muscle cell
-namespace: cell
-xref: KUPO:0001080
-is_a: CL:1001064 ! kidney artery smooth muscle cell
-is_a: CL:1001135 ! arcuate artery cell
-
-[Term]
-id: CL:1001216
-name: interlobulary artery endothelial cell
-namespace: cell
-xref: KUPO:0001082
-is_a: CL:1001138 ! interlobular artery cell
-
-[Term]
-id: CL:1001217
-name: interlobulary artery smooth muscle cell
-namespace: cell
-xref: KUPO:0001083
-is_a: CL:1001064 ! kidney artery smooth muscle cell
-is_a: CL:1001138 ! interlobular artery cell
-
-[Term]
-id: CL:1001220
-name: arcuate vein endothelial cell
-namespace: cell
-xref: KUPO:0001086
-is_a: CL:1001142 ! arcuate vein cell
-
-[Term]
-id: CL:1001221
-name: arcuate vein smooth muscle cell
-namespace: cell
-xref: KUPO:0001087
-is_a: CL:1001068 ! kidney venous system smooth muscle cell
-is_a: CL:1001142 ! arcuate vein cell
-
-[Term]
-id: CL:1001223
-name: interlobulary vein endothelial cell
-namespace: cell
-xref: KUPO:0001089
-is_a: CL:1001145 ! interlobular vein cell
-
-[Term]
-id: CL:1001224
-name: interlobulary vein smooth muscle cell
-namespace: cell
-xref: KUPO:0001090
-is_a: CL:1001068 ! kidney venous system smooth muscle cell
-is_a: CL:1001145 ! interlobular vein cell
-
-[Term]
-id: CL:1001225
-name: kidney collecting duct cell
-namespace: cell
-xref: KUPO:0001012
-xref: Wikipedia:Kidney_collecting_duct_cell
-is_a: CL:1000449 ! epithelial cell of nephron
-relationship: part_of UBERON:0001232 ! collecting duct of renal tubule
-
-[Term]
-id: CL:1001285
-name: vasa recta descending limb cell
-namespace: cell
-xref: KUPO:0001071
-is_a: CL:1001036 ! vasa recta cell
-
-[Term]
-id: CL:1001286
-name: inner medulla vasa recta descending limb cell
-namespace: cell
-xref: KUPO:0001072
-is_a: CL:1001126 ! inner renal medulla vasa recta cell
-is_a: CL:1001285 ! vasa recta descending limb cell
-relationship: part_of UBERON:0009089 ! inner medulla vasa recta descending limb
-
-[Term]
-id: CL:1001287
-name: outer medulla vasa recta descending limb cell
-namespace: cell
-xref: KUPO:0001073
-is_a: CL:1001127 ! outer renal medulla vasa recta cell
-is_a: CL:1001285 ! vasa recta descending limb cell
-relationship: part_of UBERON:0009090 ! outer medulla vasa recta descending limb
-
-[Term]
-id: CL:1001318
-name: renal interstitial pericyte
-namespace: cell
-xref: KUPO:0001104
-is_a: CL:1000497 ! kidney cell
-
-[Term]
-id: CL:1001319
-name: bladder cell
-namespace: cell
-xref: KUPO:0001120
-is_a: CL:1000600 ! lower urinary tract cell
-relationship: part_of UBERON:0001255 ! urinary bladder
-
-[Term]
-id: CL:1001320
-name: urethra cell
-namespace: cell
-xref: KUPO:0001123
-is_a: CL:1000600 ! lower urinary tract cell
-relationship: part_of UBERON:0000057 ! urethra
-
-[Term]
-id: CL:1001428
-name: bladder urothelial cell
-namespace: cell
-xref: KUPO:0001121
-is_a: CL:0000731 ! urothelial cell
-is_a: CL:1001319 ! bladder cell
-relationship: part_of UBERON:0004645 ! urinary bladder urothelium
-
-[Term]
-id: CL:1001430
-name: urethra urothelial cell
-namespace: cell
-xref: KUPO:0001124
-is_a: CL:0000731 ! urothelial cell
-is_a: CL:1000296 ! epithelial cell of urethra
-relationship: part_of UBERON:0004787 ! urethra urothelium
-
-[Term]
-id: CL:1001431
-name: kidney collecting duct principal cell
-namespace: cell
-xref: KUPO:0001128
-is_a: CL:0005009 ! renal principal cell
-is_a: CL:1000454 ! kidney collecting duct epithelial cell
-
-[Term]
-id: CL:1001432
-name: kidney collecting duct intercalated cell
-namespace: cell
-xref: http://en.wikipedia.org/wiki/Collecting_duct_system#Intercalated_cells
-xref: KUPO:0001129
-is_a: CL:0005010 ! renal intercalated cell
-is_a: CL:1000454 ! kidney collecting duct epithelial cell
-
-[Term]
-id: CL:2000040
-name: bladder microvascular endothelial cell
-namespace: cell
-def: "Any microvascular endothelial cell that is part of a urinary bladder." []
-is_a: CL:1001319 ! bladder cell
-created_by: TermGenie
-creation_date: 2014-07-09T00:04:47Z
-
-[Term]
-id: CL:2000065
-name: ovarian microvascular endothelial cell
-namespace: cell
-def: "Any microvascular endothelial cell that is part of a female urethra." []
-comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7300
-is_a: CL:1000296 ! epithelial cell of urethra
-relationship: part_of UBERON:0001334 ! female urethra
-created_by: TermGenie
-creation_date: 2014-10-07T18:18:01Z
-
-[Term]
 id: UBERON:0000056
 name: ureter
 namespace: uberon
@@ -1377,7 +70,7 @@ property_value: UBPROP:0000010 "in humans, consists of adventitial, muscular and
 id: UBERON:0000057
 name: urethra
 namespace: uberon
-def: "the fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening" [MGI:anna, MP:0000537]
+def: "The fibromuscular tubular canal through which urine is discharged from the bladder to the exterior via the external urinary meatus; in males, the urethra is joined by the ejaculatory ducts and serves as a passageway for semen during ejaculation, as well as a canal for urine during voiding; in females, the urethra is shorter and emerges above the vaginal opening." [MGI:anna, MP:0000537]
 subset: efo_slim
 subset: major_organ
 subset: organ_slim
@@ -1525,7 +218,7 @@ property_value: UBPROP:0000009 "By contrast to the pronephros, the histological 
 id: UBERON:0000081
 name: metanephros
 namespace: uberon
-def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]" [GO:0001656, Wikipedia:Metanephros#Metanephros]
+def: "In mammals, the metanephros is the excretory organ of the fetus, which develops into the mature kidney and is formed from the rear portion of the nephrogenic cord. The metanephros is an endocrine and metabolic organ that filters the blood and excretes the end products of body metabolism in the form of urine[GO]." [GO:0001656, Wikipedia:Metanephros#Metanephros]
 subset: organ_slim
 subset: pheno_slim
 synonym: "definite kidney" RELATED [BTO:0001543]
@@ -1597,7 +290,7 @@ property_value: UBPROP:0000003 "As the pronephros regresses, the archinephric du
 id: UBERON:0000084
 name: ureteric bud
 namespace: uberon
-def: "An epithelial swelling on the Wolffian duct that elongates to invade the adjacent metanephric mesenchyme[MP]" [MP:0010979, PMID:19828308]
+def: "An epithelial swelling on the Wolffian duct that elongates to invade the adjacent metanephric mesenchyme[MP]." [MP:0010979, PMID:19828308]
 subset: pheno_slim
 synonym: "diverticulum" RELATED [BTO:0001646]
 synonym: "diverticulum metanephricum" RELATED LATIN [Wikipedia:Ureteric_bud]
@@ -1626,7 +319,7 @@ property_value: UBPROP:0000003 "The first embryonic hint of a metanephros is the
 id: UBERON:0000163
 name: embryonic cloaca
 namespace: uberon
-def: "endoderm-lined chamber that develops as pouch-like dilation of the caudal end of the hindgut and receives the allantois ventrally and two mesonephric ducts laterally; caudally it ends blindly at the cloacal membrane formed by the union of proctodeal (anal pit) ectoderm and cloacal endoderm, with no intervening mesoderm[MP]." [MP:0010115, Wikipedia:Cloaca_(embryology)]
+def: "Endoderm-lined chamber that develops as pouch-like dilation of the caudal end of the hindgut and receives the allantois ventrally and two mesonephric ducts laterally; caudally it ends blindly at the cloacal membrane formed by the union of proctodeal (anal pit) ectoderm and cloacal endoderm, with no intervening mesoderm[MP]." [MP:0010115, Wikipedia:Cloaca_(embryology)]
 subset: pheno_slim
 synonym: "cloaca" RELATED SENSU []
 xref: EHDAA2:0000256
@@ -1640,7 +333,7 @@ property_value: IAO:0000232 "this class represents the embryonic form of the clo
 id: UBERON:0000164
 name: primitive urogenital sinus
 namespace: uberon
-def: "the ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females" [ISBN:0-683-40008-8, MP:0010116]
+def: "The ventral part of the cloaca remaining after septation of the rectum, which further develops into part of the bladder, part of the prostatic part of the male urethra and the urethra and vestibule in females." [ISBN:0-683-40008-8, MP:0010116]
 subset: pheno_slim
 synonym: "fetal UGS" EXACT [PMID:18977204]
 synonym: "sinus urogenitalis" EXACT LATIN []
@@ -1666,7 +359,7 @@ property_value: UBPROP:0000013 "the term 'urogenital sinus' may refer to the pri
 id: UBERON:0000362
 name: renal medulla
 namespace: uberon
-def: "the inner portion of the kidney consisting of the renal pyramids" [ISBN:0-683-40008-8, MGI:smb, MP:0003014]
+def: "The inner portion of the kidney consisting of the renal pyramids." [ISBN:0-683-40008-8, MGI:smb, MP:0003014]
 subset: pheno_slim
 synonym: "kidney medulla" EXACT [OBOL:automatic]
 synonym: "medulla of kidney" EXACT [OBOL:automatic]
@@ -1726,7 +419,7 @@ property_value: UBPROP:0000007 "urothelial" xsd:string
 id: UBERON:0000381
 name: urinary bladder detrusor smooth muscle
 namespace: uberon
-def: "bundles of smooth muscle fibers forming the muscular wall of the urinary bladder, which are arranged in a longitudinal and a circular layer and, on contraction, serve to expel urine[MP]." [MP:0011774, Wikipedia:Detrusor_urinae_muscle]
+def: "Bundles of smooth muscle fibers forming the muscular wall of the urinary bladder, which are arranged in a longitudinal and a circular layer and, on contraction, serve to expel urine[MP]." [MP:0011774, Wikipedia:Detrusor_urinae_muscle]
 subset: pheno_slim
 synonym: "detrusor" EXACT [FMA:68018]
 synonym: "detrusor muscle" EXACT [BTO:0001453]
@@ -2031,7 +724,7 @@ property_value: UBPROP:0000010 "In the adult metanephros, it forms a continuous 
 id: UBERON:0001226
 name: major calyx
 namespace: uberon
-def: "portion of the urinary collecting system within the kidney that drains several minor calyces" [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "Portion of the urinary collecting system within the kidney that drains several minor calyces." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
 comment: major calyx collects urine from several renal papillae; all major calyces unite to form the renal pelvis
 subset: uberon_slim
 synonym: "calices renales majores" EXACT LATIN [Wikipedia:Major_calyx]
@@ -2050,7 +743,7 @@ property_value: depicted:by Kidney:PioM.png xsd:anyURI
 id: UBERON:0001227
 name: minor calyx
 namespace: uberon
-def: "portion of the urinary collecting system within the kidney that drains one renal papilla" [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "Portion of the urinary collecting system within the kidney that drains one renal papilla." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
 comment: one renal papilla projects into the lumen of one minor calyx; several minor calyces unite to form a major calyx
 subset: uberon_slim
 synonym: "calices renales minores" EXACT LATIN [Wikipedia:Minor_calyx]
@@ -2091,7 +784,7 @@ property_value: depicted:by Kidney:PioM.png xsd:anyURI
 id: UBERON:0001229
 name: renal corpuscle
 namespace: uberon
-def: "the structure containing the glomerular capsule and the glomerulus that serves as the initial blood-filtering component of a nephron" [ISBN:0-683-40008-8, MP:0002827]
+def: "The structure containing the glomerular capsule and the glomerulus that serves as the initial blood-filtering component of a nephron." [ISBN:0-683-40008-8, MP:0002827]
 comment: Together, the Bowmans capsule and the glomerulus comprise the definitive renal corpuscle. http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron
 subset: pheno_slim
 subset: uberon_slim
@@ -2128,7 +821,7 @@ property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]
 id: UBERON:0001230
 name: glomerular capsule
 namespace: uberon
-def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus" [MGI:pvb, MP:0002828, Wikipedia:Bowman%27s_capsule]
+def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus." [MGI:pvb, MP:0002828, Wikipedia:Bowman%27s_capsule]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -2202,7 +895,7 @@ property_value: UBPROP:0000012 "note that in ISBN:0073040584 (Vertebrates, Kardo
 id: UBERON:0001232
 name: collecting duct of renal tubule
 namespace: uberon
-def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient" [GO:0072044, Wikipedia:Collecting_tubule]
+def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient." [GO:0072044, Wikipedia:Collecting_tubule]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -2276,7 +969,7 @@ relationship: part_of UBERON:0009916 {source="https://github.com/obophenotype/ub
 id: UBERON:0001254
 name: urothelium of ureter
 namespace: uberon
-def: "The luminal epithelium of the tube that conducts the urine from the renal pelvis to the bladder[MP]" [MP:0000535]
+def: "The luminal epithelium of the tube that conducts the urine from the renal pelvis to the bladder[MP]." [MP:0000535]
 subset: pheno_slim
 synonym: "transitional epithelium of ureter" EXACT []
 synonym: "ureter luminal urothelium" RELATED INCONSISTENT [MP:0000535]
@@ -2293,7 +986,7 @@ property_value: UBPROP:0000012 "MP treats ureter urothelium and ureter luminal u
 id: UBERON:0001255
 name: urinary bladder
 namespace: uberon
-def: "distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." [MGI:anna, Wikipedia:Urinary_bladder]
+def: "Distensible musculomembranous organ situated in the anterior part of the pelvic cavity in which urine collects before excretion[MP]." [MGI:anna, Wikipedia:Urinary_bladder]
 subset: efo_slim
 subset: major_organ
 subset: organ_slim
@@ -2360,7 +1053,7 @@ relationship: part_of UBERON:0001255 ! urinary bladder
 id: UBERON:0001257
 name: trigone of urinary bladder
 namespace: uberon
-def: "the smooth triangular region of the wall of the urinary bladder formed by the two ureteral orifices and the internal urethral orifice; it is an area in which the muscle fibers are closely adherent to the mucosa" [MGI:anna, MP:0011768]
+def: "The smooth triangular region of the wall of the urinary bladder formed by the two ureteral orifices and the internal urethral orifice; it is an area in which the muscle fibers are closely adherent to the mucosa." [MGI:anna, MP:0011768]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "bladder trigone" EXACT []
@@ -2415,7 +1108,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/63/G
 id: UBERON:0001259
 name: mucosa of urinary bladder
 namespace: uberon
-def: "the mucous membrane lining the urinary bladder" [MGI:anna, MP:0011766]
+def: "The mucous membrane lining the urinary bladder." [MGI:anna, MP:0011766]
 subset: efo_slim
 subset: pheno_slim
 synonym: "bladder mucosa" EXACT []
@@ -2520,7 +1213,7 @@ property_value: IAO:0000116 "Check part_of location against textual definition" 
 id: UBERON:0001285
 name: nephron
 namespace: uberon
-def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]" [PMID:9268568, Wikipedia:Nephron]
+def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]." [PMID:9268568, Wikipedia:Nephron]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -2552,7 +1245,7 @@ property_value: UBPROP:0000008 "In the avian kidney, three types of nephron are 
 id: UBERON:0001286
 name: Bowman's space
 namespace: uberon
-def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]" [http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499, Wikipedia:Bowman's_space]
+def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]." [http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499, Wikipedia:Bowman's_space]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -2623,7 +1316,7 @@ property_value: UBPROP:0000001 "Renal tubule that connects to the renal corpuscl
 id: UBERON:0001288
 name: loop of Henle
 namespace: uberon
-def: "the section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine" [MGI:csmith, MP:0004755]
+def: "The section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine." [MGI:csmith, MP:0004755]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "ansa nephroni" EXACT LATIN [Wikipedia:Loop_of_Henle]
@@ -2654,7 +1347,7 @@ property_value: UBPROP:0000009 "The loop of Henle plays an important role in cre
 id: UBERON:0001289
 name: descending limb of loop of Henle
 namespace: uberon
-def: "the portion of the renal tubule that constitutes the proximal part of the loop of Henle, has low permeability to ions and urea, and is highly permeable to water; it consists of an initial short thick segment lined by low simple cuboidal epithelium and a long thin segment lined by simple squamous epithelium; however, this distinction is not as important physiologically as in the ascending limb, so often the two are treated as one structure" [MGI:anna, MP:0011341]
+def: "The portion of the renal tubule that constitutes the proximal part of the loop of Henle, has low permeability to ions and urea, and is highly permeable to water; it consists of an initial short thick segment lined by low simple cuboidal epithelium and a long thin segment lined by simple squamous epithelium; however, this distinction is not as important physiologically as in the ascending limb, so often the two are treated as one structure." [MGI:anna, MP:0011341]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "descending limb" BROAD []
@@ -2706,7 +1399,7 @@ property_value: UBPROP:0000001 "Portion of the renal tubule which is just poster
 id: UBERON:0001291
 name: thick ascending limb of loop of Henle
 namespace: uberon
-def: "the distal sub-portion of the ascending loop of Henle which is lined by simple cuboidal epithelium and enters the renal cortex to empty a hypotonic filtrate into the distal convoluted tubule" [MGI:anna, MP:0011344]
+def: "The distal sub-portion of the ascending loop of Henle which is lined by simple cuboidal epithelium and enters the renal cortex to empty a hypotonic filtrate into the distal convoluted tubule." [MGI:anna, MP:0011344]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "ascending thick limb" EXACT []
@@ -2847,7 +1540,7 @@ property_value: depicted:by Female:anatomy.png xsd:anyURI
 id: UBERON:0001335
 name: prostatic urethra
 namespace: uberon
-def: "the widest and most dilatable part of the male urethra canal which runs almost vertically through the prostate from its base to its apex, lying nearer its anterior than its posterior surface; this portion of the urethral canal is spindle-shaped, being wider in the middle than at either extremity, and narrowest below, where it joins the membranous portion; it is lined by transitional epithelium and contains in its posterior wall, or floor, the orifices of the prostatic utricle, ejaculatory ducts, and prostatic ducts, collectively known as the seminal colliculus (aka verumontanum)" [MGI:anna, MP:0011777]
+def: "The widest and most dilatable part of the male urethra canal which runs almost vertically through the prostate from its base to its apex, lying nearer its anterior than its posterior surface; this portion of the urethral canal is spindle-shaped, being wider in the middle than at either extremity, and narrowest below, where it joins the membranous portion; it is lined by transitional epithelium and contains in its posterior wall, or floor, the orifices of the prostatic utricle, ejaculatory ducts, and prostatic ducts, collectively known as the seminal colliculus (aka verumontanum)." [MGI:anna, MP:0011777]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "male prostatic urethra" EXACT [MP:0011777]
@@ -2887,7 +1580,7 @@ property_value: UBPROP:0000012 "MA class sex-neutral" xsd:string {external_ontol
 id: UBERON:0001337
 name: spongiose part of urethra
 namespace: uberon
-def: "the longest part of the male urethra contained in the corpus spongiosum and extending from the end of the membranous portion to the external urethral orifice; commencing below the inferior fascia of the urogenital diaphragm it passes forward and upward to the front of the symphysis pubis; and then, in the flaccid condition of the penis, it bends downward and forward; while narrow and of uniform size in the body of the penis, it is dilated behind, within the bulb, and again anteriorly within the glans penis, where it forms the fossa navicularis urethrae; the spongy urethra is lined by pseudostratified columnar epithelium proximally, and by stratified squamous epithelium distally" [MGI:anna, MP:0011779]
+def: "The longest part of the male urethra contained in the corpus spongiosum and extending from the end of the membranous portion to the external urethral orifice; commencing below the inferior fascia of the urogenital diaphragm it passes forward and upward to the front of the symphysis pubis; and then, in the flaccid condition of the penis, it bends downward and forward; while narrow and of uniform size in the body of the penis, it is dilated behind, within the bulb, and again anteriorly within the glans penis, where it forms the fossa navicularis urethrae; the spongy urethra is lined by pseudostratified columnar epithelium proximally, and by stratified squamous epithelium distally." [MGI:anna, MP:0011779]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "cavernous portion of male urethra" EXACT [MP:0011779]
@@ -2912,7 +1605,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d7/G
 id: UBERON:0001338
 name: urethral gland
 namespace: uberon
-def: "Any of the numerous small mucous-secreting glands located in the wall of the male or female urethra that help protect the epithelium from the corrosive urine" [MP:anna]
+def: "Any of the numerous small mucous-secreting glands located in the wall of the male or female urethra that help protect the epithelium from the corrosive urine." [MP:anna]
 subset: organ_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -2962,7 +1655,7 @@ relationship: part_of UBERON:0001008 ! renal system
 id: UBERON:0002015
 name: kidney capsule
 namespace: uberon
-def: "the tough fibrous layer surrounding the kidney which is covered in a thick layer of perirenal adipose tissue that functions to provide some protection from trauma and damage" [MGI:anna, MP:0011383]
+def: "The tough fibrous layer surrounding the kidney which is covered in a thick layer of perirenal adipose tissue that functions to provide some protection from trauma and damage." [MGI:anna, MP:0011383]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "capsula fibrosa renis" EXACT LATIN [FMA:66610, FMA:TA]
@@ -3157,7 +1850,7 @@ relationship: part_of UBERON:0004190 {source="GO"} ! renal glomerulus vasculatur
 id: UBERON:0002321
 name: extraglomerular mesangium
 namespace: uberon
-def: "the tissue comprised of mesangial cells that fill the triangular space between the macula densa and the afferent and efferent arterioles of the juxtaglomerular apparatus" [ISBN:0-683-40008-8, MP:0011340]
+def: "The tissue comprised of mesangial cells that fill the triangular space between the macula densa and the afferent and efferent arterioles of the juxtaglomerular apparatus." [ISBN:0-683-40008-8, MP:0011340]
 subset: pheno_slim
 xref: EMAPA:28278
 xref: FMA:84141
@@ -3227,7 +1920,7 @@ property_value: UBPROP:0000012 "not part of a nephron or distal tubule in MA and
 id: UBERON:0002366
 name: bulbo-urethral gland
 namespace: uberon
-def: "Any of the small paired racemose glands below the apex of the prostate in males, located posterolateral to the membranous portion of the urethra at the base of the penis, between the two layers of the fascia of the urogenital diaphragm, in the deep perineal pouch, and enclosed by transverse fibers of the sphincter urethrae membranaceae muscle; homologous to the greater vestibular (Bartholin's) glands in the female[MP]" [MP:anna, Wikipedia:Bulbourethral_gland]
+def: "Any of the small paired racemose glands below the apex of the prostate in males, located posterolateral to the membranous portion of the urethra at the base of the penis, between the two layers of the fascia of the urogenital diaphragm, in the deep perineal pouch, and enclosed by transverse fibers of the sphincter urethrae membranaceae muscle; homologous to the greater vestibular (Bartholin's) glands in the female[MP]." [MP:anna, Wikipedia:Bulbourethral_gland]
 subset: organ_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -3443,24 +2136,6 @@ xref: MA:0002649
 relationship: part_of UBERON:0000057 ! urethra
 
 [Term]
-id: UBERON:0004032
-name: podocyte slit diaphragm
-namespace: uberon
-def: "The thin membrane that covers the podocyte filtration slit which allows small molecules such as water, glucose, and ionic salts to pass through while retaining larger macromolecules in the bloodstream" [MP:0008060]
-subset: pheno_slim
-relationship: part_of CL:0000653 ! glomerular visceral epithelial cell
-property_value: IAO:0000116 "TODO - submit to GO" xsd:string
-
-[Term]
-id: UBERON:0004033
-name: podocyte slit junction
-namespace: uberon
-def: "The gaps between the interdigitated foot processes of the podocyte" [MP:0008062]
-subset: pheno_slim
-relationship: part_of CL:0000653 ! glomerular visceral epithelial cell
-property_value: IAO:0000116 "TODO - submit to GO" xsd:string
-
-[Term]
 id: UBERON:0004100
 name: renal collecting system
 namespace: uberon
@@ -3498,7 +2173,7 @@ property_value: IAO:0000116 "TODO - ensure definition works across species." xsd
 id: UBERON:0004135
 name: distal tubule
 namespace: uberon
-def: "The distal tubule is a nephron tubule that consists of the distal convoluted tubule and distal straight tubule segments" [GO:0072017]
+def: "The distal tubule is a nephron tubule that consists of the distal convoluted tubule and distal straight tubule segments." [GO:0072017]
 synonym: "kidney distal tubule" EXACT [MA:0002633]
 synonym: "renal distal tubule" EXACT []
 xref: BTO:0000482
@@ -3512,7 +2187,7 @@ is_a: UBERON:0007685 ! region of nephron tubule
 id: UBERON:0004136
 name: intermediate tubule
 namespace: uberon
-def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules" [GO:0072018]
+def: "The intermediate tubule is a nephron tubule that lies between the proximal and distal tubules." [GO:0072018]
 synonym: "renal intermediate tubule" EXACT []
 synonym: "tubulus attenuatus" EXACT [FMA:17718]
 xref: FMA:17718
@@ -3541,7 +2216,7 @@ property_value: IAO:0000116 "TODO - check - GO says outer, BTO says inner. Make 
 id: UBERON:0004189
 name: glomerular endothelium
 namespace: uberon
-def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus" [GO:0072011]
+def: "The glomerular endothelium is an epithelial tissue that covers the internal surfaces of the glomerulus." [GO:0072011]
 synonym: "endothelium of renal glomerulus" EXACT [OBOL:automatic]
 synonym: "renal glomerulus endothelium" EXACT [OBOL:automatic]
 xref: BTO:0004631
@@ -3553,7 +2228,7 @@ relationship: part_of UBERON:0004190 ! renal glomerulus vasculature
 id: UBERON:0004190
 name: renal glomerulus vasculature
 namespace: uberon
-def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus" [GO:0072012]
+def: "The glomerulus vasculature is composed of the tubule structures that carry blood or lymph in the glomerulus." [GO:0072012]
 synonym: "glomerulus vasculature" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vascular network" EXACT [OBOL:automatic]
 synonym: "renal glomerulus vasculature" EXACT [OBOL:automatic]
@@ -3566,7 +2241,7 @@ relationship: part_of UBERON:0000074 ! renal glomerulus
 id: UBERON:0004193
 name: loop of Henle ascending limb thin segment
 namespace: uberon
-def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water" [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
+def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water." [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
 subset: pheno_slim
 synonym: "ascending limb thin segment of loop of Henle" EXACT []
 synonym: "ascending thin limb" EXACT [FMA:17720]
@@ -3588,7 +2263,7 @@ property_value: IAO:0000116 "check relationship to distal tubule" xsd:string
 id: UBERON:0004194
 name: long nephron
 namespace: uberon
-def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla" [GO:0072029]
+def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla." [GO:0072029]
 synonym: "juxtamedullary nephron" RELATED [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
 xref: FMA:272054
 xref: NCIT:C32892
@@ -3599,7 +2274,7 @@ is_a: UBERON:0001285 ! nephron
 id: UBERON:0004195
 name: short nephron
 namespace: uberon
-def: "Short nephrons are associated with mid-cortical glomeruli, and have no short ascending limb, so the limb is situated in the outer medulla" [GO:0072030]
+def: "Short nephrons are associated with mid-cortical glomeruli, and have no short ascending limb, so the limb is situated in the outer medulla." [GO:0072030]
 xref: FMA:272051
 is_a: UBERON:0001285 ! nephron
 
@@ -3639,7 +2314,7 @@ relationship: part_of UBERON:0001287 {source="GO"} ! proximal convoluted tubule
 id: UBERON:0004198
 name: comma-shaped body
 namespace: uberon
-def: "The comma-shaped body is the precursor structure to the S-shaped body that contributes to the morphogenesis of the nephron" [GO:0072049]
+def: "The comma-shaped body is the precursor structure to the S-shaped body that contributes to the morphogenesis of the nephron." [GO:0072049]
 subset: pheno_slim
 synonym: "CSB" EXACT ABBREVIATION []
 xref: EMAPA:27681
@@ -3650,7 +2325,7 @@ relationship: part_of UBERON:0010532 {source="cjm"} ! primitive nephron
 id: UBERON:0004199
 name: S-shaped body
 namespace: uberon
-def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron" [GO:0072050]
+def: "The S-shaped body is the successor of the comma-shaped body that contributes to the morphogenesis of the nephron." [GO:0072050]
 subset: pheno_slim
 synonym: "SSB" EXACT ABBREVIATION []
 synonym: "stage II nephron" EXACT [http://www.gudmap.org/Organ_Summaries/Metanephros/Renal_vesicle.html]
@@ -3696,7 +2371,7 @@ property_value: UBPROP:0000202 FMA:74268
 id: UBERON:0004201
 name: kidney outer medulla inner stripe
 namespace: uberon
-def: "The inner stripe is a deep, centrally located portion of the renal outer medulla and is traversed by thick and thin portions of nephron tubules" [GO:0072057]
+def: "The inner stripe is a deep, centrally located portion of the renal outer medulla and is traversed by thick and thin portions of nephron tubules." [GO:0072057]
 subset: pheno_slim
 synonym: "inner stripe" EXACT [GO:0072057]
 synonym: "inner stripe of medulla of kidney" EXACT [FMA:76663]
@@ -3713,7 +2388,7 @@ relationship: part_of UBERON:0001293 ! outer medulla of kidney
 id: UBERON:0004202
 name: kidney outer medulla outer stripe
 namespace: uberon
-def: "The outer stripe is the region of the kidney that lies distal to the line of termination of the straight renal tubules" [GO:0072058]
+def: "The outer stripe is the region of the kidney that lies distal to the line of termination of the straight renal tubules." [GO:0072058]
 subset: pheno_slim
 synonym: "outer medulla outer stripe" EXACT [MA:0002629]
 synonym: "outer stripe" EXACT [GO:0072058]
@@ -3731,7 +2406,7 @@ id: UBERON:0004203
 name: cortical collecting duct
 namespace: uberon
 alt_id: UBERON:0005267
-def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex" [GO:0072059]
+def: "The cortical collecting duct is the portion of the collecting duct that resides in the renal cortex." [GO:0072059]
 synonym: "kidney cortex collecting duct" EXACT [MA:0002600]
 synonym: "renal cortex collecting duct" RELATED [MA:0002600]
 xref: BTO:0002643
@@ -3745,7 +2420,7 @@ id: UBERON:0004204
 name: outer medullary collecting duct
 namespace: uberon
 alt_id: UBERON:0005186
-def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla" [GO:0072060]
+def: "The outer medullary collecting duct is the portion of the collecting duct that lies in the renal outer medulla." [GO:0072060]
 synonym: "kidney outer medulla collecting duct" EXACT [MA:0002599]
 synonym: "outer renal medulla collecting duct" EXACT [MA:0002599]
 xref: EMAPA:28346
@@ -3758,7 +2433,7 @@ id: UBERON:0004205
 name: inner medullary collecting duct
 namespace: uberon
 alt_id: UBERON:0005187
-def: "The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla" [GO:0072061]
+def: "The inner medullary collecting duct is the portion of the collecting duct that lies in the renal inner medulla." [GO:0072061]
 synonym: "inner renal medulla collecting duct" EXACT [MA:0002598]
 synonym: "kidney inner medulla collecting duct" EXACT [MA:0002598]
 synonym: "papillary collecting duct" RELATED [MA:0002598]
@@ -3772,7 +2447,7 @@ relationship: part_of UBERON:0001294 ! inner medulla of kidney
 id: UBERON:0004206
 name: long descending thin limb bend
 namespace: uberon
-def: "The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment" [GO:0072065]
+def: "The long descending thin limb bend is a part of the descending thin limb of a long nephron that lies beyond the prebend segment." [GO:0072065]
 is_a: UBERON:0006555 ! excretory tube
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -3780,7 +2455,7 @@ relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 id: UBERON:0004207
 name: prebend segment of loop of Henle
 namespace: uberon
-def: "The prebend segment is a part of the descending thin limb that lies before the bend and exhibits robust sodium chloride reabsorption" [GO:0072066]
+def: "The prebend segment is a part of the descending thin limb that lies before the bend and exhibits robust sodium chloride reabsorption." [GO:0072066]
 synonym: "prebend segment" RELATED [GO:0072066]
 is_a: UBERON:0006555 ! excretory tube
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
@@ -3790,7 +2465,7 @@ relationship: part_of UBERON:0005096 {source="GO"} ! descending thin limb
 id: UBERON:0004211
 name: nephron epithelium
 namespace: uberon
-def: "The nephron epithelium is a tissue that covers the surface of a nephron" [GO:0072088]
+def: "The nephron epithelium is a tissue that covers the surface of a nephron." [GO:0072088]
 synonym: "epithelial tissue of nephron" EXACT [OBOL:automatic]
 synonym: "epithelium of nephron" EXACT [OBOL:automatic]
 synonym: "nephron epithelial tissue" EXACT [OBOL:automatic]
@@ -3801,7 +2476,7 @@ relationship: part_of UBERON:0001285 ! nephron
 id: UBERON:0004212
 name: glomerular capillary
 namespace: uberon
-def: "the small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus" [MGI:csmith, MP:0011320]
+def: "The small branching blood vessels in the kidney glomerulus that receives blood from the kidney afferent arterioles; these capillaries are under high pressure for filtering within the glomerulus." [MGI:csmith, MP:0011320]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "blood capillary of renal glomerulus" EXACT [OBOL:automatic]
@@ -3847,7 +2522,7 @@ relationship: part_of UBERON:0000057 ! urethra
 id: UBERON:0004227
 name: kidney pelvis smooth muscle
 namespace: uberon
-def: "the smooth muscle tissue surrounding the urothelium of the kidney pelvis" [MGI:csmith, MP:0011335]
+def: "The smooth muscle tissue surrounding the urothelium of the kidney pelvis." [MGI:csmith, MP:0011335]
 subset: pheno_slim
 synonym: "kidney pelvis smooth muscle" EXACT [EMAPA:28120]
 synonym: "pelvic smooth muscle" RELATED [EMAPA:28120]
@@ -4045,7 +2720,7 @@ property_value: UBPROP:0000006 https://github.com/obophenotype/uberon/wiki/Model
 id: UBERON:0004639
 name: renal afferent arteriole
 namespace: uberon
-def: "the blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism" [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
+def: "The blood vessels that branch from the kidney interlobular artery, convey blood to the glomerular capillaries, and play an important role in the regulation of blood pressure as a part of the tubuloglomerular feedback mechanism." [ISBN:0-683-40008-8, MGI:csmith, MP:0011312]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "afferent arteriole" EXACT [MA:0002579]
@@ -4071,7 +2746,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0004640
 name: renal efferent arteriole
 namespace: uberon
-def: "the blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule" [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
+def: "The blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule." [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "arteriola glomerularis efferens capsulae renalis" RELATED LATIN [Wikipedia:Efferent_arteriole]
@@ -4166,7 +2841,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0004736
 name: metanephric glomerulus
 namespace: uberon
-def: "glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
+def: "Glomerulus of the mature vertebrate kidney, or metanephros." [GO:0072224]
 synonym: "glomerulus of metanephros" EXACT []
 xref: VHOG:0001242
 is_a: UBERON:0000074 ! renal glomerulus
@@ -4188,7 +2863,7 @@ relationship: part_of UBERON:0005110 {is_inferred="true", source="https://github
 id: UBERON:0004738
 name: metanephric juxtaglomerular apparatus
 namespace: uberon
-def: "juxtaglomerular apparatus of the mature vertebrate kidney, or metanephros." [GO:0072206]
+def: "Juxtaglomerular apparatus of the mature vertebrate kidney, or metanephros." [GO:0072206]
 synonym: "juxtaglomerular apparatus of metanephros" EXACT []
 is_a: UBERON:0002303 ! juxtaglomerular apparatus
 relationship: part_of UBERON:0000081 ! metanephros
@@ -4281,7 +2956,7 @@ relationship: part_of UBERON:0000057 ! urethra
 id: UBERON:0004788
 name: kidney pelvis urothelium
 namespace: uberon
-def: "the epithelial lining of the luminal space of the kidney pelvis" [MGI:csmith, MP:0011336]
+def: "The epithelial lining of the luminal space of the kidney pelvis." [MGI:csmith, MP:0011336]
 subset: pheno_slim
 synonym: "kidney pelvis transitional epithelium" EXACT [OBOL:automatic]
 synonym: "kidney pelvis uroepithelium" EXACT [OBOL:automatic]
@@ -4312,7 +2987,7 @@ relationship: part_of UBERON:0001224 ! renal pelvis
 id: UBERON:0004810
 name: nephron tubule epithelium
 namespace: uberon
-def: "the cellular avascular layer of the renal tubule luminar surfaces" [MGI:csmith, MP:0009640]
+def: "The cellular avascular layer of the renal tubule luminar surfaces." [MGI:csmith, MP:0009640]
 subset: pheno_slim
 synonym: "kidney tubule epithelium" EXACT [MA:0001681]
 xref: BTO:0005239
@@ -4328,7 +3003,7 @@ property_value: IAO:0000116 "See https://github.com/obophenotype/uberon/issues/1
 id: UBERON:0004819
 name: kidney epithelium
 namespace: uberon
-def: "the cellular avascular layer of the kidney luminar surfaces" [MGI:csmith, MP:0004967]
+def: "The cellular avascular layer of the kidney luminar surfaces." [MGI:csmith, MP:0004967]
 subset: pheno_slim
 synonym: "epithelial tissue of kidney" EXACT [OBOL:automatic]
 synonym: "epithelium of kidney" EXACT [OBOL:automatic]
@@ -4359,7 +3034,7 @@ relationship: part_of UBERON:0003829 ! urethra muscle tissue
 id: UBERON:0004902
 name: urogenital sinus epithelium
 namespace: uberon
-def: "The fetal urogenital sinus (from which the prostate derives) is a simple cylinder of stratified basal epithelium, surrounded by mesenchyme and positioned between the embryonic bladder and pelvic urethra" [PMID:18977204]
+def: "The fetal urogenital sinus (from which the prostate derives) is a simple cylinder of stratified basal epithelium, surrounded by mesenchyme and positioned between the embryonic bladder and pelvic urethra." [PMID:18977204]
 synonym: "epithelium of urogenital sinus" EXACT [OBOL:automatic]
 synonym: "UGE" EXACT [PMID:18977204]
 xref: EHDAA2:0004061
@@ -5377,7 +4052,7 @@ is_a: UBERON:0001232 ! collecting duct of renal tubule
 id: UBERON:0005168
 name: renal interlobular vein
 namespace: uberon
-def: "Any of the veins that parallel the interlobular arteries, receiving blood from the peritubular capillary plexus and empty into the arcuate veins" [ISBN:0-683-40008-8, MP:0011326]
+def: "Any of the veins that parallel the interlobular arteries, receiving blood from the peritubular capillary plexus and empty into the arcuate veins." [ISBN:0-683-40008-8, MP:0011326]
 subset: pheno_slim
 synonym: "interlobular vein" EXACT [MA:0002594]
 synonym: "interlobular veins of kidney" RELATED [FMA:71634]
@@ -5396,7 +4071,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0005185
 name: renal medulla collecting duct
 namespace: uberon
-def: "The portion of the collecting duct that resides in the renal medulla" [http://orcid.org/0000-0002-6601-2165]
+def: "The portion of the collecting duct that resides in the renal medulla." [http://orcid.org/0000-0002-6601-2165]
 synonym: "kidney medulla collecting duct" EXACT [MA:0002935]
 synonym: "medullary collecting duct" EXACT [EMAPA:28061]
 xref: BTO:0004536
@@ -5422,7 +4097,7 @@ property_value: IAO:0000116 "TODO - unify terminology - check DST = TAL? Note EM
 id: UBERON:0005211
 name: renal medulla interstitium
 namespace: uberon
-def: "tissue surrounding the loop of Henle in the renal medulla." [Wikipedia:Bone_marrow_of_ovaryry_interstitium]
+def: "Tissue surrounding the loop of Henle in the renal medulla." [Wikipedia:Bone_marrow_of_ovaryry_interstitium]
 synonym: "kidney medulla interstitium" EXACT [MA:0002619]
 synonym: "medullary interstitium" NARROW [Wikipedia:Medullary_interstitium]
 synonym: "medullary stroma" RELATED [EMAPA:18326]
@@ -5515,7 +4190,7 @@ relationship: part_of UBERON:0001225 {source="MA"} ! cortex of kidney
 id: UBERON:0005269
 name: renal cortex vein
 namespace: uberon
-def: "Artery that receives blood from the renal cortex[MP, modified]" [MGI:csmith]
+def: "Artery that receives blood from the renal cortex[MP, modified]." [MGI:csmith]
 subset: pheno_slim
 synonym: "kidney cortex vein" RELATED [MP:0011322]
 synonym: "renal cortex venous system" RELATED [MA:0002592]
@@ -5559,7 +4234,7 @@ relationship: part_of UBERON:0001225 {source="FMA", source="KUPO"} ! cortex of k
 id: UBERON:0005272
 name: peritubular capillary
 namespace: uberon
-def: "the tiny blood vessels that receive blood from the efferent arterioles of the glomerulus, and interact with superficial cortical nephrons allowing reabsorption and secretion between blood and the inner lumen of the nephron; peritubular capillaries are situated around the tubule and are at low pressure" [MGI:csmith, MP:0011321]
+def: "The tiny blood vessels that receive blood from the efferent arterioles of the glomerulus, and interact with superficial cortical nephrons allowing reabsorption and secretion between blood and the inner lumen of the nephron; peritubular capillaries are situated around the tubule and are at low pressure." [MGI:csmith, MP:0011321]
 subset: pheno_slim
 xref: EMAPA:36558
 xref: MA:0002588
@@ -5774,7 +4449,7 @@ property_value: UBPROP:0000011 "...Soon afterwards, endothelial cells invade to 
 id: UBERON:0005750
 name: glomerular parietal epithelium
 namespace: uberon
-def: "A single layer of simple squamous epithelium in the glomerular capsule. Does not function in filtration[UBERON]. outer layer of the glomerular capsule composed of a single layer of simple squamous epithelium[MP]" [https://orcid.org/0000-0002-6601-2165, MP:0011498]
+def: "A single layer of simple squamous epithelium in the glomerular capsule. Does not function in filtration[UBERON]. outer layer of the glomerular capsule composed of a single layer of simple squamous epithelium[MP]." [https://orcid.org/0000-0002-6601-2165, MP:0011498]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "Bowman's parietal epithelium" EXACT [MP:0011498]
@@ -5810,7 +4485,7 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 id: UBERON:0005751
 name: visceral layer of glomerular capsule
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]" [BTO:0001515, MP:0011497]
+def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
@@ -5857,7 +4532,7 @@ property_value: UBPROP:0000003 "In mammals the lowly monotremes still have a clo
 id: UBERON:0005777
 name: glomerular basement membrane
 namespace: uberon
-def: "the layer of extracellular matrix that lies between the endothelium of the glomerular capillaries and the podocytes of the inner or visceral layer of the Bowman capsule; it is a fusion of the endothelial cell and podocyte basal laminas and acts as a physical barrier and an ion-selective filter" [MGI:anna, MP:0011348]
+def: "The layer of extracellular matrix that lies between the endothelium of the glomerular capillaries and the podocytes of the inner or visceral layer of the Bowman capsule; it is a fusion of the endothelial cell and podocyte basal laminas and acts as a physical barrier and an ion-selective filter." [MGI:anna, MP:0011348]
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "GBM" BROAD ABBREVIATION []
@@ -5999,7 +4674,7 @@ relationship: part_of UBERON:0000080 ! mesonephros
 id: UBERON:0006171
 name: renal sinus
 namespace: uberon
-def: "A hollowed out area on the medial margin of the kidney. The renal sinus opens at the renal hilum; it contains the renal aa. and vv., major calyces and renal pelvis, perirenal fat" [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "A hollowed out area on the medial margin of the kidney. The renal sinus opens at the renal hilum; it contains the renal aa. and vv., major calyces and renal pelvis, perirenal fat." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
 xref: FMA:15611
 xref: SCTID:362222000
 relationship: part_of UBERON:0002113 ! kidney
@@ -6008,7 +4683,7 @@ relationship: part_of UBERON:0002113 ! kidney
 id: UBERON:0006172
 name: rectal diverticulum
 namespace: uberon
-def: "The rectal diverticulum is an outgrowth of the cloaca and links the pronephric kidney to the exterior" [GO:0039009]
+def: "The rectal diverticulum is an outgrowth of the cloaca and links the pronephric kidney to the exterior." [GO:0039009]
 synonym: "rectal diverticula" RELATED PLURAL [XAO:0001015]
 xref: XAO:0001015
 relationship: part_of UBERON:0002120 ! pronephros
@@ -6027,7 +4702,7 @@ relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/ub
 id: UBERON:0006174
 name: pronephric sinus
 namespace: uberon
-def: "The pronephric sinus is an ill-defined capillary network that lies between the pronephric tubules" [GO:0039012]
+def: "The pronephric sinus is an ill-defined capillary network that lies between the pronephric tubules." [GO:0039012]
 xref: AAO:0011092
 xref: XAO:0000385
 is_a: UBERON:0006171 ! renal sinus
@@ -6047,7 +4722,7 @@ relationship: part_of UBERON:0005309 {source="https://github.com/obophenotype/ub
 id: UBERON:0006182
 name: mesonephric glomerular mesangium
 namespace: uberon
-def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus" [GO:0061247]
+def: "The mesonephric glomerular mesangium is the thin membrane connective tissue composed of mesangial cells in the mesonephros, which helps to support the capillary loops in a renal glomerulus." [GO:0061247]
 is_a: UBERON:0002320 ! glomerular mesangium
 relationship: part_of UBERON:0000080 ! mesonephros
 relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus vasculature
@@ -6066,7 +4741,7 @@ relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github
 id: UBERON:0006189
 name: mesonephric connecting tubule
 namespace: uberon
-def: "The mesonephric connecting tubule is a tubular segment of the mesonephric nephron; it connects the distal tubule to the collecting duct in the mesonephros" [GO:0061272]
+def: "The mesonephric connecting tubule is a tubular segment of the mesonephric nephron; it connects the distal tubule to the collecting duct in the mesonephros." [GO:0061272]
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0005097 ! renal connecting tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
@@ -6077,7 +4752,7 @@ relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/ub
 id: UBERON:0006190
 name: mesonephric distal tubule
 namespace: uberon
-def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins at the macula densa and extends to the mesonephric connecting tubule" [GO:0061273]
+def: "The mesonephric distal tubule is a mesonephric nephron tubule that begins at the macula densa and extends to the mesonephric connecting tubule." [GO:0061273]
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0004135 ! distal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
@@ -6089,7 +4764,7 @@ property_value: UBPROP:0000012 "ZFA has terms for developing tubule" xsd:string 
 id: UBERON:0006192
 name: mesonephric proximal tubule
 namespace: uberon
-def: "The mesonephric proximal tubule extends from the capsule to the distal tubule" [GO:0061275]
+def: "The mesonephric proximal tubule extends from the capsule to the distal tubule." [GO:0061275]
 is_a: UBERON:0000083 ! mesonephric tubule
 is_a: UBERON:0004134 ! proximal tubule
 is_a: UBERON:0005330 ! mesonephric nephron epithelium
@@ -6220,7 +4895,7 @@ property_value: IAO:0000116 "MA placement to be checked" xsd:string
 id: UBERON:0006373
 name: perihilar interstitium
 namespace: uberon
-def: "the part of the renal interstitium surrounding the pelvis" [MGI:anna, MP:0011337]
+def: "The part of the renal interstitium surrounding the pelvis." [MGI:anna, MP:0011337]
 subset: pheno_slim
 xref: EMAPA:28083
 xref: MA:0002618
@@ -6260,7 +4935,7 @@ relationship: part_of UBERON:0006542 {source="MA"} ! outer medulla outer stripe 
 id: UBERON:0006517
 name: kidney calyx
 namespace: uberon
-def: "Recesses of the kidney pelvis which divides into two wide, cup-shaped major renal calices, with each major calix subdivided into 7 to 14 minor calices. Urine empties into a minor calix from collecting tubules, then passes through the major calix, renal pelvis, and ureter to enter the urinary bladder. (From Moore, Clinically Oriented Anatomy, 3d ed, p211)" [MESH:A05.810.453.537.503]
+def: "Recesses of the kidney pelvis which divides into two wide, cup-shaped major renal calices, with each major calix subdivided into 7 to 14 minor calices. Urine empties into a minor calix from collecting tubules, then passes through the major calix, renal pelvis, and ureter to enter the urinary bladder. (From Moore, Clinically Oriented Anatomy, 3d ed, p211)." [MESH:A05.810.453.537.503]
 subset: pheno_slim
 synonym: "calices renales" EXACT LATIN []
 synonym: "calices renales" RELATED PLURAL []
@@ -6605,7 +5280,7 @@ property_value: IAO:0000116 "TODO" xsd:string
 id: UBERON:0007684
 name: uriniferous tubule
 namespace: uberon
-def: "functional unit of the kidney that forms urine, consisting of two parts, the nephron and the collecting tubule." [ISBN:0073040584]
+def: "Functional unit of the kidney that forms urine, consisting of two parts, the nephron and the collecting tubule." [ISBN:0073040584]
 xref: FMA:17691
 is_a: UBERON:0004819 ! kidney epithelium
 is_a: UBERON:0006555 ! excretory tube
@@ -6908,7 +5583,7 @@ property_value: UBPROP:0000008 "human kidneys have multilobar (multipyramidal) a
 id: UBERON:0009914
 name: renal lobule
 namespace: uberon
-def: "The portion of a renal lobe consisting of nephrons grouped around a single medullary ray and draining into a single collecting duct; human kidneys have multilobular, multipapillary architecture while mice and rats have unilobular, unipapillary kidneys" [MP:0011382, Wikipedia:Cortical_lobule]
+def: "The portion of a renal lobe consisting of nephrons grouped around a single medullary ray and draining into a single collecting duct; human kidneys have multilobular, multipapillary architecture while mice and rats have unilobular, unipapillary kidneys." [MP:0011382, Wikipedia:Cortical_lobule]
 comment: Alternate definition: One of the subdivisions of the kidney, consisting of a medullary ray and that portion of the convoluted port (renal corpuscles and convoluted tubules) associated with its collecting duct. -http://www.mondofacto.com/facts/dictionary?lobulus+corticalis+renalis
 subset: pheno_slim
 synonym: "cortical lobule" RELATED [MP:0011382, Wikipedia:Cortical_lobule]
@@ -6941,7 +5616,7 @@ relationship: part_of UBERON:0000056 ! ureter
 id: UBERON:0009917
 name: kidney corticomedullary boundary
 namespace: uberon
-def: "The region demarcating the renal medulla from the surrounding cortex; end-stage renal failure may be associated with loss of the normal corticomedullary boundary" [MP:0011376]
+def: "The region demarcating the renal medulla from the surrounding cortex; end-stage renal failure may be associated with loss of the normal corticomedullary boundary." [MP:0011376]
 subset: pheno_slim
 xref: EMAPA:37886 {source="MA:th"}
 relationship: part_of UBERON:0002113 {source="MP"} ! kidney
@@ -6950,7 +5625,7 @@ relationship: part_of UBERON:0002113 {source="MP"} ! kidney
 id: UBERON:0009919
 name: ureter smooth muscle
 namespace: uberon
-def: "The smooth muscle tissue surrounding the epithelium of the ureter" [MP:0011426]
+def: "The smooth muscle tissue surrounding the epithelium of the ureter." [MP:0011426]
 subset: pheno_slim
 synonym: "ureteral smooth muscle" EXACT [MP:0011426]
 synonym: "ureteral smooth muscle layer" EXACT [EMAPA:28844]
@@ -6962,7 +5637,7 @@ relationship: part_of UBERON:0006855 ! muscular coat of ureter
 id: UBERON:0009958
 name: bladder lumen
 namespace: uberon
-def: "A anatomical space that is enclosed by a urinary bladder." [OBOL:automatic]
+def: "An anatomical space that is enclosed by a urinary bladder." [OBOL:automatic]
 synonym: "bladder cavity" EXACT [FMA:15924]
 synonym: "cavity of urinary bladder" EXACT [FMA:15924]
 synonym: "lumen of urinary bladder" EXACT [FMA:15924]
@@ -6987,7 +5662,7 @@ property_value: IAO:0000116 "TODO - child terms" xsd:string
 id: UBERON:0009963
 name: antennal gland
 namespace: uberon
-def: "Excretory gland situated in the basal article of the antennal peduncle. It functions to rehulate ionic balance" [BTO:0000075, https://orcid.org/0000-0002-6601-2165]
+def: "Excretory gland situated in the basal article of the antennal peduncle. It functions to rehulate ionic balance." [BTO:0000075, https://orcid.org/0000-0002-6601-2165]
 synonym: "green gland" EXACT []
 xref: BTO:0000075
 is_a: UBERON:0009962 {source="BTO"} ! excretory gland
@@ -7019,7 +5694,7 @@ property_value: UBPROP:0000008 "They are found in all arachnids (with the except
 id: UBERON:0009972
 name: ureteropelvic junction
 namespace: uberon
-def: "The junction between the ureter and the renal pelvis of the kidney" [MP:0011487]
+def: "The junction between the ureter and the renal pelvis of the kidney." [MP:0011487]
 subset: pheno_slim
 synonym: "pelviureteric junction" EXACT [FMA:15898]
 synonym: "pelvoureteric junction" EXACT []
@@ -7034,7 +5709,7 @@ relationship: part_of UBERON:0001008 {source="MP"} ! renal system
 id: UBERON:0009973
 name: ureterovesical junction
 namespace: uberon
-def: "The valve-like structure found at the site of entry of the ureter into the urinary bladder, normally displays an oblique angulation through the detrusor to avoid reflux of urine up the ureters and the kidney" [MP:0011488]
+def: "The valve-like structure found at the site of entry of the ureter into the urinary bladder, normally displays an oblique angulation through the detrusor to avoid reflux of urine up the ureters and the kidney." [MP:0011488]
 subset: pheno_slim
 synonym: "vesico-ureteral junction" EXACT [MA:0003020]
 synonym: "vesico-ureteric junction" EXACT []
@@ -7080,7 +5755,7 @@ relationship: part_of UBERON:0002113 ! kidney
 id: UBERON:0010186
 name: male urethral gland
 namespace: uberon
-def: "any of the numerous small mucous-secreting glands located in the wall of the penile urethra" [MGI:anna, MP:0011794]
+def: "Any of the numerous small mucous-secreting glands located in the wall of the penile urethra." [MGI:anna, MP:0011794]
 subset: pheno_slim
 synonym: "gland of Littre" EXACT []
 synonym: "gland of male urethra" EXACT []
@@ -7179,7 +5854,7 @@ relationship: part_of UBERON:0000081 {source="VHOG"} ! metanephros
 id: UBERON:0010534
 name: primitive mesonephric nephron
 namespace: uberon
-def: "Anatomical cluster which give rise to mature mesonephric nephrons. Zebrafish continously generate new mesonephric nephrons." [GOC:cvs, ORCiD:0000-0002-2244-7917, ZFA:0005584]
+def: "Anatomical cluster which give rise to mature mesonephric nephrons. Zebrafish continously generate new mesonephric nephrons." [GOC:cvs, https://orcid.org/0000-0002-2244-7917, ZFA:0005584]
 synonym: "developing mesonephric nephron" EXACT [ZFA:0005584]
 synonym: "primitive mesonephric nephron" EXACT []
 xref: ZFA:0005584
@@ -7375,7 +6050,7 @@ relationship: part_of UBERON:0001254 ! urothelium of ureter
 id: UBERON:0012238
 name: ureteric bud trunk
 namespace: uberon
-def: "ureteric bud cells that elongate to form a rigid structure (stalk) consisting of polarized epithelial cells without branching; the stalks differentiate into the collecting system of the mature kidney, while the tip cells interact with the adjacent cells of the metanephric mesenchyme, inducing their conversion into nephrons." [MP:0011761]
+def: "Ureteric bud cells that elongate to form a rigid structure (stalk) consisting of polarized epithelial cells without branching; the stalks differentiate into the collecting system of the mature kidney, while the tip cells interact with the adjacent cells of the metanephric mesenchyme, inducing their conversion into nephrons." [MP:0011761]
 subset: pheno_slim
 synonym: "ureteric bud stalk" RELATED [MP:0011761]
 synonym: "ureteric stalk" RELATED [EMAPA:27608]
@@ -7389,7 +6064,7 @@ relationship: part_of UBERON:0000084 ! ureteric bud
 id: UBERON:0012239
 name: urinary bladder vasculature
 namespace: uberon
-def: "network of tubes that carries blood through the distensible musculomembranous organ that serves to collect and store urine excreted by the kidneys[MP]" [MP:MP]
+def: "Network of tubes that carries blood through the distensible musculomembranous organ that serves to collect and store urine excreted by the kidneys[MP]." [MP:MP]
 subset: pheno_slim
 synonym: "bladder vasculature" EXACT []
 synonym: "blood vessel of bladder" RELATED [EMAPA:28679]
@@ -7402,7 +6077,7 @@ relationship: part_of UBERON:0001255 ! urinary bladder
 id: UBERON:0012240
 name: urethral meatus
 namespace: uberon
-def: "external opening or orifice of the urethra through which urine and seminal fluid (in males only) leave the body; in males the meatus presents as a vertical slit normally positioned at the tip of glans penis; in females the meatus is located between the clitoris and the vagina in the vulvular vestibule of the female genitalia[MP]." [MP:MP, Wikipedia:Urinary_meatus]
+def: "External opening or orifice of the urethra through which urine and seminal fluid (in males only) leave the body; in males the meatus presents as a vertical slit normally positioned at the tip of glans penis; in females the meatus is located between the clitoris and the vagina in the vulvular vestibule of the female genitalia[MP]." [MP:MP, Wikipedia:Urinary_meatus]
 subset: pheno_slim
 synonym: "external meatus of urethra" EXACT [FMA:19650]
 synonym: "external urethral orifice" EXACT [FMA:19650]
@@ -7445,7 +6120,7 @@ property_value: UBPROP:0000001 "The external urethral orifice is the external op
 id: UBERON:0012242
 name: internal urethral orifice
 namespace: uberon
-def: "the usually crescent-shaped opening of the urinary bladder into the urethra, placed at the anteroinferior angle (apex) of the urinary bladder trigone" [MGI:anna, MP:0011782]
+def: "The usually crescent-shaped opening of the urinary bladder into the urethra, placed at the anteroinferior angle (apex) of the urinary bladder trigone." [MGI:anna, MP:0011782]
 subset: pheno_slim
 synonym: "internal meatus of urethra" EXACT [FMA:85263]
 synonym: "internal urethral orifice of urinary bladder" EXACT [FMA:85263]
@@ -7483,7 +6158,7 @@ relationship: part_of UBERON:0001337 ! spongiose part of urethra
 id: UBERON:0012295
 name: Guérin's valve
 namespace: uberon
-def: "An inconstant fold or valve of mucous membrane sometimes found in the root or upper wall of the navicular fossa of the urethra" [http://www.drugs.com/dict/valve-of-navicular-fossa.html, MP:0011839, MP:anna]
+def: "An inconstant fold or valve of mucous membrane sometimes found in the root or upper wall of the navicular fossa of the urethra." [http://www.drugs.com/dict/valve-of-navicular-fossa.html, MP:0011839, MP:anna]
 subset: pheno_slim
 synonym: "Guerin's valve" EXACT []
 synonym: "Guérin's fold" EXACT [http://www.drugs.com/dict/valve-of-navicular-fossa.html]
@@ -7500,7 +6175,7 @@ relationship: part_of UBERON:0012299 ! mucosa of urethra
 id: UBERON:0012296
 name: urethral crest
 namespace: uberon
-def: "A longitudinal mucosal fold in the dorsal wall of the urethra[MP]" [MP:0011840, MP:anna, Wikipedia:Urethral_crest]
+def: "A longitudinal mucosal fold in the dorsal wall of the urethra[MP]." [MP:0011840, MP:anna, Wikipedia:Urethral_crest]
 subset: pheno_slim
 synonym: "crista of urethra" EXACT []
 synonym: "crista urethralis" EXACT LATIN [MP:anna]
@@ -7515,7 +6190,7 @@ property_value: UBPROP:0000012 "in the FMA this is part of the prostatic urethra
 id: UBERON:0012297
 name: male urethral crest
 namespace: uberon
-def: "narrow longitudinal fold of mucosa on the posterior wall of the male urethra, extending from the uvula of the bladder through the prostatic urethra; when distended, it may serve to prevent the passage of the semen backward into the bladder; on either side of the male urethral crest is a slightly depressed fossa, the prostatic sinus, the floor of which is perforated by the orifices of the prostatic ducts from the lateral lobes of the prostate; the ducts of the middle lobe open behind the crest; at the forepart of the crest, below its summit, is a median elevation, the colliculus seminalis, upon or within the margins of which are the orifices of the prostatic utricle and the slit-like openings of the ejaculatory ducts[MP]" [MP:0011841, MP:anna]
+def: "Narrow longitudinal fold of mucosa on the posterior wall of the male urethra, extending from the uvula of the bladder through the prostatic urethra; when distended, it may serve to prevent the passage of the semen backward into the bladder; on either side of the male urethral crest is a slightly depressed fossa, the prostatic sinus, the floor of which is perforated by the orifices of the prostatic ducts from the lateral lobes of the prostate; the ducts of the middle lobe open behind the crest; at the forepart of the crest, below its summit, is a median elevation, the colliculus seminalis, upon or within the margins of which are the orifices of the prostatic utricle and the slit-like openings of the ejaculatory ducts[MP]." [MP:0011841, MP:anna]
 subset: pheno_slim
 synonym: "crista phallica" EXACT LATIN [MP:anna]
 synonym: "crista urethralis masculinae" EXACT LATIN [MP:anna]
@@ -7531,7 +6206,7 @@ relationship: part_of UBERON:0005015 {source="cjm"} ! mucosa of prostatic urethr
 id: UBERON:0012298
 name: female urethral crest
 namespace: uberon
-def: "The conspicuous longitudinal fold of mucosa on the posterior wall of the female urethra[MP]" [MP:0011842, MP:anna]
+def: "The conspicuous longitudinal fold of mucosa on the posterior wall of the female urethra[MP]." [MP:0011842, MP:anna]
 subset: pheno_slim
 synonym: "crista urethralis femininae" EXACT LATIN [MP:anna]
 synonym: "urethral crest (female)" EXACT [FMA:85271]
@@ -7568,7 +6243,7 @@ relationship: part_of UBERON:0001334 ! female urethra
 id: UBERON:0012302
 name: male membranous urethra
 namespace: uberon
-def: "the shortest, least dilatable, and, with the exception of the external orifice, the narrowest part of the male urethral canal located in the deep perineal pouch and lined by pseudostratified columnar epithelium; it extends downward and forward, with a slight anterior concavity, between the apex of the prostate and the bulb of the urethra, perforating the urogenital diaphragm below and behind the pubic symphysis; the membranous portion of the urethra is completely surrounded by the fibers of the sphincter urethrae membranaceae; on either side near its termination are the bulbourethral glands" [MGI:anna, MP:0011778]
+def: "The shortest, least dilatable, and, with the exception of the external orifice, the narrowest part of the male urethral canal located in the deep perineal pouch and lined by pseudostratified columnar epithelium; it extends downward and forward, with a slight anterior concavity, between the apex of the prostate and the bulb of the urethra, perforating the urogenital diaphragm below and behind the pubic symphysis; the membranous portion of the urethra is completely surrounded by the fibers of the sphincter urethrae membranaceae; on either side near its termination are the bulbourethral glands." [MGI:anna, MP:0011778]
 subset: pheno_slim
 synonym: "intermediate part of male urethra" RELATED [Wikipedia:Membranous_urethra]
 synonym: "membranous urethra" BROAD INCONSISTENT [FMA:19674]
@@ -7588,7 +6263,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d7/G
 id: UBERON:0012303
 name: ureteral orifice
 namespace: uberon
-def: "The slit-like opening of either ureter into the bladder; normally, the two ureteral orifices are placed at the posterolateral angles of the urinary bladder trigone while the internal urethral orifice is placed at its anteroinferior angle (apex); wide gaping usually indicates vesicoureteral reflux" [MP:0011783, Wikipedia:Orifice_of_ureter]
+def: "The slit-like opening of either ureter into the bladder; normally, the two ureteral orifices are placed at the posterolateral angles of the urinary bladder trigone while the internal urethral orifice is placed at its anteroinferior angle (apex); wide gaping usually indicates vesicoureteral reflux." [MP:0011783, Wikipedia:Orifice_of_ureter]
 subset: pheno_slim
 synonym: "Mercier's bar" EXACT [FMA:77047]
 synonym: "orifice of ureter" EXACT [FMA:77047]
@@ -7615,7 +6290,7 @@ property_value: IAO:0000116 "TODO - add relationship to junction" xsd:string
 id: UBERON:0012351
 name: urachal lumen
 namespace: uberon
-def: "A anatomical space that is enclosed by a urachus." [OBOL:automatic]
+def: "An anatomical space that is enclosed by a urachus." [OBOL:automatic]
 synonym: "urachus lumen" EXACT []
 relationship: part_of UBERON:0002068 ! urachus
 
@@ -7623,7 +6298,7 @@ relationship: part_of UBERON:0002068 ! urachus
 id: UBERON:0012352
 name: mesangial matrix
 namespace: uberon
-def: "Extracellular matrix secreted by intraglomerular mesangial cells" [MP:0011338]
+def: "Extracellular matrix secreted by intraglomerular mesangial cells." [MP:0011338]
 subset: pheno_slim
 synonym: "extracellular mesangial matrix" EXACT [MP:0011338]
 xref: EMAPA:37907 {source="MA:th"}
@@ -7662,7 +6337,7 @@ property_value: UBPROP:0000009 "the microvilli in this layer can act as mechanos
 id: UBERON:0012441
 name: endothelium of peritubular capillary
 namespace: uberon
-def: "A endothelium that is part of a peritubular capillary." [OBOL:automatic]
+def: "An endothelium that is part of a peritubular capillary." [OBOL:automatic]
 synonym: "peritubular capillary endothelium" EXACT []
 synonym: "peritubular endothelium" BROAD []
 is_a: UBERON:0004819 ! kidney epithelium
@@ -7682,7 +6357,7 @@ relationship: part_of UBERON:0000164 ! primitive urogenital sinus
 id: UBERON:0013245
 name: sinovaginal bulb
 namespace: uberon
-def: "solid evaginations of the UG sinus that develops into a vaginal plate that which will will eventually canalize to form the inferior portion of the vagina." [https://orcid.org/0000-0002-6601-2165]
+def: "Solid evaginations of the UG sinus that develops into a vaginal plate that which will will eventually canalize to form the inferior portion of the vagina." [https://orcid.org/0000-0002-6601-2165]
 xref: NCIT:C34297
 xref: UMLS:C1519330 {source="ncithesaurus:Sinovaginal_Bulb"}
 relationship: part_of UBERON:0000164 ! primitive urogenital sinus
@@ -7720,7 +6395,7 @@ property_value: UBPROP:0000012 "we follow MA and MP in distinguishing the venous
 id: UBERON:0014464
 name: renal fat pad
 namespace: uberon
-def: "Encapsulated adipose tissue associated with the kidney" [MP:0008902]
+def: "Encapsulated adipose tissue associated with the kidney." [MP:0008902]
 subset: pheno_slim
 synonym: "perirenal fat pad" RELATED [MP:0008902]
 relationship: part_of UBERON:0002113 ! kidney
@@ -7791,7 +6466,7 @@ relationship: part_of UBERON:0000164 ! primitive urogenital sinus
 id: UBERON:0016510
 name: epithelium of male urethra
 namespace: uberon
-def: "A epithelium that is part of a male urethra." [OBOL:automatic]
+def: "An epithelium that is part of a male urethra." [OBOL:automatic]
 synonym: "male urethral epithelium" EXACT [FMA:FMA]
 synonym: "urethral epithelium of male" EXACT [EMAPA:30467]
 xref: EMAPA:30467
@@ -7828,7 +6503,7 @@ relationship: part_of UBERON:0001335 ! prostatic urethra
 id: UBERON:0016520
 name: epithelium of female urethra
 namespace: uberon
-def: "A epithelium that is part of a female urethra." [OBOL:automatic]
+def: "An epithelium that is part of a female urethra." [OBOL:automatic]
 synonym: "female urethral epithelium" EXACT [FMA:FMA]
 synonym: "urethral epithelium of female" EXACT [EMAPA:30470]
 xref: EMAPA:30470

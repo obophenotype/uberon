@@ -1,8 +1,8 @@
 format-version: 1.2
-data-version: uberon/releases/2021-07-27/imports/bspo_import.owl
+data-version: uberon/releases/2021-09-27/imports/bspo_import.owl
 ontology: uberon/imports/bspo_import
 property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/bspo/releases/2020-05-11/bspo.owl
-property_value: owl:versionInfo "2021-07-27" xsd:string
+property_value: owl:versionInfo "2021-09-27" xsd:string
 
 [Term]
 id: BSPO:0000054
@@ -40,8 +40,8 @@ def: "Anatomical region centrally located on the body or body part." [BSPO:wd]
 xref: FBql:00015851
 is_a: BSPO:0000070 ! anatomical region
 intersection_of: BSPO:0000070 ! anatomical region
-intersection_of: overlaps BSPO:0000059 ! central side
-relationship: overlaps BSPO:0000059 ! central side
+intersection_of: RO:0002131 BSPO:0000059 ! central side
+relationship: RO:0002131 BSPO:0000059 ! central side
 
 [Term]
 id: CARO:0000000
@@ -64,19 +64,25 @@ def: "An anatomical entity that has mass." [CC:DOS]
 is_a: CARO:0000000 ! anatomical entity
 
 [Typedef]
+id: BFO:0000050
+is_transitive: true
+inverse_of: BFO:0000051
+
+[Typedef]
+id: BFO:0000051
+is_transitive: true
+
+[Typedef]
+id: RO:0002220
+is_symmetric: true
+
+[Typedef]
 id: aboral_to
 name: aboral to
 namespace: spatial
 def: "nearer to the aboral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
 xref: BSPO:0015202
 is_transitive: true
-
-[Typedef]
-id: adjacent_to
-name: adjacent to
-namespace: spatial
-xref: RO:0002220
-is_symmetric: true
 
 [Typedef]
 id: anterior_to
@@ -130,13 +136,6 @@ is_transitive: true
 inverse_of: ventral_to ! ventral to
 
 [Typedef]
-id: has_part
-name: has part
-namespace: spatial
-xref: BFO:0000051
-is_transitive: true
-
-[Typedef]
 id: immediately_anterior_to
 name: immediately anterior to
 namespace: spatial
@@ -176,7 +175,7 @@ name: in anterior side of
 namespace: spatial
 def: "X anterior side of Y <=> if Y is subdivided into two anterior and posterior portions, X is part of the anterior portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000123
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_deep_part_of
@@ -184,7 +183,7 @@ name: in deep part of
 namespace: spatial
 def: "X superficial part of Y <=> if Y is subdivided into two superficial and deep portions, X is part of the deep portion." [BSPO:cjm]
 xref: BSPO:0001101
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_distal_side_of
@@ -192,7 +191,7 @@ name: in distal side of
 namespace: spatial
 def: "x in distal side of y <=> if y is subdivided into two proximal and distal portions, y is part of the distal portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000125
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_dorsal_side_of
@@ -200,7 +199,7 @@ name: in dorsal side of
 namespace: spatial
 def: "X dorsal side of Y <=> if Y is subdivided into two dorsal and ventral portions, X is part of the dorsal portion." [BSPO:cjm]
 xref: BSPO:0015101
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_lateral_side_of
@@ -209,7 +208,7 @@ namespace: spatial
 def: "X in lateral side of Y <=> if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure" [UBERON:cjm]
 xref: BSPO:0000126
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_left_side_of
@@ -227,7 +226,7 @@ name: in posterior side of
 namespace: spatial
 def: "X posterior side of Y <=> if Y is subdivided into two anterior and posterior portions, X is part of the posterior portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000122
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_proximal_side_of
@@ -235,7 +234,7 @@ name: in proximal side of
 namespace: spatial
 def: "x in proximal side of y <=> if y is subdivided into two proximal and distal portions, y is part of the proximal portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000124
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_right_side_of
@@ -252,7 +251,7 @@ name: in superficial part of
 namespace: spatial
 def: "X superficial part of Y <=> if Y is subdivided into two superficial and deep portions, X is part of the superficial portion." [BSPO:cjm]
 xref: BSPO:0001100
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: in_ventral_side_of
@@ -260,7 +259,7 @@ name: in ventral side of
 namespace: spatial
 def: "X ventral side of Y <=> if Y is subdivided into two dorsal and ventral portions, X is part of the ventral portion." [BSPO:cjm]
 xref: BSPO:0015102
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: intersects_midsagittal_plane_of
@@ -268,7 +267,7 @@ name: intersects midsagittal plane of
 namespace: spatial
 def: "X intersects median plane of iff X crosses the midine plane of Y." []
 xref: BSPO:0005001
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: oral_to
@@ -277,22 +276,6 @@ namespace: spatial
 def: "nearer to the oral opening of the organism, on the oral-aboral axis." [BSPO:cjm]
 xref: BSPO:0015201
 is_transitive: true
-
-[Typedef]
-id: overlaps
-name: overlaps
-namespace: spatial
-def: "x overlaps y iff they have some part in common." [BSPO:cjm]
-comment: "(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))" CLIF []
-xref: RO:0002131
-
-[Typedef]
-id: part_of
-name: part of
-namespace: spatial
-xref: BFO:0000050
-is_transitive: true
-inverse_of: has_part ! has part
 
 [Typedef]
 id: postaxial_to
@@ -308,7 +291,7 @@ id: postaxialmost_part_of
 name: postaxialmost part of
 namespace: spatial
 xref: BSPO:0001115
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: posterior_to
@@ -337,7 +320,7 @@ id: preaxialmost_part_of
 name: preaxialmost part of
 namespace: spatial
 xref: BSPO:0001113
-is_a: part_of ! part of
+is_a: BFO:0000050
 
 [Typedef]
 id: proximal_to
