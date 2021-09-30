@@ -1842,3 +1842,9 @@ test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
 test: test_owlaxioms 
+
+docs/releases.md: uberon-odk.yaml
+	echo "All the things to generate the release.md file and the sep. pages for each release."
+	# Amazing: only generate links to release artefacts if they truly exist:
+	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
+	# Use Github or obo purls (include switch that we can conficgue with ODK)
