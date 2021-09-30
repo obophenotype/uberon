@@ -1837,6 +1837,9 @@ test_obsolete:
 
 #test: test_obsolete
 
+update_docs:
+	mkdocs build --config-file ../../mkdocs.yaml
+
 .PHONY: test_owlaxioms
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo

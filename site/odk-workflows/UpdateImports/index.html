@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Imports management - Uberon multi-species anatomy ontology</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Imports management";
+    var mkdocs_page_input_path = "odk-workflows/UpdateImports.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Uberon multi-species anatomy ontology</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Getting started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Uberon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cite/">Cite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon">Uberon on GitHub</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon">Issue Tracker</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki">Wiki</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual">Uberon Manual</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#user-docs">User Documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#editor-docs">Editors documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#design-patterns">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#anatomical-structures">Anatomical Structures</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Browse</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://www.ebi.ac.uk/ols/ontologies/uberon">OLS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="http://www.ontobee.org/ontology/UBERON">Ontobee</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://bioportal.bioontology.org/ontologies/UBERON">BioPortal</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Download</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../current_release/">Current release</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bridges/">Cross-species bridge files</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../combined_multispecies/">Combined Multispecies Ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../old_releases/">Releases before 2020</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements/">Acknowledgements</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../adopters/">Adopters</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Standard ODK workflows</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../EditorsWorkflow/">Editors Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ReleaseWorkflow/">Release Workflow</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RepoManagement/">Manage your ODK Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SettingUpDockerForODK/">Setting up Docker for ODK</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Imports management</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#importing-a-new-term">Importing a new term</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#declaring-terms-to-be-imported">Declaring terms to be imported</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#refresh-imports">Refresh imports</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ManageDocumentation/">Managing the documentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration/">Continuous Integration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RepositoryFileStructure/">Your ODK Repository Overview</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../uberon_build_pipeline/">Uberon Build Pipeline</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Uberon multi-species anatomy ontology</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>How-to guides &raquo;</li>
+        
+      
+        
+          <li>Standard ODK workflows &raquo;</li>
+        
+      
+    
+    <li>Imports management</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="update-imports-workflow">Update Imports Workflow</h1>
+<p>This page discusses how to update the contents of your imports, like adding or removing terms. If you are looking to customise imports, like changing the module type, see <a href="../RepoManagement/">here</a>.</p>
+<h2 id="importing-a-new-term">Importing a new term</h2>
+<p>Importing a new term is split into to sub-phases:</p>
+<ol>
+<li>Declaring the terms to be imported</li>
+<li>Refreshing imports dynamically</li>
+</ol>
+<h3 id="declaring-terms-to-be-imported">Declaring terms to be imported</h3>
+<p>There are three ways to declare terms that are to be imported from an external ontology. Choose the appropriate one for your particular scenario (all three can be used in parallel if need be):</p>
+<ol>
+<li>Protege-based declaration</li>
+<li>Using term files</li>
+<li>Using the custom import template</li>
+</ol>
+<h4 id="protege-based-declaration">Protege-based declaration</h4>
+<p>This workflow is to be avoided, but may be appropriate if the editor <em>does not have access to the ODK docker container</em>.</p>
+<ol>
+<li>Open your ontology (edit file) in Protege (5.5+).</li>
+<li>Select 'owl:Thing'</li>
+<li>Add a new class as usual.</li>
+<li>Paste the <em>full iri</em> in the 'Name:' field, for example, http://purl.obolibrary.org/obo/CHEBI_50906.</li>
+<li>Click 'OK'</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/INCATools/ontology-development-kit/master/docs/img/AddingClasses.png" alt="Adding Classes" /></p>
+<p>Now you can use this term for example to construct logical definitions. The next time the imports are refreshed (see how to refresh <a href="#Refresh-imports">here</a>), the metadata (labels, definitions, etc) for this term are imported from the respective external source ontology and becomes visible in your ontology.</p>
+<h4 id="using-term-files">Using term files</h4>
+<p>Every import has, by default a term file associated with it, which can be found in the imports directory. For example, if you have a GO import in <code>src/ontology/go_import.owl</code>, you will also have an associated term file <code>src/ontology/go_terms.txt</code>. You can add terms in there simply as a list:</p>
+<pre><code>GO:0008150
+GO:0008151
+</code></pre>
+<p>Now you can run the <a href="#Refresh-imports">refresh imports workflow</a>) and the two terms will be imported.</p>
+<h4 id="using-the-custom-import-template">Using the custom import template</h4>
+<p>This workflow is appropriate if:</p>
+<ol>
+<li>You prefer to manage all your imported terms in a single file (rather than multiple files like in the "Using term files" workflow above).</li>
+<li>You wish to augment your imported ontologies with additional information. This requires a cautionary discussion.</li>
+</ol>
+<p>To enable this workflow, you add the following to your ODK config file (<code>src/ontology/uberon-odk.yaml</code>), and <a href="../RepoManagement/">update the repository</a>:</p>
+<pre><code>use_custom_import_module: TRUE
+</code></pre>
+<p>Now you can manage your imported terms directly in the custom external terms template, which is located at <code>src/templates/external_import.owl</code>. Note that this file is a <a href="http://robot.obolibrary.org/template">ROBOT template</a>, and can, in principle, be extended to include any axioms you like. Before extending the template, however, read the following carefully.</p>
+<p>The main purpose of the custom import template is to enable the management off all terms to be imported in a centralised place. To enable that, you do not have to do anything other than maintaining the template. So if you, say current import <code>APOLLO_SV:00000480</code>, and you wish to import <code>APOLLO_SV:00000532</code>, you simply add a row like this:</p>
+<pre><code>ID  Entity Type
+ID  TYPE
+APOLLO_SV:00000480  owl:Class
+APOLLO_SV:00000532  owl:Class
+</code></pre>
+<p>When the imports are refreshed <a href="#Refresh-imports">see imports refresh workflow</a>, the term(s) will simply be imported from the configured ontologies.</p>
+<p>Now, if you wish to extent the Makefile (which is beyond these instructions) and add, say, synonyms to the imported terms, you can do that, but you need to (a) preserve the <code>ID</code> and <code>ENTITY</code> columns and (b) ensure that the ROBOT template is valid otherwise, <a href="http://robot.obolibrary.org/template">see here</a>.</p>
+<p><em>WARNING</em>. Note that doing this is a <em>widespread antipattern</em> (see related <a href="https://github.com/OBOFoundry/OBOFoundry.github.io/issues/1443">issue</a>). You should not change the axioms of terms that do not belong into your ontology unless necessary - such changes should always be pushed into the ontology where they belong. However, since people are doing it, whether the OBO Foundry likes it or not, at least using the <em>custom imports module</em> as described here localises the changes to a single simple template and ensures that none of the annotations added this way are merged into the <a href="https://github.com/INCATools/ontology-development-kit/blob/master/docs/ReleaseArtefacts.md#release-artefact-1-base-required">base file</a>.  </p>
+<h3 id="refresh-imports">Refresh imports</h3>
+<p>If you want to refresh the import yourself (this may be necessary to pass the travis tests), and you have the ODK installed, you can do the following (using go as an example):</p>
+<p>First, you navigate in your terminal to the ontology directory (underneath src in your hpo root directory). </p>
+<pre><code>cd src/ontology
+</code></pre>
+<p>Then, you regenerate the import that will now include any new terms you have added.</p>
+<pre><code>sh run.sh make PAT=false imports/go_import.owl -B
+</code></pre>
+<p>Since ODK 1.2.27, it is also possible to simply run the following, which is the same as the above:</p>
+<pre><code>sh run.sh make refresh-go
+</code></pre>
+<p>Note that in case you changed the defaults, you need to add <code>IMP=true</code> and/or <code>MIR=true</code> to the command below:</p>
+<pre><code>sh run.sh make IMP=true MIR=true PAT=false imports/go_import.owl -B
+</code></pre>
+<p>If you wish to skip refreshing the mirror, i.e. skip downloading the latest version of the source ontology for your import (e.g. <code>go.owl</code> for your go import) you can set <code>MIR=false</code> instead, which will do the exact same thing as the above, but is easier to remember:</p>
+<pre><code>sh run.sh make IMP=true MIR=false PAT=false imports/go_import.owl -B
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ManageDocumentation/" class="btn btn-neutral float-right" title="Managing the documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../SettingUpDockerForODK/" class="btn btn-neutral" title="Setting up Docker for ODK"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../SettingUpDockerForODK/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ManageDocumentation/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

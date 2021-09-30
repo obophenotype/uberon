@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Release Workflow - Uberon multi-species anatomy ontology</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Release Workflow";
+    var mkdocs_page_input_path = "odk-workflows/ReleaseWorkflow.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Uberon multi-species anatomy ontology</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Getting started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About Uberon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../cite/">Cite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon">Uberon on GitHub</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon">Issue Tracker</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki">Wiki</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual">Uberon Manual</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#user-docs">User Documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#editor-docs">Editors documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#design-patterns">Design Patterns</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://github.com/obophenotype/uberon/wiki/Manual#anatomical-structures">Anatomical Structures</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Browse</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="https://www.ebi.ac.uk/ols/ontologies/uberon">OLS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="http://www.ontobee.org/ontology/UBERON">Ontobee</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="https://bioportal.bioontology.org/ontologies/UBERON">BioPortal</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Download</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../current_release/">Current release</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../bridges/">Cross-species bridge files</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../combined_multispecies/">Combined Multispecies Ontologies</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../old_releases/">Releases before 2020</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements/">Acknowledgements</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../adopters/">Adopters</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How-to guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Standard ODK workflows</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../EditorsWorkflow/">Editors Workflow</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Release Workflow</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#run-a-release-with-the-odk">Run a release with the ODK</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#review-the-release">Review the release</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#merge-the-main-branch">Merge the main branch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-github-release">Create a GitHub release</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#debugging-typical-ontology-release-problems">Debugging typical ontology release problems</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#problems-with-memory">Problems with memory</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#problems-when-using-obo-format-based-tools">Problems when using OBO format based tools</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RepoManagement/">Manage your ODK Repository</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SettingUpDockerForODK/">Setting up Docker for ODK</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../UpdateImports/">Imports management</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ManageDocumentation/">Managing the documentation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../ContinuousIntegration/">Continuous Integration</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RepositoryFileStructure/">Your ODK Repository Overview</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contributing</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../uberon_build_pipeline/">Uberon Build Pipeline</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Uberon multi-species anatomy ontology</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>How-to guides &raquo;</li>
+        
+      
+        
+          <li>Standard ODK workflows &raquo;</li>
+        
+      
+    
+    <li>Release Workflow</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="the-release-workflow">The release workflow</h1>
+<p>The release workflow recommended by the ODK is based on GitHub releases and works as follows:</p>
+<ol>
+<li>Run a release with the ODK</li>
+<li>Review the release</li>
+<li>Merge to main branch</li>
+<li>Create a GitHub release</li>
+</ol>
+<p>These steps are outlined in detail in the following.</p>
+<h2 id="run-a-release-with-the-odk">Run a release with the ODK</h2>
+<p>Preparation:</p>
+<ol>
+<li>Ensure that all your pull requests are merged into your main (master) branch</li>
+<li>Make sure that all changes to master are committed to Github (<code>git status</code> should say that there are no modified files)</li>
+<li>Locally make sure you have the latest changes from master (<code>git pull</code>)</li>
+<li>Checkout a new branch (e.g. <code>git checkout -b release-2021-01-01</code>)</li>
+<li>You may or may not want to refresh your imports as part of your release strategy (see <a href="../UpdateImports/">here</a>)</li>
+<li>Make sure you have the latest ODK installed by running <code>docker pull obolibrary/odkfull</code></li>
+</ol>
+<p>To actually run the release, you:</p>
+<ol>
+<li>Open a command line terminal window and navigate to the src/ontology directory (<code>cd uberon/src/ontology</code>)</li>
+<li>Run release pipeline:<code>sh run.sh make prepare_release -B</code>. Note that for some ontologies, this process can take up to 90 minutes - especially if there are large ontologies you depend on, like PRO or CHEBI.</li>
+<li>If everything went well, you should see the following output on your machine: <code>Release files are now in ../.. - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab</code>.</li>
+</ol>
+<p>This will create all the specified release targets (OBO, OWL, JSON, and the variants, ont-full and ont-base) and copy them into your release directory (the top level of your repo).</p>
+<h2 id="review-the-release">Review the release</h2>
+<ol>
+<li>(Optional) Rough check. This step is frequently skipped, but for the more paranoid among us (like the author of this doc), this is a 3 minute additional effort for some peace of mind. Open the main release (uberon.owl) in you favourite development environment (i.e. Protege) and eyeball the hierarchy. We recommend two simple checks: <ol>
+<li>Does the very top level of the hierarchy look ok? This means that all new terms have been imported/updated correctly.</li>
+<li>Does at least one change that you know should be in this release appear? For example, a new class. This means that the release was actually based on the recent edit file. </li>
+</ol>
+</li>
+<li>Commit your changes to the branch and make a pull request</li>
+<li>In your GitHub pull request, review the following three files in detail (based on our experience):<ol>
+<li><code>uberon.obo</code> - this reflects a useful subset of the whole ontology (everything that can be covered by OBO format). OBO format has that speaking for it: it is very easy to review!</li>
+<li><code>uberon-base.owl</code> - this reflects the asserted axioms in your ontology that you have actually edited.</li>
+<li>Ideally also take a look at <code>uberon-full.owl</code>, which may reveal interesting new inferences you did not know about. Note that the diff of this file is sometimes quite large.</li>
+</ol>
+</li>
+<li>Like with every pull request, we recommend to always employ a second set of eyes when reviewing a PR!</li>
+</ol>
+<h2 id="merge-the-main-branch">Merge the main branch</h2>
+<p>Once your <a href="../ContinuousIntegration/">CI checks</a> have passed, and your reviews are completed, you can now merge the branch into your main branch (don't forget to delete the branch afterwards - a big button will appear after the merge is finished).</p>
+<h2 id="create-a-github-release">Create a GitHub release</h2>
+<ol>
+<li>Go to your releases page on GitHub by navigating to your repository, and then clicking on releases (usually on the right, for example: https://github.com/obophenotype/uberon/releases. Then click "Draft new release"</li>
+<li>As the tag version you <strong>need to choose the date on which your ontologies were build.</strong> You can find this, for example, by looking at the <code>uberon.obo</code> file and check the <code>data-version:</code> property. The date needs to be prefixed with a <code>v</code>, so, for example <code>v2020-02-06</code>.</li>
+<li>You can write whatever you want in the release title, but we typically write the date again. The description underneath should contain a concise list of changes or term additions.</li>
+<li>Click "Publish release". Done.</li>
+</ol>
+<h2 id="debugging-typical-ontology-release-problems">Debugging typical ontology release problems</h2>
+<h3 id="problems-with-memory">Problems with memory</h3>
+<p>When you are dealing with large ontologies, you need a lot of memory. When you see error messages relating to large ontologies such as CHEBI, PRO, NCBITAXON, or Uberon, you should think of memory first, see <a href="https://github.com/INCATools/ontology-development-kit/blob/master/docs/DealWithLargeOntologies.md">here</a>.</p>
+<h3 id="problems-when-using-obo-format-based-tools">Problems when using OBO format based tools</h3>
+<p>Sometimes you will get cryptic error messages when using legacy tools using OBO format, such as the ontology release tool (OORT), which is also available as part of the ODK docker container. In these cases, you need to track down what axiom or annotation actually caused the breakdown. In our experience (in about 60% of the cases) the problem lies with duplicate annotations (<code>def</code>, <code>comment</code>) which are illegal in OBO. Here is an example recipe of how to deal with such a problem:</p>
+<ol>
+<li>If you get a message like <code>make: *** [cl.Makefile:84: oort] Error 255</code> you might have a OORT error. </li>
+<li>To debug this, in your terminal enter <code>sh run.sh make IMP=false PAT=false oort -B</code> (assuming you are already in the ontology folder in your directory) </li>
+<li>This should show you where the error is in the log (eg multiple different definitions) 
+WARNING: THE FIX BELOW IS NOT IDEAL, YOU SHOULD ALWAYS TRY TO FIX UPSTREAM IF POSSIBLE</li>
+<li>Open <code>uberon-edit.owl</code> in Protege and find the offending term and delete all offending issue (e.g. delete ALL definition, if the problem was "multiple def tags not allowed") and save. 
+*While this is not idea, as it will remove all definitions from that term, it will be added back again when the term is fixed in the ontology it was imported from and added back in.</li>
+<li>Rerun <code>sh run.sh make IMP=false PAT=false oort -B</code> and if it all passes, commit your changes to a branch and make a pull request as usual.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../RepoManagement/" class="btn btn-neutral float-right" title="Manage your ODK Repository">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../EditorsWorkflow/" class="btn btn-neutral" title="Editors Workflow"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../EditorsWorkflow/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../RepoManagement/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme_extra.js" defer></script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
