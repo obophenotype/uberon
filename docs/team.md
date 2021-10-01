@@ -8,16 +8,16 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 
 | Name (GitHub) | Funding Information | FTEs | Associated teams | Role | Responsibilities |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| David Osumi-Sutherland (@dosumis) | [HubMap](https://commonfund.nih.gov/hubmap/fundedresearch), [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy |
+| David Osumi-Sutherland (@dosumis) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch), [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy |
 | Chris Mungall (@cmungall) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy, TCs/Orphan taxa/evolutionary variability |
 | Alex Diehl | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Immune cells |
 | Anita Caron (@anitacaron)| | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
 | Ceri Van Slyke (@cerivs) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
-| Chuan Xu | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
+| Chuan Xu || 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Damien Goutte-Gattat | [FlyBase](https://flybase.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Contributing to FBbt-Uberon mappings. |
-| Ellen M Quardokus | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
+| Ellen M Quardokus (@emquardokus) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch)|0| [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Human Biomolecular Atlas Program (HuBMAP) new term requests.|
 | Jim Balhoff (@balhoff) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
-| Joshua Fortriede | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
+| Joshua Fortriede | |0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Meghan Balk (@megbalk)|  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Nico Matentzoglu (@matentzn) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
 | Nicole Vasilevsky (@nicolevasilevsky) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01)  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Edits needed for Mondo or uPheno. |
