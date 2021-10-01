@@ -1697,7 +1697,7 @@ reports/robot_main_diff.md: $(TMPDIR)/$(ONT)-quick.obo $(TMPDIR)/$(ONT)-main.obo
 	$(ROBOT) diff --left $(TMPDIR)/$(ONT)-main.obo --right $(TMPDIR)/$(ONT)-quick.obo -f markdown -o $@
 
 reports/robot_release_diff.md: $(TMPDIR)/$(ONT)-obo.obo $(TMPDIR)/$(ONT)-obo-main.obo
-	$(ROBOT) diff --left $(TMPDIR)/$(ONT)-obo.obo --right $(TMPDIR)/$(ONT)-obo-main.obo -f markdown -o $@
+	$(ROBOT) diff --right $(TMPDIR)/$(ONT)-obo.obo --left $(TMPDIR)/$(ONT)-obo-main.obo -f markdown -o $@
 
 
 .PHONY: feature_diff
