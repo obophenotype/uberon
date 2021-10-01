@@ -33,18 +33,6 @@ name: biological entity
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
-id: UBEORN:7500081
-name: articular surface for the tibia on the talus
-namespace: uberon
-def: "Contact surface between the tibia and the talus located on the talus." [https://en.wikipedia.org/wiki/Talus_bone]
-is_a: CARO:0000000 ! anatomical entity
-is_a: UBERON:4100003 ! articular surface
-is_a: UBERON:4200230 ! surface of bone
-relationship: part_of UBERON:0002395 ! talus
-property_value: http://purl.org/dc/elements/1.1/date 2021-07-27T17:04:35Z xsd:dateTime
-property_value: term:editor http://orcid.org/0000-0003-2699-3066
-
-[Term]
 id: UBERON:0000041
 name: odontode scale
 namespace: uberon
@@ -13571,6 +13559,8 @@ def: "The metacarpophalangeal joints (MCP) are of the condyloid kind, formed by 
 subset: pheno_slim
 synonym: "articulationes metacarpophalangeae" RELATED LATIN [Wikipedia:Metacarpophalangeal_joint]
 synonym: "carpometacarpophalangeal joint" NARROW SENSU [NCBITaxon:8782]
+synonym: "knuckle" EXACT [https://orcid.org/0000-0001-5208-3432]
+synonym: "knuckles" EXACT PLURAL [https://orcid.org/0000-0001-5208-3432]
 synonym: "metacarpal joint" BROAD [FMA:35246]
 synonym: "metacarpal phalangeal joint" RELATED [HP:0004294]
 synonym: "metacarpo-phalangeal joint" EXACT [MA:0000453]
@@ -64416,7 +64406,7 @@ def: "The articular surface of a talus that interacts with a tibia. It has a dee
 synonym: "trochlea for tibia" EXACT []
 synonym: "trochlea of astragalus" EXACT []
 synonym: "trochlea tali" EXACT []
-is_a: UBEORN:7500081 ! articular surface for the tibia on the talus
+is_a: UBERON:7500081 ! articular surface for the tibia on the talus
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-28T00:56:19Z xsd:dateTime
 property_value: term:editor http://orcid.org/0000-0003-2699-3066
 
@@ -64549,6 +64539,18 @@ property_value: http://purl.org/dc/elements/1.1/date 2021-06-03T00:23:08Z xsd:da
 property_value: term:editor http://orcid.org/0000-0003-2699-3066
 
 [Term]
+id: UBERON:7500081
+name: articular surface for the tibia on the talus
+namespace: uberon
+def: "Contact surface between the tibia and the talus located on the talus." [https://en.wikipedia.org/wiki/Talus_bone]
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:4100003 ! articular surface
+is_a: UBERON:4200230 ! surface of bone
+relationship: part_of UBERON:0002395 ! talus
+property_value: http://purl.org/dc/elements/1.1/date 2021-07-27T17:04:35Z xsd:dateTime
+property_value: term:editor http://orcid.org/0000-0003-2699-3066
+
+[Term]
 id: UBERON:7500089
 name: posterior articular facet for talus of calcaneus
 namespace: uberon
@@ -64626,6 +64628,15 @@ def: "A raised projection on the medial side of a calcaneus." [https://orcid.org
 is_a: UBERON:7500094 ! tubercle of calcaneus
 property_value: http://purl.org/dc/elements/1.1/date 2021-08-04T00:27:56Z xsd:dateTime
 property_value: term:editor http://orcid.org/0000-0003-2699-3066
+
+[Term]
+id: UBERON:8000008
+name: cementocyte lacuna
+namespace: uberon
+def: "The small cavity within the cellular cementum that is occupied by a cementocyte cell body." [MP:0030555, PMID:27029548]
+is_a: CARO:0000000 ! anatomical entity
+relationship: part_of UBERON:0001753 ! cementum
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: UBERON:8000009

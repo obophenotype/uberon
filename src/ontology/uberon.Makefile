@@ -1687,8 +1687,18 @@ $(TMPDIR)/$(ONT)-main.obo: | $(TMPDIR)
 	git show master:$(SRC) > $@
 	$(ROBOT) merge -i $@ reason -o $@.owl && mv $@.owl $@
 
+$(TMPDIR)/$(ONT)-obo-main.obo: | $(TMPDIR)
+	git show master:../../uberon-simple.obo > $@
+
+$(TMPDIR)/$(ONT)-obo.obo: | $(TMPDIR)
+	cp ../../uberon-simple.obo $@
+
 reports/robot_main_diff.md: $(TMPDIR)/$(ONT)-quick.obo $(TMPDIR)/$(ONT)-main.obo
 	$(ROBOT) diff --left $(TMPDIR)/$(ONT)-main.obo --right $(TMPDIR)/$(ONT)-quick.obo -f markdown -o $@
+
+reports/robot_release_diff.md: $(TMPDIR)/$(ONT)-obo.obo $(TMPDIR)/$(ONT)-obo-main.obo
+	$(ROBOT) diff --left $(TMPDIR)/$(ONT)-obo.obo --right $(TMPDIR)/$(ONT)-obo-main.obo -f markdown -o $@
+
 
 .PHONY: feature_diff
 feature_diff: reports/robot_main_diff.md
