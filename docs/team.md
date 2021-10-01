@@ -20,11 +20,11 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | Joshua Fortriede | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Meghan Balk (@megbalk)|  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Nico Matentzoglu (@matentzn) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
-| Nicole Vasilevsky (@nicolevasilevsky) |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
+| Nicole Vasilevsky (@nicolevasilevsky) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01)  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Edits needed for Mondo or uPheno. |
 | Paola Roncaglia | [Human Cell Atlas](https://www.humancellatlas.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing cell type terms needed for single-cell projects (Human Cell Atlas (HCA), Single Cell Expression Atlas, etc.) |
 | Patrick Ray |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Editing Neurons and brain related terms.| 
 | Ray Stefancsik | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing Tickets needed for the Phenotype Reconciliation Effort. Documentation. |
-| Sabrina Toro (@sabrinatoro) |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
+| Sabrina Toro (@sabrinatoro) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01)  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Edits needed for Mondo or uPheno. |
 | Shawn Tan (@shawntanzk)| | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer, Ontology Editor | Editing Neurons and brain related terms. |
 | Tiago Lubiana Alves |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New Term Requests. |
 | Wasila Dahdul (@wdahdul) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
