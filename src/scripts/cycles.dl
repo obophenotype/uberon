@@ -14,7 +14,10 @@ relation(s, p, o) :-
     basic(restr, OWL_ON_PROPERTY, p),
     basic(restr, OWL_SOME_VALUES_FROM, o),
     basic(restr, RDF_TYPE, OWL_RESTRICTION),
+    match("<.+>", s),
     match("<.+>", o).
+
+relation(s, RDFS_SUBCLASS_OF, o) :- basic(s, RDFS_SUBCLASS_OF, o), match("<.+>", s), match("<.+>", o).
 
 reachable(s, o) :- relation(s, _, o).
 reachable(s, o) :- relation(s, _, c), reachable(c, o).
