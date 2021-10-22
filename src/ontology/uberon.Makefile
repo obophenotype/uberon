@@ -976,6 +976,12 @@ $(REPORTDIR)/basic-allcycles: basic.owl
 
 test: $(REPORTDIR)/basic-allcycles
 
+tmp/basic.facts: basic.owl
+	riot -q --output=n-triples $< | sed 's/ /\t/' | sed 's/ /\t/' | sed 's/ \.$$//' >$@
+
+tmp/basic-cycles.tsv: tmp/basic.facts
+	souffle -F tmp -D tmp ../scripts/cycles.dl && mv tmp/cycle.csv $@
+
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
 # TODO @matentzn - like mondo, make sure that there are no label/exact syn clashes, use ROBOT

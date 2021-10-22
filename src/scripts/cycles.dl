@@ -1,0 +1,25 @@
+#define RDF_TYPE "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"
+#define RDFS_SUBCLASS_OF "<http://www.w3.org/2000/01/rdf-schema#subClassOf>"
+#define OWL_RESTRICTION "<http://www.w3.org/2002/07/owl#Restriction>"
+#define OWL_ON_PROPERTY "<http://www.w3.org/2002/07/owl#onProperty>"
+#define OWL_SOME_VALUES_FROM "<http://www.w3.org/2002/07/owl#someValuesFrom>"
+
+.decl basic(s: symbol, p: symbol, o: symbol)
+.decl relation(s: symbol, p: symbol, o: symbol)
+.decl reachable(s: symbol, o: symbol)
+.decl cycle(s: symbol)
+
+relation(s, p, o) :-
+    basic(s, RDFS_SUBCLASS_OF, restr),
+    basic(restr, OWL_ON_PROPERTY, p),
+    basic(restr, OWL_SOME_VALUES_FROM, o),
+    basic(restr, RDF_TYPE, OWL_RESTRICTION),
+    match("<.+>", o).
+
+reachable(s, o) :- relation(s, _, o).
+reachable(s, o) :- relation(s, _, c), reachable(c, o).
+
+cycle(s) :- reachable(s, s).
+
+.input basic
+.output cycle
