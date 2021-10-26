@@ -1176,7 +1176,9 @@ $(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscap
 	owltools $(UCAT) $(OWLSRC) $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # this is used for xrefs for bridge files
-# TODO: investigate why this necessary: --add-support-from-imports --remove-imports-declarations
+# Imports are forcefully merged and the import declarations removed, because
+# the make-bridge-ontologies-from-xrefs.pl script, which will make use of the
+# generated seed.obo file, has no understanding of imports.
 $(TMPDIR)/seed.obo: $(TMPDIR)/seed.owl $(TMPDIR)/fbbt-xrefs.owl
 	owltools $(UCAT) $< $(TMPDIR)/fbbt-xrefs.owl --merge-support-ontologies --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && $(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
