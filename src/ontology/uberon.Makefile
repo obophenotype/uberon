@@ -1167,14 +1167,18 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 # BRIDGES
 # ----------------------------------------
 
+# Generate cross-references from the FBbt mapping file
+$(TMPDIR)/fbbt-xrefs.owl: fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
 # seed.owl is never released - it is used to seed module extraction
 $(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscape-ext.owl
 	owltools $(UCAT) $(OWLSRC) $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
 
 # this is used for xrefs for bridge files
 # TODO: investigate why this necessary: --add-support-from-imports --remove-imports-declarations
-$(TMPDIR)/seed.obo: $(TMPDIR)/seed.owl
-	owltools $(UCAT) $< --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && $(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
+$(TMPDIR)/seed.obo: $(TMPDIR)/seed.owl $(TMPDIR)/fbbt-xrefs.owl
+	owltools $(UCAT) $< $(TMPDIR)/fbbt-xrefs.owl --merge-support-ontologies --add-support-from-imports --remove-imports-declarations  -o -f obo --no-check $@.tmp && $(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
 #BRIDGESRC_OBO = $(SRC) $(TMPDIR)/cl-with-xrefs.obo
 $(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
