@@ -22,6 +22,8 @@ EDIT_FORMAT=                obo
 SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
 CATALOG=                    catalog-v001.xml
 ROBOT=                      robot --catalog $(CATALOG)
+OWLTOOLS_MEMORY=            14G
+OWLTOOLS=                   OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --use-catalog
 RELEASEDIR=                 ../..
 REPORTDIR=                  reports
 TEMPLATEDIR=                ../templates
@@ -95,7 +97,11 @@ IMPORT_FILES = $(IMPORT_OWL_FILES) $(IMPORT_OBO_FILES)
 
 .PHONY: normalize_obo_src
 normalize_obo_src: $(SRC)
-	owltools --use-catalog  $< --merge-axiom-annotations -o -f obo $(TMPDIR)/NORM.obo && robot convert -i $(TMPDIR)/NORM.obo -o $(TMPDIR)/NORM.tmp.obo && mv $(TMPDIR)/NORM.tmp.obo $(SRC)
+	$(OWLTOOLS) $< --merge-axiom-annotations -o -f obo $(TMPDIR)/NORM.obo && robot convert -i $(TMPDIR)/NORM.obo -o $(TMPDIR)/NORM.tmp.obo && mv $(TMPDIR)/NORM.tmp.obo $(SRC)
+
+.PHONY: normalize_src
+normalize_src: $(SRC)
+	$(ROBOT) convert -i $< -f obo --check false -o tmp/normalise && mv tmp/normalise $<
 
 
 
@@ -287,7 +293,7 @@ IMP_LARGE=true # Global parameter to bypass handling of large imports
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then curl -L $(URIBASE)/pr.owl.gz --create-dirs -o mirror/pr.owl.gz --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/pr.owl
 
 
@@ -296,7 +302,7 @@ mirror/pr.owl: mirror/pr.trigger
 mirror/cl.trigger: $(SRC)
 
 mirror/cl.owl: mirror/cl.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/cl.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/cl.owl --create-dirs -o mirror/cl.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/cl.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/cl.owl
 
 
@@ -305,7 +311,7 @@ mirror/cl.owl: mirror/cl.trigger
 mirror/go.trigger: $(SRC)
 
 mirror/go.owl: mirror/go.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/go.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/go.owl
 
 
@@ -314,7 +320,7 @@ mirror/go.owl: mirror/go.trigger
 mirror/envo.trigger: $(SRC)
 
 mirror/envo.owl: mirror/envo.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/envo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/envo.owl --create-dirs -o mirror/envo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/envo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/envo.owl
 
 
@@ -323,7 +329,7 @@ mirror/envo.owl: mirror/envo.trigger
 mirror/ro.trigger: $(SRC)
 
 mirror/ro.owl: mirror/ro.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ro.owl --create-dirs -o mirror/ro.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/ro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ro.owl
 
 
@@ -332,7 +338,7 @@ mirror/ro.owl: mirror/ro.trigger
 mirror/bspo.trigger: $(SRC)
 
 mirror/bspo.owl: mirror/bspo.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/bspo.owl --create-dirs -o mirror/bspo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/bspo.owl
 
 
@@ -341,7 +347,7 @@ mirror/bspo.owl: mirror/bspo.trigger
 mirror/chebi.trigger: $(SRC)
 
 mirror/chebi.owl: mirror/chebi.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then curl -L $(URIBASE)/chebi.owl.gz --create-dirs -o mirror/chebi.owl.gz --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/chebi.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/chebi.owl
 
 
@@ -350,7 +356,7 @@ mirror/chebi.owl: mirror/chebi.trigger
 mirror/pato.trigger: $(SRC)
 
 mirror/pato.owl: mirror/pato.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/pato.owl --create-dirs -o mirror/pato.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/pato.owl
 
 
@@ -359,7 +365,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/ncbitaxon.trigger: $(SRC)
 
 mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) convert -I $(URIBASE)/ncbitaxon.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then curl -L $(URIBASE)/ncbitaxon.owl.gz --create-dirs -o mirror/ncbitaxon.owl.gz --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/ncbitaxon.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ncbitaxon.owl
 
 
@@ -368,7 +374,7 @@ mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
 mirror/nbo.trigger: $(SRC)
 
 mirror/nbo.owl: mirror/nbo.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/nbo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/nbo.owl --create-dirs -o mirror/nbo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/nbo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/nbo.owl
 
 
@@ -377,7 +383,7 @@ mirror/nbo.owl: mirror/nbo.trigger
 mirror/ceph.trigger: $(SRC)
 
 mirror/ceph.owl: mirror/ceph.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ceph.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ceph.owl --create-dirs -o mirror/ceph.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/ceph.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ceph.owl
 
 
@@ -386,7 +392,7 @@ mirror/ceph.owl: mirror/ceph.trigger
 mirror/cteno.trigger: $(SRC)
 
 mirror/cteno.owl: mirror/cteno.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/cteno.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/cteno.owl --create-dirs -o mirror/cteno.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/cteno.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/cteno.owl
 
 
@@ -395,7 +401,7 @@ mirror/cteno.owl: mirror/cteno.trigger
 mirror/ehdaa2.trigger: $(SRC)
 
 mirror/ehdaa2.owl: mirror/ehdaa2.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ehdaa2.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ehdaa2.owl --create-dirs -o mirror/ehdaa2.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/ehdaa2.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ehdaa2.owl
 
 
@@ -404,7 +410,7 @@ mirror/ehdaa2.owl: mirror/ehdaa2.trigger
 mirror/emapa.trigger: $(SRC)
 
 mirror/emapa.owl: mirror/emapa.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/emapa.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/emapa.owl --create-dirs -o mirror/emapa.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/emapa.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/emapa.owl
 
 
@@ -413,7 +419,7 @@ mirror/emapa.owl: mirror/emapa.trigger
 mirror/fbbt.trigger: $(SRC)
 
 mirror/fbbt.owl: mirror/fbbt.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/fbbt.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbbt.owl --create-dirs -o mirror/fbbt.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/fbbt.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/fbbt.owl
 
 
@@ -422,7 +428,7 @@ mirror/fbbt.owl: mirror/fbbt.trigger
 mirror/fbdv.trigger: $(SRC)
 
 mirror/fbdv.owl: mirror/fbdv.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/fbdv.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbdv.owl --create-dirs -o mirror/fbdv.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/fbdv.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/fbdv.owl
 
 
@@ -431,7 +437,7 @@ mirror/fbdv.owl: mirror/fbdv.trigger
 mirror/ma.trigger: $(SRC)
 
 mirror/ma.owl: mirror/ma.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/ma.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ma.owl --create-dirs -o mirror/ma.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/ma.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ma.owl
 
 
@@ -440,7 +446,7 @@ mirror/ma.owl: mirror/ma.trigger
 mirror/poro.trigger: $(SRC)
 
 mirror/poro.owl: mirror/poro.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/poro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/poro.owl --create-dirs -o mirror/poro.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/poro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/poro.owl
 
 
@@ -449,7 +455,7 @@ mirror/poro.owl: mirror/poro.trigger
 mirror/wbbt.trigger: $(SRC)
 
 mirror/wbbt.owl: mirror/wbbt.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/wbbt.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbbt.owl --create-dirs -o mirror/wbbt.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/wbbt.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/wbbt.owl
 
 
@@ -458,7 +464,7 @@ mirror/wbbt.owl: mirror/wbbt.trigger
 mirror/wbls.trigger: $(SRC)
 
 mirror/wbls.owl: mirror/wbls.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/wbls.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbls.owl --create-dirs -o mirror/wbls.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/wbls.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/wbls.owl
 
 
@@ -467,7 +473,7 @@ mirror/wbls.owl: mirror/wbls.trigger
 mirror/xao.trigger: $(SRC)
 
 mirror/xao.owl: mirror/xao.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/xao.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/xao.owl --create-dirs -o mirror/xao.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/xao.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/xao.owl
 
 
@@ -476,7 +482,7 @@ mirror/xao.owl: mirror/xao.trigger
 mirror/zfa.trigger: $(SRC)
 
 mirror/zfa.owl: mirror/zfa.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/zfa.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/zfa.owl --create-dirs -o mirror/zfa.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/zfa.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/zfa.owl
 
 
@@ -485,7 +491,7 @@ mirror/zfa.owl: mirror/zfa.trigger
 mirror/caro.trigger: $(SRC)
 
 mirror/caro.owl: mirror/caro.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/caro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/caro.owl --create-dirs -o mirror/caro.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/caro.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/caro.owl
 
 
@@ -498,7 +504,7 @@ subsets/%.tsv: subsets/%.owl
 .PRECIOUS: subsets/%.tsv
 
 subsets/%.owl: $(ONT).owl
-	owltools --use-catalog $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: subsets/%.owl
 
@@ -537,6 +543,10 @@ endif
 # ----------------------------------------
 # ROBOT report
 # ----------------------------------------
+
+$(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
 	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
