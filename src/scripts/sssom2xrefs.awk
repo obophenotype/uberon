@@ -29,9 +29,9 @@ END {
 # We only generate cross-references for "exact" mappings
 /skos:exactMatch/ {
   split($object_index, object, ":");
-  # Only process mappings where the object term belongs to Uberon or CL
-  if ( object[1] == "UBERON" || object[1] == "CL" ) {
-    print "  <Class rdf:about=\"http://purl.obolibrary.org/obo/"object[1]"_"object[2]"\">";
+  # Only process mappings where the object term belongs to Uberon
+  if ( object[1] == "UBERON" ) {
+    print "  <Class rdf:about=\"http://purl.obolibrary.org/obo/UBERON_"object[2]"\">";
     print "    <oboInOwl:hasDbXref rdf:datatype=\"http://www.w3.org/2001/XMLSchema#string\">"$1"</oboInOwl:hasDbXref>";
     print "  </Class>";
   }
