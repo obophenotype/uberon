@@ -116,12 +116,14 @@ foreach my $s (keys %fhmap) {
     print $fh "id: $prefix#develops_from\n";
     print $fh "equivalent_to: RO:0002225\n\n";
 
-    open(F,"ftr.obo");
-    while(<F>) {
-        print $fh $_;
+    # FIXME: What is this ftr.obo file? There is no mention of it
+    # anywhere else throughout the repo.
+    if ( open(F,"ftr.obo") ) {
+        while(<F>) {
+             print $fh $_;
+        }
+        close(F);
     }
-    close(F);
-
 
     $fh->close;
 }
