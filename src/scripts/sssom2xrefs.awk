@@ -9,6 +9,7 @@ BEGIN {
   print "  xml:base=\"http://www.w3.org/2002/07/owl\"";
   print "  xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"";
   print "  xmlns:oboInOwl=\"http://www.geneontology.org/formats/oboInOwl#\">";
+  print "  <Ontology rdf:about=\"http://purl.obolibrary.org/obo/uberon/components/mappings.owl\"/>";
 }
 
 END {
