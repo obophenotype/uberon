@@ -1168,7 +1168,7 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 # ----------------------------------------
 
 # Generate cross-references from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
 
 # seed.owl is never released - it is used to seed module extraction
