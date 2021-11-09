@@ -24,6 +24,7 @@ These are the current imports in UBERON
 | bspo | http://purl.obolibrary.org/obo/bspo.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
+| caro | http://purl.obolibrary.org/obo/caro.owl | None |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
