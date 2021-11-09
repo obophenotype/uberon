@@ -255,7 +255,6 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -790,7 +789,7 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b8/I
 id: UBERON:0002007
 name: medulla of lymph node
 namespace: uberon
-def: "The mdeullary portion of the lymph node, which contains large blood vessels, sinuses and medullary cords that contain antibody-secreting plasma cells." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Lymph_node#Medulla]
+def: "The medullary portion of the lymph node, which contains large blood vessels, sinuses and medullary cords that contain antibody-secreting plasma cells." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Lymph_node#Medulla]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "lymph node medulla" EXACT []
@@ -942,6 +941,7 @@ xref: NCIT:C33772
 xref: SCTID:187882006
 xref: UMLS:C1522462 {source="ncithesaurus:Thymic_Lobule"}
 relationship: part_of UBERON:0002370 ! thymus
+relationship: part_of UBERON:0005483 ! thymus lobe
 property_value: UBPROP:0000008 "in the mouse, the lobes of the thymus are not subdivided into lobules but only in the central medulla and a peripheral cortex (i.e. there is no distinct sublobulation). In humans, the two thymus lobes are composed of many lobules of various sizes which contain follicles, each comprising a medulla and a cortex. in the rat, the thymus is partially subdivided into lobules separated by thin bands of connective tissue which are continuous with the thin connective tissue capsule.[MP]" xsd:string
 property_value: UBPROP:0000010 "Lymphocytes, reticular cells and macrophages are found in the lobules" xsd:string
 
@@ -5034,6 +5034,7 @@ namespace: uberon
 synonym: "LLL" EXACT [TAO:0005106]
 xref: ZFA:0005106
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -5044,6 +5045,7 @@ namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
 relationship: part_of UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -5054,6 +5056,7 @@ namespace: uberon
 synonym: "islv" EXACT [TAO:0005319]
 xref: ZFA:0005319
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -5064,6 +5067,7 @@ namespace: uberon
 synonym: "dllv" EXACT [TAO:0005320]
 xref: ZFA:0005320
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 

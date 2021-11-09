@@ -321,7 +321,6 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -1524,99 +1523,6 @@ property_value: UBPROP:0000001 "The pectoral and pelvic girdles, which articulat
 property_value: UBPROP:0000012 "ontologies differ in whether they treat the term appendicular skeleton as being the entire set of bones in the limbs, or whether the fore and hind limbs/fins are treated as seperate appendicular skeletons. Here we follow FMA, and treat the appendicular skeleton as the sum total of skeletal elements in the organism (this is evidenced by the fact that in FMA, skeleton of left/right upper/lower limb is part_of a appendicular skeleton, and subtypes of 'subdivision of appendicular skeleton'). We have separate classes such as 'skeleton of limb', and 'skeleton of hindlimb' for the 4 parts of the appendicular skeleton. In future the ZFA/TAO classes may be moved." xsd:string {external_ontology="FMA"}
 
 [Term]
-id: UBERON:0002225
-name: costal arch
-namespace: uberon
-def: "The costal margin, sometimes referred to as the costal arch, is the medial margin formed by the false ribs, which in humans is from the eighth rib to the tenth rib." [Wikipedia:Costal_margin]
-synonym: "arcus costae" RELATED [Wikipedia:Costal_margin]
-synonym: "arcus costalis" RELATED LATIN [Wikipedia:Costal_margin]
-synonym: "costal margin" RELATED [Wikipedia:Costal_margin]
-synonym: "subcostal arch" RELATED [Wikipedia:Costal_margin]
-xref: EMAPA:37491 {source="MA:th"}
-xref: FMA:7569
-xref: FMA:7570
-xref: MA:0001396
-xref: NCIT:C52715
-xref: SCTID:367767002
-xref: UMLS:C0230143 {source="ncithesaurus:Costal_Arch"}
-xref: Wikipedia:Costal_margin
-relationship: part_of UBERON:0002228 {source="MA"} ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray115.png xsd:anyURI
-property_value: UBPROP:0000012 "we treat margin and arch in FMA as equivalent here, as a temporary measure. This may be split in future. We follow MA in making this a part of the rib." xsd:string {external_ontology="FMA"}
-
-[Term]
-id: UBERON:0002228
-name: rib
-namespace: uberon
-def: "An intersegmental rod-shaped bone that forms in the peritoneal membrane and attach to the vertebral parapophyses." [Wikipedia:Rib, ZFIN:curator]
-subset: efo_slim
-subset: pheno_slim
-subset: uberon_slim
-subset: vertebrate_core
-synonym: "dorsal rib" RELATED []
-synonym: "pleural rib" RELATED []
-synonym: "ribs" RELATED PLURAL [TAO:0000538]
-xref: AAO:0000545
-xref: CALOHA:TS-2209
-xref: EFO:0003066
-xref: EMAPA:18010
-xref: FMA:7574
-xref: GAID:245
-xref: galen:Rib
-xref: MA:0000315
-xref: MESH:D012272
-xref: NCIT:C12782
-xref: OpenCyc:Mx4rvVjNoZwpEbGdrcN5Y29ycA
-xref: SCTID:302523002
-xref: TAO:0000538
-xref: UMLS:C0035561 {source="ncithesaurus:Rib"}
-xref: VHOG:0001154
-xref: Wikipedia:Rib
-xref: ZFA:0000538
-is_a: UBERON:0002495 ! long bone
-property_value: UBPROP:0000001 "Endochondral bone that is intersegmental and rod-shaped, forming in the peritoneal membrane and attached to the vertebral parapophyses. Ribs protect and support internal organs.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000538", ontology="TAO", source="ZFIN:curator"}
-property_value: UBPROP:0000001 "Endochondral, rodlike element that articulates with the transverse process and parapophysis (double-headed rib), or with the transverse process only (single-headed rib); it extends into the body wall and provides a site for muscle attachment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000545", ontology="AAO", source="AAO:Pugener_2002"}
-property_value: UBPROP:0000007 "costal" xsd:string
-property_value: UBPROP:0000008 "In most vertebrates, ribs surround the chest. In some species, especially snakes, ribs may provide support and protection for the entire body" xsd:string
-property_value: UBPROP:0000009 "They protect and support internal organs and enable lungs to expand by expanding the chest." xsd:string
-
-[Term]
-id: UBERON:0002230
-name: head of rib
-namespace: uberon
-def: "The head of the rib is the end of a rib closest to the vertebral column, with which it articulates with." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Head_of_rib]
-subset: uberon_slim
-synonym: "caput costae" RELATED LATIN [Wikipedia:Head_of_rib]
-synonym: "rib head" EXACT []
-xref: EMAPA:37735 {source="MA:th"}
-xref: FMA:7575
-xref: MA:0001415
-xref: NCIT:C52727
-xref: SCTID:263358001
-xref: UMLS:C0222806 {source="ncithesaurus:Rib_Head"}
-xref: Wikipedia:Head_of_rib
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5c/Gray122.png xsd:anyURI
-
-[Term]
-id: UBERON:0002231
-name: body of rib
-namespace: uberon
-synonym: "corpus costae" EXACT LATIN [FMA:7577, FMA:TA]
-synonym: "rib body" EXACT []
-synonym: "rib shaft" EXACT []
-synonym: "shaft of rib" EXACT []
-xref: EMAPA:36014
-xref: FMA:7577
-xref: MA:0001416
-xref: NCIT:C52728
-xref: SCTID:263361000
-xref: UMLS:C0448161 {source="ncithesaurus:Rib_Shaft"}
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
-
-[Term]
 id: UBERON:0002234
 name: proximal phalanx of manus
 namespace: uberon
@@ -1639,104 +1545,6 @@ xref: UMLS:C0730117 {source="ncithesaurus:Proximal_Phalanx_of_Hand"}
 is_a: UBERON:0001436 ! phalanx of manus
 is_a: UBERON:0004302 ! proximal phalanx
 relationship: part_of UBERON:5102389 ! manual digit digitopodial skeleton
-
-[Term]
-id: UBERON:0002235
-name: tubercle of rib
-namespace: uberon
-def: "The tubercle of a rib is an eminence on the posterior surface, at the junction of the neck and body of the rib, and nearer the lower than the upper border. It consists of an articular and a non-articular portion. The articular portion, the lower and more medial of the two, presents a small, oval surface for articulation with the end of the transverse process of the lower of the two vertebrae to which the head is connected. The non-articular portion is a rough elevation, and affords attachment to the ligament of the tubercle. The tubercle is much more prominent in the upper than in the lower ribs[WP]." [Wikipedia:Tubercle_(rib)]
-subset: pheno_slim
-subset: uberon_slim
-synonym: "rib tubercle" EXACT []
-synonym: "tuberculum costae" EXACT LATIN [FMA:7583, FMA:TA]
-xref: EMAPA:37736 {source="MA:th"}
-xref: FMA:7583
-xref: MA:0001417
-xref: NCIT:C52729
-xref: SCTID:361104005
-xref: UMLS:C0222809 {source="ncithesaurus:Rib_Tubercle"}
-xref: Wikipedia:Tubercle_(rib)
-relationship: part_of UBERON:0002231 {source="FMA"} ! body of rib
-relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
-
-[Term]
-id: UBERON:0002236
-name: costal cartilage
-namespace: uberon
-def: "The nonvascular, resilient, flexible hyaline connective tissue that connects the end of a true rib to the sternum or the end of a false rib with the with the lower border of the costal cartilage above it." [ISBN:0-8036-0655-9, MGI:smb, MP:0006432]
-subset: pheno_slim
-subset: uberon_slim
-synonym: "cartilagines costales" RELATED LATIN [Wikipedia:Costal_cartilage]
-synonym: "cartilago costalis" RELATED [BTO:0001721]
-synonym: "sternal cartilage" RELATED [BTO:0001721]
-xref: BTO:0001721
-xref: EMAPA:35262
-xref: FMA:7591
-xref: MA:0000106
-xref: NCIT:C32391
-xref: OpenCyc:Mx4rwP1g3pwpEbGdrcN5Y29ycA
-xref: SCTID:244703004
-xref: UMLS:C0222787 {source="ncithesaurus:Costal_Cartilage"}
-xref: Wikipedia:Costal_cartilage
-relationship: part_of UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/cc/Gray315.png xsd:anyURI
-property_value: IAO:0000116 "we currently model this as part of the rib, is this correct?" xsd:string
-
-[Term]
-id: UBERON:0002237
-name: true rib
-namespace: uberon
-def: "A rib that is ventrally connected to the sternum." [ISBN:0073040584, Wikipedia:True_ribs]
-synonym: "costa vera" EXACT []
-synonym: "costae verae" RELATED PLURAL [Wikipedia:True_ribs]
-xref: EMAPA:37774 {source="MA:th"}
-xref: FMA:7592
-xref: MA:0001419
-xref: OpenCyc:Mx4rv4-iWJwpEbGdrcN5Y29ycA
-xref: SCTID:368044009
-xref: Wikipedia:True_ribs
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray115.png xsd:anyURI
-
-[Term]
-id: UBERON:0002238
-name: false rib
-namespace: uberon
-def: "A rib that is not directly ventrally connected to the sternum." [ISBN:0073040584, Wikipedia:False_rib]
-subset: uberon_slim
-synonym: "asternal ribs" RELATED [Wikipedia:False_ribs]
-synonym: "costa spuria" EXACT []
-synonym: "costae spuriae" RELATED PLURAL [Wikipedia:False_ribs]
-xref: EMAPA:37493 {source="MA:th"}
-xref: FMA:7594
-xref: MA:0001398
-xref: OpenCyc:Mx4rwLzzTZwpEbGdrcN5Y29ycA
-xref: SCTID:368045005
-xref: Wikipedia:False_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/3d/Gray115.png xsd:anyURI
-
-[Term]
-id: UBERON:0002239
-name: floating rib
-namespace: uberon
-def: "A rib that is not connected to sternum or sternal cartilage." [ISBN:0073040584, Wikipedia:Floating_rib]
-subset: pheno_slim
-subset: uberon_slim
-synonym: "costa fluitante" EXACT LATIN []
-synonym: "costae fluctuantes" RELATED LATIN [Wikipedia:Floating_rib]
-synonym: "costae fluitantes" RELATED LATIN [Wikipedia:Floating_rib]
-synonym: "free rib" EXACT [PHENOSCAPE:Alex]
-synonym: "vertebral rib" EXACT []
-xref: EMAPA:37494 {source="MA:th"}
-xref: FMA:7595
-xref: MA:0001399
-xref: OpenCyc:Mx4rvaPCWZwpEbGdrcN5Y29ycA
-xref: SCTID:368046006
-xref: Wikipedia:Floating_rib
-is_a: UBERON:0002238 ! false rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/f/f7/Skeleton_woman_back.png xsd:anyURI
-property_value: UBPROP:0000013 "We synonymize 'free rib' with 'floating rib' - this case it referes to caudal ribs, but you can have free ribs (i.e. non-attached ventrally) in other places . Should we just synonymize this with 'floating rib'? see Primate Anatomy: An Introduction by Friderun Ankel-Simons pg. 275" xsd:string
 
 [Term]
 id: UBERON:0002374
@@ -1879,7 +1687,7 @@ property_value: UBPROP:0000007 "patellar" xsd:string
 id: UBERON:0002495
 name: long bone
 namespace: uberon
-def: "Long bone is a limb bone that is subcylindrical and has a shaft with periosteum separating the ends of the bones. Long bones are present only in the limbs[VSAO:wd]." [https://github.com/obophenotype/uberon/issues/32, VSAO:wd, Wikipedia:Long_bone]
+def: "A long bone is a bone that has a shaft and 2 ends and is longer than it is wide. Long bones have a thick outside layer of compact bone and an inner medullary cavity containing bone marrow.  The ends of a long bone contain spongy bone and an epiphyseal plate or line depending on the stage of development. The epiphyseal plate is a hyaline cartilage, where new bone growth takes place, lengthening the bone prior to adulthood. Bone lengthening ceases when this cartilage is lost, leaving a remnant referred to as an epiphyseal line." [https://medlineplus.gov/ency/imagepages/9582.htm, Wikipedia:Long_bone] {seeAlso="https://github.com/obophenotype/uberon/issues/32", seeAlso="https://github.com/obophenotype/uberon/issues/2010"}
 comment: Endochondral_ossification is an essential process during the rudimentary formation of long bones, with the exception of the clavicle[Wikipedia:Endochondral_ossification]. The medial and and lateral ends undergo EO, the mid-portion is formed by a process with features of EO & IO (the process is shared by the mandible)[ISBN:9780397517251]
 subset: pheno_slim
 subset: uberon_slim
@@ -2054,23 +1862,6 @@ is_a: UBERON:0015023 ! phalanx endochondral element
 relationship: part_of UBERON:5102544 ! individual digit of digitopodial skeleton
 property_value: UBPROP:0000007 "phalangeal" xsd:string
 property_value: UBPROP:0000008 "In primates such as humans and monkeys, the thumb and big toe have two phalanges, while the other fingers and toes consist of three" xsd:string {source="WP"}
-
-[Term]
-id: UBERON:0003253
-name: neck of rib
-namespace: uberon
-def: "The neck of the rib is the flattened portion which extends lateralward from the head; it is about 2.5 cm. long, and is placed in front of the transverse process of the lower of the two vertebrC& with which the head articulates. Its anterior surface is flat and smooth, its posterior rough for the attachment of the ligament of the neck, and perforated by numerous foramina. Of its two borders the superior presents a rough crest (crista colli costE) for the attachment of the anterior costotransverse ligament; its inferior border is rounded. On the posterior surface at the junction of the neck and body, and nearer the lower than the upper border, is an eminencebthe tubercle; it consists of an articular and a non-articular portion. The articular portion, the lower and more medial of the two, presents a small, oval surface for articulation with the end of the transverse process of the lower of the two vertebrC& to which the head is connected. The non-articular portion is a rough elevation, and affords attachment to the ligament of the tubercle. The tubercle is much more prominent in the upper than in the lower ribs." [Wikipedia:Neck_of_rib]
-synonym: "collum costae" EXACT LATIN [Wikipedia:Neck_of_rib]
-synonym: "collum costae" RELATED LATIN [Wikipedia:Neck_of_rib]
-synonym: "rib neck" EXACT [FMA:7576]
-xref: EMAPA:37826 {source="MA:th"}
-xref: FMA:7576
-xref: SCTID:263359009
-xref: Wikipedia:Neck_of_rib
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0002228 ! rib
-relationship: part_of UBERON:0010388 {source="PMID:15906248"} ! proximal segment of rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/5c/Gray122.png xsd:anyURI
 
 [Term]
 id: UBERON:0003460
@@ -5107,224 +4898,6 @@ is_a: UBERON:0004446 ! epiphysis of phalanx
 relationship: part_of UBERON:0003221 ! phalanx
 
 [Term]
-id: UBERON:0004601
-name: rib 1
-namespace: uberon
-def: "The first rib of the rib cage." [http://orcid.org/0000-0002-6601-2165]
-subset: defined_by_ordinal_series
-subset: pheno_slim
-synonym: "costa I" EXACT LATIN []
-synonym: "costa prima" RELATED LATIN [Wikipedia:First_rib]
-synonym: "costa prima (I)" EXACT [FMA:7597]
-synonym: "costa prima [I]" EXACT LATIN [FMA:7597, FMA:TA]
-synonym: "first rib" EXACT [FMA:7597]
-xref: EMAPA:19529
-xref: FMA:7597
-xref: MA:0001401
-xref: NCIT:C52770
-xref: SCTID:182016005
-xref: UMLS:C1709945 {source="ncithesaurus:Rib_1"}
-xref: Wikipedia:First_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/f/fa/Gray124.png xsd:anyURI
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "1" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004602
-name: rib 2
-namespace: uberon
-def: "The second rib of the rib cage." [http://orcid.org/0000-0002-6601-2165]
-subset: defined_by_ordinal_series
-synonym: "costa II" EXACT LATIN []
-synonym: "costa secunda" RELATED LATIN [Wikipedia:Second_rib]
-synonym: "costa secunda (II)" EXACT [FMA:7620]
-synonym: "costa secunda [II]" EXACT LATIN [FMA:7620, FMA:TA]
-synonym: "second rib" EXACT [FMA:7620]
-xref: EMAPA:19530
-xref: FMA:7620
-xref: MA:0001402
-xref: NCIT:C52766
-xref: SCTID:244656007
-xref: UMLS:C1709949 {source="ncithesaurus:Rib_2"}
-xref: Wikipedia:Second_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/a/a5/Gray125.png xsd:anyURI
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "2" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004603
-name: rib 3
-namespace: uberon
-def: "The third rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_3]
-subset: defined_by_ordinal_series
-synonym: "costa III" EXACT LATIN []
-synonym: "third rib" EXACT [FMA:7638]
-xref: EMAPA:19531
-xref: FMA:7638
-xref: MA:0001403
-xref: NCIT:C52765
-xref: SCTID:244658008
-xref: UMLS:C1709950 {source="ncithesaurus:Rib_3"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "3" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004604
-name: rib 4
-namespace: uberon
-def: "The fourth rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_4]
-subset: defined_by_ordinal_series
-synonym: "costa IV" EXACT LATIN []
-synonym: "fourth rib" EXACT [FMA:7749]
-xref: EMAPA:19532
-xref: FMA:7749
-xref: MA:0001404
-xref: NCIT:C52764
-xref: SCTID:244659000
-xref: UMLS:C1709951 {source="ncithesaurus:Rib_4"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "4" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004605
-name: rib 5
-namespace: uberon
-def: "The fifth rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_5]
-subset: defined_by_ordinal_series
-synonym: "costa V" EXACT LATIN []
-synonym: "fifth rib" EXACT [FMA:7776]
-xref: EMAPA:19533
-xref: FMA:7776
-xref: MA:0001405
-xref: NCIT:C52763
-xref: SCTID:244660005
-xref: UMLS:C1711376 {source="ncithesaurus:Rib_5"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "5" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004606
-name: rib 6
-namespace: uberon
-def: "The sixth rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_6]
-subset: defined_by_ordinal_series
-synonym: "costa VI" EXACT LATIN []
-synonym: "sixth rib" EXACT [FMA:8147]
-xref: EMAPA:19534
-xref: FMA:8147
-xref: MA:0001406
-xref: NCIT:C52762
-xref: SCTID:244661009
-xref: UMLS:C1709952 {source="ncithesaurus:Rib_6"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "6" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004607
-name: rib 7
-namespace: uberon
-def: "The seventh rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_7]
-subset: defined_by_ordinal_series
-synonym: "costa VII" EXACT LATIN []
-synonym: "seventh rib" EXACT [FMA:7830]
-xref: EMAPA:19535
-xref: FMA:7830
-xref: MA:0001407
-xref: NCIT:C52761
-xref: SCTID:244662002
-xref: UMLS:C1709953 {source="ncithesaurus:Rib_7"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "7" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004608
-name: rib 9
-namespace: uberon
-def: "The ninth rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_9]
-subset: defined_by_ordinal_series
-synonym: "costa IX" EXACT LATIN []
-synonym: "lower false rib" NARROW [NCBITaxon:9606, PMCID:PMC1327870]
-synonym: "ninth rib" EXACT [FMA:8337]
-xref: EMAPA:19537
-xref: FMA:8337
-xref: MA:0001409
-xref: NCIT:C52759
-xref: SCTID:244664001
-xref: UMLS:C1709955 {source="ncithesaurus:Rib_9"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "9" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004609
-name: rib 10
-namespace: uberon
-def: "The tenth rib has only a single articular facet on its head. [WP,unvetted]." [Wikipedia:Tenth_rib]
-subset: defined_by_ordinal_series
-synonym: "costa X" EXACT LATIN []
-synonym: "tenth rib" EXACT [FMA:8418]
-xref: EMAPA:19538
-xref: FMA:8418
-xref: MA:0001410
-xref: NCIT:C52769
-xref: SCTID:244665000
-xref: UMLS:C1709946 {source="ncithesaurus:Rib_10"}
-xref: Wikipedia:Tenth_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/8/8d/Gray126.png xsd:anyURI
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000008 "May sometimes be a floating rib in humans" xsd:string {source="PMC1327870"}
-property_value: UBPROP:0000106 "10" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004610
-name: rib 11
-namespace: uberon
-def: "The eleventh rib has a single articular facet on the head, which is of rather large size. It has no necks or tubercles, and is pointed at its anterior ends. The eleventh has a slight angle and a shallow costal groove. [WP,unvetted]." [Wikipedia:Eleventh_rib]
-subset: defined_by_ordinal_series
-synonym: "costa XI" EXACT LATIN []
-synonym: "eleventh rib" EXACT [FMA:8499]
-xref: EMAPA:19539
-xref: FMA:8499
-xref: MA:0001411
-xref: NCIT:C52768
-xref: SCTID:244666004
-xref: UMLS:C1709947 {source="ncithesaurus:Rib_11"}
-xref: Wikipedia:Eleventh_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/db/Gray127.png xsd:anyURI
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "11" xsd:nonNegativeInteger
-
-[Term]
-id: UBERON:0004611
-name: rib 12
-namespace: uberon
-def: "In humans: The twelfth rib has a single articular facet on the head, which is of rather large size. It has no necks or tubercles, and is pointed at its anterior ends. The twelfth has angle nor costal groove; it is much shorter than the eleventh rib, and its head is inclined slightly downward. Sometimes the twelfth rib is even shorter than the first rib. [WP,unvetted]." [Wikipedia:Twelfth_rib]
-subset: defined_by_ordinal_series
-subset: pheno_slim
-synonym: "costa XII" EXACT LATIN []
-synonym: "twelfth rib" EXACT [FMA:8515]
-xref: EMAPA:19540
-xref: FMA:8515
-xref: MA:0001412
-xref: NCIT:C52767
-xref: SCTID:244667008
-xref: UMLS:C1709948 {source="ncithesaurus:Rib_12"}
-xref: Wikipedia:Twelfth_rib
-is_a: UBERON:0002228 ! rib
-property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/f/fe/Gray128.png xsd:anyURI
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000106 "12" xsd:nonNegativeInteger
-
-[Term]
 id: UBERON:0004651
 name: scapula spine
 namespace: uberon
@@ -5732,24 +5305,6 @@ xref: VHOG:0001155
 is_a: UBERON:0010883 ! forelimb cartilage element
 is_a: UBERON:0015003 ! ulna endochondral element
 relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
-
-[Term]
-id: UBERON:0006430
-name: xiphoid cartilage
-namespace: uberon
-def: "A costal cartilage that is part of a xiphoid process." [OBOL:automatic]
-subset: pheno_slim
-subset: uberon_slim
-synonym: "cartilage of xiphoid process" EXACT [FMA:32574]
-synonym: "ensiform cartilage" RELATED [Wikipedia:Xiphoid_process]
-synonym: "xiphoid cartilage" EXACT []
-synonym: "xiphoid process cartilage" EXACT [FMA:32574]
-xref: AAO:0000940
-xref: EMAPA:18725
-xref: FMA:32574
-xref: MA:0001884
-is_a: UBERON:0002236 ! costal cartilage
-property_value: UBPROP:0000001 "Distal, cartilaginous portion of the sternum.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000940", ontology="AAO", source="AAO:LAP"}
 
 [Term]
 id: UBERON:0006633
@@ -6501,22 +6056,6 @@ property_value: RO:0002175 NCBITaxon:8782
 property_value: UBPROP:0000008 "Found in both avian and non-avian theropods including, but not limited to: Coelophysoids, Allosauroids, Spinosauridae, Tyrannosauroids, Oviraptorosauria, Troodontidae and Dromaeosauridae" xsd:string
 
 [Term]
-id: UBERON:0007843
-name: uncinate process of ribs
-namespace: uberon
-def: "A posterior projection from proximal rib segments. Offers attachment sites for respiratory and shoulder muscles as well as adding structural support to the trunk skeleton[Kardong 2012]." [https://github.com/obophenotype/uberon/issues/96, ISBN:0073040584, PHENOSCAPE:ad]
-comment: WP: Although bony uncinate processes are unique to birds, cartilaginous uncinate processes are present in crocodiles. The uncinate process has also been reported in Sphenodon, Caudipteryx, oviraptorids, Confuciusornis and Chaoyangia however it does not occur in Archaeopteryx
-synonym: "uncinate process" BROAD INCONSISTENT [AAO:0000741]
-xref: AAO:0000741
-xref: Wikipedia:Uncinate_processes_of_ribs
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0010388 {source="ISBN:0073040584"} ! proximal segment of rib
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/alex-dececchi
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
-property_value: RO:0002161 NCBITaxon:8827 {source="PMID:15755883"}
-property_value: UBPROP:0000001 "Posteriorly directed process (occasionally directed anteriorly) usually associated with the rib (sometimes with the transverse process) of the third vertebra; they provide the origin of the mm serratus superior, medius, and inferior.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000741", ontology="AAO", source="AAO:Pugener_2002"}
-
-[Term]
 id: UBERON:0007958
 name: central carpal bone
 namespace: uberon
@@ -7101,40 +6640,6 @@ xref: EMAPA:17742
 is_a: UBERON:0010885 ! hindlimb cartilage element
 is_a: UBERON:0015052 ! femur endochondral element
 property_value: IAO:0000116 "TODO - request EHDAA2" xsd:string
-
-[Term]
-id: UBERON:0010388
-name: proximal segment of rib
-namespace: uberon
-def: "The segment of the rib that connects to a vertebra[MP]. a small part of the rib composed of the head, neck, tuberculum and a short proximal part of the body[PMID]." [MP:0000152, PMID:15906248]
-comment: The proximal rib derives from the caudal half of somite[PMID:15906248]
-subset: pheno_slim
-synonym: "costal part of rib" RELATED []
-synonym: "proximal part of rib" EXACT [PMID:15906248]
-synonym: "proximal rib" EXACT [MA:0001400]
-synonym: "proximal rib segment" EXACT []
-synonym: "vertebral part of rib" RELATED []
-xref: EMAPA:37495 {source="MA:th"}
-xref: MA:0001400
-xref: MA:0001414
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0002228 {source="MA"} ! rib
-
-[Term]
-id: UBERON:0010424
-name: distal segment of rib
-namespace: uberon
-comment: The distal rib derives from both somite halves[PMID:15906248]
-synonym: "distal part of rib" EXACT [PMID:15906248]
-synonym: "distal rib" EXACT [MA:0001397]
-synonym: "distal rib segment" EXACT []
-synonym: "sternal rib" NARROW []
-synonym: "vertical segment of rib" NARROW []
-xref: EMAPA:37492 {source="MA:th"}
-xref: MA:0001397
-xref: MA:0001418
-is_a: UBERON:0005055 ! zone of long bone
-relationship: part_of UBERON:0002228 {source="MA"} ! rib
 
 [Term]
 id: UBERON:0010540
@@ -8277,26 +7782,6 @@ xref: Wikipedia:Body_of_ilium
 relationship: part_of UBERON:0001273 ! ilium
 
 [Term]
-id: UBERON:0010757
-name: rib 8
-namespace: uberon
-def: "The eighth rib counting from the top of the rib cage down. Note that members of this class are not necessarily homologous[ncit,modified]." [http://orcid.org/0000-0002-6601-2165, ncithesaurus:Rib_8]
-subset: defined_by_ordinal_series
-synonym: "costa VIII" EXACT LATIN []
-synonym: "eighth rib" EXACT [FMA:8120]
-synonym: "upper false rib" NARROW [NCBITaxon:9606, PMCID:PMC1327870]
-xref: EMAPA:19536
-xref: FMA:8120
-xref: MA:0001408
-xref: NCIT:C52760
-xref: SCTID:244663007
-xref: UMLS:C1709954 {source="ncithesaurus:Rib_8"}
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000232 "elements are to be defined spatially/topologically" xsd:string
-property_value: UBPROP:0000008 "Typically a false rib in humans but may sometimes be a true one due to sternal attachment" xsd:string {source="PMC1327870"}
-property_value: UBPROP:0000106 "8" xsd:nonNegativeInteger
-
-[Term]
 id: UBERON:0010759
 name: equine distal sesamoid
 namespace: uberon
@@ -8815,33 +8300,6 @@ is_a: UBERON:0010712 ! limb skeleton subdivision
 relationship: part_of UBERON:0004381 {source="VSAO"} ! skeleton of limb
 property_value: UBPROP:0000007 "zeugopodial" xsd:string
 property_value: UBPROP:0000007 "zygopodial" xsd:string
-
-[Term]
-id: UBERON:0011651
-name: ventral head of rib
-namespace: uberon
-def: "Ventral head of a bicapitate rib. It articulates with the parapophysis[AAO]." [AAO:0000723]
-synonym: "capitulum" NARROW []
-synonym: "capitulum of costa" EXACT []
-synonym: "capitulum of rib" EXACT [AAO:0000723]
-synonym: "costal capitulum" EXACT []
-xref: AAO:0000723
-is_a: UBERON:0002230 ! head of rib
-property_value: UBPROP:0000008 "Ribs of primitive tetrapods are bicipital (having two heads)" xsd:string {source="ISBN:0073040584"}
-
-[Term]
-id: UBERON:0011652
-name: dorsal head of rib
-namespace: uberon
-def: "Dorsal head of a bicapitate rib. It articulates with the diapophysis[AAO]." [AAO:0000722]
-synonym: "tuberculum" BROAD [AAO:0000722]
-synonym: "tuberculum of rib" EXACT []
-xref: AAO:0000722
-xref: EMAPA:37734 {source="MA:th"}
-xref: MA:0001414
-is_a: UBERON:0002230 ! head of rib
-property_value: UBPROP:0000008 "Ribs of primitive tetrapods are bicipital (having two heads)" xsd:string {source="ISBN:0073040584"}
-property_value: UBPROP:0000013 "sometimes called the tuberculum, but not to be confused with the tubercle, which is between body and neck" xsd:string
 
 [Term]
 id: UBERON:0011655
@@ -11466,27 +10924,6 @@ is_a: UBERON:0003656 ! mesopodium bone
 is_a: UBERON:0018099 ! distal mesopodial endochondral element
 
 [Term]
-id: UBERON:0018144
-name: cervical rib
-namespace: uberon
-def: "A rib that is attached to a cervical vertebra." [http://orcid.org/0000-0002-6601-2165]
-xref: EMAPA:37825 {source="MA:th"}
-xref: UBERONTEMP:d522e981-3a43-4cab-9862-4344b5c3ff22
-is_a: UBERON:0002228 ! rib
-property_value: IAO:0000116 "Trunk, presacral and sacral ribs do not have a 'part of some region' asserted for them, we should add it to them[PHENOSCAPE:ad]" xsd:string
-property_value: RO:0002161 NCBITaxon:9606 {source="should be all Theria, see https://github.com/obophenotype/mouse-anatomy-ontology/issues/116"}
-property_value: UBPROP:0000008 "May be homologous with the transverse processes of cervical vertebra" xsd:string
-
-[Term]
-id: UBERON:0018145
-name: lumbar rib
-namespace: uberon
-def: "A rib that is attached to a lumbar vertebra." [http://orcid.org/0000-0002-6601-2165]
-is_a: UBERON:0002228 ! rib
-property_value: RO:0002161 NCBITaxon:32525
-property_value: UBPROP:0000008 "May be homologous with the transverse processes of lumbar vertebra" xsd:string
-
-[Term]
 id: UBERON:0018266
 name: third phalanx
 namespace: uberon
@@ -11713,6 +11150,7 @@ synonym: "mesocoracoideum" RELATED [TAO:0000239]
 xref: ZFA:0000239
 is_a: UBERON:0007829 ! pectoral girdle bone
 is_a: UBERON:4300092 ! mesocoracoid element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11731,6 +11169,7 @@ synonym: "postcleithrum" EXACT [PSPUB:0000164]
 xref: ZFA:0000410
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11769,6 +11208,7 @@ synonym: "suprascapula" RELATED [TAO:0000549]
 xref: ZFA:0000549
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11785,6 +11225,7 @@ synonym: "épiclithrum" EXACT [PSPUB:0000132]
 xref: ZFA:0000594
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11812,6 +11253,7 @@ synonym: "pubic plate" EXACT []
 xref: ZFA:0000623
 is_a: UBERON:0007830 ! pelvic girdle bone/zone
 is_a: UBERON:2100623 ! basipterygium element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 
 [Term]
 id: UBERON:2000663
@@ -11828,6 +11270,7 @@ synonym: "tabular" RELATED [TAO:Harrington_1955, TAO:Weitzman_1962]
 xref: ZFA:0000663
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11866,6 +11309,7 @@ def: "A plate-like chondrogenic condensation within the pectoral fin, which subd
 synonym: "fin plate cartilage" EXACT [TAO:0001456]
 xref: ZFA:0001456
 is_a: UBERON:0007390 ! pectoral appendage cartilage tissue
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11877,6 +11321,7 @@ def: "Pectoral fin cartilage that is part of the embryonic primary pectoral gird
 synonym: "mesocoracoideum" RELATED [TAO:0001537]
 xref: ZFA:0001537
 is_a: UBERON:4300092 ! mesocoracoid element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11887,6 +11332,7 @@ namespace: uberon
 def: "Bilaterally paired small, rodlike cartilages on the ventral surface of the abdomen (present at 7.9 mm). Their posterior tips expand laterally, forming L-shaped cartilages. Medially, a posterior spur of cartilage develops, which will later ossify as the ischiac process (Weitzman 1962)." [ZFIN:curator]
 xref: ZFA:0001539
 is_a: UBERON:2100623 ! basipterygium element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11945,6 +11391,7 @@ synonym: "ischiac process" EXACT [TAO:0001734]
 synonym: "ischiatic process" EXACT [TAO:0001734]
 synonym: "posterior pelvic process" EXACT [http://hdl.handle.net/10088/11710]
 relationship: part_of UBERON:2000623 ! basipterygium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -11955,28 +11402,6 @@ namespace: uberon
 def: "Foramen that is located in the coracoid." [TAO:wd]
 xref: ZFA:0005426
 relationship: part_of UBERON:0004743 ! coracoid bone
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001750
-name: rib of vertebra 6
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the sixth centrum." [TAO:wd]
-synonym: "sixth pleural rib" EXACT [TAO:0001750]
-xref: ZFA:0005543
-is_a: UBERON:0002228 ! rib
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001751
-name: rib of vertebra 5
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the fifth centrum." [TAO:wd]
-synonym: "fifth pleural rib" EXACT [TAO:0001751]
-xref: ZFA:0005542
-is_a: UBERON:0002228 ! rib
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12159,6 +11584,7 @@ name: postcleithrum 1
 namespace: uberon
 def: "Postcleithrum that anteriorly articulates with the supracleithrum and/or the cleithrum of the pectoral girdle; most dorsal element in a series of postcleithra." [TAO:GA_TG, TAO:wd]
 is_a: UBERON:2000410 ! postcleithrum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12168,6 +11594,7 @@ name: postcleithrum 2
 namespace: uberon
 def: "Postcleithrum that articulates dorsally with postcleithrum 1, ventrally with postcleithrum 3, and anteriorly with cleithrum." [TAO:GA_TG, TAO:wd]
 is_a: UBERON:2000410 ! postcleithrum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12177,46 +11604,7 @@ name: postcleithrum 3
 namespace: uberon
 def: "Postcleithrum that articulates dorsally with postcleithrum 2 and, sometimes, anteriorly with cleithrum." [TAO:GA_TG, TAO:wd]
 is_a: UBERON:2000410 ! postcleithrum
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001878
-name: rib of vertebra 2
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the second centrum." [TAO:wd]
-xref: ZFA:0005539
-is_a: UBERON:0002228 ! rib
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001879
-name: rib of vertebra 1
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the first centrum." [TAO:wd]
-xref: ZFA:0005538
-is_a: UBERON:0002228 ! rib
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001880
-name: rib of vertebra 3
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the third centrum." [TAO:wd]
-xref: ZFA:0005540
-is_a: UBERON:0002228 ! rib
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
-
-[Term]
-id: UBERON:2001881
-name: rib of vertebra 4
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the fourth centrum." [TAO:wd]
-xref: ZFA:0005541
-is_a: UBERON:0002228 ! rib
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12242,6 +11630,7 @@ synonym: "posttemporo-supracleithrum" EXACT [TAO:0001998]
 synonym: "supracleithrum" RELATED [TAO:0001998]
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12306,6 +11695,7 @@ def: "Bone that is a fusion of the pterotic, posttemporal, and supracleithrum bo
 synonym: "pterotic-supracleithrum" EXACT [TAO:0002019]
 is_a: UBERON:0007829 ! pectoral girdle bone
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12361,6 +11751,7 @@ namespace: uberon
 def: "Joint between the right and left coracoid bones of the pectoral girdle." [TAO:wd]
 xref: ZFA:0005470
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12371,6 +11762,7 @@ namespace: uberon
 def: "Process that is cartilaginous and arises from the distal margin or tip of posterior process of basipterygium and projects posteriorly." [TAO:wd]
 relationship: part_of UBERON:2001539 ! basipterygium cartilage
 relationship: part_of UBERON:2001734 ! posterior process of basipterygium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12384,6 +11776,7 @@ synonym: "internal arm of the basipterygium" EXACT [TAO:0002070]
 synonym: "mesial anterior arm of basipterygium" EXACT [TAO:0002070]
 synonym: "mesial anterior process of basipterygium" EXACT [TAO:0002070]
 relationship: part_of UBERON:2000623 ! basipterygium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12394,6 +11787,7 @@ namespace: uberon
 def: "Process that is cartilaginous and arises from the distal tip of internal anterior process of basipterygium." [TAO:wd]
 relationship: part_of UBERON:2000623 ! basipterygium bone
 relationship: part_of UBERON:2001539 ! basipterygium cartilage
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12404,6 +11798,7 @@ namespace: uberon
 def: "Process that is bony and arises from anterior margin of basipterygium between internal anterior process of basipterygium and external anterior process of basipterygium. Middle anterior process of basipterygium projects anteriorly or anteromedially." [TAO:wd]
 synonym: "middle anterior arm of basipterygium" EXACT [TAO:0002072]
 relationship: part_of UBERON:2000623 ! basipterygium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12414,6 +11809,7 @@ namespace: uberon
 def: "Process that is cartilaginous and arises from the distal tip of middle anterior process of basipterygium." [TAO:wd]
 relationship: part_of UBERON:2000623 ! basipterygium bone
 relationship: part_of UBERON:2001539 ! basipterygium cartilage
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12427,6 +11823,7 @@ synonym: "external arm of basipterygium" EXACT [TAO:0002074]
 synonym: "lateral anterior process of basipterygium" EXACT [TAO:0002074]
 synonym: "lateral pelvic process" EXACT [http://hdl.handle.net/10088/11710]
 relationship: part_of UBERON:2000623 ! basipterygium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12437,6 +11834,7 @@ namespace: uberon
 def: "Process that is cartilaginous and arises from the distal tip of external anterior process of basipterygium." [TAO:wd]
 relationship: part_of UBERON:2000623 ! basipterygium bone
 relationship: part_of UBERON:2001539 ! basipterygium cartilage
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12447,6 +11845,7 @@ namespace: uberon
 def: "Process that is bony and arises from lateral margin of basipterygium lateral to pelvic fin lepidotrichium 1 and projects laterally or anterolaterally." [TAO:wd]
 synonym: "posterolateral process of basipterygium" EXACT [TAO:0002076]
 relationship: part_of UBERON:2000623 ! basipterygium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -12543,6 +11942,7 @@ synonym: "pelvic bone" RELATED [TAO:0000623]
 synonym: "pelvic plate" RELATED []
 synonym: "pubic plate" RELATED []
 relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 
 [Term]
 id: UBERON:2101415
@@ -12763,6 +12163,7 @@ synonym: "episcapulum" RELATED [UBERON:3000748]
 synonym: "omolita" RELATED [UBERON:3000748]
 synonym: "scapula major" RELATED [UBERON:3000748]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12772,6 +12173,7 @@ name: pars acromialis
 namespace: uberon
 def: "Prominent structure (anteromedial head) that forms the anterior section of the ventral margin of the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12782,6 +12184,7 @@ namespace: uberon
 def: "Concave structure (posteromedial head) that forms the posterior head of the ventral margin of the scapula. The pars glenoidalis articulates with the humerus, and comprises the dorsal portion of the glenoid fossa." [AAO:LAP]
 synonym: "glenoid head of scapula" EXACT []
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12790,6 +12193,7 @@ id: UBERON:3000755
 name: pectoral girdle opening
 namespace: uberon
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12800,6 +12204,7 @@ namespace: uberon
 def: "Small hooked process on the dorsal aspect of the humeral shaft; it does not extend on to the glenoid head. The m subscapularis is inserted on it." [AAO:LAP]
 synonym: "crista dorsalis" RELATED [UBERON:3000756]
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12809,6 +12214,7 @@ name: zonal area
 namespace: uberon
 def: "All those parts of the pectoral girdle ventral and medial to the glenoid fossa." [AAO:LAP]
 relationship: part_of UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12824,6 +12230,7 @@ synonym: "prezonal sternum" RELATED [UBERON:3000759]
 synonym: "sternum superior" RELATED [UBERON:3000759]
 is_a: UBERON:3000936 ! zonal element
 relationship: part_of UBERON:3000937 ! prezonal element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12839,6 +12246,7 @@ synonym: "infracoracoid" RELATED [UBERON:3000762]
 synonym: "sterni ossa media" RELATED [UBERON:3000762]
 is_a: UBERON:3000936 ! zonal element
 relationship: part_of UBERON:3000757 ! zonal area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12849,6 +12257,7 @@ namespace: uberon
 def: "A pair of cartilaginous expansions (one from each epicoracoid cartilage) that project anteriorly. They articulate anteriorly with the omosternum." [AAO:LAP]
 synonym: "procoracoid bridge" RELATED [UBERON:3000763]
 relationship: part_of UBERON:3000762 ! epicoracoid
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12857,6 +12266,7 @@ id: UBERON:3000767
 name: pelvic girdle opening
 namespace: uberon
 is_a: UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12866,6 +12276,7 @@ name: acetabular depression
 namespace: uberon
 def: "The central, most concave portion of the acetabulum, which remains open." [AAO:LAP]
 is_a: UBERON:3000767 ! pelvic girdle opening
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12876,6 +12287,7 @@ namespace: uberon
 def: "Longitudinal crest on the dorsal side of the shaft of the ilium." [AAO:LAP]
 synonym: "ala ossis ilei" RELATED [UBERON:3000773]
 relationship: part_of UBERON:3000774 ! ilial shaft
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -12884,6 +12296,7 @@ name: ilial shaft
 namespace: uberon
 def: "Anterior rod that articulates with the sacrum." [AAO:LAP]
 relationship: part_of UBERON:0001273 ! ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12893,6 +12306,7 @@ name: glenoid foramen
 namespace: uberon
 def: "Opening on the glenoid fossa." [AAO:LAP]
 is_a: UBERON:3000755 ! pectoral girdle opening
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12902,6 +12316,7 @@ name: epicoracoid horn
 namespace: uberon
 def: "A pair of cartilaginous expansions (one from each epicoracoid cartilage) that project posteriorly. They articulate with the sternum by means of grooves, pouches or fossae in the dorsal surface of the sternum and provide a site for the insertion of a pair of muscles derived from the m. rectus abdominis." [AAO:LAP]
 relationship: part_of UBERON:3000762 ! epicoracoid
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12912,6 +12327,7 @@ namespace: uberon
 def: "Opening on the scapulocoracoid bone through which passes the n. supracoracoideus and the corresponding artery and vein." [AAO:LAP]
 synonym: "foramen supracoracoideum" RELATED [UBERON:3000778]
 is_a: UBERON:3000755 ! pectoral girdle opening
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12922,6 +12338,7 @@ namespace: uberon
 def: "Ovoid space on the pectoral girdle limited anteriorly by the procoracoid, medially by the epicoracoid, and posteriorly by the coracoid." [AAO:LAP]
 synonym: "fenestra between procoracoid and coracoid" RELATED [UBERON:3000779]
 is_a: UBERON:3000755 ! pectoral girdle opening
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12931,6 +12348,7 @@ name: incisura coracoidea
 namespace: uberon
 def: "Notch that separates the cartilaginous regions of the procoracoid and coracoid." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12942,6 +12360,7 @@ def: "Ovoid roughened pit, which is situated a little below and behind the cente
 comment: Not to be confused with the fovea capitis of the femur
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0006801 ! proximal head of humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12952,6 +12371,7 @@ namespace: uberon
 def: "Semi-elliptical ball located at the lower end of the humerus, adjacent to the humeral ball." [AAO:LAP]
 synonym: "medial condyle" RELATED [UBERON:3000784]
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12962,6 +12382,7 @@ namespace: uberon
 def: "Furrow between the humeral head and the ulnar condyle." [AAO:LAP]
 synonym: "trochlear sulcus of humerus" EXACT []
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12971,6 +12392,7 @@ name: fossa cubitalis ventralis
 namespace: uberon
 def: "Depresion on the distal end of the humerus, just anterior to the humeral head, in which the end of the radius fits when the forelimb is flexed." [AAO:LAP]
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12981,6 +12403,7 @@ namespace: uberon
 def: "In a fused radio-ulna, the proximal portion of the compound bone (where the sulcus longitudinalis is barely evident or absent) is a cylindrical pillar." [AAO:LAP]
 relationship: part_of UBERON:0006715 ! radio-ulna
 relationship: part_of UBERON:0010703 ! forelimb zeugopod skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -12999,6 +12422,7 @@ name: cartilago paraglenoidalis
 namespace: uberon
 def: "Strip of cartilage that separates the coracoid from the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13009,6 +12433,7 @@ namespace: uberon
 def: "Lateral end of the clavicle, which usually lies in close proximity to the pars acromialis of the scapula, and occassionally may fuse to it." [AAO:LAP]
 synonym: "extremitas glenoidalis" RELATED [UBERON:3000811]
 relationship: part_of UBERON:0001105 ! clavicle bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13018,6 +12443,7 @@ name: sulcus pro cartilagine praecoracoidealis
 namespace: uberon
 def: "Canal on the posterior aspect of the clavicle that accomodates the anterior margin of the procoracoid cartilage." [AAO:LAP]
 relationship: part_of UBERON:0001105 ! clavicle bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13064,6 +12490,7 @@ name: margo anterior of scapula
 namespace: uberon
 def: "Anterior margin of the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13073,6 +12500,7 @@ name: margo clavicularis
 namespace: uberon
 def: "Inferior margin of the pars acromialis of the scapula, which articulates with the clavicule." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13082,6 +12510,7 @@ name: margo posterior of scapula
 namespace: uberon
 def: "Posterior margin of the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13091,6 +12520,7 @@ name: margo suprascapularis
 namespace: uberon
 def: "Superior margin of the scapula, which articulates with the suprascapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13100,6 +12530,7 @@ name: pars suprascapularis
 namespace: uberon
 def: "Superior portion of the scapula, which is thinner than the rest of the shaft." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13109,6 +12540,7 @@ name: sinus interglenoidalis
 namespace: uberon
 def: "Notch or indentation between the pars glenoidalis and pars acromialis of the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13118,6 +12550,7 @@ name: tenuitas cristaeformis
 namespace: uberon
 def: "Leading (anterior) portion of the scapula, which is thinner than the rest of the shaft." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13127,6 +12560,7 @@ name: crista longitudinalis scapula
 namespace: uberon
 def: "Longitudinal ridge on the medial (inner) face of the scapula." [AAO:LAP]
 relationship: part_of UBERON:0006849 ! scapula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13208,6 +12642,7 @@ name: crista lateralis humeri
 namespace: uberon
 def: "Ridge on the lateral aspect of the humeral shaft located just anterior to the radial (lateral) epicondyle." [AAO:LAP]
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13217,6 +12652,7 @@ name: crista medialis humeri
 namespace: uberon
 def: "Ridge on the medial aspect of the humeral shaft that extends from the level of the middle portion of the shaft to ulnar (medial) epicondyle." [AAO:LAP]
 relationship: part_of UBERON:0000976 ! humerus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13226,6 +12662,7 @@ name: crista radii
 namespace: uberon
 def: "Small ridge on the lateral aspect of the radial shaft, located at the level of the collum antibrachii." [AAO:LAP]
 relationship: part_of UBERON:0001423 ! radius bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13236,6 +12673,7 @@ namespace: uberon
 def: "Lateral portion of the proximal (upper) articular surface of the radius that consists of an eminence with a rounded apex." [AAO:LAP]
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0001423 ! radius bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13246,6 +12684,7 @@ namespace: uberon
 def: "Small eminence on the distal articular head of the ulna." [AAO:LAP]
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0001424 ! ulna
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13255,6 +12694,7 @@ name: sulcus longitudinalis
 namespace: uberon
 def: "In a fused radio-ulna, longitudinal furrow that demarcates the area of fusion of both elements. This sulcus is deep in the distal portion of the compound bone, but barely evident or absent at the proximal end." [AAO:LAP]
 relationship: part_of UBERON:0006715 ! radio-ulna
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13264,6 +12704,7 @@ name: element Y of fore mesopodium
 namespace: uberon
 def: "Oval carpal element that is located on the anteromedial side of the radiale and the anterolateral side of the ulnare. Anteriorly, it articulates with carpals 1 through 4 (or 2 through 5 according to some authors). It is also recognized as centrale by some authors. This element originates from one, two, or three condensation centers. Occasionally it may fuse to carpal 2(1), carpal 3(2), the ulnare, or other elements." [AAO:LAP]
 relationship: part_of UBERON:0009880 ! carpal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13273,6 +12714,7 @@ name: intercalary element of fore digit
 namespace: uberon
 def: "Small elements present in all digits of the manus, when present in a taxon. Each intercalary element articulates with the anteroventral end of the penultimate phalanx proximally and the distal phalanx distally." [AAO:LAP]
 is_a: UBERON:0004249 ! manual digit bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13282,6 +12724,7 @@ name: foramen perforans carpi
 namespace: uberon
 def: "Opening for the passage of the perforans carpi artery from the ventral to the dorsal side. It perforates the compound ulnare + intermedium." [AAO:LAP]
 relationship: part_of UBERON:3000856 ! intercalary element of fore digit
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13291,6 +12734,7 @@ name: pubo-ischium
 namespace: uberon
 def: "Composite element formed by the fusion of the ischium and pubis." [AAO:LAP]
 relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13300,6 +12744,7 @@ name: epileon
 namespace: uberon
 def: "Dorsal extremity of the ilial shaft, which remains cartilaginous." [AAO:LAP]
 relationship: part_of UBERON:3000774 ! ilial shaft
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13309,6 +12754,7 @@ name: agger limitans anterior of ilium
 namespace: uberon
 def: "Shelf-like expansion of the ilial corpus that forms the anterior border of the acetabulum." [AAO:LAP]
 relationship: part_of UBERON:0006802 ! acetabular rim
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13318,6 +12764,7 @@ name: agger limitans anterior of ischium
 namespace: uberon
 def: "Shelf-like expansion of the ischium that forms the posterior border of the acetabulum." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13329,6 +12776,7 @@ def: "Small, dorsolaterally projecting knob located just anterior to the supra-a
 synonym: "dorsal protuberance" RELATED [UBERON:3000869]
 synonym: "tuber superior" RELATED [UBERON:3000869]
 relationship: part_of UBERON:3000774 ! ilial shaft
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -13339,6 +12787,7 @@ def: "Ventral portion of the ilial corpus, located anteroventral to the acetabul
 synonym: "pars descendens ilei" RELATED [UBERON:3000870]
 synonym: "ventral acetabular expansion" RELATED [UBERON:3000870]
 relationship: part_of UBERON:0010747 ! body of ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13348,6 +12797,7 @@ name: fossula tuberis superioris
 namespace: uberon
 def: "Small depression dorsal to the proximal portion of the collum ilei and ventral to the ilial protuberance." [AAO:LAP]
 relationship: part_of UBERON:0010747 ! body of ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13357,6 +12807,7 @@ name: collum ilei
 namespace: uberon
 def: "Cyllindrical pillar that originates anterior to the acetabulum and extends to the ilial shaft." [AAO:LAP]
 relationship: part_of UBERON:0010747 ! body of ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13366,6 +12817,7 @@ name: pars cylindriformis ilei
 namespace: uberon
 def: "Elongate, cylindrical structure on the ventral side of the shaft of the ilium that extends through its entire length." [AAO:LAP]
 relationship: part_of UBERON:3000774 ! ilial shaft
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13375,6 +12827,7 @@ name: crista ischii
 namespace: uberon
 def: "Crest on the posterior side of the ischium, which may also extend to the posteroventral aspect of pubis." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13384,6 +12837,7 @@ name: spina pelvis posterior
 namespace: uberon
 def: "Small, rounded process on the anterodorsal margin of the ischium, just posterior to the area of articulation with the ilium." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -13392,6 +12846,7 @@ name: spina pelvis anterior
 namespace: uberon
 def: "Small, rounded process on the anteroventral margin of the preacetabular expansion of the ilial corpus." [AAO:LAP]
 relationship: part_of UBERON:0010747 ! body of ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -13400,6 +12855,7 @@ name: intumescentia bilateralis inferior
 namespace: uberon
 def: "Small protuberance on the ischium, located close to its posteroventral margin." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13409,6 +12865,7 @@ name: intumescentia bilateralis superior
 namespace: uberon
 def: "Small protuberance on the ischium, located at the level of the superior margin of the acetabulum and close to its posterior margin." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13418,6 +12875,7 @@ name: incisura terminalis
 namespace: uberon
 def: "Small indentation on the posterior margin of the ischium, ventral to the intumescentia bilateralis superior." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13427,6 +12885,7 @@ name: crista hypertrophica ischium
 namespace: uberon
 def: "Large protuberance on the dorsal aspect of the ischium that extends from the ischio-ilium articulation to the spina pelvis posterior." [AAO:LAP]
 relationship: part_of UBERON:0001274 ! ischium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13436,6 +12895,7 @@ name: interilial region
 namespace: uberon
 def: "Area of convergence of the ilial shafts. When the preacetabular ilium is narrow, the interilial configuration is V-shaped or narrowly rounded, whereas when the interilial region is broadly expanded the interilial configuration is U-shaped." [AAO:LAP]
 relationship: part_of UBERON:0001273 ! ilium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13445,6 +12905,7 @@ name: recessus coccygealis
 namespace: uberon
 def: "Area dorsal to the pelvic girdle symphysis, between the dorsal portions of the ilial corpora, where lies the posterior terminus of the urostyle." [AAO:LAP]
 relationship: part_of UBERON:3000774 ! ilial shaft
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13454,6 +12915,7 @@ name: epipubis
 namespace: uberon
 def: "Small prepubic element formed by a plate of cartilage (which may calcify in the adult) that is synchondrotically united with the pubis." [AAO:LAP]
 relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13468,6 +12930,7 @@ synonym: "cartilago marsupial" RELATED [UBERON:3000886]
 synonym: "cartilago ypsiloidea" RELATED [UBERON:3000886]
 synonym: "cartilago ypsiloides" RELATED [UBERON:3000886]
 relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13478,6 +12941,7 @@ namespace: uberon
 def: "Low crest that arises just behind the acetabular head and extends distally for about one-third the length of the femoral shaft." [AAO:LAP]
 synonym: "crista femoris" RELATED [UBERON:3000894]
 relationship: part_of UBERON:0000981 ! femur
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13487,6 +12951,7 @@ name: foveal depression
 namespace: uberon
 def: "Ovoid roughened pit situated on the dorsal and anteroventral surface of the acetabular head wherein the ligaments attaching the bone to the acetabulum are inserted." [AAO:LAP]
 relationship: part_of UBERON:0006767 ! head of femur
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13496,6 +12961,7 @@ name: trochanteric crest
 namespace: uberon
 def: "Paired ridges on the ventral surface of the femoral shaft that run toward the femoral trochanter; the posterior crest is less developed." [AAO:LAP]
 relationship: part_of UBERON:0000981 ! femur
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13505,6 +12971,7 @@ name: tibial crest
 namespace: uberon
 def: "Ridge that arises from the dorso-masial side of the extensor surface of the tibia. It receives the insertion of the tendon of the extensor ilio-tibialis muscle." [AAO:LAP]
 relationship: part_of UBERON:0000979 ! tibia
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13514,6 +12981,7 @@ name: apophysis distalis of tibiofibula
 namespace: uberon
 def: "Swelling on the extensor surface of the distal head of the tibiofibula." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13523,6 +12991,7 @@ name: caput ossis cruris
 namespace: uberon
 def: "Proximal head of the tibiofibula that articulates with the distal head of the femur." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13532,6 +13001,7 @@ name: sulcus pro musculo extensori cruris brevis
 namespace: uberon
 def: "Small canal on the proximal head of to the tibiofibula, lateral to the apophysis distalis, for the insertion of the cruris brevis muscle." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13541,6 +13011,7 @@ name: eminentia arcuata
 namespace: uberon
 def: "Small crest on the extensor surface of the proximal head of the tibiofibula (tibial side)." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13550,6 +13021,7 @@ name: sulcus distalis ossis cruris
 namespace: uberon
 def: "In a fused tibiofibula, longitudinal furrow in the distal portion of the compound bone that demarcates the area of fusion of both elements." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13559,6 +13031,7 @@ name: sulcus proximalis ossis cruris
 namespace: uberon
 def: "In a fused tibiofibula, longitudinal furrow in the proximal portion of the compound bone that demarcates the area of fusion of both elements." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13568,6 +13041,7 @@ name: foramen nutritium exterius
 namespace: uberon
 def: "Foramen for the tibial artery and vein and the deep peroneal nerve; it pierces through the midpoint of the shaft of the tibiofibula." [AAO:LAP]
 relationship: part_of UBERON:0006714 ! tibiofibula
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13577,6 +13051,7 @@ name: apophysis proximalis
 namespace: uberon
 def: "Swelling on the extensor surface of the proximal compound head of the tibiale and fibulare." [AAO:LAP]
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13586,6 +13061,7 @@ name: apophysis distalis of tibiale fibulare
 namespace: uberon
 def: "Swelling on the extensor surface of the distal compound head of the tibiale and fibulare." [AAO:LAP]
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13596,6 +13072,7 @@ namespace: uberon
 def: "Oval tarsal element that is located on the anteromedial side of the tibiale. Anteriorly, it articulates with the proximal prehallux, tarsals 1, 2, and 3." [AAO:LAP]
 is_a: UBERON:0015050 ! tarsus endochondral element
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13607,6 +13084,7 @@ def: "One to three or four elements located ventral and medial to the metatarsal
 synonym: "prehallux" BROAD []
 is_a: UBERON:0010712 ! limb skeleton subdivision
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). It was modified by cjm in the following way: the class was relabeled from 'prepollex' to 'prepollex skeleton', to distinguish it from the digit-like structure which it is a part of. It was re-classified from bone to subdivision of skeleton, as it may in fact be composed of multiple individual bones. TODO: definition needs reviewed, and it still requires placement under the UBERON:0012136 ! prehallux" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13616,6 +13094,7 @@ name: intercalary element of hind digit
 namespace: uberon
 def: "Small elements present in all digits of the pes, when present in a taxon. Each intercalary element articulates with the anteroventral end of the penultimate phalanx proximally and the distal phalanx distally." [AAO:LAP]
 is_a: UBERON:0004248 ! pedal digit bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13625,6 +13104,7 @@ name: foramen perforans tarsi
 namespace: uberon
 def: "Small opening between the centrale and fibulare that allows the perforans tarsi artery to pass from the ventral to the dorsal side of the ankle." [AAO:LAP]
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13634,6 +13114,7 @@ name: zonal element
 namespace: uberon
 def: "All those parts of the pectoral girdle in the central region of the zonal area." [AAO:LAP]
 relationship: part_of UBERON:3000757 ! zonal area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13643,6 +13124,7 @@ name: prezonal element
 namespace: uberon
 def: "All those parts of the pectoral girdle that lie anterior to the zonal area." [AAO:LAP]
 relationship: part_of UBERON:3000757 ! zonal area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13652,6 +13134,7 @@ name: postzonal element
 namespace: uberon
 def: "All those parts of the pectoral girdle that lies posterior to the zonal area." [AAO:LAP]
 relationship: part_of UBERON:3000757 ! zonal area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13661,6 +13144,7 @@ name: arciferal girdle
 namespace: uberon
 def: "Pectoral girdle in which the epicoracoid cartilages are elaborated into posteriorly directed epicoracoid horns. Most arciferal pectoral girdles are characterized by fusion of the epicoracoid cartilages in the interclavicle region. Posterior to the clavicles, the epicoracoids usually are free and overlapping." [AAO:LAP]
 is_a: UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13670,6 +13154,7 @@ name: firmisternal girdle
 namespace: uberon
 def: "Pectoral girdle that lacks epicoracoid horns. The sternum is fused to the pectoral arch, and the epicoracoid cartilages of each half of the girdle are fused to one another. The midzonal length of the girdle is shorter than that of an arciferal girdle, but pre- and postzonal elements tend to be longer." [AAO:LAP]
 is_a: UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13679,6 +13164,7 @@ name: pseudofirmisternal girdle
 namespace: uberon
 def: "Modified arciferal pectoral girdle in which the fusion of the epicoracoid cartilages in the interclavicle region is extended posteriorly. Thus, the cartilages no longer overlap freely, and functionally a partially firmisternal condition is created." [AAO:LAP]
 is_a: UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13688,6 +13174,7 @@ name: pseudoarciferal girdle
 namespace: uberon
 def: "Modified firmisternal pectoral girdle in which the epicoracoid cartilages are partly free and overlapping; however, the epicoracoids are fused to one another and the sternum postermodially." [AAO:LAP]
 is_a: UBERON:0007831 ! pectoral girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13698,6 +13185,7 @@ namespace: uberon
 def: "Three pairs of cartilaginous elements posterior to the sternum that lie in the myosepta of the ventral trunk musculature." [AAO:LAP]
 synonym: "abdominal ribs" RELATED [UBERON:3000945]
 relationship: part_of UBERON:3000938 ! postzonal element
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13716,6 +13204,7 @@ name: basale commune (carpal)
 namespace: uberon
 def: "Amalgamation of distal carpals 1 and 2." [AAO:EJS]
 is_a: UBERON:0001481 ! distal carpal bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13725,6 +13214,7 @@ name: basale commune (tarsal)
 namespace: uberon
 def: "Amalgamation of distal tarsals 1 and 2." [AAO:EJS]
 is_a: UBERON:0010721 ! distal tarsal bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13736,6 +13226,7 @@ def: "Distal-most centrale when two are present." [AAO:EJS]
 is_a: UBERON:0001447 ! tarsal bone
 is_a: UBERON:0012131 ! centrale
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13747,6 +13238,7 @@ def: "Rectangular cartilage or bone between the distal basal commune and the pro
 is_a: UBERON:0001435 ! carpal bone
 is_a: UBERON:0012131 ! centrale
 relationship: part_of UBERON:0009880 ! carpal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13756,6 +13248,7 @@ name: intermedium (fore)
 namespace: uberon
 def: "Quadrangular cartilage or bone lying between the preaxial radiale and the postaxial ulnare in the proximal level of the mesopodium." [AAO:EJS]
 relationship: part_of UBERON:0009880 ! carpal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13767,6 +13260,7 @@ def: "The proximal-most rectangular cartilage or bone when two centralelia are p
 is_a: UBERON:0001447 ! tarsal bone
 is_a: UBERON:0012131 ! centrale
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13776,6 +13270,7 @@ name: mediale
 namespace: uberon
 def: "A recurrent variant of salamanders; a rhomboidal cartilage lying immediately postaxial from the centrale or centrale 1." [AAO:EJS]
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13786,6 +13281,7 @@ namespace: uberon
 def: "A rounded  cartilage lying in the postaxial margin of the mesopodium, adjacent to the distal end of the fibulare." [AAO:EJS]
 comment: Often consider atavistic when present in extant salamnders (Caudata)
 relationship: part_of UBERON:0009879 ! tarsal skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13797,6 +13293,7 @@ def: "Either of a pair of cartilaginous rods that support the intromittent organ
 synonym: "Nobelian bone" RELATED []
 synonym: "Nobelian element" RELATED []
 relationship: part_of UBERON:0007832 ! pelvic girdle skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13805,6 +13302,7 @@ id: UBERON:3010262
 name: capitulum of radio-ulna
 namespace: uberon
 relationship: part_of UBERON:0006715 ! radio-ulna
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13818,6 +13316,7 @@ comment: to edit more later
 synonym: "subarticular sesamoids" RELATED []
 is_a: UBERON:0011141 ! appendicular ossicle
 is_a: UBERON:0012357 ! digitopodium bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13828,6 +13327,7 @@ namespace: uberon
 def: "Endochondral element distal to terminal phalanx of hind digit." [AAO:EJS]
 synonym: "bony nodule" BROAD []
 is_a: UBERON:0004248 ! pedal digit bone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13838,6 +13338,7 @@ namespace: uberon
 def: "Is the proximal-most prepollical element." [PHENOSCAPE]
 is_a: UBERON:4200140 ! prepollical element
 relationship: part_of UBERON:0012135 ! prepollex skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13848,6 +13349,7 @@ namespace: uberon
 def: "Is the distal-most prepollical element." [PHENOSCAPE]
 is_a: UBERON:4200140 ! prepollical element
 relationship: part_of UBERON:0012135 ! prepollex skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13857,6 +13359,7 @@ name: proximal-most prehallical element
 namespace: uberon
 is_a: UBERON:4200141 ! prehallical element
 relationship: part_of UBERON:3000922 ! prehallux skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13866,6 +13369,7 @@ name: distal-most prehallical element
 namespace: uberon
 is_a: UBERON:4200141 ! prehallical element
 relationship: part_of UBERON:3000922 ! prehallux skeleton
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13874,6 +13378,7 @@ id: UBERON:3010719
 name: dilated medial process of metacarpal IV
 namespace: uberon
 relationship: part_of UBERON:0003648 ! metacarpal bone of digit 4
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -13882,6 +13387,7 @@ id: UBERON:3010746
 name: T-shaped terminal phalanx
 namespace: uberon
 is_a: UBERON:0004300 ! distal phalanx
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -14040,22 +13546,6 @@ namespace: uberon
 def: "Anatomical projection in the posterior/distal region of the femur." [PHENOSCAPE:NI]
 is_a: UBERON:0005055 ! zone of long bone
 relationship: part_of UBERON:0000981 ! femur
-created_by: NI
-
-[Term]
-id: UBERON:4100117
-name: presacral rib
-namespace: uberon
-def: "Rib located anterior to the sacral region." [PHENOSCAPE:NI]
-is_a: UBERON:0002228 ! rib
-created_by: NI
-
-[Term]
-id: UBERON:4100118
-name: trunk rib
-namespace: uberon
-def: "Rib located in the trunk (ribcage) area (i.e. excluding cervical and caudal axial series." [PHENOSCAPE:NI]
-is_a: UBERON:0002228 ! rib
 created_by: NI
 
 [Term]
@@ -15309,14 +14799,6 @@ relationship: part_of UBERON:0001273 ! ilium
 created_by: WD
 
 [Term]
-id: UBERON:4300128
-name: sacral rib
-namespace: uberon
-def: "Elements of the sacrum joining true sacral vertebrae to pelvis [12th edition of Henderson's Dictionary of Biological terms]." [PHENOSCAPE]
-is_a: UBERON:0002228 ! rib
-created_by: WD
-
-[Term]
 id: UBERON:4300151
 name: pelvic intercleithral cartilage
 namespace: uberon
@@ -15362,22 +14844,6 @@ name: branched pelvic fin ray
 namespace: uberon
 def: "Pelvic fin lepidotrichium that is distally branched and segmented." [PHENOSCAPE]
 is_a: UBERON:4300117 ! pelvic fin ray
-created_by: WD
-
-[Term]
-id: UBERON:4300236
-name: rib of vertebra 7
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the seventh centrum." [PHENOSCAPE]
-is_a: UBERON:0002228 ! rib
-created_by: WD
-
-[Term]
-id: UBERON:4300237
-name: rib of vertebra 8
-namespace: uberon
-def: "Rib that articulates with the parapophysis of the eighth centrum." [PHENOSCAPE]
-is_a: UBERON:0002228 ! rib
 created_by: WD
 
 [Term]
@@ -15859,6 +15325,16 @@ namespace: uberon
 def: "The ridge of the trochlea on a humerus lies in the middle of the distal end of a humerus on the lateral side of the trochlea and the medial side of the capitulum (capitellum)." [https://orcid.org/0000-0003-2699-3066]
 relationship: part_of UBERON:0000144 ! trochlea of humerus
 property_value: http://purl.org/dc/elements/1.1/date 2021-05-27T23:57:42Z xsd:dateTime
+property_value: term:editor http://orcid.org/0000-0003-2699-3066
+
+[Term]
+id: UBERON:7500062
+name: tibial tuberosity
+namespace: uberon
+def: "The tibial tuberosity is on the anterior side of a tibia and is where a patella ligament attaches." [https://en.wikipedia.org/wiki/Tuberosity_of_the_tibia]
+synonym: "fossa digitalis" EXACT []
+relationship: part_of UBERON:0008772 ! proximal epiphysis of tibia
+property_value: http://purl.org/dc/elements/1.1/date 2021-05-28T00:06:11Z xsd:dateTime
 property_value: term:editor http://orcid.org/0000-0003-2699-3066
 
 [Term]

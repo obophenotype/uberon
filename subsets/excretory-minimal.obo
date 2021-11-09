@@ -625,7 +625,6 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -924,6 +923,7 @@ xref: Wikipedia:Collecting_tubule
 xref: ZFA:0005294
 is_a: UBERON:0006555 ! excretory tube
 relationship: part_of UBERON:0001285 {notes="checkme", source="GO"} ! nephron
+relationship: part_of UBERON:0004100 ! renal collecting system
 relationship: part_of UBERON:0007684 {source="FMA"} ! uriniferous tubule
 property_value: UBPROP:0000001 "Renal duct that collects the output from renal tubules.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005294", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000012 "in ISBN:0073040584 (Vertebrates, Kardong), the nephron is adjacent to the collecting tubule, consistent with FMA, but not GO. Wikipedia says: Many sources include the connecting tubule as part of the collecting duct system. However, the embryological origin is more similar to the nephron than it is to the rest of the collecting duct (which derives from the ureteric bud), and other sources therefore classify the connecting tubule with the nephron" xsd:string {external_ontology="FMA"}
@@ -6755,6 +6755,7 @@ name: pronephric duct opening
 namespace: uberon
 xref: ZFA:0001055
 relationship: part_of UBERON:0003060 ! pronephric duct
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -6774,6 +6775,7 @@ name: posterior kidney
 namespace: uberon
 xref: ZFA:0001293
 relationship: part_of UBERON:0000080 ! mesonephros
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -6785,6 +6787,7 @@ synonym: "posterior pronephric ducts" EXACT PLURAL [TAO:0002225]
 xref: ZFA:0001623
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0003060 ! pronephric duct
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -6796,6 +6799,7 @@ def: "Portion of the renal tubule which is just posterior to the distal early tu
 xref: ZFA:0005292
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0001231 ! nephron tubule
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -6808,6 +6812,7 @@ synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -6817,6 +6822,7 @@ name: mesonephric early proximal tubule
 namespace: uberon
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -6827,6 +6833,7 @@ namespace: uberon
 def: "The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons." [Xenbase]
 synonym: "DT1" EXACT [UBERON:3010393]
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -6841,6 +6848,7 @@ synonym: "proximal tubule 3" EXACT [UBERON:3010394]
 synonym: "PT3" EXACT [UBERON:3010394]
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -6850,6 +6858,7 @@ name: early proximal tubule
 namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:19:55Z
@@ -6859,6 +6868,7 @@ id: UBERON:3011121
 name: late distal segment
 namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:21:45Z

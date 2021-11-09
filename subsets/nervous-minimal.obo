@@ -2194,7 +2194,6 @@ synonym: "neural fasciculus" EXACT [FMA:12235]
 xref: BIRNLEX:872
 xref: BTO:0002191
 xref: EMAPA:36605
-xref: FBbt:00005101
 xref: FMA:12235
 xref: NCIT:C32586
 xref: TGMA:0000088
@@ -2424,7 +2423,6 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -5610,7 +5608,7 @@ relationship: part_of UBERON:0001884 ! phrenic nerve
 id: UBERON:0001890
 name: forebrain
 namespace: uberon
-def: "The most anterior region the brain including both the telencephalon and diencephalon." [Wikipedia:Forebrain, ZFIN:ZDB-PUB-961014-576]
+def: "The most anterior region of the brain including both the telencephalon and diencephalon." [Wikipedia:Forebrain, ZFIN:ZDB-PUB-961014-576]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -5792,6 +5790,7 @@ property_value: UBPROP:0000001 "The anterior and dorsal forebrain neuromere, inc
 property_value: UBPROP:0000002 "relationship loss: develops_from presumptive telencephalon (TAO:0000571)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000079", ontology="TAO"}
 property_value: UBPROP:0000003 "From an evolutionary standpoint, the telencephalon is the most recent brain structure: the amphioxus does not have this structure as a morphological entity. Overt telencephalon is present in the hagfish and lamprey to receive numerous input fibers from various parts of the CNS, similar to gnathostomes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000283", ontology="VHOG", source="DOI:10.1016/j.ydbio.2005.02.008 Murakami Y, Uchida K, Rijli FM and Kuratani S, Evolution of the brain developmental plan: Insights from agnathans. Developmental Biology (2005)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "cerebral" xsd:string
+property_value: UBPROP:0000007 "telencephalic" xsd:string
 property_value: UBPROP:0000007 "telenencephalic" xsd:string
 property_value: UBPROP:0000008 "dolphins are the only species (other than humans) to have cerebra accounting for as much as 2 percent of their body weight." xsd:string {source="Wikipedia:Telencephalon#Variation_among_species"}
 property_value: UBPROP:0000008 "In mammals the cortex covers almost the whole of the cerebral hemispheres." xsd:string {source="Wikipedia:Telencephalon#Variation_among_species"}
@@ -11506,7 +11505,7 @@ property_value: UBPROP:0000001 "the stalk-like part of the brain that comprises 
 id: UBERON:0002301
 name: layer of neocortex
 namespace: uberon
-def: "One of the layers of the neocortex." [http://orcid.org/0000-0002-6601-2165]
+def: "One of the layers of the neocortex. These layers are defined by distinctive populations of cells based on somata size, shape, or density, that are aligned into sheets." [http://orcid.org/0000-0002-6601-2165, ISBN-10:0-87893-742-0, PMID:29081739]
 synonym: "cerebral cortex layer" RELATED [MA:0000186]
 synonym: "cortical layer" BROAD []
 synonym: "lamina of neocortex" RELATED [FMA:83138]
@@ -11518,6 +11517,7 @@ xref: FMA:83138
 xref: MA:0000186
 is_a: UBERON:0011215 ! central nervous system cell part cluster
 is_a: UBERON:0022303 ! nervous system cell part layer
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
 relationship: part_of UBERON:0001950 ! neocortex
 
 [Term]
@@ -35755,7 +35755,7 @@ relationship: part_of UBERON:0002813 ! right cerebral hemisphere
 
 [Term]
 id: UBERON:0008902
-name: lateral recess of third vetricle
+name: lateral recess of third ventricle
 namespace: uberon
 def: "Lateral protrusion of the third ventricle." [ZFIN:curator]
 synonym: "lateral recess" BROAD PLURAL [ZFA:0000231]
@@ -50969,6 +50969,7 @@ name: macula lagena
 namespace: uberon
 xref: ZFA:0000116
 relationship: part_of UBERON:0002518 ! otolith organ
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -50994,6 +50995,7 @@ synonym: "inferior lobes" EXACT PLURAL [TAO:0000165]
 xref: ZFA:0000165
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000347 ! dorsal zone of median tuberal portion of hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51005,6 +51007,7 @@ def: "Macula that is located in the developing anterior inner ear, and gives ris
 synonym: "am" EXACT [TAO:0000168]
 xref: ZFA:0000168
 relationship: part_of UBERON:0002518 ! otolith organ
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51015,6 +51018,7 @@ namespace: uberon
 xref: ZFA:0000174
 is_a: UBERON:0002317 ! white matter of cerebellum
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51035,6 +51039,7 @@ name: lateral entopeduncular nucleus
 namespace: uberon
 is_a: UBERON:0009663 ! telencephalic nucleus
 relationship: part_of UBERON:0000204 ! ventral part of telencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51046,6 +51051,7 @@ synonym: "central posterior thalamic nucleus" EXACT [TAO:0000182]
 xref: ZFA:0000182
 is_a: UBERON:0015233 ! nucleus of dorsal thalamus
 relationship: part_of UBERON:0004703 ! dorsal thalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51056,6 +51062,7 @@ namespace: uberon
 xref: ZFA:0000183
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001944 ! pretectal region
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51067,6 +51074,7 @@ def: "Part of the anterior commissure which abuts the preoptic region dorsally."
 xref: ZFA:0000185
 is_a: UBERON:0002437 ! cerebral hemisphere white matter
 relationship: part_of UBERON:0000935 ! anterior commissure
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51076,6 +51084,7 @@ name: lateral granular eminence
 namespace: uberon
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000307 ! vestibulolateralis lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51088,6 +51097,7 @@ synonym: "corpus cerebellum" EXACT [TAO:0000188]
 xref: ZFA:0000188
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002037 ! cerebellum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51098,6 +51108,7 @@ namespace: uberon
 xref: ZFA:0000193
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000165 ! inferior lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51118,6 +51129,7 @@ namespace: uberon
 xref: ZFA:0000199
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000347 ! dorsal zone of median tuberal portion of hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51128,6 +51140,7 @@ namespace: uberon
 xref: ZFA:0000209
 is_a: UBERON:2002226 ! preglomerular nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51137,6 +51150,7 @@ name: gigantocellular part of magnocellular preoptic nucleus
 namespace: uberon
 xref: ZFA:0000210
 relationship: part_of UBERON:0001928 ! preoptic area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51147,6 +51161,7 @@ namespace: uberon
 xref: ZFA:0000212
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002037 ! cerebellum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51156,6 +51171,7 @@ name: isthmic primary nucleus
 namespace: uberon
 xref: ZFA:0000222
 is_a: UBERON:0004132 ! trigeminal sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51166,6 +51182,7 @@ namespace: uberon
 def: "Macula positioned on the floor of the utricle adjacent to the utriculosaccular foramen at the base of the common crus." [ZFA:0000234]
 xref: ZFA:0000234
 relationship: part_of UBERON:0002518 ! otolith organ
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51174,6 +51191,7 @@ name: olfactory tract linking bulb to ipsilateral ventral telencephalon
 namespace: uberon
 xref: ZFA:0000238
 is_a: UBERON:0002265 ! olfactory tract
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51183,6 +51201,7 @@ namespace: uberon
 xref: ZFA:0000241
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002559 ! medullary reticular formation
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51192,6 +51211,7 @@ name: nucleus of the descending root
 namespace: uberon
 xref: ZFA:0000245
 is_a: UBERON:0004132 ! trigeminal sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51202,6 +51222,7 @@ namespace: uberon
 xref: ZFA:0000248
 is_a: UBERON:0007251 ! preoptic nucleus
 relationship: part_of UBERON:0001928 ! preoptic area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51211,6 +51232,7 @@ name: primary olfactory fiber layer
 namespace: uberon
 xref: ZFA:0000267
 relationship: part_of UBERON:0002264 ! olfactory bulb
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51220,6 +51242,7 @@ name: rostral octaval nerve sensory nucleus
 namespace: uberon
 xref: ZFA:0000274
 is_a: UBERON:2000401 ! octaval nerve sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51230,6 +51253,7 @@ namespace: uberon
 xref: ZFA:0000276
 is_a: UBERON:0015234 ! nucleus of ventral thalamus
 relationship: part_of UBERON:0001900 ! ventral thalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51240,6 +51264,7 @@ namespace: uberon
 xref: ZFA:0000278
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51260,6 +51285,7 @@ namespace: uberon
 def: "Lateral line sensory nucleus located in the cerebellum that processes sensory input from the lateral line." [ZFA:0000291]
 xref: ZFA:0000291
 is_a: UBERON:2000381 ! lateral line sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51269,6 +51295,7 @@ namespace: uberon
 xref: ZFA:0000293
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001894 ! diencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51279,6 +51306,7 @@ namespace: uberon
 xref: ZFA:0000294
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51289,6 +51317,7 @@ namespace: uberon
 xref: ZFA:0000296
 is_a: UBERON:0002164 ! tectobulbar tract
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51299,6 +51328,7 @@ namespace: uberon
 synonym: "nX" RELATED [TAO:0000297]
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51308,6 +51338,7 @@ name: ventral sulcus
 namespace: uberon
 xref: ZFA:0000305
 relationship: part_of UBERON:0001898 ! hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51318,6 +51349,7 @@ namespace: uberon
 xref: ZFA:0000307
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002037 ! cerebellum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51329,6 +51361,7 @@ synonym: "lagenar otolith" EXACT [TAO:0000315]
 synonym: "lagenolith" EXACT [TAO:0000315]
 xref: ZFA:0000315
 is_a: UBERON:0002280 ! otolith
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51340,6 +51373,7 @@ def: "CNS white matter that is part of the brain stem or spinal cord." [ZFIN]
 synonym: "brain stem/spinal tracts and commissures" EXACT PLURAL [TAO:0000318]
 xref: ZFA:0000318
 is_a: UBERON:0002316 ! white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51349,6 +51383,7 @@ name: caudal octaval nerve sensory nucleus
 namespace: uberon
 xref: ZFA:0000322
 is_a: UBERON:2000401 ! octaval nerve sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51359,6 +51394,7 @@ namespace: uberon
 xref: ZFA:0000324
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000634 ! caudal zone of median tuberal portion of hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51369,6 +51405,7 @@ namespace: uberon
 xref: ZFA:0000335
 is_a: UBERON:0002164 ! tectobulbar tract
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51379,6 +51416,7 @@ namespace: uberon
 xref: ZFA:0000347
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000392 ! median tuberal portion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51387,6 +51425,7 @@ name: external cellular layer
 namespace: uberon
 xref: ZFA:0000352
 relationship: part_of UBERON:0002264 ! olfactory bulb
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51396,6 +51435,7 @@ name: granular layer corpus cerebelli
 namespace: uberon
 xref: ZFA:0000358
 relationship: part_of UBERON:2000188 ! corpus cerebelli
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51406,6 +51446,7 @@ namespace: uberon
 xref: ZFA:0000372
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51416,6 +51457,7 @@ namespace: uberon
 xref: ZFA:0000381
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51426,6 +51468,7 @@ namespace: uberon
 xref: ZFA:0000388
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000307 ! vestibulolateralis lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51436,6 +51479,7 @@ namespace: uberon
 xref: ZFA:0000389
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51446,6 +51490,7 @@ namespace: uberon
 xref: ZFA:0000390
 is_a: UBERON:2002226 ! preglomerular nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51457,6 +51502,7 @@ def: "Multi-tissue structure which is part of the hypothalamus and consists of c
 xref: ZFA:0000392
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001898 ! hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51465,6 +51511,7 @@ name: molecular layer corpus cerebelli
 namespace: uberon
 xref: ZFA:0000394
 relationship: part_of UBERON:2000188 ! corpus cerebelli
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51475,6 +51522,7 @@ namespace: uberon
 xref: ZFA:0000397
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51485,6 +51533,7 @@ namespace: uberon
 xref: ZFA:0000398
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51494,6 +51543,7 @@ name: secondary gustatory nucleus trigeminal nuclei
 namespace: uberon
 xref: ZFA:0000399
 is_a: UBERON:0004132 ! trigeminal sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51506,6 +51556,7 @@ xref: ZFA:0000401
 is_a: UBERON:0000126 ! cranial nerve nucleus
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51515,6 +51566,7 @@ namespace: uberon
 xref: ZFA:0000408
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51537,6 +51589,7 @@ xref: ZFA:0000426
 is_a: UBERON:0007251 ! preoptic nucleus
 is_a: UBERON:2002219 ! parvocellular preoptic nucleus
 relationship: part_of UBERON:0001928 ! preoptic area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51547,6 +51600,7 @@ namespace: uberon
 xref: ZFA:0000430
 is_a: UBERON:0014649 ! white matter of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51559,6 +51613,7 @@ xref: ZFA:0000440
 is_a: UBERON:0006331 ! brainstem nucleus
 is_a: UBERON:0009662 ! hindbrain nucleus
 relationship: part_of UBERON:0004684 ! raphe nuclei
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51569,6 +51624,7 @@ namespace: uberon
 xref: ZFA:0000448
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51579,6 +51635,7 @@ namespace: uberon
 xref: ZFA:0000449
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002314 ! midbrain tectum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51599,6 +51656,7 @@ namespace: uberon
 xref: ZFA:0000459
 is_a: UBERON:0015234 ! nucleus of ventral thalamus
 relationship: part_of UBERON:0001900 ! ventral thalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51609,6 +51667,7 @@ namespace: uberon
 xref: ZFA:0000475
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51619,6 +51678,7 @@ namespace: uberon
 xref: ZFA:0000479
 is_a: UBERON:0000073 ! regional part of nervous system
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51629,6 +51689,7 @@ namespace: uberon
 def: "Hindbrain nucleus which is part of the medulla oblongata and is a mechanoreceptive area along with the medial octavolateralis nucleus. It is smaller than the medial octavolateralis nucleus and is located lateral to the facial and vagal lobes of the medulla oblongata. From Neuroanatomy of the Zebrafish Brain." [ISBN:3764351209]
 xref: ZFA:0000480
 is_a: UBERON:2000381 ! lateral line sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51638,6 +51699,7 @@ namespace: uberon
 xref: ZFA:0000481
 is_a: UBERON:2002226 ! preglomerular nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51649,6 +51711,7 @@ synonym: "posterior tuberal nucleus" EXACT [TAO:0000482]
 xref: ZFA:0000482
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51660,6 +51723,7 @@ synonym: "central nucleus inferior lobes" EXACT PLURAL [TAO:0000485]
 xref: ZFA:0000485
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000165 ! inferior lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51671,6 +51735,7 @@ synonym: "motor nucleus V" RELATED [TAO:0000502]
 synonym: "nV" RELATED [TAO:0000502]
 xref: ZFA:0000502
 is_a: UBERON:0002633 ! motor nucleus of trigeminal nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51681,6 +51746,7 @@ namespace: uberon
 xref: ZFA:0000512
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51691,6 +51757,7 @@ namespace: uberon
 xref: ZFA:0000516
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001945 ! superior colliculus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51701,6 +51768,7 @@ namespace: uberon
 xref: ZFA:0000517
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51711,6 +51779,7 @@ namespace: uberon
 xref: ZFA:0000523
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:2000542 ! medial column
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51723,6 +51792,7 @@ synonym: "utriculith" EXACT [TAO:0000530]
 xref: ZFA:0000530
 is_a: UBERON:0002280 ! otolith
 relationship: part_of UBERON:0001853 ! utricle of membranous labyrinth
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51742,6 +51812,7 @@ name: magnocellular octaval nucleus
 namespace: uberon
 xref: ZFA:0000540
 is_a: UBERON:2000401 ! octaval nerve sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51752,6 +51823,7 @@ namespace: uberon
 xref: ZFA:0000542
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002559 ! medullary reticular formation
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51773,6 +51845,7 @@ name: internal cellular layer
 namespace: uberon
 xref: ZFA:0000573
 relationship: part_of UBERON:0002264 ! olfactory bulb
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51783,6 +51856,7 @@ namespace: uberon
 xref: ZFA:0000579
 is_a: UBERON:0002316 ! white matter
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51793,6 +51867,7 @@ namespace: uberon
 xref: ZFA:0000580
 is_a: UBERON:2002226 ! preglomerular nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51804,6 +51879,7 @@ synonym: "anterior tuberal nucleus" EXACT [TAO:0000581]
 xref: ZFA:0000581
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000707 ! ventral zone
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51813,6 +51889,7 @@ name: saccus dorsalis
 namespace: uberon
 xref: ZFA:0000582
 relationship: part_of UBERON:0001899 ! epithalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51822,6 +51899,7 @@ name: sulcus ypsiloniformis
 namespace: uberon
 xref: ZFA:0000589
 relationship: part_of UBERON:0000203 ! pallium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51832,6 +51910,7 @@ namespace: uberon
 xref: ZFA:0000593
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:2000542 ! medial column
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51842,6 +51921,7 @@ namespace: uberon
 xref: ZFA:0000597
 is_a: UBERON:0011299 ! white matter of telencephalon
 relationship: part_of UBERON:0001893 ! telencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51852,6 +51932,7 @@ namespace: uberon
 xref: ZFA:0000599
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002314 ! midbrain tectum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51877,6 +51958,7 @@ namespace: uberon
 xref: ZFA:0000609
 is_a: UBERON:0011214 ! nucleus of midbrain tectum
 relationship: part_of UBERON:2000599 ! torus semicircularis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51887,6 +51969,7 @@ namespace: uberon
 xref: ZFA:0000611
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51899,6 +51982,7 @@ xref: ZFA:0000629
 is_a: UBERON:0006331 ! brainstem nucleus
 is_a: UBERON:0009662 ! hindbrain nucleus
 relationship: part_of UBERON:0002682 ! abducens nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51909,6 +51993,7 @@ xref: ZFA:0000630
 is_a: UBERON:0007251 ! preoptic nucleus
 is_a: UBERON:2002219 ! parvocellular preoptic nucleus
 relationship: part_of UBERON:0001928 ! preoptic area
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51921,6 +52006,7 @@ synonym: "posterior tuberculum" EXACT [TAO:0000633]
 xref: ZFA:0000633
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001894 ! diencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51930,6 +52016,7 @@ name: caudal zone of median tuberal portion of hypothalamus
 namespace: uberon
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000392 ! median tuberal portion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51938,6 +52025,7 @@ name: cerebellar crest
 namespace: uberon
 xref: ZFA:0000636
 relationship: part_of UBERON:2000291 ! medial octavolateralis nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51949,6 +52037,7 @@ def: "Part of the anterior commissure which is located immediately ventral to th
 xref: ZFA:0000638
 is_a: UBERON:0002437 ! cerebral hemisphere white matter
 relationship: part_of UBERON:0000935 ! anterior commissure
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -51958,6 +52047,7 @@ namespace: uberon
 xref: ZFA:0000639
 is_a: UBERON:0002317 ! white matter of cerebellum
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51968,6 +52058,7 @@ namespace: uberon
 xref: ZFA:0000643
 is_a: UBERON:0002316 ! white matter
 relationship: part_of UBERON:2000318 ! brainstem and spinal white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51977,6 +52068,7 @@ name: descending octaval nucleus
 namespace: uberon
 xref: ZFA:0000645
 is_a: UBERON:2000401 ! octaval nerve sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -51988,6 +52080,7 @@ synonym: "dorsal posterior thalamic nucleus" EXACT [TAO:0000647]
 xref: ZFA:0000647
 is_a: UBERON:0015233 ! nucleus of dorsal thalamus
 relationship: part_of UBERON:0004703 ! dorsal thalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52000,6 +52093,7 @@ xref: ZFA:0000654
 is_a: UBERON:0006331 ! brainstem nucleus
 is_a: UBERON:0009662 ! hindbrain nucleus
 relationship: part_of UBERON:0002682 ! abducens nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -52011,6 +52105,7 @@ synonym: "sacculith" EXACT [TAO:0000676]
 xref: ZFA:0000676
 is_a: UBERON:0002280 ! otolith
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52021,6 +52116,7 @@ namespace: uberon
 xref: ZFA:0000687
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001944 ! pretectal region
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52030,6 +52126,7 @@ name: tangential nucleus
 namespace: uberon
 xref: ZFA:0000693
 is_a: UBERON:2000401 ! octaval nerve sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52039,6 +52136,7 @@ name: ventral motor nucleus trigeminal nerve
 namespace: uberon
 xref: ZFA:0000703
 is_a: UBERON:0002633 ! motor nucleus of trigeminal nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52049,6 +52147,7 @@ namespace: uberon
 xref: ZFA:0000707
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:2000392 ! median tuberal portion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52059,6 +52158,7 @@ namespace: uberon
 xref: ZFA:0000710
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52078,6 +52178,7 @@ namespace: uberon
 xref: ZFA:0000779
 is_a: UBERON:2000597 ! telencephalic tracts
 relationship: part_of UBERON:2007012 ! lateral forebrain bundle
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52093,6 +52194,7 @@ xref: TAO:0000815
 xref: ZFA:0000815
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 {source="ZFA"} ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 
 [Term]
 id: UBERON:2000826
@@ -52101,6 +52203,7 @@ namespace: uberon
 xref: ZFA:0000826
 is_a: UBERON:0011214 ! nucleus of midbrain tectum
 relationship: part_of UBERON:2000599 ! torus semicircularis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52112,6 +52215,7 @@ xref: ZFA:0000910
 is_a: UBERON:0003931 ! diencephalic white matter
 is_a: UBERON:2000597 ! telencephalic tracts
 relationship: part_of UBERON:0001910 ! medial forebrain bundle
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52131,6 +52235,7 @@ namespace: uberon
 xref: ZFA:0000941
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000293 ! synencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52142,6 +52247,7 @@ xref: ZFA:0000984
 is_a: UBERON:0006331 ! brainstem nucleus
 is_a: UBERON:0009661 ! midbrain nucleus
 relationship: part_of UBERON:0001943 ! midbrain tegmentum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52152,6 +52258,7 @@ namespace: uberon
 xref: ZFA:0000985
 is_a: UBERON:0014649 ! white matter of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52161,6 +52268,7 @@ name: medial funicular nucleus trigeminal nuclei
 namespace: uberon
 xref: ZFA:0000997
 is_a: UBERON:0004132 ! trigeminal sensory nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52170,6 +52278,7 @@ name: vagal placode 1
 namespace: uberon
 xref: ZFA:0001297
 is_a: UBERON:0003078 ! epibranchial placode
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52179,6 +52288,7 @@ name: vagal placode 2
 namespace: uberon
 xref: ZFA:0001298
 is_a: UBERON:0003078 ! epibranchial placode
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52188,6 +52298,7 @@ name: vagal placode 3
 namespace: uberon
 xref: ZFA:0001299
 is_a: UBERON:0003078 ! epibranchial placode
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52197,6 +52308,7 @@ name: vagal placode 4
 namespace: uberon
 xref: ZFA:0001300
 is_a: UBERON:0003078 ! epibranchial placode
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52208,6 +52320,7 @@ synonym: "gX1" EXACT [TAO:0001302]
 synonym: "nodose ganglion 1" EXACT [TAO:0001302]
 xref: ZFA:0001302
 is_a: UBERON:0009127 ! epibranchial ganglion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52219,6 +52332,7 @@ synonym: "gX2" EXACT [TAO:0001303]
 synonym: "nodose ganglion 2" EXACT [TAO:0001303]
 xref: ZFA:0001303
 is_a: UBERON:0009127 ! epibranchial ganglion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52230,6 +52344,7 @@ synonym: "gX3" EXACT [TAO:0001304]
 synonym: "nodose ganglion 3" EXACT [TAO:0001304]
 xref: ZFA:0001304
 is_a: UBERON:0009127 ! epibranchial ganglion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52241,6 +52356,7 @@ synonym: "gX4" EXACT [TAO:0001305]
 synonym: "nodose ganglion 4" EXACT [TAO:0001305]
 xref: ZFA:0001305
 is_a: UBERON:0009127 ! epibranchial ganglion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52284,6 +52400,7 @@ synonym: "ntPOC" EXACT [TAO:0001340]
 xref: ZFA:0001340
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:0001894 ! diencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52296,6 +52413,7 @@ synonym: "IZ" EXACT [TAO:0001341]
 xref: ZFA:0001341
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0003052 ! midbrain-hindbrain boundary
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52306,6 +52424,7 @@ namespace: uberon
 xref: ZFA:0001343
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001890 ! forebrain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52315,6 +52434,7 @@ name: stratum fibrosum et griseum superficiale
 namespace: uberon
 xref: ZFA:0001347
 relationship: part_of UBERON:0001945 ! superior colliculus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52324,6 +52444,7 @@ name: stratum marginale
 namespace: uberon
 xref: ZFA:0001348
 relationship: part_of UBERON:0001945 ! superior colliculus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52333,6 +52454,7 @@ name: stratum opticum
 namespace: uberon
 xref: ZFA:0001349
 relationship: part_of UBERON:0001945 ! superior colliculus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52342,6 +52464,7 @@ name: stratum periventriculare
 namespace: uberon
 xref: ZFA:0001352
 relationship: part_of UBERON:0001945 ! superior colliculus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52351,6 +52474,7 @@ name: alar plate midbrain
 namespace: uberon
 xref: ZFA:0001357
 relationship: part_of UBERON:0001891 ! midbrain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52362,6 +52486,7 @@ synonym: "TPOC" EXACT [TAO:0001366]
 xref: ZFA:0001366
 is_a: UBERON:0003931 ! diencephalic white matter
 relationship: part_of UBERON:0003936 ! postoptic commissure
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52427,6 +52552,7 @@ namespace: uberon
 def: "Nerve that is a branch of cranial nerve VII that passes through or around the suspensorium to innervate muscles and sensory organs on or near pharyngeal arch 2." [TAO:wd]
 xref: ZFA:0005397
 is_a: UBERON:0001021 ! nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52439,6 +52565,7 @@ comment: Definition reference: McNamara, AM., JP Denizot, CD Hopkins. 2005. Comp
 synonym: "ELL" EXACT [TAO:0002105]
 is_a: UBERON:0009662 ! hindbrain nucleus
 relationship: part_of UBERON:0002028 ! hindbrain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52451,6 +52578,7 @@ comment: Definition based on Albert,2001 [Albert JS. 2001. Species Diversity and
 synonym: "EG" EXACT [TAO:0002106]
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002037 ! cerebellum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -52464,6 +52592,7 @@ synonym: "medullary pacemaker nucleus" EXACT [TAO:0002107]
 synonym: "pacemaker nucleus" EXACT [TAO:0002107]
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0002028 ! hindbrain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -52475,6 +52604,7 @@ xref: ZFA:0001697
 is_a: UBERON:0000126 ! cranial nerve nucleus
 is_a: UBERON:0007635 ! nucleus of medulla oblongata
 relationship: part_of UBERON:0001896 ! medulla oblongata
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -52485,6 +52615,7 @@ synonym: "ROLE" EXACT [TAO:0002175]
 synonym: "rostral cranial nerve VIII motor nucleus" EXACT [TAO:0002175]
 xref: ZFA:0001698
 is_a: UBERON:2002174 ! octaval nerve motor nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52494,6 +52625,7 @@ name: caudal octaval nerve motor nucleus
 namespace: uberon
 xref: ZFA:0001699
 is_a: UBERON:2002174 ! octaval nerve motor nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: teleost_anatomy_curators
 
 [Term]
@@ -52515,6 +52647,7 @@ def: "Motor nucleus of vagal nerve that is located within the dorsolateral porti
 synonym: "dlX" EXACT [TAO:0002192]
 xref: ZFA:0001695
 is_a: UBERON:2000297 ! vagal lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52526,6 +52659,7 @@ def: "Diencephalic nucleus which is located between the dorsal hypothalamus and 
 xref: ZFA:0001669
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52536,6 +52670,7 @@ namespace: uberon
 synonym: "mmX" EXACT [TAO:0002207]
 xref: ZFA:0001696
 is_a: UBERON:2000297 ! vagal lobe
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52566,6 +52701,7 @@ name: parvocellular preoptic nucleus
 namespace: uberon
 xref: ZFA:0001680
 is_a: UBERON:0006569 ! diencephalic nucleus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52577,6 +52713,7 @@ def: "Diencephalic nucleus which is located in the caudal tuberculum. The preglo
 xref: ZFA:0001662
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:2000633 ! caudal tuberculum
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52586,6 +52723,7 @@ name: Purkinje cell layer corpus cerebelli
 namespace: uberon
 xref: ZFA:0001706
 relationship: part_of UBERON:2000188 ! corpus cerebelli
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52606,6 +52744,7 @@ synonym: "SOT" EXACT [TAO:0002244]
 xref: ZFA:0001657
 is_a: UBERON:0003544 ! brain white matter
 relationship: part_of UBERON:0000955 ! brain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52618,6 +52757,7 @@ synonym: "CtA" EXACT [TAO:0005020]
 xref: ZFA:0005020
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:0008998 ! vasculature of brain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52629,6 +52769,7 @@ def: "Extend upward from the PCS, branch to provide an arterial feed to the hind
 synonym: "CCtA" EXACT [TAO:0005021]
 xref: ZFA:0005021
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52641,6 +52782,7 @@ synonym: "DLV" EXACT [TAO:0005031]
 xref: ZFA:0005031
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:0008998 ! vasculature of brain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52653,6 +52795,7 @@ synonym: "AMCtA" EXACT [TAO:0005052]
 synonym: "rostral mesencephalic central artery" EXACT [TAO:0005052]
 xref: ZFA:0005052
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52664,6 +52807,7 @@ def: "Project rostrally and dorsally from the AMCtA to to irrigate the midportio
 synonym: "MMCtA" EXACT [TAO:0005078]
 xref: ZFA:0005078
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52676,6 +52820,7 @@ synonym: "caudal mesencephalic central artery" EXACT [TAO:0005079]
 synonym: "PMCtA" EXACT [TAO:0005079]
 xref: ZFA:0005079
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52687,6 +52832,7 @@ def: "A branch of the 8th cranial nerve that innervates the cristae ampullaris."
 xref: ZFA:0005144
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52700,6 +52846,7 @@ synonym: "CVC" EXACT [TAO:0005219]
 xref: ZFA:0005219
 is_a: UBERON:0008998 ! vasculature of brain
 relationship: part_of UBERON:0001886 ! choroid plexus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52711,6 +52858,7 @@ synonym: "TCB" EXACT [TAO:0005248]
 xref: ZFA:0005248
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:2005219 ! choroid plexus vascular circuit
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52723,6 +52871,7 @@ synonym: "posterior recess of diencephalic ventricle" EXACT [TAO:0005338]
 xref: ZFA:0005338
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0002286 ! third ventricle
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52733,6 +52882,7 @@ namespace: uberon
 xref: ZFA:0005339
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000324 ! caudal periventricular hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52743,6 +52893,7 @@ namespace: uberon
 xref: ZFA:0005340
 is_a: UBERON:0006568 ! hypothalamic nucleus
 relationship: part_of UBERON:2000324 ! caudal periventricular hypothalamus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52753,6 +52904,7 @@ namespace: uberon
 synonym: "mlct" EXACT [TAO:0005341]
 xref: ZFA:0005341
 is_a: UBERON:0002316 ! white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52763,6 +52915,7 @@ namespace: uberon
 def: "CNS white matter, axonal tract interconnecting catecholaminergic cell groups in the posterior tuberculum and hypothalamus." [ZFIN:ZDB-PUB-091221-28]
 xref: ZFA:0005343
 is_a: UBERON:0002316 ! white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52772,6 +52925,7 @@ name: preopticohypothalamic tract
 namespace: uberon
 xref: ZFA:0005344
 is_a: UBERON:0002316 ! white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52784,6 +52938,7 @@ synonym: "dorsorostral cluster" EXACT [TAO:0007001]
 synonym: "drc" EXACT [TAO:0007001]
 xref: ZFA:0007001
 relationship: part_of UBERON:0001893 ! telencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52797,6 +52952,7 @@ synonym: "vrc" EXACT [TAO:0007002]
 xref: ZFA:0007002
 is_a: UBERON:0006569 ! diencephalic nucleus
 relationship: part_of UBERON:0001894 ! diencephalon
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52809,6 +52965,7 @@ synonym: "vcc" EXACT [TAO:0007003]
 synonym: "ventrocaudal cluster" EXACT [TAO:0007003]
 xref: ZFA:0007003
 is_a: UBERON:0001891 ! midbrain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52820,6 +52977,7 @@ def: "Early-developing neuronal cluster of the epiphysis. By 24 hpf the pioneer 
 synonym: "ec" EXACT [TAO:0007004]
 xref: ZFA:0007004
 relationship: part_of UBERON:0001905 ! pineal body
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52829,6 +52987,7 @@ name: lateral forebrain bundle
 namespace: uberon
 xref: ZFA:0007012
 is_a: UBERON:0002316 ! white matter
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -52837,6 +52996,7 @@ id: UBERON:3000393
 name: pars amphibiorum
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52845,6 +53005,7 @@ id: UBERON:3000395
 name: pars basilaris
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52890,6 +53051,7 @@ name: median pars intermedia
 namespace: uberon
 def: "Region of the adenohypophysis which secretes melanophore-stimulating hormone, affecting the integumentary chromatophores." [AAO:BJB]
 relationship: part_of UBERON:0002196 ! adenohypophysis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52900,6 +53062,7 @@ namespace: uberon
 def: "Ramule of ophthalmic nerve (see also ramus nasalis medialis). The first branch of ophthalmic nerve gives rise to two ramules that border the naris and innervate the surrounding tissue." [AAO:EJS]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0000348 ! ophthalmic nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52909,6 +53072,7 @@ name: ramus nasalis medialis
 namespace: uberon
 def: "Ramule of ophthalmic nerve (see also ramus nasalis lateralis). First branch gives rise to two ramules that border the naris and innervate the surrounding tissue." [AAO:EJS]
 relationship: part_of UBERON:0000348 ! ophthalmic nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52918,6 +53082,7 @@ name: ramus nasalis internus
 namespace: uberon
 def: "Distal part of the opthalmicus profundus gives rise to 2 ramules: palatinus and cutaneous." [AAO:EJS]
 is_a: UBERON:0000348 ! ophthalmic nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52927,6 +53092,7 @@ name: ramule palatinus
 namespace: uberon
 def: "Ramules that descends towards the buccal roof and give rise to several short branches that anastomose with palatine ramus of the facial nerve." [AAO:EJS]
 is_a: UBERON:3010661 ! ramus nasalis internus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52939,6 +53105,7 @@ def: "Many branches of the maxillary ramus that terminate in the integument of t
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0000377 ! maxillary nerve
 relationship: part_of UBERON:3010661 ! ramus nasalis internus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52949,6 +53116,7 @@ namespace: uberon
 def: "Portion of the trigeminal nerve where the maxillary and mandibular rami run together prior to bifurcating." [AAO:EJS]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0001645 ! trigeminal nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52959,6 +53127,7 @@ namespace: uberon
 def: "Descends and branches to the buccal roof where it anastomoses with the palatine ramus of the facial nerve." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000377 ! maxillary nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52969,6 +53138,7 @@ namespace: uberon
 def: "In the adult anuran, this innervates the muscles levator mandibulare internus and longus." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000375 ! mandibular nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52979,6 +53149,7 @@ namespace: uberon
 def: "The posttrematic branch of the facial nerve, both motor and sensory in function." [AAO:CAM]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001647 ! facial nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52988,6 +53159,7 @@ name: ramus palatinus
 namespace: uberon
 def: "Sensory branch of facial nerve from palatal region." [AAO:CAM]
 is_a: UBERON:0001647 ! facial nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -52998,6 +53170,7 @@ namespace: uberon
 def: "Branchiomotor branch of the glossopharyngeus nerve innervating the m. subarcuales rectus I." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001649 ! glossopharyngeal nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53007,6 +53180,7 @@ name: ramus anterior of CN VIII
 namespace: uberon
 def: "Formed by fibers from the anterior semicircular canal and sacculus." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53016,6 +53190,7 @@ name: ramus posterior of CN VIII
 namespace: uberon
 def: "Composed of two rami: a short ventral ramus innervating the cochlea (lagena and papille basilar), and a long dorsal ramus innervating the posterior semicircular canal." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53025,6 +53200,7 @@ name: ramus auricularis of the vagus nerve
 namespace: uberon
 def: "An afferent branch of the vagus nerve." [AAO:EJS]
 is_a: UBERON:0001759 ! vagus nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53036,6 +53212,7 @@ def: "Major branch of the vagus supplying parasympathetic innervation to viscera
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000011 ! parasympathetic nervous system
 relationship: part_of UBERON:0001759 ! vagus nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53046,6 +53223,7 @@ namespace: uberon
 def: "Motor nervous branch of the vagus innervating m. subarcualis rectus I." [AAO:CAM]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:3010754 ! ramus recurrens
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53056,6 +53234,7 @@ namespace: uberon
 def: "Branch of the vagus nerve that separates from the vagus well postcranially, then continues anteriorly to innervate the larynx." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001759 ! vagus nerve
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53084,6 +53263,7 @@ namespace: uberon
 def: "A branch of the vagus nerve innervating heart, stomach, and lung muscle." [AAO:CAM]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:3010754 ! ramus recurrens
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53101,6 +53281,7 @@ id: UBERON:3010770
 name: dorsal sympathetic chain
 namespace: uberon
 is_a: UBERON:0000407 ! sympathetic trunk
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53109,6 +53290,7 @@ id: UBERON:3010771
 name: ventral sympathetic chain
 namespace: uberon
 is_a: UBERON:0000407 ! sympathetic trunk
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53190,6 +53372,7 @@ name: gasserian ganglion
 namespace: uberon
 synonym: "gasserian ganglia" RELATED [UBERON:3011045]
 is_a: UBERON:0000045 ! ganglion
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -53534,6 +53717,16 @@ is_a: UBERON:0005304 ! submucous nerve plexus
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: UBERON:8410062
+name: parasympathetic cholinergic nerve
+namespace: uberon
+def: "A parasympathetic nerve that releases acetylcholine." [PMID:24676230]
+is_a: UBERON:0004293 ! parasympathetic nerve
+property_value: RO:0002175 "Homo sapiens" xsd:string
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/2104 xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: UBERON:8410063
 name: myenteric nerve plexus of small intestine
 namespace: uberon
@@ -53548,6 +53741,50 @@ namespace: uberon
 def: "Submucous nerve plexus that is located in the small intestine." [http://orcid.org/0000-0003-3440-1876]
 is_a: UBERON:0005304 ! submucous nerve plexus
 created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: UBERON:8440000
+name: cortical layer II/III
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers II & III." [PMID:34616063]
+synonym: "cerebral cortex layer 2/3" EXACT []
+synonym: "neocortex layer 2/3" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440001
+name: cortical layer IV/V
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers IV & V." [PMID:34616063]
+synonym: "cerebral cortex layer 4/5" EXACT []
+synonym: "neocortex layer 4/5" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440002
+name: cortical layer V/VI
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers V & VI." [PMID:34616063]
+synonym: "cerebral cortex layer 5/6" EXACT []
+synonym: "neocortex layer 5/6" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440003
+name: cortical layer VIb
+namespace: uberon
+def: "The deepest layer of the neocortex. While layer 6b is considered part of layer 6, it is distinct morphologically, genetically, and developmentally from the rest of layer 6. Neurons in L6b project to cortical targets and higher-order thalamus and develop from a precursor population that arises from the subplate." [PMID:32160552]
+synonym: "cerebral cortex layer 6b" EXACT []
+synonym: "neocortex layer 6b" EXACT []
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: part_of UBERON:0005395 ! cortical layer VI
+
+[Term]
+id: UBERON:8440004
+name: laminar subdivision of the cortex
+namespace: uberon
+def: "One or a subset of adjacent layers of the neocortex." [ISBN-10:0-87893-742-0]
+is_a: UBERON:0011215 ! central nervous system cell part cluster
 
 [Term]
 id: http://owltools.org/Q

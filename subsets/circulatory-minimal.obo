@@ -398,7 +398,6 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -6459,8 +6458,9 @@ xref: TAO:0005069
 xref: UMLS:C0037189 {source="ncithesaurus:Sinoatrial_Node"}
 xref: Wikipedia:Sinoatrial_node
 xref: ZFA:0005069
-is_a: UBERON:0004493 ! cardiac muscle tissue of myocardium
+is_a: UBERON:0003379 ! cardiac muscle of right atrium
 is_a: UBERON:0010131 {source="cjm"} ! conducting tissue of heart
+relationship: part_of UBERON:0002078 ! right cardiac atrium
 relationship: part_of UBERON:0002350 {source="ZFA"} ! conducting system of heart
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d2/Sinoatrial_node_low_mag.jpg xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/de/Sinoatrial_node_2_low_mag.jpg xsd:anyURI
@@ -7620,7 +7620,7 @@ relationship: part_of UBERON:0001612 ! facial artery
 id: UBERON:0003471
 name: artery of lower lip
 namespace: uberon
-def: "The Iinferior labial artery (inferior labial branch of facial artery) arises near the angle of the mouth; it passes upward and forward beneath the Triangularis and, penetrating the Orbicularis oris, runs in a tortuous course along the edge of the lower lip between this muscle and the mucous membrane. It supplies the labial glands, the mucous membrane, and the muscles of the lower lip; and anastomoses with the artery of the opposite side, and with the mental branch of the inferior alveolar artery." [Wikipedia:Inferior_labial_artery]
+def: "The inferior labial artery (inferior labial branch of facial artery) arises near the angle of the mouth; it passes upward and forward beneath the Triangularis and, penetrating the Orbicularis oris, runs in a tortuous course along the edge of the lower lip between this muscle and the mucous membrane. It supplies the labial glands, the mucous membrane, and the muscles of the lower lip; and anastomoses with the artery of the opposite side, and with the mental branch of the inferior alveolar artery." [Wikipedia:Inferior_labial_artery]
 synonym: "arteria labialis inferior" EXACT LATIN [Wikipedia:Inferior_labial_artery]
 synonym: "inferior labial artery" EXACT [FMA:49567]
 synonym: "inferior labial branch of facial artery" EXACT [FMA:49567]
@@ -20557,6 +20557,7 @@ name: median axial vein
 namespace: uberon
 xref: ZFA:0000039
 is_a: UBERON:0001638 ! vein
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20566,6 +20567,7 @@ name: cardinal system
 namespace: uberon
 xref: ZFA:0000096
 is_a: UBERON:0004537 ! blood vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20591,6 +20593,7 @@ synonym: "hypobranchial vessels" EXACT PLURAL [TAO:0000214]
 xref: ZFA:0000214
 is_a: UBERON:0003498 ! heart blood vessel
 relationship: part_of UBERON:0000948 ! heart
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20600,6 +20603,7 @@ name: celiacomesenteric artery
 namespace: uberon
 xref: ZFA:0000484
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20622,6 +20626,7 @@ def: "A pair of HA are connect one to each AA1. They run rostromedially until at
 synonym: "HA" EXACT [TAO:0000673]
 xref: ZFA:0000673
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20635,6 +20640,7 @@ xref: EFO:0003558
 xref: TAO:0000677
 xref: ZFA:0000677
 is_a: UBERON:0005612 ! intercostal artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 
 [Term]
 id: UBERON:2000716
@@ -20659,6 +20665,7 @@ xref: ZFA:0001051
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001532 ! internal carotid artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20673,6 +20680,7 @@ xref: ZFA:0001052
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20687,6 +20695,7 @@ xref: TAO:0001053
 xref: ZFA:0001053
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001530 {source="EHDAA2"} ! common carotid artery plus branches
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 
 [Term]
 id: UBERON:2001054
@@ -20696,6 +20705,7 @@ def: "Connect the outflow of the aortic arches to the dorsal aorta. The place wh
 synonym: "LDA" EXACT [TAO:0001054]
 xref: ZFA:0001054
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20709,6 +20719,7 @@ xref: ZFA:0001059
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001532 ! internal carotid artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20724,6 +20735,7 @@ xref: EFO:0003615
 xref: TAO:0001062
 xref: ZFA:0001062
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000001 "Branches dorsally from the cranial division of the internal carotid artery, then curves caudally along the dorsal medial wall of the eye capsule to drain into the PMBC just rostral to the midbrain hindbrain boundar[ZFIN:curator]y" xsd:string {source="ZFIN:curator"}
 
 [Term]
@@ -20733,6 +20745,7 @@ namespace: uberon
 xref: ZFA:0001063
 is_a: UBERON:0003481 ! tail vein
 relationship: part_of UBERON:0010204 ! tail vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20742,6 +20755,7 @@ name: axial vasculature
 namespace: uberon
 xref: ZFA:0001073
 is_a: UBERON:0002049 ! vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20751,6 +20765,7 @@ name: caudal vein plexus
 namespace: uberon
 xref: ZFA:0001286
 is_a: UBERON:0010204 ! tail vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20768,6 +20783,7 @@ id: UBERON:2001975
 name: suprabranchial artery
 namespace: uberon
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20780,6 +20796,7 @@ xref: ZFA:0005000
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20795,6 +20812,7 @@ xref: ZFA:0005010
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20805,6 +20823,7 @@ namespace: uberon
 def: "A vascular loop attached to the efferent part of the mandibular arch that forms at 3.5 dpf. Isogai et al. 2001." [ZFIN:curator]
 xref: ZFA:0005011
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20872,6 +20891,7 @@ xref: ZFA:0005017
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20913,6 +20933,7 @@ xref: ZFA:0005020
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:0008998 ! vasculature of brain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20924,6 +20945,7 @@ def: "Extend upward from the PCS, branch to provide an arterial feed to the hind
 synonym: "CCtA" EXACT [TAO:0005021]
 xref: ZFA:0005021
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20936,6 +20958,7 @@ synonym: "external carotid artery" RELATED [TAO:0005022]
 synonym: "ORA" EXACT [TAO:0005022]
 xref: ZFA:0005022
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20950,6 +20973,7 @@ is_a: UBERON:0003513 ! trunk blood vessel
 is_a: UBERON:0003524 ! tail blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 relationship: part_of UBERON:0010204 ! tail vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20964,6 +20988,7 @@ xref: ZFA:0005026
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20978,6 +21003,7 @@ xref: ZFA:0005027
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -20990,6 +21016,7 @@ xref: ZFA:0005030
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21003,6 +21030,7 @@ xref: ZFA:0005031
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:0008998 ! vasculature of brain
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21016,6 +21044,7 @@ xref: ZFA:0005032
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21030,6 +21059,7 @@ is_a: UBERON:0003481 ! tail vein
 is_a: UBERON:0003513 ! trunk blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
 relationship: part_of UBERON:0010204 ! tail vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21041,6 +21071,7 @@ def: "A continuation of the anterior mesenteric artery, which branches out from 
 synonym: "SIA" EXACT [TAO:0005036]
 xref: ZFA:0005036
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21052,6 +21083,7 @@ xref: ZFA:0005038
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003513 ! trunk blood vessel
 relationship: part_of UBERON:0002201 ! vasculature of trunk
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21064,6 +21096,7 @@ xref: ZFA:0005044
 is_a: UBERON:0001637 ! artery
 is_a: UBERON:0003496 ! head blood vessel
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21075,6 +21108,7 @@ def: "Vessel that branches from cranial division of the internal carotid artery,
 synonym: "PPrA" EXACT [TAO:0005048]
 xref: ZFA:0005048
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21086,6 +21120,7 @@ def: "After the primitive prosencephalic artery forms it becomes disconnected fr
 synonym: "PrA" EXACT [TAO:0005049]
 xref: ZFA:0005049
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21097,6 +21132,7 @@ def: "The PLA branches ventrally from the CrDI. It extends rostrally along the b
 synonym: "PLA" EXACT [TAO:0005050]
 xref: ZFA:0005050
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21109,6 +21145,7 @@ synonym: "CMV" EXACT [TAO:0005051]
 synonym: "communicating vessels" EXACT [TAO:0005051]
 xref: ZFA:0005051
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21121,6 +21158,7 @@ synonym: "AMCtA" EXACT [TAO:0005052]
 synonym: "rostral mesencephalic central artery" EXACT [TAO:0005052]
 xref: ZFA:0005052
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21131,6 +21169,7 @@ namespace: uberon
 synonym: "NCA" EXACT [TAO:0005053]
 xref: ZFA:0005053
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21142,6 +21181,7 @@ synonym: "IOC" EXACT [TAO:0005054]
 xref: ZFA:0005054
 is_a: UBERON:0002203 ! vasculature of eye
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21155,6 +21195,7 @@ xref: ZFA:0005055
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21168,6 +21209,7 @@ xref: ZFA:0005056
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21179,6 +21221,7 @@ def: "Composed of scattered layers of interrupted elastic lamina. Hu et al. 2001
 synonym: "bulbus arteriosus externa" EXACT [TAO:0005066]
 xref: ZFA:0005066
 relationship: part_of UBERON:0004706 ! bulbus cordis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21190,6 +21233,7 @@ def: "Composed of 7-10 layers of helically arranged smooth muscle cells surround
 synonym: "bulbus arteriosus media" EXACT [TAO:0005067]
 xref: ZFA:0005067
 relationship: part_of UBERON:0004706 ! bulbus cordis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21201,6 +21245,7 @@ def: "Composed of subendothelium with longitudinally oriented collagen, reticula
 synonym: "bulbus arteriosus intima" EXACT [TAO:0005068]
 xref: ZFA:0005068
 relationship: part_of UBERON:0004706 ! bulbus cordis
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21210,6 +21255,7 @@ name: endocardial ring
 namespace: uberon
 xref: ZFA:0005072
 relationship: part_of UBERON:0002165 ! endocardium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21222,6 +21268,7 @@ xref: ZFA:0005073
 is_a: UBERON:2005072 ! endocardial ring
 relationship: part_of UBERON:0002081 ! cardiac atrium
 relationship: part_of UBERON:0002082 ! cardiac ventricle
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21232,6 +21279,7 @@ namespace: uberon
 def: "Cardiac conduction system, characterized by slow impulse propagation and prolonged refractory periods." [ZFIN:curator]
 xref: ZFA:0005074
 is_a: UBERON:0002350 ! conducting system of heart
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21242,6 +21290,7 @@ namespace: uberon
 def: "Portion of the cardiac conduction system, with rapid impulse propagation." [ZFIN:curator]
 xref: ZFA:0005075
 is_a: UBERON:0002350 ! conducting system of heart
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21253,6 +21302,7 @@ def: "Project rostrally and dorsally from the AMCtA to to irrigate the midportio
 synonym: "MMCtA" EXACT [TAO:0005078]
 xref: ZFA:0005078
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21265,6 +21315,7 @@ synonym: "caudal mesencephalic central artery" EXACT [TAO:0005079]
 synonym: "PMCtA" EXACT [TAO:0005079]
 xref: ZFA:0005079
 is_a: UBERON:2005020 ! central artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21277,6 +21328,7 @@ synonym: "AMA" EXACT [TAO:0005080]
 synonym: "rostral mesenteric artery" EXACT [TAO:0005080]
 xref: ZFA:0005080
 is_a: UBERON:0005616 {source="cjm"} ! mesenteric artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21287,6 +21339,7 @@ namespace: uberon
 xref: ZFA:0005082
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:2005053 ! nasal ciliary artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21297,6 +21350,7 @@ namespace: uberon
 xref: ZFA:0005083
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:2005053 ! nasal ciliary artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21307,6 +21361,7 @@ namespace: uberon
 def: "These arteies branch dorsally from both sides of the posterior communicating artery looping up to join with the opposite MtA as well as with both middle cerebral veins at the dorsal midline of the head. Isogai et al. 2001." [ZFIN:curator]
 xref: ZFA:0005084
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21318,6 +21373,7 @@ def: "The nasal arteries start at the internal carotid artey and travel rostrall
 synonym: "NA" EXACT [TAO:0005085]
 xref: ZFA:0005085
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21330,6 +21386,7 @@ xref: ZFA:0005087
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0007300 ! pectoral appendage blood vessel
 relationship: part_of UBERON:0007302 ! pectoral appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21342,6 +21399,7 @@ synonym: "caudal mesenteric artery" EXACT [TAO:0005088]
 synonym: "PMA" EXACT [TAO:0005088]
 xref: ZFA:0005088
 is_a: UBERON:0005616 {source="cjm"} ! mesenteric artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21353,6 +21411,7 @@ def: "An elaborate set of vessels that branche off caudally from the anterior me
 synonym: "SBA" EXACT [TAO:0005089]
 xref: ZFA:0005089
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21365,6 +21424,7 @@ xref: ZFA:0005093
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
 relationship: part_of UBERON:0002200 ! vasculature of head
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21374,6 +21434,7 @@ name: caudal fin vasculature
 namespace: uberon
 xref: ZFA:0005097
 is_a: UBERON:0007304 ! appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21384,6 +21445,7 @@ namespace: uberon
 def: "Positioned in the intraray mesenchym between the hemirays of the lepidotrichia,. Huang et al. 2003." [ZFIN:curator]
 xref: ZFA:0005098
 is_a: UBERON:0007304 ! appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21394,6 +21456,7 @@ namespace: uberon
 def: "Lie flanking and just lateral to the fin ray, in the interray mesenchyme. Huang et al. 2003." [ZFIN:curator]
 xref: ZFA:0005099
 is_a: UBERON:0007304 ! appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21405,6 +21468,7 @@ def: "Vessels that travel between artery and veins or vein and vein in a single 
 synonym: "intervessel comisures" EXACT PLURAL [TAO:0005100]
 xref: ZFA:0005100
 is_a: UBERON:0007304 ! appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21416,6 +21480,7 @@ def: "Vessels that travel between veins in adjacent rays." [ZFIN:curator]
 synonym: "interray vessels" EXACT PLURAL [TAO:0005101]
 xref: ZFA:0005101
 is_a: UBERON:0007304 ! appendage vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21426,6 +21491,7 @@ namespace: uberon
 synonym: "LLL" EXACT [TAO:0005106]
 xref: ZFA:0005106
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21439,6 +21505,7 @@ synonym: "CVC" EXACT [TAO:0005219]
 xref: ZFA:0005219
 is_a: UBERON:0008998 ! vasculature of brain
 relationship: part_of UBERON:0001886 ! choroid plexus
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21451,6 +21518,7 @@ xref: ZFA:0005248
 is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003499 ! brain blood vessel
 relationship: part_of UBERON:2005219 ! choroid plexus vascular circuit
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21471,6 +21539,7 @@ xref: Wikipedia:Capillary#Types
 xref: ZFA:0005259
 is_a: UBERON:0001982 {source="FMA"} ! capillary
 is_a: UBERON:0004638 {source="ZFA"} ! blood vessel endothelium
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000001 "Blood vessel endothelium that has tight junctions between the endothelial cells[ZFA]." xsd:string
 
 [Term]
@@ -21497,6 +21566,7 @@ name: axial blood vessel
 namespace: uberon
 xref: ZFA:0005295
 is_a: UBERON:2001073 ! axial vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21508,6 +21578,7 @@ xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
 relationship: part_of UBERON:0004536 ! lymph vasculature
 relationship: part_of UBERON:2005097 ! caudal fin vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21518,6 +21589,7 @@ namespace: uberon
 xref: ZFA:0005304
 is_a: UBERON:0007301 ! appendage blood vessel
 relationship: part_of UBERON:2005097 ! caudal fin vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21528,6 +21600,7 @@ namespace: uberon
 synonym: "islv" EXACT [TAO:0005319]
 xref: ZFA:0005319
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21538,6 +21611,7 @@ namespace: uberon
 synonym: "dllv" EXACT [TAO:0005320]
 xref: ZFA:0005320
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: teleost_anatomy_curators
 
@@ -21548,6 +21622,7 @@ namespace: uberon
 def: "Blood vessels in respiratory skin." [AAO:EJS]
 is_a: UBERON:0003504 ! respiratory system blood vessel
 property_value: IAO:0000116 "Modified from the original AAO source" xsd:string
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -21555,6 +21630,7 @@ id: UBERON:3010243
 name: ventricular musculature
 namespace: uberon
 relationship: part_of UBERON:0002082 ! cardiac ventricle
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21566,6 +21642,7 @@ def: "The smallest of the blood vessels, parts of the microcirculation, of the l
 synonym: "liver capillary" EXACT [UBERON:3010404]
 is_a: UBERON:0001982 ! capillary
 is_a: UBERON:0015796 ! liver blood vessel
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21575,6 +21652,7 @@ name: left channel of ventral aorta
 namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21583,6 +21661,7 @@ id: UBERON:3010417
 name: posterior palatine artery
 namespace: uberon
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21591,6 +21670,7 @@ id: UBERON:3010423
 name: larval aorta
 namespace: uberon
 is_a: UBERON:0000947 ! aorta
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21600,6 +21680,7 @@ name: right channel of ventral aorta
 namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21610,6 +21691,7 @@ namespace: uberon
 def: "Part of the external carotid which delivers blood to the mm rectus cervicis and interhyoideus posterior." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001070 ! external carotid artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21622,6 +21704,7 @@ is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 is_a: UBERON:0020550 ! auricular blood vessel
 relationship: part_of UBERON:0001532 ! internal carotid artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21633,6 +21716,7 @@ def: "Part of lateral pretrosal artery which supplies blood to the roof of the m
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:3010494 ! lateral pretrosal artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21642,6 +21726,7 @@ name: cutaneus artery
 namespace: uberon
 def: "Artery which supplies blood to the thymus and parotoid region." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21651,6 +21736,7 @@ name: coeliaco-mesenteric artery
 namespace: uberon
 def: "This artery has many branches which supply blood to various organs in the viscus." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21661,6 +21747,7 @@ namespace: uberon
 def: "Major branch which supplies blood to the spleen and dorsal wall of the stomach." [AAO:BJB]
 is_a: UBERON:0003509 ! arterial blood vessel
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21671,6 +21758,7 @@ namespace: uberon
 def: "Major branch which supplies blood to pancreas and duodenum." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21681,6 +21769,7 @@ namespace: uberon
 def: "Major branch supplying blood via many smaller branches to the liver, duodenum, ventral wall of the stomach, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21691,6 +21780,7 @@ namespace: uberon
 def: "One of three arteries which are part of the renal artery supplying blood to the anterior, middle, and posterior parts of the oviduct." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001184 ! renal artery
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21700,6 +21790,7 @@ name: postcaval vein
 namespace: uberon
 def: "One of three major veins which enter the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21709,6 +21800,7 @@ name: precaval vein
 namespace: uberon
 def: "Either of a pair of veins which enter on either side of the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21718,6 +21810,7 @@ name: lateral vein
 namespace: uberon
 def: "Either of the veins which collect blood from the trunk and skin and drain into the subclavian vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21728,6 +21821,7 @@ namespace: uberon
 def: "Anterior part of the lateral vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:3010515 ! lateral vein
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21738,6 +21832,7 @@ namespace: uberon
 def: "A vein formed by the combination of veins in the pelvic region which collects blood from the liver, stomach, intestines, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0010194 ! hepatic portal system
+property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
