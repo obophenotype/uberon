@@ -243,6 +243,9 @@ mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 mirror/pato.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/pato.owl --extract-mingraph --make-subset-by-properties -f BFO:0000050 // --set-ontology-id $(URIBASE)/pato.owl -o $@; fi
 
+mirror/bfo.obo:
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget $(URIBASE)/bfo.obo -O $@; fi
+
 mirror/envo.owl: $(OWLSRC) 
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/envo.owl --extract-mingraph --set-ontology-id $(URIBASE)/envo.owl -o $@; fi
 
@@ -393,6 +396,9 @@ imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-obje
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
+	
+imports/bfo_import.owl: mirror/bfo.owl $(TMPDIR)/seed.owl
+	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/bfo.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 # TODO - logical definitions go->ubr,cl
 imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
@@ -434,7 +440,7 @@ imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
 %_import.obo: %_import.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --add-obo-shorthand-to-properties -o -f obo --no-check $@; fi
 
-imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
+imports: imports/pato_import.obo imports/bfo_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
 	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
 
 # ----------------------------------------

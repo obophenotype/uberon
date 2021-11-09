@@ -88,7 +88,7 @@ all_main: $(MAIN_FILES)
 ## By default this is the cross-product of IMPORT_MODULES x FORMATS
 
 
-IMPORTS =  pr cl go envo ro bspo chebi pato ncbitaxon nbo ceph cteno ehdaa2 emapa fbbt fbdv ma poro wbbt wbls xao zfa caro
+IMPORTS =  pr cl go envo ro bspo chebi pato ncbitaxon nbo ceph cteno ehdaa2 emapa fbbt fbdv ma poro wbbt wbls xao zfa caro bfo
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -358,6 +358,14 @@ mirror/pato.trigger: $(SRC)
 mirror/pato.owl: mirror/pato.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/pato.owl --create-dirs -o mirror/pato.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/pato.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/pato.owl
+
+## ONTOLOGY: bfo
+## Copy of bfo is re-downloaded whenever source changes
+mirror/bfo.trigger: $(SRC)
+
+mirror/bfo.owl: mirror/bfo.trigger
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/bfo.owl --create-dirs -o mirror/bfo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/bfo.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/bfo.owl
 
 
 ## ONTOLOGY: ncbitaxon
