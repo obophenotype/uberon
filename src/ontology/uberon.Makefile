@@ -1872,3 +1872,9 @@ docs/releases.md: uberon-odk.yaml
 	# Amazing: only generate links to release artefacts if they truly exist:
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
+
+explain_humans:
+	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK --axiom "'nose' SubClassOf owl:Nothing" --explanation $@.md
+
+explain_humans_all:
+	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
