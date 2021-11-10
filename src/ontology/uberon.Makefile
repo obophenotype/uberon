@@ -1872,3 +1872,9 @@ docs/releases.md: uberon-odk.yaml
 	# Amazing: only generate links to release artefacts if they truly exist:
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
+
+### Removing uberon_2 contraints 
+### refer to https://github.com/obophenotype/uberon/discussions/2158
+remove_uberon_two_constraints:
+		$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru -o $(SRC)
+		
