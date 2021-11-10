@@ -1876,7 +1876,10 @@ docs/releases.md: uberon-odk.yaml
 ### Removing uberon_2 contraints 
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
-	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru -o $(SRC)
+	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru convert -f obo -o $(SRC)
+
+select_uberon_two_constraints:
+	$(ROBOT) query -i $(SRC) --query ../sparql/select_uberon_two_constraints.sparql $@.tsv
 
 explain_humans:
 	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK --axiom "'nose' SubClassOf owl:Nothing" --explanation $@.md
