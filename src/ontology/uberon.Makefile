@@ -105,7 +105,7 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 # core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
 core.owl: $(OWLSRC)
 	$(OWLTOOLS) $< -o -f ofn $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
 
 # A portion of uberon is maintained in a separate github repo - we merge that in here
 # as part of the release
@@ -160,7 +160,7 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 	$(OWLTOOLS) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
 	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
 	unmerge -i $(TMP_REFL) \
-	$(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -170,7 +170,7 @@ ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
 # TODO: do we need this intermediate step? Used for subsets
 merged.owl: ext.owl
 	$(OWLTOOLS) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # strip imports and dangling references
 # owltools $(UCAT) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
@@ -204,7 +204,7 @@ old-uberon.owl: ext.owl
 
 basic.owl:  old-uberon.owl
 	$(OWLTOOLS) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
 
