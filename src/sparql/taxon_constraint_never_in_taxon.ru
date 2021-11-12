@@ -6,12 +6,10 @@ prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 
 INSERT {
-  owl:Nothing owl:equivalentClass [ owl:intersectionOf ( ?term
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty RO:0002162 ;
-                                         owl:someValuesFrom ?taxon
-                                       ]
-                                  )] .
+  ?term owl:disjointWith [ rdf:type owl:Restriction ;
+                           owl:onProperty RO:0002162 ;
+                           owl:someValuesFrom ?taxon
+                         ] .
 }
 WHERE 
 { 

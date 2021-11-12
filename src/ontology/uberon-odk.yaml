@@ -85,6 +85,20 @@ subset_group:
     - id: amniote-basic
     - id: euarchontoglires-basic
 robot_java_args: '-Xmx20G'
+robot_report:
+  release_reports: False
+  fail_on : ERROR
+  use_labels : False
+  custom_profile : True
+  report_on :
+    - edit
+  custom_sparql_checks :
+    - equivalent-classes 
+    - owldef-self-reference
+    - illegal-annotation-property
+  custom_sparql_exports : 
+    - basic-report
+owltools_memory: '20G'
 create_obo_metadata: FALSE
 documentation:
   documentation_system: mkdocs
