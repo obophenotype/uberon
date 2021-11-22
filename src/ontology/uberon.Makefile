@@ -90,9 +90,9 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO issues/contributor.owl not being updated atm.
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
 # TODO: Huge number of printouts that pollute the general logs
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
+$(OWLSRC): $(SRCMERGED) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --merge-import http://purl.obolibrary.org/obo/uberon/components/mappings.owl --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru --update $(SPARQLDIR)/remove_axioms.ru -o $@
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
@@ -1170,7 +1170,7 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 # ----------------------------------------
 
 # Generate cross-references from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+$(OTHER_SRC): mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
 
 # seed.owl is never released - it is used to seed module extraction
