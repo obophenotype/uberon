@@ -44,7 +44,7 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 
+OTHER_SRC =                 $(COMPONENTSDIR)/mappings.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 
 FORMATS = $(sort  owl obo json owl)
@@ -275,6 +275,20 @@ refresh-imports-excluding-large:
 .PHONY: refresh-%
 refresh-%:
 	make IMP=true IMP_LARGE=true MIR=true PAT=false imports/$*_import.owl -B
+
+
+# ----------------------------------------
+# Components
+# ----------------------------------------
+# Some ontologies contain external and internal components. A component is included in the ontology in its entirety.
+
+$(COMPONENTSDIR)/%:
+	touch $@
+.PRECIOUS: $(COMPONENTSDIR)/%
+
+
+
+
 
 
 
