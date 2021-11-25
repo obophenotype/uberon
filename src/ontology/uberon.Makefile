@@ -527,23 +527,37 @@ nh-%.owl: nh-%.obo
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
 #ext-taxon-axioms.owl 
-#subsets/%-view.owl: ext.owl contexts/context-%.owl
-#	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
-#.PRECIOUS: subsets/%-view.owl
+# mouse xenopus human
 
+# We need to add CL terms to the seed as well, because CL terms also go into the slim..
+tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
+	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp &&\
+	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
 
-subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+subsets/%-view.owl: ext.owl contexts/context-%.owl tmp/simple-slim-seed.txt
+	$(OWLTOOLS) ext.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl &&\
+	$(ROBOT) reason --input $@.tmp.owl --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		unmerge -i contexts/context-$*.owl \
+		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce -r ELK \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-view.owl
 
-subsets/human-view.owl: ext.owl contexts/context-human.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+#	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
 
-subsets/metazoan-view.owl: ext.owl
+#	subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
+#		$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x 
+
+#subsets/human-view.owl: ext.owl contexts/context-human.owl
+#	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+subsets/metazoan-view.owl: basic.owl
 	cp $< $@
-
-subsets/mouse-view.owl: ext.owl contexts/context-mouse.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
-
 
 #subsets/%-view.obo: subsets/%-view.owl
 #	owltools $(UCAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
@@ -1146,8 +1160,17 @@ $(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
 #$(TAXMODSDIR)/uberon-taxmod-annelid.owl: $(TMPDIR)/uberon-taxmod-6340.owl
 #	cp $< $@
 
-subsets/euarchontoglires-basic.owl: $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl
-	cp $< $@
+subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
+	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce -r ELK \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-basic.owl
 
 subsets/amniote-basic.owl: $(TAXMODSDIR)/uberon-taxmod-amniote.owl
 	cp $< $@
