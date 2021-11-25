@@ -90,7 +90,10 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO issues/contributor.owl not being updated atm.
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
 # TODO: Huge number of printouts that pollute the general logs
-$(OWLSRC): $(SRCMERGED) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
+tmp/uberon-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru --update $(SPARQLDIR)/remove_axioms.ru -o $@ \
@@ -133,8 +136,8 @@ $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(CO
 # First pass at making base module
 # Currently this will be missing the temporary reflexivity axioms.
 # should this include downward-injected axioms, e.g on ZFA?
-uberon-base.owl: $(TMPDIR)/unreasoned.owl
-	$(OWLTOOLS) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@.tmp && mv $@.tmp $@
+#uberon-base.owl: $(TMPDIR)/unreasoned.owl
+#	$(OWLTOOLS) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@.tmp && mv $@.tmp $@
 
 # TODO document collected-* pattern (import files see http://uberon.github.io/downloads.html#multiont)
 # ----------------------------------------
@@ -149,19 +152,19 @@ uberon-base.owl: $(TMPDIR)/unreasoned.owl
 $(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
 	$(OWLTOOLS) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl
-	$(ROBOT) --catalog $(CATALOG) relax -i $< materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
-		 reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
-		 annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
-.PRECIOUS: $(TMPDIR)/materialized.owl
-
 # somewhat awkward: we temporarily inject reflexivity axioms
 TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
-ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
-	$(OWLTOOLS) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
-	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
-	unmerge -i $(TMP_REFL) \
-	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
+	$(ROBOT) merge -i $< --collapse-import-closure false \
+		relax \
+		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
+		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
+		unmerge -i $(TMP_REFL) \
+		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
+.PRECIOUS: $(TMPDIR)/materialized.owl
+
+ext.owl: $(TMPDIR)/materialized.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
