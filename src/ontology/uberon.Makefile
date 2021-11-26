@@ -417,6 +417,14 @@ imports/fbbt_import.owl: mirror/fbbt.owl imports/fbbt_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru --update $(SPARQLDIR)/remove_axioms.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
+imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/cl_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
 .PRECIOUS: imports/%_import.owl
 
 # TODO - use full taxonomy

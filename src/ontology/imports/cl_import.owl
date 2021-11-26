@@ -15,9 +15,9 @@
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/cl_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-11-23/imports/cl_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-11-26/imports/cl_import.owl"/>
         <obo:IAO_0000700 rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
-        <obo:owl_versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-11-23</obo:owl_versionInfo>
+        <obo:owl_versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-11-25</obo:owl_versionInfo>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexander Diehl</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ceri van Slyke</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Mungall</dc:contributor>
@@ -149,7 +149,6 @@
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002161">
         <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tooth SubClassOf &apos;never in taxon&apos; value &apos;Aves&apos;</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S never_in_taxon T iff: S SubClassOf in_taxon only not T</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S never_in_taxon T iff: S SubClassOf in_taxon only not T.</obo:IAO_0000115>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x never in taxon T if and only if T is a class, and x does not instantiate the class expression &quot;in taxon some T&quot;. Note that this is a shortcut relation, and should be used as a hasValue restriction in OWL.</obo:IAO_0000115>
         <obo:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chris Mungall</obo:IAO_0000117>
@@ -4590,17 +4589,12 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000202 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000202">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002374"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002491"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mechanoreceptor cell located in the inner ear that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000855"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mechanoreceptor cell of the auditory or vestibular system that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000201</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:62364</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">auditory receptor cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear hair cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inner ear hair cell</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inner ear receptor cell</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">auditory receptor cell</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000202</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">In mammals these cells are located in the organ of Corti.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">auditory hair cell</rdfs:label>
@@ -10111,7 +10105,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000589 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000589">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000202"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A bulbous cell that is medially placed in one row in the organ of Corti. In contrast to the outer hair cells, the inner hair cells are fewer in number, have fewer sensory hairs, and are less differentiated.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inner hair cell</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0003667</oboInOwl:hasDbXref>
@@ -10257,7 +10251,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000598">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000104"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pyramidal neurons have a pyramid-shaped soma with a single axon, a large apical dendrite and multiple basal dendrites. The apex and an apical dendrite typically point toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0003102</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67310</oboInOwl:hasDbXref>
@@ -10304,14 +10297,13 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000601 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000601">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000202"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023120"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mechanoreceptor in the organ of Corti. In mammals the outer hair cells are arranged in three rows which are further from the modiolus than the single row of inner hair cells. The motile properties of the outer hair cells may contribute actively to tuning the sensitivity and frequency selectivity of the cochlea.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO:0003666</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:62366</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear outer hair cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000601</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">outer hair cell</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear outer hair cell</rdfs:label>
     </owl:Class>
     
 
@@ -10831,7 +10823,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0000636 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000636">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000127"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000681"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009004"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.</obo:IAO_0000115>
@@ -11711,9 +11702,14 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000695">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">One of a transient population of pioneering neurons in the cerebral cortex. These cells are slender bipolar cells of the developing marginal zone. One feature of these cells in mammals is that they express the Reelin gene.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000029"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neuron of the human embryonic marginal zone which display, as a salient feature, radial ascending processes that contact the pial surface, and a horizontal axon plexus located in the deep marginal zone. One feature of these cells in mammals is that they express the Reelin gene.</obo:IAO_0000115>
+        <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-7258-9596</dc:contributor>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CR cells</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Horizontal cells of Cajal</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000695</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">While previously called &apos;pioneer neurons&apos; of the marginal zone, Cajal-Retzius cells are differentiated from pioneer neurons (which are Reln-negative) by their Reln-immunoreactivity.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cajal-Retzius cell</rdfs:label>
     </owl:Class>
     
@@ -13036,7 +13032,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000576"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000763"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dendritic cell of the myeloid lineage.</obo:IAO_0000115>
@@ -13537,7 +13533,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preT.DN2.Th</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000806</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains. Also, there is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 &apos;double negative thymocyte&apos;.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN2 thymocyte</rdfs:label>
     </owl:Class>
     
@@ -13566,6 +13562,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preT.DN3.Th</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000807</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 &apos;double negative thymocyte&apos;.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN3 thymocyte</rdfs:label>
     </owl:Class>
     
@@ -13592,7 +13589,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">double negative 4</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000808</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 &apos;double negative thymocyte&apos;.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN4 thymocyte</rdfs:label>
     </owl:Class>
     
@@ -24256,10 +24253,15 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002324 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002324">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000416"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000185"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002327"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A myoepithelial cell that surrounds milk-secreting luminal epithelial cells. This cell type contracts under the stimulation of oxytocin and is attached to the basement membrane by hemidesmosomes and to the adjacent luminal cells by desmosomes. This cell type expresses high level of keratin-14 and is estrogen receptor alpha negative.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-09-20T11:42:14Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-2378</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67800</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basal cell of lactiferous duct</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myoepithelial cell of lactiferous gland</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002324</oboInOwl:id>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myoepithelial cell of mammary gland</rdfs:label>
@@ -24711,7 +24713,6 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002351 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002351">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000048"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011026"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A progenitor cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
@@ -25107,6 +25108,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002374 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002374">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000855"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hair cell of the ear that contains the organs of balance and hearing.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
@@ -25924,7 +25926,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-21T10:12:05Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002423</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observed in mice.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 &apos;double negative thymocyte&apos;.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN2a thymocyte</rdfs:label>
     </owl:Class>
     
@@ -25945,7 +25947,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2010-10-21T10:12:08Z</oboInOwl:creation_date>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002424</oboInOwl:id>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observed in mice.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 &apos;double negative thymocyte&apos;.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN2b thymocyte</rdfs:label>
     </owl:Class>
     
@@ -29012,7 +29014,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
     <!-- http://purl.obolibrary.org/obo/CL_0002624 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002624">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009009"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000510"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001585"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A paneth cell of the appendix.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tmeehan</oboInOwl:created_by>
@@ -30049,6 +30051,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0005008">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000202"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002374"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An auditory hair cell located in the macula that is sensitive to auditory stimuli.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0005008</oboInOwl:id>
@@ -31575,7 +31578,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0009020 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009020">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009041"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002203"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000405"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An intestinal tuft cell that is a part of a vermiform appendix.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
@@ -31663,7 +31666,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0009026 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009026">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000347"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000584"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000405"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An enterocyte that is a part of a vermiform appendix.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
@@ -31680,7 +31683,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0009027 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009027">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009011"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009010"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -31703,7 +31706,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009028">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009016"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009043"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000405"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An intestinal crypt stem cell that is located in the vermiform appendix. These stem cells reside at the bottom of crypts in the appendix and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
@@ -31739,7 +31741,7 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <!-- http://purl.obolibrary.org/obo/CL_0009030 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009030">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009042"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001516"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001585"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An intestinal enteroendocrine cell that is located in a vermiform appendix.</obo:IAO_0000115>
         <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
@@ -32476,6 +32478,51 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0009081 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009081">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002489"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The human equivalent of a DN2 thymocyte; typically contains two phases, in the latter of which these thymocytes begin the process of beta selection.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">‘Homo sapiens’</obo:RO_0002175>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T09:26:32Z</dc:date>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009081</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">specified double negative thymocyte (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0009082 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009082">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002489"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The human equivalent of a DN3 thymocyte; these thymocytes finish the process of beta selection.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Homo sapiens&apos;</obo:RO_0002175>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T09:30:45Z</dc:date>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009082</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">committed double negative thymocyte (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0009083 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0009083">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002489"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The human equivalent of a DN4 thymocyte.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Homo sapiens&apos;</obo:RO_0002175>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-25T09:32:13Z</dc:date>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0009083</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rearranging double negative thymocyte (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0010000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0010000">
@@ -32765,7 +32812,6 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000381"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000029"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000030"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that is capable of secreting the hormones oxytocin or vasopressin, and sometimes both, into the systemic circulation.</obo:IAO_0000115>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-7258-9596</dc:contributor>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -33124,6 +33170,25 @@ Covers cells actively being cultured or stored in a quiescent state for future u
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0011031 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011031">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000782"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000576"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dendritic cell that develops from a monocyte.</obo:IAO_0000115>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MDDC cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011031</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">monocyte-derived dendritic cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0011032 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011032">
@@ -33230,8 +33295,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_0011107 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011107">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000681"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009004"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBSOLETE: Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.</obo:IAO_0000115>
         <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0000636</obo:IAO_0100001>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muller glia</oboInOwl:hasExactSynonym>
@@ -33298,8 +33361,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_0011112 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0011112">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000167"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000381"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBSOLETE: Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland.</obo:IAO_0000115>
         <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011003</obo:IAO_0100001>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0011112</oboInOwl:id>
@@ -34624,7 +34685,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000327 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000327">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0009039"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000320"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001585"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A goblet cell that is part of the epithelium proper of appendix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:263069</oboInOwl:hasDbXref>
@@ -35312,7 +35373,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000378 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000378">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type I vestibular sensory cell that is part of the stato-acoustic epithelium.</obo:IAO_0000115>
@@ -35327,7 +35387,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000379 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000379">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth.</obo:IAO_0000115>
@@ -35342,7 +35401,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000380 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000380">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth.</obo:IAO_0000115>
@@ -35357,7 +35415,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000381 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000381">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002070"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth.</obo:IAO_0000115>
@@ -35372,7 +35429,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000382 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000382">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type II vestibular sensory cell that is part of the stato-acoustic epithelium.</obo:IAO_0000115>
@@ -35387,7 +35443,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000383 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000383">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth.</obo:IAO_0000115>
@@ -35402,7 +35457,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000384 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000384">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth.</obo:IAO_0000115>
@@ -35417,7 +35471,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000385 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000385">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000098"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002069"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth.</obo:IAO_0000115>
@@ -35632,7 +35685,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000405 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000405">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011108"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002253"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An epithelial cell that is part of the appendix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:63602</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">columnar epitheliocyte of appendix</oboInOwl:hasExactSynonym>
@@ -35787,15 +35840,13 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000416 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000416">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000185"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002327"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A myoepithelial cell that is part of the mammary gland.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-2378</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67800</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basal cell of lactiferous duct</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBSOLETE. A myoepithelial cell that is part of the mammary gland.</obo:IAO_0000115>
+        <obo:IAO_0100001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:0002324</obo:IAO_0100001>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:1000416</oboInOwl:id>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myoepithelial cell of lactiferous gland</rdfs:label>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Term merged into CL:0002324 (myoepithelial cell of mammary gland)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete myoepithelial cell of lactiferous gland</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     </owl:Class>
     
 
@@ -35817,7 +35868,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000418 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000418">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000416"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002324"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A myoepithelial cell that is part of the mammary gland alveolus.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67802</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basal cell of alveolus of lactiferous gland</oboInOwl:hasExactSynonym>
@@ -35833,7 +35884,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000419">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000068"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000416"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002324"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A myoepithelial cell that is part of the lactiferous duct.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67803</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</oboInOwl:hasOBONamespace>
@@ -36429,7 +36480,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1000468 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1000468">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000416"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002324"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A myoepithelial cell that is part of the acinus of lactiferous gland.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:74469</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basal cell of acinus of lactiferous gland</oboInOwl:hasExactSynonym>
@@ -38465,7 +38516,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001571">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002608"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron of the hippocampus.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:sao131261273</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAO:sao131261273</oboInOwl:hasDbXref>
@@ -38649,8 +38699,8 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_1001585 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001585">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002658"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1000405"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_1001588"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glandular cell of appendix epithelium. Example: Goblet cells; enterocytes or absorptive cells; enteroendocrine and M cells.</obo:IAO_0000115>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-1271</oboInOwl:hasDbXref>
         <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendix glandular cells</oboInOwl:hasRelatedSynonym>
@@ -40772,7 +40822,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023019">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023016"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023071"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41133,7 +41182,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023050">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000049"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023095"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ILX:0770158</oboInOwl:hasDbXref>
@@ -41198,7 +41246,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023054">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -41218,7 +41265,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023055">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000049"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023042"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023095"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CT VAL/VM M1</oboInOwl:hasExactSynonym>
@@ -41274,6 +41320,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023066 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023066">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41328,7 +41375,8 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023071 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023071">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0010011"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000402"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011005"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L5/6 CCK (Mus)</oboInOwl:hasExactSynonym>
@@ -41388,7 +41436,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023080">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023050"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023093"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has stellate pyramidal morphology.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stellate L6 IT MOp (Mus)</oboInOwl:hasExactSynonym>
@@ -41403,7 +41450,6 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023081">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023050"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023092"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has inverted pyramidal morphology.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">inverted L6 IT MOp (Mus)</oboInOwl:hasExactSynonym>
@@ -41499,6 +41545,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023092">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron which has an apical tree which is oriented towards the white matter.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41512,6 +41559,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023093 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023093">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41525,6 +41573,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023094 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023094">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron which has a distinctive tuft formation, distal from the soma.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41538,6 +41587,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023095 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023095">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000117"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41551,6 +41601,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/CL_4023097 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023097">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002078"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023058"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mesothelial fibroblast of the arachnoid barrier layer. Arachnoid barrier cells make up the tight-junctioned layer in the leptomeninx that functions as the physiologic barrier between the cerebrospinal fluid in the subarachnoid space and the fenestrated capillaries in the dura.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
@@ -41746,7 +41797,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023110">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0012001"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_2000029"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron with soma located in the amygdala.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023110</oboInOwl:id>
@@ -41759,7 +41810,7 @@ plexiform layer using GABA.</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023111">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002609"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0010012"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A pyramidal neuron with soma located in the cerebral cortex.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023111</oboInOwl:id>
@@ -41804,10 +41855,39 @@ plexiform layer using GABA.</obo:IAO_0000115>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_4023115 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023115">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011113"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spiral ganglion neuron that innervates inner hair cells. Type 1 spiral ganglion neurons are myelinated and bipolar.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type I spiral ganglion cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023115</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Type 1 spiral ganglion neurons comprise the vast majority of spiral ganglion cells.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type 1 spiral ganglion neuron</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023116 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023116">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011113"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spiral ganglion neuron that innervates outer hair cells. Type 1 spiral ganglion neurons are unmyelinated and unipolar.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type II spiral ganglion cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023116</oboInOwl:id>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Outer hair cells form reciprocal synapses onto type 2 spiral ganglion cells, suggesting that the type 2 cells have both afferent and efferent roles.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type 2 spiral ganglion neuron</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_4023118 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023118">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023017"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000402"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011005"/>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L5/6 non-Martinotti SST (Mus)</oboInOwl:hasExactSynonym>
@@ -41830,6 +41910,21 @@ plexiform layer using GABA.</obo:IAO_0000115>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023119</oboInOwl:id>
         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Displaced amacrine cells are a subset of Sox2 expressing amacrine cells.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">displaced amacrine cell</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023120 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023120">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000202"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002374"/>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An auditory hair cell found in the cochlea.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:62364</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlear hair cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL:4023120</oboInOwl:id>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cochlea auditory hair cell</rdfs:label>
     </owl:Class>
     
 
