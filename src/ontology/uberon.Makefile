@@ -90,11 +90,16 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 # TODO issues/contributor.owl not being updated atm.
 # TODO: for the seeds to be correctly imported, we probably need to merge phenoscape in here
 # TODO: Huge number of printouts that pollute the general logs
-$(OWLSRC): $(SRCMERGED) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
+tmp/uberon-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+# TODO This goal needs to be revived carefully. remove_axioms removes RO labels to avoid duplicates
+# merge -i ro_import then adds them back to ensure they are canonical.
+$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru --update $(SPARQLDIR)/remove_axioms.ru -o $@ \
-           query --update ../sparql/delete-definition-dot.ru -o $@ 
+           query --update ../sparql/delete-definition-dot.ru merge -i imports/ro_import.owl -o $@
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
@@ -133,8 +138,8 @@ $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(CO
 # First pass at making base module
 # Currently this will be missing the temporary reflexivity axioms.
 # should this include downward-injected axioms, e.g on ZFA?
-uberon-base.owl: $(TMPDIR)/unreasoned.owl
-	$(OWLTOOLS) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@.tmp && mv $@.tmp $@
+#uberon-base.owl: $(TMPDIR)/unreasoned.owl
+#	$(OWLTOOLS) $< --remove-imports-declarations --remove-axioms -t Declaration --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $@.tmp && mv $@.tmp $@
 
 # TODO document collected-* pattern (import files see http://uberon.github.io/downloads.html#multiont)
 # ----------------------------------------
@@ -149,19 +154,19 @@ uberon-base.owl: $(TMPDIR)/unreasoned.owl
 $(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
 	$(OWLTOOLS) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl
-	$(ROBOT) --catalog $(CATALOG) relax -i $< materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
-		 reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
-		 annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
-.PRECIOUS: $(TMPDIR)/materialized.owl
-
 # somewhat awkward: we temporarily inject reflexivity axioms
 TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
-ext.owl: $(TMPDIR)/materialized.owl $(TMP_REFL)
-	$(OWLTOOLS) $< $(TMP_REFL) --merge-support-ontologies -o $(TMPDIR)/m1.owl && \
-	$(ROBOT) --catalog $(CATALOG) merge -i $(TMPDIR)/m1.owl --collapse-import-closure false \
-	unmerge -i $(TMP_REFL) \
-	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
+	$(ROBOT) merge -i $< --collapse-import-closure false \
+		relax \
+		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
+		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
+		unmerge -i $(TMP_REFL) \
+		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
+.PRECIOUS: $(TMPDIR)/materialized.owl
+
+ext.owl: $(TMPDIR)/materialized.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
@@ -389,8 +394,11 @@ imports/local-%.obo: imports/local-%.owl
 # Import module for RO
 # if [ $(MIR) = true ] && [ $(IMP) = true ]; then command; fi
 # No TBox; use an OP seed that is derived from a separate sparql query
-imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-object-properties.csv
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
+tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
+	cat $^ | sort | uniq >  $@
+
+imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
@@ -532,23 +540,37 @@ nh-%.owl: nh-%.obo
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
 #ext-taxon-axioms.owl 
-#subsets/%-view.owl: ext.owl contexts/context-%.owl
-#	OWLTOOLS_MEMORY=14G owltools $(UCAT) $< contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
-#.PRECIOUS: subsets/%-view.owl
+# mouse xenopus human
 
+# We need to add CL terms to the seed as well, because CL terms also go into the slim..
+tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
+	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp &&\
+	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
 
-subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+subsets/%-view.owl: ext.owl contexts/context-%.owl tmp/simple-slim-seed.txt
+	$(OWLTOOLS) ext.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl &&\
+	$(ROBOT) reason --input $@.tmp.owl --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		unmerge -i contexts/context-$*.owl \
+		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce -r ELK \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-view.owl
 
-subsets/human-view.owl: ext.owl contexts/context-human.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+#	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
 
-subsets/metazoan-view.owl: ext.owl
+#	subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
+#		$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x 
+
+#subsets/human-view.owl: ext.owl contexts/context-human.owl
+#	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
+
+subsets/metazoan-view.owl: basic.owl
 	cp $< $@
-
-subsets/mouse-view.owl: ext.owl contexts/context-mouse.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
-
 
 #subsets/%-view.obo: subsets/%-view.owl
 #	owltools $(UCAT) $< -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
@@ -1151,11 +1173,17 @@ $(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
 #$(TAXMODSDIR)/uberon-taxmod-annelid.owl: $(TMPDIR)/uberon-taxmod-6340.owl
 #	cp $< $@
 
-subsets/euarchontoglires-basic.owl: $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl
-	cp $< $@
-
-subsets/amniote-basic.owl: $(TAXMODSDIR)/uberon-taxmod-amniote.owl
-	cp $< $@
+subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
+	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
+		reduce -r ELK \
+		query --update ../sparql/inject-subset-declaration.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-basic.owl
 
 $(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
 	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
