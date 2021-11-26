@@ -93,11 +93,13 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
 tmp/uberon-merged.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
 
+# TODO This goal needs to be revived carefully. remove_axioms removes RO labels to avoid duplicates
+# merge -i ro_import then adds them back to ensure they are canonical.
 $(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	$(ROBOT) query -i $@.tmp --update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru --update $(SPARQLDIR)/remove_axioms.ru -o $@ \
-           query --update ../sparql/delete-definition-dot.ru -o $@ 
+           query --update ../sparql/delete-definition-dot.ru merge -i imports/ro_import.owl -o $@
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
@@ -392,8 +394,11 @@ imports/local-%.obo: imports/local-%.owl
 # Import module for RO
 # if [ $(MIR) = true ] && [ $(IMP) = true ]; then command; fi
 # No TBox; use an OP seed that is derived from a separate sparql query
-imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl reports/uberon-edit-object-properties.csv
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m STAR -T reports/uberon-edit-object-properties.csv annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
+tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
+	cat $^ | sort | uniq >  $@
+
+imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
@@ -1171,9 +1176,6 @@ subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: subsets/%-basic.owl
-
-subsets/amniote-basic.owl: $(TAXMODSDIR)/uberon-taxmod-amniote.owl
-	cp $< $@
 
 $(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
 	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
