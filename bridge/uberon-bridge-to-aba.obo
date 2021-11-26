@@ -1,0 +1,177 @@
+ontology: uberon/bridge/uberon-bridge-to-aba
+data-version: 2015-01-01
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
+
+[Term]
+id: ABA:Brain ! 
+property_value: IAO:0000589 "brain (ABA)" xsd:string
+intersection_of: UBERON:0000955 ! brain
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX1-6b ! 
+property_value: IAO:0000589 "layer of neocortex (ABA)" xsd:string
+intersection_of: UBERON:0002301 ! layer of neocortex
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:SNI ! 
+property_value: IAO:0000589 "substantia nigra pars lateralis (ABA)" xsd:string
+intersection_of: UBERON:0002995 ! substantia nigra pars lateralis
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX1 ! 
+property_value: IAO:0000589 "cortical layer I (ABA)" xsd:string
+intersection_of: UBERON:0005390 ! cortical layer I
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX2 ! 
+property_value: IAO:0000589 "cortical layer II (ABA)" xsd:string
+intersection_of: UBERON:0005391 ! cortical layer II
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX3 ! 
+property_value: IAO:0000589 "cortical layer III (ABA)" xsd:string
+intersection_of: UBERON:0005392 ! cortical layer III
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX4 ! 
+property_value: IAO:0000589 "cortical layer IV (ABA)" xsd:string
+intersection_of: UBERON:0005393 ! cortical layer IV
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX5 ! 
+property_value: IAO:0000589 "cortical layer V (ABA)" xsd:string
+intersection_of: UBERON:0005394 ! cortical layer V
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:CTX6 ! 
+property_value: IAO:0000589 "cortical layer VI (ABA)" xsd:string
+intersection_of: UBERON:0005395 ! cortical layer VI
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: ABA:ENTITY
+name: ABA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:10090
+relationship: only_in_taxon NCBITaxon:10090
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+is_transitive: true
+
+[Typedef]
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/aba#part_of
+equivalent_to: BFO:0000050
+
+[Typedef]
+id: http://purl.obolibrary.org/obo/aba#develops_from
+equivalent_to: RO:0002225
+
+[Typedef]
+id: foaf-depicted_by
+name: depicted_by
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/depicted_by
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-contributor
+name: contributor
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/contributor
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-publisher
+name: publisher
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/publisher
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: dc-source
+name: derived from resource
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/source
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/isReferencedBy
+
+[Typedef]
+id: dcterms-references
+name: references
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/references
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#GitRepository
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#SVNRepository
+
+[Typedef]
+id: doap-wiki
+name: wiki
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#wiki
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#bug-database
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+is_metadata_tag: true
+xref: IAO:0000122

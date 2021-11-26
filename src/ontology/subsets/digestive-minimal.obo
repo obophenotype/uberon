@@ -4,18 +4,58 @@ ontology: uberon/subsets/digestive-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
@@ -8530,7 +8570,6 @@ property_value: UBPROP:0000008 "In lobe-finned fishes and the early fossil tetra
 id: UBERON:0004744
 name: articular/anguloarticular
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Articular, https://github.com/obophenotype/uberon/issues/98]
 subset: efo_slim
 synonym: "angulaire" RELATED [AAO:0000028]
 synonym: "angulare" RELATED [AAO:0000028]
@@ -12437,7 +12476,6 @@ relationship: part_of UBERON:0001042 {source="VHOG"} ! chordate pharynx
 id: UBERON:0007690
 name: early pharyngeal endoderm
 namespace: uberon
-def: "." [http://dev.biologists.org/content/128/22/4573.full]
 comment: relation conflict: ZFA vs EHDAA2. Note EHDAA2 term renamed to 'early PA endoderm'
 subset: efo_slim
 synonym: "early pharyngeal arch endoderm" EXACT [EHDAA2:0001457]
@@ -14610,7 +14648,6 @@ property_value: RO:0002175 NCBITaxon:6657
 id: UBERON:0010265
 name: mollusc hepatopancreas
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Digestive_system_of_gastropods#Hepatopancreas]
 xref: Hepatopancreas
 is_a: UBERON:0010264 ! hepatopancreas
 
@@ -15214,7 +15251,6 @@ relationship: part_of UBERON:0003700 {source="BTO"} ! temporomandibular joint
 id: UBERON:0011320
 name: ligament of temporomandibular joint
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Temporomandibular_joint#Ligaments]
 synonym: "temporomandibular joint ligament" EXACT [FMA:57070]
 xref: FMA:57070
 xref: http://www.snomedbrowser.com/Codes/Details/127861009
@@ -16788,7 +16824,6 @@ property_value: UBPROP:0000010 "a group of tubulo-acinar serous glands located b
 id: UBERON:0013476
 name: dermal layer of tongue
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/23153189]
 synonym: "tongue (dermal layer)" EXACT []
 relationship: part_of UBERON:0001723 ! tongue
 
@@ -17843,7 +17878,6 @@ relationship: part_of UBERON:0003929 {source="EHDAA2"} ! digestive tract epithel
 id: UBERON:0016618
 name: baleen feeding system
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Aquatic_predation#Lunge_feeding]
 relationship: part_of UBERON:0001007 ! digestive system
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/479 xsd:anyURI
 
@@ -17877,7 +17911,6 @@ relationship: part_of UBERON:0016618 ! baleen feeding system
 id: UBERON:0016622
 name: lunge feeding organ papilla
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/22622577]
 relationship: part_of UBERON:0016621 ! lunge feeding organ
 
 [Term]
@@ -20461,7 +20494,6 @@ synonym: "processus ascendens of premaxilla" RELATED [UBERON:3000003]
 synonym: "processus frontalis of premaxilla" RELATED [UBERON:3000003]
 synonym: "processus nasalis of premaxilla" RELATED [UBERON:3000003]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20472,7 +20504,6 @@ namespace: uberon
 def: "Foramen for the R. alveolaris of Nerve VII and the alveolar artery." [AAO:LAP]
 synonym: "inferior dental foramen" RELATED [UBERON:3000006]
 is_a: UBERON:0011772 ! lower jaw opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20482,7 +20513,6 @@ name: angulosplenial coronoid process
 namespace: uberon
 def: "Point of insertion of the adductor mandibulae musculature." [AAO:LAP]
 relationship: part_of UBERON:3000966 ! angulosplenial
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20491,7 +20521,6 @@ id: UBERON:3000017
 name: anterior process of pars palatina of maxilla
 namespace: uberon
 relationship: part_of UBERON:0004527 ! alveolar process of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20500,7 +20529,6 @@ id: UBERON:3000022
 name: antorbital process
 namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20534,7 +20562,6 @@ id: UBERON:3000038
 name: basimandibulare
 namespace: uberon
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20544,7 +20571,6 @@ name: crista contacta
 namespace: uberon
 def: "Thin, horizontal ridge that extends medially from the corpus of the septomaxilla; it lays on the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20553,7 +20579,6 @@ id: UBERON:3000111
 name: crista dentalis of maxilla
 namespace: uberon
 relationship: part_of UBERON:0004527 ! alveolar process of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20563,7 +20588,6 @@ name: crista dentalis of premaxilla
 namespace: uberon
 synonym: "dental ridge of premaxilla" RELATED [UBERON:3000112]
 relationship: part_of UBERON:0034898 ! alveolar ridge of premaxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20572,7 +20596,6 @@ id: UBERON:3000115
 name: crista lateralis of premaxilla
 namespace: uberon
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20593,7 +20616,6 @@ synonym: "infralabial cartilage" RELATED [UBERON:3000237]
 synonym: "mentomeckelian cartilage" RELATED [UBERON:3000237]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001708 ! jaw skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20602,7 +20624,6 @@ id: UBERON:3000255
 name: lamina anterior of pars facialis
 namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20612,7 +20633,6 @@ name: margo orbitalis of maxilla
 namespace: uberon
 def: "Dorsal margin of the maxilla between the frontal and zygomatico-maxillary processes." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20623,7 +20643,6 @@ namespace: uberon
 def: "A compound bone consisting of maxilla and palatine, can also contain a prefrontal and/or lacrimal; present in adult Gymnophiona." [AAO:EJS]
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003277 ! skeleton of upper jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20632,7 +20651,6 @@ id: UBERON:3000295
 name: median symphysis
 namespace: uberon
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20643,7 +20661,6 @@ namespace: uberon
 def: "A compound bone consisting of premaxilla, nasal and sometimes septomaxilla in adult members of Caeciliidae and Typhlonectidae." [AAO:EJS]
 is_a: UBERON:0011597 ! bone of upper jaw
 relationship: part_of UBERON:0003277 ! skeleton of upper jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20669,7 +20686,6 @@ id: UBERON:3000375
 name: palatine process of the pars facialis of the maxilla
 namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20687,7 +20703,6 @@ name: pars articularis of mandibular arch
 namespace: uberon
 def: "Posterior end of Meckel's cartilage that forms the articular head of the mandibular arch." [AAO:LAP]
 relationship: part_of UBERON:0003107 ! Meckel's cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20696,7 +20711,6 @@ id: UBERON:3000400
 name: pars facialis of maxilla
 namespace: uberon
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20705,7 +20719,6 @@ id: UBERON:3000401
 name: pars facialis of maxillopalatine
 namespace: uberon
 relationship: part_of UBERON:3000288 ! maxillopalatine
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20714,7 +20727,6 @@ id: UBERON:3000446
 name: posterior condyle
 namespace: uberon
 relationship: part_of UBERON:3000515 ! pseudoangular
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20723,7 +20735,6 @@ id: UBERON:3000450
 name: posterior mental process
 namespace: uberon
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20732,7 +20743,6 @@ id: UBERON:3000453
 name: posterolateral vomerine process
 namespace: uberon
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20742,7 +20752,6 @@ name: prearticular coronoid process
 namespace: uberon
 def: "Point of insertion of the masticatory musculature." [AAO:LAP]
 relationship: part_of UBERON:0011637 ! prearticular bone
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20751,7 +20760,6 @@ id: UBERON:3000467
 name: preorbital process of the pars facialis of the maxilla
 namespace: uberon
 relationship: part_of UBERON:3000400 ! pars facialis of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20762,7 +20770,6 @@ namespace: uberon
 def: "Posterior part of the corpus of the septomaxilla; the posterior surface of the processus infrafenestralis is in contact with the oblique cartilage." [AAO:LAP]
 synonym: "dorsal crest" RELATED [UBERON:3000492]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20772,7 +20779,6 @@ name: processus internus of pseudoangular
 namespace: uberon
 synonym: "processus internus" BROAD []
 relationship: part_of UBERON:3000515 ! pseudoangular
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20782,7 +20788,6 @@ name: processus posterior of maxilla
 namespace: uberon
 def: "Posterior, toothless portion of the maxilla by which it usually comes in contact with the quadratojugal." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20792,7 +20797,6 @@ name: processus pterygoideus of maxilla
 namespace: uberon
 def: "Posterior end of the pars palatina of the maxilla that is in contact with the anterior ramus of the pterygoid." [AAO:LAP]
 is_a: UBERON:0004527 ! alveolar process of maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20801,7 +20805,6 @@ id: UBERON:3000509
 name: processus suprafenestralis
 namespace: uberon
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20811,7 +20814,6 @@ name: processus zygomatico-maxillaris
 namespace: uberon
 def: "Posterodorsal extension of the maxilla by which it establishes contact with the squamosal." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20821,7 +20823,6 @@ name: pseudoangular
 namespace: uberon
 is_a: UBERON:0004768 ! bone of lower jaw
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20840,7 +20841,6 @@ namespace: uberon
 def: "Compound bone of adult Gymnophiona, consisting of dentary, coronoid and mentomeckelian." [AAO:EJS]
 is_a: UBERON:0004768 ! bone of lower jaw
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20850,7 +20850,6 @@ name: pseudodentary tooth
 namespace: uberon
 is_a: UBERON:0003268 ! tooth of lower jaw
 relationship: part_of UBERON:0009679 {source="cjm"} ! set of lower jaw teeth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm." xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20877,7 +20876,6 @@ name: recessus marsupiatus of premaxilla
 namespace: uberon
 def: "Is a recess on the surface of the premaxilla near to the base of the pars facialis." [PHENOSCAPE]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20887,7 +20885,6 @@ name: recessus vaginiformis
 namespace: uberon
 def: "Is a space on the interior surface of the pars facialis of the maxilla." [PHENOSCAPE]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20897,7 +20894,6 @@ name: retroarticular process
 namespace: uberon
 def: "Bony process that is part of the articular and is the point of insertion of the m. interhuoideus posterior." [AAO:LAP]
 relationship: part_of UBERON:3000515 ! pseudoangular
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -20906,7 +20902,6 @@ name: rostral process
 namespace: uberon
 def: "Is a process of the nasal bone directed anteriorly towards the rostrum." [PHENOSCAPE]
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20916,7 +20911,6 @@ name: sulcus dentalis of maxilla
 namespace: uberon
 def: "Groove located between the pars dentalis and the bases of the maxillary teeth." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20926,7 +20920,6 @@ name: sulcus dentalis of premaxilla
 namespace: uberon
 def: "Groove located between the pars dentalis and the bases of the premaxillary teeth." [PHENOSCAPE]
 relationship: part_of UBERON:0002244 ! premaxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20936,7 +20929,6 @@ name: sulcus for Meckels cartilage
 namespace: uberon
 def: "A groove on the palatoquadrate that is occupied by the Meckel's cartilage." [PHENOSCAPE]
 relationship: part_of UBERON:3000012 ! angulosplenial coronoid process
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20945,7 +20937,6 @@ id: UBERON:3000597
 name: symphysis maxillaris
 namespace: uberon
 relationship: part_of UBERON:0001709 ! upper jaw region
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20954,7 +20945,6 @@ id: UBERON:3000605
 name: tentacular foramen
 namespace: uberon
 is_a: UBERON:0011773 ! upper jaw opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20963,7 +20953,6 @@ id: UBERON:3000634
 name: vomerine canal
 namespace: uberon
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20973,7 +20962,6 @@ name: maxillopalatine tooth
 namespace: uberon
 is_a: UBERON:0003267 ! tooth of upper jaw
 relationship: part_of UBERON:0009680 {source="cjm"} ! set of upper jaw teeth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon. Logical definition added by cjm" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20987,7 +20975,6 @@ synonym: "centrum" RELATED [UBERON:3000645]
 synonym: "pars horizontalis" RELATED [UBERON:3000645]
 is_a: UBERON:0012360 ! bone of jaw
 relationship: part_of UBERON:3000998 ! suprarostral cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -20997,7 +20984,6 @@ name: margo libera
 namespace: uberon
 def: "Anterior, rounded portion of the corpus of the septomaxilla." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21007,7 +20993,6 @@ name: crista interna
 namespace: uberon
 def: "Sharp ridge that extends medially from the basal part of the processus infrafenestralis; it separates the diverticulum proncipale from the diverticulum medium." [AAO:LAP]
 relationship: part_of UBERON:3000492 ! processus infrafenestralis
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21017,7 +21002,6 @@ name: anterior process of vomer
 namespace: uberon
 def: "Process that extends anterolaterally toward the maxilla-premaxilla articulation." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21029,7 +21013,6 @@ def: "Anterio portion of the maxilla that may contact the nasal and take part in
 synonym: "processus frontalis" BROAD []
 synonym: "processus praeorbitalis of the pars facialis" RELATED [UBERON:3000650]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21039,7 +21022,6 @@ name: lamina anterior of maxilla
 namespace: uberon
 def: "Most anterior part of the maxilla, which is in contact with the premaxilla." [AAO:LAP]
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21051,7 +21033,6 @@ def: "Depression lacated on the inner surface of the maxilla between the palatin
 comment: Alternative more fish orientated definition: A fossa that is a depression in the proximal end of the maxilla involved in articulation with the palatine [Baldwin, CC and Johnson GD. 1996. Interrelationships of Aulopiformes. Pages 355-404 in MLJ Stiassny, LR Parenti, and DG Johnson, (eds.), Interrelationships of fishes. Academic Press, San Diego, CA.]. [PHENOSCAPE]
 synonym: "maxillary saddle" EXACT []
 relationship: part_of UBERON:0002397 ! maxilla
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21080,7 +21061,6 @@ namespace: uberon
 def: "Tooth-bearing process of the vomer." [AAO:LAP]
 synonym: "torus dentigerous" RELATED [UBERON:3000657]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21091,7 +21071,6 @@ namespace: uberon
 def: "Process that extends laterally from the anterior process; its bifurcation from the postchoanal process occurs at the level of the dentigerous process." [AAO:LAP]
 synonym: "processus choanalis anterior" RELATED [UBERON:3000658]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21102,7 +21081,6 @@ namespace: uberon
 def: "Process that extends laterally from the anterior process; its bifurcation from the prechoanal process occurs at the level of the dentigerous process." [AAO:LAP]
 synonym: "processus choanalis posterior" RELATED [UBERON:3000659]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21112,7 +21090,6 @@ name: margo choanalis
 namespace: uberon
 def: "Margin between the prechoanal and postchoanal process. It bounds the fenestra endochoanalis." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21122,7 +21099,6 @@ name: crista vomeri
 namespace: uberon
 def: "Ridge on the dorsal surface of the vomer that runs from the anterior to the postchoanal processes of the vomer; it takes part in the fixation of the bone to the lateral margin of the solum nasi." [AAO:LAP]
 relationship: part_of UBERON:0002396 ! vomer
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21135,7 +21111,6 @@ synonym: "angular" RELATED [UBERON:3000966]
 synonym: "goniale" RELATED [UBERON:3000966]
 is_a: UBERON:0004768 ! bone of lower jaw
 relationship: part_of UBERON:0003278 ! skeleton of lower jaw
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21146,7 +21121,6 @@ namespace: uberon
 def: "Larval upper jaws articulate with trabecular horns." [AAO:EJS]
 is_a: UBERON:0013765 ! digestive system element
 relationship: part_of UBERON:0001708 ! jaw skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21155,7 +21129,6 @@ id: UBERON:3001003
 name: cloacal fold
 namespace: uberon
 relationship: part_of UBERON:0000162 ! cloaca
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21174,7 +21147,6 @@ id: UBERON:3010091
 name: upper lip protuberances
 namespace: uberon
 relationship: part_of UBERON:0001834 ! upper lip
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21193,7 +21165,6 @@ name: odontoids
 namespace: uberon
 def: "Toothlike processes found on the mandible of some anurans; can be formed by dentary or dentary + mentomeckelian bones; odontoids lack enamel and dentine present in true teeth." [AAO:EJS]
 relationship: part_of UBERON:0001710 ! lower jaw region
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21205,7 +21176,6 @@ def: "The smallest of the blood vessels, parts of the microcirculation, of the l
 synonym: "liver capillary" EXACT [UBERON:3010404]
 is_a: UBERON:0015796 ! liver blood vessel
 relationship: part_of UBERON:0002107 ! liver
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21216,7 +21186,6 @@ namespace: uberon
 synonym: "ala" BROAD []
 synonym: "alae" RELATED PLURAL []
 relationship: part_of UBERON:3000998 ! suprarostral cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21234,7 +21203,6 @@ name: cloacal papilla
 namespace: uberon
 def: "A small, ridge-like projection from the antero-ventral wall of the cloacal chamber." [AAO:BMZ]
 relationship: part_of UBERON:0000162 ! cloaca
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21245,7 +21213,6 @@ namespace: uberon
 def: "A structure that surrounds the cloacal opening, consisting of a mass of coarse tubules." [AAO:BMZ]
 is_a: UBERON:0012478 ! cloacal gland
 relationship: part_of UBERON:0000162 ! cloaca
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21502,7 +21469,6 @@ created_by: LMJ
 id: UBERON:6001842
 name: insect embryonic/larval digestive system
 namespace: uberon
-def: "." [FlyBase:FBrf0007733, FlyBase:FBrf0064792]
 synonym: "larval digestive system" EXACT []
 xref: FBbt:00001842
 is_a: UBERON:0001007 ! digestive system

@@ -4,18 +4,58 @@ ontology: uberon/subsets/nervous-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
@@ -692,6 +732,7 @@ xref: http://linkedlifedata.com/resource/umls/id/C0458308
 xref: http://www.snomedbrowser.com/Codes/Details/279165009
 xref: NCIT:C32290
 xref: UMLS:C0458308 {source="ncithesaurus:Cerebral_Gyrus"}
+relationship: part_of UBERON:0000956 ! cerebral cortex
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/RDruzinsky
@@ -1342,8 +1383,8 @@ namespace: uberon
 def: "The habenular trigone is a small depressed triangular area situated in front of the superior colliculus and on the lateral aspect of the posterior part of the taenia thalami. It contains a group of nerve cells termed the ganglion habenulC&. Fibers enter it from the stalk of the pineal body, and others, forming what is termed the habenular commissure, pass across the middle line to the corresponding ganglion of the opposite side. Most of its fibers are, however, directed downward and form a bundle, the fasciculus retroflexus of Meynert, which passes medial to the red nucleus, and, after decussating with the corresponding fasciculus of the opposite side, ends in the interpeduncular ganglion." [http://en.wikipedia.org/wiki/Habenular_trigone]
 comment: superclass in BTO is thalamic nucleus, not present in most ontologies
 synonym: "trigone of habenulae" RELATED [BTO:0002700]
-synonym: "trigonum habenulae" RELATED LATIN [http://en.wikipedia.org/wiki/Habenular_trigone]
 synonym: "trigonum habenulae" RELATED [BTO:0002700]
+synonym: "trigonum habenulae" RELATED LATIN [http://en.wikipedia.org/wiki/Habenular_trigone]
 xref: BAMS:hbt
 xref: BTO:0002700
 xref: FMA:74868
@@ -1805,7 +1846,6 @@ xref: UMLS:C1269537 {source="BIRNLEX:796"}
 xref: VHOG:0000157
 xref: XAO:0000010
 xref: ZFA:0000008
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
 property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 property_value: IAO:0000116 "requires review for applicability to invertebrate structures, e.g. synganglion" xsd:string
@@ -1861,7 +1901,6 @@ xref: PBA:128011354
 xref: UMLS:C0007776 {source="BIRNLEX:1494"}
 xref: UMLS:C0007776 {source="ncithesaurus:Cortex"}
 xref: VHOG:0000722
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0011215 ! central nervous system cell part cluster
 is_a: UBERON:0016548 {source="FMA"} ! central nervous system gray matter layer
 relationship: part_of UBERON:0000203 {source="GO", source="ISBN:0471888893"} ! pallium
@@ -4735,8 +4774,8 @@ namespace: uberon
 def: "Ganglion containing neurons that receive innervation from parasympathetic neurons in the central nervous system and subserves parasympathetic functions through innervation of smooth muscle, cardiac muscle and glands." [NLXANAT:100303]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "ganglion parasympathicum" RELATED LATIN [http://en.wikipedia.org/wiki/Parasympathetic_ganglion]
 synonym: "ganglion parasympathicum" RELATED [BTO:0001256]
+synonym: "ganglion parasympathicum" RELATED LATIN [http://en.wikipedia.org/wiki/Parasympathetic_ganglion]
 xref: BTO:0001256
 xref: EHDAA2:0001400
 xref: EMAPA:32813
@@ -4756,7 +4795,6 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/f/f7/G
 id: UBERON:0001809
 name: enteric ganglion
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Enteric_ganglia]
 subset: pheno_slim
 synonym: "intramural ganglion" EXACT [FMA:5896]
 xref: EMAPA:35312
@@ -5817,7 +5855,6 @@ xref: UMLS:C0085140 {source="BIRNLEX:1509"}
 xref: VHOG:0000383
 xref: XAO:0000011
 xref: ZFA:0000109
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0000955 ! brain
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg xsd:anyURI
@@ -7640,7 +7677,6 @@ xref: UMLS:C0039441 {source="BIRNLEX:1200"}
 xref: VHOG:0001367
 xref: XAO:0004271
 xref: ZFA:0000160
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0001891 ! midbrain
 relationship: part_of UBERON:0002298 ! brainstem
@@ -11283,8 +11319,8 @@ xref: EV:0100173
 xref: FMA:77624
 xref: GAID:633
 xref: HBA:9303
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=279
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=279 {source="BIRNLEX:1137"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=279
 xref: http://linkedlifedata.com/resource/umls/id/C0028936
 xref: http://www.snomedbrowser.com/Codes/Details/279394006
 xref: MA:0000194
@@ -11917,7 +11953,6 @@ xref: UMLS:C0006121 {source="BIRNLEX:1565"}
 xref: UMLS:C0006121 {source="ncithesaurus:Brain_Stem"}
 xref: VHOG:0001457
 xref: ZFA:0001707
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0000955 ! brain
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b7/Gray719.png xsd:anyURI
@@ -11939,7 +11974,6 @@ xref: ABA:CTX1-6b
 xref: EMAPA:35588
 xref: FMA:83138
 xref: MA:0000186
-is_a: UBERON:0011215 ! central nervous system cell part cluster
 is_a: UBERON:0022303 ! nervous system cell part layer
 is_a: UBERON:8440004 ! laminar subdivision of the cortex
 relationship: part_of UBERON:0001950 ! neocortex
@@ -13042,8 +13076,8 @@ xref: DMBA:17007
 xref: EMAPA:35914
 xref: FMA:72435
 xref: HBA:9069
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=518
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=518 {source="BIRNLEX:1421"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=518
 xref: http://linkedlifedata.com/resource/umls/id/C0175394
 xref: http://www.snomedbrowser.com/Codes/Details/369244006
 xref: MA:0001031
@@ -13866,8 +13900,8 @@ xref: DMBA:16589
 xref: EMAPA:37921 {source="MA:th"}
 xref: FMA:72405
 xref: HBA:9086
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=472 {source="BIRNLEX:1037"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=472
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=472 {source="BIRNLEX:1037"}
 xref: http://en.wikipedia.org/wiki/Olivary_pretectal_nucleus
 xref: http://linkedlifedata.com/resource/umls/id/C0175359
 xref: MBA:706
@@ -19722,7 +19756,6 @@ relationship: part_of UBERON:0003023 {source="FMA"} ! pontine tegmentum
 id: UBERON:0002792
 name: lumbar spinal cord
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Lumbar_spinal_cord]
 subset: uberon_slim
 synonym: "lumbar segment of spinal cord" EXACT [FMA:71168]
 synonym: "lumbar segments of spinal cord [1-5]" EXACT [FMA:71168]
@@ -25465,7 +25498,6 @@ xref: TAO:0000042
 xref: VHOG:0000649
 xref: XAO:0000016
 xref: ZFA:0000042
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000955 {source="ZFA"} ! brain
 property_value: IAO:0000116 "consider adding class for organizer. Consider adding separate class for isthmus as a structure" xsd:string
 property_value: UBPROP:0000003 "Lampreys also have an MHB [midbrain hindbrain boundary], expressing a similar repertoire of regulatory gene cognates as in gnathostomes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000649", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1016/j.ydbio.2005.02.008 Murakami Y, Uchida K, Rijli FM and Kuratani S, Evolution of the brain developmental plan: Insights from agnathans. Developmental Biology (2005)"}
@@ -27478,7 +27510,6 @@ xref: UMLS:C1518263 {source="ncithesaurus:Neural_Retina"}
 xref: VHOG:0000535
 xref: XAO:0003216
 xref: ZFA:0000046
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0001781 ! layer of retina
 property_value: UBPROP:0000003 "(...) an essentially similar sequence of events occurs during the embryonic development of the vertebrate eye. The eye initially develops as a single median evagination of the diencephalon that soon bifurcates to form the paired optic vesicles. As each optic vesicle grows towards the body surface, its proximal part narrows as the optic stalk, and its distal part invaginates to form a two-layered optic cup. (...) The outer layer of the optic cup becomes the pigment layer of the retina, whereas the inner layer differentiates into the photoreceptive cells and neuronal layers of the retina.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000535", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.429"}
 
@@ -27915,7 +27946,6 @@ property_value: UBPROP:0000012 "it is not clear if the FMA class refers to CNS o
 id: UBERON:0004001
 name: olfactory bulb layer
 namespace: uberon
-def: "." [MP:0009946]
 subset: pheno_slim
 synonym: "cytoarchitectural part of olfactory bulb" EXACT [NLXANAT:20090402]
 xref: EMAPA:37917 {source="MA:th"}
@@ -28186,7 +28216,6 @@ xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3233
 xref: http://en.wikipedia.org/wiki/Subplate
 xref: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Corticogenesis_in_a_wild-type_mouse_with_captions_in_english_copy.png/360px-Corticogenesis_in_a_wild-type_mouse_with_captions_in_english_copy.png
 xref: PBA:294021932
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0014950 ! layer of developing cerebral cortex
 property_value: UBPROP:0000011 "The transient fetal subplate zone, together with the marginal zone and the cortical plate, represents the developmental anlage of the mammalian cerebral cortex. It serves as a waiting compartment for growing cortical afferents; its cells are involved in the establishment of pioneering cortical efferent projections and transient fetal circuitry, and apparently have a number of other developmental roles. The subplate zone is a phylogenetically recent structure and it is most developed in the human brain. Subplate neurons are among the first generated neurons in the mammalian cerebral cortex [1]. These neurons disappear during postnatal development and are important in establishing the correct wiring [2][3] and functional maturation [4] of the cerebral cortex. Subplate neurons appear to be selectively sensitive to injury (such as hypoxia) which in humans are associated with motor and cognitive defects" xsd:string {source="WP"}
 
@@ -28202,7 +28231,6 @@ synonym: "cortical mantle layer" RELATED []
 synonym: "IZ" BROAD ABBREVIATION [BRAINSPAN:BRAINSPAN]
 xref: EMAPA:17545
 xref: EMAPA:32712
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0014950 ! layer of developing cerebral cortex
 
 [Term]
@@ -28332,7 +28360,6 @@ xref: EMAPA:17152
 xref: EMAPA:35362
 xref: EMAPA_RETIRED:16783
 xref: MA:0003193
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0034706 {source="NCBIBook:NBK10047"} ! proliferating neuroepithelium
 property_value: IAO:0000116 "consider merging with 'ventricular zone'; note that the MA class probably does not belong here, as this is an embryonic structure" xsd:string
 property_value: UBPROP:0000001 "The layer of undifferentiated, proliferating cells that line the neural tube lumen" xsd:string {source="MP:0009689"}
@@ -28348,7 +28375,6 @@ synonym: "neural tube intermediate zone" EXACT [http://www.ncbi.nlm.nih.gov/book
 xref: EMAPA:17148
 xref: EMAPA:35360
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1367
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0034707 {source="NCBIBook:NBK10047"} ! differentiating neuroepithelium
 
 [Term]
@@ -28460,7 +28486,6 @@ property_value: UBPROP:0000009 "modulates muscle stretch reflexes of proximal li
 id: UBERON:0004074
 name: cerebellum vermis lobule I
 namespace: uberon
-def: "." [MP:0009988]
 subset: pheno_slim
 synonym: "lingula" RELATED [MA:0000998]
 synonym: "lingula (I)" EXACT [ABA:LING]
@@ -28493,7 +28518,6 @@ property_value: IAO:0000116 "TODO FMA:61904 lingual gyrus FMA:71032 lingula gyru
 id: UBERON:0004075
 name: cerebellum vermis lobule II
 namespace: uberon
-def: "." [MP:0009989]
 subset: pheno_slim
 synonym: "central lobule" BROAD [MA:0000999]
 synonym: "central lobule of cerebellum" BROAD []
@@ -28515,7 +28539,6 @@ property_value: UBPROP:0000012 "central vs alar central? II and III? part_of CEN
 id: UBERON:0004076
 name: cerebellum vermis lobule III
 namespace: uberon
-def: "." [MP:0009990]
 subset: pheno_slim
 synonym: "central lobule" BROAD [MA:0001000]
 synonym: "central lobule of cerebellum" BROAD []
@@ -28590,7 +28613,6 @@ relationship: part_of UBERON:0003012 {source="NIFSTD"} ! flocculonodular lobe
 id: UBERON:0004079
 name: cerebellum vermis lobule V
 namespace: uberon
-def: "." [MP:0009993]
 subset: pheno_slim
 synonym: "culmen" BROAD [MA:0001002]
 synonym: "culmen of cerebellum" BROAD []
@@ -28617,7 +28639,6 @@ name: cerebellum vermis lobule VI
 namespace: uberon
 alt_id: UBERON:0000909
 alt_id: UBERON:Declive-MA_0001003
-def: "." [MP:0009994]
 subset: pheno_slim
 synonym: "declive" BROAD [MA:0001003]
 synonym: "declive (VI)" EXACT [ABA:DEC]
@@ -28671,7 +28692,6 @@ id: UBERON:0004082
 name: cerebellum vermis lobule VIII
 namespace: uberon
 alt_id: UBERON:0002312
-def: "." [MP:0009996]
 subset: pheno_slim
 synonym: "cerebellum lobule VIII" EXACT []
 synonym: "lobule VIII of cerebellum vermis" EXACT []
@@ -28700,7 +28720,6 @@ relationship: part_of UBERON:0004009 ! cerebellum posterior vermis
 id: UBERON:0004083
 name: cerebellum vermis lobule X
 namespace: uberon
-def: "." [MP:0009997]
 subset: pheno_slim
 synonym: "lobule X of cerebellum vermis" EXACT []
 synonym: "lobule X of vermis of cerebellum" RELATED [FMA:83882]
@@ -28827,7 +28846,6 @@ property_value: IAO:0000116 "TODO - check ZFA link. note this is part of medulla
 id: UBERON:0004133
 name: salivatory nucleus
 namespace: uberon
-def: "." [GO:0021751]
 synonym: "salivary nucleus" EXACT [GO:0021751]
 is_a: UBERON:0006331 ! brainstem nucleus
 is_a: UBERON:0009662 ! hindbrain nucleus
@@ -28837,7 +28855,6 @@ relationship: part_of UBERON:0000988 ! pons
 id: UBERON:0004166
 name: superior reticular formation
 namespace: uberon
-def: "." [GO:0021729, GO_REF:0000021]
 is_a: UBERON:0007245 {source="https://orcid.org/0000-0002-6601-2165"} ! nuclear complex of neuraxis
 is_a: UBERON:0019263 ! gray matter of hindbrain
 relationship: part_of UBERON:0002559 {source="GO"} ! medullary reticular formation
@@ -29687,7 +29704,6 @@ property_value: UBPROP:0000001 "A cytoarchitecturally defined portion of the ret
 id: UBERON:0004718
 name: Brodmann (1909) area 26
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Brodmann_area_26]
 synonym: "area 26 of Brodmann" EXACT [FMA:68623]
 synonym: "area 26 of Brodmann (guenon)" RELATED [NeuroNames:1031]
 synonym: "area 26 of Brodmann-1909" EXACT [BIRNLEX:1757]
@@ -30018,7 +30034,6 @@ synonym: "forebrain-midbrain boundary region" EXACT [EMAPA:36449]
 xref: EMAPA:36449
 xref: TAO:0001367
 xref: ZFA:0001367
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000955 ! brain
 property_value: UBPROP:0000001 "The boundary between the diencephalon and the mesencephalon.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001367", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000002 "relationship loss: develops_from forebrain midbrain boundary neural tube (TAO:0007040)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001367", ontology="TAO"}
@@ -30311,7 +30326,6 @@ xref: HBA:9512
 xref: http://en.wikipedia.org/wiki/Myelencephalon
 xref: MA:0000205
 xref: VHOG:0000456
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0004733 ! segmental subdivision of hindbrain
 relationship: part_of UBERON:0002028 ! hindbrain
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg xsd:anyURI
@@ -30422,7 +30436,6 @@ xref: EMAPA:32711
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2702
 xref: MBA:695
 xref: PBA:294021914
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0014950 ! layer of developing cerebral cortex
 property_value: UBPROP:0000011 "A single stem cell in the ventricular layer can give rise to neurons (and glial cells) in any of the cortical layers (Walsh and Cepko 1988)[NCBIBook:NBK10047]" xsd:string
 property_value: UBPROP:0000011 "in humans develops into cortical layers II-VI" xsd:string
@@ -30449,7 +30462,6 @@ is_a: UBERON:0004081 {source="NIF"} ! cerebellum vermis lobule VII
 id: UBERON:0005346
 name: cerebellum vermis lobule VIIB
 namespace: uberon
-def: "." [MP:0009999]
 subset: pheno_slim
 synonym: "lobule VII B of vermis" EXACT [FMA:83890]
 synonym: "lobule VIIB (gracile lobule)" RELATED [DHBA:CbVIIb]
@@ -32815,7 +32827,6 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/36/G
 id: UBERON:0005976
 name: ansiform lobule crus I
 namespace: uberon
-def: "." [MP:0010002]
 subset: pheno_slim
 synonym: "ansiform lobe of the cerebellum, crus 1" RELATED [NeuroNames:667]
 synonym: "Cb-Crus I" RELATED ABBREVIATION [HBA:12938]
@@ -32858,7 +32869,6 @@ property_value: IAO:0000116 "synonym with hemispheric lobule VIIA based on FMA a
 id: UBERON:0005977
 name: ansiform lobule crus II
 namespace: uberon
-def: "." [MP:0010003]
 subset: pheno_slim
 synonym: "ansiform lobe of the cerebellum, crus 2" RELATED [NeuroNames:668]
 synonym: "Cb-Crus II" RELATED ABBREVIATION [HBA:12939]
@@ -33270,8 +33280,8 @@ synonym: "principle auditory receptive areas" EXACT [BIRNLEX:1582]
 xref: BIRNLEX:1582
 xref: BIRNLEX:1774
 xref: FMA:68638
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95 {source="BIRNLEX:1582"}
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95 {source="BIRNLEX:1582"}
 xref: http://linkedlifedata.com/resource/umls/id/C1272502
 xref: UMLS:C1272502 {source="BIRNLEX:1774"}
 is_a: UBERON:0013529 {source="NIFSTD"} ! Brodmann area
@@ -33345,8 +33355,8 @@ xref: BAMS:BG
 xref: BAMS:BNC
 xref: BIRNLEX:1629
 xref: EV:0100182
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=224
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=224 {source="BIRNLEX:1629"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=224
 xref: http://linkedlifedata.com/resource/umls/id/C0004781
 xref: UMLS:C0004781 {source="BIRNLEX:1629"}
 is_a: UBERON:0007245 ! nuclear complex of neuraxis
@@ -33357,7 +33367,6 @@ relationship: part_of UBERON:0002743 ! basal forebrain
 id: UBERON:0006099
 name: Brodmann (1909) area 1
 namespace: uberon
-def: "." [BIRNLEX:1732]
 synonym: "area 1 of Brodmann" EXACT [FMA:68597]
 synonym: "area 1 of Brodmann (guenon)" RELATED [NeuroNames:1022]
 synonym: "area 1 of Brodmann-1909" EXACT [BIRNLEX:1732]
@@ -33384,7 +33393,6 @@ relationship: part_of UBERON:0000956 ! cerebral cortex
 id: UBERON:0006100
 name: Brodmann (1909) area 3
 namespace: uberon
-def: "." [BIRNLEX:1734]
 synonym: "area 3 of Brodmann" EXACT [FMA:68599]
 synonym: "area 3 of Brodmann (guenon)" RELATED [NeuroNames:1006]
 synonym: "area 3 of Brodmann-1909" EXACT [BIRNLEX:1734]
@@ -33411,7 +33419,6 @@ relationship: part_of UBERON:0000956 ! cerebral cortex
 id: UBERON:0006101
 name: Brodmann (1909) area 24
 namespace: uberon
-def: "." [BIRNLEX:1755, https://github.com/obophenotype/uberon/issues/1161]
 synonym: "agranular cingulate area" RELATED [NeuroNames:1007]
 synonym: "anterior cingulate area" RELATED [NeuroNames:1007]
 synonym: "area 24 of Brodmann" EXACT [FMA:68621]
@@ -33647,8 +33654,8 @@ synonym: "fibrae nervi accessorius" RELATED LATIN [NeuroNames:792]
 xref: BAMS:11nf
 xref: BIRNLEX:916
 xref: FMA:72626
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792 {source="BIRNLEX:916"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=792
 xref: http://linkedlifedata.com/resource/umls/id/C0175549
 xref: UMLS:C0175549 {source="BIRNLEX:916"}
 is_a: UBERON:0000122 ! neuron projection bundle
@@ -33942,7 +33949,6 @@ xref: EMAPA:16092
 xref: EMAPA:16755
 xref: TAO:0000417
 xref: ZFA:0000417
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -34561,7 +34567,6 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/11/B
 id: UBERON:0006473
 name: Brodmann (1909) area 18
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Brodmann_area_18]
 synonym: "area 18 of Brodmann" EXACT [FMA:68615]
 synonym: "area 18 of Brodmann (guenon)" RELATED [NeuroNames:1027]
 synonym: "area 18 of Brodmann-1909" EXACT [BIRNLEX:1749]
@@ -34759,7 +34764,6 @@ relationship: part_of UBERON:0000956 ! cerebral cortex
 id: UBERON:0006480
 name: Brodmann (1909) area 39
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Brodmann_area_39]
 synonym: "angular area 39" EXACT [FMA:68636]
 synonym: "area 39 of Brodmann" EXACT [FMA:68636]
 synonym: "area 39 of Brodmann-1909" EXACT [BIRNLEX:1772]
@@ -36357,7 +36361,6 @@ relationship: part_of UBERON:0002272 {source="MA"} ! medial zone of hypothalamus
 id: UBERON:0007627
 name: magnocellular nucleus of stria terminalis
 namespace: uberon
-def: "." [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3220]
 comment: the magnocellular nucleus projects to virtually all known major parts of the brain network that controls pelvic functions, including micturition, defecation, and penile erection, as well as to brain networks controlling nutrient and body water homeostasis. This and other evidence suggests that the magnocellular nucleus is part of a corticostriatopallidal differentiation modulating and coordinating pelvic functions with the maintenance of nutrient and body water homeostasis[PMID:16304682]
 synonym: "magnocellular nucleus" EXACT [MA:0000928]
 xref: BAMS:MA
@@ -37261,7 +37264,6 @@ property_value: UBPROP:0000002 "relationship type change: part_of_proxy lateral 
 id: UBERON:0008921
 name: substratum of layer of retina
 namespace: uberon
-def: "." [http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html, UBERON:CL_meeting_20110725]
 is_a: UBERON:0022303 ! nervous system cell part layer
 relationship: part_of UBERON:0000966 ! retina
 
@@ -38322,7 +38324,6 @@ relationship: part_of UBERON:0002559 {source="FMA"} ! medullary reticular format
 id: UBERON:0009776
 name: intermediate reticular formation
 namespace: uberon
-def: "." [https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3413098&group_id=36855]
 synonym: "intermediate reticular formations" RELATED PLURAL [ZFA:0000219]
 xref: TAO:0000219
 xref: ZFA:0000219
@@ -39197,7 +39198,6 @@ relationship: part_of UBERON:0001880 {source="MA"} ! bed nucleus of stria termin
 id: UBERON:0011175
 name: fusiform nucleus of stria terminalis
 namespace: uberon
-def: "." [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3218]
 synonym: "bed nuclei of the stria terminalis anterior division fusiform nucleus" RELATED [BAMS:BSTfu]
 synonym: "bed nuclei of the stria terminalis fusiform nucleus" RELATED [BAMS:BSTfu]
 synonym: "bed nuclei of the stria terminalis, anterior division, fusiform nucleus" EXACT [ABA:BSTfu]
@@ -39217,7 +39217,6 @@ relationship: part_of UBERON:0011173 {source="MA"} ! anterior division of bed nu
 id: UBERON:0011176
 name: oval nucleus of stria terminalis
 namespace: uberon
-def: "." [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3214]
 synonym: "bed nuclei of the stria terminalis, anterior division, oval nucleus" EXACT [ABA:BSTov]
 synonym: "oval nucleus" EXACT [MA:0000929]
 xref: EMAPA:37667 {source="MA:th"}
@@ -39252,7 +39251,6 @@ relationship: part_of UBERON:0001880 {source="MA"} ! bed nucleus of stria termin
 id: UBERON:0011178
 name: principal nucleus of stria terminalis
 namespace: uberon
-def: "." [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3221]
 synonym: "bed nuclei of the stria terminalis posterior division principal nucleus" RELATED [BAMS:BSTpr]
 synonym: "bed nuclei of the stria terminalis principal nucleus" RELATED [BAMS:BSTpr]
 synonym: "bed nuclei of the stria terminalis, posterior division, principal nucleus" EXACT [ABA:BSTpr]
@@ -39270,7 +39268,6 @@ relationship: part_of UBERON:0011177 {source="MA"} ! posterior division of bed n
 id: UBERON:0011179
 name: transverse nucleus of stria terminalis
 namespace: uberon
-def: "." [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3223]
 synonym: "bed nuclei of the stria terminalis posterior division transverse nucleus" RELATED [BAMS:BSTtr]
 synonym: "bed nuclei of the stria terminalis transverse nucleus" RELATED [BAMS:BSTtr]
 synonym: "bed nuclei of the stria terminalis, posterior division, transverse nucleus" EXACT [ABA:BSTtr]
@@ -39517,7 +39514,6 @@ property_value: UBPROP:0000008 "Reissner's fiber is present in the central canal
 id: UBERON:0011358
 name: infundibular organ
 namespace: uberon
-def: "." [http://orcid.org/0000-0002-6601-2165]
 comment: Resembles the subcommisural organ structurally, ultrastructurally and immunochemically[Niewenhuys] Gives rise to Reissner's fiber; however secretions are not identical to those of SCO [PMID:9550137][DOI:10.1007/BF00303086]
 synonym: "infundibular organ of Boeke" EXACT []
 synonym: "ventral infundibular organ" EXACT []
@@ -40068,7 +40064,6 @@ property_value: UBPROP:0000001 "Indentation on the surface of the brain or spina
 id: UBERON:0013146
 name: venous system of brain
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/20557782, http://www.ncbi.nlm.nih.gov/pubmed/20566102]
 synonym: "brain venous system" EXACT [VHOG:0001328]
 synonym: "cranial venous system" RELATED []
 xref: EHDAA2:0000185
@@ -40461,7 +40456,6 @@ is_a: UBERON:0013529 {source="NIFSTD"} ! Brodmann area
 id: UBERON:0013540
 name: Brodmann (1909) area 9
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Brodmann_area_9]
 synonym: "area 9 of Brodmann" EXACT [FMA:68606]
 synonym: "area 9 of Brodmann (guenon)" RELATED [NeuroNames:1024]
 synonym: "area 9 of Brodmann-1909" EXACT [BIRNLEX:1740]
@@ -40508,8 +40502,8 @@ xref: BIRNLEX:1741
 xref: Brodmann_area:10
 xref: DHBA:146034836
 xref: FMA:68607
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=76
 xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=76 {source="BIRNLEX:1741"}
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=76
 xref: http://linkedlifedata.com/resource/umls/id/C1272532
 xref: UMLS:C1272532 {source="BIRNLEX:1741"}
 is_a: UBERON:0013529 {source="NIFSTD"} ! Brodmann area
@@ -40819,7 +40813,6 @@ relationship: part_of UBERON:0001953 {notes="consider merging many sources treat
 id: UBERON:0013559
 name: Brodmann (1909) area 28
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Brodmann_area_28]
 synonym: "area 28 of Brodmann" EXACT []
 synonym: "area 28 of Brodmann (Crosby)" EXACT []
 synonym: "area 28 of Brodmann (guenon)" RELATED [NeuroNames:1030]
@@ -43395,7 +43388,6 @@ relationship: part_of UBERON:0000203 ! pallium
 id: UBERON:0014757
 name: hyperpallium apicale
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/23027930]
 synonym: "HA" RELATED ABBREVIATION [http://www.ncbi.nlm.nih.gov/pubmed/23027930]
 xref: BTO:0003402
 is_a: UBERON:0002616 ! regional part of brain
@@ -43405,7 +43397,6 @@ relationship: part_of UBERON:0000203 ! pallium
 id: UBERON:0014758
 name: interstitial part of hyperpallium apicale
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/23027930]
 synonym: "IHA" RELATED ABBREVIATION [http://www.ncbi.nlm.nih.gov/pubmed/23027930]
 is_a: UBERON:0002616 ! regional part of brain
 relationship: part_of UBERON:0014757 ! hyperpallium apicale
@@ -46770,7 +46761,6 @@ property_value: UBPROP:0000013 "many sources refer to this simply as the 'superi
 id: UBERON:0022437
 name: dorsal periolivary nucleus
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29]
 synonym: "DPeO" RELATED ABBREVIATION [DMBA:17260]
 synonym: "DPO" RELATED ABBREVIATION []
 synonym: "nuclei periolivares" BROAD LATIN [FMA:TA]
@@ -54444,7 +54434,6 @@ id: UBERON:3000393
 name: pars amphibiorum
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54453,7 +54442,6 @@ id: UBERON:3000395
 name: pars basilaris
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54499,7 +54487,6 @@ name: median pars intermedia
 namespace: uberon
 def: "Region of the adenohypophysis which secretes melanophore-stimulating hormone, affecting the integumentary chromatophores." [AAO:BJB]
 relationship: part_of UBERON:0002196 ! adenohypophysis
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54510,7 +54497,6 @@ namespace: uberon
 def: "Ramule of ophthalmic nerve (see also ramus nasalis medialis). The first branch of ophthalmic nerve gives rise to two ramules that border the naris and innervate the surrounding tissue." [AAO:EJS]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0000348 ! ophthalmic nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54520,7 +54506,6 @@ name: ramus nasalis medialis
 namespace: uberon
 def: "Ramule of ophthalmic nerve (see also ramus nasalis lateralis). First branch gives rise to two ramules that border the naris and innervate the surrounding tissue." [AAO:EJS]
 relationship: part_of UBERON:0000348 ! ophthalmic nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54530,7 +54515,6 @@ name: ramus nasalis internus
 namespace: uberon
 def: "Distal part of the opthalmicus profundus gives rise to 2 ramules: palatinus and cutaneous." [AAO:EJS]
 is_a: UBERON:0000348 ! ophthalmic nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54540,7 +54524,6 @@ name: ramule palatinus
 namespace: uberon
 def: "Ramules that descends towards the buccal roof and give rise to several short branches that anastomose with palatine ramus of the facial nerve." [AAO:EJS]
 is_a: UBERON:3010661 ! ramus nasalis internus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54553,7 +54536,6 @@ def: "Many branches of the maxillary ramus that terminate in the integument of t
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0000377 ! maxillary nerve
 relationship: part_of UBERON:3010661 ! ramus nasalis internus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54564,7 +54546,6 @@ namespace: uberon
 def: "Portion of the trigeminal nerve where the maxillary and mandibular rami run together prior to bifurcating." [AAO:EJS]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:0001645 ! trigeminal nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54575,7 +54556,6 @@ namespace: uberon
 def: "Descends and branches to the buccal roof where it anastomoses with the palatine ramus of the facial nerve." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000377 ! maxillary nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54586,7 +54566,6 @@ namespace: uberon
 def: "In the adult anuran, this innervates the muscles levator mandibulare internus and longus." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000375 ! mandibular nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54597,7 +54576,6 @@ namespace: uberon
 def: "The posttrematic branch of the facial nerve, both motor and sensory in function." [AAO:CAM]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001647 ! facial nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54607,7 +54585,6 @@ name: ramus palatinus
 namespace: uberon
 def: "Sensory branch of facial nerve from palatal region." [AAO:CAM]
 is_a: UBERON:0001647 ! facial nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54618,7 +54595,6 @@ namespace: uberon
 def: "Branchiomotor branch of the glossopharyngeus nerve innervating the m. subarcuales rectus I." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001649 ! glossopharyngeal nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54628,7 +54604,6 @@ name: ramus anterior of CN VIII
 namespace: uberon
 def: "Formed by fibers from the anterior semicircular canal and sacculus." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54638,7 +54613,6 @@ name: ramus posterior of CN VIII
 namespace: uberon
 def: "Composed of two rami: a short ventral ramus innervating the cochlea (lagena and papille basilar), and a long dorsal ramus innervating the posterior semicircular canal." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54648,7 +54622,6 @@ name: ramus auricularis of the vagus nerve
 namespace: uberon
 def: "An afferent branch of the vagus nerve." [AAO:EJS]
 is_a: UBERON:0001759 ! vagus nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54660,7 +54633,6 @@ def: "Major branch of the vagus supplying parasympathetic innervation to viscera
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000011 ! parasympathetic nervous system
 relationship: part_of UBERON:0001759 ! vagus nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54671,7 +54643,6 @@ namespace: uberon
 def: "Motor nervous branch of the vagus innervating m. subarcualis rectus I." [AAO:CAM]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:3010754 ! ramus recurrens
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54682,7 +54653,6 @@ namespace: uberon
 def: "Branch of the vagus nerve that separates from the vagus well postcranially, then continues anteriorly to innervate the larynx." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001759 ! vagus nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54711,7 +54681,6 @@ namespace: uberon
 def: "A branch of the vagus nerve innervating heart, stomach, and lung muscle." [AAO:CAM]
 is_a: UBERON:0011779 ! nerve of head region
 relationship: part_of UBERON:3010754 ! ramus recurrens
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54729,7 +54698,6 @@ id: UBERON:3010770
 name: dorsal sympathetic chain
 namespace: uberon
 is_a: UBERON:0000407 ! sympathetic trunk
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54738,7 +54706,6 @@ id: UBERON:3010771
 name: ventral sympathetic chain
 namespace: uberon
 is_a: UBERON:0000407 ! sympathetic trunk
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54820,7 +54787,6 @@ name: gasserian ganglion
 namespace: uberon
 synonym: "gasserian ganglia" RELATED [UBERON:3011045]
 is_a: UBERON:0000045 ! ganglion
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -54877,7 +54843,6 @@ relationship: part_of UBERON:6001920 ! insect embryonic/larval brain
 id: UBERON:6003559
 name: insect adult nervous system
 namespace: uberon
-def: "." [FlyBase:FBrf0002482, FlyBase:FBrf0007196, FlyBase:FBrf0007735, FlyBase:FBrf0034076]
 xref: FBbt:00003559
 is_a: UBERON:0001016 ! nervous system
 
