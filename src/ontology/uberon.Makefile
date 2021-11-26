@@ -1280,7 +1280,8 @@ prepare_release: copy_additional_files
 copy_additional_files:
 	rm -rf ../../bridge
 	mkdir -p ../../bridge 
-	cp $(BRIDGEDIR)/*.{obo,owl} ../../bridge/ ;\
+	cp $(BRIDGEDIR)/*.obo ../../bridge/ ;\
+	cp $(BRIDGEDIR)/*.owl ../../bridge/ ;\
 	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
@@ -1712,6 +1713,7 @@ reports/%.csv: ../sparql/%.sparql uberon.owl
 
 $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 	$(ROBOT) convert -i $< -f owl -o $@
+.PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
 $(BRIDGEDIR)/uberon-bridge-to-nifstd.obo:
 	echo "STRONG WARNING make $@ failed, because xref-to-equiv.pl script is missing!" && touch $@

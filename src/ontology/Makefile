@@ -62,7 +62,7 @@ all: odkversion all_imports all_main all_subsets sparql_test all_reports all_ass
 
 .PHONY: test
 test: odkversion sparql_test all_reports 
-	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed all --exclude-tautologies structural --output test.owl && rm test.owl && echo "Success"
+	$(ROBOT) reason --input $(SRC) --reasoner ELK  --equivalent-classes-allowed asserted-only --exclude-tautologies structural --output test.owl && rm test.owl && echo "Success"
 
 .PHONY: odkversion
 odkversion:
@@ -92,17 +92,7 @@ IMPORTS =  pr cl go envo ro bspo chebi pato bfo ncbitaxon nbo ceph cteno ehdaa2 
 
 IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
-IMPORT_OBO_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).obo)
-IMPORT_FILES = $(IMPORT_OWL_FILES) $(IMPORT_OBO_FILES)
-
-.PHONY: normalize_obo_src
-normalize_obo_src: $(SRC)
-	$(OWLTOOLS) $< --merge-axiom-annotations -o -f obo $(TMPDIR)/NORM.obo && robot convert -i $(TMPDIR)/NORM.obo -o $(TMPDIR)/NORM.tmp.obo && mv $(TMPDIR)/NORM.tmp.obo $(SRC)
-
-.PHONY: normalize_src
-normalize_src: $(SRC)
-	$(ROBOT) convert -i $< -f obo --check false -o tmp/normalise && mv tmp/normalise $<
-
+IMPORT_FILES = $(IMPORT_OWL_FILES)
 
 
 .PHONY: all_imports
@@ -229,6 +219,12 @@ imports/%_terms_combined.txt: $(IMPORTSEED) imports/%_terms.txt
 	if [ $(IMP) = true ]; then cat $^ | grep -v ^# | sort | uniq >  $@; fi
 
 
+imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
+	echo "ERROR: You have configured your default module type to be slme; this behavior needs to be overwritten in uberon.Makefile!" && false
+
+
+
+
 imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T imports/$*_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
@@ -236,12 +232,6 @@ imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 .PRECIOUS: imports/%_import.owl
-
-# convert imports to obo.
-# this can be useful for spot-checks and diffs.
-# we set strict mode to false by default. For discussion see https://github.com/owlcs/owlapi/issues/752
-imports/%_import.obo: imports/%_import.owl
-	if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f obo -o $@.tmp.obo && mv $@.tmp.obo $@; fi
 
 ## Module for ontology: pr
 
@@ -268,6 +258,11 @@ imports/ncbitaxon_import.owl: mirror/ncbitaxon.owl imports/ncbitaxon_terms_combi
 refresh-imports:
 	make IMP=true MIR=true PAT=false IMP_LARGE=true all_imports -B
 
+.PHONY: no-mirror-refresh-imports
+no-mirror-refresh-imports:
+	make IMP=true MIR=false PAT=false IMP_LARGE=true all_imports -B
+
+
 .PHONY: refresh-imports-excluding-large
 refresh-imports-excluding-large:
 	make IMP=true MIR=true PAT=false IMP_LARGE=false all_imports -B
@@ -275,6 +270,10 @@ refresh-imports-excluding-large:
 .PHONY: refresh-%
 refresh-%:
 	make IMP=true IMP_LARGE=true MIR=true PAT=false imports/$*_import.owl -B
+
+.PHONY: no-mirror-refresh-%
+no-mirror-refresh-%:
+	make IMP=true IMP_LARGE=true MIR=false PAT=false imports/$*_import.owl -B
 
 
 # ----------------------------------------
@@ -519,6 +518,7 @@ mirror/caro.owl: mirror/caro.trigger
 
 
 
+
 # ----------------------------------------
 # Subsets
 # ----------------------------------------
@@ -671,7 +671,7 @@ $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 $(ONT).json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		convert --check false -f json -o $@.tmp.json &&\
+		convert --check false -f json -o $@.tmp.json && \
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
@@ -702,7 +702,7 @@ $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
 # Full: The full artefacts with imports merged, reasoned
 $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 	$(ROBOT) merge --input $< \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
@@ -713,7 +713,7 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC)
 
 $(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED)
 	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) \
-		reason --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		remove --axioms equivalent \
 		relax \
@@ -745,8 +745,23 @@ composite-vertebrate.owl:
 
 composite-vertebrate-basic.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
+# ----------------------------------------
+# Debugging Tools
+# ----------------------------------------
+
+explain_unsat: $(SRC) 
+	$(ROBOT) explain -i $(SRC) -M unsatisfiability --unsatisfiable random:10 --explanation $(TMPDIR)/$@.md
 
 
+
+
+.PHONY: normalize_obo_src
+normalize_obo_src: $(SRC)
+	$(OWLTOOLS) $< --merge-axiom-annotations -o -f obo $(TMPDIR)/NORM.obo && robot convert -i $(TMPDIR)/NORM.obo -o $(TMPDIR)/NORM.tmp.obo && mv $(TMPDIR)/NORM.tmp.obo $(SRC)
+
+.PHONY: normalize_src
+normalize_src: $(SRC)
+	$(ROBOT) convert -i $< -f obo --check false -o tmp/normalise && mv tmp/normalise $<
 
 
 .PHONY: validate_idranges
