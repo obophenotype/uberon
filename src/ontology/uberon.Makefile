@@ -108,8 +108,8 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 # STEP 2: preparing core release, and merging with phenoscape edit file
 # ----------------------------------------
 
-# core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
-core.owl: $(OWLSRC)
+# tmp/core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
+tmp/core.owl: $(SRC)
 	$(OWLTOOLS) $< -o -f ofn $(TMPDIR)/$@ &&\
 	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
 
@@ -121,7 +121,7 @@ core.owl: $(OWLSRC)
 #	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
 	
 # including the imports would lead to circularity, so we remove these here
-#$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl core.owl
+#$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl tmp/core.owl
 #	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
 
 # Not used anywhere so commenting out
@@ -172,9 +172,9 @@ ext.owl: $(TMPDIR)/materialized.owl
 # STEP 4: Create uberon.owl and .obo
 # ----------------------------------------
 
-# merged.owl is now the flattening of ext.owl
+# tmp/merged.owl is now the flattening of ext.owl
 # TODO: do we need this intermediate step? Used for subsets
-merged.owl: ext.owl
+tmp/merged.owl: ext.owl
 	$(OWLTOOLS) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
 	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
@@ -202,17 +202,13 @@ uberon.json.gz: uberon.json
 # STEP 5: Create basic subset
 # ----------------------------------------
 
+basic.owl:  uberon-basic.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
-# remember to git mv - this replaces uberon-simple
-# TODO: ensure relaxation is properly implemented; see for example craniofacial suture
-old-uberon.owl: ext.owl
-	$(OWLTOOLS) $< --remove-imports-declarations --remove-dangling --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/$@ -o $@
-
-basic.owl:  old-uberon.owl
-	$(OWLTOOLS) $< --make-subset-by-properties -f $(BASICRELS)  // --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 basic.obo: basic.owl
 	$(MAKEOBO)
+
+
 
 #subsets/efo-slim.owl: basic.owl
 #	owltools $(UCAT) $< --extract-ontology-subset --subset efo_slim --iri $(URIBASE)/uberon/$@ -o $@
@@ -748,7 +744,7 @@ $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 
 
 # @Deprecated
-$(REPORTDIR)/core-bridge-check-%.txt: core.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/core-bridge-check-%.txt: tmp/core.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # for debugging:
@@ -832,7 +828,7 @@ TERM_appendicular := UBERON:0002091
 #all_systems_json: $(patsubst %,subsets/%-minimal.json,$(SYSTEMS))
 
 
-subsets/merged-partonomy.owl: merged.owl
+subsets/merged-partonomy.owl: tmp/merged.owl
 	$(ROBOT) remove --input $< --axioms "equivalent disjoint type abox" \
               remove --exclude-term BFO:0000050 --select "object-properties" \
 	      -o $@
@@ -901,7 +897,7 @@ subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
 #	$(ROBOT) export -i $< -c "ID|label|SYNONYMS"  -e $@.tmp && mv $@.tmp $@
 
 # TODO: need to add subclass axioms for all intersections
-subsets/musculoskeletal-full.obo: merged.owl
+subsets/musculoskeletal-full.obo: tmp/merged.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
@@ -921,7 +917,7 @@ subsets/life-stages-core.obo: uberon.owl
 subsets/life-stages-core.owl: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
 
-subsets/immaterial.obo: merged.owl
+subsets/immaterial.obo: tmp/merged.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
 #
@@ -955,7 +951,7 @@ subsets/immaterial.obo: merged.owl
 
 
 # @Dep
-#other-bridges: merged.owl
+#other-bridges: tmp/merged.owl
 #	owltools $< --extract-bridge-ontologies -d tmp -s uberon -x -o -f obo $(TMPDIR)/minimal.obo
 
 # ----------------------------------------
@@ -1279,9 +1275,7 @@ prepare_release: copy_additional_files
 
 copy_additional_files:
 	rm -rf ../../bridge
-	mkdir -p ../../bridge 
-	cp $(BRIDGEDIR)/*.obo ../../bridge/ ;\
-	cp $(BRIDGEDIR)/*.owl ../../bridge/ ;\
+	mkdir -p ../../bridge
 	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
@@ -1762,7 +1756,7 @@ bless-mirrors:
 	touch go.owl chebi.owl mirror/ncbitaxon.obo
 
 .PHONY: quick-qc
-quick-qc: core.owl $(REPORTDIR)/uberon-edit-obscheck.txt
+quick-qc: tmp/core.owl $(REPORTDIR)/uberon-edit-obscheck.txt
 	cat $(REPORTDIR)/uberon-edit-obscheck.txt
 
 .PHONY: roundtrip_obo
@@ -1782,7 +1776,7 @@ clean:
 	rm -rf ./merged_collect*
 	rm -rf ./uberon-full.*
 	rm -rf ./uberon-base.*
-	rm -f uberon.owl uberon.obo core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
+	rm -f uberon.owl uberon.obo tmp/core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
 	rm -f ext.owl
 	
 
@@ -1836,9 +1830,7 @@ normalise_release_serialisation_ofn:
 normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../ext.owl
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../core.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../merged.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/appendicular-minimal.owl
