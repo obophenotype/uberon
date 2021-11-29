@@ -1,23 +1,7 @@
 {
   "graphs": [
     {
-      "domainRangeAxioms": [
-        {
-          "allValuesFromEdges": [
-            {
-              "obj": "http://purl.obolibrary.org/obo/BFO_0000002",
-              "pred": "http://purl.obolibrary.org/obo/BFO_0000050",
-              "sub": "http://purl.obolibrary.org/obo/BFO_0000002"
-            },
-            {
-              "obj": "http://purl.obolibrary.org/obo/BFO_0000004",
-              "pred": "http://purl.obolibrary.org/obo/BFO_0000050",
-              "sub": "http://purl.obolibrary.org/obo/BFO_0000004"
-            }
-          ],
-          "predicateId": "http://purl.obolibrary.org/obo/BFO_0000050"
-        }
-      ],
+      "domainRangeAxioms": [],
       "edges": [
         {
           "obj": "http://purl.obolibrary.org/obo/BFO_0000001",
@@ -10770,6 +10754,201 @@
       },
       "nodes": [
         {
+          "id": "http://purl.obolibrary.org/obo/BFO_0000001",
+          "lbl": "entity",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000179",
+                "val": "entity"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000180",
+                "val": "Entity"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "Julius Caesar"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "Verdi’s Requiem"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "the Second World War"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "your body mass index"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
+                "val": "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
+                "val": "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000600",
+                "val": "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"
+              },
+              {
+                "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+                "val": "http://purl.obolibrary.org/obo/bfo.owl"
+              }
+            ]
+          },
+          "type": "CLASS"
+        },
+        {
+          "id": "http://purl.obolibrary.org/obo/BFO_0000002",
+          "lbl": "continuant",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000179",
+                "val": "continuant"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000180",
+                "val": "Continuant"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
+                "val": "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000116",
+                "val": "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000600",
+                "val": "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000601",
+                "val": "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000601",
+                "val": "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000601",
+                "val": "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] "
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] "
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] "
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] "
+              },
+              {
+                "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+                "val": "http://purl.obolibrary.org/obo/bfo.owl"
+              }
+            ]
+          },
+          "type": "CLASS"
+        },
+        {
+          "id": "http://purl.obolibrary.org/obo/BFO_0000004",
+          "lbl": "independent continuant",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000179",
+                "val": "ic"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/BFO_0000180",
+                "val": "IndependentContinuant"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "a chair"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "a heart"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "a leg"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "a molecule"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "a spatial region"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "an atom"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "an orchestra."
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "an organism"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "the bottom right portion of a human torso"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000112",
+                "val": "the interior of your mouth"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000601",
+                "val": "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000601",
+                "val": "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])"
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] "
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] "
+              },
+              {
+                "pred": "http://purl.obolibrary.org/obo/IAO_0000602",
+                "val": "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] "
+              },
+              {
+                "pred": "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+                "val": "http://purl.obolibrary.org/obo/bfo.owl"
+              }
+            ],
+            "definition": {
+              "val": "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])",
+              "xrefs": []
+            }
+          },
+          "type": "CLASS"
+        },
+        {
           "id": "http://purl.obolibrary.org/obo/BFO_0000050",
           "lbl": "part of",
           "meta": {
@@ -13113,12 +13292,6 @@
                 "val": "uberon"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "http://en.wikipedia.org/wiki/Trapezium_(bone)"
-              ]
-            },
             "subsets": [
               "http://purl.obolibrary.org/obo/uberon/core#pheno_slim",
               "http://purl.obolibrary.org/obo/uberon/core#uberon_slim"
@@ -13250,12 +13423,6 @@
                 "val": "uberon"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "http://en.wikipedia.org/wiki/Trapezoid_bone"
-              ]
-            },
             "subsets": [
               "http://purl.obolibrary.org/obo/uberon/core#pheno_slim",
               "http://purl.obolibrary.org/obo/uberon/core#uberon_slim"
@@ -13385,12 +13552,6 @@
                 "val": "http://upload.wikimedia.org/wikipedia/commons/5/50/Carpus.png"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "http://en.wikipedia.org/wiki/Capitate_bone"
-              ]
-            },
             "subsets": [
               "http://purl.obolibrary.org/obo/uberon/core#pheno_slim",
               "http://purl.obolibrary.org/obo/uberon/core#uberon_slim"
@@ -13512,12 +13673,6 @@
                 "val": "http://upload.wikimedia.org/wikipedia/commons/5/50/Carpus.png"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "http://en.wikipedia.org/wiki/Hamate_bone"
-              ]
-            },
             "subsets": [
               "http://purl.obolibrary.org/obo/uberon/core#pheno_slim",
               "http://purl.obolibrary.org/obo/uberon/core#uberon_slim"
@@ -22262,12 +22417,6 @@
                 "val": "uberon"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "HP:0003832"
-              ]
-            },
             "subsets": [
               "http://purl.obolibrary.org/obo/uberon/core#pheno_slim"
             ]
@@ -42287,12 +42436,6 @@
                 "val": "P.gigas:forelimb.jpg"
               }
             ],
-            "definition": {
-              "val": ".",
-              "xrefs": [
-                "https://github.com/obophenotype/uberon/issues/119"
-              ]
-            },
             "synonyms": [
               {
                 "pred": "hasNarrowSynonym",
@@ -55703,10 +55846,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -55764,10 +55903,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -55794,10 +55929,6 @@
           "lbl": "pars glenoidalis of scapula",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -55833,10 +55964,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -55857,10 +55984,6 @@
           "lbl": "crista dorsalis humeri",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -55898,10 +56021,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -55928,10 +56047,6 @@
           "lbl": "omosternum",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -55997,10 +56112,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56065,10 +56176,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56105,10 +56212,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56129,10 +56232,6 @@
           "lbl": "acetabular depression",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56160,10 +56259,6 @@
           "lbl": "ilial ridge",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "amphibian_anatomy_curators"
@@ -56197,10 +56292,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56227,10 +56318,6 @@
           "lbl": "glenoid foramen",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56259,10 +56346,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56289,10 +56372,6 @@
           "lbl": "supracoracoid foramen",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56330,10 +56409,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56370,10 +56445,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56400,10 +56471,6 @@
           "lbl": "fovea capitis of humerus",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56434,10 +56501,6 @@
           "lbl": "ulnar condyle",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56475,10 +56538,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56513,10 +56572,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56543,10 +56598,6 @@
           "lbl": "collum antibrachii",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56602,10 +56653,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56632,10 +56679,6 @@
           "lbl": "glenoid end of clavicle",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56672,10 +56715,6 @@
           "lbl": "sulcus pro cartilagine praecoracoidealis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56826,10 +56865,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56856,10 +56891,6 @@
           "lbl": "margo clavicularis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56888,10 +56919,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56918,10 +56945,6 @@
           "lbl": "margo suprascapularis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -56950,10 +56973,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -56980,10 +56999,6 @@
           "lbl": "sinus interglenoidalis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57012,10 +57027,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57042,10 +57053,6 @@
           "lbl": "crista longitudinalis scapula",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57290,10 +57297,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57320,10 +57323,6 @@
           "lbl": "crista medialis humeri",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57352,10 +57351,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57382,10 +57377,6 @@
           "lbl": "capitulum of radius",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57414,10 +57405,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57444,10 +57431,6 @@
           "lbl": "sulcus longitudinalis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57476,10 +57459,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57506,10 +57485,6 @@
           "lbl": "intercalary element of fore digit",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57538,10 +57513,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57568,10 +57539,6 @@
           "lbl": "pubo-ischium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57600,10 +57567,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57630,10 +57593,6 @@
           "lbl": "agger limitans anterior of ilium",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57662,10 +57621,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57692,10 +57647,6 @@
           "lbl": "ilial protuberance",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "amphibian_anatomy_curators"
@@ -57735,10 +57686,6 @@
           "lbl": "preacetabular expansion",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57783,10 +57730,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57813,10 +57756,6 @@
           "lbl": "collum ilei",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57845,10 +57784,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -57875,10 +57810,6 @@
           "lbl": "crista ischii",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57907,10 +57838,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "amphibian_anatomy_curators"
               },
@@ -57934,10 +57861,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
                 "val": "amphibian_anatomy_curators"
               },
@@ -57960,10 +57883,6 @@
           "lbl": "intumescentia bilateralis inferior",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -57992,10 +57911,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58022,10 +57937,6 @@
           "lbl": "incisura terminalis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58054,10 +57965,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58084,10 +57991,6 @@
           "lbl": "interilial region",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58116,10 +58019,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58147,10 +58046,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58177,10 +58072,6 @@
           "lbl": "ypsiloid cartilage",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58246,10 +58137,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58286,10 +58173,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58316,10 +58199,6 @@
           "lbl": "trochanteric crest",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58348,10 +58227,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58378,10 +58253,6 @@
           "lbl": "apophysis distalis of tibiofibula",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58410,10 +58281,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58440,10 +58307,6 @@
           "lbl": "sulcus pro musculo extensori cruris brevis",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58472,10 +58335,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58502,10 +58361,6 @@
           "lbl": "sulcus distalis ossis cruris",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58534,10 +58389,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58564,10 +58415,6 @@
           "lbl": "foramen nutritium exterius",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58596,10 +58443,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58626,10 +58469,6 @@
           "lbl": "apophysis distalis of tibiale fibulare",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58658,10 +58497,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58688,10 +58523,6 @@
           "lbl": "prehallux skeleton",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). It was modified by cjm in the following way: the class was relabeled from 'prepollex' to 'prepollex skeleton', to distinguish it from the digit-like structure which it is a part of. It was re-classified from bone to subdivision of skeleton, as it may in fact be composed of multiple individual bones. TODO: definition needs reviewed, and it still requires placement under the UBERON:0012136 ! prehallux"
@@ -58727,10 +58558,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58757,10 +58584,6 @@
           "lbl": "foramen perforans tarsi",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58789,10 +58612,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58819,10 +58638,6 @@
           "lbl": "prezonal element",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58851,10 +58666,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58881,10 +58692,6 @@
           "lbl": "arciferal girdle",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58913,10 +58720,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -58943,10 +58746,6 @@
           "lbl": "pseudofirmisternal girdle",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -58975,10 +58774,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59005,10 +58800,6 @@
           "lbl": "inscriptional rib",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59073,10 +58864,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59103,10 +58890,6 @@
           "lbl": "basale commune (tarsal)",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59135,10 +58918,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59165,10 +58944,6 @@
           "lbl": "centrale (fore)",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59197,10 +58972,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59227,10 +58998,6 @@
           "lbl": "centrale 2",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59259,10 +59026,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59289,10 +59052,6 @@
           "lbl": "postminimus",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59323,10 +59082,6 @@
           "lbl": "Nobelian rod",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59369,10 +59124,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59393,10 +59144,6 @@
           "lbl": "subarticular sesamoid",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59439,10 +59186,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59477,10 +59220,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59507,10 +59246,6 @@
           "lbl": "distal-most prepollical element",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59539,10 +59274,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59563,10 +59294,6 @@
           "lbl": "distal-most prehallical element",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -59589,10 +59316,6 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
-              {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
@@ -59613,10 +59336,6 @@
           "lbl": "T-shaped terminal phalanx",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_40674"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
@@ -66113,21 +65832,6 @@
               ]
             }
           },
-          "type": "CLASS"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/BFO_0000001",
-          "lbl": "entity",
-          "type": "CLASS"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/BFO_0000002",
-          "lbl": "continuant",
-          "type": "CLASS"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/BFO_0000004",
-          "lbl": "independent continuant",
           "type": "CLASS"
         },
         {

@@ -4,18 +4,58 @@ ontology: uberon/subsets/circulatory-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
@@ -7004,7 +7044,6 @@ property_value: IAO:0000116 "check FMA, singular. specific subtypes e.g. FMA:227
 id: UBERON:0002455
 name: common plantar digital arteries
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Common_plantar_digital_arteries]
 synonym: "arteriae digitales plantares communes" EXACT LATIN [FMA:70821, FMA:TA]
 synonym: "arteriae digitales plantares communes" RELATED LATIN [http://en.wikipedia.org/wiki/Common_plantar_digital_arteries]
 synonym: "common plantar digital arteries" EXACT []
@@ -9485,7 +9524,6 @@ id: UBERON:0004155
 name: atrial septum secundum
 namespace: uberon
 alt_id: UBERON:0004158
-def: "." [GO:0003285, http://en.wikipedia.org/wiki/Septum_secondum]
 comment: The septum secundum, semilunar in shape, grows downward from the upper wall of the atrium immediately to the right of the primary septum and ostium secundum. Shortly after birth it fuses with the septum primum, and consequently the foramen ovale is closed, but sometimes the fusion is incomplete and the upper part of the foramen remains patent. The limbus fossae ovalis denotes the free margin of the septum secundum.
 synonym: "interatrial septum secundum" EXACT [EHDAA2:0001827]
 synonym: "septum secundum" EXACT [FMA:63910]
@@ -9507,7 +9545,6 @@ property_value: UBPROP:0000003 "The tetrapod clade develops a complete atrial se
 id: UBERON:0004159
 name: atrial septum intermedium
 namespace: uberon
-def: "." [GO:0003291]
 is_a: UBERON:0002085 ! interatrial septum
 
 [Term]
@@ -10284,7 +10321,6 @@ relationship: part_of UBERON:0004535 ! cardiovascular system
 id: UBERON:0004540
 name: proper plantar digital artery
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries]
 synonym: "arteriae digitales plantares propriae" EXACT LATIN [FMA:71564, FMA:TA]
 synonym: "arteriae digitales plantares propriae" RELATED LATIN [http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries]
 synonym: "plantar digital artery proper" EXACT []
@@ -11215,7 +11251,6 @@ relationship: part_of UBERON:0001227 ! minor calyx
 id: UBERON:0005063
 name: left ventricular compact myocardium
 namespace: uberon
-def: "." [GO:0003224]
 is_a: UBERON:0004127 ! compact layer of ventricle
 relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0003382 {source="GO"} ! cardiac muscle of left ventricle
@@ -11225,7 +11260,6 @@ relationship: part_of UBERON:0006566 {is_inferred="true", source="https://github
 id: UBERON:0005064
 name: left ventricular trabecular myocardium
 namespace: uberon
-def: "." [GO:0003225]
 is_a: UBERON:0004126 ! trabecular layer of ventricle
 relationship: part_of UBERON:0002084 ! heart left ventricle
 relationship: part_of UBERON:0003382 {source="GO"} ! cardiac muscle of left ventricle
@@ -11234,7 +11268,6 @@ relationship: part_of UBERON:0003382 {source="GO"} ! cardiac muscle of left vent
 id: UBERON:0005065
 name: right ventricular compact myocardium
 namespace: uberon
-def: "." [GO:0003226]
 is_a: UBERON:0004127 ! compact layer of ventricle
 relationship: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0003381 {source="GO"} ! cardiac muscle of right ventricle
@@ -11244,7 +11277,6 @@ relationship: part_of UBERON:0006567 {is_inferred="true", source="https://github
 id: UBERON:0005066
 name: right ventricular trabecular myocardium
 namespace: uberon
-def: "." [GO:0003227]
 is_a: UBERON:0004126 ! trabecular layer of ventricle
 relationship: part_of UBERON:0002080 ! heart right ventricle
 relationship: part_of UBERON:0003381 {source="GO"} ! cardiac muscle of right ventricle
@@ -13103,7 +13135,6 @@ is_a: UBERON:0006163 ! dorsal digital artery
 id: UBERON:0006163
 name: dorsal digital artery
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Dorsal_digital_arteries#]
 synonym: "arteriae digitales dorsales" EXACT LATIN [FMA:70801, FMA:TA]
 synonym: "dorsal digital arteries" EXACT [FMA:70801]
 synonym: "dorsal digital arteries set" EXACT [FMA:70801]
@@ -13179,7 +13210,6 @@ relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github
 id: UBERON:0006183
 name: mesonephric glomerular capillary
 namespace: uberon
-def: "." [GO:0061249]
 is_a: UBERON:0004212 ! glomerular capillary
 
 [Term]
@@ -14087,7 +14117,6 @@ property_value: IAO:0000116 "Not present in any AO. Note that WP states that tra
 id: UBERON:0006829
 name: remnant of left anterior vena cava
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava]
 xref: http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava
 is_a: UBERON:0003498 ! heart blood vessel
 is_a: UBERON:0005194 ! thoracic vein
@@ -15572,7 +15601,6 @@ is_a: UBERON:0001637 ! artery
 id: UBERON:0009658
 name: pancreaticoduodenal artery
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Pancreaticoduodenal_artery]
 synonym: "arteriae pancreaticoduodenales" EXACT LATIN []
 synonym: "pancreatico-duodenal artery" EXACT [MA:0002013]
 xref: EMAPA:36529
@@ -17261,7 +17289,6 @@ synonym: "labial vein of face" EXACT []
 synonym: "lip vein" EXACT [OBOL:automatic]
 synonym: "vena labialis" EXACT LATIN []
 xref: http://www.snomedbrowser.com/Codes/Details/367664002
-is_a: UBERON:0001638 ! vein
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0003502 ! neck blood vessel
 is_a: UBERON:0009141 ! craniocervical region vein
@@ -17350,7 +17377,6 @@ relationship: part_of UBERON:0001363 ! great saphenous vein
 id: UBERON:0013146
 name: venous system of brain
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/20557782, http://www.ncbi.nlm.nih.gov/pubmed/20566102]
 synonym: "brain venous system" EXACT [VHOG:0001328]
 synonym: "cranial venous system" RELATED []
 xref: EHDAA2:0000185
@@ -21897,7 +21923,6 @@ namespace: uberon
 def: "Blood vessels in respiratory skin." [AAO:EJS]
 is_a: UBERON:0003504 ! respiratory system blood vessel
 property_value: IAO:0000116 "Modified from the original AAO source" xsd:string
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 created_by: amphibian_anatomy_curators
 
 [Term]
@@ -21905,7 +21930,6 @@ id: UBERON:3010243
 name: ventricular musculature
 namespace: uberon
 relationship: part_of UBERON:0002082 ! cardiac ventricle
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21917,7 +21941,6 @@ def: "The smallest of the blood vessels, parts of the microcirculation, of the l
 synonym: "liver capillary" EXACT [UBERON:3010404]
 is_a: UBERON:0001982 ! capillary
 is_a: UBERON:0015796 ! liver blood vessel
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21927,7 +21950,6 @@ name: left channel of ventral aorta
 namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21936,7 +21958,6 @@ id: UBERON:3010417
 name: posterior palatine artery
 namespace: uberon
 is_a: UBERON:0001637 ! artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21945,7 +21966,6 @@ id: UBERON:3010423
 name: larval aorta
 namespace: uberon
 is_a: UBERON:0000947 ! aorta
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21955,7 +21975,6 @@ name: right channel of ventral aorta
 namespace: uberon
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0003085 ! ventral aorta
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21966,7 +21985,6 @@ namespace: uberon
 def: "Part of the external carotid which delivers blood to the mm rectus cervicis and interhyoideus posterior." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001070 ! external carotid artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21979,7 +21997,6 @@ is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 is_a: UBERON:0020550 ! auricular blood vessel
 relationship: part_of UBERON:0001532 ! internal carotid artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -21991,7 +22008,6 @@ def: "Part of lateral pretrosal artery which supplies blood to the roof of the m
 is_a: UBERON:0003496 ! head blood vessel
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:3010494 ! lateral pretrosal artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22001,7 +22017,6 @@ name: cutaneus artery
 namespace: uberon
 def: "Artery which supplies blood to the thymus and parotoid region." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22011,7 +22026,6 @@ name: coeliaco-mesenteric artery
 namespace: uberon
 def: "This artery has many branches which supply blood to various organs in the viscus." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22022,7 +22036,6 @@ namespace: uberon
 def: "Major branch which supplies blood to the spleen and dorsal wall of the stomach." [AAO:BJB]
 is_a: UBERON:0003509 ! arterial blood vessel
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22033,7 +22046,6 @@ namespace: uberon
 def: "Major branch which supplies blood to pancreas and duodenum." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22044,7 +22056,6 @@ namespace: uberon
 def: "Major branch supplying blood via many smaller branches to the liver, duodenum, ventral wall of the stomach, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001637 ! artery
 relationship: part_of UBERON:3010499 ! coeliaco-mesenteric artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22055,7 +22066,6 @@ namespace: uberon
 def: "One of three arteries which are part of the renal artery supplying blood to the anterior, middle, and posterior parts of the oviduct." [AAO:BJB]
 is_a: UBERON:0004573 ! systemic artery
 relationship: part_of UBERON:0001184 ! renal artery
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22065,7 +22075,6 @@ name: postcaval vein
 namespace: uberon
 def: "One of three major veins which enter the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22075,7 +22084,6 @@ name: precaval vein
 namespace: uberon
 def: "Either of a pair of veins which enter on either side of the sinus venosus." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22085,7 +22093,6 @@ name: lateral vein
 namespace: uberon
 def: "Either of the veins which collect blood from the trunk and skin and drain into the subclavian vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22096,7 +22103,6 @@ namespace: uberon
 def: "Anterior part of the lateral vein." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:3010515 ! lateral vein
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -22107,7 +22113,6 @@ namespace: uberon
 def: "A vein formed by the combination of veins in the pelvic region which collects blood from the liver, stomach, intestines, and gall bladder." [AAO:BJB]
 is_a: UBERON:0001638 ! vein
 relationship: part_of UBERON:0010194 ! hepatic portal system
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 

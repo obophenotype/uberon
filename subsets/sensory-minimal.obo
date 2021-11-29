@@ -4,18 +4,58 @@ ontology: uberon/subsets/sensory-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
@@ -678,7 +718,6 @@ xref: UMLS:C0023317 {source="ncithesaurus:Crystalline_Lens"}
 xref: VHOG:0000169
 xref: XAO:0000008
 xref: ZFA:0000035
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005389 ! transparent eye structure
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 property_value: UBPROP:0000003 "The eye of the adult lamprey is remarkably similar to our own, and it possesses numerous features (including the expression of opsin genes) that are very similar to those of the eyes of jawed vertebrates. The lamprey's camera-like eye has a lens, an iris and extra-ocular muscles (five of them, unlike the eyes of jawed vertebrates, which have six), although it lacks intra-ocular muscles. Its retina also has a structure very similar to that of the retinas of other vertebrates, with three nuclear layers comprised of the cell bodies of photoreceptors and bipolar, horizontal, amacrine and ganglion cells. The southern hemisphere lamprey, Geotria australis, possesses five morphological classes of retinal photoreceptor and five classes of opsin, each of which is closely related to the opsins of jawed vertebrates. Given these similarities, we reach the inescapable conclusion that the last common ancestor of jawless and jawed vertebrates already possessed an eye that was comparable to that of extant lampreys and gnathostomes. Accordingly, a vertebrate camera-like eye must have been present by the time that lampreys and gnathostomes diverged, around 500 Mya.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000169", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1038/nrn2283 Lamb TD, Collin SP and Pugh EN Jr, Evolution of the vertebrate eye: opsins, photoreceptors, retina and eye cup. Nature Reviews Neuroscience (2007)"}
@@ -1285,7 +1324,6 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/2/28/G
 id: UBERON:0001606
 name: muscle of iris
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Iris_muscle]
 subset: uberon_slim
 synonym: "iris muscle" EXACT []
 synonym: "iris muscle organ" EXACT [OBOL:automatic]
@@ -2325,7 +2363,6 @@ xref: MA:0002480
 xref: MESH:D014602
 xref: NCIT:C12811
 xref: UMLS:C0042160 {source="ncithesaurus:Uvea"}
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/e/eb/Gray869.png xsd:anyURI
 property_value: IAO:0000116 "TODO - check child terms, isa vs partof. See also MA:0001284 ! tunica vasculosa plexus" xsd:string
@@ -2458,7 +2495,6 @@ xref: NCIT:C12928
 xref: TAO:0002187
 xref: UMLS:C0459875 {source="ncithesaurus:Corneal_Epithelium"}
 xref: ZFA:0001683
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0015808 ! eye epithelium
 relationship: part_of UBERON:0000964 ! cornea
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png xsd:anyURI
@@ -2493,7 +2529,6 @@ xref: UMLS:C0036410 {source="ncithesaurus:Sclera"}
 xref: VHOG:0001274
 xref: XAO:0000183
 xref: ZFA:0005563
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0012430 {source="FMA"} ! tunica fibrosa of eyeball
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "The sclera, also known as the white part of the eye, is the opaque (usually white, though certain animals, such as horses and lizards, can have black sclera), fibrous, protective, outer layer of the eye containing collagen and elastic fiber. It is derived from the neural crest. In children, it is thinner and shows some of the underlying pigment, appearing slightly blue. In the elderly, however, fatty deposits on the sclera can make it appear slightly yellow. The sclera forms the posterior five sixths of the connective tissue coat of the globe. It is continuous with the dura mater and the cornea, and maintains the shape of the globe, offering resistance to internal and external forces, and provides an attachment for the extraocular muscle insertions. The sclera is perforated by plenty of nerves and vessels passing through the posterior scleral foramen, the hole that is formed by the optic nerve. At the optic disk the outer two-thirds of the sclera continues with the dura mater (outer coat of the brain) via the dural sheath of the optic nerve. The inner third joins with some choroidal tissue to form a plate (lamina cribrosa) across the optic nerve with perforations through which the optic fibers (fasciculi). The thickness of the sclera varies from 1mm at the posterior pole to 0.3 mm just behind the rectus muscle insertions. The sclera's blood vessels are mainly on the surface, and together with the conjunctiva (which lies on top) This is a thin layer covering the sclera. Along with the vessels of the conjunctiva, those of the sclera renders the inflamed eye bright red. [WP,unvetted][Wikipedia:Sclera]." xsd:string {source="http://en.wikipedia.org/wiki/Sclera"}
@@ -6489,7 +6524,6 @@ xref: EHDAA2:0000485
 xref: EHDAA:2910
 xref: EMAPA:16673
 xref: VHOG:0001084
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000019 ! camera-type eye
 property_value: IAO:0000116 "TODO - change mesenchyme relationships to precursor_of" xsd:string
 
@@ -6914,7 +6948,6 @@ xref: UMLS:C1518263 {source="ncithesaurus:Neural_Retina"}
 xref: VHOG:0000535
 xref: XAO:0003216
 xref: ZFA:0000046
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0001781 ! layer of retina
 property_value: UBPROP:0000003 "(...) an essentially similar sequence of events occurs during the embryonic development of the vertebrate eye. The eye initially develops as a single median evagination of the diencephalon that soon bifurcates to form the paired optic vesicles. As each optic vesicle grows towards the body surface, its proximal part narrows as the optic stalk, and its distal part invaginates to form a two-layered optic cup. (...) The outer layer of the optic cup becomes the pigment layer of the retina, whereas the inner layer differentiates into the photoreceptive cells and neuronal layers of the retina.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000535", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.429"}
 
@@ -7209,7 +7242,6 @@ property_value: IAO:0000116 "TODO check duct vs canal. Also check FMA - has many
 id: UBERON:0004101
 name: nasolabial region
 namespace: uberon
-def: "." [HP:0005289]
 subset: pheno_slim
 relationship: part_of UBERON:0000004 ! nose
 
@@ -10503,7 +10535,6 @@ property_value: RO:0002175 NCBITaxon:119203
 id: UBERON:0008921
 name: substratum of layer of retina
 namespace: uberon
-def: "." [http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html, UBERON:CL_meeting_20110725]
 relationship: part_of UBERON:0000966 ! retina
 
 [Term]
@@ -11433,7 +11464,6 @@ property_value: UBPROP:0000009 "The function of these elements is to support the
 id: UBERON:0010291
 name: layer of sclera
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Sclera#Histology]
 xref: Histology
 relationship: part_of UBERON:0001773 {source="cjm"} ! sclera
 
@@ -12092,7 +12122,6 @@ synonym: "vasculosa oculi" RELATED [MP:0005194]
 synonym: "ventral uveal tract" EXACT []
 xref: EMAPA:37417 {source="MA:th"}
 xref: http://www.snomedbrowser.com/Codes/Details/280656002
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001768 {source="MP"} ! uvea
 relationship: part_of UBERON:0001801 ! anterior segment of eyeball
 
@@ -12444,7 +12473,6 @@ property_value: UBPROP:0000010 "a group of tubulo-acinar serous glands located b
 id: UBERON:0013476
 name: dermal layer of tongue
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/23153189]
 synonym: "tongue (dermal layer)" EXACT []
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001723 ! tongue
@@ -13270,7 +13298,6 @@ is_a: UBERON:0000020 ! sense organ
 id: UBERON:0016622
 name: lunge feeding organ papilla
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/22622577]
 relationship: part_of UBERON:0016621 ! lunge feeding organ
 
 [Term]
@@ -13515,7 +13542,6 @@ is_a: UBERON:0013190 ! entotympanic bone
 id: UBERON:0018357
 name: sensory pore
 namespace: uberon
-def: "." [PHENOSCAPE:Wasila]
 synonym: "sensory canal pore" EXACT [PHENOSCAPE:Wasila]
 xref: UBERONTEMP:021ff296-2e02-4da5-af3b-b3e7220ac03b
 relationship: part_of UBERON:0001032 ! sensory system
@@ -13653,7 +13679,6 @@ synonym: "choroid and retina" EXACT []
 synonym: "retinachoroid" EXACT []
 synonym: "retinachoroidal region" EXACT []
 xref: http://www.snomedbrowser.com/Codes/Details/110701000
-is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0010230 ! eyeball of camera-type eye
 
 [Term]
@@ -13872,7 +13897,6 @@ property_value: UBPROP:0000013 "many sources refer to this simply as the 'superi
 id: UBERON:0022437
 name: dorsal periolivary nucleus
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29]
 synonym: "DPeO" RELATED ABBREVIATION [DMBA:17260]
 synonym: "DPO" RELATED ABBREVIATION []
 synonym: "nuclei periolivares" BROAD LATIN [FMA:TA]
@@ -15427,7 +15451,6 @@ synonym: "processus alaris" RELATED [UBERON:3000002]
 synonym: "second upper labial" RELATED [UBERON:3000002]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15437,7 +15460,6 @@ name: anterior maxillary process
 namespace: uberon
 def: "Process that extends anteriorly from the planum triangulare and invests the medial face of the pars facialis of the maxilla." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15449,7 +15471,6 @@ def: "Paired, vertical, and relatively straight plates that form the anterior li
 synonym: "prenasal wall" RELATED [UBERON:3000016]
 synonym: "solum anterius" RELATED [UBERON:3000016]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15459,7 +15480,6 @@ name: canalis semicircularis anterior
 namespace: uberon
 is_a: UBERON:0001840 ! semicircular canal
 relationship: part_of UBERON:0001842 ! posterior semicircular canal
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15469,7 +15489,6 @@ name: capsular process
 namespace: uberon
 def: "Narrow process of the skeletal support that projects forward." [AAO:LAP]
 relationship: part_of UBERON:3000565 ! skeletal support for eminentia olfactoria
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15480,7 +15499,6 @@ namespace: uberon
 def: "Lateral cartilaginous border of the fenestra endochoanalis." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15490,7 +15508,6 @@ name: cartilago infranarina
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15500,7 +15517,6 @@ name: cartilago retronarina
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15510,7 +15526,6 @@ name: cavum inferius
 namespace: uberon
 def: "Accessory cavity located ventral to the cavum principale and cavum medius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15519,7 +15534,6 @@ id: UBERON:3000086
 name: cavum internasale
 namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15529,7 +15543,6 @@ name: cavum medius
 namespace: uberon
 def: "Small accessory cavity located between the cavum principale and cavum inferius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15538,7 +15551,6 @@ id: UBERON:3000088
 name: cavum praenasale
 namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15548,7 +15560,6 @@ name: cavum principale
 namespace: uberon
 def: "The largest part of the nasal cavity, containing the olfactory epithelium." [AAO:LAP] {comment="AAO:EJS"}
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15558,7 +15569,6 @@ name: crista contacta
 namespace: uberon
 def: "Thin, horizontal ridge that extends medially from the corpus of the septomaxilla; it lays on the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15568,7 +15578,6 @@ name: crista intermedia
 namespace: uberon
 def: "Paired, oblique plates of cartilage located ventral to the alary cartilages. The dorsomedial margin of each crista intermedia is fused to the transitional zone between the septum nasi and the tectum nasi, whereas the ventrolateral margin bears two laminae, the lamina superior and the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15579,7 +15588,6 @@ namespace: uberon
 def: "Ventral crest of the paries nasi." [AAO:LAP]
 synonym: "subnasal crest" RELATED [UBERON:3000117]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15589,7 +15597,6 @@ name: crista supraorbitalis
 namespace: uberon
 def: "Short and blunt process that extends posteriorly from the posteromedial margin of the postnasal wall, on the anterodorsal corner of the orbit above the medial orbitonasal foramen." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15599,7 +15606,6 @@ name: endolymphatic system
 namespace: uberon
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15610,7 +15616,6 @@ namespace: uberon
 def: "Large anterior outgrowth of the septomaxilla that is directed into the space between the alary cartilage and the lamina inferior." [AAO:LAP]
 synonym: "anterior ramus" RELATED [UBERON:3000155]
 relationship: part_of UBERON:0011167 ! septomaxilla bone
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15619,7 +15624,6 @@ id: UBERON:3000160
 name: fenestra dorsalis nasi
 namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15630,7 +15634,6 @@ namespace: uberon
 def: "Opening on the ventral aspect of the nasal capsule. It contains the apertura nasalis interna." [AAO:LAP]
 synonym: "fenestra exochoanalis" RELATED [UBERON:3000161]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15643,7 +15646,6 @@ synonym: "apertura nasalis externa" RELATED [UBERON:3000162]
 synonym: "fenestra narina" RELATED [UBERON:3000162]
 synonym: "narial fenestra" RELATED [UBERON:3000162]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15655,7 +15657,6 @@ def: "Opening on the lateral side of the nasal capsule." [AAO:LAP]
 synonym: "fenestra infraconchalis" RELATED [UBERON:3000164]
 synonym: "fenestra retronarina" RELATED [UBERON:3000164]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15670,7 +15671,6 @@ synonym: "foramen apicale" RELATED [UBERON:3000166]
 synonym: "foramen epiphaniale" RELATED [UBERON:3000166]
 synonym: "nasobasal fenestra" RELATED [UBERON:3000166]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15680,7 +15680,6 @@ name: fenestra nasolateralis
 namespace: uberon
 def: "Elongated opening located on the lateral side of the nasal capsule." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15689,7 +15688,6 @@ id: UBERON:3000170
 name: fenestra precerebralis
 namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15699,7 +15697,6 @@ name: fenestra prechoanalis
 namespace: uberon
 def: "Large opening of the nasal floor anterior to the fenestra endochoanalis." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15714,7 +15711,6 @@ synonym: "otostapes" RELATED [UBERON:3000178]
 synonym: "pars otica columellae" RELATED [UBERON:3000178]
 synonym: "pseudooperculum" RELATED [UBERON:3000178]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15723,7 +15719,6 @@ id: UBERON:3000189
 name: foramen orbitonasale laterale
 namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15735,7 +15730,6 @@ synonym: "canalis orbitonasalis" RELATED [UBERON:3000190]
 synonym: "canalis orbitonasalis medialis" RELATED [UBERON:3000190]
 synonym: "foramen orbitonasale" RELATED [UBERON:3000190]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15749,7 +15743,6 @@ synonym: "processus prenasalis inferior" RELATED [UBERON:3000234]
 synonym: "processus prenasalis inferior lateralis" RELATED [UBERON:3000234]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15760,7 +15753,6 @@ namespace: uberon
 def: "Lateral expansion of the crista intermedia that serves as the floor of the cavum medium." [AAO:LAP]
 synonym: "lamina inferior cristae intermediae" RELATED [UBERON:3000259]
 relationship: part_of UBERON:0006332 ! nasal capsule
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15770,7 +15762,6 @@ name: lamina nariochoanalis
 namespace: uberon
 def: "Free, dorsal margin of the lamina inferior." [AAO:LAP]
 relationship: part_of UBERON:0006332 ! nasal capsule
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15780,7 +15771,6 @@ name: lamina precerebralis
 namespace: uberon
 def: "Posterior face of septum nasi." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15791,7 +15781,6 @@ namespace: uberon
 def: "Lateral expansion of the crista intermedia that serves as the roof of the cavum medium." [AAO:LAP]
 synonym: "lamina superior cristae intermediae" RELATED [UBERON:3000264]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15801,7 +15790,6 @@ name: medial inferior prenasal cartilage
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15811,7 +15799,6 @@ name: medial orbitonasal foramen
 namespace: uberon
 def: "Opening on the postnasal wall for the medial branch (= ramus medialis nasi) of the ophthalmicus nerve." [AAO:LAP]
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15822,7 +15809,6 @@ namespace: uberon
 def: "Anterior projection of the septum nasi that protrudes through the anterior nasal wall." [AAO:LAP]
 synonym: "processus prenasalis medius" RELATED [UBERON:3000294]
 relationship: part_of UBERON:0001706 ! nasal septum
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15831,7 +15817,6 @@ id: UBERON:3000316
 name: nasal opening
 namespace: uberon
 is_a: UBERON:0006332 ! nasal capsule
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15847,7 +15832,6 @@ synonym: "dorsal process" RELATED [UBERON:3000329]
 synonym: "lamina obliqua" RELATED [UBERON:3000329]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15856,7 +15840,6 @@ id: UBERON:3000333
 name: olfactory foramen
 namespace: uberon
 is_a: UBERON:3000316 ! nasal opening
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15870,7 +15853,6 @@ synonym: "connection between lamina nariochoanalis and postnasal wall" RELATED [
 synonym: "processus lingularis" RELATED [UBERON:3000381]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15881,7 +15863,6 @@ namespace: uberon
 def: "Paired, elongate, ventrolaterally-orieted cartilaginous structures that extend to the premaxilla-maxilla articulation." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15890,7 +15871,6 @@ id: UBERON:3000393
 name: pars amphibiorum
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15899,7 +15879,6 @@ id: UBERON:3000395
 name: pars basilaris
 namespace: uberon
 relationship: part_of UBERON:0001854 ! saccule of membranous labyrinth
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15915,7 +15894,6 @@ synonym: "hyostapes" RELATED [UBERON:3000399]
 synonym: "medio-stapedial" RELATED [UBERON:3000399]
 synonym: "pars quadrata columellae" RELATED [UBERON:3000399]
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15924,7 +15902,6 @@ id: UBERON:3000405
 name: pars inferior of labyrinth
 namespace: uberon
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15936,7 +15913,6 @@ def: "Plate-like structure that lies in the fenestra ovalis. It arises within th
 synonym: "operculum auris" RELATED [UBERON:3000406]
 synonym: "operculum fenestrae ovalis" RELATED [UBERON:3000406]
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15945,7 +15921,6 @@ id: UBERON:3000408
 name: pars media plectri
 namespace: uberon
 relationship: part_of UBERON:3000443 ! plectral apparatus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15956,7 +15931,6 @@ namespace: uberon
 def: "Consists of enlarged cistern against which the operculum and footplate of the columella rest in the oval window. Together with the endolymphatic systems comprises the membranous labryinth of the inner ear. Duellman and Trueb 1994." [PHENOSCAPE]
 is_a: UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15966,7 +15940,6 @@ name: planum antorbitale
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15976,7 +15949,6 @@ name: planum conchale
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15986,7 +15958,6 @@ name: planum internasale
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -15998,7 +15969,6 @@ def: "Vertical plate of cartilage that is fused posterodorsally to the oblique c
 synonym: "pars terminalis" RELATED [UBERON:3000440]
 synonym: "terminal plate" RELATED [UBERON:3000440]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16008,7 +15978,6 @@ name: planum triangulare
 namespace: uberon
 def: "Cartilaginous, distal expansion of the lamina orbitonasalis that invests the pars facialis of the maxilla medially." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16018,7 +15987,6 @@ name: plectral apparatus
 namespace: uberon
 def: "Complex sound-conducting anatomical structure." [AAO:LAP]
 is_a: UBERON:0001686 ! auditory ossicle bone
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16028,7 +15996,6 @@ name: posterior maxillary process
 namespace: uberon
 def: "Process that extends posteriorly from the planum triangulare and invests the maxilla laterally and the anterior ramus of the pterygoid medially." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16037,7 +16004,6 @@ id: UBERON:3000449
 name: posterior maxillary process dorsal process
 namespace: uberon
 relationship: part_of UBERON:3000448 ! posterior maxillary process
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16048,7 +16014,6 @@ namespace: uberon
 def: "Paired, anteriorly concave structures that form the posterior limit of nasal capsule. It consists of two parts: a ventral piece, the lamina orbitonasalis, and a dorsal plate that is part of the tectum nasi." [AAO:LAP]
 synonym: "posterior wall of nasal capsule" BROAD []
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16063,7 +16028,6 @@ synonym: "processus dorsalis columellae" RELATED [UBERON:3000486]
 synonym: "processus superior columellae" RELATED [UBERON:3000486]
 synonym: "suprastapediale" RELATED [UBERON:3000486]
 relationship: part_of UBERON:3000399 ! pars externa plectri
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16074,7 +16038,6 @@ namespace: uberon
 def: "Posterior part of the corpus of the septomaxilla; the posterior surface of the processus infrafenestralis is in contact with the oblique cartilage." [AAO:LAP]
 synonym: "dorsal crest" RELATED [UBERON:3000492]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16083,7 +16046,6 @@ id: UBERON:3000509
 name: processus suprafenestralis
 namespace: uberon
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16092,7 +16054,6 @@ id: UBERON:3000538
 name: recessus fenestrae ovalis
 namespace: uberon
 relationship: part_of UBERON:3000428 ! perilymphatic system
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16102,7 +16063,6 @@ name: rostral process
 namespace: uberon
 def: "Is a process of the nasal bone directed anteriorly towards the rostrum." [PHENOSCAPE]
 relationship: part_of UBERON:0001681 ! nasal bone
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16112,7 +16072,6 @@ name: septum semicircularium anterior
 namespace: uberon
 def: "The anterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16122,7 +16081,6 @@ name: septum semicircularium laterale
 namespace: uberon
 def: "The lateral connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16132,7 +16090,6 @@ name: septum semircularium posterior
 namespace: uberon
 def: "The posterior connective tissue partition between walls of otic capsule around which the membranous semicircular canals pass." [PHENOSCAPE]
 relationship: part_of UBERON:0001846 ! internal ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16141,7 +16098,6 @@ id: UBERON:3000563
 name: seydels palatal process
 namespace: uberon
 relationship: part_of UBERON:3000068 ! cartilago ectochoanalis
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16151,7 +16107,6 @@ name: skeletal support for eminentia olfactoria
 namespace: uberon
 def: "Elevation of the dorsal surface of the solum nasi medial to the fenestra endochoanalis that provides support for the eminentia olfactoria." [AAO:LAP]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16164,7 +16119,6 @@ synonym: "nasal floor" RELATED [UBERON:3000569]
 synonym: "planum basale" RELATED [UBERON:3000569]
 synonym: "solum nasale" RELATED [UBERON:3000569]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16173,7 +16127,6 @@ id: UBERON:3000570
 name: spatium sacculare
 namespace: uberon
 relationship: part_of UBERON:3000428 ! perilymphatic system
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16193,7 +16146,6 @@ synonym: "stapes" RELATED [UBERON:3000580]
 synonym: "stelidium" RELATED [UBERON:3000580]
 synonym: "stilus columellare" RELATED [UBERON:3000580]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16204,7 +16156,6 @@ namespace: uberon
 def: "Paired, elongate cartilages that extend anteroventrally to abut the dorsomedial margin of the posterior face of the alary process of the premaxilla. The function of these cartilages is to transmit the movement of the premaxilla to the alary cartilages during the closure of the apertura nasalis externa." [AAO:LAP]
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16215,7 +16166,6 @@ namespace: uberon
 def: "Roof of the nasal capsule, confluent with lamina orbitonasalis posteriorly and united to septum nasi." [AAO:LAP]
 synonym: "tectum nasale" RELATED [UBERON:3000601]
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16227,7 +16177,6 @@ def: "Rod-shaped process that extends caudally from the inferior edge of the pla
 synonym: "lingular process" RELATED [UBERON:3000644]
 synonym: "processus lingularis" BROAD []
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16240,7 +16189,6 @@ def: "Basal part of the septomaxilla." [AAO:LAP]
 synonym: "centrum" RELATED [UBERON:3000645]
 synonym: "pars horizontalis" RELATED [UBERON:3000645]
 relationship: part_of UBERON:0011167 ! septomaxilla bone
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16250,7 +16198,6 @@ name: margo libera
 namespace: uberon
 def: "Anterior, rounded portion of the corpus of the septomaxilla." [AAO:LAP]
 relationship: part_of UBERON:3000645 ! corpus
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16260,7 +16207,6 @@ name: crista interna
 namespace: uberon
 def: "Sharp ridge that extends medially from the basal part of the processus infrafenestralis; it separates the diverticulum proncipale from the diverticulum medium." [AAO:LAP]
 relationship: part_of UBERON:3000492 ! processus infrafenestralis
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16270,7 +16216,6 @@ name: crista praeopercularis
 namespace: uberon
 def: "Synchondrotic or synostotic connection between the footplate of the pars media plectri and the ventral margin of the fenestra ovalis." [AAO:LAP]
 relationship: part_of UBERON:3000408 ! pars media plectri
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16289,7 +16234,6 @@ id: UBERON:3010079
 name: upper eyelid protuberances
 namespace: uberon
 relationship: part_of UBERON:0001712 ! upper eyelid
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16326,7 +16270,6 @@ name: musculus levator bulbi
 namespace: uberon
 def: "Cranial nerve V innervated; ventral to the eye." [AAO:EJS]
 is_a: UBERON:0001601 ! extra-ocular muscle
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16346,7 +16289,6 @@ namespace: uberon
 def: "Investing bone in non-teleosts associated with nasolacrimal duct and lying between pars facialis of maxilla and prefrontal and sometimes nasal." [AAO:EJS]
 synonym: "ectethmoid" RELATED [UBERON:3010146]
 is_a: UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16357,7 +16299,6 @@ namespace: uberon
 def: "A part of the inferior cavity of the olfactory organ, found in anurans." [AAO:EJS]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16377,7 +16318,6 @@ def: "Round, flat bone or cartilage that lies in the fenestra ovalis and articul
 synonym: "otic operculum" EXACT []
 relationship: part_of UBERON:0001032 ! sensory system
 relationship: part_of UBERON:0001690 ! ear
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16387,7 +16327,6 @@ name: ramus anterior of CN VIII
 namespace: uberon
 def: "Formed by fibers from the anterior semicircular canal and sacculus." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16397,7 +16336,6 @@ name: ramus posterior of CN VIII
 namespace: uberon
 def: "Composed of two rami: a short ventral ramus innervating the cochlea (lagena and papille basilar), and a long dorsal ramus innervating the posterior semicircular canal." [AAO:EJS]
 relationship: part_of UBERON:0001648 ! vestibulocochlear nerve
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
@@ -16506,7 +16444,6 @@ name: anterior prenasal cartilage
 namespace: uberon
 is_a: UBERON:0001823 ! nasal cartilage
 relationship: part_of UBERON:0006813 ! nasal skeleton
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
 created_by: amphibian_anatomy_curators
 
