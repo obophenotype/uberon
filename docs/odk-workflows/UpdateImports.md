@@ -147,3 +147,7 @@ When we use the base pipelines, we
 2) We merge all base files into one big pile
 3) Then we extract a single module `imports/merged_import.owl`
 
+The first implementation of this pipeline is PATO, see https://github.com/pato-ontology/pato/blob/master/src/ontology/pato-odk.yaml.
+
+As we will test and roll out this feature more widely, we will also expand the documentation.
+
