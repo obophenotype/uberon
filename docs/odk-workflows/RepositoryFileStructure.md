@@ -16,7 +16,7 @@ These are the current imports in UBERON
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | http://purl.obolibrary.org/obo/pr.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | cl | http://purl.obolibrary.org/obo/cl.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
 | envo | http://purl.obolibrary.org/obo/envo.owl | None |
@@ -25,7 +25,7 @@ These are the current imports in UBERON
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
 | ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
 | cteno | http://purl.obolibrary.org/obo/cteno.owl | None |

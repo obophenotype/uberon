@@ -27,25 +27,45 @@ release_artefacts:
   - custom-composite-vertebrate-basic
 edit_format: obo
 import_group:
-  release_imports: TRUE
+  use_base_merging: TRUE
+  slme_individuals: exclude
+  exclude_iri_patterns:
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBA_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
   products:
     - id: pr
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
       is_large: TRUE
-      use_gzipped: TRUE
     - id: cl
+      use_base: TRUE
     - id: go
+      use_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/GO_
+        - http://purl.obolibrary.org/obo/GOREL_
+        - http://purl.obolibrary.org/obo/GOCHE_
     - id: envo 
+      use_base: TRUE 
     - id: ro
+      use_base: TRUE
     - id: bspo
+      use_base: TRUE
     - id: chebi
-      is_large: TRUE
+      make_base: TRUE
       use_gzipped: TRUE
+      is_large: TRUE
     - id: pato
+      use_base: TRUE
     - id: bfo
     - id: ncbitaxon
-      is_large: TRUE
-      use_gzipped: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
+      use-base: TRUE
     # Pipeline dependencies (not directly imported)
     - id: ceph
     - id: cteno
