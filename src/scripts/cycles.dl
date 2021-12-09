@@ -4,10 +4,22 @@
 #define OWL_ON_PROPERTY "<http://www.w3.org/2002/07/owl#onProperty>"
 #define OWL_SOME_VALUES_FROM "<http://www.w3.org/2002/07/owl#someValuesFrom>"
 
+.type List = [
+    head : PathSegment,
+    tail : List
+]
+
+.type PathSegment = [
+    property: symbol,
+    filler: symbol
+]
+
 .decl basic(s: symbol, p: symbol, o: symbol)
 .decl relation(s: symbol, p: symbol, o: symbol)
-.decl reachable(s: symbol, o: symbol)
-.decl cycle(s: symbol)
+.decl reachable_via_path(s: symbol, o: symbol, reverse_path: List)
+.decl cycle_path(s: symbol, reverse_path: List)
+.decl cycle_path_text_builder(s: symbol, text_path: symbol, remaining: List)
+.decl cycle(text_path: symbol)
 
 relation(s, p, o) :-
     basic(s, RDFS_SUBCLASS_OF, restr),
@@ -19,10 +31,16 @@ relation(s, p, o) :-
 
 relation(s, RDFS_SUBCLASS_OF, o) :- basic(s, RDFS_SUBCLASS_OF, o), match("<.+>", s), match("<.+>", o).
 
-reachable(s, o) :- relation(s, _, o).
-reachable(s, o) :- relation(s, _, c), reachable(c, o).
+reachable_via_path(s, o, [[p, o], nil]) :- relation(s, p, o).
+reachable_via_path(s, o, [[p, o], path]) :- reachable_via_path(s, c, path), relation(c, p, o), s != c, s != o.
 
-cycle(s) :- reachable(s, s).
+cycle_path(s, path) :- reachable_via_path(s, s, path).
+cycle_path(s, [[p, s], path]) :- reachable_via_path(s, c, path), relation(c, p, s), s != c.
+
+cycle_path_text_builder(s, cat(" --[", p, "]--> ", o), remaining) :- cycle_path(s, [[p, o], remaining]).
+cycle_path_text_builder(s, cat(" --[", p, "]--> ", o, current), remaining) :- cycle_path_text_builder(s, current, [[p, o], remaining]).
+
+cycle(cat(s, current)) :- cycle_path_text_builder(s, current, nil).
 
 .input basic
 .output cycle
