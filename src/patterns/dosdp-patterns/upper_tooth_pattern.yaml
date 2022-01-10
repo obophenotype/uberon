@@ -1,5 +1,5 @@
 
-Naming pattern: upper primary/secondary side tooth number
+Naming pattern: upper primary/secondary tooth number
 
 #insicors get premaxilla and mandible
 #canines, molars, and premolars get maxilla and mandible
@@ -14,14 +14,14 @@ pattern_name: upper_teeth
 Description: "This defines upper teeth."
 
 classes:
-    bone of jaw: UBERON:0012360 # Add ID for bone
-    dentition: UBERON:0003672
-    calcareous tooth: UBERON:0001091
-    in_lateral_side_of: BSPO:0000126
+    bone of jaw: 'UBERON:0012360' # Add ID for bone
+    dentition: 'UBERON:0003672'
+    calcareous tooth: 'UBERON:0001091'
+    in_lateral_side_of: 'BSPO:0000126'
 
 
 relations:
-    part_of: BFO:0000050
+    part_of: 'BFO:0000050'
 
 vars:
     bone: "'bone of jaw" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
@@ -35,13 +35,13 @@ vars:
       #canine UBERON:0003674
       #molar UBERON:0003655
       #premolar UBERON:0007120
-    side: "'in_lateral_side_of'"  #
-      #in_right_side_of BSPO:0000121
-      #in_left_side_of BSPO:0000120
 
 data_var:
     number: xsd:integer
       #1-6
+
+data_list_var:
+    xrefs: xsd:string #separate mulitple eentries by "|"
 
 name:
     text: "Upper %s %s %s"
@@ -53,21 +53,14 @@ name:
 def:
     text: "Upper %s %s phylogenetically in position %s"
     vars:
-      - dentition
+      - dentition_type
       - tooth
       - number
+    xrefs: xrefs
 
 equivalentTo:
-  text: "%s and (part_of some %s) and (part_of some %s)"
+  text: "%s and ('part_of' some %s) and ('part_of' some %s)"
   vars:
     - tooth
     - bone
-    - dentition
-
-subClassOf:
-  'upper %s %s'
-  vars:
-    - dentition
-    - tooth
-
-#lower teeth
+    - dentition_type
