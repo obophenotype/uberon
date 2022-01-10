@@ -1,0 +1,41 @@
+
+pattern_name: anatomyPartOfAnatomy #xPartOfY
+
+description: An anatomical entity that is part of another anatomical entity.
+#examples: lower molar tooth: 'molar tooth' and ('part of' some mandible)
+
+contributors:
+  - https://orcid.org/0000-0003-2699-3066
+  
+classes: 
+  anatomical_feature: "UBERON:0001062"
+  anatomical_structure: "UBERON:0001062"
+
+relations: 
+  part of: "BFO:0000050"
+
+vars:
+  anatomical_feature: "'anatomical entity'"
+  anatomical_structure: "'anatomical entity'"
+  
+data_list_vars:
+  xref: "xsd:string"
+  
+name:
+  text: "%s of %s"
+  vars:
+    - anatomical_feature
+    - anatomical_structure
+
+def:
+  text: "Any %s that is part of a(n) %s."
+  vars:
+    - anatomical_feature
+    - anatomical_structure
+ xrefs: xrefs
+  
+equivalentTo:
+  text: "%s and ('part of' some %s)"
+  vars:
+    - anatomical_feature
+    - anatomical_structure
