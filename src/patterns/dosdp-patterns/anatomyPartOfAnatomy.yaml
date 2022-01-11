@@ -1,4 +1,3 @@
-
 pattern_name: anatomyPartOfAnatomy #xPartOfY
 
 description: An anatomical entity that is part of another anatomical entity.
@@ -9,14 +8,14 @@ contributors:
   
 classes: 
   anatomical_feature: "UBERON:0001062"
-  anatomical_structure: "UBERON:0001062"
+  anatomical_part: "UBERON:0001062"
 
 relations: 
   part of: "BFO:0000050"
 
 vars:
   anatomical_feature: "'anatomical entity'"
-  anatomical_structure: "'anatomical entity'"
+  anatomical_part: "'anatomical entity'"
   
 data_list_vars:
   xref: "xsd:string"
@@ -25,17 +24,17 @@ name:
   text: "%s of %s"
   vars:
     - anatomical_feature
-    - anatomical_structure
+    - anatomical_part
 
 def:
   text: "Any %s that is part of a(n) %s."
   vars:
     - anatomical_feature
-    - anatomical_structure
+    - anatomical_part
  xrefs: xrefs
   
 equivalentTo:
   text: "%s and ('part of' some %s)"
   vars:
     - anatomical_feature
-    - anatomical_structure
+    - anatomical_part
