@@ -1003,7 +1003,7 @@ $(REPORTDIR)/%-allcycles: %.owl
 $(REPORTDIR)/basic-allcycles: basic.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
 
-# test: $(REPORTDIR)/basic-allcycles
+test: $(REPORTDIR)/basic-allcycles
 
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
