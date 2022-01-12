@@ -1,5 +1,5 @@
 ## Customize Makefile settings for uberon
-## 
+##
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 
@@ -45,7 +45,7 @@ ELKRUN= $(OWLTOOLS) $< $(QELK) --run-reasoner -r elk -u > $@.tmp || (tail -1000 
 
 # materialize takes too long on travis
 #travis_test: ttest-uberon ttest-ext ttest-tax
-# TODO Current travis test does nearly nothing. NICO replace by standard qc tests 
+# TODO Current travis test does nearly nothing. NICO replace by standard qc tests
 travis_test: $(TMPDIR)/is_ok
 
 ttest-uberon: uberon.owl $(REPORTDIR)/bfo-check.txt
@@ -119,7 +119,7 @@ tmp/core.owl: $(SRC)
 # FIXED apparently our base does not contain phenoscape-ext!! (It does, through unreasoned)
 #$(TMPDIR)/phenoscape-ext-src.owl: $(SRC)
 #	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
-	
+
 # including the imports would lead to circularity, so we remove these here
 #$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl tmp/core.owl
 #	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
@@ -245,10 +245,10 @@ mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 mirror/pato.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/pato.owl --extract-mingraph --make-subset-by-properties -f BFO:0000050 // --set-ontology-id $(URIBASE)/pato.owl -o $@; fi
 
-mirror/envo.owl: $(OWLSRC) 
+mirror/envo.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/envo.owl --extract-mingraph --set-ontology-id $(URIBASE)/envo.owl -o $@; fi
 
-mirror/nbo.owl: $(OWLSRC) 
+mirror/nbo.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/nbo.owl --extract-mingraph --set-ontology-id $(URIBASE)/nbo.owl -o $@; fi
 
 mirror/chebi.obo.gz: $(OWLSRC)
@@ -275,7 +275,7 @@ mirror/aminoacid.owl: mirror/pr-gunzip.owl
 mirror/pr.owl: mirror/aminoacid.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) mirror/aminoacid.owl --extract-mingraph --rename-entity $(URIBASE)/pr#has_part $(URIBASE)/BFO_0000051 --rename-entity $(URIBASE)/pr#part_of $(URIBASE)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d components -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(URIBASE)/pr.owl -o $@ && touch $@; fi
 
-mirror/ncbitaxon.obo: 
+mirror/ncbitaxon.obo:
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget $(URIBASE)/ncbitaxon.obo -O $@; fi
 
 mirror/fbbt.obo:
@@ -432,7 +432,7 @@ imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
 .PRECIOUS: imports/%_import.owl
 
 # TODO - use full taxonomy
-#ncbitaxon.owl: 
+#ncbitaxon.owl:
 #	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/ncbitaxon.owl -o $@ && touch $@
 ##	owltools $(URIBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(URIBASE)/$@ -o $@
 
@@ -464,7 +464,7 @@ Xenopus = NCBITaxon:8353
 Human = NCBITaxon:9606
 Dmel = NCBITaxon:7227
 ##RPT_TAXA_ARGS = -gp BFO:0000050 -gf $(Drerio) $(Xenopus) $(Human) $(Dmel)
-RPT_TAXA_ARGS = 
+RPT_TAXA_ARGS =
 #RPT_STAGE_RELS = RO:0002488 RO:0002492 RO:0002496 RO:0002497
 RPT_STAGE_RELS = RO:0002496 RO:0002497
 
@@ -535,7 +535,7 @@ nh-%.owl: nh-%.obo
 
 
 # run the reasoner, set to remove unsatisfiable classes (ie those not in the species specified in the context)
-#ext-taxon-axioms.owl 
+#ext-taxon-axioms.owl
 # mouse xenopus human
 
 # We need to add CL terms to the seed as well, because CL terms also go into the slim..
@@ -560,7 +560,7 @@ subsets/%-view.owl: ext.owl contexts/context-%.owl tmp/simple-slim-seed.txt
 #	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
 
 #	subsets/xenopus-view.owl: ext.owl contexts/context-xenopus.owl
-#		$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x 
+#		$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x
 
 #subsets/human-view.owl: ext.owl contexts/context-human.owl
 #	$(OWLTOOLS) $^ --merge-support-ontologies --merge-imports-closure $(QELK) --set-ontology-id  $(URIBASE)/$@ --run-reasoner -r elk -x -o -f ofn $@
@@ -664,7 +664,7 @@ $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.o
 ## CHECK_AO_LIST = ma emapa zfa xao fbbt wbbt wbls
 #####  CHECK_AO_LIST = ma emapa zfa xao fbbt wbls : Add MA back to list when this is solved; https://sourceforge.net/p/obo/mouse-anatomy-requests/94/
 
-# gold glub 
+# gold glub
 EXTRA_FULL_CHECK_AO_LIST = caro
 
 # silver club
@@ -786,7 +786,7 @@ QC_FILES = checks\
     reports/stages
 
 uberon-qc: $(QC_FILES)
-	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt 
+	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
 
 # Disjoint violations
 $(REPORTDIR)/%-dv.txt: %.owl
@@ -820,7 +820,7 @@ TERM_appendicular := UBERON:0002091
 
 #SYSTEMS = musculoskeletal excretory nephron reproductive digestive nervous sensory immune circulatory pulmonary cranial renal appendicular
 
-#all_subsets: all_systems subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl 
+#all_subsets: all_systems subsets/life-stages-composite.obo subsets/life-stages-core.obo subsets/life-stages-core.owl
 #all_systems: all_systems_obo all_systems_owl  all_systems_json all_systems_tsv
 #all_systems_obo: $(patsubst %,subsets/%-minimal.obo,$(SYSTEMS))
 #all_systems_owl: $(patsubst %,subsets/%-minimal.owl,$(SYSTEMS))
@@ -1003,7 +1003,7 @@ $(REPORTDIR)/%-allcycles: %.owl
 $(REPORTDIR)/basic-allcycles: basic.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
 
-test: $(REPORTDIR)/basic-allcycles
+# test: $(REPORTDIR)/basic-allcycles
 
 #%-synclash: %.obo
 #	blip-findall -u query_obo -i $< "same_label_as(X,Y,A,B,C),X@<Y,class_refcount(X,XC),class_refcount(Y,YC)" -select "same_label_as(X,Y,A,B,C,XC,YC)" -label > $@
@@ -1035,7 +1035,7 @@ $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo: $(TMPDIR)/update-s
 	test -f $@
 
 $(TMPDIR)/merged-stages-xrefs.obo: $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo
-	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv 
+	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv
 	cat $@_xrefs_to_uberon.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
 
 $(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo $(TMPDIR)/update-stages
@@ -1085,7 +1085,7 @@ MAKESPMERGE= --catalog-xml $(CATALOG)\
   --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl\
   --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl\
  $(URIBASE)/uberon/$(BRIDGEDIR)/collected-$*.owl
- 
+
 #  --merge-imports-closure
 
 # bundled: collect all ontologies and do a basic (non-species) import closure merge
@@ -1279,7 +1279,7 @@ copy_additional_files:
 	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
-#S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy 
+#S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy
 
 # see https://github.com/obophenotype/uberon/issues/1551
 # we now use S3 directly
@@ -1391,7 +1391,7 @@ $(BRIDGEDIR)/caro-bridge-to-xao.obo:
 # Neurolex
 # ----------------------------------------
 # We got rid of this as per discussion with @cmungall
-#nlx-%.owl: $(TMPDIR)/nlx_stage_all.rdf 
+#nlx-%.owl: $(TMPDIR)/nlx_stage_all.rdf
 #	owltools --catalog-xml catalog-nlx.xml $< --abox-to-tbox  --reasoner-query -r elk -d  -l "$*" -c $(URIBASE)/nlx/neuron  -o $@
 #	owltools --catalog-xml catalog-nlx.xml $<  --reasoner-query -r elk -d -l "$*" --abox-to-tbox  --make-ontology-from-results $(URIBASE)/nlx/neuron.owl -o $@
 
@@ -1446,7 +1446,7 @@ aspell:
 	apt-get install -y aspell
 
 %-spellcheck: % | aspell
-	cat $< | aspell -a check --home-dir . 
+	cat $< | aspell -a check --home-dir .
 
 %-ispellcheck: % | aspell
 	aspell check --home-dir . $<
@@ -1549,7 +1549,7 @@ ALLENS = dmba hba dhba pba mba
 
 
 # TODO Review this ABA has been removed!! especially bridges/aba.owl
-# @cmungall aba was replaced by mba 
+# @cmungall aba was replaced by mba
 #aba.obo: ABA-src.obo
 #	$(SCRIPTSDIR)/make-aba-part-ofs.pl $< > $@
 #$(BRIDGEDIR)/aba.owl: aba.obo
@@ -1582,7 +1582,7 @@ $(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo
 # ----------------------------------------
 # NIF
 # ----------------------------------------
-NIF = 
+NIF =
 $(TMPDIR)/NIF-GrossAnatomy-src.owl:
 	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
 $(TMPDIR)/NIF-GrossAnatomy.owl: $(TMPDIR)/NIF-GrossAnatomy-src.owl
@@ -1639,7 +1639,7 @@ patternizer:
 	pl2sparql   -e -c patterns/patternizer_conf.pl -A void.ttl -i ext doall
 
 # reverse engineer CSV from uberon axioms and DOSDPs
-# TODO @cmungall nico leave as reminder 
+# TODO @cmungall nico leave as reminder
 modules/%.csv: $(PSRC)
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -i $< -r pext  -u odputil -i $(PATTERNDIR)/uberon_patterns.pro "write_tuple($*)" > $@.tmp && mv $@.tmp $@
@@ -1680,7 +1680,7 @@ $(MODDIR)/%.omn: $(MODDIR)/%.csv $(PATTERNDIR)/%.yaml
 #$(MODDIR)/%-gci.owl: $(MODDIR)/%.omn
 
 # need to go via RDF due to OWLAPI bug
-$(MODDIR)/%.rdf: $(MODDIR)/%.omn $(MODDIR)/%-gci.owl 
+$(MODDIR)/%.rdf: $(MODDIR)/%.omn $(MODDIR)/%-gci.owl
 	$(OWLTOOLS) $^ --merge-support-ontologies --set-ontology-id $(URIBASE)/uberon/$@ -o  $@
 
 $(MODDIR)/%.owl: $(MODDIR)/%.rdf
@@ -1746,8 +1746,8 @@ reports/robot_release_diff.md: $(TMPDIR)/$(ONT)-obo.obo $(TMPDIR)/$(ONT)-obo-mai
 
 .PHONY: feature_diff
 feature_diff: reports/robot_main_diff.md
-	
-	
+
+
 ########################
 #### Utility commands ##
 
@@ -1778,7 +1778,7 @@ clean:
 	rm -rf ./uberon-base.*
 	rm -f uberon.owl uberon.obo tmp/core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
 	rm -f ext.owl
-	
+
 
 explain:
 	$(ROBOT) explain --input $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK \
@@ -1789,13 +1789,13 @@ explain:
 #	echo "skipping $@"
 
 unsat: $(TMPDIR)/bundled-metazoan.owl_unsat.ofn $(TMPDIR)/cl_mondo_merged.owl_unsat.ofn
-	
+
 $(TMPDIR)/%_unsat.ofn: %
 	$(ROBOT) merge --input $< explain --reasoner ELK \
   -M unsatisfiability --unsatisfiable random:3 --explanation $@.md \
     annotate --ontology-iri "$(ONTBASE)/$@" \
     --output $@
-		
+
 cl_mondo_merged.owl:
 	$(ROBOT) merge -i uberon.owl -I $(URIBASE)/cl.owl -o $@
 
@@ -1871,7 +1871,7 @@ normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/fbbt_import.owl
 
 .PHONY: normalise_release
-normalise_release: 
+normalise_release:
 	make normalise_release_serialisation_rdfmxml -B
 	make normalise_release_serialisation_ofn -B
 
@@ -1896,7 +1896,7 @@ update_docs:
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-test: test_owlaxioms 
+test: test_owlaxioms
 
 docs/releases.md: uberon-odk.yaml
 	echo "All the things to generate the release.md file and the sep. pages for each release."
@@ -1904,7 +1904,7 @@ docs/releases.md: uberon-odk.yaml
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
 
-### Removing uberon_2 contraints 
+### Removing uberon_2 contraints
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
 	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru convert -f obo -o $(SRC)
