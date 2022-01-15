@@ -1,5 +1,5 @@
 
-Naming pattern: lower primary/secondary tooth number
+#Naming pattern: lower primary/secondary tooth number
 
 #insicors get premaxilla and mandible
 #canines, molars, and premolars get maxilla and mandible
@@ -14,7 +14,7 @@ contributors:
 
 #lower teeth
 pattern_name: lower_teeth
-Description: "This defines lower teeth."
+description: "This defines lower teeth."
 
 classes:
     bone of jaw: 'UBERON:0012360' # Add ID for bone
@@ -28,7 +28,7 @@ relations:
 
 vars:
     bone: "'bone of jaw" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
-      #mandible UBERON:0001684 
+      #mandible UBERON:0001684
     dentition_type: "'dentition'"
       #primary UBERON:0007116
       #secondary UBERON:0007774
@@ -42,7 +42,7 @@ data_vars:
     number: 'xsd:integer'
       #1-6
 
-data_list_var:
+data_list_vars:
     xrefs: 'xsd:string' #separate mulitple eentries by "|"
 
 name:

@@ -3,8 +3,11 @@ pattern_name: endochondral_cartilage
 classes:
   cartilage tissue: "UBERON:0002418"
 
-relations: 
+relations:
   composed_primarily_of: "RO:0002473"
+
+annotationProperties:
+  has_exact_synonym: "oio:hasExactSynonym"
 
 vars:
   element: "Thing"
@@ -12,26 +15,24 @@ vars:
 name:
   text: "%s cartilage element"
   vars:
-   - element
+    - element
 
 annotations:
-  - property: oio:hasExactSynonym
+  - annotationProperty: has_exact_synonym
     text: "%s cartilage"
     vars:
      - element
-  - property: oio:hasRelatedSynonym
+  - annotationProperty: has_exact_synonym
     text: "%s cartilage"
     vars:
-     - element
+      - element
 
 def:
   text: "A %s that is composed primarily of cartilage tissue"
   vars:
-    - element
+     - element
 
 equivalentTo:
   text: "%s and 'composed_primarily_of' some 'cartilage tissue'"
   vars:
     - element
-
-

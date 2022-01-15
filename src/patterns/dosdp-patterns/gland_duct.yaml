@@ -3,8 +3,12 @@ pattern_name: gland_duct
 classes:
   duct: UBERON:0000058
 
-relations: 
+relations:
   part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
 
 vars:
   gland: "Thing"
@@ -15,7 +19,7 @@ name:
    - gland
 
 annotations:
-  - property: oio:hasExactSynonym
+  - annotationProperty: exact_synonym
     text: "duct of %s"
     vars:
      - gland
@@ -29,5 +33,3 @@ equivalentTo:
   text: "'duct' and 'part_of' some %s"
   vars:
     - gland
-
-

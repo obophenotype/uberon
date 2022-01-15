@@ -1,31 +1,31 @@
 pattern_name: uberon/patterns/taxon_specific
 
-classes: 
-  anatomical entity: UBERON:0001062
-  taxon: NCBITaxon:1
+classes:
+  anatomical entity: "UBERON:0001062"
+  taxon: "NCBITaxon:1"
 
 relations:
-  in taxon: RO:0002162
+  in taxon: "RO:0002162"
 
-vars: 
-  anatomical entity: "'anatomical entity'"
+vars:
+  anatomical_entity: "'anatomical entity'"
   taxon: "'taxon'"
 
-name: 
+name:
   text: "%s, %s"
-  vars: 
-    - anatomical entity
+  vars:
+    - anatomical_entity
     - taxon
 
-def: 
+def:
   text: "Any %s that is part of a %s."
   vars:
-    - anatomical entity
+    - anatomical_entity
     - taxon
 
-equivalentTo: 
+equivalentTo:
   text: "% that 'in taxon' some %s"
 
   vars:
-    - anatomical entity
+    - anatomical_entity
     - taxon
