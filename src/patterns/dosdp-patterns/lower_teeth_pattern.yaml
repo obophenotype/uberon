@@ -14,6 +14,7 @@ contributors:
 
 #lower teeth
 pattern_name: lower_teeth
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml
 description: "This defines lower teeth."
 
 classes:
@@ -27,7 +28,7 @@ relations:
     part_of: 'BFO:0000050'
 
 vars:
-    bone: "'bone of jaw" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
+    bone: "'bone of jaw'" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
       #mandible UBERON:0001684
     dentition_type: "'dentition'"
       #primary UBERON:0007116
@@ -46,7 +47,7 @@ data_list_vars:
     xrefs: 'xsd:string' #separate mulitple eentries by "|"
 
 name:
-    text: "Lower %s %s %s"
+    text: "lower %s %s %s"
     vars:
       - dentition_type
       - tooth

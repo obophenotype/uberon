@@ -1,9 +1,11 @@
 pattern_name: gland_acinus
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/gland_acinus.yaml
 
 classes:
   glandular_acinus: UBERON:0009842
+  Thing: "owl:Thing"
 
-relations: 
+relations:
   part_of: BFO:0000050
 
 vars:
@@ -14,7 +16,6 @@ name:
   vars:
    - gland
 
-annotations: []
 
 def:
   text: "The acinar part of a %s."
@@ -25,5 +26,3 @@ equivalentTo:
   text: "'glandular_acinus' and 'part_of' some %s"
   vars:
     - gland
-
-
