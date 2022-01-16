@@ -119,7 +119,7 @@ tmp/core.owl: $(SRC)
 # FIXED apparently our base does not contain phenoscape-ext!! (It does, through unreasoned)
 #$(TMPDIR)/phenoscape-ext-src.owl: $(SRC)
 #	wget --no-check-certificate https://raw.githubusercontent.com/obophenotype/uberon-phenoscape-ext/master/phenoscape-ext.owl -O $@ && touch $@
-	
+
 # including the imports would lead to circularity, so we remove these here
 #$(COMPONENTSDIR)/phenoscape-ext.owl: $(TMPDIR)/phenoscape-ext-src.owl tmp/core.owl
 #	owltools $(UCAT) $< --remove-imports-declarations -o -f functional $@
@@ -1746,8 +1746,8 @@ reports/robot_release_diff.md: $(TMPDIR)/$(ONT)-obo.obo $(TMPDIR)/$(ONT)-obo-mai
 
 .PHONY: feature_diff
 feature_diff: reports/robot_main_diff.md
-	
-	
+
+
 ########################
 #### Utility commands ##
 
@@ -1778,7 +1778,6 @@ clean:
 	rm -rf ./uberon-base.*
 	rm -f uberon.owl uberon.obo tmp/core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
 	rm -f ext.owl
-	
 
 explain:
 	$(ROBOT) explain --input $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK \
@@ -1789,13 +1788,13 @@ explain:
 #	echo "skipping $@"
 
 unsat: $(TMPDIR)/bundled-metazoan.owl_unsat.ofn $(TMPDIR)/cl_mondo_merged.owl_unsat.ofn
-	
+
 $(TMPDIR)/%_unsat.ofn: %
 	$(ROBOT) merge --input $< explain --reasoner ELK \
   -M unsatisfiability --unsatisfiable random:3 --explanation $@.md \
     annotate --ontology-iri "$(ONTBASE)/$@" \
     --output $@
-		
+
 cl_mondo_merged.owl:
 	$(ROBOT) merge -i uberon.owl -I $(URIBASE)/cl.owl -o $@
 
@@ -1904,6 +1903,24 @@ docs/releases.md: uberon-odk.yaml
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
 
+# ----------------------------------------
+# TAXON CONSTRAINTS VIA RELATION GRAPH
+# ----------------------------------------
+# see https://github.com/obophenotype/uberon/issues/2137#issuecomment-963594082
+
+# make a relationgraph ttl file (assumes RG 2.0 - may not be in ODK yet)
+tmp/%.relationgraph.ttl: %.obo
+	relation-graph --ontology-file $< --equivalence-as-subclass true --output-subclasses true --reflexive-subclasses true --output-file $@
+.PRECIOUS: tmp/%.relationgraph.ttl
+
+tmp/%.rgmerged.ttl: tmp/%.relationgraph.ttl %.obo
+	robot merge -i $< -i $*.obo -o $@
+.PRECIOUS: tmp/%.rgmerged.ttl
+
+# This is currently hardcoded to a subset of species
+tmp/class-taxon-exclusions.tsv: tmp/uberon-edit.rgmerged.ttl
+	 robot query -i $< --tdb true --query ../sparql/taxon-violation-relation-graph.sparql $@
+
 ### Removing uberon_2 contraints 
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
@@ -1917,3 +1934,4 @@ explain_humans:
 
 explain_humans_all:
 	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
+

@@ -1,0 +1,47 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+PREFIX human: <http://purl.obolibrary.org/obo/NCBITaxon_9606>
+PREFIX mammal: <http://purl.obolibrary.org/obo/NCBITaxon_40674>
+PREFIX never_in_taxon: <http://purl.obolibrary.org/obo/RO_0002161>
+PREFIX in_taxon: <http://purl.obolibrary.org/obo/RO_0002162>
+
+SELECT  ?c ?cLabel ?p ?pLabel ?clsWithConstraint  ?clsWithConstraintLabel ?taxonWithConstraint ?taxonWithConstraintLabel ?queryTaxon
+WHERE {
+
+   ?c        ?p                    ?clsWithConstraint .
+
+      # NEVER IN
+      { 
+        ?clsWithConstraint       never_in_taxon:  ?taxonWithConstraint .
+        ?queryTaxon
+                  rdfs:subClassOf  ?taxonWithConstraint
+      }
+    UNION
+      # ONLY IN
+      {
+        ?clsWithConstraint  in_taxon:  ?taxonWithConstraint
+        FILTER NOT EXISTS { ?queryTaxon
+                                      rdfs:subClassOf  ?taxonWithConstraint
+                          }
+      }
+
+  # add to this as required
+  VALUES ?queryTaxon {
+    human: mammal:
+  }
+    OPTIONAL
+          { ?c  rdfs:label  ?cLabel }
+    OPTIONAL
+          { ?p  rdfs:label  ?pLabel }
+    OPTIONAL
+          { ?clsWithConstraint  rdfs:label  ?clsWithConstraintLabel }
+    OPTIONAL
+          { ?taxonWithConstraint  rdfs:label  ?taxonWithConstraintLabel }
+
+
+  FILTER isIRI(?c)
+ 
+
+  }
