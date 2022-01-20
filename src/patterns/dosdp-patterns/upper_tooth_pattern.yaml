@@ -1,5 +1,5 @@
 
-#Naming pattern: upper primary/secondary tooth number
+#Naming pattern: upper primary/secondary side tooth number
 
 #insicors get premaxilla and mandible
 #canines, molars, and premolars get maxilla and mandible
@@ -32,9 +32,9 @@ vars:
     bone: "'bone of jaw'" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
       #premaxilla UBERON_0002244
       #maxilla UBERON:0002397
-    dentition_type: "'dentition'"
-      #primary UBERON:0007116
-      #secondary UBERON:0007774
+    side: "in_lateral_side_of"
+      #right side BSPO:0000007
+      #left side BSPO:0000000
     tooth: "'calcareous tooth'"
       #incisor UBERON_0001098
       #canine UBERON:0003674
@@ -49,23 +49,26 @@ data_list_vars:
     xrefs: 'xsd:string' #separate mulitple eentries by "|"
 
 name:
-    text: "Upper %s %s %s"
+    text: "upper %s %s %s %s"
     vars:
       - dentition_type
+      - side
       - tooth
       - number
 
 def:
-    text: "Upper %s %s phylogenetically in position %s"
+    text: "Upper %s %s %s phylogenetically in position %s"
     vars:
       - dentition_type
+      - side
       - tooth
       - number
     xrefs: xrefs
 
 equivalentTo:
-  text: "%s and ('part_of' some %s) and ('part_of' some %s)"
+  text: "%s and ('inheres in' some %s and ('part_of' some %s) and ('part_of' some %s))"
   vars:
     - tooth
+    - side
     - bone
     - dentition_type
