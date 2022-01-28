@@ -233,13 +233,6 @@ imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 
 .PRECIOUS: imports/%_import.owl
 
-## Module for ontology: pr
-
-imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
 ## Module for ontology: chebi
 
 imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt
@@ -306,7 +299,7 @@ IMP_LARGE=true # Global parameter to bypass handling of large imports
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then curl -L $(URIBASE)/pr.owl.gz --create-dirs -o mirror/pr.owl.gz --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/pr.owl.gz -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/pr.owl
 
 
