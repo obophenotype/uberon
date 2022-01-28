@@ -1883,10 +1883,10 @@ normalise_release:
 normalise_robot: .FORCE
 	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
 
-test_obo_parse:
+test_obo_serialisation:
 	$(ROBOT) convert -i $(SRC) -f obo -o $(TMPDIR)/uberon_make_sure_serialisable_as_obo.obo
 
-test: test_obo_parse 
+test: test_obo_serialisation 
 
 .PHONY: obocheck
 obocheck:
