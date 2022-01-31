@@ -400,8 +400,13 @@ tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
 imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
 	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
 
-imports/pato_import.owl: mirror/pato.owl $(TMPDIR)/seed.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pato.owl -c --extract-mingraph --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
+imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" \
+		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 # TODO - logical definitions go->ubr,cl
 imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
@@ -410,9 +415,14 @@ imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
 imports/envo_import.owl: mirror/envo.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
-imports/nbo_import.owl: mirror/nbo.owl $(TMPDIR)/seed.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/nbo.owl -c --make-subset-by-properties --force  --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
+imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/nbo_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" \
+		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+	
 imports/chebi_import.owl: mirror/chebi.owl $(TMPDIR)/seed.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
