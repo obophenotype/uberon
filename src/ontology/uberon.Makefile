@@ -1893,6 +1893,11 @@ normalise_release:
 normalise_robot: .FORCE
 	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
 
+test_obo_serialisation:
+	$(ROBOT) convert -i $(SRC) -f obo -o $(TMPDIR)/uberon_make_sure_serialisable_as_obo.obo
+
+test: test_obo_serialisation 
+
 .PHONY: obocheck
 obocheck:
 	fastobo-validator uberon-edit.obo
@@ -1911,7 +1916,7 @@ update_docs:
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-test: test_owlaxioms 
+test: test_owlaxioms
 
 docs/releases.md: uberon-odk.yaml
 	echo "All the things to generate the release.md file and the sep. pages for each release."
