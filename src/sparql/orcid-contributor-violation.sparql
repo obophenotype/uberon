@@ -3,6 +3,8 @@ PREFIX dc_terms: <http://purl.org/dc/terms/>
 SELECT ?subject ?orcid
 WHERE {
   ?subject dc_terms:contributor ?orcid .
+  FILTER(str(?orcid) != "https://github.com/orgs/pato-ontology/teams/pato-community")
   FILTER(!regex(str(?orcid), "^(https://orcid.org/)[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)") && 
-         !regex(str(?orcid), "^(https://www.wikidata.org/wiki/Q)[0-9]+") )
+         !regex(str(?orcid), "^(https://www.wikidata.org/wiki/Q)[0-9]+") &&
+         !regex(str(?orcid), "^(https://ror.org/)[0-9a-z]{9}") )
 }
