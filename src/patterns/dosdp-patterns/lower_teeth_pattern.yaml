@@ -26,7 +26,6 @@ classes:
 
 relations:
     part_of: 'BFO:0000050'
-    characteristic_of: 'RO:0000052'
 
 vars:
     bone: "'bone of jaw'" # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
@@ -68,7 +67,7 @@ def:
     xrefs: xrefs
 
 equivalentTo:
-  text: "%s and ('characteristic_of' some %s and ('part_of' some %s) and ('part_of' some %s))"
+  text: "%s and ('inheres in' some %s and ('part_of' some %s) and ('part_of' some %s))"
   vars:
     - tooth
     - side
