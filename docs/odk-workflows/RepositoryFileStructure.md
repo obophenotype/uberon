@@ -16,7 +16,7 @@ These are the current imports in UBERON
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | http://purl.obolibrary.org/obo/pr.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | cl | http://purl.obolibrary.org/obo/cl.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
 | envo | http://purl.obolibrary.org/obo/envo.owl | None |
