@@ -160,7 +160,7 @@ $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
 	$(ROBOT) merge -i $< --collapse-import-closure false \
 		relax \
 		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
-		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed none \
+		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
 		unmerge -i $(TMP_REFL) \
 		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
 .PRECIOUS: $(TMPDIR)/materialized.owl
