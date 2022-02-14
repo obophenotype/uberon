@@ -1,0 +1,35 @@
+pattern_name: innervates_branching
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/innervates_branching.yaml
+
+classes:
+  Thing: "owl:Thing"
+
+relations:
+  branching_part_of: RO:0002380
+  innervates: RO:0002134
+
+vars:
+  innervator: "Thing"
+  innervatee: "Thing"
+  whole: "Thing"
+
+name:
+  text: "%s %s %s"
+  vars:
+   - whole
+   - innervator
+   - innervatee
+
+def:
+  text: "A %s that branches from a %s and innervates a %s"
+  vars:
+    - innervator
+    - whole
+    - innervatee
+
+equivalentTo:
+  text: "%s and 'branching_part_of' some %s and 'innervates' some %s"
+  vars:
+    - innervator
+    - whole
+    - innervatee

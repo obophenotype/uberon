@@ -1,0 +1,37 @@
+pattern_name: gland_duct
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/gland_duct.yaml
+
+classes:
+  duct: UBERON:0000058
+  Thing: "owl:Thing"
+
+relations:
+  part_of: BFO:0000050
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+vars:
+  gland: "Thing"
+
+name:
+  text: "%s duct"
+  vars:
+   - gland
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "duct of %s"
+    vars:
+     - gland
+
+def:
+  text: "The duct part of a %s."
+  vars:
+    - gland
+
+equivalentTo:
+  text: "'duct' and 'part_of' some %s"
+  vars:
+    - gland
