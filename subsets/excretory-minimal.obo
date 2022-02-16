@@ -60,6 +60,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -99,7 +100,7 @@ xref: XAO:0000144
 is_a: UBERON:0006555 ! excretory tube
 relationship: part_of UBERON:0011143 {source="FMA"} ! upper urinary tract
 relationship: part_of UBERON:0036295 ! renal pelvis/ureter
-property_value: depicted:by Urinary:system.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/30/Urinary_system.svg xsd:anyURI
 property_value: UBPROP:0000001 "Anatomical structure consisting of long narrow duct which carries urine from the kidney to the urinary bladder.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010254", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The duct of amniotes that carries urine from a metanephric kidney to the urinary bladder. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-29, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000605", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "The first embryonic hint of a metanephros is the formation of the metanephric duct that appears as a ureteric diverticulum arising at the base of preexisting mesonephric duct. The ureteric diverticulum grows dorsally into the posterior region of the nephric ridge. Here it enlarges and stimulates the growth of metanephric tubules that come to make up the metanephric kidney. The metanephros becomes the adult kidney of amniotes, and the metanephric duct is usually called the ureter.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000605", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.543"}
@@ -138,7 +139,7 @@ xref: UMLS:C0041967 {source="ncithesaurus:Urethra"}
 xref: VHOG:0001264
 xref: XAO:0000153
 relationship: part_of UBERON:0001556 ! lower urinary tract
-property_value: depicted:by Female:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 property_value: UBPROP:0000007 "urethral" xsd:string
 property_value: UBPROP:0000008 "In human males, the urethra travels through the penis, and carries semen as well as urine. In females, the urethra is shorter and emerges above the vaginal opening." xsd:string
 
@@ -206,9 +207,9 @@ xref: UMLS:C0022663 {source="ncithesaurus:Glomerulus"}
 xref: ZFA:0001288
 relationship: part_of UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg xsd:anyURI
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9114-8737 xsd:anyURI
 property_value: UBPROP:0000012 "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?" xsd:string {external_ontology="ZFA"}
-created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 
 [Term]
@@ -407,6 +408,7 @@ id: UBERON:0000362
 name: renal medulla
 namespace: uberon
 def: "The inner portion of the kidney consisting of the renal pyramids." [ISBN:0-683-40008-8, MGI:smb, MP:0003014]
+comment: Note that 'renal medulla' is not synonymous with 'medullary region of kidney'. The former is composed of kidney pyramids only, while the latter covers kidney pyramids and renal columns, which are histologically different.
 subset: pheno_slim
 synonym: "kidney medulla" EXACT [OBOL:automatic]
 synonym: "medulla of kidney" EXACT [OBOL:automatic]
@@ -431,7 +433,7 @@ xref: NCIT:C12740
 xref: Renal:medulla
 xref: UMLS:C0022664 {source="ncithesaurus:Renal_Medulla"}
 relationship: part_of UBERON:0002113 ! kidney
-property_value: depicted:by Illu:kidney.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/69/Illu_kidney.jpg xsd:anyURI
 property_value: UBPROP:0000010 "The renal medulla is split up into a number of sections, known as the renal pyramids. Blood enters into the kidney via the renal artery, which then splits up to form the arcuate arterioles. The arcuate arterioles each in turn branch into interlobular arterioles, which finally reach the glomeruli. At the glomerulus the blood reaches a highly disfavourable pressure gradient and a large exchange surface area, which forces the serum portion of the blood out of the vessel into the renal tubules. Flow continues through the renal tubules, including the proximal tubule, the Loop of Henle, and finally leaves the kidney by means of the collecting duct, leading to the renal ureter. The renal medulla contains the structures of the nephrons responsible for maintaining the salt and water balance of the blood. The renal medulla is hypertonic to the filtrate in the nephron and aids in the reabsorption of water" xsd:string
 
 [Term]
@@ -462,7 +464,7 @@ xref: Transitional:epithelium
 xref: UMLS:C0225339 {source="ncithesaurus:Transitional_Epithelium"}
 xref: UMLS:C0227598 {source="ncithesaurus:Urothelium"}
 relationship: part_of UBERON:0001008 ! renal system
-property_value: depicted:by Harnblase:Urothel.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/9/91/Harnblase_Urothel.png xsd:anyURI
 property_value: UBPROP:0000007 "urothelial" xsd:string
 
 [Term]
@@ -491,7 +493,7 @@ xref: MA:0001698
 xref: NCIT:C62404
 is_a: UBERON:0004228 ! urinary bladder smooth muscle
 relationship: part_of UBERON:0012378 {source="FMA"} ! muscle layer of urinary bladder
-property_value: depicted:by Illu:bladder.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/5/57/Illu_bladder.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0000461
@@ -746,7 +748,7 @@ xref: Renal:pelvis
 xref: UMLS:C0227666 {source="ncithesaurus:Renal_Pelvis"}
 relationship: part_of UBERON:0002113 {source="MA"} ! kidney
 relationship: part_of UBERON:0036295 ! renal pelvis/ureter
-property_value: depicted:by Illu:kidney2.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/c0/Illu_kidney2.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0001225
@@ -773,7 +775,7 @@ xref: Renal:cortex
 xref: UMLS:C0022655 {source="ncithesaurus:Renal_Cortex"}
 relationship: part_of UBERON:0002113 ! kidney
 relationship: part_of UBERON:0008987 {source="FMA"} ! renal parenchyma
-property_value: depicted:by Illu:kidney.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/69/Illu_kidney.jpg xsd:anyURI
 property_value: UBPROP:0000010 "In the adult metanephros, it forms a continuous smooth outer zone with a number of projections that extend down between the pyramids. It contains the renal corpuscles and the renal tubules except for parts of the loop of Henle which descend into the renal medulla. It also contains blood vessels and cortical collecting ducts. The renal cortex is the part of the kidney where ultrafiltration occurs.[WP]" xsd:string
 
 [Term]
@@ -793,7 +795,7 @@ xref: MA:0001644
 xref: Major:calyx
 is_a: UBERON:0006517 ! kidney calyx
 is_a: UBERON:0014401 ! renal venous blood vessel
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 
 [Term]
 id: UBERON:0001227
@@ -812,7 +814,7 @@ xref: MA:0001645
 xref: Minor:calyx
 is_a: UBERON:0006517 ! kidney calyx
 is_a: UBERON:0014401 ! renal venous blood vessel
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 
 [Term]
 id: UBERON:0001228
@@ -835,7 +837,7 @@ xref: Renal:papilla
 xref: UMLS:C0022666 {source="ncithesaurus:Renal_Papilla"}
 relationship: part_of UBERON:0001224 ! renal pelvis
 relationship: part_of UBERON:0001294 ! inner medulla of kidney
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 
 [Term]
 id: UBERON:0001229
@@ -870,7 +872,7 @@ xref: ZFA:0005281
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0001285 {source="MA", source="ZFA"} ! nephron
 relationship: part_of UBERON:0007684 {source="FMA"} ! uriniferous tubule
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
 property_value: UBPROP:0000001 "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney[BTO]" xsd:string {date_retrieved="2012-11-28", external_class="BTO:0000333", ontology="BTO", source="BTO:curator"}
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated. Paired highly vascularized structures of the pronephros, responsible for blood filtration.[XAO]" xsd:string {date_retrieved="2012-11-28", external_class="XAO:0000146", ontology="XAO", source="XAO:curator"}
 property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005281", ontology="TAO", source="ZFIN:curator"}
@@ -1081,7 +1083,7 @@ xref: Urinary:bladder
 xref: VHOG:0000740
 xref: XAO:0000154
 relationship: part_of UBERON:0001556 {source="FMA"} ! lower urinary tract
-property_value: depicted:by Urinary:system.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/30/Urinary_system.svg xsd:anyURI
 property_value: RO:0002161 NCBITaxon:8782 {editor="BGEE:Ann", id="GOTAX:0010073", source="https://github.com/obophenotype/uberon/issues/454"}
 property_value: UBPROP:0000001 "A saccular organ in which urine accumulates before discharge from the body. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-29, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000740", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Anatomical structure which consists of a membranous sac used to temporarily store urine until it is excreted from the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000623", ontology="AAO", source="AAO:BJB"}
@@ -1139,7 +1141,7 @@ xref: MA:0002492
 xref: NCIT:C12331
 xref: UMLS:C0447586 {source="ncithesaurus:Bladder_Trigone"}
 relationship: part_of UBERON:0006082 ! fundus of urinary bladder
-property_value: depicted:by Illu:bladder.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/5/57/Illu_bladder.jpg xsd:anyURI
 property_value: UBPROP:0000009 "The area is very sensitive to expansion and once stretched to a certain degree, the urinary bladder signals the brain of its need to empty. The signals become stronger as the bladder continues to fill." xsd:string
 property_value: UBPROP:0000011 "Embryologically, the trigone of the bladder is derived from the caudal end of mesonephric ducts, which is of mesodermal origin (the rest of the bladder is endodermal). In the female the mesonephric ducts regresses, causing the trigone to be less prominent, but still present" xsd:string {source="WP"}
 
@@ -1255,7 +1257,8 @@ property_value: UBPROP:0000010 "Contains loose to dense connective tissue, varia
 id: UBERON:0001284
 name: renal column
 namespace: uberon
-def: "A column of tissue that is histologically identical to tissue found in the renal cortex, but which is located in the medulla between the renal pyramids." [http://anatomy.uams.edu/anatomyhtml/kidney.html]
+def: "A column of tissue that is histologically identical to tissue found in the renal cortex, and which is located in the medullary region of kidney, between the renal pyramids." [http://www.ncbi.nlm.nih.gov/pubmed/17449786, https://orcid.org/0000-0002-1572-1316]
+comment: The renal columns have been thought of as being part of the medulla only because they are located in the inner, medullary region of the kidney, rather than in the outer, cortical region. Histologically, they are extensions of the renal cortex.
 subset: uberon_slim
 synonym: "Bertin's column" RELATED [FMA:17633]
 synonym: "column of Bertin" RELATED [FMA:17633]
@@ -1272,9 +1275,8 @@ xref: http://linkedlifedata.com/resource/umls/id/C0736346
 xref: MA:0001651
 xref: NCIT:C32387
 xref: Renal:column
-relationship: part_of UBERON:0002189 {source="FMA", source="MA"} ! outer cortex of kidney
-property_value: depicted:by Illu:kidney2.jpg xsd:anyURI
-property_value: IAO:0000116 "Check part_of location against textual definition" xsd:string
+relationship: part_of UBERON:8410073 ! medullary region of kidney
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/c0/Illu_kidney2.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0001285
@@ -1522,7 +1524,7 @@ is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
 relationship: part_of UBERON:0001225 ! cortex of kidney
 relationship: part_of UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
-property_value: depicted:by Kidney:nephron.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/21/Kidney_nephron.png xsd:anyURI
 property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="http://en.wikipedia.org/wiki/Distal_convoluted_tubule"}
 property_value: UBPROP:0000009 "in humans it is responsible for the reabsorption of about 5% of filtered sodium via the thiazide-sensitive Na-Cl symporter." xsd:string
 
@@ -1588,7 +1590,7 @@ xref: Male:urethra
 xref: NCIT:C33050
 xref: UMLS:C0458452 {source="ncithesaurus:Male_Urethra"}
 is_a: UBERON:0000057 ! urethra
-property_value: depicted:by Female:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0001334
@@ -1609,7 +1611,7 @@ xref: MA:0002637
 xref: NCIT:C32591
 xref: UMLS:C0458485 {source="ncithesaurus:Female_Urethra"}
 is_a: UBERON:0000057 ! urethra
-property_value: depicted:by Female:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0001335
@@ -1748,7 +1750,7 @@ xref: MA:0000370
 xref: NCIT:C12885
 xref: UMLS:C0227637 {source="ncithesaurus:Renal_Capsule"}
 relationship: part_of UBERON:0002113 ! kidney
-property_value: depicted:by Illu:kidney.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/69/Illu_kidney.jpg xsd:anyURI
 property_value: UBPROP:0000009 "provides some protection from trauma and damage." xsd:string
 property_value: UBPROP:0000010 "The renal capsule relates to the other layers in the following order (moving from innermost to outermost): renal medulla renal cortex renal capsule perinephric fat (or 'perirenal fat') renal fascia paranephric fat (or 'pararenal fat') peritoneum (anteriorly), and transversalis fascia (posteriorly).[Wikipedia:Kidney_capsule]" xsd:string
 
@@ -2029,7 +2031,7 @@ xref: NCIT:C32395
 xref: UMLS:C0006366 {source="ncithesaurus:Cowper_s_Gland"}
 is_a: UBERON:0010186 ! male urethral gland
 relationship: part_of UBERON:0001333 {notes="check this", source="MA"} ! male urethra
-property_value: depicted:by Male:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/35/Male_anatomy.png xsd:anyURI
 property_value: UBPROP:0000001 "Either of two small racemose glands that are located below the prostate and discharge a component of the seminal fluid into the urethra. They are homologous to the Bartholin's glands in the female[BTO]." xsd:string {ontology="BTO", source="BTO:0001698"}
 property_value: UBPROP:0000001 "Lobular organ the parenchyma of which consists of glandular acini which communicate the bulbar part of the urethra. Examples: There only two instances, right and left bulbo-urethral glands[FMA]" xsd:string {ontology="FMA", source="FMA:9599"}
 property_value: UBPROP:0000010 "The bulbourethral glands are compound tubulo-alveolar glands." xsd:string
@@ -2453,7 +2455,7 @@ xref: Renal:pyramids
 xref: UMLS:C0227629 {source="ncithesaurus:Renal_Pyramid"}
 xref: UMLS:C1514613 {source="ncithesaurus:Pyramid_of_Malpighi"}
 relationship: part_of UBERON:0000362 ! renal medulla
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 property_value: UBPROP:0000012 "not the same as FMA:50609 Pyramid (which is a volume / dimensional entity)" xsd:string {external_ontology="FMA"}
 property_value: UBPROP:0000202 FMA:74268
 
@@ -2906,7 +2908,7 @@ xref: FMA:272193
 xref: FMA:321527
 xref: MA:0002593
 is_a: UBERON:0014401 ! renal venous blood vessel
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 property_value: UBPROP:0000202 FMA:71632
 
 [Term]
@@ -4580,9 +4582,10 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 
 [Term]
 id: UBERON:0005751
-name: visceral layer of glomerular capsule
+name: glomerular visceral epithelium
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+def: "The inner (visceral) layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer (parietal) layer by the capsular (Bowman's) space[BTO]. This epithelial layer is superficially adjacent to the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. This inner epithelial layer of the glomerular capsule surrounds the capillary endothelial cells and is composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the inner visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+comment: Formerly had rdfs:label 'visceral layer of glomerular capsule'. The current label 'glomerular visceral epithelium' was copied from UBERON:0006852, which is now obsolete since it represented the same entity as this IRI.
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
@@ -4593,12 +4596,14 @@ synonym: "visceral epithelium of Bowman's capsule" EXACT [http://www.gudmap.org/
 synonym: "visceral epithelium of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of glomerular capsule" EXACT [MP:0011497]
+xref: EMAPA:28254
 xref: FMA:74273
 xref: http://linkedlifedata.com/resource/umls/id/C0227644
 xref: http://www.snomedbrowser.com/Codes/Details/244093000
+xref: MA:0002607
 xref: NCIT:C33879
 xref: UMLS:C0227644 {source="ncithesaurus:Visceral_Layer_of_Bowman_s_Capsule"}
-is_a: UBERON:0004211 ! nephron epithelium
+is_a: UBERON:0004188 ! glomerular epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
 property_value: IAO:0000116 "TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers" xsd:string
 
@@ -5155,16 +5160,6 @@ is_a: UBERON:0005272 ! peritubular capillary
 relationship: part_of UBERON:0001225 ! cortex of kidney
 
 [Term]
-id: UBERON:0006852
-name: glomerular visceral epithelium
-namespace: uberon
-synonym: "podocyte layer" RELATED [MA:0002607]
-xref: EMAPA:28254
-xref: MA:0002607
-is_a: UBERON:0004188 ! glomerular epithelium
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
 id: UBERON:0006853
 name: renal cortex tubule
 namespace: uberon
@@ -5684,7 +5679,7 @@ xref: NCIT:C32894
 xref: Renal:lobe
 xref: UMLS:C0736382 {source="ncithesaurus:Kidney_Lower_Lobe"}
 relationship: part_of UBERON:0002113 ! kidney
-property_value: depicted:by Kidney:PioM.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/7/7e/Kidney_PioM.png xsd:anyURI
 property_value: IAO:0000116 "todo - add has_part relationships." xsd:string
 property_value: UBPROP:0000008 "human kidneys have multilobar (multipyramidal) architecture while mice and rats have unilobar (unipyramidal) kidneys" xsd:string {source="MP"}
 
@@ -6872,8 +6867,8 @@ name: pronephric duct opening
 namespace: uberon
 xref: ZFA:0001055
 relationship: part_of UBERON:0003060 ! pronephric duct
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001200
@@ -6882,8 +6877,8 @@ namespace: uberon
 def: "Islands of eosinic cells found on the lateroventral surface of the kidney. Function is thought to be that of the parathyroid gland in other vertebrates, which are lacking in fishes. These cells secrete hypocalcin (teleocalcin) to regulate calcium metabolism." [ZFIN:curator]
 xref: ZFA:0001200
 relationship: part_of UBERON:0000080 ! mesonephros
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2001293
@@ -6891,8 +6886,8 @@ name: posterior kidney
 namespace: uberon
 xref: ZFA:0001293
 relationship: part_of UBERON:0000080 ! mesonephros
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2002225
@@ -6902,8 +6897,8 @@ synonym: "posterior pronephric ducts" EXACT PLURAL [TAO:0002225]
 xref: ZFA:0001623
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0003060 ! pronephric duct
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005292
@@ -6913,8 +6908,8 @@ def: "Portion of the renal tubule which is just posterior to the distal early tu
 xref: ZFA:0005292
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0001231 ! nephron tubule
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005311
@@ -6925,8 +6920,8 @@ synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3010392
@@ -6934,8 +6929,8 @@ name: mesonephric early proximal tubule
 namespace: uberon
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010393
@@ -6944,8 +6939,8 @@ namespace: uberon
 def: "The site of bicarbonate resorption in the adult kidney. It is equivalent to the convoluted distal segment of metanephric nephrons." [Xenbase]
 synonym: "DT1" EXACT [UBERON:3010393]
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3010394
@@ -6958,8 +6953,8 @@ synonym: "proximal tubule 3" EXACT [UBERON:3010394]
 synonym: "PT3" EXACT [UBERON:3010394]
 is_a: UBERON:0006553 ! renal duct
 relationship: part_of UBERON:0000083 ! mesonephric tubule
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 
 [Term]
 id: UBERON:3011120
@@ -6967,8 +6962,8 @@ name: early proximal tubule
 namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:19:55Z
 
 [Term]
@@ -6976,9 +6971,21 @@ id: UBERON:3011121
 name: late distal segment
 namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:21:45Z
+
+[Term]
+id: UBERON:8410073
+name: medullary region of kidney
+namespace: uberon
+def: "A part of the kidney that comprises kidney pyramids and renal columns." [http://orcid.org/0000-0002-7073-9172]
+comment: Note that 'medullary region of kidney' is not synonymous with 'renal medulla'. The former covers kidney pyramids and renal columns, which are histologically different, while the latter is composed of kidney pyramids only.
+synonym: "kidney medullary region" EXACT []
+relationship: part_of UBERON:0002113 ! kidney
+property_value: http://purl.org/dc/elements/1.1/date 2022-02-03T14:18:40Z xsd:dateTime
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/2126 xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: http://owltools.org/Q

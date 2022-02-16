@@ -60,6 +60,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -97,8 +98,6 @@ xref: ZFA_RETIRED:0005318
 is_a: UBERON:0005057 ! immune organ
 relationship: part_of UBERON:0002465 ! lymphoid system
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/b/b8/Illu_lymph_node_structure.png xsd:anyURI
-property_value: RO:0002161 NCBITaxon:32443 {source="https://doi.org/10.1177/0192623311409597", source="ZFA:0005318"}
-property_value: RO:0002161 NCBITaxon:8570 {source="Wikipedia"}
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/650 xsd:anyURI
 property_value: UBPROP:0000003 "Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001273", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.630"}
 
@@ -205,7 +204,7 @@ namespace: uberon
 synonym: "folliculus lymphaticus" RELATED [BTO:0002684]
 synonym: "lymphatic follicle" RELATED [BTO:0002684]
 synonym: "lymphatic nodule" RELATED [BTO:0002684]
-synonym: "lymphoid nodule" EXACT [FMA:55222]
+synonym: "lymphoid nodule" RELATED [FMA:55222]
 synonym: "nodular lymphoid tissue" EXACT [FMA:55222]
 synonym: "nodulus lymphaticus" RELATED [BTO:0002684]
 synonym: "nodulus lymphoideus" RELATED [BTO:0002684]
@@ -925,7 +924,7 @@ xref: XAO:0000328
 xref: ZFA:0000436
 is_a: UBERON:0005057 ! immune organ
 relationship: part_of UBERON:0002405 ! immune system
-property_value: depicted:by Illu:spleen.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/d/d6/Illu_spleen.jpg xsd:anyURI
 property_value: UBPROP:0000001 "An organ involved in red blood cell filtration and immune response.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010395", ontology="AAO", source="AAO:BMZ"}
 property_value: UBPROP:0000003 "With the advent of clonal selection, the accumulation and segregation of T and B cells in specialized organs for antigen presentation became necessary, and indeed the spleen is found in all jawed vertebrates, but not in agnathans or invertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000120", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0781765190 Paul WE, Fundamental Immunology (2008) p.94"}
 property_value: UBPROP:0000007 "lienal" xsd:string
@@ -1032,7 +1031,7 @@ xref: MA:0000739
 xref: NCIT:C33028
 xref: UMLS:C0229699 {source="ncithesaurus:Lymph_Node_Capsule"}
 relationship: part_of UBERON:0000029 ! lymph node
-property_value: depicted:by Lymphknoten:(Schwein).jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/9/92/Lymphknoten_(Schwein).jpg xsd:anyURI
 property_value: UBPROP:0000008 "from its internal surface are given off a number of membranous processes or trabeculae, consisting, in man, of connective tissue, with a small admixture of plain muscle fibers; but in many of the lower animals composed almost entirely of involuntary muscle[WP]" xsd:string
 
 [Term]
@@ -1042,7 +1041,9 @@ namespace: uberon
 def: "Membranous process coming from capsule of lymph node[WP]." [http://en.wikipedia.org/wiki/Lymph_node_trabeculae]
 subset: pheno_slim
 synonym: "lymph node trabecula" EXACT []
+synonym: "lymph node trabeculae" EXACT PLURAL []
 synonym: "lymph node trabeculum" EXACT []
+synonym: "trabeculae of lymph node" EXACT PLURAL []
 xref: FMA:74605
 xref: http://en.wikipedia.org/wiki/Lymph_node_trabeculae
 xref: http://linkedlifedata.com/resource/umls/id/C1184179
@@ -1091,7 +1092,7 @@ xref: XAO:0000163
 xref: ZFA:0001078
 is_a: UBERON:0005057 ! immune organ
 relationship: part_of UBERON:0002405 {source="XAO"} ! immune system
-property_value: depicted:by Illu:thymus.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cf/Illu_thymus.jpg xsd:anyURI
 property_value: IAO:0000116 "check - a subtype of gland? not in GO. NCIT has thymus and thymus gland. EHDAA2 has ductless gland." xsd:string
 property_value: UBPROP:0000001 "Anatomical structure which originates as several paired thickenings on the dorsal side of the pharyngeal pouches and secretes thymosin.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010548", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "A thymus develops in all vertebrates from the endodermal epithelium of certain pharyngeal pouches and from the adjacent ectodermal epithelium. In fishes, all the pouches, or the first four, contribute to thymus formation, but in tetrapods, the number is more restricted. In mammals, only the third and fourth are involved, and the contribution of the third is by far the greater.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000253", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0878932504 Gilbert SF, Developmental Biology (2006) p.558"}
@@ -1197,7 +1198,7 @@ xref: Palatine:tonsil
 xref: UMLS:C0040421 {source="ncithesaurus:Palatine_Tonsil"}
 xref: VHOG:0001140
 is_a: UBERON:0002372 ! tonsil
-property_value: depicted:by Illu:mouth.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/f/f6/Illu_mouth.jpg xsd:anyURI
 property_value: RO:0002174 NCBITaxon:9989 {source="http://www.ncbi.nlm.nih.gov/pubmed/20144910"}
 property_value: UBPROP:0000011 "tonsillar fossa develops from dorsal portion of pouch 2. Note that pharyngeal and lingual tonsils do not develop from pharyngeal pouches" xsd:string {source="ISBN:1607950324"}
 
@@ -2164,7 +2165,7 @@ xref: MA:0000773
 xref: NCIT:C32988
 xref: UMLS:C0229871 {source="ncithesaurus:Lingual_Tonsil"}
 is_a: UBERON:0002372 ! tonsil
-property_value: depicted:by Illu04:tongue.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/4c/Illu04_tongue.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0007384
@@ -2706,7 +2707,7 @@ xref: NCIT:C13337
 xref: UMLS:C0282491 {source="ncithesaurus:Germinal_Center"}
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0001745 ! secondary nodular lymphoid tissue
-property_value: depicted:by Germinal:center.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/60/Germinal_center.svg xsd:anyURI
 
 [Term]
 id: UBERON:0010755
@@ -4119,7 +4120,7 @@ is_a: UBERON:0015860 {source="FMA"} ! visceral abdominal lymph node
 id: UBERON:0037560
 name: superficial axillary lymph node
 namespace: uberon
-synonym: "axillary node" EXACT [FMA:12771]
+synonym: "axillary node" BROAD [FMA:12771]
 xref: FMA:12771
 is_a: UBERON:0001097 {source="FMA"} ! axillary lymph node
 
@@ -4429,7 +4430,7 @@ synonym: "aortopulmonary window lymph node" EXACT [FMA:276813]
 synonym: "mediastinal lymph node station # 5" EXACT [FMA:276813]
 synonym: "station 5 lymph node" EXACT [FMA:276813]
 synonym: "station 5 N2 lymph node" EXACT [FMA:276813]
-synonym: "subaortic lymph node" EXACT [FMA:276813]
+synonym: "subaortic lymph node" RELATED [FMA:276813]
 xref: FMA:276813
 is_a: UBERON:0002524 {source="FMA"} ! mediastinal lymph node
 
@@ -4545,7 +4546,7 @@ synonym: "no. 12p hepatic lymph node" EXACT [FMA:277271]
 synonym: "periportal lymph node" EXACT [FMA:277271]
 synonym: "porta hepatis lymph node" EXACT [FMA:277271]
 synonym: "portahepatic lymph node" EXACT [FMA:277271]
-synonym: "portal lymph node" EXACT [FMA:277271]
+synonym: "portal lymph node" BROAD [FMA:277271]
 xref: FMA:277271
 is_a: UBERON:0015859 {source="FMA"} ! hepatic lymph node
 
@@ -5150,8 +5151,8 @@ namespace: uberon
 synonym: "LLL" EXACT [TAO:0005106]
 xref: ZFA:0005106
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005303
@@ -5160,8 +5161,8 @@ namespace: uberon
 xref: ZFA:0005303
 is_a: UBERON:0007384 ! appendage lymph vessel
 relationship: part_of UBERON:0004536 ! lymph vasculature
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005319
@@ -5170,8 +5171,8 @@ namespace: uberon
 synonym: "islv" EXACT [TAO:0005319]
 xref: ZFA:0005319
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005320
@@ -5180,8 +5181,8 @@ namespace: uberon
 synonym: "dllv" EXACT [TAO:0005320]
 xref: ZFA:0005320
 is_a: UBERON:0004536 ! lymph vasculature
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:8410002
@@ -5191,7 +5192,7 @@ def: "A lymphatic vessel that supplies the small intestine." [http://orcid.org/0
 subset: location_grouping
 synonym: "lymphatic vessel of small intestine" EXACT []
 is_a: UBERON:0001473 ! lymphatic vessel
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410013
@@ -5201,7 +5202,7 @@ def: "A valve in an afferent lymphatic vessel. It manages the flow of lymphatic 
 synonym: "valve of afferent lymphatic vessel" EXACT []
 is_a: UBERON:0034949 ! lymphatic valve
 relationship: part_of UBERON:0010396 ! afferent lymphatic vessel
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410014
@@ -5211,7 +5212,7 @@ def: "A valve in an efferent lymphatic vessel. It manages the flow of lymphatic 
 synonym: "valve of efferent lymphatic vessel" EXACT []
 is_a: UBERON:0034949 ! lymphatic valve
 relationship: part_of UBERON:0010397 ! efferent lymphatic vessel
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410029
@@ -5222,7 +5223,7 @@ synonym: "lymphatic capillary of appendix vermiformis" EXACT []
 synonym: "lymphatic capillary of vermiform appendix" EXACT []
 is_a: UBERON:0006842 ! lymphatic capillary
 is_a: UBERON:8410030 ! lymphatic vessel of appendix
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410030
@@ -5232,7 +5233,7 @@ def: "A lymphatic vessel located in the vermiform appendix." [http://orcid.org/0
 synonym: "lymphatic vessel of appendix vermiformis" EXACT []
 synonym: "lymphatic vessel of vermiform appendix" EXACT []
 is_a: UBERON:0001473 ! lymphatic vessel
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410032
@@ -5241,7 +5242,7 @@ namespace: uberon
 def: "The trabecular sinus is the lymph-filled space outside the trabeculae between lobules of the lymph node. This is a continuation of the subcapsular sinus which receives the afferent vessels and is present beneath the capsule. This space is traversed by both reticular fibers and cells in the lymph." [http://orcid.org/0000-0003-4183-8865/, http://www.ncbi.nlm.nih.gov/pubmed/32491649, WikipediaVersioned:Lymph_node&oldid=1020495758]
 synonym: "lymph node trabecular sinus" EXACT []
 relationship: part_of UBERON:0000029 ! lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410035
@@ -5251,7 +5252,7 @@ def: "An arteriole that arises from the hilar artery of a lymph node and radiate
 synonym: "arteriole of medulla of lymph node" EXACT []
 is_a: UBERON:8410042 ! arteriole of lymph node
 relationship: part_of UBERON:0002007 ! medulla of lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410036
@@ -5261,7 +5262,7 @@ def: "Medullary venules are a continuation of high endothelial venules which con
 synonym: "venule of medulla of lymph node" EXACT []
 is_a: UBERON:8410041 ! venule of lymph node
 relationship: part_of UBERON:0002007 ! medulla of lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410038
@@ -5271,7 +5272,7 @@ def: "A high endothelial venule that is part of a of lymph node." [http://orcid.
 synonym: "lymph node high endothelial venule" EXACT []
 is_a: UBERON:8410041 ! venule of lymph node
 relationship: part_of UBERON:0000029 ! lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410040
@@ -5281,7 +5282,7 @@ def: "A high endothelial venule that is located in a Peyer's patch in the small 
 synonym: "high endothelial venule of Peyer's patch" BROAD []
 synonym: "high endothelial venule of Peyer's patch of small intestine" EXACT []
 relationship: part_of UBERON:0003454 ! small intestine Peyer's patch
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410041
@@ -5290,7 +5291,7 @@ namespace: uberon
 def: "A venule that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
 synonym: "lymph node venule" EXACT []
 relationship: part_of UBERON:0000029 ! lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410042
@@ -5299,7 +5300,7 @@ namespace: uberon
 def: "An arteriole that is part of a lymph node." [http://orcid.org/0000-0003-3440-1876, http://www.ncbi.nlm.nih.gov/pubmed/17067937]
 synonym: "lymph node arteriole" EXACT []
 relationship: part_of UBERON:0000029 ! lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410051
@@ -5307,7 +5308,7 @@ name: lymphatic vessel of colon
 namespace: uberon
 def: "A lymphatic vessel located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
 is_a: UBERON:0001473 ! lymphatic vessel
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410052
@@ -5319,7 +5320,7 @@ synonym: "light zone of germinal center" BROAD []
 synonym: "light zone of lymph node germinal center" EXACT []
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0009039 ! lymph node germinal center
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410053
@@ -5331,7 +5332,7 @@ synonym: "dark zone of lymph node germinal center" EXACT []
 synonym: "germinal center dark zone" BROAD []
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0009039 ! lymph node germinal center
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410054
@@ -5340,7 +5341,7 @@ namespace: uberon
 def: "A lymphatic capillary located in the colon." [https://orcid.org/0000-0003-3440-1876, https://orcid.org/0000-0003-4183-8865/]
 is_a: UBERON:0006842 ! lymphatic capillary
 is_a: UBERON:8410051 ! lymphatic vessel of colon
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410055
@@ -5348,7 +5349,7 @@ name: lymphatic capillary of anorectum
 namespace: uberon
 def: "A lymphatic capillary located in the anorectum." [https://orcid.org/0000-0003-3440-1876]
 is_a: UBERON:0006842 ! lymphatic capillary
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410065
@@ -5360,7 +5361,7 @@ synonym: "marginal zone of lymph node" BROAD []
 synonym: "marginal zone of lymph node follicle" EXACT []
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0000029 ! lymph node
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410066
@@ -5369,7 +5370,7 @@ namespace: uberon
 def: "The lymph node paracortex is the middle layer of the lymph node and is mostly populated by T cells and dendritic cells. The paracortex also contains specialised blood vessels called high endothelial venules which allow lymphocytes to enter the node." [http://orcid.org/0000-0001-9990-8331, http://orcid.org/0000-0003-4183-8865/, https://www.immunology.org/public-information/bitesized-immunology/organs-and-tissues/lymph-node]
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0010417 ! lymph node T cell domain
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: UBERON:8410067
@@ -5379,7 +5380,18 @@ def: "Follicules in the lymph node are surrounded and separated by the interfoll
 synonym: "interfollicular cortex of lymph node" EXACT []
 is_a: UBERON:0001744 ! lymphoid tissue
 relationship: part_of UBERON:0010417 ! lymph node T cell domain
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
+
+[Term]
+id: UBERON:8410069
+name: lymphoid nodule
+namespace: uberon
+def: "Lymphoid tissue found in some birds and similar, but not identical, to mammalian lymph nodes." [http://orcid.org/0000-0001-9990-8331, http://orcid.org/0000-0002-1572-1316, http://orcid.org/0000-0002-6601-2165, http://www.ncbi.nlm.nih.gov/pubmed/16889640, http://www.ncbi.nlm.nih.gov/pubmed/22483556, http://www.ncbi.nlm.nih.gov/pubmed/23640588, http://www.ncbi.nlm.nih.gov/pubmed/552577, http://www.ncbi.nlm.nih.gov/pubmed/916458]
+synonym: "avian lymph node" RELATED []
+synonym: "avian lymphoid nodule" EXACT []
+is_a: UBERON:0001744 ! lymphoid tissue
+property_value: http://purl.org/dc/elements/1.1/date 2022-01-24T16:47:47Z xsd:dateTime
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621 xsd:anyURI
 
 [Term]
 id: http://owltools.org/Q

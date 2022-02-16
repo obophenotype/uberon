@@ -60,6 +60,7 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -156,9 +157,9 @@ xref: ZFA:0001288
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg xsd:anyURI
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9114-8737 xsd:anyURI
 property_value: UBPROP:0000012 "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?" xsd:string {external_ontology="ZFA"}
-created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 
 [Term]
@@ -239,7 +240,7 @@ xref: VHOG:0001262
 xref: ZFA:0005281
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001285 {source="MA", source="ZFA"} ! nephron
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
 property_value: UBPROP:0000001 "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney[BTO]" xsd:string {date_retrieved="2012-11-28", external_class="BTO:0000333", ontology="BTO", source="BTO:curator"}
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated. Paired highly vascularized structures of the pronephros, responsible for blood filtration.[XAO]" xsd:string {date_retrieved="2012-11-28", external_class="XAO:0000146", ontology="XAO", source="XAO:curator"}
 property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005281", ontology="TAO", source="ZFIN:curator"}
@@ -603,7 +604,7 @@ xref: UMLS:C0022676 {source="ncithesaurus:Distal_Convoluted_Tubule"}
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
 relationship: part_of UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
-property_value: depicted:by Kidney:nephron.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/21/Kidney_nephron.png xsd:anyURI
 property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="http://en.wikipedia.org/wiki/Distal_convoluted_tubule"}
 property_value: UBPROP:0000009 "in humans it is responsible for the reabsorption of about 5% of filtered sodium via the thiazide-sensitive Na-Cl symporter." xsd:string
 
@@ -1655,9 +1656,10 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 
 [Term]
 id: UBERON:0005751
-name: visceral layer of glomerular capsule
+name: glomerular visceral epithelium
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+def: "The inner (visceral) layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer (parietal) layer by the capsular (Bowman's) space[BTO]. This epithelial layer is superficially adjacent to the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. This inner epithelial layer of the glomerular capsule surrounds the capillary endothelial cells and is composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the inner visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+comment: Formerly had rdfs:label 'visceral layer of glomerular capsule'. The current label 'glomerular visceral epithelium' was copied from UBERON:0006852, which is now obsolete since it represented the same entity as this IRI.
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
@@ -1668,12 +1670,14 @@ synonym: "visceral epithelium of Bowman's capsule" EXACT [http://www.gudmap.org/
 synonym: "visceral epithelium of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of glomerular capsule" EXACT [MP:0011497]
+xref: EMAPA:28254
 xref: FMA:74273
 xref: http://linkedlifedata.com/resource/umls/id/C0227644
 xref: http://www.snomedbrowser.com/Codes/Details/244093000
+xref: MA:0002607
 xref: NCIT:C33879
 xref: UMLS:C0227644 {source="ncithesaurus:Visceral_Layer_of_Bowman_s_Capsule"}
-is_a: UBERON:0004211 ! nephron epithelium
+is_a: UBERON:0004188 ! glomerular epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
 property_value: IAO:0000116 "TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers" xsd:string
 
@@ -1898,16 +1902,6 @@ xref: MA:0002630
 is_a: UBERON:0034996 ! outer renal medulla loop of Henle
 
 [Term]
-id: UBERON:0006852
-name: glomerular visceral epithelium
-namespace: uberon
-synonym: "podocyte layer" RELATED [MA:0002607]
-xref: EMAPA:28254
-xref: MA:0002607
-is_a: UBERON:0004188 ! glomerular epithelium
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
 id: UBERON:0006853
 name: renal cortex tubule
 namespace: uberon
@@ -2130,8 +2124,8 @@ namespace: uberon
 def: "Portion of the renal tubule which is just posterior to the distal early tubule." [ZFIN:curator]
 xref: ZFA:0005292
 relationship: part_of UBERON:0001231 ! nephron tubule
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:2005311
@@ -2142,8 +2136,8 @@ synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
+property_value: http://purl.org/dc/terms/contributor "teleost_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
 
 [Term]
 id: UBERON:3011120
@@ -2152,8 +2146,8 @@ namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:19:55Z
 
 [Term]
@@ -2161,8 +2155,8 @@ id: UBERON:3011121
 name: late distal segment
 namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
+property_value: http://purl.org/dc/terms/contributor "amphibian_anatomy_curators" xsd:string
 property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
 creation_date: 2011-04-20T05:21:45Z
 
 [Term]
