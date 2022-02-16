@@ -253,13 +253,17 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 # merge BSPO into RO
+# get rid of it
 mirror/bspo.owl: mirror/bspo.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/bspo.owl
 
+# Probably no reason to merge them first
+# --add-obo-shorthand-to-properties: remove this to add mappings into remove
 mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
+# make-subset-by-properties -f BFO:0000050 excludes all properties that are not BFO:0000050, essentially making a basic file. Not super relevant here remove here
 mirror/pato.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/pato.owl --extract-mingraph --make-subset-by-properties -f BFO:0000050 // --set-ontology-id $(URIBASE)/pato.owl -o $@; fi
 
@@ -275,6 +279,7 @@ mirror/chebi.obo.gz: $(OWLSRC)
 mirror/chebi.obo: mirror/chebi.obo.gz
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then gunzip -c $< > $@; fi
 
+# Does chebi still have these bad non RO OPs? Double check if relations are RO (partof)
 mirror/chebi.owl: mirror/chebi.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --extract-mingraph --rename-entity $(URIBASE)/chebi#has_part $(URIBASE)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/chebi.owl $(URIBASE)/chebi.owl -o $@ && touch $@; fi
 
@@ -308,10 +313,16 @@ $(TMPDIR)/mirror-%: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/$* -O $@ && touch $@; fi
 .PRECIOUS: $(TMPDIR)/mirror-%
 
+# Filter only EMAPA classes
+# EMAPA using a list flat ids for stages, these are mapped to MmusDv ids by fix-emapa-stages.pl
+# It would be useful to make a combined stage ontology, but than make it filterable by species (subsets)
 $(TMPDIR)/fixed-emapa.obo: $(TMPDIR)/mirror-emapa.obo | $(TMPDIR)
 	$(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | $(SCRIPTSDIR)/fix-emapa-stages.pl  > $@
 
 # stages must be mapped to MmusDv
+# We should add releate targets to stage ontology repo makefile.
+# Most stage ontologies in the stage ontology do not have PURls
+# We not to review the stage repo, in particular make sure that ontologies like ZFS are updated correctly
 $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo: $(TMPDIR)/update-stages
 	test -f $@
 
@@ -320,6 +331,8 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/developmental-stage-ontolo
 
 # https://github.com/obophenotype/uberon/issues/423#issuecomment-43425949
 
+# TODO: We should fix that upstream
+# They are using too strict relationships, which are here replaced by more general ones
 $(TMPDIR)/fixed-zfa.obo: $(TMPDIR)/mirror-zfa.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then perl -npe 's@RO:0002488@RO:0002496@;s@RO:0002492@RO:0002497@' $< > $@; fi
 
@@ -332,6 +345,9 @@ $(TMPDIR)/fixed-ehdaa2.obo: $(TMPDIR)/mirror-ehdaa2.obo | $(SCRIPTSDIR)/obo-grep
 mirror/ehdaa2.obo: mirror/ehdaa2.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(MAKEOBO); fi
 
+# https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
+# There was a period when Jonathan sent OBO files to Chris
+# Jonathan has "essentially" seeded the ownership? Double check
 mirror/ehdaa2.owl:
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@; fi
 
@@ -379,17 +395,17 @@ imports/local-ceph.owl:
 # NON-ORTHOGONAL ONTOLOGY MIRRORING
 
 ## Map legacy OBO-format ObjectProperties to their BFO/RO intended equivalent
+## a mirror is just a mirror, and local-mirror is a file with all that wrangling needed to message it into the right form. local- files are needed in composite file generation.
+## 
 ## TODO: many ontologies may have fixed their legacy properties
 ## TODO: Shouldnt bridge generation be a depenency for this goal? eg $(BRIDGEDIR)/uberon-bridge-to-caro.owl
+# Probably renaming local- to composite, as all of the local stuff is used for composite
 imports/local-%.owl: mirror/%.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
     --rename-entity $(URIBASE)/$*#develops_in $(URIBASE)/RO_0002203 \
     --rename-entity $(URIBASE)/$*#develops_from $(URIBASE)/RO_0002202 \
     --rename-entity $(URIBASE)/$*#preceded_by $(URIBASE)/RO_0002087 \
     --rename-entity $(URIBASE)/$*#starts_at_end_of $(URIBASE)/RO_0002087 \
-    --rename-entity $(URIBASE)/$*#DESCENDENTOF $(URIBASE)/RO_0002476 \
-    --rename-entity $(URIBASE)/$*#DESCINMALE $(URIBASE)/RO_0002478 \
-    --rename-entity $(URIBASE)/$*#DESCINHERM $(URIBASE)/RO_0002477 \
     --rename-entity $(URIBASE)/$*#connected_to $(URIBASE)/RO_0002170 \
     --rename-entity $(URIBASE)/$*#start $(URIBASE)/RO_0002496 \
     --rename-entity $(URIBASE)/$*#end $(URIBASE)/RO_0002497 \
