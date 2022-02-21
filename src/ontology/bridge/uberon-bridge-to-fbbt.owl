@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2021-11-26/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2022-02-21/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Osumi-Sutherland</dc:contributor>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon editors</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic equivalence axioms between the drosophila anatomy ontology and Uberon. Note that currently Uberon focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future Uberon may bridge via the arthropod anatomy ontology</dc:description>
@@ -3338,6 +3338,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBbt_00003039 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003039">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6003039"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal trunk of insect trachea (drosophila)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003039</oboInOwl:id>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBbt_00003125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003125">
@@ -5107,6 +5127,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003127"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6005043"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -5114,6 +5135,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect trachea (drosophila)</obo:IAO_0000589>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open tracheal system trachea (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005043</oboInOwl:id>
     </owl:Class>
@@ -9890,6 +9912,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_6003039 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6003039"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_6003218 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6003218"/>
@@ -10127,6 +10155,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_6005037 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6005037"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_6005043 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6005043"/>
     
 
 

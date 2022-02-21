@@ -594,6 +594,11 @@
           "sub": "http://purl.obolibrary.org/obo/UBERON_8410067"
         },
         {
+          "obj": "http://purl.obolibrary.org/obo/UBERON_0001744",
+          "pred": "is_a",
+          "sub": "http://purl.obolibrary.org/obo/UBERON_8410069"
+        },
+        {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0001745",
           "pred": "http://purl.obolibrary.org/obo/BFO_0000050",
           "sub": "http://purl.obolibrary.org/obo/UBERON_0010754"
@@ -2799,6 +2804,19 @@
           "type": "CLASS"
         },
         {
+          "id": "http://purl.obolibrary.org/obo/BFO_0000040",
+          "lbl": "material entity",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+                "val": "bfo"
+              }
+            ]
+          },
+          "type": "CLASS"
+        },
+        {
           "id": "http://purl.obolibrary.org/obo/BFO_0000050",
           "lbl": "part of",
           "meta": {
@@ -2927,14 +2945,6 @@
           "lbl": "lymph node",
           "meta": {
             "basicPropertyValues": [
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_32443"
-              },
-              {
-                "pred": "http://purl.obolibrary.org/obo/RO_0002161",
-                "val": "http://purl.obolibrary.org/obo/NCBITaxon_8570"
-              },
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000003",
                 "val": "Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]"
@@ -3379,13 +3389,6 @@
             "synonyms": [
               {
                 "pred": "hasExactSynonym",
-                "val": "lymphoid nodule",
-                "xrefs": [
-                  "FMA:55222"
-                ]
-              },
-              {
-                "pred": "hasExactSynonym",
                 "val": "nodular lymphoid tissue",
                 "xrefs": [
                   "FMA:55222"
@@ -3410,6 +3413,13 @@
                 "val": "lymphatic nodule",
                 "xrefs": [
                   "BTO:0002684"
+                ]
+              },
+              {
+                "pred": "hasRelatedSynonym",
+                "val": "lymphoid nodule",
+                "xrefs": [
+                  "FMA:55222"
                 ]
               },
               {
@@ -5694,7 +5704,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Illu:spleen.jpg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Illu_spleen.jpg"
               }
             ],
             "definition": {
@@ -6056,7 +6066,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Lymphknoten:(Schwein).jpg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/9/92/Lymphknoten_(Schwein).jpg"
               }
             ],
             "definition": {
@@ -6130,6 +6140,18 @@
             "synonyms": [
               {
                 "pred": "hasExactSynonym",
+                "synonymType": "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+                "val": "lymph node trabeculae",
+                "xrefs": []
+              },
+              {
+                "pred": "hasExactSynonym",
+                "synonymType": "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+                "val": "trabeculae of lymph node",
+                "xrefs": []
+              },
+              {
+                "pred": "hasExactSynonym",
                 "val": "lymph node trabecula",
                 "xrefs": []
               },
@@ -6183,7 +6205,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Illu:thymus.jpg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Illu_thymus.jpg"
               }
             ],
             "definition": {
@@ -6521,7 +6543,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Illu:mouth.jpg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Illu_mouth.jpg"
               }
             ],
             "definition": {
@@ -10043,7 +10065,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Illu04:tongue.jpg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Illu04_tongue.jpg"
               }
             ],
             "definition": {
@@ -11844,7 +11866,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Germinal:center.svg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/6/60/Germinal_center.svg"
               }
             ],
             "comments": [
@@ -16662,7 +16684,7 @@
             ],
             "synonyms": [
               {
-                "pred": "hasExactSynonym",
+                "pred": "hasBroadSynonym",
                 "val": "axillary node",
                 "xrefs": [
                   "FMA:12771"
@@ -17619,7 +17641,7 @@
                 ]
               },
               {
-                "pred": "hasExactSynonym",
+                "pred": "hasRelatedSynonym",
                 "val": "subaortic lymph node",
                 "xrefs": [
                   "FMA:276813"
@@ -18053,6 +18075,13 @@
             },
             "synonyms": [
               {
+                "pred": "hasBroadSynonym",
+                "val": "portal lymph node",
+                "xrefs": [
+                  "FMA:277271"
+                ]
+              },
+              {
                 "pred": "hasExactSynonym",
                 "val": "jPS 12p node",
                 "xrefs": [
@@ -18090,13 +18119,6 @@
               {
                 "pred": "hasExactSynonym",
                 "val": "portahepatic lymph node",
-                "xrefs": [
-                  "FMA:277271"
-                ]
-              },
-              {
-                "pred": "hasExactSynonym",
-                "val": "portal lymph node",
                 "xrefs": [
                   "FMA:277271"
                 ]
@@ -20383,10 +20405,6 @@
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "uberon"
               }
@@ -20418,10 +20436,6 @@
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "uberon"
               }
@@ -20442,10 +20456,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20479,10 +20489,6 @@
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "uberon"
               }
@@ -20510,8 +20516,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20543,8 +20549,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20573,8 +20579,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20603,8 +20609,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20638,8 +20644,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20673,8 +20679,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20705,8 +20711,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20736,8 +20742,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20767,8 +20773,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20798,8 +20804,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20836,8 +20842,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20867,8 +20873,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20898,8 +20904,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20922,8 +20928,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -20964,8 +20970,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21006,8 +21012,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21030,8 +21036,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21053,8 +21059,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21095,8 +21101,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21120,8 +21126,8 @@
           "meta": {
             "basicPropertyValues": [
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "http://orcid.org/0000-0002-2825-0621"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -21147,8 +21153,49 @@
           "type": "CLASS"
         },
         {
-          "id": "http://purl.obolibrary.org/obo/BFO_0000040",
-          "lbl": "material entity",
+          "id": "http://purl.obolibrary.org/obo/UBERON_8410069",
+          "lbl": "lymphoid nodule",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.org/dc/elements/1.1/date",
+                "val": "2022-01-24T16:47:47Z"
+              },
+              {
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0002-2825-0621"
+              },
+              {
+                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+                "val": "uberon"
+              }
+            ],
+            "definition": {
+              "val": "Lymphoid tissue found in some birds and similar, but not identical, to mammalian lymph nodes.",
+              "xrefs": [
+                "http://orcid.org/0000-0001-9990-8331",
+                "http://orcid.org/0000-0002-1572-1316",
+                "http://orcid.org/0000-0002-6601-2165",
+                "http://www.ncbi.nlm.nih.gov/pubmed/16889640",
+                "http://www.ncbi.nlm.nih.gov/pubmed/22483556",
+                "http://www.ncbi.nlm.nih.gov/pubmed/23640588",
+                "http://www.ncbi.nlm.nih.gov/pubmed/552577",
+                "http://www.ncbi.nlm.nih.gov/pubmed/916458"
+              ]
+            },
+            "synonyms": [
+              {
+                "pred": "hasExactSynonym",
+                "val": "avian lymphoid nodule",
+                "xrefs": []
+              },
+              {
+                "pred": "hasRelatedSynonym",
+                "val": "avian lymph node",
+                "xrefs": []
+              }
+            ]
+          },
           "type": "CLASS"
         }
       ],
