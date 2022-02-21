@@ -170,11 +170,6 @@
         },
         {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0000074",
-          "pred": "http://purl.obolibrary.org/obo/BFO_0000050",
-          "sub": "http://purl.obolibrary.org/obo/UBERON_0006852"
-        },
-        {
-          "obj": "http://purl.obolibrary.org/obo/UBERON_0000074",
           "pred": "is_a",
           "sub": "http://purl.obolibrary.org/obo/UBERON_0004736"
         },
@@ -681,7 +676,7 @@
         {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0004188",
           "pred": "is_a",
-          "sub": "http://purl.obolibrary.org/obo/UBERON_0006852"
+          "sub": "http://purl.obolibrary.org/obo/UBERON_0005751"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0004189",
@@ -802,11 +797,6 @@
           "obj": "http://purl.obolibrary.org/obo/UBERON_0004211",
           "pred": "is_a",
           "sub": "http://purl.obolibrary.org/obo/UBERON_0005330"
-        },
-        {
-          "obj": "http://purl.obolibrary.org/obo/UBERON_0004211",
-          "pred": "is_a",
-          "sub": "http://purl.obolibrary.org/obo/UBERON_0005751"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/UBERON_0004211",
@@ -1724,6 +1714,19 @@
           "type": "CLASS"
         },
         {
+          "id": "http://purl.obolibrary.org/obo/BFO_0000040",
+          "lbl": "material entity",
+          "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+                "val": "bfo"
+              }
+            ]
+          },
+          "type": "CLASS"
+        },
+        {
           "id": "http://purl.obolibrary.org/obo/BFO_0000050",
           "lbl": "part_of",
           "meta": {
@@ -2007,8 +2010,8 @@
                 "val": "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "Melissa Haendel"
+                "pred": "http://purl.org/dc/terms/contributor",
+                "val": "https://orcid.org/0000-0001-9114-8737"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
@@ -2020,11 +2023,11 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Renal:corpuscle.svg"
+                "val": "http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg"
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg"
               }
             ],
             "definition": {
@@ -2299,7 +2302,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Renal:corpuscle.svg"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg"
               }
             ],
             "comments": [
@@ -3572,7 +3575,7 @@
               },
               {
                 "pred": "http://xmlns.com/foaf/0.1/depicted_by",
-                "val": "Kidney:nephron.png"
+                "val": "https://upload.wikimedia.org/wikipedia/commons/2/21/Kidney_nephron.png"
               }
             ],
             "definition": {
@@ -6909,7 +6912,7 @@
         },
         {
           "id": "http://purl.obolibrary.org/obo/UBERON_0005751",
-          "lbl": "visceral layer of glomerular capsule",
+          "lbl": "glomerular visceral epithelium",
           "meta": {
             "basicPropertyValues": [
               {
@@ -6921,8 +6924,11 @@
                 "val": "uberon"
               }
             ],
+            "comments": [
+              "Formerly had rdfs:label 'visceral layer of glomerular capsule'. The current label 'glomerular visceral epithelium' was copied from UBERON:0006852, which is now obsolete since it represented the same entity as this IRI."
+            ],
             "definition": {
-              "val": "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP].",
+              "val": "The inner (visceral) layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer (parietal) layer by the capsular (Bowman's) space[BTO]. This epithelial layer is superficially adjacent to the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. This inner epithelial layer of the glomerular capsule surrounds the capillary endothelial cells and is composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the inner visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP].",
               "xrefs": [
                 "BTO:0001515",
                 "MP:0011497"
@@ -6992,7 +6998,13 @@
             ],
             "xrefs": [
               {
+                "val": "EMAPA:28254"
+              },
+              {
                 "val": "FMA:74273"
+              },
+              {
+                "val": "MA:0002607"
               },
               {
                 "val": "NCIT:C33879"
@@ -7672,36 +7684,6 @@
               },
               {
                 "val": "MA:0002630"
-              }
-            ]
-          },
-          "type": "CLASS"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/UBERON_0006852",
-          "lbl": "glomerular visceral epithelium",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "uberon"
-              }
-            ],
-            "synonyms": [
-              {
-                "pred": "hasRelatedSynonym",
-                "val": "podocyte layer",
-                "xrefs": [
-                  "MA:0002607"
-                ]
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "EMAPA:28254"
-              },
-              {
-                "val": "MA:0002607"
               }
             ]
           },
@@ -8433,10 +8415,6 @@
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
                 "val": "uberon"
               }
@@ -8463,10 +8441,6 @@
               {
                 "pred": "http://purl.obolibrary.org/obo/UBPROP_0000004",
                 "val": "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "teleost_anatomy_curators"
               },
               {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
@@ -8506,10 +8480,6 @@
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "amphibian_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
                 "val": "2011-04-20T05:19:55Z"
               },
@@ -8540,10 +8510,6 @@
                 "val": "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon"
               },
               {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "amphibian_anatomy_curators"
-              },
-              {
                 "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
                 "val": "2011-04-20T05:21:45Z"
               },
@@ -8553,11 +8519,6 @@
               }
             ]
           },
-          "type": "CLASS"
-        },
-        {
-          "id": "http://purl.obolibrary.org/obo/BFO_0000040",
-          "lbl": "material entity",
           "type": "CLASS"
         },
         {

@@ -910,12 +910,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/term_editor -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/term_editor"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION">
@@ -1207,6 +1201,15 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/uberon/core#inconsistent_with_fma -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#inconsistent_with_fma">
@@ -1315,19 +1318,6 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/contributor</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
-        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
@@ -1395,6 +1385,19 @@
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-title</oboInOwl:shorthand>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/terms/contributor</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -2270,7 +2273,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands.</obo:IAO_0000115>
-        <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <obo:UBPROP_0000001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nervous structures including ganglia outside of the central nervous system. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Part of nervous system in which nerves extend throughout the body outside of the brain and spinal cord.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The peripheral nervous system (PNS) is the part of the nervous system connected to the CNS which contains cranial nerves III - XII, spinal, peripheral and autonomic nerves. (CUMBO)</obo:UBPROP_0000001>
@@ -2321,14 +2323,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A major division of the nervous system that contains nerves which connect the central nervous system (CNS) with sensory organs, other organs, muscles, blood vessels and glands.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO:0007422</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000010"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002171"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
-        <oboInOwl:exceptions rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:exceptions>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/obophenotype/uberon/issues/378</oboInOwl:source>
-        <oboInOwl:status rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pending</oboInOwl:status>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000010"/>
@@ -2477,6 +2471,18 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006238"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2955,6 +2961,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuraxis tract</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:83847</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tract of neuraxis</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:83847</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -2976,12 +2988,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">White matter structure of CNS that contains axons that arise predominantly in one central nervous system part and terminate in another. Tracts are generally named by their region or origin followed by their region of primary termination, e.g., mammillothalamic tract contains axons that arise from neurons in the mammillary bodies and terminate in the thalamus. (CUMBO)</owl:annotatedTarget>
         <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://neurolex.org/wiki/Cumbo_terms</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001018"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuraxis tract</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:83847</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 

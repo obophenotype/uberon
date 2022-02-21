@@ -8,4 +8,82 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 Ontology(<urn:unnamed:ontology#ont1>
 
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001021>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001091>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001638>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0003672>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010000>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010912>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012360>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml>))
+Declaration(Class(<http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002134>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002179>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002576>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/title>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> ('multicellular anatomical structure' nerve)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> "Any nerve that innervates the 'multicellular anatomical structure'."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> "nerve_by_structure_innervated"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> "'multicellular anatomical structure' nerve"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> "nerve to 'multicellular anatomical structure'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> "'multicellular anatomical structure' nerve"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0001021> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002134> <http://purl.obolibrary.org/obo/UBERON_0010000>)))
+
+# Class: <http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml> ('anatomical entity' of 'anatomical entity')
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "xsd:string"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml> "Any 'anatomical entity' that is part of a(n) 'anatomical entity'."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml> "anatomyPartOfAnatomy"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml> "'anatomical entity' of 'anatomical entity'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/patterns/anatomyPartOfAnatomy.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0001062> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001062>)))
+
+# Class: <http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml> (lower 'dentition' 'calcareous tooth' xsd:integer)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "xsd:string"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml> "Lower 'dentition' 'calcareous tooth' phylogenetically in position xsd:integer"^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml> "lower_teeth"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml> "lower 'dentition' 'calcareous tooth' xsd:integer"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0001091> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0003672>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0012360>)))
+
+# Class: <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> (skeleton of 'multicellular anatomical structure')
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> "A subdivision of the skeleton that supports the 'multicellular anatomical structure'."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> "skeleton_of_body_part"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> "'multicellular anatomical structure' skeleton"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> "'multicellular anatomical structure'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> "skeleton of 'multicellular anatomical structure'"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0010912> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002576> <http://purl.obolibrary.org/obo/UBERON_0010000>)))
+
+# Class: <http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml> (Upper 'dentition' 'calcareous tooth' xsd:integer)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "xsd:string"^^xsd:string) <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml> "Upper 'dentition' 'calcareous tooth' phylogenetically in position xsd:integer"^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml> "upper_teeth"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml> "Upper 'dentition' 'calcareous tooth' xsd:integer"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/patterns/upper_teeth.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0001091> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0003672>) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0012360>)))
+
+# Class: <http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> ('multicellular anatomical structure' vein)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> "Any vein that drains a 'multicellular anatomical structure'."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> "vein_by_drainage"^^xsd:string)
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> "vein of 'multicellular anatomical structure'"^^xsd:string)
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> "'multicellular anatomical structure' vein"^^xsd:string)
+EquivalentClasses(<http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/UBERON_0001638> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002179> <http://purl.obolibrary.org/obo/UBERON_0010000>)))
+
+
 )

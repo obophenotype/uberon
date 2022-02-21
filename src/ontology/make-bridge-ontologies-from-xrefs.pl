@@ -116,13 +116,12 @@ foreach my $s (keys %fhmap) {
     print $fh "id: $prefix#develops_from\n";
     print $fh "equivalent_to: RO:0002225\n\n";
 
-    # Append common footer to the generated bridge
-    if ( open(F,"ftr.obo") ) {
-        while(<F>) {
-             print $fh $_;
-        }
-        close(F);
+    open(F,"ftr.obo");
+    while(<F>) {
+        print $fh $_;
     }
+    close(F);
+
 
     $fh->close;
 }
