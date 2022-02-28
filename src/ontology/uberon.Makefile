@@ -669,7 +669,7 @@ $(REPORTDIR)/%.obo-OWL-check: %.obo
 
 # test any file for non UTF-8 characters
 $(REPORTDIR)/%-iconv: %
-	iconv -f UTF-8 -t ISO-8859-15 $< > $@
+	iconv -f UTF-8 -t UTF-8 $< > $@
 
 # run subset of syntax and structure checks used by GO
 # (see .travis.yml for dependencies)
