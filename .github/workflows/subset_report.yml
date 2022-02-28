@@ -1,0 +1,42 @@
+name: Subset report
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'src/ontology/uberon-edit.obo'
+  workflow_dispatch:
+env:
+  STATUS: 1
+jobs:
+  is_changed:
+    runs-on: ubuntu-latest
+    container: obolibrary/odklite:v1.2.32
+    steps:
+      # Checks-out current branch
+      - uses: actions/checkout@v2
+      # Checks-out main and prepare git diff report
+      - name: create git diff
+        id: gitdiff
+        if: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch origin main ${{ github.event.pull_request.base.sha }}
+          git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} > gitdiff.md
+          echo ::set-output name=diff::$(cat gitdiff.md)
+      # Set Status to 0 to cancel the workflow' if keyword not in the diff file
+      - name: conditional cancel
+        if: "!contains(steps.gitdiff.outputs.diff, 'never_in_taxon')"
+        run: |
+          echo Taxon constraint updates do not exist
+          echo "STATUS=0" >> $GITHUB_ENV
+      # Checks-out main branch under "main" directory
+      - uses: actions/checkout@v2
+        if: env.STATUS == 1
+        with:
+          ref: main
+          path: main
+      - name: make step for branch
+        if: env.STATUS == 1
+        run: echo brrrrr $STATUS
+      - name: make step for main
+        if: env.STATUS == 1
+        run: echo brrrrr $STATUS
