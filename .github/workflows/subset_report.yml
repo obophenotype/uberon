@@ -36,7 +36,17 @@ jobs:
           path: main
       - name: make step for branch
         if: env.STATUS == 1
-        run: echo brrrrr $STATUS
+        run: |
+          cd src/ontology
+          mkdir -p tmp reports mirror
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          cat TESTLOG.log
+          ll subsets
       - name: make step for main
         if: env.STATUS == 1
-        run: echo brrrrr $STATUS
+        run: |
+          cd ../../main/src/ontology
+          mkdir -p tmp reports mirror
+          make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl > TESTLOG.log
+          cat TESTLOG.log
+          ll subsets
