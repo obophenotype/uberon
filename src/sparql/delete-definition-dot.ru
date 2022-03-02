@@ -15,5 +15,5 @@ WHERE {
           owl:annotatedProperty definition: ;
    	 	  owl:annotatedTarget ?def .
     }
-    FILTER (ISIRI(?term) && STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/UBERON_") && !REGEX(?def, "\\w.", "i"))
+    FILTER (ISIRI(?term) && (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/UBERON_") || STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/uberon/core"))  && !REGEX(?def, "\\w.", "i"))
 }

@@ -4,22 +4,63 @@ ontology: uberon/subsets/nephron-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -116,9 +157,9 @@ xref: ZFA:0001288
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg xsd:anyURI
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9114-8737
 property_value: UBPROP:0000012 "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?" xsd:string {external_ontology="ZFA"}
-created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 
 [Term]
@@ -199,7 +240,7 @@ xref: VHOG:0001262
 xref: ZFA:0005281
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001285 {source="MA", source="ZFA"} ! nephron
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
 property_value: UBPROP:0000001 "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney[BTO]" xsd:string {date_retrieved="2012-11-28", external_class="BTO:0000333", ontology="BTO", source="BTO:curator"}
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated. Paired highly vascularized structures of the pronephros, responsible for blood filtration.[XAO]" xsd:string {date_retrieved="2012-11-28", external_class="XAO:0000146", ontology="XAO", source="XAO:curator"}
 property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005281", ontology="TAO", source="ZFIN:curator"}
@@ -563,7 +604,7 @@ xref: UMLS:C0022676 {source="ncithesaurus:Distal_Convoluted_Tubule"}
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
 relationship: part_of UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
-property_value: depicted:by Kidney:nephron.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/21/Kidney_nephron.png xsd:anyURI
 property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="http://en.wikipedia.org/wiki/Distal_convoluted_tubule"}
 property_value: UBPROP:0000009 "in humans it is responsible for the reabsorption of about 5% of filtered sodium via the thiazide-sensitive Na-Cl symporter." xsd:string
 
@@ -1615,9 +1656,10 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 
 [Term]
 id: UBERON:0005751
-name: visceral layer of glomerular capsule
+name: glomerular visceral epithelium
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+def: "The inner (visceral) layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer (parietal) layer by the capsular (Bowman's) space[BTO]. This epithelial layer is superficially adjacent to the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. This inner epithelial layer of the glomerular capsule surrounds the capillary endothelial cells and is composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the inner visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+comment: Formerly had rdfs:label 'visceral layer of glomerular capsule'. The current label 'glomerular visceral epithelium' was copied from UBERON:0006852, which is now obsolete since it represented the same entity as this IRI.
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
@@ -1628,12 +1670,14 @@ synonym: "visceral epithelium of Bowman's capsule" EXACT [http://www.gudmap.org/
 synonym: "visceral epithelium of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of glomerular capsule" EXACT [MP:0011497]
+xref: EMAPA:28254
 xref: FMA:74273
 xref: http://linkedlifedata.com/resource/umls/id/C0227644
 xref: http://www.snomedbrowser.com/Codes/Details/244093000
+xref: MA:0002607
 xref: NCIT:C33879
 xref: UMLS:C0227644 {source="ncithesaurus:Visceral_Layer_of_Bowman_s_Capsule"}
-is_a: UBERON:0004211 ! nephron epithelium
+is_a: UBERON:0004188 ! glomerular epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
 property_value: IAO:0000116 "TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers" xsd:string
 
@@ -1742,7 +1786,6 @@ relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github
 id: UBERON:0006183
 name: mesonephric glomerular capillary
 namespace: uberon
-def: "." [GO:0061249]
 is_a: UBERON:0004212 ! glomerular capillary
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
@@ -1811,7 +1854,6 @@ relationship: part_of UBERON:0004639 ! renal afferent arteriole
 id: UBERON:0006376
 name: premacula segment of distal straight tubule
 namespace: uberon
-def: "." [http://www.ncbi.nlm.nih.gov/pubmed/14595018, https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376]
 synonym: "distal straight tubule premacula segment" EXACT [MA:0002628]
 synonym: "kidney medulla loop of Henle ascending limb thick segment" EXACT [MA:th]
 synonym: "medullary thick ascending limb of Henle's loop" EXACT [MA:th]
@@ -1860,16 +1902,6 @@ xref: MA:0002630
 is_a: UBERON:0034996 ! outer renal medulla loop of Henle
 
 [Term]
-id: UBERON:0006852
-name: glomerular visceral epithelium
-namespace: uberon
-synonym: "podocyte layer" RELATED [MA:0002607]
-xref: EMAPA:28254
-xref: MA:0002607
-is_a: UBERON:0004188 ! glomerular epithelium
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
 id: UBERON:0006853
 name: renal cortex tubule
 namespace: uberon
@@ -1884,7 +1916,6 @@ is_a: UBERON:0007685 ! region of nephron tubule
 id: UBERON:0006854
 name: distal straight tubule postmacula segment
 namespace: uberon
-def: "." [https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376]
 synonym: "cortical thick ascending limb of Henle's loop" EXACT [MA:th]
 synonym: "kidney cortex loop of Henle ascending limb thick segment" EXACT [MA:th]
 synonym: "renal cortex loop of Henle ascending limb thick segment" EXACT [MA:th]
@@ -2093,8 +2124,7 @@ namespace: uberon
 def: "Portion of the renal tubule which is just posterior to the distal early tubule." [ZFIN:curator]
 xref: ZFA:0005292
 relationship: part_of UBERON:0001231 ! nephron tubule
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005311
@@ -2105,8 +2135,7 @@ synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:3011120
@@ -2115,9 +2144,7 @@ namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 creation_date: 2011-04-20T05:19:55Z
 
 [Term]
@@ -2125,9 +2152,7 @@ id: UBERON:3011121
 name: late distal segment
 namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 creation_date: 2011-04-20T05:21:45Z
 
 [Term]

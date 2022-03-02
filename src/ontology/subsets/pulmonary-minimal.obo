@@ -4,22 +4,63 @@ ontology: uberon/subsets/pulmonary-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -245,7 +286,7 @@ synonym: "papulae" EXACT PLURAL [ISBN:0030229073]
 synonym: "papulli" EXACT PLURAL []
 xref: http://en.wikipedia.org/wiki/Papula
 is_a: UBERON:0002535 ! gill
-created_by: cjm
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
 creation_date: 2009-04-18T01:13:57Z
 
 [Term]
@@ -256,9 +297,9 @@ def: "A gill that develops in the walls of the pharynx along a series of gill sl
 xref: ANISEED:1235300
 xref: Vertebrate_gills
 is_a: UBERON:0002535 ! gill
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-6601-2165
 property_value: UBPROP:0000008 "In bony fish, the gills are covered by a bony cover called an operculum. When a fish breathes, it opens its mouth at regular times and draws in a mouthful of water. It then draws the sides of its throat together, forcing the water through the gill openings. The water passes over the gills on the outside. Valves inside the mouth keep the water from escaping through the mouth again. The operculum can be very important in adjusting the pressure of water inside of the pharynx to allow proper ventilation of the gills. Lampreys and sharks lack an operculum, they have multiple gill openings. Also, they must use different methods to force water over the gills. In sharks and rays, this ventilation of the gills is achieved either by the use of spiracles or ram ventilation (ventilation by constantly swimming). Although some animals use this method it is much better for animals to use a spiracle because they are less susceptible to injury" xsd:string
 property_value: UBPROP:0000009 "Gills are made of filaments which help increase surface area for oxygen exchange" xsd:string
-created_by: cjm
 creation_date: 2009-04-18T01:18:17Z
 
 [Term]
@@ -651,7 +692,7 @@ xref: OpenCyc:Mx4rvq5O0JwpEbGdrcN5Y29ycA
 xref: UMLS:C0020629 {source="ncithesaurus:Hypopharynx"}
 xref: VHOG:0000445
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: depicted:by Illu:pharynx.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/4a/Illu_pharynx.jpg xsd:anyURI
 property_value: UBPROP:0000001 "The inferior portion of the pharynx, between the epiglottis and the larynx. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000445", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/hypopharynx"}
 property_value: UBPROP:0000007 "hypopharyngeal" xsd:string
 
@@ -963,7 +1004,7 @@ xref: VHOG:0000375
 is_a: UBERON:0000072 ! proximo-distal subdivision of respiratory tract
 relationship: part_of UBERON:0001042 ! chordate pharynx
 relationship: part_of UBERON:0001557 ! upper respiratory tract
-property_value: depicted:by Illu:pharynx.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/4a/Illu_pharynx.jpg xsd:anyURI
 property_value: UBPROP:0000001 "The uppermost of the three regions of the throat (pharynx), situated behind the nasal cavity and extending from the posterior nares to the level above the soft palate. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000375", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/nasopharynx"}
 property_value: UBPROP:0000007 "nasopharyngeal" xsd:string
 property_value: UBPROP:0000008 "In humans - in front it communicates through the choanae with the nasal cavities. On its lateral wall is the pharyngeal ostium of the auditory tube, somewhat triangular in shape, and bounded behind by a firm prominence, the torus tubarius or cushion, caused by the medial end of the cartilage of the tube which elevates the mucous membrane" xsd:string
@@ -1000,7 +1041,7 @@ xref: VHOG:0000457
 xref: VSAO:0000034
 xref: XAO:0004048
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: depicted:by Illu:pharynx.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/4a/Illu_pharynx.jpg xsd:anyURI
 property_value: UBPROP:0000001 "One of the three anatomic divisions of the pharynx that lies posterior to the mouth and is continuous above with the nasopharynx and below with the laryngopharynx. It extends behind the mouth from the soft palate above to the level of the hyoid bone below and contains the palatine and lingual tonsils. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000457", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/oropharynx"}
 property_value: UBPROP:0000007 "oropharyngeal" xsd:string
 
@@ -1266,7 +1307,7 @@ xref: NCIT:C12277
 xref: OpenCyc:Mx4rvqMUR5wpEbGdrcN5Y29ycA
 xref: UMLS:C0016734 {source="ncithesaurus:Frontal_Sinus"}
 is_a: UBERON:0001825 {source="MA"} ! paranasal sinus
-property_value: depicted:by Nnh:front.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/f/fb/Nnh_front.svg xsd:anyURI
 property_value: UBPROP:0000008 "A unique feature in the horse is that the frontal sinus communicates with the caudal maxillary sinus via the frontomaxillary opening" xsd:string {source="MURDOCh"}
 
 [Term]
@@ -1362,7 +1403,7 @@ xref: NCIT:C12763
 xref: Paranasal:sinuses
 xref: UMLS:C0030471 {source="ncithesaurus:Paranasal_Sinus"}
 relationship: part_of UBERON:0001004 ! respiratory system
-property_value: depicted:by Nnh:front.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/f/fb/Nnh_front.svg xsd:anyURI
 property_value: UBPROP:0000011 "Arise as epithelial lined diverticula of the lining of the nasal cavity. The extent of sinus development varies with species, most of the development occurs postnatally" xsd:string
 property_value: UBPROP:0000202 FMA:76587
 
@@ -2161,7 +2202,7 @@ relationship: part_of UBERON:0002048 {source="MA"} ! lung
 relationship: part_of UBERON:0002185 ! bronchus
 relationship: part_of UBERON:0007196 {source="FMA"} ! tracheobronchial tree
 relationship: part_of UBERON:0010368 {source="ncit"} ! pulmonary lobule
-property_value: depicted:by Alveoli:diagram.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/d/db/Alveoli_diagram.png xsd:anyURI
 property_value: UBPROP:0000007 "bronchiolar" xsd:string
 property_value: UBPROP:0000010 "lacks submucosa and cartilage plates; they have 3 layers: mucosa, muscular layer and outer layer" xsd:string {source="ISBN:0123813611"}
 
@@ -2186,7 +2227,7 @@ xref: OpenCyc:Mx4rwS7IU5wpEbGdrcN5Y29ycA
 xref: Terminal:bronchiole
 xref: UMLS:C0225666 {source="ncithesaurus:Terminal_Bronchiole"}
 is_a: UBERON:0002186 ! bronchiole
-property_value: depicted:by Alveoli:diagram.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/d/db/Alveoli_diagram.png xsd:anyURI
 
 [Term]
 id: UBERON:0002188
@@ -2209,7 +2250,7 @@ xref: Respiratory:bronchiole
 xref: UMLS:C1261270 {source="ncithesaurus:Respiratory_Bronchiole"}
 is_a: UBERON:0002186 ! bronchiole
 relationship: part_of UBERON:0008874 {source="ISBN:0123813611"} ! pulmonary acinus
-property_value: depicted:by Alveoli:diagram.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/d/db/Alveoli_diagram.png xsd:anyURI
 property_value: UBPROP:0000008 "mice have few or none of these structures, with the terminal bronchioles transitioning directly to the alveolary ducts" xsd:string {source="ISBN:0123813611"}
 
 [Term]
@@ -2288,7 +2329,7 @@ xref: VHOG:0001445
 relationship: part_of UBERON:0002048 ! lung
 relationship: part_of UBERON:0002169 {source="FMA"} ! alveolar sac
 relationship: part_of UBERON:0006524 {source="MA"} ! alveolar system
-property_value: depicted:by Alveolus:diagram.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/46/Alveolus_diagram.svg xsd:anyURI
 
 [Term]
 id: UBERON:0002338
@@ -2451,7 +2492,7 @@ xref: Palatine:tonsil
 xref: UMLS:C0040421 {source="ncithesaurus:Palatine_Tonsil"}
 xref: VHOG:0001140
 is_a: UBERON:0002372 ! tonsil
-property_value: depicted:by Illu:mouth.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/f/f6/Illu_mouth.jpg xsd:anyURI
 property_value: RO:0002174 NCBITaxon:9989 {source="http://www.ncbi.nlm.nih.gov/pubmed/20144910"}
 property_value: UBPROP:0000011 "tonsillar fossa develops from dorsal portion of pouch 2. Note that pharyngeal and lingual tonsils do not develop from pharyngeal pouches" xsd:string {source="ISBN:1607950324"}
 
@@ -2594,7 +2635,7 @@ xref: MESH:D005005
 xref: NCIT:C12276
 xref: UMLS:C0015028 {source="ncithesaurus:Ethmoid_Sinus"}
 is_a: UBERON:0001825 {source="FMA"} ! paranasal sinus
-property_value: depicted:by Nnh:front.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/f/fb/Nnh_front.svg xsd:anyURI
 
 [Term]
 id: UBERON:0002486
@@ -2615,7 +2656,7 @@ xref: MESH:D005931
 xref: NCIT:C12724
 xref: UMLS:C0017681 {source="ncithesaurus:Glottis"}
 relationship: part_of UBERON:0001737 ! larynx
-property_value: depicted:by Arytenoid:cartilage.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/32/Arytenoid_cartilage.png xsd:anyURI
 property_value: UBPROP:0000001 "A small, slit-like aperture lying longitudinally on the floor of the pharynx.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010610", ontology="AAO", source="AAO:BMZ"}
 
 [Term]
@@ -4439,7 +4480,6 @@ synonym: "respiratory system endothelium of artery" EXACT [OBOL:automatic]
 xref: EMAPA:37566 {source="MA:th"}
 xref: MA:0001801
 is_a: UBERON:0004702 ! respiratory system blood vessel endothelium
-is_a: UBERON:0004807 ! respiratory system epithelium
 relationship: part_of UBERON:0001004 ! respiratory system
 relationship: part_of UBERON:0003469 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system artery
 relationship: part_of UBERON:0003504 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! respiratory system blood vessel
@@ -5275,7 +5315,6 @@ id: UBERON:0005244
 name: lobar bronchus of right lung cranial lobe
 namespace: uberon
 alt_id: UBERON:0012060
-def: "." [http://en.wikipedia.org/wiki/Eparterial_bronchus]
 synonym: "eparterial bronchus" RELATED [http://en.wikipedia.org/wiki/Eparterial_bronchus]
 synonym: "lobar bronchus of cranial lobe" BROAD [EMAPA:17992]
 synonym: "right lung cranial lobe lobar bronchus" EXACT [EHDAA2:0001752]
@@ -5955,7 +5994,7 @@ xref: MA:0000773
 xref: NCIT:C32988
 xref: UMLS:C0229871 {source="ncithesaurus:Lingual_Tonsil"}
 is_a: UBERON:0002372 ! tonsil
-property_value: depicted:by Illu04:tongue.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/4/4c/Illu04_tongue.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0007267
@@ -6164,7 +6203,7 @@ synonym: "gill slit" RELATED []
 synonym: "pharyngeal perforation" RELATED [http://www.ncbi.nlm.nih.gov/pubmed/23020903]
 xref: Pharyngeal:slit
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: depicted:by 280px-Gill:slits.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Gill_slits.png/280px-Gill_slits.png xsd:anyURI
 property_value: IAO:0000116 "requires review. Kardong uses the term pharyngeal slit for Chondrichthyans. 'branchial slit' may also be used for amniote structures." xsd:string
 property_value: RO:0002161 NCBITaxon:7742
 property_value: UBPROP:0000008 "homologous to pharyngeal pouches" xsd:string
@@ -8339,8 +8378,7 @@ namespace: uberon
 synonym: "gill lamellae" EXACT PLURAL [TAO:0000211]
 xref: ZFA:0000211
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2000319
@@ -8348,8 +8386,7 @@ name: branchiostegal membrane
 namespace: uberon
 xref: ZFA:0000319
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2000666
@@ -8360,8 +8397,7 @@ xref: ZFA:0000666
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0007303 ! pharyngeal vasculature
 relationship: part_of UBERON:0009120 ! gill filament
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2000716
@@ -8382,8 +8418,7 @@ name: pharyngeal mesoderm
 namespace: uberon
 xref: ZFA:0001467
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001857
@@ -8392,8 +8427,7 @@ namespace: uberon
 def: "An artery that passes along the ventral portions of the hyoid arch; supplies oxygenated blood to the pseudobranch." [TAO:wd]
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:0011150 ! pharyngeal arch derived gill
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001990
@@ -8403,8 +8437,7 @@ def: "Anatomical cluster that is an outgrowth of the soft tissue around the dors
 comment: Greenwood, P. H. 1961 (A revision of the genus Dinotopterus Blgr. (pisces, Clariidae) with notes on the comparative anatomy of the suprabranchial organs in the Clariidae. Bull. British Mus (Nat. His.), Zool. 7(4): 217-241.) described this structure in certain catfishes and applied the term suprabranchial organ to it. To avoid possible confusion with distinctly different structures bearing the name suprabranchial organs in other teleosts, the term epibranchial arborescent organ is used here following the lead of de Pinna 1993.
 synonym: "suprabranchial organ" EXACT [TAO:0001990]
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2002057
@@ -8419,16 +8452,14 @@ synonym: "opercular opening" EXACT [TAO:0002057]
 xref: ZFA:0005389
 relationship: part_of UBERON:0001042 ! chordate pharynx
 property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2002116
 name: epibranchial organ
 namespace: uberon
 relationship: part_of UBERON:0001042 ! chordate pharynx
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005012
@@ -8440,8 +8471,7 @@ xref: ZFA:0005012
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000666 ! filamental artery
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005013
@@ -8452,8 +8482,7 @@ synonym: "CCB" EXACT [TAO:0005013]
 xref: ZFA:0005013
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005014
@@ -8465,8 +8494,7 @@ synonym: "recurrent branch afferent branchial arteries" EXACT PLURAL [TAO:000501
 xref: ZFA:0005014
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000716 ! afferent portion of pharyngeal arch artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005015
@@ -8478,8 +8506,7 @@ xref: ZFA:0005015
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000211 ! gill lamella
 relationship: part_of UBERON:2005012 ! afferent filamental artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005018
@@ -8490,8 +8517,7 @@ xref: ZFA:0005018
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000202 ! efferent portion of pharyngeal arch artery
 relationship: part_of UBERON:2000666 ! filamental artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005019
@@ -8503,8 +8529,7 @@ xref: ZFA:0005019
 is_a: UBERON:0003469 ! respiratory system artery
 relationship: part_of UBERON:2000211 ! gill lamella
 relationship: part_of UBERON:2005018 ! efferent filamental artery
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:3000085
@@ -8512,18 +8537,14 @@ name: cavum inferius
 namespace: uberon
 def: "Accessory cavity located ventral to the cavum principale and cavum medius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000086
 name: cavum internasale
 namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000087
@@ -8531,18 +8552,14 @@ name: cavum medius
 namespace: uberon
 def: "Small accessory cavity located between the cavum principale and cavum inferius." [AAO:LAP]
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000088
 name: cavum praenasale
 namespace: uberon
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000089
@@ -8550,9 +8567,7 @@ name: cavum principale
 namespace: uberon
 def: "The largest part of the nasal cavity, containing the olfactory epithelium." [AAO:LAP] {comment="AAO:EJS"}
 is_a: UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000676
@@ -8561,9 +8576,7 @@ namespace: uberon
 def: "Paired processes that extend posteroventrally from the anterolateral margins of the cricoid ring." [AAO:LAP]
 synonym: "processus trachealis" RELATED [UBERON:3000676]
 relationship: part_of UBERON:0002375 ! cricoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000677
@@ -8571,9 +8584,7 @@ name: lateral process of cricoid cartilage
 namespace: uberon
 synonym: "lateral process" BROAD []
 relationship: part_of UBERON:0002375 ! cricoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000678
@@ -8582,9 +8593,7 @@ namespace: uberon
 def: "Median process located on the posterior end of the cricoid cartilage." [AAO:LAP]
 synonym: "spina oesophagea" RELATED [UBERON:3000678]
 relationship: part_of UBERON:0002375 ! cricoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000688
@@ -8593,9 +8602,7 @@ namespace: uberon
 def: "Anterior end of the arytenoid cartilage." [AAO:LAP]
 synonym: "prominentia apicalis anterior" RELATED [UBERON:3000688]
 relationship: part_of UBERON:0001740 ! arytenoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000689
@@ -8604,9 +8611,7 @@ namespace: uberon
 def: "Posterior (cardiac) end of the arytenoid cartilage." [AAO:LAP]
 synonym: "prominentia apicalis posterior" RELATED [UBERON:3000689]
 relationship: part_of UBERON:0001740 ! arytenoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3000948
@@ -8615,9 +8620,7 @@ namespace: uberon
 def: "Paired processes located on the anterior end of the cricoid cartilage." [AAO:LAP]
 synonym: "processus articularis anterior" RELATED [UBERON:3000948]
 relationship: part_of UBERON:0002375 ! cricoid cartilage
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010197
@@ -8625,9 +8628,7 @@ name: lateral recess
 namespace: uberon
 def: "A part of the inferior cavity of the olfactory organ, found in anurans." [AAO:EJS]
 relationship: part_of UBERON:0001707 ! nasal cavity
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010200
@@ -8637,8 +8638,7 @@ def: "Blood vessels in respiratory skin." [AAO:EJS]
 is_a: UBERON:0003504 ! respiratory system blood vessel
 relationship: part_of UBERON:0001004 ! respiratory system
 property_value: IAO:0000116 "Modified from the original AAO source" xsd:string
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010524
@@ -8646,9 +8646,7 @@ name: bronchial tube
 namespace: uberon
 def: "Either of the short tubes which bifurcate posteriorly from the trachea and lead into the lungs." [AAO:BJB]
 relationship: part_of UBERON:0001004 ! respiratory system
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010613
@@ -8656,8 +8654,25 @@ name: laryngo-tracheal chamber
 namespace: uberon
 def: "Muscular vestibule between the pharynx and lungs, lying between the posterior cornua of the hyoid." [AAO:BMZ]
 relationship: part_of UBERON:0001737 ! larynx
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
+
+[Term]
+id: UBERON:6003039
+name: dorsal trunk of insect trachea
+namespace: uberon
+def: "Longitudinal tracheal branch of the insect tracheal system, dorsal to the lateral trunk." [FBbt:00005043]
+synonym: "dorsal trunk" BROAD SENSU [NCBITaxon:50557]
+xref: FBbt:00003039
+is_a: UBERON:6005043 ! insect trachea
+
+[Term]
+id: UBERON:6005043
+name: insect trachea
+namespace: uberon
+def: "Cuticle-lined epithelial tube that forms part of the insect tracheal system." [FBbt:00005043]
+synonym: "trachea" BROAD SENSU [NCBITaxon:50557]
+xref: FBbt:00005043
+is_a: UBERON:0003127 ! open tracheal system trachea
 
 [Term]
 id: UBERON:6005054
@@ -8679,7 +8694,7 @@ synonym: "submucosal bronchus gland" EXACT []
 xref: EFO:0010666
 is_a: UBERON:0036225 ! respiratory system gland
 relationship: part_of UBERON:0002185 ! bronchus
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: http://owltools.org/Q

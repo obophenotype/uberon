@@ -9,6 +9,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/subsets/immune-minimal.owl"/>
     
@@ -22,6 +23,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000179 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000179"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000180 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000180"/>
     
 
 
@@ -58,6 +71,30 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000601 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000601"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000602 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000602"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0010000 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0010000"/>
     
 
 
@@ -169,9 +206,15 @@
     
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#created_by -->
+    <!-- http://purl.org/dc/elements/1.1/date -->
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -310,19 +353,19 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is part of</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this day is part of this year (occurrent parthood)</obo:IAO_0000112>
+        <obo:IAO_0000111>is part of</obo:IAO_0000111>
+        <obo:IAO_0000112>my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
+        <obo:IAO_0000112>my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
+        <obo:IAO_0000112>this day is part of this year (occurrent parthood)</obo:IAO_0000112>
+        <obo:IAO_0000115>a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a core relation that holds between a part and its whole</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
+        <obo:IAO_0000116>Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
+        <obo:IAO_0000116>Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
 A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</obo:IAO_0000118>
+        <obo:IAO_0000118>part_of</obo:IAO_0000118>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
@@ -332,22 +375,22 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
+        <oboInOwl:id>part_of</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
         <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
+        <rdfs:label>part_of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections"/>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:PartOf"/>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
+        <rdfs:seeAlso>http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -379,8 +422,32 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <obo:BFO_0000179>entity</obo:BFO_0000179>
+        <obo:BFO_0000180>Entity</obo:BFO_0000180>
+        <obo:IAO_0000112 xml:lang="en">Julius Caesar</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">Verdi’s Requiem</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the Second World War</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">your body mass index</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Entity doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example Werner Ceusters &apos;portions of reality&apos; include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, &apos;How to track absolutely everything&apos; at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf</obo:IAO_0000116>
+        <obo:IAO_0000600 xml:lang="en">An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])</obo:IAO_0000600>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">entity</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <owl:annotatedTarget xml:lang="en">Entity doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example Werner Ceusters &apos;portions of reality&apos; include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, &apos;How to track absolutely everything&apos; at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/0000004"/>
+        <rdfs:comment>per discussion with Barry Smith</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000600"/>
+        <owl:annotatedTarget xml:lang="en">An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/001-001"/>
+    </owl:Axiom>
     
 
 
@@ -388,14 +455,75 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <obo:BFO_0000179>continuant</obo:BFO_0000179>
+        <obo:BFO_0000180>Continuant</obo:BFO_0000180>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Continuant doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster&apos;s other portions of reality, questions are raised as to whether universals are continuants</obo:IAO_0000116>
+        <obo:IAO_0000600 xml:lang="en">A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])</obo:IAO_0000600>
+        <obo:IAO_0000601 xml:lang="en">if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])</obo:IAO_0000601>
+        <obo:IAO_0000601 xml:lang="en">if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])</obo:IAO_0000601>
+        <obo:IAO_0000601 xml:lang="en">if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])</obo:IAO_0000601>
+        <obo:IAO_0000602>(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] </obo:IAO_0000602>
+        <obo:IAO_0000602>(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] </obo:IAO_0000602>
+        <obo:IAO_0000602>(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] </obo:IAO_0000602>
+        <obo:IAO_0000602>(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] </obo:IAO_0000602>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">continuant</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/126-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/008-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/011-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <owl:annotatedTarget xml:lang="en">Continuant doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster&apos;s other portions of reality, questions are raised as to whether universals are continuants</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/0000007"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000600"/>
+        <owl:annotatedTarget xml:lang="en">A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/008-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/126-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/009-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/011-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/009-002"/>
+    </owl:Axiom>
     
 
 
@@ -403,14 +531,63 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <obo:BFO_0000179>ic</obo:BFO_0000179>
+        <obo:BFO_0000180>IndependentContinuant</obo:BFO_0000180>
+        <obo:IAO_0000112 xml:lang="en">a chair</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a heart</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a leg</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a molecule</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">a spatial region</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an atom</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an orchestra.</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">an organism</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the bottom right portion of a human torso</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the interior of your mouth</obo:IAO_0000112>
+        <obo:IAO_0000115 xml:lang="en">b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])</obo:IAO_0000115>
+        <obo:IAO_0000601 xml:lang="en">For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])</obo:IAO_0000601>
+        <obo:IAO_0000601 xml:lang="en">For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])</obo:IAO_0000601>
+        <obo:IAO_0000602>(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] </obo:IAO_0000602>
+        <obo:IAO_0000602>(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] </obo:IAO_0000602>
+        <obo:IAO_0000602>(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] </obo:IAO_0000602>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">independent continuant</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget xml:lang="en">b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/017-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/134-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000601"/>
+        <owl:annotatedTarget xml:lang="en">For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/018-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/134-001"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/018-002"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000602"/>
+        <owl:annotatedTarget>(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] </owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/017-002"/>
+    </owl:Axiom>
     
 
 
@@ -418,8 +595,10 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <oboInOwl:hasOBONamespace>bfo</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>BFO:0000040</oboInOwl:id>
+        <rdfs:label>material entity</rdfs:label>
         <rdfs:label xml:lang="en">material entity</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material entity</rdfs:label>
     </owl:Class>
     
 
@@ -435,8 +614,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph.</obo:IAO_0000115>
-        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
-        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8570"/>
         <obo:UBPROP_0000003>Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]</obo:UBPROP_0000003>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Lymph_node"/>
         <oboInOwl:hasDbXref rdf:resource="http://linkedlifedata.com/resource/umls/id/C0024204"/>
@@ -473,35 +650,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>lymph gland</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>VHOG:0001273</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>nodus lymphaticus</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Lymph_node"/>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#LATIN"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BTO:0000784</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
-        <oboInOwl:source rdf:resource="https://doi.org/10.1177/0192623311409597"/>
-        <oboInOwl:source>ZFA:0005318</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8570"/>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
@@ -518,6 +669,19 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>UMLS:C0024204</owl:annotatedTarget>
         <oboInOwl:source>ncithesaurus:Lymph_Node</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>lymph gland</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>VHOG:0001273</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000029"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>nodus lymphaticus</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Lymph_node"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#LATIN"/>
     </owl:Axiom>
     
 
@@ -785,7 +949,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000444">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001744"/>
-        <obo:IAO_0000115>.</obo:IAO_0000115>
         <obo:IAO_0000116>introducing part_of to &apos;cortex of lymph node&apos; as in issue 7 introduces equivalencies; the part_of has instead been added to &apos;lymph node follicle&apos;</obo:IAO_0000116>
         <dc:contributor rdf:resource="https://github.com/cmungall"/>
         <dc:contributor rdf:resource="https://github.com/tmeehan"/>
@@ -795,12 +958,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasDbXref>FMA:55222</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C33040</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0229654</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>lymphoid nodule</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>nodular lymphoid tissue</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>folliculus lymphaticus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>lymphatic follicle</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>lymphatic nodule</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>lymphoid nodule</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nodulus lymphaticus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>nodulus lymphoideus</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0000444</oboInOwl:id>
@@ -814,22 +977,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/6"/>
-        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/7"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>UMLS:C0229654</owl:annotatedTarget>
         <oboInOwl:source>ncithesaurus:Lymphoid_Follicle</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>lymphoid nodule</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:55222</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
@@ -854,6 +1004,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>lymphatic nodule</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BTO:0002684</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>lymphoid nodule</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>FMA:55222</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000444"/>
@@ -1304,6 +1460,30 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>spleen lymphoid follicle</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>MA:0002672</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>splenic B cell follicle</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>CL:tm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>splenic lymphatic follicle</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>FMA:15843</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>spleen lymphoid nodule</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>MA:0002672</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
@@ -1379,30 +1559,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>spleen B cell follicle</owl:annotatedTarget>
         <oboInOwl:hasDbXref>CL:tm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>spleen lymphoid follicle</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MA:0002672</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>splenic B cell follicle</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>CL:tm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>splenic lymphatic follicle</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:15843</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001249"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>spleen lymphoid nodule</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MA:0002672</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1501,6 +1657,19 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001251"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The zone between the red and white pulp of the spleen containing numerous macrophages and lymphocytes, and a rich plexus of sinusoids supplied by white pulp arterioles carrying blood-borne antigens.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0-683-40008-8</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0002362</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001251"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
+        <owl:annotatedTarget>WP says - (Some sources consider it to be the part of red pulp which borders on the white pulp, while other sources consider it to be neither red pulp nor white pulp.) - we use the adjacency relation here so it overlaps neither. FMA considers this an anatomical line.</owl:annotatedTarget>
+        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA</oboInOwl:external_ontology>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001251"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>marginal zone</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Marginal_zone"/>
@@ -1516,19 +1685,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>spleen marginal zone</owl:annotatedTarget>
         <oboInOwl:hasDbXref>MA:0000755</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001251"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The zone between the red and white pulp of the spleen containing numerous macrophages and lymphocytes, and a rich plexus of sinusoids supplied by white pulp arterioles carrying blood-borne antigens.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0-683-40008-8</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MP:0002362</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001251"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
-        <owl:annotatedTarget>WP says - (Some sources consider it to be the part of red pulp which borders on the white pulp, while other sources consider it to be neither red pulp nor white pulp.) - we use the adjacency relation here so it overlaps neither. FMA considers this an anatomical line.</owl:annotatedTarget>
-        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA</oboInOwl:external_ontology>
     </owl:Axiom>
     
 
@@ -1955,7 +2111,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>In the popliteal fossa between biceps femoris m. and semitendinosus m..</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001543"/>
@@ -2741,7 +2897,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>spleen</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Illu:spleen.jpg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/d/d6/Illu_spleen.jpg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002106"/>
@@ -3040,7 +3196,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:id>UBERON:0002194</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>capsule of lymph node</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Lymphknoten:(Schwein).jpg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/9/92/Lymphknoten_(Schwein).jpg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002194"/>
@@ -3082,7 +3238,9 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasDbXref>NCIT:C33035</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C1184179</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>lymph node trabecula</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>lymph node trabeculae</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymph node trabeculum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>trabeculae of lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0002195</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
@@ -3100,6 +3258,18 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>UMLS:C1184179</owl:annotatedTarget>
         <oboInOwl:source>ncithesaurus:Lymph_Node_Trabecula</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002195"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>lymph node trabeculae</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002195"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>trabeculae of lymph node</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#PLURAL"/>
     </owl:Axiom>
     
 
@@ -3154,7 +3324,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>thymus</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Illu:thymus.jpg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/c/cf/Illu_thymus.jpg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002370"/>
@@ -3419,7 +3589,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>palatine tonsil</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Illu:mouth.jpg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/f/f6/Illu_mouth.jpg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002373"/>
@@ -4234,7 +4404,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Dorsal to the ipsilateral kidney nearby the renal blood vessels, caudal to the adrenal gland</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003425"/>
@@ -4959,7 +5129,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The dense region demarcating the thymus medulla from the surrounding cortex that is characterized by numerous blood vessels (predominantly arterioles) with some perivascular connective tissue, mature and immature T lymphocytes, dendritic cells, variable numbers of perivascular B-lymphocytes and plasma cells; site of entry of bone marrow stem cells and exit of mature, functional T cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
@@ -4971,49 +5141,49 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymic cortico-medullary boundary</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymic corticomedullary boundary</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymic corticomedullary junction</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymic corticomedullary zone</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymus CMZ</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymus cortico-medullary boundary</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymus corticomedullary junction</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003988"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thymus corticomedullary zone</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>MP:0009543</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0009543</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6659,7 +6829,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:id>UBERON:0007250</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>lingual tonsil</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Illu04:tongue.jpg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/4/4c/Illu04_tongue.jpg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007250"/>
@@ -7646,7 +7816,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010396"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Lymphatic vessel that enters the lymph node. The afferent lymph vessels enter at all parts of the periphery of the lymph node, and after branching and forming a dense plexus in the substance of the capsule, open into the lymph sinuses of the cortical part. In doing this they lose all their coats except their endothelial lining, which is continuous with a layer of similar cells lining the lymph paths.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010396"/>
@@ -7681,7 +7851,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010397"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Lymphatic vessel that exits the lymph node. The efferent lymphatic vessel commences from the lymph sinuses of the medullary portion of the lymph nodes and leave the lymph nodes either to veins or greater nodes. Efferent lymphatic vessels are also found in the thymus and spleen. This is in contrast to afferent lymphatic vessels, which are found only in lymph nodes.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010397"/>
@@ -7720,7 +7890,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010398"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The border region surrounding the spleen B cell follicles and the periarteriolar lymphoid sheath that separates it from the marginal zone that mediates lymphocyte entry into the white pulp from the blood.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010398"/>
@@ -7783,7 +7953,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010399"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>When the splenic artery passes into the trabecula of the spleen and branches, they become known as the trabecular arteries. When these arteries then reach the white pulp, and become covered with Periarteriolar lymphoid sheaths, the name changes again to central arteries (or central arterioles). Branches of the central arteries are given to the red pulp, and these are called penicillar arteries).[Wikipedia]</owl:annotatedTarget>
-        <oboInOwl:ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia</oboInOwl:ontology>
+        <oboInOwl:ontology>Wikipedia</oboInOwl:ontology>
         <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Trabecular_arteries"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -7828,7 +7998,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010400"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>The trabecular veins are the largest veins inside the spleen. It drains the blood collected in the sinuses of the pulp.[Wikipedia]</owl:annotatedTarget>
-        <oboInOwl:ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia</oboInOwl:ontology>
+        <oboInOwl:ontology>Wikipedia</oboInOwl:ontology>
         <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Trabecular_veins"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -7877,7 +8047,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010401"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A blood vessel surrounded by the periarteriolar lymphoid sheath that connects the trabecular artery to the trabecular vein.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010401"/>
@@ -7935,7 +8105,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010416"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A part of the lymph node cortex in which B lymphocytes home to primary follicles to survey follicular dendritic cells (FDCs); antigen stimulated B cells proliferate and differentiate within the follicles forming distinctive germinal centers.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010416"/>
@@ -8087,7 +8257,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/25656706"/>
         <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/7"/>
         <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:MP</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:MP</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010420"/>
@@ -8429,7 +8599,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:id>UBERON:0010754</oboInOwl:id>
         <rdfs:comment>A germinal center is a specialized microenvironment formed when activated B cells enter lymphoid follicles. Germinal centers are the foci for B cell proliferation and somatic hypermutation.[GO]</rdfs:comment>
         <rdfs:label>germinal center</rdfs:label>
-        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Germinal:center.svg</foaf:depicted_by>
+        <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/6/60/Germinal_center.svg</foaf:depicted_by>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010754"/>
@@ -8563,19 +8733,19 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The enmeshed group of antigen presenting cells with extensive dendritic processes in the spleen B cell follicle that present antigen to B cells during an immune response.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0008473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0008473</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>FDC network</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0008473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0008473</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>FDCN</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0008473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0008473</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
@@ -8587,13 +8757,13 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>spleen FDC network</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0008473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0008473</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010756"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>splenic follicular dendritic cell network</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP:0008473</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>MP:0008473</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9463,7 +9633,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Single (unpaired) lymph node at the tracheal bifurcation.</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015472"/>
@@ -9654,7 +9824,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Single (unpaired) lymph node in the lesser omentum at the minor curvature of the stomach</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015863"/>
@@ -10015,7 +10185,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>In mice, Rostromedial to the sublingual and mandibular salivary glands.</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015872"/>
@@ -10441,7 +10611,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Dorsolateral to the mandibular lymph node.</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     
 
@@ -10472,7 +10642,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Rostromedial to the sublingual and mandibular salivary glands Dorsolateral to the mandibular lymph node Ventral to the external acoustic pore, caudal to the extraorbital lacrimal gland, cranioventral to the parotid salivary gland, dorsal to the junction between the superficial temporal vein (v.) and the maxillary v..</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015923"/>
@@ -10512,7 +10682,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Medial to the external jugular vein and sternocephalic muscle (m.), lateral to sternohyoid m., caudal to digastric m., dorsal to the trachea.</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     
 
@@ -10892,6 +11062,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016394"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>preauricular glands</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Preauricular_deep_parotid_lymph_nodes"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016394"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016393"/>
         <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA</oboInOwl:source>
@@ -10936,12 +11112,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016394"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>pre-auricular lymph nodes</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Preauricular_deep_parotid_lymph_nodes"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016394"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>preauricular glands</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Preauricular_deep_parotid_lymph_nodes"/>
     </owl:Axiom>
     
@@ -11141,7 +11311,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>Single (unpaired) lymph node in the mesoduodenum, dorsal to the portal vein, surrounded by pancreatic tissue</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016401"/>
@@ -11190,7 +11360,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
         <owl:annotatedTarget>In the mesocolon at the transition between ascending colon and transverse colon</owl:annotatedTarget>
         <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16624319"/>
-        <oboInOwl:taxon rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NCBITaxon:10090</oboInOwl:taxon>
+        <oboInOwl:taxon>NCBITaxon:10090</oboInOwl:taxon>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016402"/>
@@ -13005,8 +13175,8 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0037560">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001097"/>
+        <oboInOwl:hasBroadSynonym>axillary node</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>FMA:12771</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>axillary node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0037560</oboInOwl:id>
         <rdfs:label>superficial axillary lymph node</rdfs:label>
@@ -13019,7 +13189,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0037560"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>axillary node</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:12771</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -13828,8 +13998,8 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasExactSynonym>mediastinal lymph node station # 5</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>station 5 N2 lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>station 5 lymph node</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>subaortic lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>subaortic lymph node</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0038633</oboInOwl:id>
         <rdfs:label>aortopulmonary lymph node</rdfs:label>
     </owl:Class>
@@ -13871,7 +14041,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038633"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>subaortic lymph node</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:276813</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -14274,6 +14444,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0038694">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015859"/>
         <obo:IAO_0000115>Hepatic lymph node located along the portal vein.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>portal lymph node</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>FMA:277271</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>jPS 12p node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>jPS No. 12p node</oboInOwl:hasExactSynonym>
@@ -14281,7 +14452,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasExactSynonym>periportal lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>porta hepatis lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>portahepatic lymph node</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>portal lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0038694</oboInOwl:id>
         <rdfs:label>hepatoportal lymph node</rdfs:label>
@@ -14296,6 +14466,12 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038694"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Hepatic lymph node located along the portal vein.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>FMA:277271</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038694"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>portal lymph node</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:277271</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -14332,12 +14508,6 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038694"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>portahepatic lymph node</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277271</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038694"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>portal lymph node</owl:annotatedTarget>
         <oboInOwl:hasDbXref>FMA:277271</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -14454,7 +14624,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0038697">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0037527"/>
         <obo:IAO_0000115>Superior pancreaticoduodenal lymph node located on the anterior anterior of superior region of head of pancreas.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>anterosuperior pancreaticoduodenal lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>jPS 17a node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>jPS no. 17a node</oboInOwl:hasExactSynonym>
@@ -14473,31 +14643,31 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038697"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Superior pancreaticoduodenal lymph node located on the anterior anterior of superior region of head of pancreas.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038697"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>anterosuperior pancreaticoduodenal lymph node</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038697"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>jPS 17a node</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038697"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>jPS no. 17a node</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0038697"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>no. 17a pancreaticoduodenal lymph node</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:277305</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:277305</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -16532,13 +16702,18 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2005106">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004536"/>
         <obo:UBPROP_0000004>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
-        <oboInOwl:created_by>teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref>ZFA:0005106</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>LLL</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:2005106</oboInOwl:id>
         <rdfs:label>longitudinal lateral lymphatic vessel</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005106"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+        <owl:annotatedTarget>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</owl:annotatedTarget>
+        <oboInOwl:source rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005106"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -16559,12 +16734,17 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:UBPROP_0000004>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
-        <oboInOwl:created_by>teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref>ZFA:0005303</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:2005303</oboInOwl:id>
         <rdfs:label>caudal fin lymph vessel</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005303"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+        <owl:annotatedTarget>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</owl:annotatedTarget>
+        <oboInOwl:source rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
+    </owl:Axiom>
     
 
 
@@ -16573,13 +16753,18 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2005319">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004536"/>
         <obo:UBPROP_0000004>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
-        <oboInOwl:created_by>teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref>ZFA:0005319</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>islv</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:2005319</oboInOwl:id>
         <rdfs:label>intersegmental lymph vessel</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005319"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+        <owl:annotatedTarget>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</owl:annotatedTarget>
+        <oboInOwl:source rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005319"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -16594,13 +16779,18 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_2005320">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004536"/>
         <obo:UBPROP_0000004>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</obo:UBPROP_0000004>
-        <oboInOwl:created_by>teleost_anatomy_curators</oboInOwl:created_by>
         <oboInOwl:hasDbXref>ZFA:0005320</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>dllv</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:2005320</oboInOwl:id>
         <rdfs:label>dorsal longitudinal lymphatic vessel</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005320"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
+        <owl:annotatedTarget>This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon</owl:annotatedTarget>
+        <oboInOwl:source rdf:resource="http://purl.obolibrary.org/obo/tao.owl"/>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_2005320"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -16615,7 +16805,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001473"/>
         <obo:IAO_0000115>A lymphatic vessel that supplies the small intestine.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymphatic vessel of small intestine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410002</oboInOwl:id>
@@ -16642,7 +16832,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A valve in an afferent lymphatic vessel. It manages the flow of lymphatic fluid into the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>valve of afferent lymphatic vessel</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410013</oboInOwl:id>
@@ -16668,7 +16858,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A valve in an efferent lymphatic vessel. It manages the flow of lymphatic fluid out of the lymph node carrying immune cells and is essential for the correct flow of fluid through the lymphatic system.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>valve of efferent lymphatic vessel</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410014</oboInOwl:id>
@@ -16689,7 +16879,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006842"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_8410030"/>
         <obo:IAO_0000115>A lymphatic capillary that is located in the vermiform appendix.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymphatic capillary of appendix vermiformis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphatic capillary of vermiform appendix</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -16710,7 +16900,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410030">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001473"/>
         <obo:IAO_0000115>A lymphatic vessel located in the vermiform appendix.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymphatic vessel of appendix vermiformis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphatic vessel of vermiform appendix</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -16736,7 +16926,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The trabecular sinus is the lymph-filled space outside the trabeculae between lobules of the lymph node. This is a continuation of the subcapsular sinus which receives the afferent vessels and is present beneath the capsule. This space is traversed by both reticular fibers and cells in the lymph.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymph node trabecular sinus</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410032</oboInOwl:id>
@@ -16764,7 +16954,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An arteriole that arises from the hilar artery of a lymph node and radiates centrifugally, branching in the medulla.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>arteriole of medulla of lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410035</oboInOwl:id>
@@ -16791,7 +16981,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Medullary venules are a continuation of high endothelial venules which condense repeatedly in the interfollicular cortex and peripheral deep cortical unit and then transition to medullary venules at the corticomedullary junction. The medullary venules condense and return centripetally to the hilar vein.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>venule of medulla of lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410036</oboInOwl:id>
@@ -16818,7 +17008,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A high endothelial venule that is part of a of lymph node.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymph node high endothelial venule</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410038</oboInOwl:id>
@@ -16844,7 +17034,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A high endothelial venule that is located in a Peyer&apos;s patch in the small intestine.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasBroadSynonym>high endothelial venule of Peyer&apos;s patch</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>high endothelial venule of Peyer&apos;s patch of small intestine</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -16873,7 +17063,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A venule that is part of a lymph node.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymph node venule</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410041</oboInOwl:id>
@@ -16899,7 +17089,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An arteriole that is part of a lymph node.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>lymph node arteriole</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410042</oboInOwl:id>
@@ -16920,7 +17110,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410051">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001473"/>
         <obo:IAO_0000115>A lymphatic vessel located in the colon.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410051</oboInOwl:id>
         <rdfs:label>lymphatic vessel of colon</rdfs:label>
@@ -16946,7 +17136,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Lymph node germinal centers contain two microenvironments: the light zone and the dark zone. The light zone is sparsely populated with B cells and includes additional cell types such as follicular dendritic cells, lymph node tingible macrophages and T follicular helper cells.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasBroadSynonym>germinal center light zone</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasBroadSynonym>light zone of germinal center</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>light zone of lymph node germinal center</oboInOwl:hasExactSynonym>
@@ -16976,7 +17166,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Lymph node germinal centers contain two microenvironments: the light zone and the dark zone. The dark zone is densely populated with B cell blasts and reticular cells.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasBroadSynonym>dark zone of germinal center</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasBroadSynonym>germinal center dark zone</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>dark zone of lymph node germinal center</oboInOwl:hasExactSynonym>
@@ -17001,7 +17191,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006842"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_8410051"/>
         <obo:IAO_0000115>A lymphatic capillary located in the colon.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410054</oboInOwl:id>
         <rdfs:label>lymphatic capillary of colon</rdfs:label>
@@ -17021,7 +17211,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410055">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006842"/>
         <obo:IAO_0000115>A lymphatic capillary located in the anorectum.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410055</oboInOwl:id>
         <rdfs:label>lymphatic capillary of anorectum</rdfs:label>
@@ -17046,7 +17236,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Histologically, the marginal zone pattern of the lymph node is characterized by lymphoid follicles with three distinct layers. The inner layer is composed of follicular center zones, the middle layer of darkly stained mantle zones, and the outer layer of marginal zones. However, the marginal zone pattern is rarely seen in reactive lymph nodes except for mesenteric lymph nodes. Lymph node marginal zones are populated by marginal zone B cells which express CD19 and CD20 and have the phenotypic features of memory B cells.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasBroadSynonym>lymph node marginal zone</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasBroadSynonym>marginal zone of lymph node</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>marginal zone of lymph node follicle</oboInOwl:hasExactSynonym>
@@ -17076,7 +17266,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The lymph node paracortex is the middle layer of the lymph node and is mostly populated by T cells and dendritic cells. The paracortex also contains specialised blood vessels called high endothelial venules which allow lymphocytes to enter the node.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410066</oboInOwl:id>
         <rdfs:label>lymph node paracortex</rdfs:label>
@@ -17103,7 +17293,7 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Follicules in the lymph node are surrounded and separated by the interfollicular cortex. Together with the lymph node follicle, the interfollicular cortex of the lymph node lobule make up the superficial cortex of the lymph node. Capillaries empty into the high endothelial venules located in the interfollicular cortex. The interfollicular cortex also serves as transit corriders for lymphocytes migrating between the B and T cell areas.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0002-2825-0621</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
         <oboInOwl:hasExactSynonym>interfollicular cortex of lymph node</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8410067</oboInOwl:id>
@@ -17116,6 +17306,35 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
         <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0003-4183-8865/"/>
         <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/17067937"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_8410069 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8410069">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001744"/>
+        <obo:IAO_0000115>Lymphoid tissue found in some birds and similar, but not identical, to mammalian lymph nodes.</obo:IAO_0000115>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-01-24T16:47:47Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2825-0621"/>
+        <oboInOwl:hasExactSynonym>avian lymphoid nodule</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>avian lymph node</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>UBERON:8410069</oboInOwl:id>
+        <rdfs:label>lymphoid nodule</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8410069"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Lymphoid tissue found in some birds and similar, but not identical, to mammalian lymph nodes.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0001-9990-8331"/>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-1572-1316"/>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-6601-2165"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16889640"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22483556"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23640588"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/552577"/>
+        <oboInOwl:hasDbXref rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/916458"/>
     </owl:Axiom>
     
 

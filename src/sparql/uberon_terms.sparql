@@ -3,5 +3,5 @@ WHERE {
   { ?s1 ?p1 ?term . }
   UNION
   { ?term ?p2 ?o2 . }
-  FILTER(isIRI(?term) && (regex(str(?term), UCASE("uberon_")) || regex(str(?term), "http://purl.obolibrary.org/obo/UBERON_") || regex(str(?term), "http://purl.obolibrary.org/obo/uberon#")))
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/UBERON_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/UBERON_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/uberon#") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/UBPROP_")))
 }

@@ -4,22 +4,63 @@ ontology: uberon/subsets/reproductive-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -144,7 +185,7 @@ xref: MA:0002909
 xref: NCIT:C32692
 xref: UMLS:C0600225 {source="ncithesaurus:Graafian_Follicle"}
 is_a: UBERON:0001305 ! ovarian follicle
-property_value: depicted:by Primary:follicle-4.JPG xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/e/e6/Primary_follicle-4.JPG xsd:anyURI
 
 [Term]
 id: UBERON:0000038
@@ -209,7 +250,7 @@ xref: UMLS:C0227794 {source="ncithesaurus:Vaginal_Fornix"}
 xref: Vaginal:fornix
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0000996 ! vagina
-property_value: depicted:by Female:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0000061
@@ -941,8 +982,8 @@ xref: ZFA:0000403
 is_a: UBERON:0000991 ! gonad
 is_a: UBERON:0003134 ! female reproductive organ
 relationship: part_of UBERON:0000474 ! female reproductive system
-property_value: depicted:by Female:anatomy.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/d/d4/Gray589.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 property_value: UBPROP:0000001 "Either of paired female reproductive organs involved in production of ova and female sex hormones.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000371", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "Female reproductive organ.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000403", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "(...) while it is likely that Urbilateria lacked a complex somatic reproductive system, it is at present impossible to speculate on whether or not it possessed a true gonad, let alone any other somatic adaptations for reproduction (reference 1); Examination of different vertebrate species shows that the adult gonad is remarkably similar in its morphology across different phylogenetic classes. Surprisingly, however, the cellular and molecular programs employed to create similar organs are not evolutionarily conserved (reference 2).[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000251", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1093/icb/icm052 Extavour CGM, Gray anatomy: phylogenetic patterns of somatic gonad structures and reproductive strategies across the Bilateria. Integrative and Comparative Biology (2007), DOI:10.1146/annurev.cellbio.042308.13350 DeFalco T and Capel B, Gonad morphogenesis in vertebrates: divergent means to a convergent end. Annual review of cell and developmental biology (2009)"}
@@ -1047,8 +1088,8 @@ xref: VHOG:0001137
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0013515 {source="cjm"} ! subdivision of oviduct
 relationship: part_of UBERON:0004175 ! internal genitalia
-property_value: depicted:by Female:anatomy.png xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/6/6a/Female_reproductive_system_lateral_nolabel.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/c/cb/Female_anatomy.png xsd:anyURI
 property_value: UBPROP:0000001 "The hollow muscular organ in female mammals in which the blastocyst normally becomes embedded and in which the developing embryo and fetus is nourished. Its cavity opens into the vagina below and into a uterine tube on either side. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001137", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/uterus"}
 property_value: UBPROP:0000003 "An infundibulum, uterine tube, uterus, and vagina also differentiate along the oviducts of eutherian mammals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001137", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.678"}
 property_value: UBPROP:0000007 "uterine" xsd:string
@@ -1103,15 +1144,13 @@ def: "External genital organs of the female mammal[WP]." [http://en.wikipedia.or
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
-synonym: "female pudendum" EXACT [BTO:0003101, FMA:20462]
+synonym: "female pudendum" EXACT DEPRECATED [BTO:0003101, FMA:20462, https://doi.org/10.1002/ca.23705]
 synonym: "mammalian vulva" EXACT []
 synonym: "puboperineal region" EXACT [FMA:20462]
-synonym: "pudendum" RELATED [BTO:0003101]
-synonym: "pudendum femininum" EXACT LATIN [FMA:20462, FMA:TA]
-synonym: "pudendum femininum" RELATED LATIN [http://en.wikipedia.org/wiki/Vulva]
-synonym: "pudendum muliebre" RELATED [BTO:0003101]
-synonym: "skin of female pudendum" EXACT []
-synonym: "skin of vulva" EXACT []
+synonym: "pudendum" RELATED DEPRECATED [BTO:0003101, https://doi.org/10.1002/ca.23705]
+synonym: "pudendum femininum" EXACT DEPRECATED [FMA:20462, FMA:TA, https://doi.org/10.1002/ca.23705]
+synonym: "pudendum femininum" RELATED DEPRECATED [http://en.wikipedia.org/wiki/Vulva, https://doi.org/10.1002/ca.23705]
+synonym: "pudendum muliebre" RELATED DEPRECATED [BTO:0003101, https://doi.org/10.1002/ca.23705]
 synonym: "vulva" EXACT [MA:0000395]
 xref: BTO:0003101
 xref: CALOHA:TS-1168
@@ -1214,7 +1253,7 @@ xref: OpenCyc:Mx4rwOt7MJwpEbGdrcN5Y29ycA
 xref: UMLS:C0013747 {source="ncithesaurus:Ejaculatory_Duct"}
 is_a: UBERON:0005904 ! duct of male reproductive system
 relationship: part_of UBERON:0000079 ! male reproductive system
-property_value: depicted:by Male:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/35/Male_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0001000
@@ -1315,7 +1354,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0019042 ! reproductive system mucosa
 relationship: part_of UBERON:0000459 {source="FMA"} ! uterine wall
 relationship: part_of UBERON:0000995 ! uterus
-property_value: depicted:by Illu:cervix.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cervix.jpg xsd:anyURI
 property_value: UBPROP:0000001 "The mucous membrane lining the uterus. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001285", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/Endometrium"}
 property_value: UBPROP:0000003 "The maternal part of the placenta (of eutherian mammals) is the vascularized and glandular uterine lining, or endometrium.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001285", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.144"}
 property_value: UBPROP:0000007 "endometrial" xsd:string
@@ -1351,7 +1390,7 @@ xref: UMLS:C0027088 {source="ncithesaurus:Myometrium"}
 xref: VHOG:0001281
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000459 {source="FMA"} ! uterine wall
-property_value: depicted:by Illu:cervix.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cervix.jpg xsd:anyURI
 property_value: UBPROP:0000001 "The muscular wall of the uterus. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001281", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/myometrium"}
 property_value: UBPROP:0000003 "In all mammals, the uterus develops as a specialization of the paramesonephric or Müllerian ducts, which gives rise to the infundibula, oviducts, uterus, cervix, and anterior vagina. Morphogenetic events common to development of all uteri include: 1) differentiation and growth of the myometrium, 2) differentiation and morphogenesis of the endometrial glands, and 3) organization and stratification of endometrial stroma. Uterine development is initiated in the fetus, but is only completed postnatally with differentiation and development of the endometrial glands.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001281", ontology="VHOG", source="http://bgee.unil.ch/", source="PMID:15471813 Spencer TE, Bazer FW, Uterine and placental factors regulating conceptus growth in domestic animals. Journal of Animal Science (2004)"}
 property_value: UBPROP:0000007 "myometrial" xsd:string
@@ -1382,7 +1421,7 @@ xref: UMLS:C0227824 {source="ncithesaurus:Perimetrium"}
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000459 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! uterine wall
 relationship: part_of UBERON:0000995 ! uterus
-property_value: depicted:by Illu:cervix.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cervix.jpg xsd:anyURI
 property_value: IAO:0000116 "TODO - check for parallel structure with peritoneum" xsd:string
 
 [Term]
@@ -1411,7 +1450,7 @@ xref: VHOG:0001475
 is_a: UBERON:0035651 ! glans
 relationship: part_of UBERON:0000989 ! penis
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/1/13/Anteriorglanspenis.jpg xsd:anyURI
-property_value: depicted:by Male:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/35/Male_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0001300
@@ -1576,7 +1615,7 @@ xref: ZFA:0001110
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000992 ! ovary
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/c/ca/Human_ovarian_follicle.jpg xsd:anyURI
-property_value: depicted:by Primary:follicle-4.JPG xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/e/e6/Primary_follicle-4.JPG xsd:anyURI
 property_value: IAO:0000116 "TODO - align subtypes based on staging, which is taxon-specific" xsd:string
 property_value: UBPROP:0000001 "Oocyte development of zebrafish has been divided into five stages based on morphological criteria and on physiological and biochemical events. Stage I follicles (less than 140 microns) are primary growth stage, stage II follicles (140-340 microns) are cortical alveolus stage, stage III (340-690 microns) are vitellogenesis, stage IV (690-730 microns) are oocyte maturation, and stage V follicles are matured egg. Selman et al, 1993.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001110", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "Examination of different vertebrate species shows that the adult gonad is remarkably similar in its morphology across different phylogenetic classes. Surprisingly, however, the cellular and molecular programs employed to create similar organs are not evolutionarily conserved.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001536", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1146/annurev.cellbio.042308.13350 DeFalco T, Capel B, Gonad morphogenesis in vertebrates: divergent means to a convergent end. Annual review of cell and developmental biology (2009)"}
@@ -1734,8 +1773,8 @@ xref: OpenCyc:Mx4rvVjlTZwpEbGdrcN5Y29ycA
 xref: UMLS:C0227952 {source="ncithesaurus:Male_Prepuce"}
 is_a: UBERON:0011374 ! prepuce
 relationship: part_of UBERON:0000989 ! penis
-property_value: depicted:by Foreskin:CloseupV2.jpg xsd:anyURI
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Foreskin2.jpg/200px-Foreskin2.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/e/e6/Foreskin_CloseupV2.jpg xsd:anyURI
 
 [Term]
 id: UBERON:0001337
@@ -2070,7 +2109,7 @@ xref: NCIT:C32395
 xref: UMLS:C0006366 {source="ncithesaurus:Cowper_s_Gland"}
 is_a: UBERON:0006868 ! seminal fluid secreting gland
 is_a: UBERON:0010147 ! male accessory sex gland
-property_value: depicted:by Male:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/35/Male_anatomy.png xsd:anyURI
 property_value: UBPROP:0000001 "Either of two small racemose glands that are located below the prostate and discharge a component of the seminal fluid into the urethra. They are homologous to the Bartholin's glands in the female[BTO]." xsd:string {ontology="BTO", source="BTO:0001698"}
 property_value: UBPROP:0000001 "Lobular organ the parenchyma of which consists of glandular acini which communicate the bulbar part of the urethra. Examples: There only two instances, right and left bulbo-urethral glands[FMA]" xsd:string {ontology="FMA", source="FMA:9599"}
 property_value: UBPROP:0000010 "The bulbourethral glands are compound tubulo-alveolar glands." xsd:string
@@ -2672,7 +2711,6 @@ is_a: UBERON:0001305 ! ovarian follicle
 id: UBERON:0003982
 name: mature ovarian follicle
 namespace: uberon
-def: "." [MP:0009364]
 subset: efo_slim
 subset: pheno_slim
 subset: vertebrate_core
@@ -2706,7 +2744,7 @@ xref: FMA:18307
 xref: http://en.wikipedia.org/wiki/Infundibulum_of_uterine_tube
 xref: http://www.snomedbrowser.com/Codes/Details/362262001
 is_a: UBERON:0013515 {source="FMA"} ! subdivision of oviduct
-property_value: depicted:by Illu:cervix.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cervix.jpg xsd:anyURI
 property_value: RO:0002175 NCBITaxon:8782
 property_value: UBPROP:0000001 "The third part of the uterine tube is the infundibulum. It terminates with the ostium of Fallopian tube, surrounded by fimbriae, one of which is attached to the ovary[Wikipedia:Infundibulum_of_uterine_tube]." xsd:string {source="http://en.wikipedia.org/wiki/Infundibulum_of_uterine_tube"}
 property_value: UBPROP:0000008 "In mammals, the uterine tube infundibulum is part of the fallopian tube. In birds, where there is no fallopian tube, the uterine tube infundibulum is part of the oviduct." xsd:string {xref="https://orcid.org/0000-0002-2825-0621"}
@@ -2721,7 +2759,8 @@ synonym: "labia minorum" EXACT []
 synonym: "labium minora" EXACT []
 synonym: "labium minorum" EXACT [MA:0002845]
 synonym: "labium minus" EXACT [FMA:20374]
-synonym: "labium minus pudendi" RELATED LATIN [http://en.wikipedia.org/wiki/Labia_minora]
+synonym: "labium minus pudendi" EXACT DEPRECATED [https://doi.org/10.1002/ca.23705]
+synonym: "labium minus pudendi" EXACT LATIN [http://en.wikipedia.org/wiki/Labia_minora]
 xref: FMA:20374
 xref: galen:LabiaMinora
 xref: http://linkedlifedata.com/resource/umls/id/C0227766
@@ -2819,7 +2858,8 @@ synonym: "labia majorum" EXACT []
 synonym: "labium majora" EXACT []
 synonym: "labium majorum" EXACT [MA:0002844]
 synonym: "labium majus" EXACT []
-synonym: "labium majus pudendi" RELATED LATIN [http://en.wikipedia.org/wiki/Labia_majora]
+synonym: "labium majus pudendi" EXACT LATIN [http://en.wikipedia.org/wiki/Labia_majora]
+synonym: "labium majus pudendi" EXACT DEPRECATED [https://doi.org/10.1002/ca.23705]
 xref: FMA:20367
 xref: galen:LabiaMajora
 xref: http://linkedlifedata.com/resource/umls/id/C0227760
@@ -4014,7 +4054,7 @@ xref: Spermatic:cord
 xref: UMLS:C0037855 {source="ncithesaurus:Spermatic_Cord"}
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0004054 ! internal male genitalia
-property_value: depicted:by Male:anatomy.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/35/Male_anatomy.png xsd:anyURI
 
 [Term]
 id: UBERON:0005398
@@ -4578,7 +4618,7 @@ xref: EMAPA:19219
 xref: FMA:21354
 xref: http://en.wikipedia.org/wiki/Deep_dorsal_vein_of_the_penis
 xref: http://www.snomedbrowser.com/Codes/Details/55433007
-is_a: UBERON:0005156 ! reproductive structure
+is_a: UBERON:0039422 ! dorsal vein of penis
 relationship: part_of UBERON:0000989 ! penis
 
 [Term]
@@ -4953,8 +4993,8 @@ synonym: "vaginal introitus" RELATED [BTO:0003145]
 synonym: "vaginal vestibule" EXACT [FMA:19970, MP:0011848]
 synonym: "vestibule of vagina" EXACT [FMA:19970, MP:0011848]
 synonym: "vestibule of vagina" RELATED [BTO:0003145]
-synonym: "vestibulum pudendi" EXACT [MP:0011848]
-synonym: "vestibulum pudendi" RELATED [BTO:0003145]
+synonym: "vestibulum pudendi" EXACT DEPRECATED [BTO:0003145]
+synonym: "vestibulum pudendi" EXACT DEPRECATED [MP:0011848]
 synonym: "vestibulum vaginae" EXACT LATIN [http://en.wikipedia.org/wiki/Vulval_vestibule, MP:0011848]
 xref: BTO:0003145
 xref: FMA:19970
@@ -5382,7 +5422,7 @@ xref: NCIT:C34135
 xref: Placental:cotyledon
 xref: UMLS:C0242769 {source="ncithesaurus:Cotyledon"}
 relationship: part_of UBERON:0002450 ! decidua
-property_value: depicted:by Placental:cotyledon.png xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/3/30/Placental_cotyledon.png xsd:anyURI
 property_value: UBPROP:0000008 "in ruminants, this is" xsd:string
 property_value: UBPROP:0000008 "Rodents have a single cotyledon (called a discoid placenta), whereas humans have multiple cotyledons, although they are consolidated into a cluster that resembles a single disc[PMID:19829370]" xsd:string
 
@@ -5435,7 +5475,7 @@ xref: Skene%27s:gland
 xref: UMLS:C0221315 {source="ncithesaurus:Paraurethral_Gland"}
 is_a: UBERON:0005398 ! female reproductive gland
 relationship: part_of UBERON:0000997 {source="FMA"} ! mammalian vulva
-property_value: depicted:by Skenes:gland.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/b/b8/Skenes_gland.jpg xsd:anyURI
 property_value: UBPROP:0000012 "in MP female urethral gland, Skene gland and paraurethral gland are exact syns. Note that NCITA seems to use the term in a more generic way, as a parent for skene gland, cowper gland (which may be the same as the male bulbo-urethral gland)" xsd:string {external_ontology="MP"}
 
 [Term]
@@ -5457,7 +5497,7 @@ xref: http://www.snomedbrowser.com/Codes/Details/279480006
 xref: Skene%27s:ducts
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0010145 ! paraurethral gland
-property_value: depicted:by Skenes:gland.jpg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/b/b8/Skenes_gland.jpg xsd:anyURI
 property_value: UBPROP:0000012 "FMA has two classes that may be equivalent here" xsd:string {external_ontology="FMA"}
 
 [Term]
@@ -5765,7 +5805,6 @@ relationship: part_of UBERON:0003135 ! male reproductive organ
 id: UBERON:0011757
 name: differentiated genital tubercle
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Primordial_phallus]
 synonym: "phallus" RELATED [http://en.wikipedia.org/wiki/Primordial_phallus]
 synonym: "phallus primordialis" RELATED LATIN [http://en.wikipedia.org/wiki/Primordial_phallus]
 synonym: "primordial phallus" RELATED [http://en.wikipedia.org/wiki/Primordial_phallus]
@@ -7146,7 +7185,6 @@ relationship: part_of UBERON:0001987 ! placenta
 id: UBERON:0034691
 name: internal spermatic fascia
 namespace: uberon
-def: "." [http://en.wikipedia.org/wiki/Internal_spermatic_fascia]
 synonym: "infundibuliform fascia" RELATED [http://en.wikipedia.org/wiki/Internal_spermatic_fascia]
 xref: FMA:77299
 xref: http://en.wikipedia.org/wiki/Internal_spermatic_fascia
@@ -7620,6 +7658,37 @@ is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000996 {source="FMA"} ! vagina
 
 [Term]
+id: UBERON:0039288
+name: rima vulvae
+namespace: uberon
+def: "The fissure between the labia majora" [https://www.thefreedictionary.com/pudendal+cleft]
+synonym: "pudendal cleft" EXACT DEPRECATED [https://doi.org/10.1002/ca.23705]
+synonym: "pudendal cleft" EXACT [FMA:19995]
+synonym: "rima pudendi" EXACT DEPRECATED [https://doi.org/10.1002/ca.23705]
+synonym: "rima pudendi" EXACT LATIN [A09.2.01.006]
+synonym: "urogenital cleft" BROAD [https://www.thefreedictionary.com/pudendal+cleft]
+synonym: "vulvar slit" EXACT [https://www.thefreedictionary.com/pudendal+cleft]
+xref: FMA:19995
+relationship: part_of UBERON:0000997 ! mammalian vulva
+
+[Term]
+id: UBERON:0039421
+name: superficial dorsal vein of penis
+namespace: uberon
+def: "A vein that drains the prepuce and skin of the penis, and, running backward in the subcutaneous tissue, inclines to the right or left, and opens into the corresponding superficial external pudendal vein, a tributary of the great saphenous vein.." [https://en.wikipedia.org/wiki/Dorsal_veins_of_the_penis]
+xref: FMA:21384
+is_a: UBERON:0039422 ! dorsal vein of penis
+relationship: part_of UBERON:0000989 {source="FMA"} ! penis
+
+[Term]
+id: UBERON:0039422
+name: dorsal vein of penis
+namespace: uberon
+def: "One of the superficial dorsal vein of the penis or the deep dorsal vein of the penis." [https://en.wikipedia.org/wiki/Dorsal_veins_of_the_penis]
+is_a: UBERON:0005156 ! reproductive structure
+relationship: part_of UBERON:0000989 ! penis
+
+[Term]
 id: UBERON:2001118
 name: urogenital papilla
 namespace: uberon
@@ -7631,8 +7700,7 @@ synonym: "UGP" EXACT [TAO:0001118]
 synonym: "urogenital papillae" EXACT PLURAL [TAO:0001118]
 xref: ZFA:0001118
 relationship: part_of UBERON:0000990 ! reproductive system
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001263
@@ -7642,8 +7710,7 @@ def: "Stage I follicles (less than 140 microns) are primary growth stage. Selman
 synonym: "previtillogenic ovarian follicle" EXACT [TAO:0001263]
 xref: ZFA:0001263
 is_a: UBERON:0001305 ! ovarian follicle
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001265
@@ -7652,8 +7719,7 @@ namespace: uberon
 def: "Stage II follicles (140-340 microns) are cortical alveolus stage. Selman et al, 1993." [ZFIN:curator]
 xref: ZFA:0001265
 is_a: UBERON:0001305 ! ovarian follicle
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001266
@@ -7662,8 +7728,7 @@ namespace: uberon
 def: "Stage III (340-690 microns) are vitellogenesis. Selman et al, 1993." [ZFIN:curator]
 xref: ZFA:0001266
 is_a: UBERON:0001305 ! ovarian follicle
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2001571
@@ -7671,8 +7736,7 @@ name: postovulatory follicle
 namespace: uberon
 xref: ZFA:0001571
 is_a: UBERON:0001305 ! ovarian follicle
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2002114
@@ -7683,8 +7747,7 @@ comment: Definition reference: James Wetzel, John P. Wourms and John Friel 1997.
 synonym: "cotylephores" EXACT PLURAL [TAO:0002114]
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2002117
@@ -7693,8 +7756,7 @@ namespace: uberon
 def: "Organ that functions in egg deposition." [TAO:wd]
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005272
@@ -7706,8 +7768,7 @@ xref: ZFA:0005272
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:3000041
@@ -7716,9 +7777,7 @@ namespace: uberon
 def: "Anatomical structure which forms from an enlargement of the anterior portion of each gonad in all male bufonid larvae and consists of ovarian tissues." [AAO:BJB]
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000990 ! reproductive system
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010240
@@ -7729,9 +7788,7 @@ synonym: "Nobelian bone" RELATED []
 synonym: "Nobelian element" RELATED []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:3010260 ! intromittent organ (Ascaphus type)
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010259
@@ -7739,9 +7796,7 @@ name: phallodeum
 namespace: uberon
 def: "Eversible phalloid portion of the cloaca that is inserted in the female's vent during copulation. Found in male Caecillians." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0008811 ! intromittent organ
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010260
@@ -7749,9 +7804,7 @@ name: intromittent organ (Ascaphus type)
 namespace: uberon
 def: "A tail like posterior extension of the cloaca supported by a pair of Nobelian rods." [http://orcid.org/0000-0002-6601-2165]
 is_a: UBERON:0008811 ! intromittent organ
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010529
@@ -7763,8 +7816,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000992 ! ovary
 relationship: part_of UBERON:0000993 ! oviduct
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010586
@@ -7772,9 +7824,7 @@ name: vasa efferentia
 namespace: uberon
 def: "Sperm travel through these 4 or 5 fine ducts which pass through the mesorchium from the testis to the sexual kidney." [AAO:BMZ]
 is_a: UBERON:0006946 ! efferent duct
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010780
@@ -7782,9 +7832,7 @@ name: pars recta
 namespace: uberon
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000993 ! oviduct
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:3010781
@@ -7793,9 +7841,7 @@ namespace: uberon
 synonym: "pars convoluta" BROAD []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0000993 ! oviduct
-property_value: RO:0002161 NCBITaxon:40674 {source="https://github.com/obophenotype/uberon/issues/2050"}
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 
 [Term]
 id: UBERON:4100111
@@ -7816,7 +7862,7 @@ namespace: uberon
 def: "In the clasper skeleton, a flat semicylindrical cartilage that is partially fused to the lateral edge of the axial cartilage, and forms the lateral wall of the clasper groove [Compagno, L. 2001. Sharks of the World: An Annotated and Illustrated Catalogue of Shark Species Known to Date. Volume 2]." [PHENOSCAPE]
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0010518 ! pelvic fin clasper
-created_by: WD
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-3162-7490
 
 [Term]
 id: UBERON:8410010
@@ -7825,14 +7871,14 @@ namespace: uberon
 def: "A fringe of tissue around the ostium of the fallopian tube, in the direction of the ovary." [WikipediaVersioned:Fallopian_tube&oldid=998395727]
 subset: added_for_HCA
 synonym: "fimbria of fallopian tube" EXACT []
-synonym: "fimbriae of fallopian tube" EXACT []
-synonym: "fimbriae of uterine tube" EXACT []
+synonym: "fimbriae of fallopian tube" EXACT PLURAL []
+synonym: "fimbriae of uterine tube" EXACT PLURAL []
 xref: FMA:18308
 xref: http://orcid.org/0000-0001-7505-5418
 is_a: UBERON:0003889 ! fallopian tube
 relationship: part_of UBERON:0003889 ! fallopian tube
-property_value: RO:0002175 "Mammalia" xsd:string
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+property_value: RO:0002175 NCBITaxon:40674
 
 [Term]
 id: UBERON:8410025
@@ -7844,8 +7890,8 @@ synonym: "prostate transition zone" EXACT []
 synonym: "transition zone of human prostate" NARROW []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0002367 ! prostate gland
-property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+property_value: RO:0002175 NCBITaxon:9606 {source="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
 
 [Term]
 id: UBERON:8410026
@@ -7857,8 +7903,8 @@ synonym: "peripheral zone of human prostate" NARROW []
 synonym: "prostate peripheral zone" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0002367 ! prostate gland
-property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
-created_by: http://orcid.org/0000-0002-2825-0621
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+property_value: RO:0002175 NCBITaxon:9606 {source="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
 
 [Term]
 id: UBERON:8410027
@@ -7870,7 +7916,7 @@ synonym: "central zone of human prostate" NARROW []
 synonym: "prostate central zone" EXACT []
 is_a: UBERON:0005156 ! reproductive structure
 relationship: part_of UBERON:0002367 ! prostate gland
-property_value: RO:0002175 "Homo sapiens" xsd:string {xref="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
+property_value: RO:0002175 NCBITaxon:9606 {source="http://www.ncbi.nlm.nih.gov/pubmed/29038334"}
 
 [Term]
 id: http://owltools.org/Q
