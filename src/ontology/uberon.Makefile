@@ -254,7 +254,7 @@ subsets/cumbo.obo: subsets/cumbo.owl
 
 # merge BSPO into RO
 # get rid of it
-mirror/bspo.owl: mirror/bspo.trigger
+mirror/bspo.owl: $(OWLSRC)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/bspo.owl
 
