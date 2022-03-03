@@ -22,7 +22,7 @@ INSERT {
 WHERE {
   VALUES ?synonym {oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym} 
   ?cls rdfs:label ?label .
-  ?cls ?synonym ?value .
+  ?cls ?synonym ?label .
   OPTIONAL {
     ?x a owl:Axiom ;
       owl:annotatedSource ?cls ;
@@ -30,6 +30,5 @@ WHERE {
       owl:annotatedTarget ?value ;
       ?p ?z .
   }
-  FILTER(STR(?label) = STR(?value))
   FILTER(!isBlank(?cls) && STRSTARTS(STR(?cls), "http://purl.obolibrary.org/obo/UBERON_"))
 }

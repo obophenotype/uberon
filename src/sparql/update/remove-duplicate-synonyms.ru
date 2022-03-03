@@ -20,8 +20,8 @@ INSERT {
       ?p ?z .
 }
 WHERE {
-  VALUES ?synonym {oboInOwl:hasExactSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym} 
-  VALUES ?synonym2 {oboInOwl:hasExactSynonym oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym} 
+  VALUES ?synonym { oboInOwl:hasRelatedSynonym oboInOwl:hasNarrowSynonym oboInOwl:hasBroadSynonym }
+  VALUES ?synonym2 { oboInOwl:hasExactSynonym } 
   ?cls ?synonym ?value .
   ?cls ?synonym2 ?value .
   OPTIONAL {
@@ -31,6 +31,5 @@ WHERE {
       owl:annotatedTarget ?value ;
       ?p ?z .
   }
-  FILTER(?synonym != ?synonym2)
   FILTER(!isBlank(?cls) && STRSTARTS(STR(?cls), "http://purl.obolibrary.org/obo/UBERON_"))
 }
