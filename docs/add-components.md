@@ -39,6 +39,6 @@ Quick guide for adding a component that uses ROBOT template:
 2. Your custom makefile goal should look something like: 
 ```
 $(COMPONENTSDIR)/your-component-name.owl: $(SRC)
-	$(ROBOT) template --template ../templates/your-component-template.tsv --output $(COMPONENTSDIR)/your-component-name.owl.owl 
+	$(ROBOT) template --template ../templates/your-component-template.tsv --output $(COMPONENTSDIR)/your-component-name.owl
 	$(ROBOT) annotate --input $(COMPONENTSDIR)/your-component-name.owl --ontology-iri $(ONTBASE)/$@ -o $@
 ```
