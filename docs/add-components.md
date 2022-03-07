@@ -31,7 +31,7 @@ $(COMPONENTSDIR)/your-component-name.owl: $(SRC)
 ```
 7. Make the file by running `sh run.sh make components/your-component-name.owl`
 
-*ROBOT Templates* 
+### ROBOT Templates
 
 Quick guide for adding a component that uses ROBOT template:
 
