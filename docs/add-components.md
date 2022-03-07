@@ -8,7 +8,7 @@ components:
   products:
     - filename: your-component-name.owl
 ```
-3. Add the component to your catalog file (src/ontology/catalog-v100.xml)
+3. Add the component to your catalog file (src/ontology/catalog-v001.xml)
 ```
   <uri name="http://purl.obolibrary.org/obo/uberon/components/your-component-name.owl" uri="components/your-component-name.owl"/>
 ```
@@ -19,7 +19,7 @@ import: http://purl.obolibrary.org/obo/uberon/components/your-component-name.owl
 ```
 for .owl formats: 
 ```
-Import(<http://purl.obolibrary.org/obo/pcl/components/your-component-name.owl>)
+Import(<http://purl.obolibrary.org/obo/uberon/components/your-component-name.owl>)
 ```
 5. Refresh your repo by running `sh run.sh make update_repo` - this should create a new file in src/ontology/components.
 6. In your custom makefile (src/ontology/uberon.Makefile) add a goal for your custom make file as follows: 
@@ -38,7 +38,7 @@ Quick guide for adding a component that uses ROBOT template:
 1. Add your template in src/templates/
 2. Your custom makefile goal should look something like: 
 ```
-$(COMPONENTSDIR)/your-component-name.owl: $(SRC)
-	$(ROBOT) template --template ../templates/your-component-template.tsv --output $(COMPONENTSDIR)/your-component-name.owl
-	$(ROBOT) annotate --input $(COMPONENTSDIR)/your-component-name.owl --ontology-iri $(ONTBASE)/$@ -o $@
+$(COMPONENTSDIR)/your-component-name.owl: $(SRC) ../templates/your-component-template.tsv 
+	$(ROBOT) template --template ../templates/your-component-template.tsv \
+  annotate --ontology-iri $(ONTBASE)/$@ -o $@ --output $(COMPONENTSDIR)/your-component-name.owl
 ```
