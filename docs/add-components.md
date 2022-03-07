@@ -40,5 +40,5 @@ Quick guide for adding a component that uses ROBOT template:
 ```
 $(COMPONENTSDIR)/your-component-name.owl: $(SRC) ../templates/your-component-template.tsv 
 	$(ROBOT) template --template ../templates/your-component-template.tsv \
-  annotate --ontology-iri $(ONTBASE)/$@ -o $@ --output $(COMPONENTSDIR)/your-component-name.owl
+  annotate --ontology-iri $(ONTBASE)/$@ --output $(COMPONENTSDIR)/your-component-name.owl
 ```
