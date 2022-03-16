@@ -47,7 +47,7 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-taxon.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 PATTERNDIR=                 ../patterns
 PATTERN_TESTER=              dosdp validate -i
@@ -318,6 +318,8 @@ COMP=true # Global parameter to bypass component generation
 $(COMPONENTSDIR)/%: | $(COMPONENTSDIR)
 	touch $@
 .PRECIOUS: $(COMPONENTSDIR)/%
+
+
 
 
 

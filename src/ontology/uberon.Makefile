@@ -1676,6 +1676,14 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
+# ROBOT PATTERNS AND TEMPLATES
+# ----------------------------------------
+
+$(COMPONENTSDIR)/in-subset.owl: $(SRC) $(TEMPLATEDIR)/in-subset.template.tsv 
+    $(ROBOT) template --template $(TEMPLATEDIR)/in-subset.template.tsv \
+  annotate --ontology-iri $(ONTBASE)/$@ --output $(COMPONENTSDIR)/in-subset.owl
+
+# ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS
 # ----------------------------------------
 MODDIR=modules
