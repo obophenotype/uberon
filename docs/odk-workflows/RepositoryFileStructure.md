@@ -53,4 +53,4 @@ These are the components in UBERON
 | Filename | URL |
 | -------- | --- |
 | mappings.owl | None |
-| in-taxon.owl | None |
+| in-subset.owl | None |
