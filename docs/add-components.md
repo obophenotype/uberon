@@ -1,5 +1,6 @@
 # Adding components to an ODK repo
 
+For details on what components are, please see [here](https://obophenotype.github.io/cell-ontology/odk-workflows/RepositoryFileStructure/#components).
 To add custom components to an ODK repo, please follow the following steps:
 1. Locate your odk yaml file and open it with your favourite text editor (src/ontology/uberon-odk.yaml)
 2. Search if there is already a component section to the yaml file, if not add it accordingly, adding the name of your component:
@@ -22,7 +23,7 @@ for .owl formats:
 Import(<http://purl.obolibrary.org/obo/uberon/components/your-component-name.owl>)
 ```
 5. Refresh your repo by running `sh run.sh make update_repo` - this should create a new file in src/ontology/components.
-6. In your custom makefile (src/ontology/uberon.Makefile) add a goal for your custom make file as follows: 
+6. In your custom makefile (src/ontology/uberon.Makefile) add a goal for your custom make file as follows (for ROBOT template goals, please see section below): 
 
 ```
 YOUR_COMPONENT_NAME = {insert how your component is made, for example a url it is downloaded from}
