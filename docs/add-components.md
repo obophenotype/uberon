@@ -1,6 +1,7 @@
 # Adding components to an ODK repo
 
 For details on what components are, please see [here](https://obophenotype.github.io/cell-ontology/odk-workflows/RepositoryFileStructure/#components).
+
 To add custom components to an ODK repo, please follow the following steps:
 1. Locate your odk yaml file and open it with your favourite text editor (src/ontology/uberon-odk.yaml)
 2. Search if there is already a component section to the yaml file, if not add it accordingly, adding the name of your component:
