@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fbbt
-data-version: 2022-02-21
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and Uberon. Note that currently Uberon focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future Uberon may bridge via the arthropod anatomy ontology" xsd:string
@@ -1083,12 +1083,6 @@ intersection_of: UBERON:6000046 ! insect dorsal appendage
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00000094 ! 
-property_value: IAO:0000589 "clypeo-labral anlage in statu nascendi (drosophila)" xsd:string
-intersection_of: UBERON:6000094 ! clypeo-labral anlage in statu nascendi
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00000096 ! 
 property_value: IAO:0000589 "insect ventral furrow (drosophila)" xsd:string
 intersection_of: UBERON:6000096 ! insect ventral furrow
@@ -1725,12 +1719,6 @@ intersection_of: UBERON:6003024 ! insect adult abdominal segment
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00003039 ! 
-property_value: IAO:0000589 "dorsal trunk of insect trachea (drosophila)" xsd:string
-intersection_of: UBERON:6003039 ! dorsal trunk of insect trachea
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00003218 ! 
 property_value: IAO:0000589 "insect adult muscle system (drosophila)" xsd:string
 intersection_of: UBERON:6003218 ! insect adult muscle system
@@ -1971,12 +1959,6 @@ intersection_of: UBERON:6005037 ! insect tracheal primordium
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00005043 ! 
-property_value: IAO:0000589 "insect trachea (drosophila)" xsd:string
-intersection_of: UBERON:6005043 ! insect trachea
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005054 ! 
 property_value: IAO:0000589 "insect spiracle (drosophila)" xsd:string
 intersection_of: UBERON:6005054 ! insect spiracle
@@ -2022,12 +2004,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00005413 ! 
 property_value: IAO:0000589 "insect anlage in statu nascendi (drosophila)" xsd:string
 intersection_of: UBERON:6005413 ! insect anlage in statu nascendi
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005425 ! 
-property_value: IAO:0000589 "insect visual anlage in statu nascendi (drosophila)" xsd:string
-intersection_of: UBERON:6005425 ! insect visual anlage in statu nascendi
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -2395,12 +2371,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by
