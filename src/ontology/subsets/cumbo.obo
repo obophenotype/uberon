@@ -13,7 +13,9 @@ subsetdef: feed_aligned "subset of classes that have logical defs text defs and 
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
+subsetdef: human_reference_atlas ""
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
+subsetdef: location_grouping ""
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
 subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
 subsetdef: non_informative "abstract class brought in to group ontology classes but not informative"
@@ -91,7 +93,7 @@ relationship: part_of UBERON:0001016 ! nervous system
 id: UBERON:0000125
 name: neural nucleus
 namespace: uberon
-def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)" [NLX:28443]
+def: "A spatially aggregated collection of nerve cell bodies in the CNS, consisting of one or more subpopulations that share cell type, chemical phenotype, and connections, and including nearby cells that share the same cell type, chemical phenotype, and connections. (CUMBO)." [NLX:28443]
 subset: cumbo
 synonym: "nervous system nucleus" EXACT []
 synonym: "neuraxis nucleus" EXACT [FMA:83686]
@@ -104,7 +106,7 @@ xref: FMA:83686
 xref: NCIT:C13197
 xref: NLX:28443
 xref: Wikipedia:Nucleus_(neuroanatomy)
-relationship: part_of UBERON:0001017 {source="CUMBO"} ! central nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
 id: UBERON:0000955
@@ -161,8 +163,6 @@ xref: VHOG:0000157
 xref: Wikipedia:Brain
 xref: XAO:0000010
 xref: ZFA:0000008
-property_value: dc-contributor https://github.com/cmungall
-relationship: develops_from UBERON:0006238 ! future brain
 relationship: immediate_transformation_of UBERON:0006238 {source="Bgee:AN"} ! future brain
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
 
@@ -298,15 +298,12 @@ xref: TADS:0000201
 xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
 xref: Wikipedia:Commissure
 is_a: UBERON:0001018 ! axon tract
-property_value: dc-contributor https://github.com/cmungall
-property_value: dc-contributor https://github.com/mellybelly
-relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0002240
 name: spinal cord
 namespace: uberon
-def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)" [BIRNLEX:1709]
+def: "Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO)." [BIRNLEX:1709]
 subset: cumbo
 subset: efo_slim
 subset: major_organ
@@ -354,6 +351,7 @@ xref: VHOG:0000601
 xref: Wikipedia:Spinal_cord
 xref: XAO:0000020
 xref: ZFA:0000075
+relationship: mutually_spatially_disjoint_with UBERON:0000955 {exceptions="ZFA", source="https://github.com/obophenotype/uberon/issues/378", status="pending"} ! brain
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -397,7 +395,7 @@ xref: ZFA:0000146
 id: UBERON:0007418
 name: neural decussation
 namespace: uberon
-def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)" [NLX:144064]
+def: "Nerve fibers crossing the midline of the neuraxis relative to their point of origin, on a course to from one level of the nervous system to another. (CUMBO, Heimer, L. The Human Brain, 2nd ed., 1995, pg 6)." [NLX:144064]
 subset: cumbo
 synonym: "chiasm" BROAD []
 synonym: "chiasma" BROAD []
@@ -436,7 +434,7 @@ relationship: part_of UBERON:0000955 ! brain
 id: UBERON:0014778
 name: cell group
 namespace: uberon
-def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)" [NLX:532]
+def: "A group of cells that may not be contained within macroscopic anatomical boundaries, e.g., A9 dopaminergic cell group; massa intercalata of the amygdala (CUMBO)." [NLX:532]
 subset: cumbo
 subset: upper_level
 synonym: "group of cells" EXACT []
@@ -489,6 +487,7 @@ is_metadata_tag: true
 
 [Typedef]
 id: curator_notes
+name: curator note
 name: curator notes
 namespace: uberon
 xref: IAO:0000232
@@ -498,7 +497,7 @@ is_metadata_tag: true
 id: dc-contributor
 name: contributor
 namespace: uberon
-xref: http://purl.org/dc/elements/1.1/contributor
+xref: http://purl.org/dc/terms/contributor
 is_metadata_tag: true
 
 [Typedef]
@@ -575,9 +574,15 @@ is_metadata_tag: true
 
 [Typedef]
 id: develops_from
+name: develops from
+name: develops_from
 namespace: uberon
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
 xref: RO:0002202
+holds_over_chain: part_of develops_from
 is_transitive: true
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: doap-GitRepository
@@ -728,11 +733,14 @@ is_metadata_tag: true
 
 [Typedef]
 id: immediate_transformation_of
+name: immediate transformation of
 namespace: uberon
+def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
-is_a: transformation_of
+is_a: develops_from ! develops from
+is_a: transformation_of ! transformation of
 
 [Typedef]
 id: implements_design_pattern
@@ -767,10 +775,13 @@ is_class_level: true
 
 [Typedef]
 id: never_in_taxon
+name: never in taxon
 name: never_in_taxon
 namespace: uberon
-def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" [PMID:20973947]
+def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T." [PMID:20973947]
+def: "x never in taxon T if and only if T is a class, and x does not instantiate the class expression \"in taxon some T\". Note that this is a shortcut relation, and should be used as a hasValue restriction in OWL." []
 xref: RO:0002161
+expand_assertion_to: "?X DisjointWith RO_0002162 some ?Y " []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 is_metadata_tag: true
 is_class_level: true
@@ -779,14 +790,23 @@ is_class_level: true
 id: paired_appendage_number
 name: paired_appendage number
 namespace: uberon
-def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage" [https://orcid.org/0000-0002-6601-2165]
+def: "x paired_appendage_number N if and only if (i) x is a paired_appendage, and (ii) x is paired_appendage number N in a series of paired_appendages repeated along an anterior-posterior axis, with paired_appendage_number 1 being the anteriormost paired_appendage. In vertebrates, this is the pectoral appendage." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000109
 is_metadata_tag: true
 
 [Typedef]
 id: part_of
 name: part of
+name: part_of
+namespace: external
+namespace: protein
+namespace: quality
 namespace: uberon
+def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 is_transitive: true
 
@@ -794,7 +814,7 @@ is_transitive: true
 id: phalanx_number
 name: phalanx number
 namespace: uberon
-def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2" [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
+def: "x phalanx_number N if and only if (i) x is a phalanx, and (ii) x is phalanx number N in a series of phalanges repeated along an prixomo-distal axis, with phalanx_number 1 being the proximalmost phalanx. Note that in humans, the distalmost phalanx has phlanax_number 3, except in ray_number 1, where the distalmost has phalanx_number 2." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Phalanx_bone#Phalangeal_formula]
 comment: Most land mammals including humans have a 2-3-3-3-3 formula in both the hands (or paws) and feet. Primitive reptiles typically had the formula 2-3-4-4-5, and this pattern, with some modification, remained in many later reptiles and in the mammal-like reptiles. The phalangeal formula in the flippers of cetaceans (marine mammals) is 2-12-8-1
 xref: UBPROP:0000105
 is_metadata_tag: true
@@ -811,15 +831,17 @@ is_metadata_tag: true
 id: preceding_element_is
 name: preceding element is
 namespace: uberon
-def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)" [https://orcid.org/0000-0002-6601-2165]
+def: "A property used in conjunction with repeated_element_number to indicate an axis and directionality along that axis. If P preceding_element_is R, and P is_count_of S, and X P N, and X' P N+1, then it follows that every X R some X', and the class expression [S and R some X' and inv(R) some X] is empty (i.e. X is followed by X', with no intermediates)." [https://orcid.org/0000-0002-6601-2165]
 xref: UBPROP:0000101
 is_metadata_tag: true
 
 [Typedef]
 id: present_in_taxon
+name: present in taxon
 name: present_in_taxon
 namespace: uberon
-def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" [https://orcid.org/0000-0002-6601-2165]
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" []
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S." [https://orcid.org/0000-0002-6601-2165]
 synonym: "applicable for taxon" EXACT []
 xref: RO:0002175
 is_metadata_tag: true
@@ -845,7 +867,7 @@ is_metadata_tag: true
 id: repeated_element_number
 name: repeated element number
 namespace: uberon
-def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition" [https://orcid.org/0000-0002-6601-2165]
+def: "A property used to indicate the position of an element where that element is of a type that is serially repeated linearly along some axis for which a total ordering exists. The ordering may represent an ancestral condition." [https://orcid.org/0000-0002-6601-2165]
 comment: The range is currently non-negative integer
 xref: UBPROP:0000102
 is_metadata_tag: true
@@ -871,6 +893,7 @@ id: seeAlso
 name: see also
 namespace: uberon
 xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+xref: seeAlso
 is_metadata_tag: true
 
 [Typedef]
@@ -916,17 +939,19 @@ is_metadata_tag: true
 id: tooth_number
 name: tooth number
 namespace: uberon
-def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw" []
+def: "x tooth_number N if and only if (i) x is a tooth, and (ii) x is ancestrally tooth number N in a series of teeth repeated along an anterior-posterior axis, typically on the lateral side of a structure such as a jaw, with tooth_number 1 being the anteriormost. Note that this count refers to the total number of teeth starting from the first, regardless of the type of tooth. If sub-systems are required for numbering within a series of teeth of the same type, consider a subproperty. For example, in a human, maxillary canine = tooth 3 of upper jaw = canine_tooth 1 of upper jaw." []
 xref: UBPROP:0000112
 is_metadata_tag: true
 
 [Typedef]
 id: transformation_of
+name: transformation of
 namespace: uberon
+def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
 synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 is_transitive: true
-is_a: develops_from
+is_a: develops_from ! develops from
 
 [Typedef]
 id: vertebra_number

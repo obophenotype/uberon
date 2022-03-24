@@ -1,0 +1,48 @@
+pattern_name: vein_by_drainage
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/vein_by_drainage.yaml
+
+
+description: >-
+
+  A vein classified by the tissue which it drains.
+
+  Note this is for classes that use vein as a genus. We may need specific patterns in future
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
+classes:
+  multicellular anatomical structure: "UBERON:0010000"
+  vein: "UBERON:0001638"
+
+relations:
+  drains: "RO:0002179"
+
+
+vars:
+  structure: "'multicellular anatomical structure'"
+
+name:
+  text: "%s vein"
+  vars:
+    - structure
+
+def:
+  text: "Any vein that drains a %s."
+  vars:
+    - structure
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  related_synonym: oio:hasRelatedSynonym
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "vein of %s"
+    vars:
+      - structure
+
+equivalentTo:
+  text: "('vein' and ('drains' some %s))"
+  vars:
+    - structure

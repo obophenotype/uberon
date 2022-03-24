@@ -15,9 +15,9 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:oboInOwl1="ttp://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/caro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-07-27/imports/caro_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-09-27/imports/caro_import.owl"/>
         <dc:source rdf:resource="http://purl.obolibrary.org/obo/caro/2.0/beta/caro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-07-27</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-09-27</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1963,7 +1963,17 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/CARO_0010000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0010000">
-        <owl:equivalentClass rdf:nodeID="genid131"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000003"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001993"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <obo:IAO_0000115>An anatomical structure that has more than one cell as a part.</obo:IAO_0000115>
         <obo:IAO_0000117>djs93</obo:IAO_0000117>
         <obo:IAO_creation_date>Sun Feb 27 10:53:00 GMT 2011</obo:IAO_creation_date>
@@ -1971,19 +1981,20 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/caro#core"/>
         <rdfs:label>multicellular anatomical structure</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid131">
-        <owl:intersectionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000003"/>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001993"/>
-            </owl:Restriction>
-        </owl:intersectionOf>
-    </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CARO_0010000"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid131"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000003"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001993"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
         <rdfs:comment>There is a cost to burying this in PATO.  We lose that we could relax the cardinality assertion to subClassOf has_part some cell.  I&apos;m sure having this axiom inherited would come in handy.  DOS</rdfs:comment>
     </owl:Axiom>
     
@@ -2035,26 +2046,37 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/CARO_0020003 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0020003">
-        <owl:equivalentClass rdf:nodeID="genid142"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000013"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0000013"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <obo:IAO_0000115>An anatomical structure consisting of one or more cells.</obo:IAO_0000115>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-09-28T14:20:19Z</oboInOwl:creation_date>
         <rdfs:label xml:lang="en">cellular anatomical structure</rdfs:label>
         <oboInOwl1:created_by>dos</oboInOwl1:created_by>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid142">
-        <owl:unionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000013"/>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0000013"/>
-            </owl:Restriction>
-        </owl:unionOf>
-    </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CARO_0020003"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid142"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000013"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0000013"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
         <obo:IAO_0000115>With a reflexive part_of relation this might safely be defined as &apos;anatomical structure&apos; that has_part some cell</obo:IAO_0000115>
     </owl:Axiom>
     
@@ -2398,17 +2420,23 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
                     </owl:Restriction>
                 </owl:someValuesFrom>
-                <owl:equivalentClass rdf:nodeID="genid155"/>
+                <owl:equivalentClass>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
+                    </owl:Restriction>
+                </owl:equivalentClass>
             </owl:Restriction>
         </owl:annotatedSource>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid155"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
         <rdfs:comment>Should belong in BFO, but lives in caro for now.</rdfs:comment>
     </owl:Axiom>
-    <owl:Restriction rdf:nodeID="genid155">
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
-    </owl:Restriction>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
@@ -2618,5 +2646,5 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
 
 
-<!-- Generated by the OWL API (version 4.5.19) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.6) https://github.com/owlcs/owlapi -->
 

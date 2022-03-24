@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fbbt
-data-version: 2014-05-27
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and CL. Note that currently CL focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future CL may bridge via the arthropod anatomy ontology" xsd:string
@@ -39,7 +39,7 @@ intersection_of: CL:0000023 ! oocyte
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00000034 ! 
+id: FBbt:00057012 ! 
 property_value: IAO:0000589 "egg cell (drosophila)" xsd:string
 intersection_of: CL:0000025 ! egg cell
 intersection_of: part_of NCBITaxon:7227
@@ -54,12 +54,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00005145 ! 
 property_value: IAO:0000589 "glioblast (drosophila)" xsd:string
 intersection_of: CL:0000030 ! glioblast
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005146 ! 
-property_value: IAO:0000589 "neuroblast (drosophila)" xsd:string
-intersection_of: CL:0000031 ! neuroblast
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -112,8 +106,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00005144 ! 
-property_value: IAO:0000589 "glial cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000124 ! glial cell (sensu Nematoda and Protostomia)
+property_value: IAO:0000589 "obsolete glial cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
+intersection_of: CL:0000124 ! obsolete glial cell (sensu Nematoda and Protostomia)
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -171,9 +165,9 @@ intersection_of: CL:0000381 ! neurosecretory neuron
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00005217 ! 
-property_value: IAO:0000589 "scolopidium (drosophila)" xsd:string
-intersection_of: CL:0000382 ! scolopidium
+id: FBbt:00005219 ! 
+property_value: IAO:0000589 "scolopale cell (drosophila)" xsd:string
+intersection_of: CL:0000382 ! scolopale cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -184,8 +178,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00005063 ! 
-property_value: IAO:0000589 "hemocyte (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+property_value: IAO:0000589 "hemocyte (sensu Arthropoda) (drosophila)" xsd:string
+intersection_of: CL:0000387 ! hemocyte (sensu Arthropoda)
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -268,8 +262,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00005147 ! 
-property_value: IAO:0000589 "neuroglioblast (drosophila)" xsd:string
-intersection_of: CL:0000468 ! neuroglioblast
+property_value: IAO:0000589 "neuroglioblast (sensu Nematoda and Protostomia) (drosophila)" xsd:string
+intersection_of: CL:0000468 ! neuroglioblast (sensu Nematoda and Protostomia)
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -286,8 +280,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00004904 ! 
-property_value: IAO:0000589 "follicle cell (drosophila)" xsd:string
-intersection_of: CL:0000477 ! follicle cell
+property_value: IAO:0000589 "ovarian follicle cell (drosophila)" xsd:string
+intersection_of: CL:0000477 ! ovarian follicle cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -306,12 +300,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00005106 ! 
 property_value: IAO:0000589 "neuron (drosophila)" xsd:string
 intersection_of: CL:0000540 ! neuron
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005127 ! 
-property_value: IAO:0000589 "amacrine cell (drosophila)" xsd:string
-intersection_of: CL:0000561 ! amacrine cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -351,6 +339,12 @@ intersection_of: CL:0001658 ! visual pigment cell (sensu Nematoda and Protostomi
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
+id: FBbt:00005797 ! 
+property_value: IAO:0000589 "Malpighian tubule stellate cell (drosophila)" xsd:string
+intersection_of: CL:1000155 ! Malpighian tubule stellate cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
 id: FBbt:ENTITY
 name: FBbt entity
 intersection_of: UBERON:0001062 ! anatomical entity
@@ -367,12 +361,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

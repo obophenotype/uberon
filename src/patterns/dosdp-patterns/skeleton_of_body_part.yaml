@@ -1,0 +1,51 @@
+pattern_name: skeleton_of_body_part
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/skeleton_of_body_part.yaml
+
+description: >-
+
+  Examples: [nasal skeleton](http://purl.obolibrary.org/obo/UBERON_0006813), [pectoral fin skeleton](http://purl.obolibrary.org/obo/UBERON_0010710), [pelvic fin skeleton](http://purl.obolibrary.org/obo/UBERON_0010711) (65 total)
+
+contributors:
+- https://orcid.org/0000-0002-6601-2165
+
+classes:
+  multicellular anatomical structure: "UBERON:0010000"
+  subdivision of skeleton: "UBERON:0010912"
+
+
+relations:
+  skeleton of: "RO:0002576"
+
+
+vars:
+  parent: "'multicellular anatomical structure'"
+
+name:
+  text: "skeleton of %s"
+  vars:
+    - parent
+
+def:
+  text: "A subdivision of the skeleton that supports the %s."
+  vars:
+    - parent
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s skeleton"
+    vars:
+      - parent
+  - annotationProperty: related_synonym
+    text: "%s"
+    vars:
+      - parent
+
+
+equivalentTo:
+  text: "('subdivision of skeleton' and ('skeleton of' some %s))"
+  vars:
+    - parent

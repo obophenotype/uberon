@@ -10,9 +10,9 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/bspo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-07-27/imports/bspo_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-09-27/imports/bspo_import.owl"/>
         <dc:source rdf:resource="http://purl.obolibrary.org/obo/bspo/releases/2020-05-11/bspo.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-07-27</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-09-27</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -201,11 +201,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>part_of</oboInOwl:id>
-        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
-        <rdfs:label>part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -214,11 +209,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <oboInOwl:hasDbXref>BFO:0000051</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>has_part</oboInOwl:id>
-        <oboInOwl:shorthand>has_part</oboInOwl:shorthand>
-        <rdfs:label>has part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -892,21 +882,7 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002131 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
-        <obo:IAO_0000115>x overlaps y iff they have some part in common.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>RO:0002131</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>overlaps</oboInOwl:id>
-        <oboInOwl:shorthand>overlaps</oboInOwl:shorthand>
-        <rdfs:comment>&quot;(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))&quot; CLIF []</rdfs:comment>
-        <rdfs:label>overlaps</rdfs:label>
-    </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>x overlaps y iff they have some part in common.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
     
 
 
@@ -914,11 +890,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <oboInOwl:hasDbXref>RO:0002220</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>adjacent_to</oboInOwl:id>
-        <oboInOwl:shorthand>adjacent_to</oboInOwl:shorthand>
-        <rdfs:label>adjacent to</rdfs:label>
     </owl:ObjectProperty>
     
 

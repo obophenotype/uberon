@@ -1,0 +1,29 @@
+pattern_name: endochondral_bone
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/endochondral_bone.yaml
+
+classes:
+  bone tissue: UBERON:0002481
+  Thing: "owl:Thing"
+
+
+relations:
+  composed_primarily_of: RO:0002473
+
+vars:
+  element: "Thing"
+
+name:
+  text: "%s bone"
+  vars:
+   - element
+
+
+def:
+  text: "A %s that is composed primarily of bone tissue"
+  vars:
+    - element
+
+equivalentTo:
+  text: "%s and 'composed_primarily_of' some 'bone tissue'"
+  vars:
+    - element
