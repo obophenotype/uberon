@@ -82,7 +82,7 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
     $(REPORTDIR)/uberon-orphans \
     $(REPORTDIR)/uberon-synclash
 
-test: $(REPORTDIR)/uberon-edit-xp-check
+test: $(REPORTDIR)/uberon-edit-xp-check reports/bfo-check.txt
 
 # ----------------------------------------
 # STEP 1: pre-processing and quick validation
@@ -736,7 +736,7 @@ extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.tx
 ##$(REPORTDIR)/bfo-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 # TODO @cmungall: worth fixing!
 # TODO @matentzn: use ROBOT merge instead and dump debug modules..
-$(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(CATALOG_DYNAMIC)
+$(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(CATALOG_DYNAMIC) mirror/ro.owl mirror/bfo.owl
 	echo "STRONG WARNING: check $@ FAIL currently!"
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $(URIBASE)/ro.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o $(REPORTDIR)/bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp
 
@@ -1986,3 +1986,15 @@ explain_humans:
 
 explain_humans_all:
 	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
+
+
+###############################
+### New release pipeline ######
+###############################
+
+#ASSETS BRIDGES
+
+deploy_release:
+	@test $(GHVERSION)
+	ls -alt $(ASSETS)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)
