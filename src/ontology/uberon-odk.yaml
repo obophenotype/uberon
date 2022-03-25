@@ -1,25 +1,26 @@
 id: uberon
 title: "Uberon multi-species anatomy ontology"
 github_org: obophenotype
+git_main_branch: master
 repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
-use_dosdps: FALSE
+use_dosdps: TRUE
 export_formats:
   - owl
   - obo
   - json
-namespaces: 
+namespaces:
   - http://purl.obolibrary.org/obo/UBERON_
   - http://purl.obolibrary.org/obo/uberon#
-release_artefacts: 
+  - http://purl.obolibrary.org/obo/UBPROP_
+release_artefacts:
   - base
   - full
   - simple
+  - basic
   - custom-ext
   - custom-basic
-  - custom-merged
-  - custom-core
   - custom-composite-metazoan
   - custom-composite-metazoan-basic
   - custom-composite-vertebrate
@@ -29,17 +30,17 @@ import_group:
   release_imports: TRUE
   products:
     - id: pr
-      is_large: TRUE
-      use_gzipped: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
     - id: cl
     - id: go
-    - id: envo 
+    - id: envo
     - id: ro
     - id: bspo
     - id: chebi
       is_large: TRUE
       use_gzipped: TRUE
     - id: pato
+    - id: bfo
     - id: ncbitaxon
       is_large: TRUE
       use_gzipped: TRUE
@@ -84,4 +85,26 @@ subset_group:
     - id: amniote-basic
     - id: euarchontoglires-basic
 robot_java_args: '-Xmx20G'
+robot_report:
+  release_reports: False
+  fail_on: ERROR
+  use_labels: False
+  custom_profile: True
+  report_on:
+    - edit
+  custom_sparql_checks:
+    - equivalent-classes
+    - owldef-self-reference
+    - illegal-annotation-property
+    - taxon-range
+    - orcid-contributor
+  custom_sparql_exports:
+    - basic-report
+owltools_memory: '20G'
 create_obo_metadata: FALSE
+documentation:
+  documentation_system: mkdocs
+components:
+  products:
+    - filename: mappings.owl
+    - filename: in-subset.owl
