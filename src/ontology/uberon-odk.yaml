@@ -10,11 +10,11 @@ export_formats:
   - owl
   - obo
   - json
-namespaces: 
+namespaces:
   - http://purl.obolibrary.org/obo/UBERON_
   - http://purl.obolibrary.org/obo/uberon#
   - http://purl.obolibrary.org/obo/UBPROP_
-release_artefacts: 
+release_artefacts:
   - base
   - full
   - simple
@@ -33,7 +33,7 @@ import_group:
       mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
     - id: cl
     - id: go
-    - id: envo 
+    - id: envo
     - id: ro
     - id: bspo
     - id: chebi
@@ -87,18 +87,18 @@ subset_group:
 robot_java_args: '-Xmx20G'
 robot_report:
   release_reports: False
-  fail_on : ERROR
-  use_labels : False
-  custom_profile : True
-  report_on :
+  fail_on: ERROR
+  use_labels: False
+  custom_profile: True
+  report_on:
     - edit
-  custom_sparql_checks :
-    - equivalent-classes 
+  custom_sparql_checks:
+    - equivalent-classes
     - owldef-self-reference
     - illegal-annotation-property
     - taxon-range
     - orcid-contributor
-  custom_sparql_exports : 
+  custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
 create_obo_metadata: FALSE
@@ -107,3 +107,4 @@ documentation:
 components:
   products:
     - filename: mappings.owl
+    - filename: in-subset.owl

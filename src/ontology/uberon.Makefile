@@ -414,6 +414,7 @@ imports/local-%.owl: mirror/%.owl
     --rename-entity $(URIBASE)/$*#releases_neurotransmitter $(URIBASE)/RO_0002111  \
     --rename-entity $(URIBASE)/$*#develops_directly_from $(URIBASE)/RO_0002207   \
     --rename-entity $(URIBASE)/$*#electrically_synapsed_to $(URIBASE)/RO_0002003 \
+    --rename-entity $(URIBASE)/$*#part_of $(URIBASE)/BFO_0000050 \
     --rename-entity $(URIBASE)/$*#regional_part_of $(URIBASE)/BFO_0000050 \
     --rename-entity $(URIBASE)/$*#systemic_part_of $(URIBASE)/BFO_0000050 \
     --rename-entity $(URIBASE)/$*#constitutional_part_of $(URIBASE)/BFO_0000050\
@@ -1674,6 +1675,14 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 
 %-names.txt: %.obo
 	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
+
+# ----------------------------------------
+# ROBOT PATTERNS AND TEMPLATES
+# ----------------------------------------
+
+$(COMPONENTSDIR)/in-subset.owl: $(SRC) $(TEMPLATEDIR)/in-subset.template.tsv 
+	$(ROBOT) template --template $(TEMPLATEDIR)/in-subset.template.tsv \
+	annotate --ontology-iri $(ONTBASE)/$@ --output $(COMPONENTSDIR)/in-subset.owl
 
 # ----------------------------------------
 # DEAD SIMPLE DESIGN PATTERNS

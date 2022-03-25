@@ -110,11 +110,11 @@ foreach my $s (keys %fhmap) {
 
     my $prefix = "http://purl.obolibrary.org/obo/".lc($s);
     print $fh "[Typedef]\n";
-    print $fh "id: $prefix#part_of\n";
-    print $fh "equivalent_to: BFO:0000050\n\n";
+    print $fh "id: part_of\n";
+    print $fh "xref: BFO:0000050\n\n";
     print $fh "[Typedef]\n";
-    print $fh "id: $prefix#develops_from\n";
-    print $fh "equivalent_to: RO:0002225\n\n";
+    print $fh "id: develops_from\n";
+    print $fh "xref: RO:0002225\n\n";
 
     open(F,"ftr.obo");
     while(<F>) {
