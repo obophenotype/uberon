@@ -736,9 +736,8 @@ extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.tx
 ##$(REPORTDIR)/bfo-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 # TODO @cmungall: worth fixing!
 # TODO @matentzn: use ROBOT merge instead and dump debug modules..
-$(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(CATALOG_DYNAMIC) mirror/ro.owl mirror/bfo.owl
-	echo "STRONG WARNING: check $@ FAIL currently!"
-	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $(URIBASE)/ro.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl  --merge-support-ontologies -o $(REPORTDIR)/bfo-check.owl $(QELK) --run-reasoner -r elk -u > $@.tmp
+$(REPORTDIR)/bfo-check.txt: $(OWLSRC) mirror/ro.owl mirror/bfo.owl
+	$(ROBOT) merge -i $(OWLSRC) -i mirror/ro.owl -i mirror/bfo.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
 
 bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
