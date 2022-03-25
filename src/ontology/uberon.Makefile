@@ -82,6 +82,8 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
     $(REPORTDIR)/uberon-orphans \
     $(REPORTDIR)/uberon-synclash
 
+test: $(REPORTDIR)/uberon-edit-xp-check
+
 # ----------------------------------------
 # STEP 1: pre-processing and quick validation
 # ----------------------------------------
