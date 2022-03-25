@@ -8,7 +8,7 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 
 | Name (GitHub) | Funding Information | FTEs | Associated teams | Role | Responsibilities |
 | ---- | ---- | ---- | ---- | ---- | ---- |
-| David Osumi-Sutherland (@dosumis) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch), [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy |
+| David Osumi-Sutherland (@dosumis) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch), [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | some | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy |
 | Chris Mungall (@cmungall) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy, TCs/Orphan taxa/evolutionary variability |
 | Alex Diehl | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Immune cells |
 | Anita Caron (@anitacaron)| | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
@@ -21,14 +21,15 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | Meghan Balk (@megbalk)|  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Nico Matentzoglu (@matentzn) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
 | Nicole Vasilevsky (@nicolevasilevsky) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01)  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Edits needed for Mondo or uPheno. |
-| Paola Roncaglia | [Human Cell Atlas](https://www.humancellatlas.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing cell type terms needed for single-cell projects (Human Cell Atlas (HCA), Single Cell Expression Atlas, etc.) |
+| Paola Roncaglia (@paolaroncaglia) | [Human Cell Atlas](https://www.humancellatlas.org/) | some | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing cell type terms needed for single-cell projects (Human Cell Atlas (HCA), Single Cell Expression Atlas, etc.) |
 | Patrick Ray |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Editing Neurons and brain related terms.| 
-| Ray Stefancsik | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing Tickets needed for the Phenotype Reconciliation Effort. Documentation. |
+| Ray Stefancsik (@rays22) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Principal Ontology Editor | Editing; Tickets needed for the Phenotype Reconciliation Effort; Documentation. |
 | Sabrina Toro (@sabrinatoro) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01)  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Edits needed for Mondo or uPheno. |
 | Shawn Tan (@shawntanzk)| | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer, Ontology Editor | Editing Neurons and brain related terms. |
-| Tiago Lubiana Alves |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New Term Requests. |
+| Tiago Lubiana Alves (@lubianat) |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New Term Requests. |
 | Wasila Dahdul (@wdahdul) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
 | Yvonne Bradford (@ybradford) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
+| Bradley Varner (@bvarner-ebi) | [Cell Annotation Platform]() | 1 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New cell types & edits for CAP |
 
 
 ## Past team members and major contributors

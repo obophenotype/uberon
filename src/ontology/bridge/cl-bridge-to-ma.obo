@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-ma
-data-version: 2014-05-27
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to ma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between adult moouse anatomy and CL" xsd:string
@@ -13,32 +13,32 @@ property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
 id: MA:0002765 ! 
 property_value: IAO:0000589 "male germ cell (post-embryonic mouse)" xsd:string
 intersection_of: CL:0000015 ! male germ cell
-intersection_of: part_of NCBITaxon:10088
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: MA:0000388 ! 
 property_value: IAO:0000589 "female germ cell (post-embryonic mouse)" xsd:string
 intersection_of: CL:0000021 ! female germ cell
-intersection_of: part_of NCBITaxon:10088
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: MA:0000388 ! 
 property_value: IAO:0000589 "egg cell (post-embryonic mouse)" xsd:string
 intersection_of: CL:0000025 ! egg cell
-intersection_of: part_of NCBITaxon:10088
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: MA:0002419 ! 
 property_value: IAO:0000589 "type B pancreatic cell (post-embryonic mouse)" xsd:string
 intersection_of: CL:0000169 ! type B pancreatic cell
-intersection_of: part_of NCBITaxon:10088
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: MA:ENTITY
 name: MA entity
 intersection_of: UBERON:0001062 ! anatomical entity
-intersection_of: part_of NCBITaxon:10088
-relationship: only_in_taxon NCBITaxon:10088
+intersection_of: part_of NCBITaxon:10090
+relationship: only_in_taxon NCBITaxon:10090
 
 [Typedef]
 id: part_of
@@ -50,12 +50,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

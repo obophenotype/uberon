@@ -16,7 +16,7 @@ These are the current imports in UBERON
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | http://purl.obolibrary.org/obo/pr.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | cl | http://purl.obolibrary.org/obo/cl.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
 | envo | http://purl.obolibrary.org/obo/envo.owl | None |
@@ -24,6 +24,7 @@ These are the current imports in UBERON
 | bspo | http://purl.obolibrary.org/obo/bspo.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
+| bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
 | ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
@@ -47,4 +48,9 @@ Components, in contrast to imports, are considered full members of the ontology.
 2. A part of the ontology is managed in ROBOT templates
 3. The expressivity of the component is higher than the format of the edit file. For example, people still choose to manage their ontology in OBO format (they should not) missing out on a lot of owl features. They may chose to manage logic that is beyond OBO in a specific OWL component.
 
+These are the components in UBERON
 
+| Filename | URL |
+| -------- | --- |
+| mappings.owl | None |
+| in-subset.owl | None |

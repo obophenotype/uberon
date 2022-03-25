@@ -1,14 +1,220 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/imports/pr_import.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/imports/pr_import.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/pr_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-09-27/imports/pr_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2022-03-17/imports/pr_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/pr/obophenotype/releases/2022-01-25/pr_slim.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-03-17</owl:versionInfo>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasSynonymType -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasSynonymType"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#is_transitive -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_transitive"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>part_of</oboInOwl:id>
+        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
+        <rdfs:label>part_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <oboInOwl:hasDbXref>BFO:0000051</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>has_part</oboInOwl:id>
+        <oboInOwl:shorthand>has_part</oboInOwl:shorthand>
+        <rdfs:label>has_part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0000086 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000086">
+        <oboInOwl:hasDbXref>RO:0000086</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>has_quality</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <oboInOwl:shorthand>has_quality</oboInOwl:shorthand>
+        <rdfs:label>has_quality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160">
+        <obo:IAO_0000115>U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>RO:0002160</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>never_outside_taxon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>specific_to</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>specific_to_taxon</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>only_in_taxon</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <oboInOwl:shorthand>only_in_taxon</oboInOwl:shorthand>
+        <rdfs:comment>Down-propagates. The original name for this in the paper is &apos;specific_to&apos;. Applicable to genes because some genes are lost in sub-species (strains) of a species.</rdfs:comment>
+        <rdfs:label>only_in_taxon</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ROC:Waclaw</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002180 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
+        <oboInOwl:hasDbXref>RO:0002180</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>has_component</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <oboInOwl:shorthand>has_component</oboInOwl:shorthand>
+        <rdfs:label>has_component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002215 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002215">
+        <oboInOwl:hasDbXref>RO:0002215</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>capable_of</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <oboInOwl:shorthand>capable_of</oboInOwl:shorthand>
+        <rdfs:label>capable_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002353 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002353">
+        <oboInOwl:hasDbXref>RO:0002353</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>output_of</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <oboInOwl:shorthand>output_of</oboInOwl:shorthand>
+        <rdfs:label>output_of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/pr#has_gene_template -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/pr#has_gene_template">
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>has_gene_template</oboInOwl:id>
+        <oboInOwl:is_transitive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_transitive>
+        <rdfs:label>has_gene_template</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -23,11 +229,23 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
+        <oboInOwl:hasOBONamespace>bfo</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>BFO:0000019</oboInOwl:id>
+        <rdfs:label>quality</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/BFO_0000030 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000030">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</rdfs:label>
+        <oboInOwl:hasOBONamespace>bfo</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>BFO:0000030</oboInOwl:id>
+        <rdfs:label>object</rdfs:label>
     </owl:Class>
     
 
@@ -35,7 +253,9 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000040 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material entity</rdfs:label>
+        <oboInOwl:hasOBONamespace>bfo</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>BFO:0000040</oboInOwl:id>
+        <rdfs:label>material entity</rdfs:label>
     </owl:Class>
     
 
@@ -44,8 +264,17 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_23367">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24431"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">molecular entity</rdfs:label>
+        <obo:IAO_0000115>Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>CHEBI:23367</oboInOwl:id>
+        <rdfs:label>molecular entity</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>fake:2</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -53,8 +282,49 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24431">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chemical entity</rdfs:label>
+        <obo:IAO_0000115>A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>CHEBI:24431</oboInOwl:id>
+        <rdfs:label>chemical entity</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33247 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33247">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <obo:IAO_0000115>Any substituent group or skeleton containing carbon.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>CHEBI:33247</oboInOwl:id>
+        <rdfs:label>organic group</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33708 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33708">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33247"/>
+        <obo:IAO_0000115>When two or more amino acids combine to form a peptide, the elements of water are removed, and what remains of each amino acid is called an amino-acid residue.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>amino acid residue</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>protein residue</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>CHEBI:33708</oboInOwl:id>
+        <rdfs:label>amino-acid residue</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33708"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>When two or more amino acids combine to form a peptide, the elements of water are removed, and what remains of each amino acid is called an amino-acid residue.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>Dummy:dummy</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33708"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>protein residue</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -62,7 +332,253 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_50047">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">organic amino compound</rdfs:label>
+        <obo:IAO_0000115>A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by organyl groups.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>CHEBI:50047</oboInOwl:id>
+        <rdfs:label>organic amino compound</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
+        <obo:IAO_0000115>The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cell or subcellular entity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>GO:0005575</oboInOwl:id>
+        <rdfs:comment>Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. Note that when this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.</rdfs:comment>
+        <rdfs:label>cellular_component</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0006412 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0006412">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <obo:IAO_0000115>The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>protein anabolism</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>GO:0006412</oboInOwl:id>
+        <rdfs:label>translation</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
+        <obo:IAO_0000115>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>biological process</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>GO:0008150</oboInOwl:id>
+        <rdfs:comment>Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code &apos;no data&apos; (ND), is used to indicate this.</rdfs:comment>
+        <rdfs:label>biological_process</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0016485 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016485">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <obo:IAO_0000115>Any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein. Protein maturation is the process leading to the attainment of the full functional capacity of a protein.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>peptidolysis during protein maturation</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>GO:0016485</oboInOwl:id>
+        <rdfs:label>protein processing</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Any protein maturation process achieved by the cleavage of a peptide bond or bonds within a protein. Protein maturation is the process leading to the attainment of the full functional capacity of a protein.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:curators</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:jsg</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>peptidolysis during protein maturation</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_10090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_10090">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9989"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>m</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>mouse</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:10090</oboInOwl:id>
+        <rdfs:label>Mus musculus</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>m</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>mouse</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0100026"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>euk-</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:2759</oboInOwl:id>
+        <rdfs:label>Eukaryota</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>euk-</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33154 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33154">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Fungi/Metazoa group</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:33154</oboInOwl:id>
+        <rdfs:label>Opisthokonta</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33208 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33208">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>metazoan-</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:33208</oboInOwl:id>
+        <rdfs:label>Metazoa</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>metazoan-</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_40674 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <oboInOwl:hasExactSynonym>mammal</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>mammal-</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:40674</oboInOwl:id>
+        <rdfs:label>Mammalia</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mammal</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>mammal-</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>h</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>human</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:9606</oboInOwl:id>
+        <rdfs:label>Homo sapiens</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>h</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>human</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9989 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9989">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+        <oboInOwl:hasExactSynonym>rodent</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:9989</oboInOwl:id>
+        <rdfs:label>Rodentia</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9989"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>rodent</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0100026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
+        <oboInOwl:hasOBONamespace>obi</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>OBI:0100026</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>organism</rdfs:label>
     </owl:Class>
     
 
@@ -70,9 +586,67 @@
     <!-- http://purl.obolibrary.org/obo/PR_000000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000000001">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000018263"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>natural protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>native protein</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000000001</oboInOwl:id>
+        <rdfs:comment>The definition above excludes protein complexes, which some also consider a protein. Those who wish to refer to a class representing both senses of the word are directed to CHEBI:36080. Note that the definition allows for experimentally-manipulated genes, and allows for artifically-produced derivatives that mimic those found naturally. Proteins (in the sense defined here) that descended from a common ancestor can be classified into families and superfamilies composed of products of evolutionarily-related genes. The domain architecture of a protein is described by the order of its constituent domains. Proteins with the same domains in the same order are defined as homeomorphic [PRO:WCB].</rdfs:comment>
+        <rdfs:label>protein</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>natural protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>native protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IEDB:BP</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -80,8 +654,37 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000007499">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fibroblast growth factor 8</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human FGF8 gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>FGF-8</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>FGF8</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>androgen-induced growth factor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>AIGF</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>HBGF-8</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>heparin-binding growth factor 8</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000007499</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>fibroblast growth factor 8</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007499"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human FGF8 gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007499"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>FGF8</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007499"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>AIGF</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -89,8 +692,59 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000007636">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forkhead box protein N1</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human FOXN1 gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>IUPHARobj:2958</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>FOXN1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>HNF-3/forkhead homolog 11</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>winged-helix transcription factor nude</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Fkh19</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>HFH-11</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Hfh11</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>RONU</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>WHN</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>hepatocyte nuclear factor 3 forkhead homolog 11</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000007636</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>forkhead box protein N1</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human FOXN1 gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>FOXN1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Fkh19</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Hfh11</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>RONU</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>WHN</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -98,8 +752,42 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000009978">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lactotransferrin</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human LTF gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>LTF</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>lactoferrin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>talalactoferrin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>GIG12</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>LF</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000009978</oboInOwl:id>
+        <rdfs:comment>Category=gene. Requested by=CL.</rdfs:comment>
+        <rdfs:label>lactotransferrin</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human LTF gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>LTF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GIG12</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>LF</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -107,8 +795,35 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000010228">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myelin basic protein</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human MBP gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>MBP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>myelin A1 protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>myelin membrane encephalitogenic protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Shi</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000010228</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>myelin basic protein</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000010228"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human MBP gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000010228"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>MBP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000010228"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Shi</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -116,8 +831,36 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000014841">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sonic hedgehog protein</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human SHH gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>HHG-1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>SHH</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ShhNC</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Hhg1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000014841</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>sonic hedgehog protein</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human SHH gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SHH</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Hhg1</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -125,8 +868,42 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000015557">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spondin-1</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human SPON1 gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>F-spondin</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>SPON1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>vascular smooth muscle cell growth-promoting factor</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>KIAA0762</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>VSGP</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000015557</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>spondin-1</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human SPON1 gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SPON1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>KIAA0762</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>VSGP</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -134,8 +911,40 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000015658">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SCO-spondin</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human SSPO gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>SSPO</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>KIAA2036</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>SSPOP</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000015658</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>SCO-spondin</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human SSPO gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SSPO</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>KIAA2036</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>SSPOP</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -143,8 +952,34 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000016283">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thyroglobulin</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human TG gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>TG</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Tg</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Tgn</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000016283</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>thyroglobulin</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000016283"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human TG gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000016283"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>TG</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000016283"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Tgn</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
     
 
 
@@ -152,17 +987,186 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018263">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_50047"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amino acid chain</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33708"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>peptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>polypeptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000018263</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>amino acid chain</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:JSG</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>peptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>polypeptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/PR_000018264 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018264">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">proteolytic cleavage product</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein that is produced as the result of proteolytic processing of a longer protein.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>ClvPrd</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>peptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>polypeptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000018264</oboInOwl:id>
+        <rdfs:label>proteolytic cleavage product</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is produced as the result of proteolytic processing of a longer protein.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>ClvPrd</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>peptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>polypeptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000020497 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000020497">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000009978"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A lactotransferrin that has been processed by proteolytic cleavage.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>LTF/ClvPrd</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000020497</oboInOwl:id>
+        <rdfs:comment>Category=modification.</rdfs:comment>
+        <rdfs:label>lactotransferrin proteolytic cleavage product</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000020497"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A lactotransferrin that has been processed by proteolytic cleavage.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000020497"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>LTF/ClvPrd</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000021468 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000021468">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000014841"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0016485"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sonic hedgehog protein that has been processed by proteolytic cleavage.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>SHH/ClvPrd</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000021468</oboInOwl:id>
+        <rdfs:comment>Category=modification.</rdfs:comment>
+        <rdfs:label>sonic hedgehog protein proteolytic cleavage product</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000021468"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sonic hedgehog protein that has been processed by proteolytic cleavage.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000021468"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SHH/ClvPrd</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
     
 
 
@@ -170,8 +1174,80 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000027222">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALCA gene translation product</rdfs:label>
+        <obo:IAO_0000115>A protein that is a translation product of the human CALCA gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>CALCA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>CALC</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:000027222</oboInOwl:id>
+        <rdfs:comment>Category=gene.</rdfs:comment>
+        <rdfs:label>CALCA gene translation product</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000027222"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human CALCA gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>MGI:2151253</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:CNA</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000027222"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>CALCA</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000027223 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000027223">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000027222"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000027222"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:2151253"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A CALCA gene translation product that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>mCALCA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000027223</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>CALCA gene translation product (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000027223"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A CALCA gene translation product that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>MGI:2151253</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:HJD</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000027223"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mCALCA</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
     
 
 
@@ -179,25 +1255,2101 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000028527">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018264"/>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">casein derived peptide</rdfs:label>
+        <obo:IAO_0000115>A proteolytic cleavage product that is derived from any of the casein milk proteins.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>CN (f)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000028527</oboInOwl:id>
+        <rdfs:comment>Category=modification.</rdfs:comment>
+        <rdfs:label>casein derived peptide</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000028527"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A proteolytic cleavage product that is derived from any of the casein milk proteins.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000028527"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>CN (f)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000029032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000029032">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000036194"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein that is encoded in the genome of Mus musculus.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>mouse protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000029032</oboInOwl:id>
+        <rdfs:label>Mus musculus protein</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is encoded in the genome of Mus musculus.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mouse protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000029067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000029067">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000036194"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein that is encoded in the genome of Homo sapiens.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>human protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000029067</oboInOwl:id>
+        <rdfs:label>Homo sapiens protein</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is encoded in the genome of Homo sapiens.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>human protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000030026 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000030026">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000027222"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000027222"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A CALCA gene translation product that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>CALC1 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>CGRP-I (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>alpha-type CGRP (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>calcitonin gene-related peptide I (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hCALCA</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000030026</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>CALCA gene translation product (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A CALCA gene translation product that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P06881</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>CALC1 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P06881</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>CGRP-I (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P06881</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>alpha-type CGRP (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P06881</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>calcitonin gene-related peptide I (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P06881</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000030026"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hCALCA</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000036194 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000036194">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000000001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein that is encoded in the genome of some Eukaryota.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Eukaryota protein</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000036194</oboInOwl:id>
+        <rdfs:label>eukaryotic protein</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000036194"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is encoded in the genome of some Eukaryota.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000036194"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Eukaryota protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_A2VEC9 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_A2VEC9">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000015658"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=21998"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A SCO-spondin that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>SCO-spondin pseudogene (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hSSPO</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>KIAA2036</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>SSPO</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>SSPOP</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:A2VEC9</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>SCO-spondin (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A SCO-spondin that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SCO-spondin pseudogene (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hSSPO</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>KIAA2036</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>SSPO</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_A2VEC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>SSPOP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:A2VEC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_O08710 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_O08710">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000016283"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000016283"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:98733"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A thyroglobulin that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:O08710</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>mTG</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Tg</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Tgn</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:O08710</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>thyroglobulin (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O08710"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A thyroglobulin that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:O08710</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O08710"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mTG</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O08710"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Tg</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O08710</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O08710"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Tgn</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O08710</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_O15353 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_O15353">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000007636"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12765"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A forkhead box protein N1 that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>hFOXN1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>winged-helix transcription factor nude (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>FOXN1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>RONU</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>WHN</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:O15353</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>forkhead box protein N1 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A forkhead box protein N1 that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hFOXN1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>winged-helix transcription factor nude (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>FOXN1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>RONU</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O15353"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>WHN</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:O15353</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P01266 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P01266">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000016283"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000016283"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11764"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A thyroglobulin that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:P01266</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>Tg (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hTG</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>TG</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P01266</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>thyroglobulin (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P01266"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A thyroglobulin that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P01266</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P01266"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Tg (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P01266</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P01266"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hTG</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P01266"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>TG</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P01266</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P02686 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P02686">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000010228"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000010228"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6925"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A myelin basic protein that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>Reactome:R-HSA-9614770</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>hMBP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>myelin A1 protein (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>myelin membrane encephalitogenic protein (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>MBP</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P02686</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>myelin basic protein (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A myelin basic protein that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+        <owl:annotatedTarget>Reactome:R-HSA-9614770</owl:annotatedTarget>
+        <rdfs:label>PR:P02686 located_in GO:0005829</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hMBP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>myelin A1 protein (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>myelin membrane encephalitogenic protein (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02686"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>MBP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02686</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P02788 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P02788">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000009978"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6720"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A lactotransferrin that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>growth-inhibiting protein 12 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hLTF</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>lactoferrin (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>talalactoferrin (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>GIG12</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>LF</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>LTF</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P02788</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>lactotransferrin (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A lactotransferrin that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>growth-inhibiting protein 12 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hLTF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>lactoferrin (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>talalactoferrin (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>GIG12</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>LF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P02788"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>LTF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P02788</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P04370 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P04370">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000010228"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000010228"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:96925"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A myelin basic protein that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>MBP (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mMBP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>myelin A1 protein (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Mbp</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Shi</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P04370</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>myelin basic protein (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A myelin basic protein that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:P04370</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>MBP (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mMBP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>myelin A1 protein (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Mbp</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P04370"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Shi</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P04370</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P08071 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P08071">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000009978"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000009978"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:96837"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A lactotransferrin that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:P08071</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>lactoferrin (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mLTF</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Ltf</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P08071</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>lactotransferrin (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08071"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A lactotransferrin that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:P08071</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08071"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>lactoferrin (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P08071</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08071"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mLTF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08071"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Ltf</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P08071</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P37237 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P37237">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000007499"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000007499"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:99604"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A fibroblast growth factor 8 that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>AIGF (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>FGF-8 (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>androgen-induced growth factor (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mFGF8</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Aigf</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Fgf8</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>HBGF-8 (mouse)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>heparin-binding growth factor 8 (mouse)</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P37237</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>fibroblast growth factor 8 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A fibroblast growth factor 8 that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:P37237</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>AIGF (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>FGF-8 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>androgen-induced growth factor (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mFGF8</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Aigf</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Fgf8</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>HBGF-8 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P37237"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>heparin-binding growth factor 8 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P37237</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_P55075 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P55075">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000007499"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000007499"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=3686"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A fibroblast growth factor 8 that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>HBGF-8 (human)</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>heparin-binding growth factor 8 (human)</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>FGF-8 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>androgen-induced growth factor (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hFGF8</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>AIGF</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>FGF8</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:P55075</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>fibroblast growth factor 8 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A fibroblast growth factor 8 that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>HBGF-8 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>heparin-binding growth factor 8 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>FGF-8 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>androgen-induced growth factor (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hFGF8</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>AIGF</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P55075"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>FGF8</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:P55075</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q15465 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q15465">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000014841"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=10848"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sonic hedgehog protein that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>HHG-1 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ShhNC (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hSHH</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>SHH</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q15465</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>sonic hedgehog protein (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sonic hedgehog protein that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>HHG-1 (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>ShhNC (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hSHH</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q15465"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>SHH</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q15465</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q61575 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q61575">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000007636"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000007636"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:102949"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A forkhead box protein N1 that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>HFH-11 (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>HNF-3/forkhead homolog 11 (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hepatocyte nuclear factor 3 forkhead homolog 11 (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mFOXN1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>winged-helix transcription factor nude (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Fkh19</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Foxn1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Hfh11</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Whn</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q61575</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>forkhead box protein N1 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A forkhead box protein N1 that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>HFH-11 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>HNF-3/forkhead homolog 11 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hepatocyte nuclear factor 3 forkhead homolog 11 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mFOXN1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>winged-helix transcription factor nude (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Fkh19</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Foxn1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Hfh11</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Whn</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q61575</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q62226 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q62226">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000014841"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000014841"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:98297"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A sonic hedgehog protein that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>HHG-1 (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>SHH (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>ShhNC (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mSHH</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Hhg1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Shh</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q62226</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>sonic hedgehog protein (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A sonic hedgehog protein that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:Q62226</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>HHG-1 (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>SHH (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>ShhNC (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mSHH</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Hhg1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62226"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Shh</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q62226</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q8CG65 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q8CG65">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000015658"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000015658"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:2674311"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A SCO-spondin that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q8CG65</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>mSSPO</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Sspo</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q8CG65</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>SCO-spondin (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8CG65"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A SCO-spondin that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8CG65"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mSSPO</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8CG65"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Sspo</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q8CG65</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q8VCC9 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q8VCC9">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000015557"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:2385287"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A spondin-1 that is encoded in the genome of mouse.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q8VCC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>F-spondin (mouse)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>mSPON1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Spon1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q8VCC9</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>spondin-1 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8VCC9"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A spondin-1 that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>OMA:Q8VCC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8VCC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>F-spondin (mouse)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q8VCC9</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8VCC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>mSPON1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8VCC9"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Spon1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q8VCC9</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_Q9HCB6 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q9HCB6">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000015557"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000015557"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
+                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11252"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A spondin-1 that is encoded in the genome of human.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>F-spondin (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>hSPON1</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>vascular smooth muscle cell growth-promoting factor (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>KIAA0762</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>SPON1</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>VSGP</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PR:Q9HCB6</oboInOwl:id>
+        <rdfs:comment>Category=organism-gene.</rdfs:comment>
+        <rdfs:label>spondin-1 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A spondin-1 that is encoded in the genome of human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>F-spondin (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>hSPON1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>vascular smooth muscle cell growth-promoting factor (human)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>KIAA0762</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>SPON1</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9HCB6"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>VSGP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>UniProtKB:Q9HCB6</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000019"/>
+        <oboInOwl:hasExactSynonym>protein-coding</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0000010</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>protein_coding</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+    <!-- http://purl.obolibrary.org/obo/SO_0000110 -->
 
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_component</rdfs:label>
-    </rdf:Description>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000110">
+        <obo:IAO_0000115>An extent of biological sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>located_sequence_feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>sequence feature</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>located sequence feature</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>SO:0000110</oboInOwl:id>
+        <rdfs:label>sequence_feature</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An extent of biological sequence.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:ke</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000704 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000704">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000110"/>
+        <obo:IAO_0000115>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0000704</oboInOwl:id>
+        <rdfs:label>gene</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A region (or regions) that includes all of the sequence elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>SO:immuno_workshop</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0001217 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0001217">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000704"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasExactSynonym>protein coding gene</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>sequence</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>SO:0001217</oboInOwl:id>
+        <rdfs:label>protein_coding_gene</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=10848 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=10848">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene SHH in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:10848</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>SHH (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=10848"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene SHH in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11252 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11252">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene SPON1 in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:11252</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>SPON1 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11252"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene SPON1 in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11764 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11764">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene TG in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:11764</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>TG (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11764"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene TG in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12765 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12765">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene FOXN1 in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:12765</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>FOXN1 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=12765"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene FOXN1 in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene CALCA in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:1437</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>CALCA (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=1437"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene CALCA in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=21998 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=21998">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene SSPO in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:21998</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>SSPO (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=21998"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene SSPO in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=3686 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=3686">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene FGF8 in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:3686</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>FGF8 (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=3686"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene FGF8 in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6720 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6720">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene LTF in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:6720</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>LTF (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6720"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene LTF in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6925 -->
+
+    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6925">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene MBP in human.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>HGNC:6925</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>MBP (human)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=6925"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene MBP in human.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:102949 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:102949">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Foxn1 in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:102949</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Foxn1 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:102949"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Foxn1 in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:2151253 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:2151253">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Calca in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:2151253</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Calca (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:2151253"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Calca in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:2385287 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:2385287">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Spon1 in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:2385287</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Spon1 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:2385287"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Spon1 in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:2674311 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:2674311">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Sspo in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:2674311</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Sspo (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:2674311"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Sspo in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:96837 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:96837">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Ltf in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:96837</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Ltf (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:96837"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Ltf in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:96925 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:96925">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Mbp in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:96925</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Mbp (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:96925"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Mbp in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:98297 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:98297">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Shh in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:98297</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Shh (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:98297"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Shh in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:98733 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:98733">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Tg in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:98733</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Tg (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:98733"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Tg in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.informatics.jax.org/marker/MGI:99604 -->
+
+    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:99604">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A protein coding gene Fgf8 in mouse.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>gene</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>MGI:99604</oboInOwl:id>
+        <rdfs:comment>Category=external.</rdfs:comment>
+        <rdfs:label>Fgf8 (mouse)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:99604"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein coding gene Fgf8 in mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
+    </owl:Axiom>
 </rdf:RDF>
 
 

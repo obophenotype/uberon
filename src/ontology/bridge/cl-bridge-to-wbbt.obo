@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-wbbt
-data-version: 2014-05-27
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -76,8 +76,8 @@ intersection_of: part_of NCBITaxon:6237
 
 [Term]
 id: WBbt:0007846 ! 
-property_value: IAO:0000589 "flatworm hypodermal cell (worm)" xsd:string
-intersection_of: CL:0000411 ! flatworm hypodermal cell
+property_value: IAO:0000589 "Caenorhabditis hypodermal cell (worm)" xsd:string
+intersection_of: CL:0000411 ! Caenorhabditis hypodermal cell
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
@@ -142,8 +142,8 @@ intersection_of: part_of NCBITaxon:6237
 
 [Term]
 id: WBbt:0007028 ! 
-property_value: IAO:0000589 "embryonic cell (worm)" xsd:string
-intersection_of: CL:0002321 ! embryonic cell
+property_value: IAO:0000589 "embryonic cell (metazoa) (worm)" xsd:string
+intersection_of: CL:0002321 ! embryonic cell (metazoa)
 intersection_of: part_of NCBITaxon:6237
 
 [Term]
@@ -169,12 +169,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/wbbt#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/wbbt#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

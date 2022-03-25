@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ma
-data-version: 2021-10-01
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to ma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between adult moouse anatomy and Uberon" xsd:string
@@ -8,30 +8,6 @@ property_value: dc-creator "Terry Hayamizu" xsd:string
 property_value: dc-contributor "George Gkoutos" xsd:string
 property_value: dcterms-references http://purl.obolibrary.org/obo/ma.owl
 property_value: dcterms-references http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
-id: MA:0002765 ! 
-property_value: IAO:0000589 "male germ cell (post-embryonic mouse)" xsd:string
-intersection_of: CL:0000015 ! male germ cell
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: MA:0000388 ! 
-property_value: IAO:0000589 "female germ cell (post-embryonic mouse)" xsd:string
-intersection_of: CL:0000021 ! female germ cell
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: MA:0000388 ! 
-property_value: IAO:0000589 "egg cell (post-embryonic mouse)" xsd:string
-intersection_of: CL:0000025 ! egg cell
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: MA:0002419 ! 
-property_value: IAO:0000589 "type B pancreatic cell (post-embryonic mouse)" xsd:string
-intersection_of: CL:0000169 ! type B pancreatic cell
-intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: MA:0000392 ! 
@@ -14608,6 +14584,12 @@ intersection_of: UBERON:0005750 ! glomerular parietal epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
+id: MA:0002607 ! 
+property_value: IAO:0000589 "glomerular visceral epithelium (post-embryonic mouse)" xsd:string
+intersection_of: UBERON:0005751 ! glomerular visceral epithelium
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
 id: MA:0003235 ! 
 property_value: IAO:0000589 "urorectal septum (post-embryonic mouse)" xsd:string
 intersection_of: UBERON:0005760 ! urorectal septum
@@ -15565,12 +15547,6 @@ intersection_of: part_of NCBITaxon:10090
 id: MA:0002590 ! 
 property_value: IAO:0000589 "renal cortex peritubular capillary (post-embryonic mouse)" xsd:string
 intersection_of: UBERON:0006851 ! renal cortex peritubular capillary
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: MA:0002607 ! 
-property_value: IAO:0000589 "glomerular visceral epithelium (post-embryonic mouse)" xsd:string
-intersection_of: UBERON:0006852 ! glomerular visceral epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
@@ -18506,10 +18482,105 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
+[Typedef]
+id: foaf-depicted_by
+name: depicted_by
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/depicted_by
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-contributor
+name: contributor
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/contributor
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-publisher
+name: publisher
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/publisher
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: dc-source
+name: derived from resource
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/source
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/isReferencedBy
+
+[Typedef]
+id: dcterms-references
+name: references
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/references
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#GitRepository
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#SVNRepository
+
+[Typedef]
+id: doap-wiki
+name: wiki
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#wiki
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#bug-database
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+is_metadata_tag: true
+xref: IAO:0000122

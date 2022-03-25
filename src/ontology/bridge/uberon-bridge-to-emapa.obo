@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-emapa
-data-version: 2021-10-01
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to emapa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and Uberon" xsd:string
@@ -9,72 +9,6 @@ property_value: dc-creator "Aurelie Comte" xsd:string
 property_value: dc-creator "Anne Niknejad" xsd:string
 property_value: dcterms-references http://purl.obolibrary.org/obo/fma.owl
 property_value: dcterms-references http://purl.obolibrary.org/obo/uberon.owl
-
-[Term]
-id: EMAPA:31484 ! 
-property_value: IAO:0000589 "spermatocyte (embryonic mouse)" xsd:string
-intersection_of: CL:0000017 ! spermatocyte
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:31486 ! 
-property_value: IAO:0000589 "spermatid (embryonic mouse)" xsd:string
-intersection_of: CL:0000018 ! spermatid
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:31482 ! 
-property_value: IAO:0000589 "spermatogonium (embryonic mouse)" xsd:string
-intersection_of: CL:0000020 ! spermatogonium
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:29655 ! 
-property_value: IAO:0000589 "Leydig cell (embryonic mouse)" xsd:string
-intersection_of: CL:0000178 ! Leydig cell
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:16032 ! 
-property_value: IAO:0000589 "primary polar body (embryonic mouse)" xsd:string
-intersection_of: CL:0002091 ! primary polar body
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:16034 ! 
-property_value: IAO:0000589 "secondary polar body (embryonic mouse)" xsd:string
-intersection_of: CL:0002093 ! secondary polar body
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:16045 ! 
-property_value: IAO:0000589 "secondary polar body (embryonic mouse)" xsd:string
-intersection_of: CL:0002093 ! secondary polar body
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:31247 ! 
-property_value: IAO:0000589 "follicular cell of ovary (embryonic mouse)" xsd:string
-intersection_of: CL:0002174 ! follicular cell of ovary
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:18686 ! 
-property_value: IAO:0000589 "male gonocyte (embryonic mouse)" xsd:string
-intersection_of: CL:0002238 ! male gonocyte
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:17965 ! 
-property_value: IAO:0000589 "ooblast (embryonic mouse)" xsd:string
-intersection_of: CL:0002239 ! ooblast
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:16066 ! 
-property_value: IAO:0000589 "primary trophoblast giant cell (embryonic mouse)" xsd:string
-intersection_of: CL:0002497 ! primary trophoblast giant cell
-intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:29927 ! 
@@ -18293,6 +18227,12 @@ intersection_of: UBERON:0005750 ! glomerular parietal epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
+id: EMAPA:28254 ! 
+property_value: IAO:0000589 "glomerular visceral epithelium (embryonic mouse)" xsd:string
+intersection_of: UBERON:0005751 ! glomerular visceral epithelium
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
 id: EMAPA:17212 ! 
 property_value: IAO:0000589 "urorectal septum (embryonic mouse)" xsd:string
 intersection_of: UBERON:0005760 ! urorectal septum
@@ -20540,12 +20480,6 @@ intersection_of: part_of NCBITaxon:10090
 id: EMAPA:37488 !  {source="MA:th"}
 property_value: IAO:0000589 "renal cortex peritubular capillary (embryonic mouse)" xsd:string
 intersection_of: UBERON:0006851 ! renal cortex peritubular capillary
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: EMAPA:28254 ! 
-property_value: IAO:0000589 "glomerular visceral epithelium (embryonic mouse)" xsd:string
-intersection_of: UBERON:0006852 ! glomerular visceral epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
@@ -26967,10 +26901,105 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/emapa#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/emapa#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
+[Typedef]
+id: foaf-depicted_by
+name: depicted_by
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/depicted_by
+
+[Typedef]
+id: foaf-homepage
+name: homepage
+is_metadata_tag: true
+xref: http://xmlns.com/foaf/0.1/homepage
+
+[Typedef]
+id: dc-title
+name: title
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/title
+
+[Typedef]
+id: dc-contributor
+name: contributor
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/contributor
+
+[Typedef]
+id: dc-creator
+name: creator
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/creator
+
+[Typedef]
+id: dc-publisher
+name: publisher
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/publisher
+
+[Typedef]
+id: dc-description
+name: description
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/description
+
+[Typedef]
+id: dc-source
+name: derived from resource
+is_metadata_tag: true
+xref: http://purl.org/dc/elements/1.1/source
+
+[Typedef]
+id: dcterms-isReferencedBy
+name: is referenced by
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/isReferencedBy
+
+[Typedef]
+id: dcterms-references
+name: references
+is_metadata_tag: true
+xref: http://purl.org/dc/terms/references
+
+[Typedef]
+id: doap-GitRepository
+name: Git repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#GitRepository
+
+[Typedef]
+id: doap-SVNRepository
+name: SVN repository
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#SVNRepository
+
+[Typedef]
+id: doap-wiki
+name: wiki
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#wiki
+
+[Typedef]
+id: doap-bug-database
+name: bug database
+is_metadata_tag: true
+xref: http://usefulinc.com/ns/doap#bug-database
+
+[Typedef]
+id: seeAlso
+name: see also
+is_metadata_tag: true
+xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+
+[Typedef]
+id: example_of_usage
+name: example of usage
+is_metadata_tag: true
+xref: IAO:0000122

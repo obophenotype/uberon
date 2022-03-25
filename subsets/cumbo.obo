@@ -13,6 +13,7 @@ subsetdef: feed_aligned "subset of classes that have logical defs text defs and 
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
+subsetdef: human_reference_atlas ""
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
 subsetdef: location_grouping ""
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
@@ -105,7 +106,7 @@ xref: FMA:83686
 xref: NCIT:C13197
 xref: NLX:28443
 xref: Wikipedia:Nucleus_(neuroanatomy)
-relationship: part_of UBERON:0001017 {source="CUMBO"} ! central nervous system
+relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
 id: UBERON:0000955
@@ -162,8 +163,6 @@ xref: VHOG:0000157
 xref: Wikipedia:Brain
 xref: XAO:0000010
 xref: ZFA:0000008
-property_value: dc-contributor https://github.com/cmungall
-relationship: develops_from UBERON:0006238 ! future brain
 relationship: immediate_transformation_of UBERON:0006238 {source="Bgee:AN"} ! future brain
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
 
@@ -299,9 +298,6 @@ xref: TADS:0000201
 xref: UMLS:C1185742 {source="ncithesaurus:Commissure"}
 xref: Wikipedia:Commissure
 is_a: UBERON:0001018 ! axon tract
-property_value: dc-contributor https://github.com/cmungall
-property_value: dc-contributor https://github.com/mellybelly
-relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
 id: UBERON:0002240
@@ -355,6 +351,7 @@ xref: VHOG:0000601
 xref: Wikipedia:Spinal_cord
 xref: XAO:0000020
 xref: ZFA:0000075
+relationship: mutually_spatially_disjoint_with UBERON:0000955 {exceptions="ZFA", source="https://github.com/obophenotype/uberon/issues/378", status="pending"} ! brain
 relationship: part_of UBERON:0001017 ! central nervous system
 
 [Term]
@@ -490,6 +487,7 @@ is_metadata_tag: true
 
 [Typedef]
 id: curator_notes
+name: curator note
 name: curator notes
 namespace: uberon
 xref: IAO:0000232
@@ -499,7 +497,7 @@ is_metadata_tag: true
 id: dc-contributor
 name: contributor
 namespace: uberon
-xref: http://purl.org/dc/elements/1.1/contributor
+xref: http://purl.org/dc/terms/contributor
 is_metadata_tag: true
 
 [Typedef]
@@ -576,9 +574,15 @@ is_metadata_tag: true
 
 [Typedef]
 id: develops_from
+name: develops from
+name: develops_from
 namespace: uberon
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+comment: This is the transitive form of the develops from relation
 xref: RO:0002202
+holds_over_chain: part_of develops_from
 is_transitive: true
+transitive_over: part_of ! part_of
 
 [Typedef]
 id: doap-GitRepository
@@ -729,11 +733,14 @@ is_metadata_tag: true
 
 [Typedef]
 id: immediate_transformation_of
+name: immediate transformation of
 namespace: uberon
+def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
-is_a: transformation_of
+is_a: develops_from ! develops from
+is_a: transformation_of ! transformation of
 
 [Typedef]
 id: implements_design_pattern
@@ -768,10 +775,13 @@ is_class_level: true
 
 [Typedef]
 id: never_in_taxon
+name: never in taxon
 name: never_in_taxon
 namespace: uberon
 def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T." [PMID:20973947]
+def: "x never in taxon T if and only if T is a class, and x does not instantiate the class expression \"in taxon some T\". Note that this is a shortcut relation, and should be used as a hasValue restriction in OWL." []
 xref: RO:0002161
+expand_assertion_to: "?X DisjointWith RO_0002162 some ?Y " []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 is_metadata_tag: true
 is_class_level: true
@@ -787,7 +797,16 @@ is_metadata_tag: true
 [Typedef]
 id: part_of
 name: part of
+name: part_of
+namespace: external
+namespace: protein
+namespace: quality
 namespace: uberon
+def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000050
 is_transitive: true
 
@@ -818,8 +837,10 @@ is_metadata_tag: true
 
 [Typedef]
 id: present_in_taxon
+name: present in taxon
 name: present_in_taxon
 namespace: uberon
+def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" []
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S." [https://orcid.org/0000-0002-6601-2165]
 synonym: "applicable for taxon" EXACT []
 xref: RO:0002175
@@ -872,6 +893,7 @@ id: seeAlso
 name: see also
 namespace: uberon
 xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
+xref: seeAlso
 is_metadata_tag: true
 
 [Typedef]
@@ -923,11 +945,13 @@ is_metadata_tag: true
 
 [Typedef]
 id: transformation_of
+name: transformation of
 namespace: uberon
+def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
 synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 is_transitive: true
-is_a: develops_from
+is_a: develops_from ! develops from
 
 [Typedef]
 id: vertebra_number

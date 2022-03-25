@@ -1,17 +1,20 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
-     xmlns:uberon-bridge-to-ev="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev#">
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev/2021-10-01/uberon/bridge/uberon-bridge-to-ev.owl"/>
-        <uberon-bridge-to-ev:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</uberon-bridge-to-ev:seeAlso>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ev/2022-03-21/uberon/bridge/uberon-bridge-to-ev.owl"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/references/reference_0000026</rdfs:seeAlso>
     </owl:Ontology>
     
 
@@ -27,15 +30,235 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000122 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000122">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IAO:0000122</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example_of_usage</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example_of_usage</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">example of usage</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0000589 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000589"/>
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/contributor</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-contributor</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contributor</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/creator</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-creator</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">creator</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/description</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-description</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-description</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">description</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/publisher</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-publisher</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-publisher</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">publisher</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/source</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-source</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-source</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">derived from resource</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/elements/1.1/title</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-title</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dc-title</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">title</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/isReferencedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/isReferencedBy">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/terms/isReferencedBy</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dcterms-isReferencedBy</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dcterms-isReferencedBy</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is referenced by</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/references -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/references">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.org/dc/terms/references</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dcterms-references</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dcterms-references</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">references</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#GitRepository -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#GitRepository">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://usefulinc.com/ns/doap#GitRepository</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-GitRepository</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-GitRepository</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Git repository</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#SVNRepository -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#SVNRepository">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://usefulinc.com/ns/doap#SVNRepository</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-SVNRepository</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-SVNRepository</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SVN repository</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#bug-database -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#bug-database">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://usefulinc.com/ns/doap#bug-database</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-bug-database</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-bug-database</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bug database</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#wiki -->
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#wiki">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://usefulinc.com/ns/doap#wiki</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-wiki</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doap-wiki</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wiki</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">database_cross_reference</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#id -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#is_metadata_tag -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#shorthand -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#shorthand">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shorthand</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.w3.org/2000/01/rdf-schema#seeAlso</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seeAlso</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">see also</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/depicted_by -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/depicted_by">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/depicted_by</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-depicted_by</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-depicted_by</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">depicted_by</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://xmlns.com/foaf/0.1/homepage</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:id>
+        <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">foaf-homepage</oboInOwl:shorthand>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">homepage</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -53,7 +276,9 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
-        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ev#part_of"/>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -61,23 +286,9 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
-        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ev#develops_from"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ev#develops_from -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ev#develops_from">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ev#develops_from</oboInOwl:id>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ev#part_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ev#part_of">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ev#part_of</oboInOwl:id>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002225</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -90,12 +301,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CL_0000169 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000169"/>
     
 
 
@@ -3557,16 +3762,6 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001153"/>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">caecum (EV)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EV:0100397</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/EV_0200009 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EV_0200009">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000169"/>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">type B pancreatic cell (EV)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EV:0200009</oboInOwl:id>
     </owl:Class>
     
 

@@ -4,22 +4,63 @@ ontology: uberon/subsets/nephron-minimal
 [Term]
 id: BFO:0000001
 name: entity
+property_value: BFO:0000179 "entity" xsd:string
+property_value: BFO:0000180 "Entity" xsd:string
+property_value: IAO:0000112 "Julius Caesar" xsd:string
+property_value: IAO:0000112 "the Second World War" xsd:string
+property_value: IAO:0000112 "Verdi’s Requiem" xsd:string
+property_value: IAO:0000112 "your body mass index" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81" xsd:string
+property_value: IAO:0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000004", comment="per discussion with Barry Smith", http://www.w3.org/2000/01/rdf-schema#seeAlso="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"}
+property_value: IAO:0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/001-001"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000002
 name: continuant
 is_a: BFO:0000001 ! entity
-relationship: part_of BFO:0000002 ! continuant
+property_value: BFO:0000179 "continuant" xsd:string
+property_value: BFO:0000180 "Continuant" xsd:string
+property_value: IAO:0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240" xsd:string
+property_value: IAO:0000116 "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/0000007"}
+property_value: IAO:0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000601 "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000601 "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/009-002"}
+property_value: IAO:0000602 "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/126-001"}
+property_value: IAO:0000602 "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/008-002"}
+property_value: IAO:0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/011-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000004
 name: independent continuant
+def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
 is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000004 ! independent continuant
+property_value: BFO:0000179 "ic" xsd:string
+property_value: BFO:0000180 "IndependentContinuant" xsd:string
+property_value: IAO:0000112 "a chair" xsd:string
+property_value: IAO:0000112 "a heart" xsd:string
+property_value: IAO:0000112 "a leg" xsd:string
+property_value: IAO:0000112 "a molecule" xsd:string
+property_value: IAO:0000112 "a spatial region" xsd:string
+property_value: IAO:0000112 "an atom" xsd:string
+property_value: IAO:0000112 "an orchestra." xsd:string
+property_value: IAO:0000112 "an organism" xsd:string
+property_value: IAO:0000112 "the bottom right portion of a human torso" xsd:string
+property_value: IAO:0000112 "the interior of your mouth" xsd:string
+property_value: IAO:0000601 "For any independent continuant b and any time t there is some spatial region r such that b is located_in r at t. (axiom label in BFO2 Reference: [134-001])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000601 "For every independent continuant b and time t during the region of time spanned by its life, there are entities which s-depends_on b during t. (axiom label in BFO2 Reference: [018-002])" xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (and (IndependentContinuant x) (existsAt x t)) (exists (y) (and (Entity y) (specificallyDependsOnAt y x t))))) // axiom label in BFO2 CLIF: [018-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/018-002"}
+property_value: IAO:0000602 "(forall (x t) (if (IndependentContinuant x) (exists (r) (and (SpatialRegion r) (locatedInAt x r t))))) // axiom label in BFO2 CLIF: [134-001] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/134-001"}
+property_value: IAO:0000602 "(iff (IndependentContinuant a) (and (Continuant a) (not (exists (b t) (specificallyDependsOnAt a b t))))) // axiom label in BFO2 CLIF: [017-002] " xsd:string {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 
 [Term]
 id: BFO:0000040
 name: material entity
+namespace: bfo
 is_a: BFO:0000004 ! independent continuant
 
 [Term]
@@ -52,9 +93,9 @@ xref: FMA:67135
 xref: GAID:781
 xref: HAO:0000003
 xref: http://dbpedia.org/ontology/AnatomicalStructure
+xref: http://www.snomedbrowser.com/Codes/Details/362889002
 xref: MA:0003000
 xref: MESH:D000825
-xref: SCTID:362889002
 xref: TAO:0000037
 xref: TGMA:0001823
 xref: VHOG:0001759
@@ -76,8 +117,8 @@ xref: AAO:0011124
 xref: BIRNLEX:16
 xref: EFO:0000635
 xref: FMA:82472
-xref: SCTID:113343008
-xref: SCTID:91717005
+xref: http://www.snomedbrowser.com/Codes/Details/113343008
+xref: http://www.snomedbrowser.com/Codes/Details/91717005
 is_a: UBERON:0010000 ! multicellular anatomical structure
 property_value: IAO:0000232 "currently defined in a very broad sense, may be replaced by more specific classes in the future" xsd:string
 
@@ -85,14 +126,14 @@ property_value: IAO:0000232 "currently defined in a very broad sense, may be rep
 id: UBERON:0000074
 name: renal glomerulus
 namespace: uberon
-def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]." [MP:0005325, Wikipedia:Glomerulus]
+def: "A capillary tuft which forms a close network with the visceral epithelium (podocytes) and the mesangium to form the filtration barrier and is surrounded by Bowman's capsule in nephrons of the vertebrate kidney[GO]." [http://en.wikipedia.org/wiki/Glomerulus, MP:0005325]
 subset: efo_slim
 subset: pheno_slim
 subset: vertebrate_core
 synonym: "glomerular capillary tuft" RELATED [ZFA:0001288]
 synonym: "glomerular tuft" RELATED INCONSISTENT []
 synonym: "glomerulus" BROAD []
-synonym: "glomerulus renis" RELATED LATIN [Wikipedia:Glomerulus]
+synonym: "glomerulus renis" RELATED LATIN [http://en.wikipedia.org/wiki/Glomerulus]
 synonym: "Malphigian glomerulus" RELATED MISSPELLING [BTO:0000530]
 synonym: "Malpighian glomerulus" RELATED [http://medical-dictionary.thefreedictionary.com/malpighian+glomerulus]
 synonym: "Malpighian tuft" RELATED [http://medical-dictionary.thefreedictionary.com/malpighian+glomerulus]
@@ -104,20 +145,21 @@ xref: EFO:0003667
 xref: EMAPA:28329
 xref: EV:0100386
 xref: FMA:15624
+xref: http://en.wikipedia.org/wiki/Glomerulus
+xref: http://linkedlifedata.com/resource/umls/id/C0022663
+xref: http://www.snomedbrowser.com/Codes/Details/362217000
 xref: MA:0001657
 xref: MESH:D007678
 xref: NCIT:C13250
-xref: SCTID:362217000
 xref: TAO:0001288
 xref: UMLS:C0022663 {source="ncithesaurus:Glomerulus"}
-xref: Wikipedia:Glomerulus
 xref: ZFA:0001288
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg xsd:anyURI
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9114-8737
 property_value: UBPROP:0000012 "ZFA - The multi-tissue structure where the glomerular basement membrane supported by mesonephric podocytes filters blood from the glomerular capillaries. GUDMAP: 'Together, the Bowman's capsule and the glomerulus comprise the definitive renal corpuscle.' - here the glomerulus is part of the capsule?" xsd:string {external_ontology="ZFA"}
-created_by: Melissa Haendel
 creation_date: 2009-06-18T09:26:37Z
 
 [Term]
@@ -153,9 +195,9 @@ xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
 xref: FBbt:10000000
-xref: FBbt_root:00000000
 xref: FMA:62955
 xref: HAO:0000000
+xref: http://linkedlifedata.com/resource/umls/id/C1515976
 xref: MA:0000001
 xref: NCIT:C12219
 xref: TAO:0100000
@@ -176,9 +218,9 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "corpusculum renale" EXACT LATIN []
-synonym: "corpusculum renis" RELATED LATIN [Wikipedia:Renal_corpuscle]
+synonym: "corpusculum renis" RELATED LATIN [http://en.wikipedia.org/wiki/Renal_corpuscle]
 synonym: "cortical renal corpuscle" RELATED [MA:0000376]
-synonym: "kidney corpuscle" RELATED [Wikipedia:Renal_corpuscle]
+synonym: "kidney corpuscle" RELATED [http://en.wikipedia.org/wiki/Renal_corpuscle]
 synonym: "Malphigian corpuscle" EXACT MISSPELLING [MA:0000376]
 synonym: "Malpighian corpuscle" EXACT [ZFA:0005281]
 xref: BTO:0000333
@@ -187,17 +229,18 @@ xref: EMAPA:28236
 xref: EMAPA:35726
 xref: EV:0100385
 xref: FMA:15625
+xref: http://linkedlifedata.com/resource/umls/id/C0227635
+xref: http://www.snomedbrowser.com/Codes/Details/361329009
 xref: MA:0000376
 xref: NCIT:C33456
-xref: SCTID:361329009
+xref: Renal:corpuscle
 xref: TAO:0005281
 xref: UMLS:C0227635 {source="ncithesaurus:Renal_Corpuscle"}
 xref: VHOG:0001262
-xref: Wikipedia:Renal_corpuscle
 xref: ZFA:0005281
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001285 {source="MA", source="ZFA"} ! nephron
-property_value: depicted:by Renal:corpuscle.svg xsd:anyURI
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/22/Renal_corpuscle.svg xsd:anyURI
 property_value: UBPROP:0000001 "A mass of arterial capillaries enveloped in a capsule and attached to a tubule in the kidney[BTO]" xsd:string {date_retrieved="2012-11-28", external_class="BTO:0000333", ontology="BTO", source="BTO:curator"}
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated. Paired highly vascularized structures of the pronephros, responsible for blood filtration.[XAO]" xsd:string {date_retrieved="2012-11-28", external_class="XAO:0000146", ontology="XAO", source="XAO:curator"}
 property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005281", ontology="TAO", source="ZFIN:curator"}
@@ -206,7 +249,7 @@ property_value: UBPROP:0000001 "The part of the nephron that filters blood.[TAO]
 id: UBERON:0001230
 name: glomerular capsule
 namespace: uberon
-def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus." [MGI:pvb, MP:0002828, Wikipedia:Bowman%27s_capsule]
+def: "A cup-like sac at the expanded beginning of a tubular component of a nephron that contains the glomerulus." [http://en.wikipedia.org/wiki/Bowman%27s_capsule, MGI:pvb, MP:0002828]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -222,18 +265,19 @@ synonym: "Muellerian capsule" RELATED [BTO:0002297]
 synonym: "pronephric glomerular capsule" RELATED [TAO:0005310]
 synonym: "renal glomerular capsule" EXACT [TAO:0005254]
 xref: AAO:0010526
+xref: Bowman%27s:capsule
 xref: BTO:0002297
 xref: EMAPA:27973
 xref: EMAPA:28257
 xref: FMA:15626
+xref: http://linkedlifedata.com/resource/umls/id/C0524448
+xref: http://www.snomedbrowser.com/Codes/Details/361331000
 xref: KUPO:0001001
 xref: MA:0001660
 xref: NCIT:C32225
-xref: SCTID:361331000
 xref: TAO:0005254
 xref: TAO:0005310
 xref: UMLS:C0524448 {source="ncithesaurus:Bowman_s_Capsule"}
-xref: Wikipedia:Bowman%27s_capsule
 xref: ZFA:0005254
 xref: ZFA:0005310
 is_a: CARO:0000000 ! anatomical entity
@@ -249,7 +293,7 @@ id: UBERON:0001231
 name: nephron tubule
 namespace: uberon
 alt_id: UBERON:0004210
-def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, Wikipedia:Renal_tubule]
+def: "An epithelial tube that is part of the nephron, the functional part of the kidney." [GO:0072078, http://en.wikipedia.org/wiki/Renal_tubule]
 subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
@@ -265,13 +309,14 @@ xref: EMAPA:27782
 xref: EV:0100387
 xref: FMA:15627
 xref: GAID:433
+xref: http://linkedlifedata.com/resource/umls/id/C0022674
+xref: http://www.snomedbrowser.com/Codes/Details/361332007
 xref: MA:0000377
 xref: MESH:D007684
 xref: NCIT:C49274
-xref: SCTID:361332007
+xref: Renal:tubule
 xref: TAO:0001287
 xref: UMLS:C0022674 {source="ncithesaurus:Renal_Tubule"}
-xref: Wikipedia:Renal_tubule
 xref: ZFA:0001287
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001285 ! nephron
@@ -281,32 +326,32 @@ property_value: UBPROP:0000012 "note that in ISBN:0073040584 (Vertebrates, Kardo
 id: UBERON:0001232
 name: collecting duct of renal tubule
 namespace: uberon
-def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient." [GO:0072044, Wikipedia:Collecting_tubule]
+def: "The collecting duct is a portion of the nephron through which water flows, moving passively down its concentration gradient." [GO:0072044, http://en.wikipedia.org/wiki/Collecting_tubule]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "arcuate renal tubule" RELATED [Wikipedia:Connecting_tubule]
+synonym: "arcuate renal tubule" RELATED [http://en.wikipedia.org/wiki/Connecting_tubule]
 synonym: "collecting duct" EXACT [GO:0072044]
 synonym: "collecting duct system" RELATED [BTO:0000761]
 synonym: "collecting tubule" RELATED []
-synonym: "junctional tube" RELATED [Wikipedia:Connecting_tubule]
+synonym: "junctional tube" RELATED [http://en.wikipedia.org/wiki/Connecting_tubule]
 synonym: "kidney collecting duct" EXACT []
 synonym: "kidney collecting tubule" RELATED []
 synonym: "renal collecting tubule" EXACT [FMA:15628]
-synonym: "tubulus renalis arcuatus" EXACT LATIN [Wikipedia:Connecting_tubule]
+synonym: "tubulus renalis arcuatus" EXACT LATIN [http://en.wikipedia.org/wiki/Connecting_tubule]
 synonym: "tubulus renalis colligens" EXACT []
 synonym: "ureteric tree" RELATED [EMAPA:28407]
 xref: BTO:0000761
 xref: CALOHA:TS-0860
+xref: Collecting:tubule
 xref: EMAPA:28407
 xref: EV:0100391
 xref: FMA:15628
 xref: GAID:434
+xref: http://www.snomedbrowser.com/Codes/Details/28202009
 xref: MA:0000371
 xref: MESH:D007685
-xref: SCTID:28202009
 xref: TAO:0005294
-xref: Wikipedia:Collecting_tubule
 xref: ZFA:0005294
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001285 {notes="checkme", source="GO"} ! nephron
@@ -317,13 +362,13 @@ property_value: UBPROP:0000012 "in ISBN:0073040584 (Vertebrates, Kardong), the n
 id: UBERON:0001285
 name: nephron
 namespace: uberon
-def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]." [PMID:9268568, Wikipedia:Nephron]
+def: "The basic functional unit of the kidney. its chief function is to regulate the concentration of water and soluble substances like sodium salts by filtering the blood, reabsorbing what is needed and excreting the rest as urine. A nephron eliminates wastes from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH. Its functions are vital to life and are regulated by the endocrine system by hormones such as antidiuretic hormone, aldosterone, and parathyroid hormone.[WP]." [http://en.wikipedia.org/wiki/Nephron, http://www.ncbi.nlm.nih.gov/pubmed/9268568]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "mature nephron" NARROW [EMAPA:28491]
-synonym: "nephroneum" RELATED LATIN [Wikipedia:Nephron]
-synonym: "tubulus renalis" RELATED LATIN [Wikipedia:Nephron]
+synonym: "nephroneum" RELATED LATIN [http://en.wikipedia.org/wiki/Nephron]
+synonym: "tubulus renalis" RELATED LATIN [http://en.wikipedia.org/wiki/Nephron]
 xref: BTO:0000924
 xref: CALOHA:TS-1312
 xref: EMAPA:28491
@@ -331,13 +376,14 @@ xref: EMAPA:35592
 xref: EV:0100384
 xref: FMA:17640
 xref: GAID:428
+xref: http://en.wikipedia.org/wiki/Nephron
+xref: http://linkedlifedata.com/resource/umls/id/C0027713
+xref: http://www.snomedbrowser.com/Codes/Details/361337001
 xref: MA:0000375
 xref: MESH:D009399
 xref: NCIT:C13048
-xref: SCTID:361337001
 xref: TAO:0002153
 xref: UMLS:C0027713 {source="ncithesaurus:Nephron"}
-xref: Wikipedia:Nephron
 xref: ZFA:0005282
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000064 ! organ part
@@ -350,7 +396,7 @@ property_value: UBPROP:0000008 "In the avian kidney, three types of nephron are 
 id: UBERON:0001286
 name: Bowman's space
 namespace: uberon
-def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]." [http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499, Wikipedia:Bowman's_space]
+def: "A narrow chalice-shaped cavity between the glomerular and capsular epithelium of the glomerular capsule of the kidney[TFD]. Between the visceral and parietal layers, into which the filtrate enters after passing through the podocytes' filtration slits[WP]. luminal region between the glomerular capsule visceral and parietal layers, into which filtrate enters after passing through the filtration barrier from the glomerular capillaries[MP]." [http://en.wikipedia.org/wiki/Bowman's_space, http://medical-dictionary.thefreedictionary.com/bowman's+space, MP:0011499]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -365,16 +411,17 @@ synonym: "pronephric capsular space" EXACT [ZFA:0005312]
 synonym: "renal capsular space" EXACT [ZFA:0005283]
 synonym: "urinary space" EXACT []
 synonym: "urinary space of renal corpuscle" EXACT [EMAPA:28263]
+xref: Bowman's:space
 xref: EMAPA:27985
 xref: EMAPA:28263
 xref: FMA:17676
+xref: http://linkedlifedata.com/resource/umls/id/C0227643
+xref: http://www.snomedbrowser.com/Codes/Details/244284006
 xref: MA:0001664
 xref: NCIT:C33840
-xref: SCTID:244284006
 xref: TAO:0005283
 xref: TAO:0005312
 xref: UMLS:C0227643 {source="ncithesaurus:Urinary_Space"}
-xref: Wikipedia:Bowman's_space
 xref: ZFA:0005283
 xref: ZFA:0005312
 is_a: CARO:0000000 ! anatomical entity
@@ -398,18 +445,19 @@ synonym: "PCT" RELATED []
 synonym: "proximal convoluted renal tubule" EXACT []
 synonym: "renal proximal convoluted tubule" RELATED [http://orcid.org/0000-0002-6601-2165]
 synonym: "tubulus contortus proximalis" EXACT []
-synonym: "tubulus contortus proximalis" RELATED LATIN [Wikipedia:Proximal_convoluted_tubule]
+synonym: "tubulus contortus proximalis" RELATED LATIN [http://en.wikipedia.org/wiki/Proximal_convoluted_tubule]
 synonym: "tubulus convolutus proximalis" RELATED LATIN []
 xref: CALOHA:TS-2198
 xref: EMAPA:28287
 xref: EV:0100388
 xref: FMA:17693
+xref: http://en.wikipedia.org/wiki/Proximal_convoluted_tubule
+xref: http://linkedlifedata.com/resource/umls/id/C1514580
+xref: http://www.snomedbrowser.com/Codes/Details/362220008
 xref: MA:0001669
 xref: NCIT:C33417
-xref: SCTID:362220008
 xref: TAO:0005290
 xref: UMLS:C1514580 {source="ncithesaurus:Proximal_Convoluted_Tube"}
-xref: Wikipedia:Proximal_convoluted_tubule
 xref: ZFA:0005290
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
@@ -424,7 +472,7 @@ namespace: uberon
 def: "The section of the renal tubule in the kidney medulla with a hairpin bend; consists of a descending limb and an ascending limb, and is situated between the proximal convoluted tubule to the distal convoluted tubule; it functions to reabsorb water and ions from the urine." [MGI:csmith, MP:0004755]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "ansa nephroni" EXACT LATIN [Wikipedia:Loop_of_Henle]
+synonym: "ansa nephroni" EXACT LATIN [http://en.wikipedia.org/wiki/Loop_of_Henle]
 synonym: "Henle loop" EXACT []
 synonym: "Henle's loop" EXACT []
 xref: BTO:0004608
@@ -432,21 +480,22 @@ xref: EMAPA:19280
 xref: EV:0100390
 xref: FMA:17698
 xref: GAID:437
+xref: http://en.wikipedia.org/wiki/Loop_of_Henle
+xref: http://linkedlifedata.com/resource/umls/id/C0023986
+xref: http://www.snomedbrowser.com/Codes/Details/361335009
 xref: MA:0001675
 xref: MESH:D008138
 xref: NCIT:C33006
-xref: SCTID:361335009
 xref: UMLS:C0023986 {source="ncithesaurus:Loop_of_Henle"}
 xref: VHOG:0001270
-xref: Wikipedia:Loop_of_Henle
 is_a: UBERON:0007685 ! region of nephron tubule
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
 property_value: IAO:0000116 "the definitions of some kidney parts (e.g. proximal straight tubule) refer to Henle's loop, even in species where this may not be present. Requires review." xsd:string
 property_value: RO:0002174 NCBITaxon:8353
 property_value: RO:0002175 NCBITaxon:8782
 property_value: UBPROP:0000001 "A highly specialized segment of the mammalian kidney tubules, that dips into the medulla. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Grande_L, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF, p.648, see_Liem_KF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001270", ontology="VHOG", source="http://bgee.unil.ch/"}
-property_value: UBPROP:0000008 "The structure differs considerably between species; there is a definite physical loop of Henle in the mammalian and avian renal systems but this seems to be absent in Xenopus. However, homologs of some, but not all, molecular markers (e.g. cldn8 and clcnk) of the mammalian loop of Henle were found to be present in the pronephros of the frog larva ." xsd:string {source="DOI:10.1371/journal.pone.0099864"}
-property_value: UBPROP:0000009 "The loop of Henle plays an important role in creating a concentration gradient in the medulla of the kidney. It is involved in reabsorption of filtered water and ions including sodium, potassium and calcium, and independently regulates both the volume and osmolarity of body fluids." xsd:string {source="DOI:10.1371/journal.pone.0099864"}
+property_value: UBPROP:0000008 "The structure differs considerably between species; there is a definite physical loop of Henle in the mammalian and avian renal systems but this seems to be absent in Xenopus. However, homologs of some, but not all, molecular markers (e.g. cldn8 and clcnk) of the mammalian loop of Henle were found to be present in the pronephros of the frog larva ." xsd:string {source="https://doi.org/10.1371/journal.pone.0099864"}
+property_value: UBPROP:0000009 "The loop of Henle plays an important role in creating a concentration gradient in the medulla of the kidney. It is involved in reabsorption of filtered water and ions including sodium, potassium and calcium, and independently regulates both the volume and osmolarity of body fluids." xsd:string {source="https://doi.org/10.1371/journal.pone.0099864"}
 
 [Term]
 id: UBERON:0001289
@@ -460,11 +509,12 @@ synonym: "descending limb of Henle's loop" EXACT []
 synonym: "loop of Henle descending limb" EXACT []
 xref: EMAPA:35511
 xref: FMA:17705
+xref: http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_henle
+xref: http://linkedlifedata.com/resource/umls/id/C0227657
+xref: http://www.snomedbrowser.com/Codes/Details/245350001
 xref: MA:0001679
 xref: NCIT:C32456
-xref: SCTID:245350001
 xref: UMLS:C0227657 {source="ncithesaurus:Descending_Limb_of_the_Henle_s_Loop"}
-xref: Wikipedia:Descending_limb_of_loop_of_henle
 is_a: UBERON:0007685 {source="FMA"} ! region of nephron tubule
 relationship: part_of UBERON:0001288 {source="FMA"} ! loop of Henle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
@@ -488,9 +538,9 @@ xref: BTO:0000055
 xref: EMAPA:29661
 xref: EMAPA:29669
 xref: FMA:17716
+xref: http://en.wikipedia.org/wiki/Proximal_straight_tubule
 xref: MA:0002614
 xref: TAO:0005291
-xref: Wikipedia:Proximal_straight_tubule
 xref: ZFA:0005291
 is_a: UBERON:0006853 ! renal cortex tubule
 is_a: UBERON:0009035 {source="MA"} ! renal straight tubule
@@ -516,14 +566,14 @@ synonym: "thick ascending limb" EXACT []
 synonym: "thick ascending limb of distal tubule" EXACT [FMA:17722]
 synonym: "thick ascending limb of Henle's loop" EXACT []
 synonym: "tubulus rectus distalis" EXACT [FMA:17722]
-synonym: "tubulus rectus distalis" RELATED LATIN [Wikipedia:Thick_ascending_limb_of_loop_of_Henle]
+synonym: "tubulus rectus distalis" RELATED LATIN [http://en.wikipedia.org/wiki/Thick_ascending_limb_of_loop_of_Henle]
 xref: EMAPA:28396
 xref: EMAPA:29671
 xref: EMAPA:35512
 xref: FMA:17722
+xref: http://en.wikipedia.org/wiki/Thick_ascending_limb_of_loop_of_Henle
+xref: http://www.snomedbrowser.com/Codes/Details/244953001
 xref: MA:0001677
-xref: SCTID:244953001
-xref: Wikipedia:Thick_ascending_limb_of_loop_of_Henle
 is_a: UBERON:0009035 {source="MA"} ! renal straight tubule
 relationship: part_of UBERON:0004135 {source="GOC:dph", source="MA-modified-from-isa"} ! distal tubule
 relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
@@ -540,38 +590,40 @@ subset: uberon_slim
 synonym: "distal convoluted renal tubule" EXACT []
 synonym: "second convoluted tubule" RELATED []
 synonym: "tubulus contortus distalis" EXACT []
-synonym: "tubulus contortus distalis" RELATED LATIN [Wikipedia:Distal_convoluted_tubule]
+synonym: "tubulus contortus distalis" RELATED LATIN [http://en.wikipedia.org/wiki/Distal_convoluted_tubule]
 synonym: "tubulus convolutus distalis" RELATED LATIN []
 xref: EMAPA:28393
 xref: EV:0100389
 xref: FMA:17721
+xref: http://en.wikipedia.org/wiki/Distal_convoluted_tubule
+xref: http://linkedlifedata.com/resource/umls/id/C0022676
+xref: http://www.snomedbrowser.com/Codes/Details/361336005
 xref: MA:0001666
 xref: NCIT:C32469
-xref: SCTID:361336005
 xref: UMLS:C0022676 {source="ncithesaurus:Distal_Convoluted_Tubule"}
-xref: Wikipedia:Distal_convoluted_tubule
 is_a: UBERON:0006534 {source="MA"} ! renal convoluted tubule
 is_a: UBERON:0006853 ! renal cortex tubule
 relationship: part_of UBERON:0004135 {source="EMAPA", source="GO", source="MA-modified-from-isa"} ! distal tubule
-property_value: depicted:by Kidney:nephron.png xsd:anyURI
-property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="Wikipedia:Distal_convoluted_tubule"}
+property_value: depicted:by https://upload.wikimedia.org/wikipedia/commons/2/21/Kidney_nephron.png xsd:anyURI
+property_value: UBPROP:0000001 "a portion of kidney nephron between the loop of Henle and the collecting duct system[Wikipedia:Distal_convoluted_tubule]." xsd:string {source="http://en.wikipedia.org/wiki/Distal_convoluted_tubule"}
 property_value: UBPROP:0000009 "in humans it is responsible for the reabsorption of about 5% of filtered sodium via the thiazide-sensitive Na-Cl symporter." xsd:string
 
 [Term]
 id: UBERON:0002319
 name: mesangium
 namespace: uberon
-def: "The inner layer of the glomerulus, within the basement membrane surrounding the glomerular capillaries." [https://sourceforge.net/p/obo/foundational-model-of-anatomy-fma-requests/13/, Wikipedia:Mesangium]
+def: "The inner layer of the glomerulus, within the basement membrane surrounding the glomerular capillaries." [http://en.wikipedia.org/wiki/Mesangium, https://sourceforge.net/p/obo/foundational-model-of-anatomy-fma-requests/13/]
 subset: pheno_slim
 subset: uberon_slim
 xref: BTO:0002494
 xref: EMAPA:28248
 xref: EMAPA:36561 {source="MA:th"}
 xref: FMA:84139
+xref: http://en.wikipedia.org/wiki/Mesangium
+xref: http://linkedlifedata.com/resource/umls/id/C0017655
 xref: MA:0002617
 xref: NCIT:C33101
 xref: UMLS:C0017655 {source="ncithesaurus:Mesangium"}
-xref: Wikipedia:Mesangium
 relationship: part_of UBERON:0000074 ! renal glomerulus
 property_value: UBPROP:0000007 "mesangial" xsd:string
 property_value: UBPROP:0000012 "WP considers this the same as glomerular mesangium. In MA, glomerular and extraglomerular are distingsuished. FMA class has no definition and is a type of stroma, which is inconsistent with our classification of this here." xsd:string {external_ontology="MA"}
@@ -580,17 +632,17 @@ property_value: UBPROP:0000012 "WP considers this the same as glomerular mesangi
 id: UBERON:0002320
 name: glomerular mesangium
 namespace: uberon
-def: "A thin membrane which helps to support the capillary loops in a renal glomerulus. It is connective tissue composed of mesangial cells - myofibroblasts phenotypically related to vascular smooth muscle cells (muscle, smooth, vascular), phagocytes and the mesangial extracellular matrix." [MESH:A05.810.453.736.520.380, Wikipedia:Glomerular_mesangium]
+def: "A thin membrane which helps to support the capillary loops in a renal glomerulus. It is connective tissue composed of mesangial cells - myofibroblasts phenotypically related to vascular smooth muscle cells (muscle, smooth, vascular), phagocytes and the mesangial extracellular matrix." [http://en.wikipedia.org/wiki/Glomerular_mesangium, MESH:A05.810.453.736.520.380]
 subset: pheno_slim
 subset: uberon_slim
 xref: EMAPA:27961
 xref: EMAPA:28248
 xref: FMA:84140
 xref: GAID:430
+xref: Glomerular:mesangium
+xref: http://www.snomedbrowser.com/Codes/Details/244574009
 xref: MA:0002606
 xref: MESH:A05.810.453.736.520.380
-xref: SCTID:244574009
-xref: Wikipedia:Glomerular_mesangium
 relationship: part_of UBERON:0002319 ! mesangium
 relationship: part_of UBERON:0004190 {source="GO"} ! renal glomerulus vasculature
 
@@ -611,17 +663,18 @@ property_value: IAO:0000116 "check MA part_ofs - should be spatially disjoint fr
 id: UBERON:0002335
 name: macula densa
 namespace: uberon
-def: "The macula densa is an area of specialized cells in the distal tubule that makes contact with the vascular pole of the glomerulus[GO]." [GO:0072024, Wikipedia:Macula_densa]
+def: "The macula densa is an area of specialized cells in the distal tubule that makes contact with the vascular pole of the glomerulus[GO]." [GO:0072024, http://en.wikipedia.org/wiki/Macula_densa]
 subset: pheno_slim
 subset: uberon_slim
 xref: BTO:0003940
 xref: EMAPA:28399
 xref: FMA:86333
+xref: http://linkedlifedata.com/resource/umls/id/C0227662
+xref: http://www.snomedbrowser.com/Codes/Details/244657003
 xref: MA:0002603
+xref: Macula:densa
 xref: NCIT:C33043
-xref: SCTID:244657003
 xref: UMLS:C0227662 {source="ncithesaurus:Macula_Densa"}
-xref: Wikipedia:Macula_densa
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0004135 {source="GO"} ! distal tubule
 property_value: UBPROP:0000012 "not part of a nephron or distal tubule in MA and FMA" xsd:string {external_ontology="MA"}
@@ -735,7 +788,7 @@ relationship: part_of UBERON:0000074 ! renal glomerulus
 id: UBERON:0004193
 name: loop of Henle ascending limb thin segment
 namespace: uberon
-def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water." [GO:0072021, Wikipedia:Thin_ascending_limb_of_loop_of_Henle]
+def: "A sub-portion of the loop of Henle in the nephron of the kidney that is permeable to ions but not to water." [GO:0072021, http://en.wikipedia.org/wiki/Thin_ascending_limb_of_loop_of_Henle]
 subset: pheno_slim
 synonym: "ascending limb thin segment of loop of Henle" EXACT []
 synonym: "ascending thin limb" EXACT [FMA:17720]
@@ -745,8 +798,8 @@ synonym: "thin ascending limb of loop of Henle" EXACT []
 xref: EMAPA:28328
 xref: EMAPA:28361
 xref: FMA:17720
+xref: http://en.wikipedia.org/wiki/Thin_ascending_limb_of_loop_of_Henle
 xref: MA:0001678
-xref: Wikipedia:Thin_ascending_limb_of_loop_of_Henle
 is_a: UBERON:0007685 ! region of nephron tubule
 relationship: part_of UBERON:0003455 ! inner renal medulla loop of Henle
 relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
@@ -760,6 +813,7 @@ namespace: uberon
 def: "Long nephrons are associated with juxtamedullary glomeruli and extend to the inner medulla." [GO:0072029]
 synonym: "juxtamedullary nephron" RELATED [GO:0072029, http://sourceforge.net/tracker/?func=detail&aid=3031362&group_id=36855&atid=440764]
 xref: FMA:272054
+xref: http://linkedlifedata.com/resource/umls/id/C1517630
 xref: NCIT:C32892
 xref: UMLS:C1517630 {source="ncithesaurus:Juxtamedullary_Nephron"}
 is_a: UBERON:0001285 ! nephron
@@ -887,9 +941,10 @@ synonym: "renal glomerulus capillary" EXACT [OBOL:automatic]
 synonym: "renal glomerulus capillary vessel" EXACT [OBOL:automatic]
 xref: EMAPA:28245
 xref: FMA:274259
+xref: http://linkedlifedata.com/resource/umls/id/C0226356
+xref: http://www.snomedbrowser.com/Codes/Details/362049007
 xref: MA:0002587
 xref: NCIT:C32684
-xref: SCTID:362049007
 xref: TAO:0005284
 xref: UMLS:C0226356 {source="ncithesaurus:Glomerular_Capillary"}
 xref: ZFA:0005284
@@ -904,9 +959,10 @@ namespace: uberon
 def: "An endothelium that is part of a glomerular capillary." [OBOL:automatic]
 subset: pheno_slim
 synonym: "renal glomerulus capillary endothelium" EXACT [OBOL:automatic]
+xref: http://linkedlifedata.com/resource/umls/id/C0227647
+xref: http://www.snomedbrowser.com/Codes/Details/243993006
 xref: MA:0001658
 xref: NCIT:C32522
-xref: SCTID:243993006
 xref: UMLS:C0227647 {source="ncithesaurus:Endothelium_of_the_Glomerular_Capillary"}
 is_a: UBERON:0004189 ! glomerular endothelium
 relationship: part_of UBERON:0004212 ! glomerular capillary
@@ -921,16 +977,16 @@ subset: vertebrate_core
 synonym: "afferent arteriole" EXACT [MA:0002579]
 synonym: "afferent glomerular arteriole" EXACT [ZFA:0005307]
 synonym: "afferent glomerular arteriole of kidney" EXACT [FMA:77042]
-synonym: "arteriola glomerularis afferens" RELATED LATIN [Wikipedia:Afferent_arterioles]
+synonym: "arteriola glomerularis afferens" RELATED LATIN [http://en.wikipedia.org/wiki/Afferent_arterioles]
 synonym: "arteriola glomerularis afferens renis" EXACT LATIN [FMA:77042, FMA:TA]
 synonym: "kidney afferent arteriole" EXACT [MP:0011312]
+xref: Afferent:arterioles
 xref: EMAPA:28230
 xref: EMAPA:28266
 xref: FMA:77042
+xref: http://www.snomedbrowser.com/Codes/Details/67498004
 xref: MA:0002579
-xref: SCTID:67498004
 xref: TAO:0002139
-xref: Wikipedia:Afferent_arterioles
 xref: ZFA:0005307
 relationship: part_of UBERON:0001229 ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
@@ -942,19 +998,19 @@ namespace: uberon
 def: "The blood vessels that convey blood from the glomerulocapillary network to the capillary bed of the proximal convoluted tubule." [ISBN:0-683-40008-8, MGI:csmith, MP:0011313]
 subset: pheno_slim
 subset: vertebrate_core
-synonym: "arteriola glomerularis efferens capsulae renalis" RELATED LATIN [Wikipedia:Efferent_arteriole]
+synonym: "arteriola glomerularis efferens capsulae renalis" RELATED LATIN [http://en.wikipedia.org/wiki/Efferent_arteriole]
 synonym: "arteriola glomerularis efferens renis" EXACT LATIN [FMA:77043, FMA:TA]
 synonym: "efferent arteriole" EXACT [MA:0002585]
 synonym: "efferent glomerular arteriole" EXACT [ZFA:0005308]
 synonym: "efferent glomerular arteriole of kidney" EXACT [FMA:77043]
 synonym: "kidney efferent arteriole" EXACT [MP:0011313]
+xref: Efferent:arteriole
 xref: EMAPA:28233
 xref: EMAPA:28275
 xref: FMA:77043
+xref: http://www.snomedbrowser.com/Codes/Details/29926005
 xref: MA:0002585
-xref: SCTID:29926005
 xref: TAO:0002140
-xref: Wikipedia:Efferent_arteriole
 xref: ZFA:0005308
 relationship: part_of UBERON:0001229 ! renal corpuscle
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
@@ -984,7 +1040,7 @@ id: UBERON:0004739
 name: pronephric glomerulus
 namespace: uberon
 alt_id: UBERON:0004191
-def: "The glomus forms from the splanchnic intermediate mesoderm and is the vascularized filtration unit, filtering the blood before it enters the tubules. The glomus is external to the nephron and extends over more than one body segment." [DOI:10.1371/journal.pone.0099864, GO:0072013, GOC:mtg_kidney_jan10, PMID:10572058, PMID:15647339, PMID:9268568, XAO:0000318]
+def: "The glomus forms from the splanchnic intermediate mesoderm and is the vascularized filtration unit, filtering the blood before it enters the tubules. The glomus is external to the nephron and extends over more than one body segment." [GO:0072013, GOC:mtg_kidney_jan10, http://www.ncbi.nlm.nih.gov/pubmed/10572058, http://www.ncbi.nlm.nih.gov/pubmed/15647339, http://www.ncbi.nlm.nih.gov/pubmed/9268568, https://doi.org/10.1371/journal.pone.0099864, XAO:0000318]
 synonym: "corpuscle" RELATED [XAO:0000318]
 synonym: "glomera" RELATED PLURAL [XAO:0000318]
 synonym: "glomerulus of pronephros" EXACT []
@@ -993,7 +1049,7 @@ synonym: "pronephric glomera" RELATED [VHOG:0001237]
 synonym: "pronephric glomeruli" RELATED PLURAL [VHOG:0001237]
 synonym: "pronephric glomus" RELATED [VHOG:0001237]
 xref: AAO:0011049
-xref: SCTID:360548001
+xref: http://www.snomedbrowser.com/Codes/Details/360548001
 xref: TAO:0001557
 xref: VHOG:0001237
 xref: XAO:0000318
@@ -1001,7 +1057,7 @@ xref: ZFA:0001557
 is_a: UBERON:0000074 ! renal glomerulus
 property_value: IAO:0000232 "a glomus differs from a glomerulus in that each vascular glomus services several tubules" xsd:string {source="ISBN:0073040584"}
 property_value: UBPROP:0000001 "Paired highly vascularized portion of the pronephros. Left and right glomeruli are fused at the midline. Begins to function between 40 and 48hpf. Drummond, 2000.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001557", ontology="TAO", source="ZFIN:curator"}
-property_value: UBPROP:0000003 "The teleost pronephros shares many essential features with the amphibian pronephros including its derivation from mesoderm associated with the coelom and the derivation of the glomerular blood supply from the medial dorsal aorta. However, unlike the pronephros of amphibians, which have an external glomus and tubules with nephrostomes open to the coelom, the mature teleost pronephros has no connection to the body cavity and instead functions as a closed system (reference 1); This variation in nephron types [with external glomeruli that open into the coelom and with internal glomeruli that do not connect with the coelom] and their pattern of distribution suggest an evolutionary sequence. Ancestral craniates probably had an external glomerulus and nephrostomes, as do the first few to develop in very primitive craniates. (...) The mechanism would become more efficient as the coelomic recess into which each glomerulus discharged became a part of the tubule, that is, grew around the glomerulus as a renal capsule. The glomerulus becomes internal. The nephrostomes were lost during subsequent evolution, leaving the type of renal tubule found in most vertebrates (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001237", ontology="VHOG", source="PMID:9806915 Drummond IA, Majumdar A, Hentschel H, Elger M, Solnica-Krezel L, Schier AF, Neuhauss SCF, Stemple DL, Zwartkruis F, Rangini Z, Driever W, Fishman MC, Early development of the zebrafish pronephros and analysis of mutations affecting pronephric function. Development (1998), ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.636", source="http://bgee.unil.ch/"}
+property_value: UBPROP:0000003 "The teleost pronephros shares many essential features with the amphibian pronephros including its derivation from mesoderm associated with the coelom and the derivation of the glomerular blood supply from the medial dorsal aorta. However, unlike the pronephros of amphibians, which have an external glomus and tubules with nephrostomes open to the coelom, the mature teleost pronephros has no connection to the body cavity and instead functions as a closed system (reference 1); This variation in nephron types [with external glomeruli that open into the coelom and with internal glomeruli that do not connect with the coelom] and their pattern of distribution suggest an evolutionary sequence. Ancestral craniates probably had an external glomerulus and nephrostomes, as do the first few to develop in very primitive craniates. (...) The mechanism would become more efficient as the coelomic recess into which each glomerulus discharged became a part of the tubule, that is, grew around the glomerulus as a renal capsule. The glomerulus becomes internal. The nephrostomes were lost during subsequent evolution, leaving the type of renal tubule found in most vertebrates (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001237", ontology="VHOG", source="http://bgee.unil.ch/", source="PMID:9806915 Drummond IA, Majumdar A, Hentschel H, Elger M, Solnica-Krezel L, Schier AF, Neuhauss SCF, Stemple DL, Zwartkruis F, Rangini Z, Driever W, Fishman MC, Early development of the zebrafish pronephros and analysis of mutations affecting pronephric function. Development (1998), ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.636"}
 property_value: UBPROP:0000012 "GO treats glomus and pronephric glomerulus differently" xsd:string {external_ontology="GO"}
 
 [Term]
@@ -1013,6 +1069,7 @@ subset: pheno_slim
 synonym: "kidney tubule epithelium" EXACT [MA:0001681]
 xref: BTO:0005239
 xref: EMAPA:36524
+xref: http://linkedlifedata.com/resource/umls/id/C1709902
 xref: MA:0001681
 xref: NCIT:C49276
 xref: UMLS:C1709902 {source="ncithesaurus:Renal_Tubule_Epithelium"}
@@ -1025,22 +1082,22 @@ id: UBERON:0005096
 name: descending thin limb
 namespace: uberon
 alt_id: UBERON:0005165
-def: "The descending thin limb is a part of the loop of Henle situated just after the proximal straight tubule (S3). It extends to the tip of the loop of Henle[GO]." [GO:0072022, Wikipedia:Descending_limb_of_loop_of_Henle]
+def: "The descending thin limb is a part of the loop of Henle situated just after the proximal straight tubule (S3). It extends to the tip of the loop of Henle[GO]." [GO:0072022, http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
 subset: uberon_slim
-synonym: "descending limb of Henle's loop" RELATED [Wikipedia:Descending_limb_of_loop_of_Henle]
-synonym: "descending limb of loop of Henle" RELATED [Wikipedia:Descending_limb_of_loop_of_Henle]
+synonym: "descending limb of Henle's loop" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "descending limb of loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
 synonym: "descending thin limb of loop of Henle" EXACT []
 synonym: "loop of Henle descending thin limb" EXACT []
 synonym: "loop of Henle thin descending limb" EXACT [MA:0002625]
 synonym: "pars descendens (tubulus attenuatus)" EXACT [FMA:17719]
 synonym: "thin descending limb" EXACT []
-synonym: "thin descending limb of loop of Henle" RELATED [Wikipedia:Descending_limb_of_loop_of_Henle]
-synonym: "thin descending limb of the loop of Henle" RELATED [Wikipedia:Descending_limb_of_loop_of_Henle]
-synonym: "thin descending loop of Henle" RELATED [Wikipedia:Descending_limb_of_loop_of_Henle]
+synonym: "thin descending limb of loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "thin descending limb of the loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
+synonym: "thin descending loop of Henle" RELATED [http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle]
 xref: EMAPA:35514
 xref: FMA:17719
+xref: http://en.wikipedia.org/wiki/Descending_limb_of_loop_of_Henle
 xref: MA:0002625
-xref: Wikipedia:Descending_limb_of_loop_of_Henle
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001288 ! loop of Henle
@@ -1051,16 +1108,16 @@ property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/G
 id: UBERON:0005097
 name: renal connecting tubule
 namespace: uberon
-def: "The connecting tubule is a tubular segment of the nephron; it connects the distal convoluted tubule to the collecting duct[GO]." [GO:0072027, Wikipedia:Connecting_tubule]
+def: "The connecting tubule is a tubular segment of the nephron; it connects the distal convoluted tubule to the collecting duct[GO]." [GO:0072027, http://en.wikipedia.org/wiki/Connecting_tubule]
 synonym: "connecting tubule" EXACT [MA:0002610]
 synonym: "kidney connecting tubule" EXACT [MA:0002610]
-synonym: "tubulus renalis arcuatus" RELATED LATIN [Wikipedia:Connecting_tubule]
+synonym: "tubulus renalis arcuatus" RELATED LATIN [http://en.wikipedia.org/wiki/Connecting_tubule]
 xref: BTO:0004539
+xref: Connecting:tubule
 xref: EMAPA:27758
 xref: EMAPA:27790
 xref: EMAPA:28011
 xref: MA:0002610
-xref: Wikipedia:Connecting_tubule
 is_a: UBERON:0007685 ! region of nephron tubule
 property_value: depicted:by http://upload.wikimedia.org/wikipedia/commons/0/02/Gray1128.png xsd:anyURI
 
@@ -1108,7 +1165,7 @@ alt_id: UBERON:0005142
 def: "A metanephric nephron is the functional unit of the metanephros[GO]." [GO:0072273]
 xref: VHOG:0000719
 is_a: UBERON:0001285 ! nephron
-property_value: UBPROP:0000003 "The primitive form of the vertebrate nephron consists of a vascular filtration surface overlain with podocytes, a specialized coelomic cavity to receive the ultrafiltrate, and a tubule for modification to final urine. Although previously thought to be unique to the vertebrates, this design is now known to be widespread among invertebrates, including most of the protochordates, and especially their larvae.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000719", ontology="VHOG", source="DOI:10.1093/icb/34.4.542 Ruppert EE, Evolutionary Origin of the Vertebrate Nephron. Integrative and Comparative Biology (1994)", source="http://bgee.unil.ch/"}
+property_value: UBPROP:0000003 "The primitive form of the vertebrate nephron consists of a vascular filtration surface overlain with podocytes, a specialized coelomic cavity to receive the ultrafiltrate, and a tubule for modification to final urine. Although previously thought to be unique to the vertebrates, this design is now known to be widespread among invertebrates, including most of the protochordates, and especially their larvae.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000719", ontology="VHOG", source="http://bgee.unil.ch/", source="DOI:10.1093/icb/34.4.542 Ruppert EE, Evolutionary Origin of the Vertebrate Nephron. Integrative and Comparative Biology (1994)"}
 
 [Term]
 id: UBERON:0005114
@@ -1375,7 +1432,7 @@ relationship: part_of UBERON:0005110 {source="https://github.com/obophenotype/ub
 id: UBERON:0005164
 name: ascending limb of loop of Henle
 namespace: uberon
-def: "The distal part of the loop of Henle that is impermeable to water and actively pumps sodium out of the filtrate to generate the hypertonic interstitium that drives countercurrent exchange; it consists of an initial very thin segment lined by simple squamous epithelium followed by a distal thick segment lined by simple cuboidal epithelium[MP]." [MP:0011342, Wikipedia:Ascending_limb_of_loop_of_Henle]
+def: "The distal part of the loop of Henle that is impermeable to water and actively pumps sodium out of the filtrate to generate the hypertonic interstitium that drives countercurrent exchange; it consists of an initial very thin segment lined by simple squamous epithelium followed by a distal thick segment lined by simple cuboidal epithelium[MP]." [http://en.wikipedia.org/wiki/Ascending_limb_of_loop_of_Henle, MP:0011342]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "ascending limb" BROAD []
@@ -1384,11 +1441,12 @@ synonym: "distal straight tubule" RELATED []
 synonym: "loop of Henle ascending limb" EXACT [MP:0011342]
 xref: EMAPA:35510
 xref: FMA:17717
+xref: http://en.wikipedia.org/wiki/Ascending_limb_of_loop_of_Henle
+xref: http://linkedlifedata.com/resource/umls/id/C0227658
+xref: http://www.snomedbrowser.com/Codes/Details/245434005
 xref: MA:0001676
 xref: NCIT:C32154
-xref: SCTID:245434005
 xref: UMLS:C0227658 {source="ncithesaurus:Ascending_Limb_of_the_Henle_s_Loop"}
-xref: Wikipedia:Ascending_limb_of_loop_of_Henle
 is_a: UBERON:0004135 ! distal tubule
 relationship: part_of UBERON:0001288 ! loop of Henle
 property_value: IAO:0000116 "TODO - thick/thin check. Also relationship to distal tubule. We need a home for MA:0002634-renal straight tubule" xsd:string
@@ -1406,9 +1464,9 @@ synonym: "papillary duct of kidney" EXACT []
 synonym: "renal papillary duct" EXACT []
 xref: BTO:0004540
 xref: EMAPA:35655
+xref: http://en.wikipedia.org/wiki/Duct_of_Bellini
+xref: http://www.snomedbrowser.com/Codes/Details/110623009
 xref: MA:0001646
-xref: SCTID:110623009
-xref: Wikipedia:Duct_of_Bellini
 is_a: UBERON:0001232 ! collecting duct of renal tubule
 
 [Term]
@@ -1483,7 +1541,7 @@ xref: AAO:0010387
 xref: XAO:0000292
 xref: ZFA:0005592
 is_a: UBERON:0001285 ! nephron
-property_value: UBPROP:0000001 "The structure that is the basic functional unit of the kidney.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010387", ontology="AAO", source="PMID:9268568"}
+property_value: UBPROP:0000001 "The structure that is the basic functional unit of the kidney.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010387", ontology="AAO", source="http://www.ncbi.nlm.nih.gov/pubmed/9268568"}
 
 [Term]
 id: UBERON:0005324
@@ -1501,12 +1559,12 @@ def: "The mesonephric glomerulus is a capillary tuft which forms a close network
 synonym: "glomerulus" BROAD SENSU [AAO:0010388]
 xref: AAO:0010388
 xref: EMAPA:30568
-xref: SCTID:362217000
+xref: http://www.snomedbrowser.com/Codes/Details/362217000
 xref: VHOG:0001238
 xref: XAO:0000146
 is_a: UBERON:0000074 ! renal glomerulus
 property_value: UBPROP:0000001 "A tuft of capillaries found in a Bowman's capsule in which waste products are filtered from the blood and urine formation is initiated.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010388", ontology="AAO", source="AAO:BJB"}
-property_value: UBPROP:0000003 "In animals in which the mesonephros is the terminal kidney, such as amphibians and fish, the final organ is very complex, containing a large number of nephrons, most of which have an internal glomerulus.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001238", ontology="VHOG", source="ISBN:978-0127224411 Vize PD, Woolf AS, Bard JBL, The kidney: From normal development to congenital disease (2003) p.3", source="http://bgee.unil.ch/"}
+property_value: UBPROP:0000003 "In animals in which the mesonephros is the terminal kidney, such as amphibians and fish, the final organ is very complex, containing a large number of nephrons, most of which have an internal glomerulus.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001238", ontology="VHOG", source="http://bgee.unil.ch/", source="ISBN:978-0127224411 Vize PD, Woolf AS, Bard JBL, The kidney: From normal development to congenital disease (2003) p.3"}
 property_value: UBPROP:0000012 "XAO/AAO class belongs here, as it refers to mesonephric structure" xsd:string {external_ontology="XAO"}
 
 [Term]
@@ -1548,13 +1606,13 @@ relationship: part_of UBERON:0005322 {is_inferred="true", source="https://github
 id: UBERON:0005749
 name: glomerular tuft
 namespace: uberon
-def: "The capillary loops of the kidney that normally function as a filtration unit[MP]." [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron, MP:0005325, Wikipedia:Glomerulus]
+def: "The capillary loops of the kidney that normally function as a filtration unit[MP]." [http://en.wikipedia.org/wiki/Glomerulus, http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron, MP:0005325]
 subset: pheno_slim
 synonym: "glomerular capillary tuft" RELATED []
 synonym: "glomerulus" RELATED INCONSISTENT [EMAPA:28239]
 xref: EMAPA:28239
-xref: SCTID:362217000
-xref: Wikipedia:Glomerulus
+xref: http://en.wikipedia.org/wiki/Glomerulus
+xref: http://www.snomedbrowser.com/Codes/Details/362217000
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001230 ! glomerular capsule
 property_value: UBPROP:0000011 "...Soon afterwards, endothelial cells invade to make a capillary knot-like outgrowth, the glomerular tuft, which goes on to form the glomerulus" xsd:string {source="GudMap"}
@@ -1584,9 +1642,10 @@ xref: EMAPA:27979
 xref: EMAPA:28260
 xref: EMAPA:35969
 xref: FMA:74272
+xref: http://linkedlifedata.com/resource/umls/id/C0227645
+xref: http://www.snomedbrowser.com/Codes/Details/362218005
 xref: MA:0002605
 xref: NCIT:C33271
-xref: SCTID:362218005
 xref: TAO:0005253
 xref: UMLS:C0227645 {source="ncithesaurus:Parietal_Layer_of_Bowman_s_Capsule"}
 xref: ZFA:0005253
@@ -1597,24 +1656,28 @@ property_value: UBPROP:0000001 "Simple squamous epithelium that lines the capsul
 
 [Term]
 id: UBERON:0005751
-name: visceral layer of glomerular capsule
+name: glomerular visceral epithelium
 namespace: uberon
-def: "The inner, or visceral, layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer, or parietal, layer by the capsular (Bowman's) space[BTO]. Lies just above the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. inner layer of the glomerular capsule surrounding the capillary endothelial cells and composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+def: "The inner (visceral) layer of the renal glomerular capsule, overlying the capillaries, composed of podocytes, and separated from the outer (parietal) layer by the capsular (Bowman's) space[BTO]. This epithelial layer is superficially adjacent to the thickened glomerular basement membrane and is made of podocytes. Beneath the visceral layer lie the glomerular capillaries[WP]. This inner epithelial layer of the glomerular capsule surrounds the capillary endothelial cells and is composed of highly specialized epithelial cells (podocytes) that are separated by filtration slits; the inner visceral layer is separated from the outer parietal layer by the urinary space (also known as the Bowman's or capsular space)[MP]." [BTO:0001515, MP:0011497]
+comment: Formerly had rdfs:label 'visceral layer of glomerular capsule'. The current label 'glomerular visceral epithelium' was copied from UBERON:0006852, which is now obsolete since it represented the same entity as this IRI.
 subset: inconsistent_with_fma
 subset: pheno_slim
 synonym: "Bowman's visceral epithelium" EXACT [MP:0011497]
 synonym: "glomerular capsule visceral layer" EXACT [MP:0011497]
 synonym: "inner epithelial layer of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
 synonym: "podocyte layer of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
-synonym: "visceral epithelium of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral epithelium of Bowman's capsule" EXACT [http://www.gudmap.org/About/Tutorial/DevMUS.html#DMK_Nephron]
+synonym: "visceral epithelium of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of Bowman's capsule" EXACT [MP:0011497]
 synonym: "visceral layer of glomerular capsule" EXACT [MP:0011497]
+xref: EMAPA:28254
 xref: FMA:74273
+xref: http://linkedlifedata.com/resource/umls/id/C0227644
+xref: http://www.snomedbrowser.com/Codes/Details/244093000
+xref: MA:0002607
 xref: NCIT:C33879
-xref: SCTID:244093000
 xref: UMLS:C0227644 {source="ncithesaurus:Visceral_Layer_of_Bowman_s_Capsule"}
-is_a: UBERON:0004211 ! nephron epithelium
+is_a: UBERON:0004188 ! glomerular epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
 property_value: IAO:0000116 "TODO - check - the BTO class 'glomerular epithelium' is the visceral layer. But GO uses 'glomerular epithelium' as the mereological sum of P+V layers" xsd:string
 
@@ -1631,12 +1694,13 @@ synonym: "glomerular filtration membrane" EXACT [ZFA:0005285]
 xref: EMAPA:28251
 xref: EMAPA:30965
 xref: FMA:74274
+xref: http://en.wikipedia.org/wiki/Glomerular_basement_membrane
+xref: http://linkedlifedata.com/resource/umls/id/C0599297
+xref: http://www.snomedbrowser.com/Codes/Details/243897006
 xref: MA:0001659
 xref: NCIT:C32683
-xref: SCTID:243897006
 xref: TAO:0005285
 xref: UMLS:C0599297 {source="ncithesaurus:Glomerular_Basement_Membrane"}
-xref: Wikipedia:Glomerular_basement_membrane
 xref: ZFA:0005285
 relationship: part_of UBERON:0000074 ! renal glomerulus
 relationship: part_of UBERON:0001229 ! renal corpuscle
@@ -1654,6 +1718,7 @@ synonym: "lamina densa" BROAD [ZFA:0005286]
 synonym: "lamina densa of glomerular basement membrane" EXACT [FMA:74276]
 synonym: "middle layer of glomerular basement membrane" EXACT [FMA:74276]
 xref: FMA:74276
+xref: http://linkedlifedata.com/resource/umls/id/C1235665
 xref: NCIT:C32916
 xref: TAO:0005286
 xref: UMLS:C1235665 {source="ncithesaurus:Lamina_Densa"}
@@ -1669,6 +1734,7 @@ subset: vertebrate_core
 synonym: "internal layer of glomerular basement membrane" EXACT [FMA:74277]
 synonym: "lamina interna of glomerular basement membrane" EXACT [FMA:74277]
 xref: FMA:74277
+xref: http://linkedlifedata.com/resource/umls/id/C1517719
 xref: NCIT:C32920
 xref: TAO:0005287
 xref: UMLS:C1517719 {source="ncithesaurus:Lamina_Rara_Interna"}
@@ -1684,6 +1750,7 @@ subset: vertebrate_core
 synonym: "external layer of glomerular basement membrane" EXACT [FMA:74275]
 synonym: "lamina externa of glomerular basement membrane" EXACT [FMA:74275]
 xref: FMA:74275
+xref: http://linkedlifedata.com/resource/umls/id/C1517718
 xref: NCIT:C32919
 xref: TAO:0005288
 xref: UMLS:C1517718 {source="ncithesaurus:Lamina_Rara_Externa"}
@@ -1719,7 +1786,6 @@ relationship: part_of UBERON:0005326 {is_inferred="true", source="https://github
 id: UBERON:0006183
 name: mesonephric glomerular capillary
 namespace: uberon
-def: "." [GO:0061249]
 is_a: UBERON:0004212 ! glomerular capillary
 relationship: part_of UBERON:0005322 {source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric nephron
 relationship: part_of UBERON:0005325 {is_inferred="true", source="https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships"} ! mesonephric glomerulus
@@ -1788,7 +1854,6 @@ relationship: part_of UBERON:0004639 ! renal afferent arteriole
 id: UBERON:0006376
 name: premacula segment of distal straight tubule
 namespace: uberon
-def: "." [https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376, PMID:14595018]
 synonym: "distal straight tubule premacula segment" EXACT [MA:0002628]
 synonym: "kidney medulla loop of Henle ascending limb thick segment" EXACT [MA:th]
 synonym: "medullary thick ascending limb of Henle's loop" EXACT [MA:th]
@@ -1809,12 +1874,13 @@ def: "Any region of a nephron tubule that is convoluted. Examples: distal convol
 subset: grouping_class
 synonym: "convoluted tubule" EXACT []
 synonym: "kidney convoluted tubule" EXACT [MA:0001665]
+xref: Convoluted:tubule
 xref: EMAPA:35725
+xref: http://linkedlifedata.com/resource/umls/id/C1707510
+xref: http://www.snomedbrowser.com/Codes/Details/361333002
 xref: MA:0001665
 xref: NCIT:C49479
-xref: SCTID:361333002
 xref: UMLS:C1707510 {source="ncithesaurus:Convoluted_Tubule"}
-xref: Wikipedia:Convoluted_tubule
 is_a: UBERON:0007685 ! region of nephron tubule
 
 [Term]
@@ -1836,16 +1902,6 @@ xref: MA:0002630
 is_a: UBERON:0034996 ! outer renal medulla loop of Henle
 
 [Term]
-id: UBERON:0006852
-name: glomerular visceral epithelium
-namespace: uberon
-synonym: "podocyte layer" RELATED [MA:0002607]
-xref: EMAPA:28254
-xref: MA:0002607
-is_a: UBERON:0004188 ! glomerular epithelium
-relationship: part_of UBERON:0000074 ! renal glomerulus
-
-[Term]
 id: UBERON:0006853
 name: renal cortex tubule
 namespace: uberon
@@ -1860,7 +1916,6 @@ is_a: UBERON:0007685 ! region of nephron tubule
 id: UBERON:0006854
 name: distal straight tubule postmacula segment
 namespace: uberon
-def: "." [https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376]
 synonym: "cortical thick ascending limb of Henle's loop" EXACT [MA:th]
 synonym: "kidney cortex loop of Henle ascending limb thick segment" EXACT [MA:th]
 synonym: "renal cortex loop of Henle ascending limb thick segment" EXACT [MA:th]
@@ -1962,9 +2017,9 @@ def: "Any region of a nephron tubule that is straight. Examples: distal convolut
 synonym: "kidney straight tubule" EXACT [MA:0002634]
 synonym: "straight tubule" EXACT []
 xref: EMAPA:37489 {source="MA:th"}
+xref: http://en.wikipedia.org/wiki/Tubuli_seminiferi_recti
+xref: http://www.snomedbrowser.com/Codes/Details/245151008
 xref: MA:0002634
-xref: SCTID:245151008
-xref: Wikipedia:Tubuli_seminiferi_recti
 is_a: UBERON:0007685 ! region of nephron tubule
 
 [Term]
@@ -1989,9 +2044,10 @@ synonym: "kidney tubule basement membrane" EXACT [MA:0001680]
 synonym: "renal tubular basement membrane" EXACT []
 synonym: "renal tubule basement membrane" EXACT [MA:0001680]
 xref: EMAPA:37490 {source="MA:th"}
+xref: http://linkedlifedata.com/resource/umls/id/C1709901
+xref: http://www.snomedbrowser.com/Codes/Details/245251000
 xref: MA:0001680
 xref: NCIT:C49273
-xref: SCTID:245251000
 xref: UMLS:C1709901 {source="ncithesaurus:Renal_Tubule_Basement_Membrane"}
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0001231 {source="MA"} ! nephron tubule
@@ -2023,7 +2079,7 @@ relationship: part_of UBERON:0002319 ! mesangium
 id: UBERON:0012428
 name: proximal convoluted tubule brush border
 namespace: uberon
-def: "A brush border layer that is part of a proximal tubule in the kidney." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Microvillus#Function]
+def: "A brush border layer that is part of a proximal tubule in the kidney." [http://en.wikipedia.org/wiki/Microvillus#Function, http://orcid.org/0000-0002-6601-2165]
 synonym: "kidney brush border layer" BROAD []
 synonym: "proximal tubule brush border layer" BROAD []
 is_a: CARO:0000000 ! anatomical entity
@@ -2068,8 +2124,7 @@ namespace: uberon
 def: "Portion of the renal tubule which is just posterior to the distal early tubule." [ZFIN:curator]
 xref: ZFA:0005292
 relationship: part_of UBERON:0001231 ! nephron tubule
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:2005311
@@ -2080,8 +2135,7 @@ synonym: "pronephric parietal epithelial layer" EXACT [TAO:0005311]
 xref: ZFA:0005311
 is_a: UBERON:0004211 ! nephron epithelium
 relationship: part_of UBERON:0001230 ! glomerular capsule
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: teleost_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/tao.owl"}
 
 [Term]
 id: UBERON:3011120
@@ -2090,8 +2144,7 @@ namespace: uberon
 synonym: "PT2" EXACT [UBERON:3011120]
 is_a: CARO:0000000 ! anatomical entity
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 creation_date: 2011-04-20T05:19:55Z
 
 [Term]
@@ -2099,8 +2152,7 @@ id: UBERON:3011121
 name: late distal segment
 namespace: uberon
 relationship: part_of UBERON:0005309 ! pronephric nephron
-property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string
-created_by: amphibian_anatomy_curators
+property_value: UBPROP:0000004 "This class was sourced from an external ontology (amphibian_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" xsd:string {source="http://purl.obolibrary.org/obo/aao.owl"}
 creation_date: 2011-04-20T05:21:45Z
 
 [Term]

@@ -9,6 +9,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/subsets/life-stages-core.owl">
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Life cycle stage subset of uberon core (generic stages only)</dc:description>
@@ -24,6 +25,18 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000179 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000179"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000180 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000180"/>
     
 
 
@@ -60,6 +73,18 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000600 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000600"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0010000 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0010000"/>
     
 
 
@@ -117,21 +142,15 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/creator -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
     
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#created_by -->
+    <!-- http://purl.org/dc/terms/contributor -->
 
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -254,19 +273,19 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is part of</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this day is part of this year (occurrent parthood)</obo:IAO_0000112>
+        <obo:IAO_0000111>is part of</obo:IAO_0000111>
+        <obo:IAO_0000112>my brain is part of my body (continuant parthood, two material entities)</obo:IAO_0000112>
+        <obo:IAO_0000112>my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)</obo:IAO_0000112>
+        <obo:IAO_0000112>this day is part of this year (occurrent parthood)</obo:IAO_0000112>
+        <obo:IAO_0000115>a core relation that holds between a part and its whole</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a core relation that holds between a part and its whole</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
+        <obo:IAO_0000116>Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
+        <obo:IAO_0000116>Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
 
 A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</obo:IAO_0000118>
+        <obo:IAO_0000118>part_of</obo:IAO_0000118>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
@@ -276,22 +295,22 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:RO_0040042 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000031"/>
         <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
+        <oboInOwl:id>part_of</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
         <rdfs:label>part of</rdfs:label>
         <rdfs:label xml:lang="en">part of</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</rdfs:label>
+        <rdfs:label>part_of</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections"/>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:PartOf"/>
-        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
+        <rdfs:seeAlso>http://www.obofoundry.org/ro/#OBO_REL:part_of</rdfs:seeAlso>
     </owl:ObjectProperty>
     
 
@@ -301,37 +320,37 @@ A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</obo:IAO_0000111>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my body has part my brain (continuant parthood, two material entities)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)</obo:IAO_0000112>
-        <obo:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">this year has part this day (occurrent parthood)</obo:IAO_0000112>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2.</obo:IAO_0000115>
+        <obo:IAO_0000111>has part</obo:IAO_0000111>
+        <obo:IAO_0000112>my body has part my brain (continuant parthood, two material entities)</obo:IAO_0000112>
+        <obo:IAO_0000112>my stomach has part my stomach cavity (continuant parthood, material entity has part immaterial entity)</obo:IAO_0000112>
+        <obo:IAO_0000112>this year has part this day (occurrent parthood)</obo:IAO_0000112>
+        <obo:IAO_0000115>Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2.</obo:IAO_0000115>
+        <obo:IAO_0000115>a core relation that holds between a whole and its part</obo:IAO_0000115>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a core relation that holds between a whole and its part</obo:IAO_0000115>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
-        <obo:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
+        <obo:IAO_0000116>Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
+        <obo:IAO_0000116>Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime</obo:IAO_0000116>
+        <obo:IAO_0000116>Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
 
 A continuant cannot have an occurrent as part: use &apos;participates in&apos;. An occurrent cannot have a continuant as part: use &apos;has participant&apos;. An immaterial entity cannot have a material entity as part: use &apos;location of&apos;. An independent continuant cannot have a specifically dependent continuant as part: use &apos;bearer of&apos;. A specifically dependent continuant cannot have an independent continuant as part: use &apos;inheres in&apos;.</obo:IAO_0000116>
-        <obo:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</obo:IAO_0000118>
+        <obo:IAO_0000118>has_part</obo:IAO_0000118>
         <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
         <oboInOwl:hasDbXref>BFO:0000051</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">chebi_ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">external</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">protein</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:id>
+        <oboInOwl:id>has_part</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:is_cyclic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</oboInOwl:is_cyclic>
-        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</oboInOwl:shorthand>
-        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality &apos;swollen&apos; necessarily comes with the qualities of &apos;protruding&apos; and &apos;increased size&apos;.</rdfs:comment>
+        <oboInOwl:shorthand>has_part</oboInOwl:shorthand>
+        <rdfs:comment>We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality &apos;swollen&apos; necessarily comes with the qualities of &apos;protruding&apos; and &apos;increased size&apos;.</rdfs:comment>
+        <rdfs:label>has part</rdfs:label>
         <rdfs:label xml:lang="en">has part</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has part</rdfs:label>
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</rdfs:label>
+        <rdfs:label>has_part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -411,7 +430,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:id>immediately_preceded_by</oboInOwl:id>
         <oboInOwl:shorthand>immediately_preceded_by</oboInOwl:shorthand>
         <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
-        <rdfs:label>immediately_preceded_by</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/SIO_000251"/>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -461,8 +479,32 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <obo:BFO_0000179>entity</obo:BFO_0000179>
+        <obo:BFO_0000180>Entity</obo:BFO_0000180>
+        <obo:IAO_0000112 xml:lang="en">Julius Caesar</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">Verdi’s Requiem</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">the Second World War</obo:IAO_0000112>
+        <obo:IAO_0000112 xml:lang="en">your body mass index</obo:IAO_0000112>
+        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Entity doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example Werner Ceusters &apos;portions of reality&apos; include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, &apos;How to track absolutely everything&apos; at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf</obo:IAO_0000116>
+        <obo:IAO_0000600 xml:lang="en">An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])</obo:IAO_0000600>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
         <rdfs:label xml:lang="en">entity</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <owl:annotatedTarget xml:lang="en">Entity doesn&apos;t have a closure axiom because the subclasses don&apos;t necessarily exhaust all possibilites. For example Werner Ceusters &apos;portions of reality&apos; include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, &apos;How to track absolutely everything&apos; at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/0000004"/>
+        <rdfs:comment>per discussion with Barry Smith</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000600"/>
+        <owl:annotatedTarget xml:lang="en">An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])</owl:annotatedTarget>
+        <obo:IAO_0010000 rdf:resource="http://purl.obolibrary.org/obo/bfo/axiom/001-001"/>
+    </owl:Axiom>
     
 
 
@@ -470,12 +512,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">occurrent</rdfs:label>
     </owl:Class>
     
@@ -503,7 +539,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000066 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000066">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -543,7 +578,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both sexually immature stage, and adult stage.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -551,7 +586,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000068 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000068">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -567,6 +601,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
         <obo:IAO_0000115>A life cycle stage that starts with fertilization and ends with the fully formed embryo.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://www.snomedbrowser.com/Codes/Details/296280003"/>
         <oboInOwl:hasDbXref>BilaDO:0000002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EV:0300001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FBdv:00005289</oboInOwl:hasDbXref>
@@ -575,7 +610,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasDbXref>MmusDv:0000002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000022</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SCTID:296280003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBls:0000003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBls:0000092</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBls:0000102</oboInOwl:hasDbXref>
@@ -590,7 +624,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A life cycle stage that starts with fertilization and ends with the fully formed embryo.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -615,13 +649,13 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000232>Uberon includes clade-specific subclasses, e.g. nematod larva</obo:IAO_0000232>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32524"/>
         <obo:UBPROP_0000008>It is a misunderstanding that the larval form always reflects the group&apos;s evolutionary history. It could be the case, but often the larval stage has evolved secondarily, as in insects. In these cases the larval form might differ more from the group&apos;s common origin than the adult form</obo:UBPROP_0000008>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasDbXref>BTO:0000915</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0000954</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001303</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FBdv:00005336</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000400</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000008</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFS:0000048</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>larva stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>ammocoete</oboInOwl:hasNarrowSynonym>
@@ -666,7 +700,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
@@ -678,98 +712,98 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>ammocoete</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>ammocoete stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>bipinnaria</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>bipinnaria stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>caterpillar</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>caterpillar stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>glochidium</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>glochidium stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>grub</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>grub stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>leptocephalus</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>leptocephalus stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>maggot</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>maggot stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -783,56 +817,56 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>naiad, nymph</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>naiad, nymph stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>nauplius</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>nauplius stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>nymph</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>nymph stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>planula</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>planula stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -846,56 +880,56 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>trochophore</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>trochophore stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>veliger</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>veliger stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>wriggler</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>wriggler stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>zoea</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>zoea stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     
@@ -924,8 +958,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <dc:contributor rdf:resource="https://github.com/dosumis"/>
         <dc:contributor rdf:resource="https://github.com/fbastian"/>
         <dc:contributor rdf:resource="https://github.com/mmc46"/>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pupa"/>
         <oboInOwl:hasDbXref>FBdv:00005349</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Pupa</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>pupa stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>aurelia stage</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>chrysalides stage</oboInOwl:hasNarrowSynonym>
@@ -939,29 +973,29 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000070"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A life cycle stage of holometabolous insects in which the organism is a pupa and starts with the larval-pupal apolysis and ends with pupal-adult apolysis.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Pupa</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/562</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pupa"/>
+        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/562"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>aurelia stage</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pupa"/>
         <oboInOwl:hasDbXref>NCBITaxon:37572</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Pupa</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>chrysalides stage</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pupa"/>
         <oboInOwl:hasDbXref>NCBITaxon:37572</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Pupa</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>chrysalis stage</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pupa"/>
         <oboInOwl:hasDbXref>NCBITaxon:37572</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Pupa</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -997,7 +1031,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000092 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000092">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1026,7 +1059,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Stage succeeding embryo, including mature structure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -1064,7 +1097,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A spatiotemporal region encompassing some part of the life cycle of an organism.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -1072,7 +1105,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000106 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000106">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1082,6 +1114,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         </rdfs:subClassOf>
         <obo:IAO_0000115>A stage at which the organism is a single cell produced by means of sexual reproduction.</obo:IAO_0000115>
         <obo:UBPROP_0000003>As in all metazoans, eumetazoan development begins with a fertilized egg, or zygote.[well established][VHOG]</obo:UBPROP_0000003>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Zygote"/>
         <oboInOwl:hasDbXref>BILS:0000106</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BilaDO:0000005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001322</oboInOwl:hasDbXref>
@@ -1090,7 +1123,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasDbXref>NCIT:C12601</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PdumDv:0000100</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0000745</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Zygote</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>XAO:1000001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFS:0000001</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>1-cell stage</oboInOwl:hasExactSynonym>
@@ -1110,7 +1142,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A stage at which the organism is a single cell produced by means of sexual reproduction.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Zygote</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Zygote"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
@@ -1119,8 +1151,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:date_retrieved rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2012-09-17</oboInOwl:date_retrieved>
         <oboInOwl:external_class>VHOG:0000745</oboInOwl:external_class>
         <oboInOwl:ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VHOG</oboInOwl:ontology>
+        <oboInOwl:source rdf:resource="http://bgee.unil.ch/"/>
         <oboInOwl:source>ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.107</oboInOwl:source>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://bgee.unil.ch/</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
@@ -1144,7 +1176,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>zygotum</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Zygote</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Zygote"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#LATIN"/>
     </owl:Axiom>
     
@@ -1153,7 +1185,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000107 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000107">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1168,6 +1199,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Cleavage_(embryo)"/>
         <oboInOwl:hasDbXref>BILS:0000107</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BilaDO:0000006</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001290</oboInOwl:hasDbXref>
@@ -1177,7 +1209,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasDbXref>OGES:000015</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000020</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PdumDv:0000200</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Cleavage_(embryo)</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>XAO:1000004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFS:0000046</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -1189,8 +1220,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Cleavage_(embryo)"/>
         <oboInOwl:hasDbXref>GO:0040016</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Cleavage_(embryo)</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1198,7 +1229,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000108 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000108">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1214,6 +1244,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         </rdfs:subClassOf>
         <obo:IAO_0000115>An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence.</obo:IAO_0000115>
         <obo:IAO_0000116>consider adding a preceding stage &apos;morula stage&apos; as part of cleavage</obo:IAO_0000116>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Blastula"/>
         <oboInOwl:hasDbXref>BILS:0000108</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BilaDO:0000007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001282</oboInOwl:hasDbXref>
@@ -1224,7 +1255,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasDbXref>OGES:000021</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBls:0000005</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Blastula</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>XAO:1000003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFS:0000045</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -1237,7 +1267,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Blastula</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Blastula"/>
     </owl:Axiom>
     
 
@@ -1245,7 +1275,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000109 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000109">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1303,37 +1332,37 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>blastocystis trilaminaris stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trilaminar blastocyst stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trilaminar blastoderm stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trilaminar disk stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trilaminar germ stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>trilaminar stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -1341,7 +1370,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000110 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000110">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1378,7 +1406,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000111 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000111">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1393,13 +1420,13 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Organogenesis"/>
         <oboInOwl:hasDbXref>BILS:0000111</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BilaDO:0000010</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>HsapDv:0000015</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MmusDv:0000018</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000032</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Organogenesis</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>segmentation stage</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0000111</oboInOwl:id>
@@ -1410,7 +1437,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000111"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Organogenesis</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Organogenesis"/>
     </owl:Axiom>
     
 
@@ -1467,7 +1494,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000112"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>subadult stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://eol.org/schema/terms/subadult</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://eol.org/schema/terms/subadult"/>
     </owl:Axiom>
     
 
@@ -1509,7 +1536,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000113"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The stage of being a sexually mature adult animal.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -1532,10 +1559,10 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         </rdfs:subClassOf>
         <obo:IAO_0000115>A stage that follows the blastula, gastrula and neurula stages. At the pharyngula stage, all vertebrate embryos show remarkable similarities.</obo:IAO_0000115>
         <obo:UBPROP_0000008>Corresponds to E7-E11 in Mouse (Galis et al, TREE, 2001)</obo:UBPROP_0000008>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pharyngula"/>
         <oboInOwl:hasDbXref>DrerDO:0000052</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001310</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000006</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Pharyngula</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFS:0000050</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>phylotypic stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -1548,7 +1575,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004707"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A stage that follows the blastula, gastrula and neurula stages. At the pharyngula stage, all vertebrate embryos show remarkable similarities.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Pharyngula</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Pharyngula"/>
     </owl:Axiom>
     
 
@@ -1589,28 +1616,28 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004728"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>polliwog</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004728"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>polliwog stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004728"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>tadpole</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004728"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>tadpole stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia:Larva</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Larva"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1686,6 +1713,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:resource="http://www.snomedbrowser.com/Codes/Details/367619004"/>
         <oboInOwl:hasDbXref>EV:0300011</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EVM:2990031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FBdv:00005333</oboInOwl:hasDbXref>
@@ -1693,7 +1721,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasDbXref>MIAA:0000399</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MmusDv:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000023</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SCTID:367619004</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>embryo late (growth) stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>fetal stage</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>fetus</oboInOwl:hasNarrowSynonym>
@@ -1710,7 +1737,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007220"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An embryo stage that covers late steps of the embryogenesis with a fully formed embryo still developing before birth or egg hatching.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BGEE:ANiknejad</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BGEE:ANiknejad</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007220"/>
@@ -1722,7 +1749,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007220"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>fetal stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1735,7 +1762,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007220"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>fetus stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1765,15 +1792,15 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         </rdfs:subClassOf>
         <obo:IAO_0000115>Of or pertaining to the period of time immediately following birth, or to the newborn.</obo:IAO_0000115>
         <obo:IAO_0000116>consider splitting infant/newborn</obo:IAO_0000116>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Infant"/>
+        <oboInOwl:hasDbXref rdf:resource="http://neurolex.org/wiki/Category:Infant_organism"/>
+        <oboInOwl:hasDbXref rdf:resource="http://neurolex.org/wiki/Category:Newborn_organism"/>
         <oboInOwl:hasDbXref>BTO:0001762</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EV:0300037</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>HsapDv:0000082</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MmusDv:0000096</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NIF_Organism:birnlex_695</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000025</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Infant</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://neurolex.org/wiki/Category:Infant_organism</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://neurolex.org/wiki/Category:Newborn_organism</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>neonatal stage</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>fledgling stage</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>hatchling</oboInOwl:hasNarrowSynonym>
@@ -1793,8 +1820,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Of or pertaining to the period of time immediately following birth, or to the newborn.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Infant</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://en.wiktionary.org/wiki/neonatal</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Infant"/>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wiktionary.org/wiki/neonatal"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
@@ -1806,35 +1833,35 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>fledgling stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>hatchling</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>hatchling stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>infant stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>nestling stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#SENSU"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -1862,7 +1889,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007221"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>newborn stage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -1883,6 +1910,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0018241"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <oboInOwl:hasDbXref rdf:resource="http://linkedlifedata.com/resource/umls/id/C0001792"/>
         <oboInOwl:hasDbXref>EV:0300123</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>HsapDv:0000093</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C16268</oboInOwl:hasDbXref>
@@ -2109,7 +2137,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0008264"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Larval stage in echinoderms characterized by a planktonic and feeding larval form that possesses limb-like outgrowths bearing ciliated bands.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://www.encyclopedia.com/doc/1O8-echinopluteuslarva.html</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://www.encyclopedia.com/doc/1O8-echinopluteuslarva.html"/>
     </owl:Axiom>
     
 
@@ -2119,7 +2147,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009849">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004728"/>
         <obo:IAO_0000115>Wholly aquatic larval stage in the life cycle of an amphibian, particularly of a frog or toad[WP]. XAO: The stages from feeding to the end of metamorphosis. Encompasses Weisz&apos;s first-form tadpole (equivalent to NF stages 45 to 49), second-form tadpole (NF 49 to 56) and third-form tadpole (NF 56 to 60-plus) stages.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>Wikipedia:Tadpole</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Tadpole"/>
         <oboInOwl:hasDbXref>XAO:1000008</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0009849</oboInOwl:id>
@@ -2129,9 +2157,9 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009849"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Wholly aquatic larval stage in the life cycle of an amphibian, particularly of a frog or toad[WP]. XAO: The stages from feeding to the end of metamorphosis. Encompasses Weisz&apos;s first-form tadpole (equivalent to NF stages 45 to 49), second-form tadpole (NF 49 to 56) and third-form tadpole (NF 56 to 60-plus) stages.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:0471209627</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Tadpole"/>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0471209627</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISSN:0003-276X</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Tadpole</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2173,7 +2201,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012101"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The period spanning the range immediately before and after birth.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -2185,8 +2213,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <obo:IAO_0000115>A larval stage of that is the immature stage of some invertebrates that undergoe gradual metamorphosis (hemimetabolism) before reaching its adult stage.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
         <obo:UBPROP_0000001>Any of various immature insects; especially: a larva of an insect (as a grasshopper, true bug, or mayfly) with incomplete metamorphosis that differs from the imago especially in size and in its incompletely developed wings and genitalia[BTO:0000954].</obo:UBPROP_0000001>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Nymph_(biology)"/>
         <oboInOwl:hasDbXref>BTO:0000954</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Nymph_(biology)</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>nymph</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0014405</oboInOwl:id>
@@ -2235,7 +2263,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014406"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The free-swimming first stage of the larva of certain crustaceans, having an unsegmented body with three pairs of appendages and a single median eye. The eye is known for that reason as the &apos;naupliar eye&apos;, and is often absent in later developmental stages, although it is retained into the adult form in some groups, such as the Notostraca.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Crustacean_larvae#Nauplius</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Crustacean_larvae#Nauplius"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014406"/>
@@ -2274,8 +2302,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014856"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The larval form of any of the Taenia tapeworms.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="http://www.medterms.com/"/>
         <oboInOwl:hasDbXref>BTO:0003168</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.medterms.com/</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014856"/>
@@ -2312,7 +2340,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014857"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A crustacean larval stage characterised by the use of the thoracic appendages for swimming.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Crustacean_larvae#Zoea</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Crustacean_larvae#Zoea"/>
     </owl:Axiom>
     
 
@@ -2343,7 +2371,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014858"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A crustacean larval stage characterised by the use of abdominal appendages (pleopods) for propulsion.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Crustacean_larvae#Post-larval</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Crustacean_larvae#Post-larval"/>
     </owl:Axiom>
     
 
@@ -2363,7 +2391,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014859"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The crustacean post-larval stage of a crab.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-6601-2165"/>
     </owl:Axiom>
     
 
@@ -2394,7 +2422,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014860"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A development stage of copepods which follows the nauplius stage. It is segmented with more than 3 pairs of appendages.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://www.encyclo.co.uk/define/Copepodite</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://www.encyclo.co.uk/define/Copepodite"/>
     </owl:Axiom>
     
 
@@ -2419,7 +2447,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014861"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A developmental stage in a hermit crab that has completed the swimming larval stages.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://www.encyclo.co.uk/define/Copepodite</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://www.encyclo.co.uk/define/Copepodite"/>
     </owl:Axiom>
     
 
@@ -2435,7 +2463,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A larval stage of a trochozoan in which the organism is in free-swimming planktonic form with several bands of cilia[WP,modified].</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>Wikipedia:Trochophore</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Trochophore"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>trochophore</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>trocophore</oboInOwl:hasRelatedSynonym>
@@ -2446,7 +2474,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014862"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A larval stage of a trochozoan in which the organism is in free-swimming planktonic form with several bands of cilia[WP,modified].</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Trochophore</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Trochophore"/>
     </owl:Axiom>
     
 
@@ -2462,7 +2490,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The characteristic larval stage of the gastropod, bivalve and scaphopod taxonomic classes. It is produced following either the embryonic or trochophore larval stage of development.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>Wikipedia:Veliger</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Veliger"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>veliger</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0014863</oboInOwl:id>
@@ -2472,7 +2500,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014863"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The characteristic larval stage of the gastropod, bivalve and scaphopod taxonomic classes. It is produced following either the embryonic or trochophore larval stage of development.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Veliger</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Veliger"/>
     </owl:Axiom>
     
 
@@ -2482,7 +2510,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0014864">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
         <obo:IAO_0000115>The larval stage of members of the order Lepidoptera.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>Wikipedia:Caterpillar</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Caterpillar"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>caterpillar</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>UBERON:0014864</oboInOwl:id>
@@ -2492,7 +2520,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014864"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The larval stage of members of the order Lepidoptera.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Caterpillar</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Caterpillar"/>
     </owl:Axiom>
     
 
@@ -2520,8 +2548,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0018241"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A life cycle stage that starts at completion of development and growth of the sexually mature adult animal, and ends before senescence.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/496"/>
         <oboInOwl:hasDbXref>Bgee:AN</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/496</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2539,7 +2567,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0018378"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The larval stage of a crustacean, the stages of which are separated my moults. Typically this goes through a nauplius - zoea - post-larval cycle.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Crustacean_larvae</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Crustacean_larvae"/>
     </owl:Axiom>
     
 
@@ -2596,8 +2624,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034919"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The stage of being no more dependent of the nest and/or from caregivers for subsistence while having not reach sexual maturity.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/645"/>
         <oboInOwl:hasDbXref>Bgee:AN</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/645</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2629,8 +2657,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034920"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Nursing stage that follows the neonate stage in mammals and ends at weaning.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:resource="https://github.com/obophenotype/uberon/issues/644"/>
         <oboInOwl:hasDbXref>Bgee:AN</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/644</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2640,7 +2668,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8000000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004730"/>
         <obo:IAO_0000115>The first stage of instar larva stage.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-5208-3432"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8000000</oboInOwl:id>
         <rdfs:label>first instar larva stage</rdfs:label>
@@ -2659,7 +2687,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004730"/>
         <obo:IAO_0000115>The second stage of instar larva stage.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-5208-3432"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8000001</oboInOwl:id>
         <rdfs:label>second instar larva stage</rdfs:label>
@@ -2678,7 +2706,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004730"/>
         <obo:IAO_0000115>The third stage of instar larva stage.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-5208-3432"/>
         <oboInOwl:hasExactSynonym>third instar larva</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8000002</oboInOwl:id>
@@ -2698,7 +2726,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8000003">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004730"/>
         <obo:IAO_0000115>The fourth stage of instar larva stage.</obo:IAO_0000115>
-        <oboInOwl:created_by>http://orcid.org/0000-0001-5208-3432</oboInOwl:created_by>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0001-5208-3432"/>
         <oboInOwl:hasExactSynonym>fourth instar larva</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8000003</oboInOwl:id>
@@ -2736,8 +2764,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A development stage of copepods which immediately follows the nauplius stage. It is characterized by the presence of 2 swimming legs.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T14:57:48Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200002</oboInOwl:id>
         <rdfs:label>copepodite stage 1</rdfs:label>
@@ -2746,7 +2774,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200002"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A development stage of copepods which immediately follows the nauplius stage. It is characterized by the presence of 2 swimming legs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2774,8 +2802,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A development stage of copepods which immediately follows copepodite stage 1. It is characterized by the presence of 3 swimming legs.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T15:07:18Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200003</oboInOwl:id>
         <rdfs:label>copepodite stage 2</rdfs:label>
@@ -2784,7 +2812,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200003"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A development stage of copepods which immediately follows copepodite stage 1. It is characterized by the presence of 3 swimming legs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2812,8 +2840,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A development stage of copepods which immediately follows copepodite stage 2. It is characterized by the presence of 4 swimming legs.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T15:43:37Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200004</oboInOwl:id>
         <rdfs:label>copepodite stage 3</rdfs:label>
@@ -2822,7 +2850,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200004"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A development stage of copepods which immediately follows copepodite stage 2. It is characterized by the presence of 4 swimming legs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2850,8 +2878,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A development stage of copepods which immediately follows copepodite stage 3. It is characterized by the presence of 5 swimming legs.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T15:45:12Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200005</oboInOwl:id>
         <rdfs:label>copepodite stage 4</rdfs:label>
@@ -2860,7 +2888,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A development stage of copepods which immediately follows copepodite stage 3. It is characterized by the presence of 5 swimming legs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2882,8 +2910,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A pre-adult stage of copepods which immediately follows copepodite stage 4. It is characterized by enlargement of the urosome and development of sexual organs.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T15:46:40Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200006</oboInOwl:id>
         <rdfs:label>copepodite stage 5</rdfs:label>
@@ -2892,7 +2920,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200006"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pre-adult stage of copepods which immediately follows copepodite stage 4. It is characterized by enlargement of the urosome and development of sexual organs.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2914,8 +2942,8 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A fully formed stage of copepods which immediately follows copepodite stage 5. It is characterized by the complete development of the fifth swimming leg.</obo:IAO_0000115>
-        <dc:creator rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-07-26T15:48:54Z</dc:date>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2908-3327"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8200007</oboInOwl:id>
         <rdfs:label>copepodite stage 6</rdfs:label>
@@ -2924,7 +2952,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8200007"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A fully formed stage of copepods which immediately follows copepodite stage 5. It is characterized by the complete development of the fifth swimming leg.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-2908-3327</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-2908-3327"/>
     </owl:Axiom>
     
 
@@ -2932,8 +2960,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
     <!-- http://www.w3.org/2002/07/owl#Nothing -->
 
     <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Nothing">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0014405"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
     </owl:Class>
     

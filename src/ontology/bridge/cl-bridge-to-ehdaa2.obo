@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-ehdaa2
-data-version: 2014-05-27
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to ehdaa2" xsd:string
 property_value: dc-description "Equivalence axioms between EHDAA2 and CL. EHDAA2 replaces EHDAA" xsd:string
@@ -10,8 +10,8 @@ property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
 
 [Term]
 id: EHDAA2:0004546 ! 
-property_value: IAO:0000589 "zygote (embryonic human)" xsd:string
-intersection_of: CL:0000365 ! zygote
+property_value: IAO:0000589 "animal zygote (embryonic human)" xsd:string
+intersection_of: CL:0000365 ! animal zygote
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -61,12 +61,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ehdaa2#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ehdaa2#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by
