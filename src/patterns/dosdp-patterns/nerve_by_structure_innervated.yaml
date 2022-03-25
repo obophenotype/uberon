@@ -1,0 +1,51 @@
+pattern_name: nerve_by_structure_innervated
+pattern_iri: http://purl.obolibrary.org/obo/uberon/nerve_by_structure_innervated
+
+description: >-
+  Nerves classified by the anatomical structure that is innervated
+
+  Examples: [splanchnic nerve](http://purl.obolibrary.org/obo/UBERON_0003715), [nerve of penis](http://purl.obolibrary.org/obo/UBERON_0035649), [mylohyoid nerve](http://purl.obolibrary.org/obo/UBERON_0011322) (20 total)
+
+classes:
+  multicellular anatomical structure: "UBERON:0010000"
+  nerve: "UBERON:0001021"
+
+
+relations:
+  innervates: "RO:0002134"
+
+vars:
+  structure: "'multicellular anatomical structure'"
+
+name:
+  text: "%s nerve"
+  vars:
+    - structure
+
+def:
+  # Induced, frequency=0.25, p=http://purl.obolibrary.org/obo/IAO_0000115
+  text: "Any nerve that innervates the %s."
+  vars:
+    - structure
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym
+    text: "%s nerve"
+    vars:
+      - structure
+  - annotationProperty: related_synonym
+    # Induced p=related_synonym
+    text: "nerve to %s"
+    vars:
+      - structure
+
+
+equivalentTo:
+  text: "('nerve' and ('innervates' some %s))"
+  vars:
+    - structure

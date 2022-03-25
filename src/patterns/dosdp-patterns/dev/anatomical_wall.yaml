@@ -1,0 +1,43 @@
+pattern_name: anatomical_wall_part_of_X
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/anatomical_wall_part_of_X.yaml
+
+description: >-
+
+  See https://github.com/obophenotype/uberon/issues/1581
+
+classes:
+  anatomical wall: "UBERON:0000060"
+  multicellular anatomical structure: "UBERON:0010000"
+
+relations:
+  part of: "BFO:0000050"
+
+
+vars:
+  structure: "'multicellular anatomical structure'"
+
+name:
+  text: "wall of %s"
+  vars:
+    - structure
+
+def:
+  text: "An anatomical wall that is part of a %s."
+  vars:
+    - structure
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%s wall"
+    vars:
+      - structure
+
+
+equivalentTo:
+  text: "('anatomical wall' and ('part of' some %s))"
+  vars:
+    - structure

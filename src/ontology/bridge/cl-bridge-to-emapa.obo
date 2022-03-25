@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-emapa
-data-version: 2014-05-27
+data-version: 2022-03-21
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to emapa" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between EMAPA (abstract developmental mouse) and CL" xsd:string
@@ -13,65 +13,92 @@ property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
 [Term]
 id: EMAPA:31484 ! 
 property_value: IAO:0000589 "spermatocyte (embryonic mouse)" xsd:string
-is_a: CL:0000017 ! spermatocyte
+intersection_of: CL:0000017 ! spermatocyte
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:31486 ! 
 property_value: IAO:0000589 "spermatid (embryonic mouse)" xsd:string
-is_a: CL:0000018 ! spermatid
+intersection_of: CL:0000018 ! spermatid
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:31482 ! 
 property_value: IAO:0000589 "spermatogonium (embryonic mouse)" xsd:string
-is_a: CL:0000020 ! spermatogonium
+intersection_of: CL:0000020 ! spermatogonium
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:29655 ! 
 property_value: IAO:0000589 "Leydig cell (embryonic mouse)" xsd:string
-is_a: CL:0000178 ! Leydig cell
+intersection_of: CL:0000178 ! Leydig cell
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:16032 ! 
 property_value: IAO:0000589 "primary polar body (embryonic mouse)" xsd:string
-is_a: CL:0002091 ! primary polar body
+intersection_of: CL:0002091 ! primary polar body
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:16034 ! 
 property_value: IAO:0000589 "secondary polar body (embryonic mouse)" xsd:string
-is_a: CL:0002093 ! secondary polar body
+intersection_of: CL:0002093 ! secondary polar body
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:16045 ! 
 property_value: IAO:0000589 "secondary polar body (embryonic mouse)" xsd:string
-is_a: CL:0002093 ! secondary polar body
+intersection_of: CL:0002093 ! secondary polar body
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:31247 ! 
 property_value: IAO:0000589 "follicular cell of ovary (embryonic mouse)" xsd:string
-is_a: CL:0002174 ! follicular cell of ovary
+intersection_of: CL:0002174 ! follicular cell of ovary
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:18686 ! 
 property_value: IAO:0000589 "male gonocyte (embryonic mouse)" xsd:string
-is_a: CL:0002238 ! male gonocyte
+intersection_of: CL:0002238 ! male gonocyte
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:17965 ! 
 property_value: IAO:0000589 "ooblast (embryonic mouse)" xsd:string
-is_a: CL:0002239 ! ooblast
+intersection_of: CL:0002239 ! ooblast
+intersection_of: part_of NCBITaxon:10090
 
 [Term]
 id: EMAPA:16066 ! 
 property_value: IAO:0000589 "primary trophoblast giant cell (embryonic mouse)" xsd:string
-is_a: CL:0002497 ! primary trophoblast giant cell
+intersection_of: CL:0002497 ! primary trophoblast giant cell
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
+id: EMAPA:ENTITY
+name: EMAPA entity
+intersection_of: UBERON:0001062 ! anatomical entity
+intersection_of: part_of NCBITaxon:10090
+relationship: only_in_taxon NCBITaxon:10090
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/emapa#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
+is_transitive: true
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/emapa#develops_from
-equivalent_to: RO:0002225
+id: only_in_taxon
+xref: RO:0002160
+
+[Typedef]
+id: part_of
+xref: BFO:0000050
+
+[Typedef]
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

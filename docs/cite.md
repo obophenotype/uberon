@@ -8,7 +8,7 @@ Unification of multi-species vertebrate anatomy ontologies for comparative biolo
 
 [Google scholar link](https://scholar.google.com/scholar?as_q=uberon)
 
-#Posters and Presentatations
+#Posters and Presentations
 
 - Structuring Phenotype Data for Invertebrate Genomes - Chris Mungall, GIGA2 2015
 - From baleen to cleft palate: an ontological exploration of evolution and disease - Melissa Haendel, Keynote, Bio-Ontologies 2014

@@ -8,7 +8,7 @@ relevance to Uberon editors/developers.
 
 For an overview of the ontology, plus usage instructions on how to
 download the compiled versions of the ontology, please visit
-[uberon.org](http://uberon.org).
+[uberon.org](http://obophenotype.github.io/uberon/).
 
 ## Content
 
