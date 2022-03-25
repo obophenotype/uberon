@@ -737,7 +737,7 @@ extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.tx
 # TODO @cmungall: worth fixing!
 # TODO @matentzn: use ROBOT merge instead and dump debug modules..
 $(REPORTDIR)/bfo-check.txt: $(OWLSRC) mirror/ro.owl mirror/bfo.owl
-	$(ROBOT) merge -i $(OWLSRC) -i mirror/ro.owl -i mirror/bfo.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
+	$(ROBOT) merge -i $(OWLSRC) -I $(URIBASE)/bfo.owl -I $(URIBASE)/ro.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
 
 bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
