@@ -425,24 +425,12 @@ imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
 
 .PRECIOUS: imports/%_import.owl
 
-# TODO - use full taxonomy
-#ncbitaxon.owl:
-#	OWLTOOLS_MEMORY=14G owltools $(URIBASE)/ncbitaxon.owl -o $@ && touch $@
-##	owltools $(URIBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(URIBASE)/$@ -o $@
-
-
-#imports/ncbitaxon_import.owl: mirror/ncbitaxon.obo $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo
-#	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo --merge-support-ontologies --extract-module -s $(URIBASE)/ncbitaxon.owl -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
 # CL - take **everything**
 imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
 	if [ $(IMP) = true ]; then $(OWLTOOLS) $<  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 %_import.obo: %_import.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --add-obo-shorthand-to-properties -o -f obo --no-check $@; fi
-
-#imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
-#	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
 
 # ----------------------------------------
 # MARKDOWN EXPORT
