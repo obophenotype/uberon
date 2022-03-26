@@ -24,7 +24,7 @@ RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 
 
-all: uberon-qc prepare_release clean
+all: uberon-qc
 	echo "make $@ succeeded..."
 
 # ----------------------------------------
@@ -257,7 +257,7 @@ subsets/cumbo.obo: subsets/cumbo.owl
 # merge BSPO into RO
 # get rid of it
 mirror/bspo.owl: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo.owl remove --select "BFO:* RO:*" --select "object-properties" --axioms "annotation" -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo/bspo-base.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/bspo.owl
 
 # Probably no reason to merge them first
@@ -265,60 +265,16 @@ mirror/bspo.owl: $(OWLSRC)
 mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
-# make-subset-by-properties -f BFO:0000050 excludes all properties that are not BFO:0000050, essentially making a basic file. Not super relevant here remove here
-mirror/pato.owl: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/pato.owl --extract-mingraph --make-subset-by-properties -f BFO:0000050 // --set-ontology-id $(URIBASE)/pato.owl -o $@; fi
+imports/envo_import.owl:
+	echo "ERROR $@ IMPORT CURRENTLY BLOCKED BECAUSE BROKEN UPSTREAM."
 
-mirror/envo.owl: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/envo.owl --extract-mingraph --set-ontology-id $(URIBASE)/envo.owl -o $@; fi
-
-mirror/nbo.owl: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/nbo.owl --extract-mingraph --set-ontology-id $(URIBASE)/nbo.owl -o $@; fi
-
-mirror/chebi.obo.gz: $(OWLSRC)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/chebi.obo.gz -O $@.tmp && mv $@.tmp $@ && touch $@; fi
-
-mirror/chebi.obo: mirror/chebi.obo.gz
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then gunzip -c $< > $@; fi
-
-# Does chebi still have these bad non RO OPs? Double check if relations are RO (partof)
-mirror/chebi.owl: mirror/chebi.obo
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --extract-mingraph --rename-entity $(URIBASE)/chebi#has_part $(URIBASE)/BFO_0000051 --make-subset-by-properties -f BFO:0000051 //  --set-ontology-id -v $(RELEASE)/chebi.owl $(URIBASE)/chebi.owl -o $@ && touch $@; fi
-
-# Do not rebuild: PR is now too big
-# Why this step? (NICO: to get the branch and remove BFO top level). Dates back to the time when there were bad URIs, maybe we can switch to something normal now.
-
-#mirror/pr.owl.gz: $(OWLSRC)
-#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/pr.owl.gz -O $@.tmp && mv $@.tmp $@ && touch $@; fi
-# currently using pro_obo_slim
-
-#mirror/pr-gunzip.owl: mirror/pr.owl.gz
-#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then gunzip -c $< > $@; fi
-# currently using pro_obo_slim
-
-#mirror/aminoacid.owl: mirror/pr-gunzip.owl
-#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --reasoner-query -r elk PR_000018263 --reasoner-dispose --make-ontology-from-results $(URIBASE)/uberon/aminoacid.owl  -o $@; fi
-# currently using pro_obo_slim
-
-#mirror/pr.owl: mirror/aminoacid.owl
-#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) mirror/aminoacid.owl --extract-mingraph --rename-entity $(URIBASE)/pr#has_part $(URIBASE)/BFO_0000051 --rename-entity $(URIBASE)/pr#part_of $(URIBASE)/BFO_0000050  --make-subset-by-properties -f BFO:0000050 BFO:0000051 // --split-ontology -d components -l snap --remove-imports-declarations  --remove-dangling --set-ontology-id $(URIBASE)/pr.owl -o $@ && touch $@; fi
-# currently using pro_obo_slim
-
-mirror/ncbitaxon.obo:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget $(URIBASE)/ncbitaxon.obo -O $@; fi
-
-mirror/fbbt.obo:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget $(URIBASE)/fbbt.obo -O $@; fi
-
-
-$(TMPDIR)/mirror-%: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then wget --no-check-certificate $(URIBASE)/$* -O $@ && touch $@; fi
-.PRECIOUS: $(TMPDIR)/mirror-%
+mirror/%.obo: mirror/%.owl
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo; fi
 
 # Filter only EMAPA classes
 # EMAPA using a list flat ids for stages, these are mapped to MmusDv ids by fix-emapa-stages.pl
 # It would be useful to make a combined stage ontology, but than make it filterable by species (subsets)
-$(TMPDIR)/fixed-emapa.obo: $(TMPDIR)/mirror-emapa.obo | $(TMPDIR)
+$(TMPDIR)/fixed-emapa.obo: mirror/emapa.obo | $(TMPDIR)
 	$(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | $(SCRIPTSDIR)/fix-emapa-stages.pl  > $@
 
 # stages must be mapped to MmusDv
@@ -335,13 +291,13 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/developmental-stage-ontolo
 
 # TODO: We should fix that upstream
 # They are using too strict relationships, which are here replaced by more general ones
-$(TMPDIR)/fixed-zfa.obo: $(TMPDIR)/mirror-zfa.obo
+$(TMPDIR)/fixed-zfa.obo: mirror/zfa.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then perl -npe 's@RO:0002488@RO:0002496@;s@RO:0002492@RO:0002497@' $< > $@; fi
 
 mirror/zfa.owl: $(TMPDIR)/fixed-zfa.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< -o -f ofn $@; fi
 
-$(TMPDIR)/fixed-ehdaa2.obo: $(TMPDIR)/mirror-ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
+$(TMPDIR)/fixed-ehdaa2.obo: mirror/ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(SCRIPTSDIR)/obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | $(SCRIPTSDIR)/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@; fi
 
 mirror/ehdaa2.obo: mirror/ehdaa2.owl
@@ -445,13 +401,6 @@ imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
-# TODO - logical definitions go->ubr,cl
-imports/go_import.owl: mirror/go.owl $(TMPDIR)/seed.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $<  $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/go.owl -c --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
-imports/envo_import.owl: mirror/envo.owl $(TMPDIR)/seed.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/envo.owl -c --make-subset-by-properties --force --extract-mingraph --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
 imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T imports/nbo_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
@@ -459,13 +408,6 @@ imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
 		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-	
-imports/chebi_import.owl: mirror/chebi.owl $(TMPDIR)/seed.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/chebi.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
-#imports/pr_import.owl: mirror/pr.owl $(TMPDIR)/seed.owl
-#	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl --extract-module -s $(URIBASE)/pr.owl -c --extract-mingraph  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-# Currently using pro_obo_slim
 
 imports/fbbt_import.owl: mirror/fbbt.owl imports/fbbt_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
@@ -489,8 +431,8 @@ imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
 ##	owltools $(URIBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl --merge-import-closure --make-subset-by-properties -f RO:0002162 // --split-ontology -d null -l cl go caro --remove-imports-declarations --set-ontology-id $(URIBASE)/$@ -o $@
 
 
-imports/ncbitaxon_import.owl: mirror/ncbitaxon.obo $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo
-	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo --merge-support-ontologies --extract-module -s $(URIBASE)/ncbitaxon.owl -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
+#imports/ncbitaxon_import.owl: mirror/ncbitaxon.obo $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo
+#	if [ $(IMP) = true ]; then $(OWLTOOLS) --map-ontology-iri $(ONTBASE)/$@ $< $(TMPDIR)/seed.owl $(TMPDIR)/composite-stages.obo --merge-support-ontologies --extract-module -s $(URIBASE)/ncbitaxon.owl -c --extract-mingraph  --remove-dangling-annotations --create-taxon-disjoint-over-in-taxon -s -r NCBITaxon:2759 -m --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
 
 # CL - take **everything**
 imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
@@ -499,8 +441,8 @@ imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
 %_import.obo: %_import.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --add-obo-shorthand-to-properties -o -f obo --no-check $@; fi
 
-imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
-	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
+#imports: imports/pato_import.obo imports/chebi_import.obo imports/pr_import.obo imports/ncbitaxon_import.obo imports/cl_import.obo imports/go_import.obo imports/ro_import.obo
+#	echo "STRONG WARNING: THIS GOAL HARDBAKES THE FOLLOWING IMPORTS AND COULD BE INCOMPLETE: $^" && touch $@
 
 # ----------------------------------------
 # MARKDOWN EXPORT
@@ -805,6 +747,10 @@ $(TMPDIR)/ext-merged-%.owl: ext.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disj
 
 # check for dangling classes
 # TODO: add to Oort
+
+merged.obo: tmp/merged.owl
+	cp $< $@
+
 $(REPORTDIR)/%-orphans: %.obo
 	$(SCRIPTSDIR)/obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | $(SCRIPTSDIR)/obo-grep.pl -r Term - | $(SCRIPTSDIR)/obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | $(SCRIPTSDIR)/obo-grep.pl -r Term - > $@.tmp && (egrep '^(id|name):'  $@.tmp > $@ || echo ok)
 
@@ -1813,10 +1759,6 @@ feature_diff: reports/robot_main_diff.md
 
 ########################
 #### Utility commands ##
-
-.PHONY: bless-mirrors
-bless-mirrors:
-	touch go.owl chebi.owl mirror/ncbitaxon.obo
 
 .PHONY: quick-qc
 quick-qc: tmp/core.owl $(REPORTDIR)/uberon-edit-obscheck.txt
