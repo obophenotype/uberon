@@ -16,7 +16,7 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/wbbt.owl>
-<http://purl.obolibrary.org/obo/wbbt/releases/2021-09-27/wbbt.owl>
+<http://purl.obolibrary.org/obo/wbbt/releases/2022-03-22/wbbt.owl>
 Annotation(obo:IAO_0000700 obo:WBbt_0000100)
 Annotation(dc:description "Ontology about the gross anatomy of the C. elegans")
 Annotation(dc:title "C. elegans Gross Anatomy Ontology")
@@ -47,6 +47,7 @@ Declaration(Class(obo:GO_0008150))
 Declaration(Class(obo:GO_0016301))
 Declaration(Class(obo:GO_0016740))
 Declaration(Class(obo:GO_0016772))
+Declaration(Class(obo:PATO_0000001))
 Declaration(Class(obo:UBERON_0001062))
 Declaration(Class(obo:WBbt_0000100))
 Declaration(Class(obo:WBbt_0000101))
@@ -7713,6 +7714,10 @@ Declaration(ObjectProperty(obo:RO_0004035))
 Declaration(ObjectProperty(obo:RO_0004046))
 Declaration(ObjectProperty(obo:RO_0004047))
 Declaration(ObjectProperty(obo:RO_0011002))
+Declaration(ObjectProperty(obo:RO_0017001))
+Declaration(ObjectProperty(obo:RO_0019000))
+Declaration(ObjectProperty(obo:RO_0019001))
+Declaration(ObjectProperty(obo:RO_0019002))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/wbbt#xunion_of>))
 Declaration(AnnotationProperty(obo:IAO_0000115))
 Declaration(AnnotationProperty(obo:IAO_0000700))
@@ -8250,6 +8255,18 @@ SubObjectPropertyOf(obo:RO_0004047 obo:RO_0002418)
 
 SubObjectPropertyOf(obo:RO_0011002 obo:RO_0002566)
 
+# Object Property: obo:RO_0019000 (obo:RO_0019000)
+
+SubObjectPropertyOf(obo:RO_0019000 obo:RO_0002410)
+
+# Object Property: obo:RO_0019001 (obo:RO_0019001)
+
+SubObjectPropertyOf(obo:RO_0019001 obo:RO_0019000)
+
+# Object Property: obo:RO_0019002 (obo:RO_0019002)
+
+SubObjectPropertyOf(obo:RO_0019002 obo:RO_0019000)
+
 
 
 ############################
@@ -8362,6 +8379,11 @@ SubClassOf(obo:GO_0016740 obo:GO_0003824)
 
 AnnotationAssertion(rdfs:label obo:GO_0016772 "transferase activity, transferring phosphorus-containing groups")
 SubClassOf(obo:GO_0016772 obo:GO_0016740)
+
+# Class: obo:PATO_0000001 (quality)
+
+AnnotationAssertion(rdfs:label obo:PATO_0000001 "quality")
+SubClassOf(obo:PATO_0000001 obo:BFO_0000020)
 
 # Class: obo:UBERON_0001062 (anatomical entity)
 
@@ -69025,11 +69047,16 @@ SubObjectPropertyOf(Annotation(obo:RO_0002582 "true"^^xsd:boolean) ObjectPropert
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002131 obo:BFO_0000050) obo:RO_0002131)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002203 obo:BFO_0000050) obo:RO_0002255)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002211 obo:RO_0002025) obo:RO_0002211)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002211 obo:RO_0019000) obo:RO_0019000)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002212 obo:RO_0002212) obo:RO_0002213)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002212 obo:RO_0019001) obo:RO_0019002)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002213 obo:RO_0019001) obo:RO_0019001)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002213 obo:RO_0019002) obo:RO_0019002)
 SubObjectPropertyOf(Annotation(obo:RO_0002582 "true"^^xsd:boolean) ObjectPropertyChain(obo:RO_0002215 obo:BFO_0000050) obo:RO_0002216)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002211) obo:RO_0002596)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002212) obo:RO_0002597)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002213) obo:RO_0002598)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002233) obo:RO_0017001)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002314 obo:BFO_0000050) obo:RO_0002314)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002327 obo:BFO_0000050) obo:RO_0002331)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002327 obo:BFO_0000051) obo:RO_0002327)
@@ -69076,5 +69103,6 @@ DLSafeRule(Annotation(rdfs:label "'causally downstream of' and 'overlaps' should
 DLSafeRule(Annotation(rdfs:label "'causally upstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties).") Body(ObjectPropertyAtom(obo:RO_0002411 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)) ObjectPropertyAtom(obo:RO_0002131 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)))Head(ClassAtom(owl:Nothing Variable(<urn:swrl#x>)) ClassAtom(owl:Nothing Variable(<urn:swrl#y>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002213 Variable(<urn:swrl#y>) Variable(<urn:swrl#z>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)))Head(ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#z>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002213 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#y>) Variable(<urn:swrl#z>)))Head(ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#z>))))
+DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0019002 Variable(<urn:swrl:var#y>) Variable(<urn:swrl:var#z>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#y>)))Head(ObjectPropertyAtom(obo:RO_0019001 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#z>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002264 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#y>)) ObjectPropertyAtom(obo:RO_0002411 Variable(<urn:swrl:var#y>) Variable(<urn:swrl:var#z>)))Head(ObjectPropertyAtom(obo:RO_0002263 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#z>))))
 )

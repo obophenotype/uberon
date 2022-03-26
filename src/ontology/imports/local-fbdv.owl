@@ -18,7 +18,7 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/fbdv.owl>
-<http://purl.obolibrary.org/obo/fbdv/releases/2021-09-01/fbdv.owl>
+<http://purl.obolibrary.org/obo/fbdv/releases/2022-02-25/fbdv.owl>
 Annotation(obo:IAO_0000700 obo:FBdv_00000000)
 Annotation(obo:IAO_0000700 obo:FBdv_00005259)
 Annotation(obo:IAO_0000700 obo:FBdv_00007013)
@@ -29,12 +29,12 @@ Annotation(dc:creator "https://orcid.org/0000-0001-5948-3092"^^xsd:string)
 Annotation(dc:creator "https://orcid.org/0000-0002-0027-0858"^^xsd:string)
 Annotation(dc:description "An ontology of Drosophila melanogaster developmental stages."^^xsd:string)
 Annotation(dc:title "FlyBase Developmental Ontology (FBdv)"^^xsd:string)
-Annotation(terms:license "https://creativecommons.org/licenses/by/3.0/"^^xsd:string)
+Annotation(terms:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:string)
 Annotation(oboInOwl:NamespaceIdRule "* FBdv:$sequence(8,7000,10000)$"^^xsd:string)
-Annotation(oboInOwl:date "01:09:2021 09:21"^^xsd:string)
+Annotation(oboInOwl:date "25:02:2022 11:14"^^xsd:string)
 Annotation(oboInOwl:default-namespace "FlyBase_development_CV"^^xsd:string)
 Annotation(oboInOwl:hasOBOFormatVersion "1.2"^^xsd:string)
-Annotation(owl:versionInfo "2021-09-01"^^xsd:string)
+Annotation(owl:versionInfo "2022-02-25"^^xsd:string)
 
 Declaration(Class(obo:BFO_0000002))
 Declaration(Class(obo:BFO_0000003))
@@ -290,6 +290,7 @@ Declaration(Class(obo:GO_0071840))
 Declaration(Class(obo:GO_0098763))
 Declaration(Class(obo:GO_0140014))
 Declaration(Class(obo:GO_1903047))
+Declaration(Class(obo:PATO_0000001))
 Declaration(Class(obo:UBERON_0001062))
 Declaration(ObjectProperty(obo:BFO_0000050))
 Declaration(ObjectProperty(obo:BFO_0000051))
@@ -406,6 +407,10 @@ Declaration(ObjectProperty(obo:RO_0004035))
 Declaration(ObjectProperty(obo:RO_0004046))
 Declaration(ObjectProperty(obo:RO_0004047))
 Declaration(ObjectProperty(obo:RO_0011002))
+Declaration(ObjectProperty(obo:RO_0017001))
+Declaration(ObjectProperty(obo:RO_0019000))
+Declaration(ObjectProperty(obo:RO_0019001))
+Declaration(ObjectProperty(obo:RO_0019002))
 Declaration(AnnotationProperty(obo:IAO_0000115))
 Declaration(AnnotationProperty(obo:IAO_0000700))
 Declaration(AnnotationProperty(obo:IAO_0100001))
@@ -1118,6 +1123,18 @@ SubObjectPropertyOf(obo:RO_0004047 obo:RO_0002418)
 
 SubObjectPropertyOf(obo:RO_0011002 obo:RO_0002566)
 
+# Object Property: obo:RO_0019000 (obo:RO_0019000)
+
+SubObjectPropertyOf(obo:RO_0019000 obo:RO_0002410)
+
+# Object Property: obo:RO_0019001 (obo:RO_0019001)
+
+SubObjectPropertyOf(obo:RO_0019001 obo:RO_0019000)
+
+# Object Property: obo:RO_0019002 (obo:RO_0019002)
+
+SubObjectPropertyOf(obo:RO_0019002 obo:RO_0019000)
+
 
 
 ############################
@@ -1590,9 +1607,9 @@ SubClassOf(obo:FBdv_00005304 ObjectSomeValuesFrom(obo:FBdv_00018001 obo:FBdv_000
 SubClassOf(obo:FBdv_00005304 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005290))
 SubClassOf(obo:FBdv_00005304 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005301))
 
-# Class: obo:FBdv_00005305 (syncytial blastoderm stage)
+# Class: obo:FBdv_00005305 (obsolete syncytial blastoderm stage)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00005305 "syncytial blastoderm stage"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005305 "obsolete syncytial blastoderm stage"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005305 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00005306 (embryonic stage 4)
@@ -1631,9 +1648,9 @@ SubClassOf(obo:FBdv_00005309 obo:FBdv_00007011)
 SubClassOf(obo:FBdv_00005309 ObjectSomeValuesFrom(obo:FBdv_00018001 obo:FBdv_00005306))
 SubClassOf(obo:FBdv_00005309 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005308))
 
-# Class: obo:FBdv_00005310 (cellular blastoderm stage)
+# Class: obo:FBdv_00005310 (obsolete cellular blastoderm stage)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00005310 "cellular blastoderm stage"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005310 "obsolete cellular blastoderm stage"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005310 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00005311 (embryonic stage 5)
@@ -1716,9 +1733,9 @@ SubClassOf(obo:FBdv_00005319 obo:FBdv_00005259)
 SubClassOf(obo:FBdv_00005319 ObjectSomeValuesFrom(obo:FBdv_00018001 obo:FBdv_00005317))
 SubClassOf(obo:FBdv_00005319 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005318))
 
-# Class: obo:FBdv_00005320 (germ band stage)
+# Class: obo:FBdv_00005320 (obsolete germ band stage)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00005320 "germ band stage"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005320 "obsolete germ band stage"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005320 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00005321 (extended germ band stage)
@@ -1765,9 +1782,9 @@ SubClassOf(obo:FBdv_00005325 ObjectSomeValuesFrom(obo:FBdv_00018001 obo:FBdv_000
 SubClassOf(obo:FBdv_00005325 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005324))
 SubClassOf(obo:FBdv_00005325 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00014201))
 
-# Class: obo:FBdv_00005326 (contracted germ band stage)
+# Class: obo:FBdv_00005326 (obsolete contracted germ band stage)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00005326 "contracted germ band stage"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005326 "obsolete contracted germ band stage"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005326 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00005327 (embryonic stage 12)
@@ -1790,10 +1807,10 @@ SubClassOf(obo:FBdv_00005328 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_000044
 SubClassOf(obo:FBdv_00005328 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005321))
 SubClassOf(obo:FBdv_00005328 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005327))
 
-# Class: obo:FBdv_00005329 (head involution stage)
+# Class: obo:FBdv_00005329 (obsolete head involution stage)
 
 AnnotationAssertion(obo:IAO_0100001 obo:FBdv_00005329 "FBdv:00005330"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:FBdv_00005329 "head involution stage"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005329 "obsolete head involution stage"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005329 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00005330 (embryonic stage 14)
@@ -2229,9 +2246,9 @@ AnnotationAssertion(owl:deprecated obo:FBdv_00005374 "true"^^xsd:boolean)
 AnnotationAssertion(obo:IAO_0100001 obo:FBdv_00005375 obo:FBdv_00006012)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005375 "true"^^xsd:boolean)
 
-# Class: obo:FBdv_00005412 (gamete)
+# Class: obo:FBdv_00005412 (obsolete gamete)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00005412 "gamete"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00005412 "obsolete gamete"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00005412 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00006011 (pharate adult stage)
@@ -2317,9 +2334,9 @@ SubClassOf(obo:FBdv_00007007 obo:FBdv_00005259)
 SubClassOf(obo:FBdv_00007007 ObjectSomeValuesFrom(obo:FBdv_00018001 obo:FBdv_00005339))
 SubClassOf(obo:FBdv_00007007 ObjectSomeValuesFrom(obo:RO_0002087 obo:FBdv_00005340))
 
-# Class: obo:FBdv_00007008 (occurrent)
+# Class: obo:FBdv_00007008 (obsolete occurrent)
 
-AnnotationAssertion(rdfs:label obo:FBdv_00007008 "occurrent"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:FBdv_00007008 "obsolete occurrent"^^xsd:string)
 AnnotationAssertion(owl:deprecated obo:FBdv_00007008 "true"^^xsd:boolean)
 
 # Class: obo:FBdv_00007009 (developmental process)
@@ -3022,7 +3039,7 @@ SubClassOf(obo:GO_0007049 obo:GO_0009987)
 
 # Class: obo:GO_0007275 (multicellular organism development)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dph"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:ems") Annotation(oboInOwl:hasDbXref "GOC:isa_complete"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tb"^^xsd:string) obo:IAO_0000115 obo:GO_0007275 "The biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote or a young adult) to a later condition (e.g. a multicellular animal or an aged adult).")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dph"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:ems"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:isa_complete"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tb"^^xsd:string) obo:IAO_0000115 obo:GO_0007275 "The biological process whose specific outcome is the progression of a multicellular organism over time from an initial condition (e.g. a zygote or a young adult) to a later condition (e.g. a multicellular animal or an aged adult).")
 AnnotationAssertion(rdfs:label obo:GO_0007275 "multicellular organism development")
 SubClassOf(obo:GO_0007275 obo:GO_0032501)
 SubClassOf(obo:GO_0007275 obo:GO_0048856)
@@ -3191,6 +3208,11 @@ EquivalentClasses(obo:GO_1903047 ObjectIntersectionOf(obo:GO_0009987 ObjectSomeV
 SubClassOf(obo:GO_1903047 obo:GO_0022402)
 SubClassOf(obo:GO_1903047 ObjectSomeValuesFrom(obo:BFO_0000050 obo:GO_0000278))
 
+# Class: obo:PATO_0000001 (quality)
+
+AnnotationAssertion(rdfs:label obo:PATO_0000001 "quality")
+SubClassOf(obo:PATO_0000001 obo:BFO_0000020)
+
 # Class: obo:UBERON_0001062 (anatomical entity)
 
 AnnotationAssertion(rdfs:label obo:UBERON_0001062 "anatomical entity"@en)
@@ -3215,11 +3237,16 @@ SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002093 obo:BFO_0000062) obo:RO_0
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002131 obo:BFO_0000050) obo:RO_0002131)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002203 obo:BFO_0000050) obo:RO_0002255)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002211 obo:RO_0002025) obo:RO_0002211)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002211 obo:RO_0019000) obo:RO_0019000)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002212 obo:RO_0002212) obo:RO_0002213)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002212 obo:RO_0019001) obo:RO_0019002)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002213 obo:RO_0019001) obo:RO_0019001)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002213 obo:RO_0019002) obo:RO_0019002)
 SubObjectPropertyOf(Annotation(obo:RO_0002582 "true"^^xsd:boolean) ObjectPropertyChain(obo:RO_0002215 obo:BFO_0000050) obo:RO_0002216)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002211) obo:RO_0002596)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002212) obo:RO_0002597)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002213) obo:RO_0002598)
+SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002215 obo:RO_0002233) obo:RO_0017001)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002314 obo:BFO_0000050) obo:RO_0002314)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002327 obo:BFO_0000050) obo:RO_0002331)
 SubObjectPropertyOf(ObjectPropertyChain(obo:RO_0002327 obo:BFO_0000051) obo:RO_0002327)
@@ -3266,5 +3293,6 @@ DLSafeRule(Annotation(rdfs:label "'causally downstream of' and 'overlaps' should
 DLSafeRule(Annotation(rdfs:label "'causally upstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties).") Body(ObjectPropertyAtom(obo:RO_0002411 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)) ObjectPropertyAtom(obo:RO_0002131 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)))Head(ClassAtom(owl:Nothing Variable(<urn:swrl#x>)) ClassAtom(owl:Nothing Variable(<urn:swrl#y>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002213 Variable(<urn:swrl#y>) Variable(<urn:swrl#z>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)))Head(ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#z>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002213 Variable(<urn:swrl#x>) Variable(<urn:swrl#y>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#y>) Variable(<urn:swrl#z>)))Head(ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl#x>) Variable(<urn:swrl#z>))))
+DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0019002 Variable(<urn:swrl:var#y>) Variable(<urn:swrl:var#z>)) ObjectPropertyAtom(obo:RO_0002212 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#y>)))Head(ObjectPropertyAtom(obo:RO_0019001 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#z>))))
 DLSafeRule(Body(ObjectPropertyAtom(obo:RO_0002264 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#y>)) ObjectPropertyAtom(obo:RO_0002411 Variable(<urn:swrl:var#y>) Variable(<urn:swrl:var#z>)))Head(ObjectPropertyAtom(obo:RO_0002263 Variable(<urn:swrl:var#x>) Variable(<urn:swrl:var#z>))))
 )
