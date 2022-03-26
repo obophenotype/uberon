@@ -36,14 +36,14 @@ import_group:
     - id: envo
     - id: ro
     - id: bspo
+      use_base: TRUE
     - id: chebi
       is_large: TRUE
       use_gzipped: TRUE
     - id: pato
     - id: bfo
     - id: ncbitaxon
-      is_large: TRUE
-      use_gzipped: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
     # Pipeline dependencies (not directly imported)
     - id: ceph
