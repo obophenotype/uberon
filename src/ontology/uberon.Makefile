@@ -272,7 +272,7 @@ imports/envo_import.owl:
 
 # This goal here is needed as a new _intermediate_ for mirrors that need to be fixed
 # by hacking into their OBO format representations.
-$(TMPDIR)/mirror-%.obo: | mirror-%
+$(TMPDIR)/mirror-%.obo: mirror-% | $(TMPDIR)
 	if [ $(IMP) = true ] && [ $(MIR) = true ]; then $(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo; fi
 
 # Filter only EMAPA classes
