@@ -268,14 +268,18 @@ mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
 imports/envo_import.owl:
 	echo "ERROR $@ IMPORT CURRENTLY BLOCKED BECAUSE BROKEN UPSTREAM."
 
-mirror/%.obo: mirror/%.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo; fi
+############
+
+# This goal here is needed as a new _intermediate_ for mirrors that need to be fixed
+# by hacking into their OBO format representations.
+$(TMPDIR)/mirror-%.obo: $(TMPDIR)/mirror-%.owl | mirror-%
+	if [ $(IMP) = true ] && [ $(MIR) = true ]; then $(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo; fi
 
 # Filter only EMAPA classes
 # EMAPA using a list flat ids for stages, these are mapped to MmusDv ids by fix-emapa-stages.pl
 # It would be useful to make a combined stage ontology, but than make it filterable by species (subsets)
-$(TMPDIR)/fixed-emapa.obo: mirror/emapa.obo | $(TMPDIR)
-	$(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | $(SCRIPTSDIR)/fix-emapa-stages.pl  > $@
+$(TMPDIR)/fixed-emapa.obo: $(TMPDIR)/mirror-emapa.obo
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | $(SCRIPTSDIR)/fix-emapa-stages.pl  > $@; fi
 
 # stages must be mapped to MmusDv
 # We should add releate targets to stage ontology repo makefile.
@@ -291,23 +295,23 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/developmental-stage-ontolo
 
 # TODO: We should fix that upstream
 # They are using too strict relationships, which are here replaced by more general ones
-$(TMPDIR)/fixed-zfa.obo: mirror/zfa.obo
+$(TMPDIR)/fixed-zfa.obo: $(TMPDIR)/mirror-zfa.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then perl -npe 's@RO:0002488@RO:0002496@;s@RO:0002492@RO:0002497@' $< > $@; fi
 
 mirror/zfa.owl: $(TMPDIR)/fixed-zfa.obo
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< -o -f ofn $@; fi
 
-$(TMPDIR)/fixed-ehdaa2.obo: mirror/ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
+$(TMPDIR)/fixed-ehdaa2.obo: $(TMPDIR)/mirror-ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(SCRIPTSDIR)/obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | $(SCRIPTSDIR)/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@; fi
 
-mirror/ehdaa2.obo: mirror/ehdaa2.owl
+mirror/%.obo: mirror/%.owl
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(MAKEOBO); fi
 
 # https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
 # There was a period when Jonathan sent OBO files to Chris
 # Jonathan has "essentially" seeded the ownership? Double check
-mirror/ehdaa2.owl:
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@; fi
+#mirror/ehdaa2.owl:
+#	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o -f ofn $@; fi
 
 #CMUNGALL_OBO_SCRIPTS=https://raw.githubusercontent.com/cmungall/obo-scripts/master/
 #$(SCRIPTSDIR)/%.pl:
@@ -334,8 +338,6 @@ mirror/ehdaa2.owl:
 #	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O cached-$@.owl && perl -pi -ne 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@$(URIBASE)/NIF_GrossAnatomy_@g' cached-$@.owl && owltools cached-$@.owl -o -f obo $@
 
 
-
-
 ####################################
 ### Local Ontology dependencies ####
 ####################################
@@ -351,6 +353,9 @@ imports/local-ceph.owl:
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
 
 # NON-ORTHOGONAL ONTOLOGY MIRRORING
+
+## Devloper notes: Local files are used for a bunch of quality checks, and the composite file
+## Not anywhere in normal uberon.
 
 ## Map legacy OBO-format ObjectProperties to their BFO/RO intended equivalent
 ## a mirror is just a mirror, and local-mirror is a file with all that wrangling needed to message it into the right form. local- files are needed in composite file generation.
@@ -414,16 +419,6 @@ imports/fbbt_import.owl: mirror/fbbt.owl imports/fbbt_terms_combined.txt
 		extract -T imports/fbbt_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru --update $(SPARQLDIR)/remove_axioms.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-imports/cl_import.owl: mirror/cl.owl imports/cl_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/cl_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: imports/%_import.owl
 
 # CL - take **everything**
 imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
@@ -1706,9 +1701,6 @@ $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 	$(ROBOT) convert -i $< -f owl -o $@
 .PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
-$(BRIDGEDIR)/uberon-bridge-to-nifstd.obo:
-	echo "STRONG WARNING make $@ failed, because xref-to-equiv.pl script is missing!" && touch $@
-
 TEMPLATESDIR=templates
 
 TEMPLATES=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
@@ -1761,7 +1753,7 @@ normalize: $(TMPDIR)/NORMALIZE.obo
 	mv $< $(SRC)
 	echo "WARNING: $(SRC) has been overwritten! Please carefully check your diff before you commit!"
 
-clean:
+clean_uberon:
 	rm -rf ./*.tmp
 	rm -rf ./*.tmp1
 	rm -rf ./*.tmp2
@@ -1772,6 +1764,7 @@ clean:
 	rm -f uberon.owl uberon.obo tmp/core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
 	rm -f ext.owl
 
+clean: clean_uberon
 
 explain:
 	$(ROBOT) explain --input $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK \
@@ -1796,9 +1789,6 @@ cl_mondo_merged.owl:
 #### Temporary exclusions
 
 reports/composite-metazoan-dv.txt:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!" && touch $@
-
-subsets/life-stages-composite.obo:
 	echo "ERROR ERROR WARNING ERROR: $@ currently fails!" && touch $@
 
 OLDLOCATION=http://svn.code.sf.net/p/obo/svn/uberon/releases/2020-09-16
@@ -1886,9 +1876,6 @@ test_obsolete:
 	! grep "! obsolete" uberon-edit.obo
 
 test: test_obsolete
-
-update_docs:
-	mkdocs build --config-file ../../mkdocs.yaml
 
 .PHONY: test_owlaxioms
 test_owlaxioms:

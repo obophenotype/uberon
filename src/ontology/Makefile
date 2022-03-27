@@ -367,7 +367,7 @@ mirror-ro: | $(TMPDIR)
 .PHONY: mirror-bspo
 .PRECIOUS: $(MIRRORDIR)/bspo.owl
 mirror-bspo: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/bspo.owl --create-dirs -o $(MIRRORDIR)/bspo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/bspo/bspo-base.owl --create-dirs -o $(MIRRORDIR)/bspo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/bspo.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: chebi
@@ -423,7 +423,7 @@ mirror-cteno: | $(TMPDIR)
 .PHONY: mirror-ehdaa2
 .PRECIOUS: $(MIRRORDIR)/ehdaa2.owl
 mirror-ehdaa2: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ehdaa2.owl --create-dirs -o $(MIRRORDIR)/ehdaa2.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/ehdaa2.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: emapa
