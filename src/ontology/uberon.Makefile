@@ -256,14 +256,14 @@ subsets/cumbo.obo: subsets/cumbo.owl
 
 # merge BSPO into RO
 # get rid of it
-mirror/bspo.owl: $(OWLSRC)
+mirror/bspo.owl: mirror-bspo | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo/bspo-base.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/bspo.owl
 
 # Probably no reason to merge them first
 # --add-obo-shorthand-to-properties: remove this to add mappings into remove
-mirror/ro.owl: $(OWLSRC) mirror/bspo.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl mirror/bspo.owl --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
+mirror/ro.owl: mirror/bspo.owl mirror-% | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl $< --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
 imports/envo_import.owl:
 	echo "ERROR $@ IMPORT CURRENTLY BLOCKED BECAUSE BROKEN UPSTREAM."
