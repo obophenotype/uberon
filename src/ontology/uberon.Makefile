@@ -1241,6 +1241,7 @@ ext-xref-conflict2.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r pext -r ZFA -i pe/tao-obsoletions.obo "entity_xref(Z,T),entity_replaced_by(T,U),\+id_idspace(Z,'UBERON'),id_idspace(U,'UBERON'),entity_xref(Ux,Z),id_idspace(Ux,'UBERON'),Ux\=U" -select "x(U,Z,Ux)" -label > $@
 
+.PHONY: release-diff
 release-diff:
 	cd diffs && make all
 
@@ -1250,18 +1251,20 @@ release-diff:
 
 #RELDIR=../..
 
+.PHONY: uberon
+uberon:
+	make prepare_release IMP=false PAT=false BRI=true
+	make copy_additional_files
+	make release-diff
 
-prepare_release: release-diff
-# TODO @matentzn. Verify removal of following
-# cp composite-brain.{obo,owl} $(RELDIR) ;\
-
-prepare_release: copy_additional_files
-
+.PHONY: copy_additional_files
 copy_additional_files:
 	rm -rf ../../bridge
 	mkdir -p ../../bridge
 	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
+	# TODO @matentzn. Verify removal of following
+	# cp composite-brain.{obo,owl} $(RELDIR) ;\
 
 #S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy
 
