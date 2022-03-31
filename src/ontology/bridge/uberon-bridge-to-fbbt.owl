@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2022-03-21/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbbt/2022-03-26/uberon/bridge/uberon-bridge-to-fbbt.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David Osumi-Sutherland</dc:contributor>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon editors</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic equivalence axioms between the drosophila anatomy ontology and Uberon. Note that currently Uberon focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future Uberon may bridge via the arthropod anatomy ontology</dc:description>
@@ -355,7 +355,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">panarthropod tagma (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arthropod tagma (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00000002</oboInOwl:id>
     </owl:Class>
     
@@ -1569,7 +1569,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6001057"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002346"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -1577,7 +1577,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect neurogenic region (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurectoderm (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00001057</oboInOwl:id>
     </owl:Class>
     
@@ -1619,46 +1619,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect embryonic brain (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00001060</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00001061 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00001061">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0002346"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neurectoderm (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00001061</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00001102 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00001102">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000934"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral nerve cord (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00001102</oboInOwl:id>
     </owl:Class>
     
 
@@ -3303,6 +3263,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBbt_00003039 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003039">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6003039"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal trunk of insect trachea (drosophila)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003039</oboInOwl:id>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBbt_00003125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003125">
@@ -3343,53 +3323,12 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00003148 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003148">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001245"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anus (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003148</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00003152 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003152">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015231"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circulatory system dorsal vessel (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003152</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FBbt_00003154 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003154">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0007100"/>
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015230"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -3399,7 +3338,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dorsal vessel heart (drosophila)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">primary circulatory organ (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003154</oboInOwl:id>
     </owl:Class>
     
@@ -3441,26 +3379,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect adult somatic muscle (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003259</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00003525 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00003525">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001135"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smooth muscle tissue (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00003525</oboInOwl:id>
     </owl:Class>
     
 
@@ -4585,26 +4503,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00004859 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004859">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004909"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelium of gonad (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004859</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FBbt_00004864 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004864">
@@ -4661,26 +4559,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">egg chamber (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004894</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00004896 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004896">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004911"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelium of female gonad (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004896</oboInOwl:id>
     </owl:Class>
     
 
@@ -4761,26 +4639,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">testis (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004928</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00004955 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004955">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004910"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">epithelium of male gonad (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00004955</oboInOwl:id>
     </owl:Class>
     
 
@@ -5071,7 +4929,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003127"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6005043"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -5079,7 +4937,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open tracheal system trachea (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect trachea (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005043</oboInOwl:id>
     </owl:Class>
     
@@ -5151,7 +5009,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001009"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0009054"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -5159,7 +5017,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circulatory system (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open circulatory system (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005057</oboInOwl:id>
     </owl:Class>
     
@@ -5265,28 +5123,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00005073 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005073">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005090"/>
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0014895"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">muscle structure (drosophila)</obo:IAO_0000589>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">somatic muscle (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005073</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FBbt_00005093 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005093">
@@ -5367,6 +5203,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBbt_00005097 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005097">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000934"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ventral nerve cord (drosophila)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005097</oboInOwl:id>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBbt_00005098 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005098">
@@ -5427,26 +5283,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00005103 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005103">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001020"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nervous system commissure (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005103</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FBbt_00005105 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005105">
@@ -5487,26 +5323,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00005137 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005137">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000045"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ganglion (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005137</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FBbt_00005139 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005139">
@@ -5523,26 +5339,6 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">neuropil (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005139</oboInOwl:id>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/FBbt_00005140 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00005140">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004732"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">segmental subdivision of nervous system (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00005140</oboInOwl:id>
     </owl:Class>
     
 
@@ -7313,7 +7109,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000480"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0034923"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -7321,7 +7117,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical group (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">disconnected anatomical group (drosophila)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00007276</oboInOwl:id>
     </owl:Class>
     
@@ -7847,13 +7643,13 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FBbt_00057001 -->
+    <!-- http://purl.obolibrary.org/obo/FBbt_00047153 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00057001">
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00047153">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_6057001"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001245"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -7861,8 +7657,28 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">insect anterior-posterior subdivision of organism (drosophila)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00057001</oboInOwl:id>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anus (drosophila)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00047153</oboInOwl:id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00058291 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00058291">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0015231"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">circulatory system dorsal vessel (drosophila)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt:00058291</oboInOwl:id>
     </owl:Class>
     
 
@@ -8155,12 +7971,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000045 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000045"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000058 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000058"/>
@@ -8290,12 +8100,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000479 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000479"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000480 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000480"/>
     
 
 
@@ -8479,12 +8283,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001009 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001009"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001011 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001011"/>
@@ -8506,12 +8304,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0001018 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001018"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001020 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001020"/>
     
 
 
@@ -8617,12 +8409,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001135 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001135"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001245 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001245"/>
@@ -8704,12 +8490,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0003125 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003125"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0003127 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003127"/>
     
 
 
@@ -8821,12 +8601,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004732 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004732"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0004734 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004734"/>
@@ -8845,33 +8619,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004909 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004909"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004910 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004910"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004911 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004911"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0004921 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004921"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005090 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005090"/>
     
 
 
@@ -8953,12 +8703,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007100 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007100"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0007376 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007376"/>
@@ -8980,6 +8724,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0008816 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008816"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0009054 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009054"/>
     
 
 
@@ -9037,12 +8787,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0014895 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0014895"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0015203 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0015203"/>
@@ -9070,6 +8814,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0018656 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0018656"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034923 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034923"/>
     
 
 
@@ -9358,12 +9108,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_6001056 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6001056"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_6001057 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6001057"/>
     
 
 
@@ -9829,6 +9573,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_6003039 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6003039"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_6003218 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6003218"/>
@@ -10066,6 +9816,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_6005037 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6005037"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_6005043 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6005043"/>
     
 
 
@@ -10432,12 +10188,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_6041000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6041000"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_6057001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_6057001"/>
     
 
 
