@@ -262,7 +262,7 @@ mirror/bspo.owl: mirror-bspo | $(MIRRORDIR)
 
 # Probably no reason to merge them first
 # --add-obo-shorthand-to-properties: remove this to add mappings into remove
-mirror/ro.owl: mirror/bspo.owl mirror-% | $(MIRRORDIR)
+mirror/ro.owl: mirror/bspo.owl mirror-ro | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl $< --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
 imports/envo_import.owl:
