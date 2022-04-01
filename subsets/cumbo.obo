@@ -13,6 +13,7 @@ subsetdef: feed_aligned "subset of classes that have logical defs text defs and 
 subsetdef: functional_classification "functional_classification"
 subsetdef: grouping_class "Subset consisting of classes creating for grouping purposes"
 subsetdef: homology_grouping "A grouping class that depends on an assumption of homology between subclasses"
+subsetdef: human_reference_atlas ""
 subsetdef: inconsistent_with_fma "classes that have some inconsistency with FMA"
 subsetdef: location_grouping ""
 subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
@@ -86,7 +87,6 @@ xref: VHOG:0000399
 xref: Wikipedia:Peripheral_nervous_system
 xref: XAO:0000178
 xref: ZFA:0000142
-relationship: mutually_spatially_disjoint_with UBERON:0001017 {exceptions="ZFA", source="https://github.com/obophenotype/uberon/issues/378", status="pending"} ! central nervous system
 relationship: part_of UBERON:0001016 ! nervous system
 
 [Term]
@@ -497,7 +497,7 @@ is_metadata_tag: true
 id: dc-contributor
 name: contributor
 namespace: uberon
-xref: http://purl.org/dc/elements/1.1/contributor
+xref: http://purl.org/dc/terms/contributor
 is_metadata_tag: true
 
 [Typedef]

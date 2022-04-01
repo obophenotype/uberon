@@ -1,0 +1,28 @@
+pattern_name: gland_acinus
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/gland_acinus.yaml
+
+classes:
+  glandular_acinus: UBERON:0009842
+  Thing: "owl:Thing"
+
+relations:
+  part_of: BFO:0000050
+
+vars:
+  gland: "Thing"
+
+name:
+  text: "%s acinus"
+  vars:
+   - gland
+
+
+def:
+  text: "The acinar part of a %s."
+  vars:
+    - gland
+
+equivalentTo:
+  text: "'glandular_acinus' and 'part_of' some %s"
+  vars:
+    - gland

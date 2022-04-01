@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fma
-data-version: 2021-11-26
+data-version: 2022-03-26
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and CL" xsd:string
@@ -553,12 +553,6 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:86740 ! 
 property_value: IAO:0000589 "photoreceptor cell (post-embryonic human)" xsd:string
 intersection_of: CL:0000210 ! photoreceptor cell
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: FMA:66786 ! 
-property_value: IAO:0000589 "synovial cell (post-embryonic human)" xsd:string
-intersection_of: CL:0000214 ! synovial cell
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1481,8 +1475,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:62302 ! 
-property_value: IAO:0000589 "olfactory epithelial support cell (post-embryonic human)" xsd:string
-intersection_of: CL:0000853 ! olfactory epithelial support cell
+property_value: IAO:0000589 "olfactory epithelial supporting cell (post-embryonic human)" xsd:string
+intersection_of: CL:0000853 ! olfactory epithelial supporting cell
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2093,8 +2087,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:62954 ! 
-property_value: IAO:0000589 "mucus neck cell of gastric gland (post-embryonic human)" xsd:string
-intersection_of: CL:0002181 ! mucus neck cell of gastric gland
+property_value: IAO:0000589 "mucous neck cell of gastric gland (post-embryonic human)" xsd:string
+intersection_of: CL:0002181 ! mucous neck cell of gastric gland
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2861,8 +2855,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:86712 ! 
-property_value: IAO:0000589 "periperhal blood mesothelial cell (post-embryonic human)" xsd:string
-intersection_of: CL:0002318 ! periperhal blood mesothelial cell
+property_value: IAO:0000589 "peripheral blood mesothelial cell (post-embryonic human)" xsd:string
+intersection_of: CL:0002318 ! peripheral blood mesothelial cell
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2993,8 +2987,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:84104 ! 
-property_value: IAO:0000589 "neuron of cerebral cortex (post-embryonic human)" xsd:string
-intersection_of: CL:0002609 ! neuron of cerebral cortex
+property_value: IAO:0000589 "obsolete neuron of cerebral cortex (post-embryonic human)" xsd:string
+intersection_of: CL:0002609 ! obsolete neuron of cerebral cortex
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -3169,6 +3163,12 @@ intersection_of: part_of NCBITaxon:9606
 id: FMA:84632 ! 
 property_value: IAO:0000589 "lower motor neuron (post-embryonic human)" xsd:string
 intersection_of: CL:0008039 ! lower motor neuron
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
+id: FMA:84104 ! 
+property_value: IAO:0000589 "cerebral cortex neuron (post-embryonic human)" xsd:string
+intersection_of: CL:0010012 ! cerebral cortex neuron
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -4286,12 +4286,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fma#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fma#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

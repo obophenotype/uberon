@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ma
-data-version: 2021-11-26
+data-version: 2022-03-26
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to ma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between adult moouse anatomy and Uberon" xsd:string
@@ -14584,6 +14584,12 @@ intersection_of: UBERON:0005750 ! glomerular parietal epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
+id: MA:0002607 ! 
+property_value: IAO:0000589 "glomerular visceral epithelium (post-embryonic mouse)" xsd:string
+intersection_of: UBERON:0005751 ! glomerular visceral epithelium
+intersection_of: part_of NCBITaxon:10090
+
+[Term]
 id: MA:0003235 ! 
 property_value: IAO:0000589 "urorectal septum (post-embryonic mouse)" xsd:string
 intersection_of: UBERON:0005760 ! urorectal septum
@@ -15541,12 +15547,6 @@ intersection_of: part_of NCBITaxon:10090
 id: MA:0002590 ! 
 property_value: IAO:0000589 "renal cortex peritubular capillary (post-embryonic mouse)" xsd:string
 intersection_of: UBERON:0006851 ! renal cortex peritubular capillary
-intersection_of: part_of NCBITaxon:10090
-
-[Term]
-id: MA:0002607 ! 
-property_value: IAO:0000589 "glomerular visceral epithelium (post-embryonic mouse)" xsd:string
-intersection_of: UBERON:0006852 ! glomerular visceral epithelium
 intersection_of: part_of NCBITaxon:10090
 
 [Term]
@@ -18482,12 +18482,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ma#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by
