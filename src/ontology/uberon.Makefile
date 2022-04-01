@@ -732,7 +732,7 @@ $(TMPDIR)/ext-merged-%.owl: ext.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disj
 # TODO: add to Oort
 
 merged.obo: tmp/merged.owl
-	cp $< $@
+	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
 
 $(REPORTDIR)/%-orphans: %.obo
 	$(SCRIPTSDIR)/obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | $(SCRIPTSDIR)/obo-grep.pl -r Term - | $(SCRIPTSDIR)/obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | $(SCRIPTSDIR)/obo-grep.pl -r Term - > $@.tmp && (egrep '^(id|name):'  $@.tmp > $@ || echo ok)
@@ -1251,12 +1251,15 @@ release-diff:
 
 #RELDIR=../..
 
+DEPLOY_GH=true
+
 .PHONY: uberon
 uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
-	$(MAKE) deploy_release GHVERSION="v$(TODAY)" --generate-notes
+	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)" --generate-notes; fi
+
 
 .PHONY: copy_additional_files
 copy_additional_files:
