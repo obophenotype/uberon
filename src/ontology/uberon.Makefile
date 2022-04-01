@@ -1253,9 +1253,10 @@ release-diff:
 
 .PHONY: uberon
 uberon:
-	make prepare_release IMP=false PAT=false BRI=true
-	make copy_additional_files
-	make release-diff
+	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
+	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
+	$(MAKE) release-diff
+	$(MAKE) deploy_release GHVERSION="v$(TODAY)" --generate-notes
 
 .PHONY: copy_additional_files
 copy_additional_files:
@@ -1265,6 +1266,11 @@ copy_additional_files:
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 	# TODO @matentzn. Verify removal of following
 	# cp composite-brain.{obo,owl} $(RELDIR) ;\
+
+deploy_release:
+	@test $(GHVERSION)
+	ls -alt $(ASSETS)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)
 
 #S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy
 
@@ -1905,15 +1911,3 @@ explain_humans:
 
 explain_humans_all:
 	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
-
-
-###############################
-### New release pipeline ######
-###############################
-
-#ASSETS BRIDGES
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(ASSETS)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)
