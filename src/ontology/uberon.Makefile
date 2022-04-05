@@ -176,12 +176,16 @@ $(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
 ## **Hacking_Feb_2022** TODO - rewrite as as expansions from annotation axioms using SPARQL. Expanded axioms --> component (as for taxon restrictions).
 
 TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
+DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
+# see https://github.com/obophenotype/uberon/issues/2381
+
 $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
-	$(ROBOT) merge -i $< --collapse-import-closure false \
+	$(ROBOT) merge -i $< -i $(DEVELOPS_FROM_CHAIN) --collapse-import-closure false \
 		relax \
 		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
 		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
 		unmerge -i $(TMP_REFL) \
+		unmerge -i $(DEVELOPS_FROM_CHAIN) \
 		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
 .PRECIOUS: $(TMPDIR)/materialized.owl
 
