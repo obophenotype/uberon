@@ -82,7 +82,7 @@ checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt 
     $(REPORTDIR)/uberon-orphans \
     $(REPORTDIR)/uberon-synclash
 
-test: $(REPORTDIR)/uberon-edit-xp-check reports/bfo-check.txt
+test: $(REPORTDIR)/uberon-edit-xp-check reports/bfo-check.txt reports/taxon-constraint-check.txt
 
 # ----------------------------------------
 # STEP 1: pre-processing and quick validation
@@ -633,7 +633,7 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@ || (tail -10 $@ && exit 1)
 
 # BRIDGE CHECKS.
 # these can be used to validate on a per-bridge file basis. There are a variety of flavours:
@@ -750,7 +750,7 @@ $(REPORTDIR)/%-orphans: %.obo
 
 # TODO: add to Oort
 $(REPORTDIR)/%-xp-check: %.obo
-	$(SCRIPTSDIR)/obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && exit 1)
+	$(SCRIPTSDIR)/obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && tail -20 $@.err && exit 1)
 
 # See: http://douroucouli.wordpress.com/2012/07/03/45/
 # Deleted sas per discussion with @cmungall
