@@ -25,11 +25,11 @@ These are the current imports in UBERON
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
 | ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
 | cteno | http://purl.obolibrary.org/obo/cteno.owl | None |
-| ehdaa2 | http://purl.obolibrary.org/obo/ehdaa2.owl | None |
+| ehdaa2 | https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo | None |
 | emapa | http://purl.obolibrary.org/obo/emapa.owl | None |
 | fbbt | http://purl.obolibrary.org/obo/fbbt.owl | None |
 | fbdv | http://purl.obolibrary.org/obo/fbdv.owl | None |
