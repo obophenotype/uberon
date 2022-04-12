@@ -194,6 +194,7 @@ $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
 		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
 .PRECIOUS: $(TMPDIR)/materialized.owl
 
+# Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
 ext.owl: $(TMPDIR)/materialized.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
 
@@ -1112,7 +1113,7 @@ composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
 composite-%.obo: composite-%.owl
 	$(OWLTOOLS) $< --add-obo-shorthand-to-properties --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
 
-## **Hacking_Feb_2022** This still needs fixing. Needed by Begee
+## **Hacking_Feb_2022** This still needs fixing. Needed by Begee: # Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
 ## This makes a composite of Uberon + various subontologies but does so in a clever way that avoids building a lattic-ey ontology.
 ### **Hacking_Feb_2022** TODO: the details of this need to be documented (in an earlier step - OWLtools does the important work - building unreasoned-composite-%.owl & upstream.
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
