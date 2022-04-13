@@ -1368,15 +1368,8 @@ $(BRIDGEDIR)/caro-bridge-to-xao.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 	#blip-findall -r uberonp -consult util/caro_equiv.pro "ec(C,Z,'XAO')" -select C-Z  -no_pred | $(SCRIPTSDIR)/tbl2obolinks.pl --rel equivalent_to - > $@
 
-# Overwrite base file to delete all external axioms present since first release
-$(ONT)-base.owl: $(SRC) $(OTHER_SRC)
-	$(ROBOT) remove --input $< --select imports --trim false \
-    remove --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/UBPROP_ --base-iri http://purl.obolibrary.org/obo/uberon# --axioms external --trim false \
-    merge $(patsubst %, -i %, $(OTHER_SRC)) \
-     $(SHARED_ROBOT_COMMANDS) annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
-		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		--output $@.tmp.owl && mv $@.tmp.owl $@
-    
+
+
 # ///////////////////////
 # ///////////////////////
 # ///  odds and ends ////
