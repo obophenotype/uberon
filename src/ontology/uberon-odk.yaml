@@ -36,19 +36,20 @@ import_group:
     - id: envo
     - id: ro
     - id: bspo
+      use_base: TRUE
     - id: chebi
       is_large: TRUE
       use_gzipped: TRUE
     - id: pato
     - id: bfo
     - id: ncbitaxon
-      is_large: TRUE
-      use_gzipped: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
     # Pipeline dependencies (not directly imported)
     - id: ceph
     - id: cteno
     - id: ehdaa2
+      mirror_from: https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
     - id: emapa
     - id: fbbt
     - id: fbdv
@@ -98,6 +99,7 @@ robot_report:
     - illegal-annotation-property
     - taxon-range
     - orcid-contributor
+    - obsolete-replaced_by
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
