@@ -692,10 +692,9 @@ $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAM
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall: TRY again, CARO is worth fixing (SOP: take screenshot, make individual tickets with one explanation eachg)
-$(REPORTDIR)/bridge-check-caro.txt: |  $(CATALOG_DYNAMIC)
+$(REPORTDIR)/bridge-check-caro.txt $(REPORTDIR)/bridge-check-wbls.txt: |  $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@ || true
-
 
 $(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
