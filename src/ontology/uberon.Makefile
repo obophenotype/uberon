@@ -807,6 +807,7 @@ TERM_pulmonary := UBERON:0001004
 TERM_cranial := UBERON:0010323
 TERM_renal := UBERON:0001008
 TERM_appendicular := UBERON:0002091
+TERM_life_cycle_stage := UBERON:0000105
 
 #SYSTEMS = musculoskeletal excretory nephron reproductive digestive nervous sensory immune circulatory pulmonary cranial renal appendicular
 
@@ -872,6 +873,10 @@ subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl
 
 subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
 	$(eval TERM_ID := $(TERM_sensory))
+	$(SUBSETCMD)
+
+subsets/life-stage-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_life_cycle_stage))
 	$(SUBSETCMD)
 
 #subsets/%-minimal.owl: subsets/merged-partonomy.owl
