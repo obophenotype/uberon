@@ -1268,7 +1268,7 @@ uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)" --generate-notes; fi
+	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 
 .PHONY: copy_additional_files
@@ -1283,7 +1283,7 @@ copy_additional_files:
 deploy_release:
 	@test $(GHVERSION)
 	ls -alt $(ASSETS)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)  --generate-notes
 
 #S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy
 
