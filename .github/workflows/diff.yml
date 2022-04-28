@@ -26,7 +26,7 @@ jobs:
       # Checks-out main branch under "master" directory
       - uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
           path: master
       - name: Diff classification
         run: docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --right ../../master/src/ontology/uberon-edit.obo -f markdown -o edit-diff.md
