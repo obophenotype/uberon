@@ -40,7 +40,7 @@ jobs:
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
-          ref: main
+          ref: master
           path: main
       - name: make step for branch
         if: env.STATUS == 1
