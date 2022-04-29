@@ -1,7 +1,7 @@
 name: 'Subset report'
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
     paths:
       - 'src/ontology/uberon-edit.obo'
   workflow_dispatch:
@@ -20,12 +20,12 @@ jobs:
         run: docker pull obolibrary/odklite
       # Checks-out current branch
       - uses: actions/checkout@v2
-      # Checks-out main and prepare git diff report
+      # Checks-out master and prepare git diff report
       - name: create git diff
         id: gitdiff
         if: ${{ github.event.pull_request.base.sha }}
         run: |
-          git fetch origin main ${{ github.event.pull_request.base.sha }}
+          git fetch origin master ${{ github.event.pull_request.base.sha }}
           ls -l
           git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/ontology/uberon-edit.obo > gitdiff.md
           cat gitdiff.md
@@ -36,31 +36,31 @@ jobs:
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
-      # Checks-out main branch under "main" directory
+      # Checks-out master branch under "master" directory
       - uses: actions/checkout@v2
         if: env.STATUS == 1
         with:
           ref: master
-          path: main
+          path: master
       - name: make step for branch
         if: env.STATUS == 1
         run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
       - name: debugging branch
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
-      - name: make step for main
+      - name: make step for master
         if: env.STATUS == 1
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
-      - name: debugging main
+        run: cd master/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
+      - name: debugging master
         if: ${{ failure() }}
-        run: tail -20 main/src/ontology/TESTLOG.log
+        run: tail -20 master/src/ontology/TESTLOG.log
       - name: prepare diff report
         if: env.STATUS == 1
         run: |
           cd src/ontology
           pwd
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/human-view.owl --right ../../main/src/ontology/subsets/human-view.owl -f markdown -o human-report.md
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/mouse-view.owl --right ../../main/src/ontology/subsets/mouse-view.owl -f markdown -o mouse-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/human-view.owl --right ../../master/src/ontology/subsets/human-view.owl -f markdown -o human-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/mouse-view.owl --right ../../master/src/ontology/subsets/mouse-view.owl -f markdown -o mouse-report.md
           ls -l
       - name: prepare comment
         if: env.STATUS == 1
