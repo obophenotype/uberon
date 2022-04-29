@@ -44,7 +44,7 @@ jobs:
       - name: Diff report
         run: |
           cd src/ontology
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-simple.owl --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o simple-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left ../../master/src/ontology/uberon-simple.owl --left-catalog catalog-v001.xml --right uberon-simple.owl --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o simple-report.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
