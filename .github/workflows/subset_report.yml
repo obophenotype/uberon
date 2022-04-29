@@ -59,8 +59,8 @@ jobs:
         run: |
           cd src/ontology
           pwd
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/human-view.owl --right ../../master/src/ontology/subsets/human-view.owl -f markdown -o human-report.md
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/mouse-view.owl --right ../../master/src/ontology/subsets/mouse-view.owl -f markdown -o mouse-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left ../../master/src/ontology/subsets/human-view.owl --right subsets/human-view.owl -f markdown -o human-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left ../../master/src/ontology/subsets/mouse-view.owl --right subsets/mouse-view.owl -f markdown -o mouse-report.md
           ls -l
       - name: prepare comment
         if: env.STATUS == 1
