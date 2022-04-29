@@ -1,0 +1,84 @@
+name: 'Create ROBOT diffs on Pull requests'
+
+on:
+  # Triggers the workflow on pull request events for the master branch
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'src/ontology/uberon-edit.obo'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  diff-reports:
+    runs-on: macos-latest
+    steps:
+      - uses: docker-practice/actions-setup-docker@master
+      - run: |
+          set -x
+          docker version
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
+      # Checks-out current branch
+      - uses: actions/checkout@v2
+      # Checks-out master branch under "master" directory
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+          path: master
+      - name: Diff classification
+        run: |
+          cd src/ontology
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-edit.obo --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
+      - name: Upload diff
+        uses: actions/upload-artifact@v2
+        with:
+          name: edit-diff.md
+          path: src/ontology/edit-diff.md
+      - name: Make step for branch
+        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
+      - name: Make step for master
+        run: cd master/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
+      - name: Diff report
+        run: |
+          cd src/ontology
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-simple.owl --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o simple-report.md
+      - name: Upload diff
+        uses: actions/upload-artifact@v2
+        with:
+          name: simple-report.md
+          path: src/ontology/simple-report.md
+  post_comment:
+    needs: [diff-reports]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download reasoned diff
+        uses: actions/download-artifact@v2
+        with:
+          name: simple-report.md
+      - name: Prepare reasoned comment
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report.md >> comment.md"
+      - name: Post reasoned comment
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../comment.md"
+          identifier: "REASONED"
+      - uses: actions/checkout@v2
+      - name: Download edit diff
+        uses: actions/download-artifact@v2
+        with:
+          name: edit-diff.md
+      - name: Prepare edit file comment
+        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
+      - name: Post comment
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../edit-comment.md"
+          identifier: "UNREASONED"
