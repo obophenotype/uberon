@@ -23,33 +23,33 @@ jobs:
         run: docker pull obolibrary/odklite
       # Checks-out current branch
       - uses: actions/checkout@v2
-      # Checks-out main branch under "master" directory
+      # Checks-out master branch under "master" directory
       - uses: actions/checkout@v2
         with:
           ref: master
           path: master
       - name: Diff classification
-        run: docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --right ../../master/src/ontology/uberon-edit.obo -f markdown -o edit-diff.md
+        run: |
+          cd src/ontology
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-edit.obo --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-edit.obo --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
           name: edit-diff.md
-          path: edit-diff
+          path: src/ontology/edit-diff.md
       - name: Make step for branch
         run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
-      - name: Make step for main
-        run: cd main/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
+      - name: Make step for master
+        run: cd master/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false uberon-simple.owl > TESTLOG.log
       - name: Diff report
         run: |
           cd src/ontology
-          ls -l
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --right ../../main/src/ontology/uberon-simple.owl -f markdown -o simple-report.md
-          ls -l
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left uberon-simple.owl --left-catalog catalog-v001.xml --right ../../master/src/ontology/uberon-simple.owl --right-catalog ../../master/src/ontology/catalog-v001.xml -f markdown -o simple-report.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
           name: simple-report.md
-          path: simple-report
+          path: src/ontology/simple-report.md
   post_comment:
     needs: [diff-reports]
     runs-on: ubuntu-latest
@@ -59,9 +59,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: simple-report.md
-          path: simple-report
       - name: Prepare reasoned comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report/simple-report.md >> comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" > comment.md; cat simple-report.md >> comment.md"
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -74,9 +73,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
-          path: edit-diff
       - name: Prepare edit file comment
-        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff/edit-diff.md >> edit-comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
       - name: Post comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
