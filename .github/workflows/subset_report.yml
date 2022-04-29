@@ -1,0 +1,80 @@
+name: 'Subset report'
+on:
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'src/ontology/uberon-edit.obo'
+  workflow_dispatch:
+env:
+  STATUS: 1
+jobs:
+  is_changed:
+    runs-on: macos-latest
+    # container: obolibrary/odkfull:latest
+    steps:
+      - uses: docker-practice/actions-setup-docker@master
+      - run: |
+          set -x
+          docker version
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
+      # Checks-out current branch
+      - uses: actions/checkout@v2
+      # Checks-out master and prepare git diff report
+      - name: create git diff
+        id: gitdiff
+        if: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch origin master ${{ github.event.pull_request.base.sha }}
+          ls -l
+          git diff ${{ github.event.pull_request.base.sha }} ${{ github.sha }} src/ontology/uberon-edit.obo > gitdiff.md
+          cat gitdiff.md
+          echo ::set-output name=diff::$(cat gitdiff.md)
+      # Set Status to 0 to cancel the workflow' if keyword not in the diff file
+      - name: conditional cancel
+        if: "!contains(steps.gitdiff.outputs.diff, 'in_taxon') && !contains(steps.gitdiff.outputs.diff, 'never_in_taxon') && !contains(steps.gitdiff.outputs.diff, 'only_in_taxon') && !contains(steps.gitdiff.outputs.diff, 'present_in_taxon')"
+        run: |
+          echo Taxon constraint updates do not exist
+          echo "STATUS=0" >> $GITHUB_ENV
+      # Checks-out master branch under "master" directory
+      - uses: actions/checkout@v2
+        if: env.STATUS == 1
+        with:
+          ref: master
+          path: master
+      - name: make step for branch
+        if: env.STATUS == 1
+        run: cd src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
+      - name: debugging branch
+        if: ${{ failure() }}
+        run: tail -20 src/ontology/TESTLOG.log
+      - name: make step for master
+        if: env.STATUS == 1
+        run: cd master/src/ontology && mkdir -p tmp reports mirror && docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false PAT=false IMP=false subsets/human-view.owl subsets/mouse-view.owl > TESTLOG.log
+      - name: debugging master
+        if: ${{ failure() }}
+        run: tail -20 master/src/ontology/TESTLOG.log
+      - name: prepare diff report
+        if: env.STATUS == 1
+        run: |
+          cd src/ontology
+          pwd
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/human-view.owl --right ../../master/src/ontology/subsets/human-view.owl -f markdown -o human-report.md
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left subsets/mouse-view.owl --right ../../master/src/ontology/subsets/mouse-view.owl -f markdown -o mouse-report.md
+          ls -l
+      - name: prepare comment
+        if: env.STATUS == 1
+        run: |
+          ls -l src/ontology/
+          echo "<details>   <summary> Here's a diff of your human-view </summary>   " > view-comment.md; cat src/ontology/human-report.md >> view-comment.md
+          wc -l view-comment.md
+          echo "</details><details>   <summary> Here's a diff of your mouse-view </summary>   " >> view-comment.md; cat src/ontology/mouse-report.md >> view-comment.md
+          wc -l view-comment.md
+          ls -l
+      - name: post comment
+        if: env.STATUS == 1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../view-comment.md"
