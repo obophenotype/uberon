@@ -32,7 +32,7 @@ jobs:
           echo ::set-output name=diff::$(cat gitdiff.md)
       # Set Status to 0 to cancel the workflow' if keyword not in the diff file
       - name: conditional cancel
-        if: "!contains(steps.gitdiff.outputs.diff, 'never_in_taxon')"
+        if: "!contains(steps.gitdiff.outputs.diff, 'in_taxon') && !contains(steps.gitdiff.outputs.diff, 'never_in_taxon') && !contains(steps.gitdiff.outputs.diff, 'only_in_taxon') && !contains(steps.gitdiff.outputs.diff, 'present_in_taxon')"
         run: |
           echo Taxon constraint updates do not exist
           echo "STATUS=0" >> $GITHUB_ENV
