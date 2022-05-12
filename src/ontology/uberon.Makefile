@@ -23,8 +23,6 @@ BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 
-BRIDGE_LSXREFS =
-
 
 all: uberon-qc
 	echo "make $@ succeeded..."
