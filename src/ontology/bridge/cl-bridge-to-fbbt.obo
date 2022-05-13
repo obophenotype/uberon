@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fbbt
-data-version: 2021-11-26
+data-version: 2022-03-26
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and CL. Note that currently CL focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future CL may bridge via the arthropod anatomy ontology" xsd:string
@@ -303,12 +303,6 @@ intersection_of: CL:0000540 ! neuron
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00005127 ! 
-property_value: IAO:0000589 "amacrine cell (drosophila)" xsd:string
-intersection_of: CL:0000561 ! amacrine cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00004905 ! 
 property_value: IAO:0000589 "border follicle cell (drosophila)" xsd:string
 intersection_of: CL:0000579 ! border follicle cell
@@ -367,12 +361,12 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/fbbt#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
 
 [Typedef]
 id: foaf-depicted_by

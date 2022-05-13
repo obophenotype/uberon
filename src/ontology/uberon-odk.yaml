@@ -5,16 +5,16 @@ git_main_branch: master
 repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
-use_dosdps: FALSE
+use_dosdps: TRUE
 export_formats:
   - owl
   - obo
   - json
-namespaces: 
+namespaces:
   - http://purl.obolibrary.org/obo/UBERON_
   - http://purl.obolibrary.org/obo/uberon#
   - http://purl.obolibrary.org/obo/UBPROP_
-release_artefacts: 
+release_artefacts:
   - base
   - full
   - simple
@@ -70,6 +70,7 @@ import_group:
     - id: ceph
     - id: cteno
     - id: ehdaa2
+      mirror_from: https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
     - id: emapa
     - id: fbbt
     - id: fbdv
@@ -108,16 +109,19 @@ subset_group:
 robot_java_args: '-Xmx20G'
 robot_report:
   release_reports: False
-  fail_on : ERROR
-  use_labels : False
-  custom_profile : True
-  report_on :
+  fail_on: ERROR
+  use_labels: False
+  custom_profile: True
+  report_on:
     - edit
-  custom_sparql_checks :
-    - equivalent-classes 
+  custom_sparql_checks:
+    - equivalent-classes
     - owldef-self-reference
     - illegal-annotation-property
-  custom_sparql_exports : 
+    - taxon-range
+    - orcid-contributor
+    - obsolete-replaced_by
+  custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
 create_obo_metadata: FALSE
@@ -126,3 +130,4 @@ documentation:
 components:
   products:
     - filename: mappings.owl
+    - filename: in-subset.owl

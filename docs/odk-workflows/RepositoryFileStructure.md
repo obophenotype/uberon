@@ -29,7 +29,7 @@ These are the current imports in UBERON
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
 | ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
 | cteno | http://purl.obolibrary.org/obo/cteno.owl | None |
-| ehdaa2 | http://purl.obolibrary.org/obo/ehdaa2.owl | None |
+| ehdaa2 | https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo | None |
 | emapa | http://purl.obolibrary.org/obo/emapa.owl | None |
 | fbbt | http://purl.obolibrary.org/obo/fbbt.owl | None |
 | fbdv | http://purl.obolibrary.org/obo/fbdv.owl | None |
@@ -53,3 +53,4 @@ These are the components in UBERON
 | Filename | URL |
 | -------- | --- |
 | mappings.owl | None |
+| in-subset.owl | None |

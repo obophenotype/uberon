@@ -1,0 +1,34 @@
+## http://www.histology.leeds.ac.uk/digestive/GI_layers.php
+
+pattern_name: uberon/patterns/mucosal_layers
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/mucosal_layers.yaml
+
+classes:
+  layer: "UBERON:0004923"
+  segment: "UBERON:0004921" ## subdivision of digestive tract
+
+relations:
+  part of: "BFO:0000050"
+
+vars:
+  layer: "'layer'"
+  segment: "'segment'"
+
+name:
+  text: "%s of %s"
+  vars:
+    - layer
+    - segment
+
+def:
+  text: "A %s that lines the %s."
+  vars:
+    - layer
+    - segment
+
+equivalentTo:
+  text: "% and ('part of' some %s)"
+
+  vars:
+    - layer
+    - segment
