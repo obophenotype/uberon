@@ -3,8 +3,16 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
 PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX life_cycle: <http://purl.obolibrary.org/obo/UBERON_0000104>
+PREFIX life_cycle_stage: <http://purl.obolibrary.org/obo/UBERON_0000105>
+PREFIX part_of: <http://purl.obolibrary.org/obo/BFO_0000050>
 
 SELECT DISTINCT ?xref WHERE {
-  ?sub rdfs:subClassOf* life_cycle: .
+  { 
+    ?sub part_of: life_cycle: .
+  }
+  UNION
+  {
+    ?sub rdfs:subClassOf* life_cycle_stage: . 
+  }
   ?sub oboInOwl:hasDbXref ?xref .
 }
