@@ -1,0 +1,10 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX life_cycle: <http://purl.obolibrary.org/obo/UBERON_0000104>
+
+SELECT DISTINCT ?xref WHERE {
+  ?sub rdfs:subClassOf* life_cycle: .
+  ?sub oboInOwl:hasDbXref ?xref .
+}
