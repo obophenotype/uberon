@@ -9,6 +9,7 @@ my $n;
 my $n_xrefs = 0;
 my $stype;
 my %nh = ();
+my %lsxrefs = ();
 
 my @fns = ();
 my $base = 'uberon';
@@ -17,6 +18,14 @@ while ($ARGV[0] =~ /^\-/) {
     my $opt = shift @ARGV;
     if ($opt eq '-b' || $opt eq '--base') {
         $base = shift @ARGV;
+    }
+    elsif ($opt eq '-l' || $opt eq '--life-cycle-xrefs') {
+        open(F, shift @ARGV);
+        while (<F>) {
+            chomp;
+            $lsxrefs{$_} = 1;
+        }
+        close(F);
     }
 }
 
@@ -74,6 +83,9 @@ while (<>) {
                 }
                 elsif ($t eq 'gd') {
                     print $fh "intersection_of: $id ! $n\n";
+                    if (exists($lsxrefs{$x})) {
+                        $rel = "occurs_in";
+                    }
                     print $fh "intersection_of: $rel $filler\n";
                 }
                 else {
@@ -110,11 +122,14 @@ foreach my $s (keys %fhmap) {
 
     my $prefix = "http://purl.obolibrary.org/obo/".lc($s);
     print $fh "[Typedef]\n";
-    print $fh "id: $prefix#part_of\n";
-    print $fh "equivalent_to: BFO:0000050\n\n";
+    print $fh "id: part_of\n";
+    print $fh "xref: BFO:0000050\n\n";
     print $fh "[Typedef]\n";
-    print $fh "id: $prefix#develops_from\n";
-    print $fh "equivalent_to: RO:0002225\n\n";
+    print $fh "id: develops_from\n";
+    print $fh "xref: RO:0002225\n\n";
+    print $fh "[Typedef]\n";
+    print $fh "id: occurs_in\n";
+    print $fh "xref: BFO:0000066\n\n";
 
     open(F,"ftr.obo");
     while(<F>) {

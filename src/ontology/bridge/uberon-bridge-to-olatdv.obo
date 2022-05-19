@@ -1,12 +1,12 @@
 ontology: uberon/bridge/uberon-bridge-to-olatdv
-data-version: 2022-03-21
+data-version: 2022-05-17
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
 id: OlatDv:0000010 ! 
 property_value: IAO:0000589 "life cycle stage (OlatDv)" xsd:string
 intersection_of: UBERON:0000105 ! life cycle stage
-intersection_of: part_of NCBITaxon:8089
+intersection_of: occurs_in NCBITaxon:8089
 
 [Term]
 id: OlatDv:ENTITY
@@ -31,6 +31,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by
