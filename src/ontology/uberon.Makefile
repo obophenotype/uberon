@@ -634,8 +634,8 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
-	#$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-	echo "STRONG WARNING: Skipped $@."
+	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	#echo "STRONG WARNING: Skipped $@."
 
 # BRIDGE CHECKS.
 # these can be used to validate on a per-bridge file basis. There are a variety of flavours:
