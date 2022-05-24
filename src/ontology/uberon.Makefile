@@ -634,8 +634,8 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
-	#$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-	echo "STRONG WARNING: Skipped $@."
+	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	#echo "STRONG WARNING: Skipped $@."
 
 # BRIDGE CHECKS.
 # these can be used to validate on a per-bridge file basis. There are a variety of flavours:
@@ -691,11 +691,6 @@ $(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external
 .PRECIOUS: $(REPORTDIR)/bridge-check-%.owl
 $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-
-# TODO @cmungall: TRY again, CARO is worth fixing (SOP: take screenshot, make individual tickets with one explanation eachg)
-$(REPORTDIR)/bridge-check-caro.txt $(REPORTDIR)/bridge-check-wbls.txt: |  $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@ || true
 
 $(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
@@ -777,6 +772,8 @@ QC_FILES = checks\
     $(REPORTDIR)/uberon-dv.txt\
     $(REPORTDIR)/composite-metazoan-dv.txt\
     reports/stages
+
+test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.txt
 
 uberon-qc: $(QC_FILES)
 	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
