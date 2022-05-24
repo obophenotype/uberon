@@ -773,7 +773,7 @@ QC_FILES = checks\
     $(REPORTDIR)/composite-metazoan-dv.txt\
     reports/stages
 
-test: $(REPORTDIR)/taxon-constraint-check.txt $(REPORTDIR)/bridge-check-caro.txt
+test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.txt
 
 uberon-qc: $(QC_FILES)
 	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
