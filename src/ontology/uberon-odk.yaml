@@ -40,7 +40,6 @@ import_group:
     - id: pr
       make_base: TRUE
       mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
-      is_large: TRUE
     - id: cl
       use_base: TRUE
     - id: go
@@ -65,22 +64,35 @@ import_group:
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
-      use-base: TRUE
+      use_base: TRUE
     # Pipeline dependencies (not directly imported)
     - id: ceph
+      make_base: TRUE
     - id: cteno
+      make_base: TRUE
     - id: ehdaa2
+      make_base: TRUE
       mirror_from: https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
     - id: emapa
+      make_base: TRUE
     - id: fbbt
+      use_base: TRUE
     - id: fbdv
+      use_base: TRUE
     - id: ma
+      make_base: TRUE
     - id: poro
+      make_base: TRUE
     - id: wbbt
+      use_base: TRUE
     - id: wbls
+      use_base: TRUE
     - id: xao
+      make_base: TRUE
     - id: zfa
+      use_base: TRUE
     - id: caro
+      use_base: TRUE
     # fma
     # allen: dhba, dmba, hba, mba, pba
 subset_group:
