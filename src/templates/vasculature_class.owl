@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:CCFH="http://ccf_tools_helpers/class_helper.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <Ontology/>
     
@@ -230,18 +233,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001182 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001182"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001183 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001183"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001190 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001190">
@@ -263,12 +254,6 @@
         </annotatedTarget>
         <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
     </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001215 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001215"/>
     
 
 
@@ -950,51 +935,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001545 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001545"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001546 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001546"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001547 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001547"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001549 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001549">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039341"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001549"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039341"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001550 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001550"/>
     
 
 
@@ -1514,30 +1457,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001669 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001669">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001669"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0001670 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001670">
@@ -1636,25 +1555,97 @@
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0002078 -->
 
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002078"/>
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002078">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002078"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <annotatedTarget>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </annotatedTarget>
+        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
+    </Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0002079 -->
 
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002079"/>
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002079">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002079"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <annotatedTarget>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </annotatedTarget>
+        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
+    </Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0002080 -->
 
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002080"/>
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002080">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002080"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <annotatedTarget>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </annotatedTarget>
+        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
+    </Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0002084 -->
 
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002084"/>
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002084">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    <Axiom>
+        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002084"/>
+        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <annotatedTarget>
+            <Restriction>
+                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
+            </Restriction>
+        </annotatedTarget>
+        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
+    </Axiom>
     
 
 
@@ -1889,6 +1880,12 @@
         </annotatedTarget>
         <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
     </Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004537 -->
+
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004537"/>
     
 
 
@@ -2296,25 +2293,7 @@
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0006666 -->
 
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006666">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006666"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
+    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006666"/>
     
 
 
@@ -2389,36 +2368,6 @@
             <Restriction>
                 <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
                 <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001535"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007150 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007150"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007152 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007152">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007152"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039452"/>
             </Restriction>
         </annotatedTarget>
         <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
@@ -2975,30 +2924,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0014694 -->
 
     <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0014694"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0015174 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0015174">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039244"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015174"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039244"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
     
 
 
@@ -3604,262 +3529,6 @@
         </annotatedTarget>
         <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
     </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039211 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039211">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001182"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039211"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001182"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039212 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039212">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001182"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039212"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001182"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039219 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039219">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001183"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039219"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001183"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039227 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039227">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001215"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039227"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001215"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039231 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039231">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001138"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039231"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001138"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039244 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039244">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0008320"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039244"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0008320"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039304 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039304">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001626"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039304"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001626"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039341 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039341">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001545"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001547"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001550"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039341"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001545"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039341"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001547"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039341"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001550"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039393 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039393">
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007150"/>
-            </Restriction>
-        </rdfs:subClassOf>
-    </Class>
-    <Axiom>
-        <annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0039393"/>
-        <annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <annotatedTarget>
-            <Restriction>
-                <onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
-                <someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007150"/>
-            </Restriction>
-        </annotatedTarget>
-        <oboInOwl:inSubset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_reference_atlas</oboInOwl:inSubset>
-    </Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0039452 -->
-
-    <Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0039452"/>
 </rdf:RDF>
 
 
