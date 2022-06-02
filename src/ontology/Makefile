@@ -170,10 +170,10 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON)  --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON)  --print 5 -o $@
 
 # ----------------------------------------
 # Release assets
@@ -367,7 +367,7 @@ mirror-cl: | $(TMPDIR)
 .PHONY: mirror-go
 .PRECIOUS: $(MIRRORDIR)/go.owl
 mirror-go: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go.owl --create-dirs -o $(MIRRORDIR)/go.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o $(MIRRORDIR)/go.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: envo
