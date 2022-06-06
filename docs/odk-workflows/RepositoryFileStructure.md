@@ -27,18 +27,6 @@ These are the current imports in UBERON
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
-| ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
-| cteno | http://purl.obolibrary.org/obo/cteno.owl | None |
-| ehdaa2 | https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo | None |
-| emapa | http://purl.obolibrary.org/obo/emapa.owl | None |
-| fbbt | http://purl.obolibrary.org/obo/fbbt.owl | None |
-| fbdv | http://purl.obolibrary.org/obo/fbdv.owl | None |
-| ma | http://purl.obolibrary.org/obo/ma.owl | None |
-| poro | http://purl.obolibrary.org/obo/poro.owl | None |
-| wbbt | http://purl.obolibrary.org/obo/wbbt.owl | None |
-| wbls | http://purl.obolibrary.org/obo/wbls.owl | None |
-| xao | http://purl.obolibrary.org/obo/xao.owl | None |
-| zfa | http://purl.obolibrary.org/obo/zfa.owl | None |
 | caro | http://purl.obolibrary.org/obo/caro.owl | None |
 
 ## Components
