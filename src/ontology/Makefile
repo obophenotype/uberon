@@ -47,7 +47,7 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 PATTERNDIR=                 ../patterns
 PATTERN_TESTER=              dosdp validate -i
@@ -116,7 +116,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-core merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
+SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-core life-stages-minimal merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -330,6 +330,8 @@ recreate-%:
 $(COMPONENTSDIR)/%: | $(COMPONENTSDIR)
 	touch $@
 .PRECIOUS: $(COMPONENTSDIR)/%
+
+
 
 
 
