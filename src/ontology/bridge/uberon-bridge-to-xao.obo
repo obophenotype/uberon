@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-xao
-data-version: 2022-03-26
+data-version: 2022-05-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to xao" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between XAO and Uberon" xsd:string
@@ -103,13 +103,13 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:1000012 ! 
 property_value: IAO:0000589 "embryo stage (xenopus)" xsd:string
 intersection_of: UBERON:0000068 ! embryo stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0000437 ! 
 property_value: IAO:0000589 "death stage (xenopus)" xsd:string
 intersection_of: UBERON:0000071 ! death stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0000155 ! 
@@ -157,49 +157,49 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:1000000 ! 
 property_value: IAO:0000589 "life cycle stage (xenopus)" xsd:string
 intersection_of: UBERON:0000105 ! life cycle stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000001 ! 
 property_value: IAO:0000589 "zygote stage (xenopus)" xsd:string
 intersection_of: UBERON:0000106 ! zygote stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000004 ! 
 property_value: IAO:0000589 "cleavage stage (xenopus)" xsd:string
 intersection_of: UBERON:0000107 ! cleavage stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000003 ! 
 property_value: IAO:0000589 "blastula stage (xenopus)" xsd:string
 intersection_of: UBERON:0000108 ! blastula stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000005 ! 
 property_value: IAO:0000589 "gastrula stage (xenopus)" xsd:string
 intersection_of: UBERON:0000109 ! gastrula stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000006 ! 
 property_value: IAO:0000589 "neurula stage (xenopus)" xsd:string
 intersection_of: UBERON:0000110 ! neurula stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000010 ! 
 property_value: IAO:0000589 "sexually immature stage (xenopus)" xsd:string
 intersection_of: UBERON:0000112 ! sexually immature stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000093 ! 
 property_value: IAO:0000589 "post-juvenile adult stage (xenopus)" xsd:string
 intersection_of: UBERON:0000113 ! post-juvenile adult stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0000129 ! 
@@ -2587,7 +2587,7 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:1000008 ! 
 property_value: IAO:0000589 "amphibian larval stage (xenopus)" xsd:string
 intersection_of: UBERON:0004728 ! amphibian larval stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0000092 ! 
@@ -3121,19 +3121,19 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:1000011 ! 
 property_value: IAO:0000589 "2 cell stage (xenopus)" xsd:string
 intersection_of: UBERON:0007232 ! 2 cell stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000013 ! 
 property_value: IAO:0000589 "4 cell stage (xenopus)" xsd:string
 intersection_of: UBERON:0007233 ! 4 cell stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:1000014 ! 
 property_value: IAO:0000589 "8 cell stage (xenopus)" xsd:string
 intersection_of: UBERON:0007236 ! 8 cell stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0004137 ! 
@@ -3331,7 +3331,7 @@ intersection_of: part_of NCBITaxon:8353
 id: XAO:1000008 ! 
 property_value: IAO:0000589 "tadpole stage (xenopus)" xsd:string
 intersection_of: UBERON:0009849 ! tadpole stage
-intersection_of: part_of NCBITaxon:8353
+intersection_of: occurs_in NCBITaxon:8353
 
 [Term]
 id: XAO:0003211 ! 
@@ -3650,6 +3650,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by
