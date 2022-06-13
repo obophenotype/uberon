@@ -47,7 +47,7 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 PATTERNDIR=                 ../patterns
 PATTERN_TESTER=              dosdp validate -i
@@ -67,7 +67,10 @@ RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic ex
 .PHONY: .FORCE
 
 .PHONY: all
-all: odkversion test all_assets
+all: all_odk
+
+.PHONY: all_odk
+all_odk: odkversion test all_assets
 
 .PHONY: test
 test: odkversion dosdp_validation sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
@@ -113,7 +116,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-core merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
+SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-core life-stages-minimal merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -205,7 +208,7 @@ CLEANFILES=$(MAIN_FILES) $(SRCMERGED)
 # It will ensure that all assets/files are fresh, and will copy to release folder
 
 .PHONY: prepare_release
-prepare_release: all
+prepare_release: all_odk
 	rsync -R $(RELEASE_ASSETS) $(RELEASEDIR) &&\
 	mkdir -p $(RELEASEDIR)/patterns && cp -rf $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
 	rm -f $(CLEANFILES) &&\
@@ -217,6 +220,10 @@ prepare_initial_release: all_assets
 	mkdir -p $(RELEASEDIR)/patterns && cp -rf $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
 	rm -f $(patsubst %, ./%, $(CLEANFILES)) &&\
 	cd $(RELEASEDIR) && git add $(RELEASE_ASSETS)
+
+.PHONY: prepare_release_fast
+prepare_release_fast:
+	$(MAKE) prepare_release IMP=false PAT=false MIR=false COMP=false
 
 # ------------------------
 # Imports: Seeding system 
@@ -276,7 +283,7 @@ $(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/%.owl $(IMPORTDIR)/%_terms_combined.txt
 ## Module for ontology: chebi
 
 $(IMPORTDIR)/chebi_import.owl: $(MIRRORDIR)/chebi.owl $(IMPORTDIR)/chebi_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/chebi_terms_combined.txt --force true --individuals include --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/chebi_terms_combined.txt --force true  --copy-ontology-annotations true --individuals include --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
@@ -323,6 +330,8 @@ recreate-%:
 $(COMPONENTSDIR)/%: | $(COMPONENTSDIR)
 	touch $@
 .PRECIOUS: $(COMPONENTSDIR)/%
+
+
 
 
 
@@ -873,6 +882,7 @@ Usage: [IMAGE=(odklite|odkfull)] [ODK_DEBUG=yes] sh run.sh make [(IMP|MIR|IMP_LA
 
 Core commands:
 * prepare_release:	Run the entire release pipeline. Use make IMP=false prepare_release to avoid rerunning the imports
+* prepare_release_fast:	Run the entire release pipeline without refreshing imports, recreating components or recompiling patterns.
 * update_repo:		Update the ODK repository setup using the config file uberon-odk.yaml
 * test:			Running all validation tests
 * odkversion:		Show the current version of the ODK Makefile and ROBOT.

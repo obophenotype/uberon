@@ -628,14 +628,14 @@ $(TMPDIR)/GO.xrf_abbs: $(SRC)
 #  * external-disjoints.owl
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(BRIDGEDIR)/bridges $(CATALOG_DYNAMIC)
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(TMPDIR)/external-disjoints.owl `ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
-	#$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-	echo "STRONG WARNING: Skipped $@."
+	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+	#echo "STRONG WARNING: Skipped $@."
 
 # BRIDGE CHECKS.
 # these can be used to validate on a per-bridge file basis. There are a variety of flavours:
@@ -679,29 +679,24 @@ bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
-$(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 aaa:
 	make IMP=false PAT=false MIR=false $(REPORTDIR)/quick-bridge-check-caro.txt
 
 # A bridge check uses uberon (no TCs) plus external ontology and the bridge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< imports/local-$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: $(REPORTDIR)/bridge-check-%.owl
 $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-# TODO @cmungall: TRY again, CARO is worth fixing (SOP: take screenshot, make individual tickets with one explanation eachg)
-$(REPORTDIR)/bridge-check-caro.txt $(REPORTDIR)/bridge-check-wbls.txt: |  $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@ || true
-
 $(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
 
 # A full bridge check uses ext plus external ontology and the bridge
-$(REPORTDIR)/full-bridge-check-%.txt: ext.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/full-bridge-check-%.txt: ext.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall says: worth fixing
@@ -728,13 +723,16 @@ $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@ || true
 
+$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
+	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
+	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
 
 # @Deprecated
-$(REPORTDIR)/core-bridge-check-%.txt: tmp/core.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/core-bridge-check-%.txt: tmp/core.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # for debugging:
-$(TMPDIR)/ext-merged-%.owl: ext.owl $(BRIDGEDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(TMPDIR)/ext-merged-%.owl: ext.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
 .PRECIOUS: $(TMPDIR)/ext-merged-%.owl
 
@@ -761,7 +759,7 @@ $(REPORTDIR)/%-xp-check: %.obo
 #	owltools $< -o file://`pwd`/$@
 
 QC_FILES = checks\
-    $(BRIDGEDIR)/bridges\
+    $(TMPDIR)/bridges\
     quick-bridge-checks\
     bridge-checks\
     full-bridge-checks\
@@ -774,6 +772,8 @@ QC_FILES = checks\
     $(REPORTDIR)/uberon-dv.txt\
     $(REPORTDIR)/composite-metazoan-dv.txt\
     reports/stages
+
+test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.txt
 
 uberon-qc: $(QC_FILES)
 	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
@@ -807,6 +807,7 @@ TERM_pulmonary := UBERON:0001004
 TERM_cranial := UBERON:0010323
 TERM_renal := UBERON:0001008
 TERM_appendicular := UBERON:0002091
+TERM_life_cycle_stage := UBERON:0000105
 
 #SYSTEMS = musculoskeletal excretory nephron reproductive digestive nervous sensory immune circulatory pulmonary cranial renal appendicular
 
@@ -872,6 +873,10 @@ subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl
 
 subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
 	$(eval TERM_ID := $(TERM_sensory))
+	$(SUBSETCMD)
+
+subsets/life-stage-minimal.owl: subsets/merged-partonomy.owl
+	$(eval TERM_ID := $(TERM_life_cycle_stage))
 	$(SUBSETCMD)
 
 #subsets/%-minimal.owl: subsets/merged-partonomy.owl
@@ -1051,7 +1056,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 $(TMPDIR)/ext-weak.owl: ext.owl | $(TMPDIR)
 	$(OWLTOOLS) $< --merge-imports-closure --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
 
-MBASE = $(TMPDIR)/ext-weak.owl $(BRIDGEDIR)/bridges imports/local-ma.owl imports/local-ehdaa2.owl imports/local-emapa.owl imports/local-xao.owl \
+MBASE = $(TMPDIR)/ext-weak.owl $(TMPDIR)/bridges imports/local-ma.owl imports/local-ehdaa2.owl imports/local-emapa.owl imports/local-xao.owl \
 	imports/local-zfa.owl imports/local-fbbt.owl imports/local-fbdv.owl \
 	imports/local-wbbt.owl imports/local-wbls.owl imports/local-ceph.owl \
 	imports/local-cteno.owl imports/local-poro.owl $(TMPDIR)/allen-mba.obo $(TMPDIR)/allen-pba.obo $(TMPDIR)/allen-hba.obo \
@@ -1196,6 +1201,16 @@ $(TMPDIR)/uberon-taxmod-%.owl: ext.owl
 # BRIDGES
 # ----------------------------------------
 
+# Download the FBbt mapping file
+.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
+$(TMPDIR)/fbbt-mappings.sssom.tsv:
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+
+# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
+# (no update if the downloaded file is absent or identical to the one we already have)
+mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+
 # Generate cross-references from the FBbt mapping file
 $(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
@@ -1223,8 +1238,8 @@ $(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
 make-bridge-ontologies-from-xrefs.pl:
 	cp $(SCRIPTSDIR)/make-bridge-ontologies-from-xrefs.pl $@
 
-$(BRIDGEDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl
-	if [ $(BRI) = true ]; then cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && touch bridges; fi
+$(TMPDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt
+	if [ $(BRI) = true ]; then cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && cd .. && touch $@; fi
 
 $(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
 	if [ $(BRI) = true ]; then egrep '^(idspace|treat-)' $(SRC) > $@.tmp && cat $< >> $@.tmp && $(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; fi
@@ -1238,8 +1253,8 @@ $(BRIDGEDIR)/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt $(TMPDIR)/upda
 $(BRIDGEDIR)/uberon-bridge-to-emap.owl: $(BRIDGEDIR)/uberon-bridge-to-emap.obo
 	$(MAKEOBO)
 
-$(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge-ontologies-from-xrefs.pl
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -b uberon-ext ext-xref.obo
+$(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt
+	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b uberon-ext ext-xref.obo
 
 # see #157
 # TODO @matentzn dont spend much time but perhaps make ticket
