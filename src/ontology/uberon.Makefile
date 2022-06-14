@@ -636,11 +636,11 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 # Note: the bridges are generated in new_bridge branch - this might change in the future, if it breaks here, please check ABA_Uberon repo to make sure that the new bridges are appropriately linked
 
 UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/new_bridge/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
-$(COMPONENTSDIR)/uberon-bridge-to-mba.owl: $(SRC)
+$(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
 	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
 UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/new_bridge/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
-$(COMPONENTSDIR)/uberon-bridge-to-dmba.owl: $(SRC)
+$(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
 	$(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
 # see above
