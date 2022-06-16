@@ -637,15 +637,15 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 
 UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/new_bridge/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
 $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
-	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
+	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
 $(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
-	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $(BRIDGEDIR)/uberon-bridge-to-mba.obo
+	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $(BRIDGEDIR)/uberon-bridge-to-mba.obo; fi
 
 UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/new_bridge/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
-	$(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@
+	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
-	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
+	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $(BRIDGEDIR)/uberon-bridge-to-dmba.obo; fi
 
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
