@@ -1313,7 +1313,8 @@ copy_additional_files:
 	# TODO @matentzn. Verify removal of following
 	# cp composite-brain.{obo,owl} $(RELDIR) ;\
 
-MAIN_FILES_RELEASE = $(foreach n, $(ASSETS), ../../$(n))
+FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(ASSETS)), ../../$(n))
 
 deploy_release:
 	@test $(GHVERSION)
