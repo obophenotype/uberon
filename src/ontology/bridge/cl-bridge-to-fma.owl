@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2022-05-27/uberon/bridge/cl-bridge-to-fma.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2022-06-20/uberon/bridge/cl-bridge-to-fma.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Onard Mejino</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terry Hayamizu</dc:contributor>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL editors</dc:creator>
@@ -3164,12 +3164,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CL_0002520 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002520"/>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/CL_0002543 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002543"/>
@@ -4439,6 +4433,12 @@
     <!-- http://purl.obolibrary.org/obo/CL_1001611 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001611"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_2000032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_2000032"/>
     
 
 
@@ -9070,7 +9070,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pericyte cell (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pericyte (post-embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:63174</oboInOwl:id>
     </owl:Class>
     
@@ -12936,7 +12936,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">glomerular visceral epithelial cell (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">podocyte (post-embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:70967</oboInOwl:id>
     </owl:Class>
     
@@ -16092,26 +16092,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/FMA_83807 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_83807">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002520"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nephrocyte (post-embryonic human)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:83807</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/FMA_83808 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_83808">
@@ -17043,6 +17023,7 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000111"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_2000032"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -17050,7 +17031,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral neuron (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obsolete peripheral neuron (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peripheral nervous system neuron (post-embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84664</oboInOwl:id>
     </owl:Class>
     
