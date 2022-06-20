@@ -1313,10 +1313,12 @@ copy_additional_files:
 	# TODO @matentzn. Verify removal of following
 	# cp composite-brain.{obo,owl} $(RELDIR) ;\
 
+MAIN_FILES_RELEASE = $(foreach n, $(ASSETS), ../../$(n))
+
 deploy_release:
 	@test $(GHVERSION)
-	ls -alt $(ASSETS)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(ASSETS)  --generate-notes
+	ls -alt $(MAIN_FILES_RELEASE)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
 
 #S3CMD = s3cmd -c ~/.s3cfg.go-push --acl-public --reduced-redundancy
 
