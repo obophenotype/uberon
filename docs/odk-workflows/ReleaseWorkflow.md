@@ -21,11 +21,7 @@ Preparation:
 
 To actually run the release, you:
 
-1. Open a command line terminal window and navigate to the src/ontology directory (`cd uberon/src/ontology`)
-2. Run release pipeline:`sh run.sh make prepare_release -B`. Note that for some ontologies, this process can take up to 90 minutes - especially if there are large ontologies you depend on, like PRO or CHEBI.
-3. If everything went well, you should see the following output on your machine: `Release files are now in ../.. - now you should commit, push and make a release on your git hosting site such as GitHub or GitLab`.
-
-This will create all the specified release targets (OBO, OWL, JSON, and the variants, ont-full and ont-base) and copy them into your release directory (the top level of your repo).
+Uberon uses a specific workflow for release, please refer to [Uberon release documentation](../uberon-release.md) for instructions on how to create a Uberon release. 
 
 ## Review the release
 
@@ -44,10 +40,7 @@ Once your [CI checks](ContinuousIntegration.md) have passed, and your reviews ar
 
 ## Create a GitHub release
 
-1. Go to your releases page on GitHub by navigating to your repository, and then clicking on releases (usually on the right, for example: https://github.com/obophenotype/uberon/releases. Then click "Draft new release"
-1. As the tag version you **need to choose the date on which your ontologies were build.** You can find this, for example, by looking at the `uberon.obo` file and check the `data-version:` property. The date needs to be prefixed with a `v`, so, for example `v2020-02-06`.
-1. You can write whatever you want in the release title, but we typically write the date again. The description underneath should contain a concise list of changes or term additions.
-1. Click "Publish release". Done.
+Uberon uses a specific workflow for release, please refer to [Uberon release documentation](../uberon-release.md) for instructions on how to create a Uberon release. 
 
 ## Debugging typical ontology release problems
 
