@@ -33,10 +33,23 @@ Press Enter to open github.com in your browser...
 
 ## Release Process
 
-1. Follow the preparation steps found in the [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md)
+### Preparation 
+
+Preparation:
+
+1. Ensure that all your pull requests are merged into your main (master) branch
+1. Make sure that all changes to master are committed to Github (`git status` should say that there are no modified files)
+1. Locally make sure you have the latest changes from master (`git pull`)
+1. Checkout a new branch (e.g. `git checkout -b release-2021-01-01`)
+1. You may or may not want to refresh your imports as part of your release strategy (see [here](UpdateImports.md))(Note: in UBERON we decouple our imports and releases - we hence advice that you do not update imports)
+1. Make sure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
+
+To actually run the release, you:
+
 1. Open a command line terminal window and navigate to the src/ontology directory (`cd uberon/src/ontology`)
-1. Run the release using `sh run.sh make uberon DEPLOY_GH=false`. This will build all files and copy them to the correct place. 
-1. Review the release as per the review release section in [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md)
+1. Run the release using `sh run.sh make IMP=false uberon DEPLOY_GH=false`. This will build all files and copy them to the correct place. (Note: the `IMP=false` is used to decouple imports refresh with release)
+1. Review the release as per the `review release` section in [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md)
+1. Create a pull request and get a second set of eyes to review it. As Uberon uses a custom release pipeline, we ask that you get at least one core developer to review it too.
 1. Merge to main branch once reviewed and CI checks have passed
 1. Deploy release on GitHub by running `make deploy_release GHVERSION="v2022-06-20"` on the release branch (DO NOTE CHANGE TO MAIN BRANCH!), replacing the date with the date of release (NOTE: no `sh run.sh`)
 Editors note: ODK 1.3.2 will have a feature to run the release from inside the docker container. For now deploy_release has to be run outside.
