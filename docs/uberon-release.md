@@ -47,7 +47,7 @@ Preparation:
 To actually run the release, you:
 
 1. Open a command line terminal window and navigate to the src/ontology directory (`cd uberon/src/ontology`)
-1. Run the release using `sh run.sh make IMP=false uberon DEPLOY_GH=false`. This will build all files and copy them to the correct place. (Note: the `IMP=false` is used to decouple imports refresh with release)
+1. Run the release using `sh run.sh make uberon DEPLOY_GH=false`. This will build all files and copy them to the correct place. (Note: the `IMP=false` is used to decouple imports refresh with release)
 1. Review the release as per the `review release` section in [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md)
 1. Create a pull request and get a second set of eyes to review it. As Uberon uses a custom release pipeline, we ask that you get at least one core developer to review it too.
 1. Merge to main branch once reviewed and CI checks have passed
