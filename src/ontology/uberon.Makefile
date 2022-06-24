@@ -891,7 +891,7 @@ subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
 	$(eval TERM_ID := $(TERM_sensory))
 	$(SUBSETCMD)
 
-subsets/life-stage-minimal.owl: subsets/merged-partonomy.owl
+subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl
 	$(eval TERM_ID := $(TERM_life_cycle_stage))
 	$(SUBSETCMD)
 
