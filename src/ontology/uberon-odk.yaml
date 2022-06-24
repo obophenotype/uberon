@@ -113,3 +113,22 @@ components:
     - filename: in-subset.owl
     - filename: hra_subset.owl
     - filename: vasculature_class.owl
+mappings:
+  products:
+    - filename: fbbt-mappings.sssom.tsv
+      mirror_from: http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv
+      release: false
+    - filename: wbbt-mappings.sssom.tsv
+    - filename: legacy-mappings.sssom.tsv
+      type: xref-generated
+bridges:
+  products:
+    - filename: uberon-to-fbbt-bridge.owl
+      from_sssom: fbbt-mappings.sssom.tsv
+    - filename: uberon-to-wbbt-bridge.owl
+      from_sssom: wbbt-mappings.sssom.tsv
+    - filename: uberon-to-mba-mappings.owl
+    - filename: uberon-to-zfa-bridge.owl
+      from_xref: ZFA
+    - filename: uberon-to-zfs-bridge.owl
+      from_xref: ZFS
