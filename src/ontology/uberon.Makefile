@@ -926,6 +926,7 @@ subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/d
 #subsets/life-stages.obo: composite-metazoan.obo
 subsets/life-stages-composite.owl: composite-metazoan.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f owl $@ --no-check --reasoner-dispose 2>&1 > $@.LOG
+	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o -f owl --no-check --reasoner-dispose $@ 2>&1 > $@.LOG
 
 subsets/life-stages-core.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
