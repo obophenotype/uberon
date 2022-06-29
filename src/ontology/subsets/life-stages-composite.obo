@@ -1,13 +1,6 @@
 format-version: 1.2
-ontology: uberon/subsets/life-stages-composite.obo
+ontology: uberon/subsets/life-stages-composite
 property_value: http://purl.org/dc/elements/1.1/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" xsd:string
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nDeclaration(Class(<http://purl.obolibrary.org/obo/HsapDv_0000000>))\n############################\n#   Classes\n############################\n\n# Class: <http://purl.obolibrary.org/obo/HsapDv_0000000> (<http://purl.obolibrary.org/obo/HsapDv_0000000>)\n\nSubClassOf(<http://purl.obolibrary.org/obo/HsapDv_0000000> owl:Thing)\n\n# Class: owl:Nothing (owl:Nothing)\n\nSubClassOf(owl:Nothing owl:Nothing)\n\n\n)
-
-[Term]
-id: EHDAA2:0004523
-name: heart associated veins (human)
-is_a: HsapDv:0000027 ! Carnegie stage 20
-relationship: existence_starts_during_or_after HsapDv:0000016 ! Carnegie stage 09
 
 [Term]
 id: HsapDv:0000000
@@ -46,6 +39,7 @@ property_value: start_dpf "0.0" xsd:float
 [Term]
 id: HsapDv:0000003
 name: Carnegie stage 01
+name: CS01
 namespace: human_developmental_stage
 def: "Embryonic stage defined by a fertilized oocyte and presence of pronuclei." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Starts at day 1 post-fertilization, beginning of the first week.
@@ -61,6 +55,7 @@ property_value: start_dpf "0.0" xsd:float
 [Term]
 id: HsapDv:0000005
 name: Carnegie stage 02
+name: CS02
 namespace: human_developmental_stage
 def: "Embryonic stage during which cell division occurs with reduction in cytoplasmic volume, and formation of inner and outer cell mass." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 2 and day 3 post-fertilization.
@@ -71,7 +66,7 @@ xref: UBERON:0000107
 xref: XUO:0000131
 is_a: HsapDv:0000000 ! life cycle stage
 relationship: part_of HsapDv:0000002 ! embryonic stage
-relationship: preceded_by HsapDv:0000003 ! Carnegie stage 01
+relationship: preceded_by HsapDv:0000003 ! CS01
 property_value: start_dpf "2.5" xsd:float
 
 [Term]
@@ -88,6 +83,7 @@ relationship: preceded_by HsapDv:0000005 ! Carnegie stage 02
 [Term]
 id: HsapDv:0000007
 name: Carnegie stage 03
+name: CS03
 namespace: human_developmental_stage
 def: "Blastula stage with the loss of the zona pellucida and the definition of a free blastocyst." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 4 and day 5 post-fertilization.
@@ -104,6 +100,7 @@ property_value: start_dpf "4.5" xsd:float
 [Term]
 id: HsapDv:0000008
 name: Carnegie stage 04
+name: CS04
 namespace: human_developmental_stage
 def: "Blastula stage during which the blastocyst becomes attached." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 5 and day 6 post-fertilization.
@@ -127,7 +124,7 @@ synonym: "CS04" EXACT []
 xref: FMA:295909
 xref: XUO:0000134
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000008 ! Carnegie stage 04
+relationship: immediately_preceded_by HsapDv:0000008 ! CS04
 relationship: part_of HsapDv:0000006 ! blastula stage
 property_value: has_stage_marker GO:0007566
 property_value: start_dpf "7.0" xsd:float
@@ -173,6 +170,7 @@ property_value: has_stage_marker EHDAA2:0001254
 [Term]
 id: HsapDv:0000013
 name: Carnegie stage 07
+name: CS07
 namespace: human_developmental_stage
 def: "Neurula stage during which the notochordal process appears, and gastrulation is continuing." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 15 and day 17 post-fertilization, beginning of the third week.
@@ -182,7 +180,7 @@ xref: FMA:295911
 xref: XUO:0000136
 is_a: HsapDv:0000000 ! life cycle stage
 relationship: immediately_preceded_by HsapDv:0000011 ! Carnegie stage 06
-relationship: immediately_preceded_by HsapDv:0000035 ! Carnegie stage 06b
+relationship: immediately_preceded_by HsapDv:0000035 ! CS06b
 relationship: part_of HsapDv:0000012 ! neurula stage
 property_value: has_stage_marker EHDAA2:0001279
 property_value: start_dpf "15.0" xsd:float
@@ -190,6 +188,7 @@ property_value: start_dpf "15.0" xsd:float
 [Term]
 id: HsapDv:0000014
 name: Carnegie stage 08
+name: CS08
 namespace: human_developmental_stage
 def: "Neurula stage during which the primitive pit and the notochordal canal appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 17 and day 19 post-fertilization.
@@ -198,7 +197,7 @@ xref: EHDAA2:CS08
 xref: FMA:295912
 xref: XUO:0000137
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000013 ! Carnegie stage 07
+relationship: immediately_preceded_by HsapDv:0000013 ! CS07
 relationship: part_of HsapDv:0000012 ! neurula stage
 property_value: has_stage_marker EHDAA2:0001521
 property_value: has_stage_marker UBERON:0013704
@@ -217,6 +216,7 @@ relationship: preceded_by HsapDv:0000012 ! neurula stage
 [Term]
 id: HsapDv:0000016
 name: Carnegie stage 09
+name: CS09
 namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 1-3 appear, and neural folds, cardiac primordium, and head fold are present." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 19 and day 21 post-fertilization.
@@ -225,7 +225,7 @@ xref: EHDAA2:CS09
 xref: FMA:295913
 xref: XUO:0000138
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000014 ! Carnegie stage 08
+relationship: immediately_preceded_by HsapDv:0000014 ! CS08
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: has_stage_marker EHDAA2:0000214
 property_value: has_stage_marker EHDAA2:0001249
@@ -237,6 +237,7 @@ property_value: start_dpf "19.0" xsd:float
 [Term]
 id: HsapDv:0000017
 name: Carnegie stage 10
+name: CS10
 namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 4-12 appear, and the neural fold fuses." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 22 and day 23 post-fertilization, beginning of the fourth week.
@@ -262,6 +263,7 @@ property_value: start_dpf "22.0" xsd:float
 [Term]
 id: HsapDv:0000018
 name: Carnegie stage 11
+name: CS11
 namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 13-20 appear, and the rostral neuropore closes." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 23 and day 26 post-fertilization.
@@ -270,7 +272,7 @@ xref: EHDAA2:CS11
 xref: FMA:295915
 xref: XUO:0000140
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000017 ! Carnegie stage 10
+relationship: immediately_preceded_by HsapDv:0000017 ! CS10
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: has_stage_marker EHDAA2:0001861
 property_value: has_stage_marker EHDAA2:0001862
@@ -285,6 +287,7 @@ property_value: start_dpf "23.0" xsd:float
 [Term]
 id: HsapDv:0000019
 name: Carnegie stage 12
+name: CS12
 namespace: human_developmental_stage
 def: "Organogenesis stage during which somites 21-29 appear, and the caudal neuropore closes." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 26 and day 30 post-fertilization.
@@ -293,7 +296,7 @@ xref: EHDAA2:CS12
 xref: FMA:295916
 xref: XUO:0000141
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000018 ! Carnegie stage 11
+relationship: immediately_preceded_by HsapDv:0000018 ! CS11
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: has_stage_marker EHDAA2:0001869
 property_value: has_stage_marker EHDAA2:0001870
@@ -310,6 +313,7 @@ property_value: start_dpf "26.0" xsd:float
 [Term]
 id: HsapDv:0000020
 name: Carnegie stage 13
+name: CS13
 namespace: human_developmental_stage
 def: "Organogenesis developmental stage during which somite 30 appears, and leg buds, lens placode, pharyngeal arches are present." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 28 and day 32 post-fertilization, beginning of the fifth week.
@@ -328,6 +332,7 @@ property_value: start_dpf "28.0" xsd:float
 [Term]
 id: HsapDv:0000021
 name: Carnegie stage 14
+name: CS14
 namespace: human_developmental_stage
 def: "Organogenesis stage during which lens pit and optic cup appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 31 and day 35 post-fertilization.
@@ -345,6 +350,7 @@ property_value: start_dpf "31.0" xsd:float
 [Term]
 id: HsapDv:0000022
 name: Carnegie stage 15
+name: CS15
 namespace: human_developmental_stage
 def: "Organogenesis stage during which lens vesicle, nasal pit, and hand plate appear." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 35 and day 38 post-fertilization.
@@ -365,6 +371,7 @@ property_value: start_dpf "35.0" xsd:float
 [Term]
 id: HsapDv:0000023
 name: Carnegie stage 16
+name: CS16
 namespace: human_developmental_stage
 def: "Organogenesis stage during which nasal pits moved ventrally, and features are auricular hillocks, and foot plate." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 37 and day 42 post-fertilization, beginning of the sixth week.
@@ -383,6 +390,7 @@ property_value: start_dpf "37.0" xsd:float
 [Term]
 id: HsapDv:0000024
 name: Carnegie stage 17
+name: CS17
 namespace: human_developmental_stage
 def: "Organogenesis stage during which finger rays become visible." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 42 and day 44 post-fertilization.
@@ -391,13 +399,14 @@ xref: EHDAA2:CS17
 xref: FMA:295920
 xref: XUO:0000146
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000023 ! Carnegie stage 16
+relationship: immediately_preceded_by HsapDv:0000023 ! CS16
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: start_dpf "42.0" xsd:float
 
 [Term]
 id: HsapDv:0000025
 name: Carnegie stage 18
+name: CS18
 namespace: human_developmental_stage
 def: "Organogenesis stage during which ossification commences." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 44 and day 48 post-fertilization, beginning of the seventh week.
@@ -406,7 +415,7 @@ xref: EHDAA2:CS18
 xref: FMA:295921
 xref: XUO:0000147
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000024 ! Carnegie stage 17
+relationship: immediately_preceded_by HsapDv:0000024 ! CS17
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: has_stage_marker GO:0001503
 property_value: start_dpf "44.0" xsd:float
@@ -414,6 +423,7 @@ property_value: start_dpf "44.0" xsd:float
 [Term]
 id: HsapDv:0000026
 name: Carnegie stage 19
+name: CS19
 namespace: human_developmental_stage
 def: "Organogenesis stage during which the straightening of the trunk starts." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 48 and day 51 post-fertilization.
@@ -422,13 +432,14 @@ xref: EHDAA2:CS19
 xref: FMA:295922
 xref: XUO:0000148
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000025 ! Carnegie stage 18
+relationship: immediately_preceded_by HsapDv:0000025 ! CS18
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: start_dpf "48.0" xsd:float
 
 [Term]
 id: HsapDv:0000027
 name: Carnegie stage 20
+name: CS20
 namespace: human_developmental_stage
 def: "Organogenesis stage during which upper limbs are longer and bent at elbow." [http://embryology.med.unsw.edu.au/embryology/index.php?title=Carnegie_stage_table]
 comment: Usually starts between day 51 and day 53 post-fertilization, beginning of the eighth week.
@@ -437,7 +448,8 @@ xref: EHDAA2:CS20
 xref: FMA:295923
 xref: XUO:0000149
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000026 ! Carnegie stage 19
+relationship: existence_starts_during_or_after HsapDv:0000032 ! CS05b
+relationship: immediately_preceded_by HsapDv:0000026 ! CS19
 relationship: part_of HsapDv:0000015 ! organogenesis stage
 property_value: start_dpf "51.0" xsd:float
 
@@ -489,6 +501,7 @@ property_value: start_dpf "56.0" xsd:float
 [Term]
 id: HsapDv:0000031
 name: Carnegie stage 05a
+name: CS05a
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a solid trophoblast." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
 synonym: "CS05a" EXACT [EHDAA2:CS05a]
@@ -502,6 +515,7 @@ relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 [Term]
 id: HsapDv:0000032
 name: Carnegie stage 05b
+name: CS05b
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a trophoblastic lacunae." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
 synonym: "CS05b" EXACT [EHDAA2:CS05b]
@@ -509,13 +523,14 @@ xref: EHDAA2:CS05b
 xref: FMA:296709
 xref: XUO:0000188
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000031 ! Carnegie stage 05a
+relationship: immediately_preceded_by HsapDv:0000031 ! CS05a
 relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 property_value: has_stage_marker EHDAA2:0004715
 
 [Term]
 id: HsapDv:0000033
 name: Carnegie stage 05c
+name: CS05c
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 5 defined by a lacunar vascular circle." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage05.pdf]
 synonym: "CS05c" EXACT [EHDAA2:CS05c]
@@ -523,12 +538,13 @@ xref: EHDAA2:CS05c
 xref: FMA:296711
 xref: XUO:0000189
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000032 ! Carnegie stage 05b
+relationship: immediately_preceded_by HsapDv:0000032 ! CS05b
 relationship: part_of HsapDv:0000009 ! Carnegie stage 05
 
 [Term]
 id: HsapDv:0000034
 name: Carnegie stage 06a
+name: CS06a
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 6 during which chorionic villi appear." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage06.pdf]
 synonym: "CS06a" EXACT [EHDAA2:CS06a]
@@ -542,13 +558,14 @@ property_value: has_stage_marker EHDAA2:0004717
 [Term]
 id: HsapDv:0000035
 name: Carnegie stage 06b
+name: CS06b
 namespace: human_developmental_stage
 def: "Carnegie developmental stage 6 during which the primitive streak appears." [http://www.medicalmuseum.mil/assets/documents/collections/hdac/stage06.pdf]
 synonym: "CS06b" EXACT [EHDAA2:CS06b]
 xref: EHDAA2:CS06b
 xref: XUO:0000191
 is_a: HsapDv:0000000 ! life cycle stage
-relationship: immediately_preceded_by HsapDv:0000034 ! Carnegie stage 06a
+relationship: immediately_preceded_by HsapDv:0000034 ! CS06a
 relationship: part_of HsapDv:0000011 ! Carnegie stage 06
 property_value: has_stage_marker EHDAA2:0001525
 
@@ -3127,37 +3144,176 @@ created_by: dos
 
 [Typedef]
 id: existence_starts_during_or_after
+name: existence starts during or after
+namespace: uberon
+def: "x existence starts during or after y if and only if the time point at which x starts is after or equivalent to the time point at which y starts. Formally: x existence starts during or after y iff α (x) >= α (y)." []
+xref: RO:0002496
 is_a: RO:0002487
 
 [Typedef]
 id: immediately_preceded_by
+name: immediately preceded by
+name: immediately_preceded_by
+namespace: bonobo_stages_ontology
+namespace: cat_stages_ontology
+namespace: cavy_stages_ontology
+namespace: chicken_stages_ontology
+namespace: chimpanzee_stages_ontology
+namespace: cow_stages_ontology
+namespace: Dananassae_stages_ontology
+namespace: Dmojavensis_stages_ontology
+namespace: dog_stages_ontology
+namespace: Dpseudobscura_stages_ontology
+namespace: Dsimulans_stages_ontology
+namespace: Dvirilis_stages_ontology
+namespace: Dyakuba_stages_ontology
+namespace: gorilla_stages_ontology
+namespace: hedgehog_stages_ontology
+namespace: horse_stages_ontology
+namespace: human_stages_ontology
+namespace: lizard_stages_ontology
+namespace: medaka_ontology
+namespace: mouse_stages_ontology
+namespace: opossum_stages_ontology
+namespace: orangutan_stages_ontology
+namespace: pig_stages_ontology
+namespace: platypus_stages_ontology
+namespace: pufferfish_stages_ontology
+namespace: rabbit_stages_ontology
+namespace: rat_stages_ontology
+namespace: rhesus_macaque_stages_ontology
+namespace: uberon
+def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)" []
+comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
+synonym: "directly preceded by" EXACT []
+synonym: "is directly preceded by" EXACT []
+synonym: "is immediately preceded by" EXACT [SIO:000251]
+synonym: "starts_at_end_of" EXACT []
+xref: RO:0002087
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000118 "starts_at_end_of" xsd:string
+property_value: seeAlso SIO:000251
 is_transitive: true
-is_a: preceded_by
+is_a: preceded_by ! preceded_by
 inverse_of: RO:0002090
 
 [Typedef]
 id: part_of
+name: part of
+name: part_of
+namespace: bonobo_stages_ontology
+namespace: cat_stages_ontology
+namespace: cavy_stages_ontology
+namespace: chicken_stages_ontology
+namespace: chimpanzee_stages_ontology
+namespace: cow_stages_ontology
+namespace: Dananassae_stages_ontology
+namespace: Dmojavensis_stages_ontology
+namespace: dog_stages_ontology
+namespace: Dpseudobscura_stages_ontology
+namespace: Dsimulans_stages_ontology
+namespace: Dvirilis_stages_ontology
+namespace: Dyakuba_stages_ontology
+namespace: external
+namespace: gorilla_stages_ontology
+namespace: hedgehog_stages_ontology
+namespace: horse_stages_ontology
+namespace: human_stages_ontology
+namespace: lizard_stages_ontology
+namespace: medaka_ontology
+namespace: mouse_stages_ontology
+namespace: opossum_stages_ontology
+namespace: orangutan_stages_ontology
+namespace: pig_stages_ontology
+namespace: platypus_stages_ontology
+namespace: protein
+namespace: pufferfish_stages_ontology
+namespace: quality
+namespace: rabbit_stages_ontology
+namespace: rat_stages_ontology
+namespace: rhesus_macaque_stages_ontology
+namespace: uberon
+def: "a core relation that holds between a part and its whole" []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
+subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
+xref: BFO:0000050
+property_value: IAO:0000111 "is part of" xsd:string
+property_value: IAO:0000111 "is part of" xsd:string
+property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
+property_value: IAO:0000112 "my brain is part of my body (continuant parthood, two material entities)" xsd:string
+property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
+property_value: IAO:0000112 "my stomach cavity is part of my stomach (continuant parthood, immaterial entity is part of material entity)" xsd:string
+property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
+property_value: IAO:0000112 "this day is part of this year (occurrent parthood)" xsd:string
+property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other." xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
+property_value: IAO:0000116 "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime" xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
+property_value: IAO:0000116 "Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)\n\nA continuant cannot be part of an occurrent: use 'participates in'. An occurrent cannot be part of a continuant: use 'has participant'. A material entity cannot be part of an immaterial entity: use 'has location'. A specifically dependent continuant cannot be part of an independent continuant: use 'inheres in'. An independent continuant cannot be part of a specifically dependent continuant: use 'bearer of'." xsd:string
+property_value: IAO:0000118 "part_of" xsd:string
+property_value: IAO:0000118 "part_of" xsd:string
+property_value: RO:0001900 RO:0001901
+property_value: RO:0040042 BFO:0000002
+property_value: RO:0040042 BFO:0000003
+property_value: RO:0040042 BFO:0000004
+property_value: RO:0040042 BFO:0000017
+property_value: RO:0040042 BFO:0000019
+property_value: RO:0040042 BFO:0000020
+property_value: RO:0040042 BFO:0000031
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
+property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
+property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
 is_transitive: true
 is_a: RO:0002131
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
-equivalent_to: part_of
 inverse_of: BFO:0000051
 
 [Typedef]
 id: preceded_by
+name: preceded by
+name: preceded_by
+namespace: bonobo_stages_ontology
+namespace: cat_stages_ontology
+namespace: cavy_stages_ontology
+namespace: chicken_stages_ontology
+namespace: chimpanzee_stages_ontology
+namespace: cow_stages_ontology
+namespace: Dananassae_stages_ontology
+namespace: Dmojavensis_stages_ontology
+namespace: dog_stages_ontology
+namespace: Dpseudobscura_stages_ontology
+namespace: Dsimulans_stages_ontology
+namespace: Dvirilis_stages_ontology
+namespace: Dyakuba_stages_ontology
+namespace: gorilla_stages_ontology
+namespace: hedgehog_stages_ontology
+namespace: horse_stages_ontology
+namespace: human_stages_ontology
+namespace: lizard_stages_ontology
+namespace: medaka_ontology
+namespace: mouse_stages_ontology
+namespace: opossum_stages_ontology
+namespace: orangutan_stages_ontology
+namespace: pig_stages_ontology
+namespace: platypus_stages_ontology
+namespace: pufferfish_stages_ontology
+namespace: rabbit_stages_ontology
+namespace: rat_stages_ontology
+namespace: rhesus_macaque_stages_ontology
+namespace: uberon
+def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
+def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)" []
+subset: ro-eco
+synonym: "is preceded by" EXACT [SIO:000249]
+synonym: "takes place after" EXACT [Allen:precedes]
+xref: BFO:0000062
+property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
+property_value: IAO:0000111 "preceded by" xsd:string
+property_value: IAO:0000116 "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
+property_value: IAO:0000118 "is preceded by" xsd:string
+property_value: IAO:0000118 "preceded_by" xsd:string
 domain: BFO:0000003
 range: BFO:0000003
 is_transitive: true
