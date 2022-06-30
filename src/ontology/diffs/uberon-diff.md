@@ -1005,189 +1005,197 @@
 ### _:genid2147739159 
 
 #### Added
-- _:genid2147739159 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147739159 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003285" 
+
+- _:genid2147739159 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Septum_secondum](http://en.wikipedia.org/wiki/Septum_secondum) 
 
 
 ### _:genid2147739160 
 
 #### Added
-- _:genid2147739160 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Facial_skeleton](http://en.wikipedia.org/wiki/Facial_skeleton) 
+- _:genid2147739160 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
 
 
 ### _:genid2147739161 
 
 #### Added
-- _:genid2147739161 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Internal_spermatic_fascia](http://en.wikipedia.org/wiki/Internal_spermatic_fascia) 
+- _:genid2147739161 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Persistent_left_superior_vena_cava](http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava) 
 
 
 ### _:genid2147739162 
 
 #### Added
-- _:genid2147739162 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Capitate_bone](http://en.wikipedia.org/wiki/Capitate_bone) 
+- _:genid2147739162 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pancreaticoduodenal_artery](http://en.wikipedia.org/wiki/Pancreaticoduodenal_artery) 
 
 
 ### _:genid2147739163 
 
 #### Added
-- _:genid2147739163 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Ligaments](http://en.wikipedia.org/wiki/Temporomandibular_joint#Ligaments) 
+- _:genid2147739163 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [56](https://github.com/obophenotype/mouse-anatomy-ontology/issues/56) 
 
 
 ### _:genid2147739164 
 
 #### Added
-- _:genid2147739164 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_periolivary_nucleus_.28DPO.29](http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29) 
+- _:genid2147739164 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3515562&group_id=76834&atid=994726](https://sourceforge.net/tracker/?func=detail&aid=3515562&group_id=76834&atid=994726) 
 
 
 ### _:genid2147739165 
 
 #### Added
-- _:genid2147739165 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hamate_bone](http://en.wikipedia.org/wiki/Hamate_bone) 
+- _:genid2147739165 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-6601-2165](http://orcid.org/0000-0002-6601-2165) 
 
 
 ### _:genid2147739166 
 
 #### Added
-- _:genid2147739166 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3580301&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3580301&group_id=76834&atid=1205376) 
+- _:genid2147739166 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23153189](http://www.ncbi.nlm.nih.gov/pubmed/23153189) 
 
 
 ### _:genid2147739167 
 
 #### Added
-- _:genid2147739167 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Corpus_cavernosum](http://en.wikipedia.org/wiki/Corpus_cavernosum) 
+- _:genid2147739167 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1264](https://github.com/obophenotype/uberon/issues/1264) 
 
 
 ### _:genid2147739168 
 
 #### Added
-- _:genid2147739168 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Vertebral_foramen](http://en.wikipedia.org/wiki/Atlas_(anatomy)#Vertebral_foramen) 
+- _:genid2147739168 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_28](http://en.wikipedia.org/wiki/Brodmann_area_28) 
 
 
 ### _:genid2147739169 
 
 #### Added
-- _:genid2147739169 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [22622577](http://www.ncbi.nlm.nih.gov/pubmed/22622577) 
+- _:genid2147739169 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
 
 
 ### _:genid2147739170 
 
 #### Added
-- _:genid2147739170 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hepatopancreas](http://en.wikipedia.org/wiki/Digestive_system_of_gastropods#Hepatopancreas) 
+- _:genid2147739170 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Adductor_muscles_of_the_hip](http://en.wikipedia.org/wiki/Adductor_muscles_of_the_hip) 
 
 
 ### _:genid2147739171 
 
 #### Added
-- _:genid2147739171 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&atid=440764&aid=3413098&group_id=36855](https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3413098&group_id=36855) 
+- _:genid2147739171 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lumbar_spinal_cord](http://en.wikipedia.org/wiki/Lumbar_spinal_cord) 
 
 
 ### _:genid2147739172 
 
 #### Added
-- _:genid2147739172 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123600&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376) 
-
-- _:genid2147739172 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [14595018](http://www.ncbi.nlm.nih.gov/pubmed/14595018) 
+- _:genid2147739172 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
 
 
 ### _:genid2147739173 
 
 #### Added
-- _:genid2147739173 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [mesoder.htm](http://www.ana.ed.ac.uk/database/humat/notes/extraemb/mesoder.htm) 
+- _:genid2147739173 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [7](https://github.com/obophenotype/uberon/issues/7) 
+
+- _:genid2147739173 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [6](https://github.com/obophenotype/uberon/issues/6) 
 
 
 ### _:genid2147739174 
 
 #### Added
-- _:genid2147739174 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_26](http://en.wikipedia.org/wiki/Brodmann_area_26) 
+- _:genid2147739174 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Corpus_cavernosum](http://en.wikipedia.org/wiki/Corpus_cavernosum) 
 
 
 ### _:genid2147739175 
 
 #### Added
-- _:genid2147739175 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Primordial_phallus](http://en.wikipedia.org/wiki/Primordial_phallus) 
+- _:genid2147739175 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Common_plantar_digital_arteries](http://en.wikipedia.org/wiki/Common_plantar_digital_arteries) 
 
 
 ### _:genid2147739176 
 
 #### Added
-- _:genid2147739176 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_digital_arteries#](http://en.wikipedia.org/wiki/Dorsal_digital_arteries#) 
+- _:genid2147739176 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Neurofilament](http://en.wikipedia.org/wiki/Neurofilament) 
 
 
 ### _:genid2147739177 
 
 #### Added
-- _:genid2147739177 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lumbar_spinal_cord](http://en.wikipedia.org/wiki/Lumbar_spinal_cord) 
+- _:genid2147739177 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pisiform_joint](http://en.wikipedia.org/wiki/Pisiform_joint) 
 
 
 ### _:genid2147739178 
 
 #### Added
-- _:genid2147739178 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [full](http://dev.biologists.org/content/128/22/4573.full) 
+- _:genid2147739178 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147739179 
 
 #### Added
-- _:genid2147739179 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezoid_bone](http://en.wikipedia.org/wiki/Trapezoid_bone) 
+- _:genid2147739179 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1161](https://github.com/obophenotype/uberon/issues/1161) 
+
+- _:genid2147739179 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1755" 
 
 
 ### _:genid2147739180 
 
 #### Added
-- _:genid2147739180 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezium_(bone)](http://en.wikipedia.org/wiki/Trapezium_(bone)) 
+- _:genid2147739180 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Snout](http://en.wikipedia.org/wiki/Snout) 
 
 
 ### _:genid2147739181 
 
 #### Added
-- _:genid2147739181 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
+- _:genid2147739181 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hamate_bone](http://en.wikipedia.org/wiki/Hamate_bone) 
 
 
 ### _:genid2147739182 
 
 #### Added
-- _:genid2147739182 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
+- _:genid2147739182 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20557782](http://www.ncbi.nlm.nih.gov/pubmed/20557782) 
+
+- _:genid2147739182 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20566102](http://www.ncbi.nlm.nih.gov/pubmed/20566102) 
 
 
 ### _:genid2147739183 
 
 #### Added
-- _:genid2147739183 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
+- _:genid2147739183 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Epicondyle](http://en.wikipedia.org/wiki/Epicondyle) 
 
 
 ### _:genid2147739184 
 
 #### Added
-- _:genid2147739184 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [56](https://github.com/obophenotype/mouse-anatomy-ontology/issues/56) 
+- _:genid2147739184 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:CL_meeting_20110725" 
+
+- _:genid2147739184 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [retina_gross.html](http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html) 
 
 
 ### _:genid2147739185 
 
 #### Added
-- _:genid2147739185 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Snout](http://en.wikipedia.org/wiki/Snout) 
+- _:genid2147739185 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_9](http://en.wikipedia.org/wiki/Brodmann_area_9) 
 
 
 ### _:genid2147739186 
 
 #### Added
-- _:genid2147739186 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Persistent_left_superior_vena_cava](http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava) 
+- _:genid2147739186 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Coat_(animal)](http://en.wikipedia.org/wiki/Coat_(animal)) 
 
 
 ### _:genid2147739187 
 
 #### Added
-- _:genid2147739187 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Enteric_ganglia](http://en.wikipedia.org/wiki/Enteric_ganglia) 
+- _:genid2147739187 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Gastric_juice](http://en.wikipedia.org/wiki/Gastric_juice) 
 
 
 ### _:genid2147739188 
 
 #### Added
-- _:genid2147739188 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Anal_gland](http://en.wikipedia.org/wiki/Anal_gland) 
+- _:genid2147739188 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Iris_muscle](http://en.wikipedia.org/wiki/Iris_muscle) 
 
 
 ### _:genid2147739189 
 
 #### Added
-- _:genid2147739189 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-6601-2165](http://orcid.org/0000-0002-6601-2165) 
+- _:genid2147739189 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Intermediate_filament](http://en.wikipedia.org/wiki/Intermediate_filament) 
 
 
 ### _:genid2147739190 
@@ -1199,155 +1207,153 @@
 ### _:genid2147739191 
 
 #### Added
-- _:genid2147739191 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_9](http://en.wikipedia.org/wiki/Brodmann_area_9) 
+- _:genid2147739191 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147739192 
 
 #### Added
-- _:genid2147739192 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Node_of_ranvier](http://en.wikipedia.org/wiki/Node_of_ranvier) 
+- _:genid2147739192 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_18](http://en.wikipedia.org/wiki/Brodmann_area_18) 
 
 
 ### _:genid2147739193 
 
 #### Added
-- _:genid2147739193 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_28](http://en.wikipedia.org/wiki/Brodmann_area_28) 
+- _:genid2147739193 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Eparterial_bronchus](http://en.wikipedia.org/wiki/Eparterial_bronchus) 
 
 
 ### _:genid2147739194 
 
 #### Added
-- _:genid2147739194 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Intermediate_filament](http://en.wikipedia.org/wiki/Intermediate_filament) 
+- _:genid2147739194 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezium_(bone)](http://en.wikipedia.org/wiki/Trapezium_(bone)) 
 
 
 ### _:genid2147739195 
 
 #### Added
-- _:genid2147739195 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147739195 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezoid_bone](http://en.wikipedia.org/wiki/Trapezoid_bone) 
 
 
 ### _:genid2147739196 
 
 #### Added
-- _:genid2147739196 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147739196 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hypoblast](http://en.wikipedia.org/wiki/Hypoblast) 
+
+- _:genid2147739196 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:dph" 
+
+- _:genid2147739196 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [<https://sourceforge.net/p/geneontology/ontology-requests/9676/>](https://sourceforge.net/p/geneontology/ontology-requests/9676/) 
+
+- _:genid2147739196 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFIN:cvs" 
 
 
 ### _:genid2147739197 
 
 #### Added
-- _:genid2147739197 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23153189](http://www.ncbi.nlm.nih.gov/pubmed/23153189) 
+- _:genid2147739197 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Anal_gland](http://en.wikipedia.org/wiki/Anal_gland) 
 
 
 ### _:genid2147739198 
 
 #### Added
-- _:genid2147739198 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_18](http://en.wikipedia.org/wiki/Brodmann_area_18) 
+- _:genid2147739198 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pronucleus](http://en.wikipedia.org/wiki/Pronucleus) 
 
 
 ### _:genid2147739199 
 
 #### Added
-- _:genid2147739199 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [retina_gross.html](http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html) 
+- _:genid2147739199 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [14595018](http://www.ncbi.nlm.nih.gov/pubmed/14595018) 
 
-- _:genid2147739199 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:CL_meeting_20110725" 
+- _:genid2147739199 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123600&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376) 
 
 
 ### _:genid2147739200 
 
 #### Added
-- _:genid2147739200 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147739200 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123598&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376) 
 
 
 ### _:genid2147739201 
 
 #### Added
-- _:genid2147739201 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Septum_secondum](http://en.wikipedia.org/wiki/Septum_secondum) 
-
-- _:genid2147739201 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003285" 
+- _:genid2147739201 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pterion](http://en.wikipedia.org/wiki/Pterion) 
 
 
 ### _:genid2147739202 
 
 #### Added
-- _:genid2147739202 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Eparterial_bronchus](http://en.wikipedia.org/wiki/Eparterial_bronchus) 
+- _:genid2147739202 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Rattle](http://en.wikipedia.org/wiki/Rattlesnake#Rattle) 
 
 
 ### _:genid2147739203 
 
 #### Added
-- _:genid2147739203 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147739203 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Internal_spermatic_fascia](http://en.wikipedia.org/wiki/Internal_spermatic_fascia) 
 
 
 ### _:genid2147739204 
 
 #### Added
-- _:genid2147739204 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pancreaticoduodenal_artery](http://en.wikipedia.org/wiki/Pancreaticoduodenal_artery) 
+- _:genid2147739204 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Ligaments](http://en.wikipedia.org/wiki/Temporomandibular_joint#Ligaments) 
 
 
 ### _:genid2147739205 
 
 #### Added
-- _:genid2147739205 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_39](http://en.wikipedia.org/wiki/Brodmann_area_39) 
+- _:genid2147739205 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
 
 
 ### _:genid2147739206 
 
 #### Added
-- _:genid2147739206 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1264](https://github.com/obophenotype/uberon/issues/1264) 
+- _:genid2147739206 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147739207 
 
 #### Added
-- _:genid2147739207 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Epicondyle](http://en.wikipedia.org/wiki/Epicondyle) 
+- _:genid2147739207 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_26](http://en.wikipedia.org/wiki/Brodmann_area_26) 
 
 
 ### _:genid2147739208 
 
 #### Added
-- _:genid2147739208 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pisiform_joint](http://en.wikipedia.org/wiki/Pisiform_joint) 
+- _:genid2147739208 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Vertebral_foramen](http://en.wikipedia.org/wiki/Atlas_(anatomy)#Vertebral_foramen) 
 
 
 ### _:genid2147739209 
 
 #### Added
-- _:genid2147739209 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1755" 
-
-- _:genid2147739209 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1161](https://github.com/obophenotype/uberon/issues/1161) 
+- _:genid2147739209 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Proper_plantar_digital_arteries](http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries) 
 
 
 ### _:genid2147739210 
 
 #### Added
-- _:genid2147739210 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [7](https://github.com/obophenotype/uberon/issues/7) 
-
-- _:genid2147739210 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [6](https://github.com/obophenotype/uberon/issues/6) 
+- _:genid2147739210 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [full](http://dev.biologists.org/content/128/22/4573.full) 
 
 
 ### _:genid2147739211 
 
 #### Added
-- _:genid2147739211 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Rattle](http://en.wikipedia.org/wiki/Rattlesnake#Rattle) 
+- _:genid2147739211 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [urinhaute03.html](http://www.embryology.ch/anglais/turinary/urinhaute03.html) 
 
 
 ### _:genid2147739212 
 
 #### Added
-- _:genid2147739212 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pterion](http://en.wikipedia.org/wiki/Pterion) 
+- _:genid2147739212 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&atid=440764&aid=3413098&group_id=36855](https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3413098&group_id=36855) 
 
 
 ### _:genid2147739213 
 
 #### Added
-- _:genid2147739213 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Gastric_juice](http://en.wikipedia.org/wiki/Gastric_juice) 
+- _:genid2147739213 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Facial_skeleton](http://en.wikipedia.org/wiki/Facial_skeleton) 
 
 
 ### _:genid2147739214 
 
 #### Added
-- _:genid2147739214 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20557782](http://www.ncbi.nlm.nih.gov/pubmed/20557782) 
-
-- _:genid2147739214 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20566102](http://www.ncbi.nlm.nih.gov/pubmed/20566102) 
+- _:genid2147739214 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Primordial_phallus](http://en.wikipedia.org/wiki/Primordial_phallus) 
 
 
 ### _:genid2147739215 
@@ -1359,7 +1365,7 @@
 ### _:genid2147739216 
 
 #### Added
-- _:genid2147739216 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3515562&group_id=76834&atid=994726](https://sourceforge.net/tracker/?func=detail&aid=3515562&group_id=76834&atid=994726) 
+- _:genid2147739216 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Enteric_ganglia](http://en.wikipedia.org/wiki/Enteric_ganglia) 
 
 
 ### _:genid2147739217 
@@ -1373,111 +1379,105 @@
 ### _:genid2147739218 
 
 #### Added
-- _:genid2147739218 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_male_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra) 
-
-- _:genid2147739218 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_female_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra) 
+- _:genid2147739218 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Flight_feather](http://en.wikipedia.org/wiki/Flight_feather) 
 
 
 ### _:genid2147739219 
 
 #### Added
-- _:genid2147739219 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Flight_feather](http://en.wikipedia.org/wiki/Flight_feather) 
+- _:genid2147739219 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3580301&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3580301&group_id=76834&atid=1205376) 
 
 
 ### _:genid2147739220 
 
 #### Added
-- _:genid2147739220 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Neurofilament](http://en.wikipedia.org/wiki/Neurofilament) 
+- _:genid2147739220 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147739221 
 
 #### Added
-- _:genid2147739221 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Histology](http://en.wikipedia.org/wiki/Sclera#Histology) 
+- _:genid2147739221 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147739222 
 
 #### Added
-- _:genid2147739222 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [<https://sourceforge.net/p/geneontology/ontology-requests/9676/>](https://sourceforge.net/p/geneontology/ontology-requests/9676/) 
-
-- _:genid2147739222 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hypoblast](http://en.wikipedia.org/wiki/Hypoblast) 
-
-- _:genid2147739222 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:dph" 
-
-- _:genid2147739222 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFIN:cvs" 
+- _:genid2147739222 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [mesoder.htm](http://www.ana.ed.ac.uk/database/humat/notes/extraemb/mesoder.htm) 
 
 
 ### _:genid2147739223 
 
 #### Added
-- _:genid2147739223 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Adductor_muscles_of_the_hip](http://en.wikipedia.org/wiki/Adductor_muscles_of_the_hip) 
+- _:genid2147739223 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [22622577](http://www.ncbi.nlm.nih.gov/pubmed/22622577) 
 
 
 ### _:genid2147739224 
 
 #### Added
-- _:genid2147739224 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pronucleus](http://en.wikipedia.org/wiki/Pronucleus) 
+- _:genid2147739224 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Histology](http://en.wikipedia.org/wiki/Sclera#Histology) 
 
 
 ### _:genid2147739225 
 
 #### Added
-- _:genid2147739225 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147739225 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lunge_feeding](http://en.wikipedia.org/wiki/Aquatic_predation#Lunge_feeding) 
 
 
 ### _:genid2147739226 
 
 #### Added
-- _:genid2147739226 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
+- _:genid2147739226 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_digital_arteries#](http://en.wikipedia.org/wiki/Dorsal_digital_arteries#) 
 
 
 ### _:genid2147739227 
 
 #### Added
-- _:genid2147739227 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147739227 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_39](http://en.wikipedia.org/wiki/Brodmann_area_39) 
 
 
 ### _:genid2147739228 
 
 #### Added
-- _:genid2147739228 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123598&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376) 
+- _:genid2147739228 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_female_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra) 
+
+- _:genid2147739228 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_male_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra) 
 
 
 ### _:genid2147739229 
 
 #### Added
-- _:genid2147739229 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Common_plantar_digital_arteries](http://en.wikipedia.org/wiki/Common_plantar_digital_arteries) 
+- _:genid2147739229 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Capitate_bone](http://en.wikipedia.org/wiki/Capitate_bone) 
 
 
 ### _:genid2147739230 
 
 #### Added
-- _:genid2147739230 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Iris_muscle](http://en.wikipedia.org/wiki/Iris_muscle) 
+- _:genid2147739230 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147739231 
 
 #### Added
-- _:genid2147739231 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Coat_(animal)](http://en.wikipedia.org/wiki/Coat_(animal)) 
+- _:genid2147739231 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Node_of_ranvier](http://en.wikipedia.org/wiki/Node_of_ranvier) 
 
 
 ### _:genid2147739232 
 
 #### Added
-- _:genid2147739232 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Proper_plantar_digital_arteries](http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries) 
+- _:genid2147739232 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hepatopancreas](http://en.wikipedia.org/wiki/Digestive_system_of_gastropods#Hepatopancreas) 
 
 
 ### _:genid2147739233 
 
 #### Added
-- _:genid2147739233 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lunge_feeding](http://en.wikipedia.org/wiki/Aquatic_predation#Lunge_feeding) 
+- _:genid2147739233 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_periolivary_nucleus_.28DPO.29](http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29) 
 
 
 ### _:genid2147739234 
 
 #### Added
-- _:genid2147739234 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [urinhaute03.html](http://www.embryology.ch/anglais/turinary/urinhaute03.html) 
+- _:genid2147739234 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147739235 
@@ -1485,13 +1485,11 @@
 #### Added
 - _:genid2147739235 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
-- _:genid2147739235 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
 
 ### _:genid2147739236 
 
 #### Added
-- _:genid2147739236 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3218" 
+- _:genid2147739236 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061249" 
 
 
 ### _:genid2147739237 
@@ -1503,267 +1501,263 @@
 ### _:genid2147739238 
 
 #### Added
-- _:genid2147739238 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147739238 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072165" 
 
 
 ### _:genid2147739239 
 
 #### Added
-- _:genid2147739239 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147739239 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000864" 
 
 
 ### _:genid2147739240 
 
 #### Added
-- _:genid2147739240 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0064792" 
-
-- _:genid2147739240 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007733" 
+- _:genid2147739240 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0089570" 
 
 
 ### _:genid2147739241 
 
 #### Added
-- _:genid2147739241 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3221" 
+- _:genid2147739241 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+
+- _:genid2147739241 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000021" 
 
 
 ### _:genid2147739242 
 
 #### Added
-- _:genid2147739242 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061249" 
+- _:genid2147739242 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
 
 
 ### _:genid2147739243 
 
 #### Added
-- _:genid2147739243 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009994" 
+- _:genid2147739243 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021728" 
 
 
 ### _:genid2147739244 
 
 #### Added
-- _:genid2147739244 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010002" 
+- _:genid2147739244 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003350" 
 
 
 ### _:genid2147739245 
 
 #### Added
-- _:genid2147739245 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147739245 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009994" 
 
 
 ### _:genid2147739246 
 
 #### Added
-- _:genid2147739246 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000021" 
-
-- _:genid2147739246 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+- _:genid2147739246 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0005289" 
 
 
 ### _:genid2147739247 
 
 #### Added
-- _:genid2147739247 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003291" 
+- _:genid2147739247 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003225" 
 
 
 ### _:genid2147739248 
 
 #### Added
-- _:genid2147739248 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009364" 
+- _:genid2147739248 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003227" 
 
 
 ### _:genid2147739249 
 
 #### Added
-- _:genid2147739249 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147739249 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003291" 
 
 
 ### _:genid2147739250 
 
 #### Added
-- _:genid2147739250 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147739250 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007733" 
+
+- _:genid2147739250 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0064792" 
 
 
 ### _:genid2147739251 
 
 #### Added
-- _:genid2147739251 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072166" 
+- _:genid2147739251 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147739252 
 
 #### Added
-- _:genid2147739252 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0002482" 
-
-- _:genid2147739252 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007196" 
-
-- _:genid2147739252 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007735" 
-
-- _:genid2147739252 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0034076" 
+- _:genid2147739252 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739253 
 
 #### Added
-- _:genid2147739253 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009988" 
+- _:genid2147739253 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3220" 
 
 
 ### _:genid2147739254 
 
 #### Added
-- _:genid2147739254 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147739254 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739255 
 
 #### Added
-- _:genid2147739255 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009990" 
+- _:genid2147739255 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1734" 
 
 
 ### _:genid2147739256 
 
 #### Added
-- _:genid2147739256 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000864" 
+- _:genid2147739256 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009364" 
 
 
 ### _:genid2147739257 
 
 #### Added
-- _:genid2147739257 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
-- _:genid2147739257 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147739257 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010003" 
 
 
 ### _:genid2147739258 
 
 #### Added
-- _:genid2147739258 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021728" 
+- _:genid2147739258 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
 
 
 ### _:genid2147739259 
 
 #### Added
-- _:genid2147739259 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021751" 
+- _:genid2147739259 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+
+- _:genid2147739259 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147739260 
 
 #### Added
-- _:genid2147739260 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072003" 
+- _:genid2147739260 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009993" 
 
 
 ### _:genid2147739261 
 
 #### Added
-- _:genid2147739261 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003224" 
+- _:genid2147739261 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EFO:0000240" 
 
 
 ### _:genid2147739262 
 
 #### Added
-- _:genid2147739262 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3214" 
+- _:genid2147739262 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072003" 
 
 
 ### _:genid2147739263 
 
 #### Added
-- _:genid2147739263 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Wasila" 
+- _:genid2147739263 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3218" 
 
 
 ### _:genid2147739264 
 
 #### Added
-- _:genid2147739264 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
-- _:genid2147739264 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147739264 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3214" 
 
 
 ### _:genid2147739265 
 
 #### Added
-- _:genid2147739265 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061214" 
+- _:genid2147739265 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147739266 
 
 #### Added
-- _:genid2147739266 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009999" 
+- _:genid2147739266 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+
+- _:genid2147739266 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739267 
 
 #### Added
-- _:genid2147739267 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010003" 
+- _:genid2147739267 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0060682" 
 
 
 ### _:genid2147739268 
 
 #### Added
-- _:genid2147739268 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+- _:genid2147739268 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+
+- _:genid2147739268 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739269 
 
 #### Added
-- _:genid2147739269 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EFO:0000240" 
+- _:genid2147739269 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009946" 
 
 
 ### _:genid2147739270 
 
 #### Added
-- _:genid2147739270 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009996" 
+- _:genid2147739270 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003832" 
 
 
 ### _:genid2147739271 
 
 #### Added
-- _:genid2147739271 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003832" 
+- _:genid2147739271 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009990" 
 
 
 ### _:genid2147739272 
 
 #### Added
-- _:genid2147739272 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0005289" 
+- _:genid2147739272 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009996" 
 
 
 ### _:genid2147739273 
 
 #### Added
-- _:genid2147739273 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1732" 
+- _:genid2147739273 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003226" 
 
 
 ### _:genid2147739274 
 
 #### Added
-- _:genid2147739274 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147739274 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0006943" 
 
 
 ### _:genid2147739275 
 
 #### Added
-- _:genid2147739275 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009946" 
+- _:genid2147739275 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009988" 
 
 
 ### _:genid2147739276 
 
 #### Added
-- _:genid2147739276 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003227" 
+- _:genid2147739276 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1732" 
 
 
 ### _:genid2147739277 
 
 #### Added
-- _:genid2147739277 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147739277 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010002" 
 
 
 ### _:genid2147739278 
 
 #### Added
-- _:genid2147739278 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147739278 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061214" 
 
 
 ### _:genid2147739279 
 
 #### Added
-- _:genid2147739279 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003225" 
+- _:genid2147739279 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147739280 
@@ -1775,19 +1769,19 @@
 ### _:genid2147739281 
 
 #### Added
-- _:genid2147739281 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
+- _:genid2147739281 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3223" 
 
 
 ### _:genid2147739282 
 
 #### Added
-- _:genid2147739282 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0060682" 
+- _:genid2147739282 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739283 
 
 #### Added
-- _:genid2147739283 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003226" 
+- _:genid2147739283 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3221" 
 
 
 ### _:genid2147739284 
@@ -1799,79 +1793,85 @@
 ### _:genid2147739285 
 
 #### Added
-- _:genid2147739285 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0006943" 
+- _:genid2147739285 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Wasila" 
 
 
 ### _:genid2147739286 
 
 #### Added
-- _:genid2147739286 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0089570" 
+- _:genid2147739286 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147739287 
 
 #### Added
-- _:genid2147739287 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2093943" 
+- _:genid2147739287 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009989" 
 
 
 ### _:genid2147739288 
 
 #### Added
-- _:genid2147739288 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3220" 
+- _:genid2147739288 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072166" 
 
 
 ### _:genid2147739289 
 
 #### Added
-- _:genid2147739289 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147739289 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007735" 
+
+- _:genid2147739289 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0002482" 
+
+- _:genid2147739289 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007196" 
+
+- _:genid2147739289 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0034076" 
 
 
 ### _:genid2147739290 
 
 #### Added
-- _:genid2147739290 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009997" 
+- _:genid2147739290 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009999" 
 
 
 ### _:genid2147739291 
 
 #### Added
-- _:genid2147739291 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009993" 
+- _:genid2147739291 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003224" 
 
 
 ### _:genid2147739292 
 
 #### Added
-- _:genid2147739292 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072165" 
+- _:genid2147739292 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147739293 
 
 #### Added
-- _:genid2147739293 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009989" 
+- _:genid2147739293 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009997" 
 
 
 ### _:genid2147739294 
 
 #### Added
-- _:genid2147739294 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003350" 
+- _:genid2147739294 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147739295 
 
 #### Added
-- _:genid2147739295 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3223" 
+- _:genid2147739295 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2093943" 
 
 
 ### _:genid2147739296 
 
 #### Added
-- _:genid2147739296 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147739296 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147739297 
 
 #### Added
-- _:genid2147739297 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1734" 
+- _:genid2147739297 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021751" 
 
 
 ### _Commissure-MA_0002723 `http://purl.obolibrary.org/obo/UBERON#_Commissure-MA_0002723`
@@ -1982,6 +1982,14 @@
 - [anterior_to](http://purl.obolibrary.org/obo/BSPO_0000096) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) [FBcv_0000039](http://purl.obolibrary.org/obo/FBcv_0000039) 
 
 
+### arthropod sensillum `http://purl.obolibrary.org/obo/UBERON_0002536`
+#### Removed
+- [arthropod sensillum](http://purl.obolibrary.org/obo/UBERON_0002536) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [arthropod sensillum](http://purl.obolibrary.org/obo/UBERON_0002536) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+
 ### capillary of brain `http://purl.obolibrary.org/obo/UBERON_8480001`
 
 #### Added
@@ -2045,6 +2053,14 @@
 
 
 
+### deep artery of penis `http://purl.obolibrary.org/obo/UBERON_0008321`
+
+#### Added
+- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
 ### deep to `http://purl.obolibrary.org/obo/BSPO_0000107`
 
 #### Added
@@ -2077,6 +2093,12 @@
 
 #### Added
 - [distalmost part of](http://purl.obolibrary.org/obo/BSPO_0001108) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "spatial" 
+
+
+### dorsal venous arch `http://purl.obolibrary.org/obo/UBERON_0008783`
+
+#### Added
+- [dorsal venous arch](http://purl.obolibrary.org/obo/UBERON_0008783) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 ### dorsal_to `http://purl.obolibrary.org/obo/BSPO_0000098`
@@ -2135,6 +2157,12 @@
 #### Removed
 - [hippocampal commissure](http://purl.obolibrary.org/obo/UBERON_0000908) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "UBERON:Commissure-MA_0002723" 
 
+
+
+### hyoid artery `http://purl.obolibrary.org/obo/UBERON_0005608`
+
+#### Added
+- [hyoid artery](http://purl.obolibrary.org/obo/UBERON_0005608) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 ### iliac artery smooth muscle tissue `http://purl.obolibrary.org/obo/UBERON_8480003`
@@ -2250,7 +2278,7 @@
 - [in central side of](http://purl.obolibrary.org/obo/BSPO_0020001) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) [BSPO_0000059](http://purl.obolibrary.org/obo/BSPO_0000059) 
 
 - [in central side of](http://purl.obolibrary.org/obo/BSPO_0020001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "X in_central_side Y &lt;=&gt; if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm" 
 
 - [in central side of](http://purl.obolibrary.org/obo/BSPO_0020001) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-6523-4866](https://orcid.org/0000-0002-6523-4866) 
 
@@ -2342,7 +2370,7 @@
 ### in_central_side_of `http://purl.obolibrary.org/obo/uberon/core#in_central_side_of`
 #### Removed
 - [in_central_side_of](http://purl.obolibrary.org/obo/uberon/core#in_central_side_of) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "X in_central_side Y &lt;=&gt; if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm" 
 
 - [in_central_side_of](http://purl.obolibrary.org/obo/uberon/core#in_central_side_of) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) [BSPO_0000059](http://purl.obolibrary.org/obo/BSPO_0000059) 
 
@@ -2370,6 +2398,20 @@
 
 #### Added
 - [intersects midsagittal plane of](http://purl.obolibrary.org/obo/BSPO_0005001) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "spatial" 
+
+
+### jejunal artery `http://purl.obolibrary.org/obo/UBERON_0018255`
+
+#### Added
+- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### left colic artery `http://purl.obolibrary.org/obo/UBERON_8410022`
+
+#### Added
+- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 ### lingual cusp of tooth `http://purl.obolibrary.org/obo/UBERON_0016929`
@@ -2455,7 +2497,7 @@
 - [overlaps](http://purl.obolibrary.org/obo/RO_0002131) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "spatial" 
 
 - [overlaps](http://purl.obolibrary.org/obo/RO_0002131) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "x overlaps y iff they have some part in common." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BSPO:cjm" 
 
 
 ### part_of `http://purl.obolibrary.org/obo/BFO_0000050`
@@ -2662,6 +2704,28 @@
 
 
 
+### right colic artery `http://purl.obolibrary.org/obo/UBERON_8410023`
+
+#### Added
+- [right colic artery](http://purl.obolibrary.org/obo/UBERON_8410023) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### right colic vein `http://purl.obolibrary.org/obo/UBERON_8410018`
+
+#### Added
+- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### saphenous artery `http://purl.obolibrary.org/obo/UBERON_0015350`
+
+#### Added
+- [saphenous artery](http://purl.obolibrary.org/obo/UBERON_0015350) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [saphenous artery](http://purl.obolibrary.org/obo/UBERON_0015350) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
 ### see also `http://www.w3.org/2000/01/rdf-schema#seeAlso`
 
 #### Added
@@ -2672,6 +2736,14 @@
 
 #### Added
 - [superficial_to](http://purl.obolibrary.org/obo/BSPO_0000108) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "spatial" 
+
+
+### tentorial sinus `http://purl.obolibrary.org/obo/UBERON_0005481`
+
+#### Added
+- [tentorial sinus](http://purl.obolibrary.org/obo/UBERON_0005481) [present in taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [tentorial sinus](http://purl.obolibrary.org/obo/UBERON_0005481) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
 ### thoracic aorta smooth muscle tissue `http://purl.obolibrary.org/obo/UBERON_8480002`
