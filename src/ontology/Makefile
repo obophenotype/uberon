@@ -119,7 +119,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-core life-stages-minimal merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
+SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-composite life-stages-core life-stages-minimal merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal renal-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -173,10 +173,10 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON)  --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON)  --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 # ----------------------------------------
 # Release assets
@@ -761,10 +761,6 @@ composite-vertebrate-basic.json: composite-vertebrate-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
-
-
-
-
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -779,8 +775,6 @@ $(ONT).json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json && \
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $@ && rm $@.tmp.json
-
-
 # -----------------------------------------------------
 # Release artefacts: variants (base, full, simple, etc)
 # -----------------------------------------------------
@@ -789,10 +783,6 @@ SHARED_ROBOT_COMMANDS =
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
 	touch $(ONTOLOGYTERMS) && \
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/uberon_terms.sparql $@
-
-
-
-
 
 # base: OTHER sources of interest, such as definitions owl
 $(ONT)-base.owl: $(SRC) $(OTHER_SRC)
@@ -810,7 +800,6 @@ $(ONT)-full.owl: $(SRC) $(OTHER_SRC) $(IMPORT_FILES)
 		reduce -r ELK \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
-
 # foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
 # drop every axiom: filter --term-file keep_terms.txt --trim true
 #	remove --select imports --trim false
@@ -824,10 +813,6 @@ $(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED) $(IMPORT_FILES)
 		reduce -r ELK \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-
-
-
-
 
 # foo-basic: A version of -simple containing only relationships using relations on a configurable whitelist (default = BFO:0000050 (?)). 
 # See above (David comment) for explanation.
@@ -843,7 +828,6 @@ $(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(SIMPLESEED) $(KEEPRELATIONS) $(IMPORT_FI
 		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
 		reduce -r ELK \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-
 
 ext.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
