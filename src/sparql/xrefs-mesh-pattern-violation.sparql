@@ -1,0 +1,8 @@
+PREFIX oio: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?cls ?xref
+WHERE {
+  ?cls a owl:Class; oio:hasDbXref ?xref .
+  FILTER(STRSTARTS(?xref, "MESH:") && !REGEX(?xref, "(C|D)[0-9]{6,9}$"))
+}
