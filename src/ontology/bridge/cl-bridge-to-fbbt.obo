@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fbbt
-data-version: 2022-03-26
+data-version: 2022-06-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and CL. Note that currently CL focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future CL may bridge via the arthropod anatomy ontology" xsd:string
@@ -7,6 +7,12 @@ property_value: dc-creator "CL editors" xsd:string
 property_value: dc-contributor "David Osumi-Sutherland" xsd:string
 property_value: dcterms-references http://purl.obolibrary.org/obo/fbbt.owl
 property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
+
+[Term]
+id: FBbt:00007002 ! 
+property_value: IAO:0000589 "cell (drosophila)" xsd:string
+intersection_of: CL:0000000 ! cell
+intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00004936 ! 
@@ -27,9 +33,21 @@ intersection_of: CL:0000019 ! sperm
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
+id: FBbt:00004934 ! 
+property_value: IAO:0000589 "spermatogonium (drosophila)" xsd:string
+intersection_of: CL:0000020 ! spermatogonium
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
 id: FBbt:00004935 ! 
 property_value: IAO:0000589 "spermatogonium (drosophila)" xsd:string
 intersection_of: CL:0000020 ! spermatogonium
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00004873 ! 
+property_value: IAO:0000589 "female germ line stem cell (drosophila)" xsd:string
+intersection_of: CL:0000022 ! female germ line stem cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -48,12 +66,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00004878 ! 
 property_value: IAO:0000589 "invertebrate nurse cell (drosophila)" xsd:string
 intersection_of: CL:0000026 ! invertebrate nurse cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005145 ! 
-property_value: IAO:0000589 "glioblast (drosophila)" xsd:string
-intersection_of: CL:0000030 ! glioblast
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -81,15 +93,15 @@ intersection_of: CL:0000087 ! male germ line stem cell (sensu Nematoda and Proto
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00004873 ! 
-property_value: IAO:0000589 "female germ line stem cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000088 ! female germ line stem cell (sensu Nematoda and Protostomia)
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005125 ! 
 property_value: IAO:0000589 "interneuron (drosophila)" xsd:string
 intersection_of: CL:0000099 ! interneuron
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005123 ! 
+property_value: IAO:0000589 "motor neuron (drosophila)" xsd:string
+intersection_of: CL:0000100 ! motor neuron
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -106,20 +118,14 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00005144 ! 
-property_value: IAO:0000589 "obsolete glial cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000124 ! obsolete glial cell (sensu Nematoda and Protostomia)
+property_value: IAO:0000589 "glial cell (drosophila)" xsd:string
+intersection_of: CL:0000125 ! glial cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00005074 ! 
 property_value: IAO:0000589 "muscle cell (drosophila)" xsd:string
 intersection_of: CL:0000187 ! muscle cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00004211 ! 
-property_value: IAO:0000589 "photoreceptor cell (drosophila)" xsd:string
-intersection_of: CL:0000210 ! photoreceptor cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -135,9 +141,21 @@ intersection_of: CL:0000301 ! pole cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00004193 ! 
-property_value: IAO:0000589 "crystallin accumulating cell (drosophila)" xsd:string
-intersection_of: CL:0000306 ! crystallin accumulating cell
+id: FBbt:00005038 ! 
+property_value: IAO:0000589 "tracheal epithelial cell (drosophila)" xsd:string
+intersection_of: CL:0000307 ! tracheal epithelial cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005146 ! 
+property_value: IAO:0000589 "neuroblast (sensu Nematoda and Protostomia) (drosophila)" xsd:string
+intersection_of: CL:0000338 ! neuroblast (sensu Nematoda and Protostomia)
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005145 ! 
+property_value: IAO:0000589 "glioblast (sensu Nematoda and Protostomia) (drosophila)" xsd:string
+intersection_of: CL:0000340 ! glioblast (sensu Nematoda and Protostomia)
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -183,12 +201,6 @@ intersection_of: CL:0000387 ! hemocyte (sensu Arthropoda)
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00001688 ! 
-property_value: IAO:0000589 "podocyte (sensu Diptera) (drosophila)" xsd:string
-intersection_of: CL:0000391 ! podocyte (sensu Diptera)
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00001685 ! 
 property_value: IAO:0000589 "plasmatocyte (drosophila)" xsd:string
 intersection_of: CL:0000394 ! plasmatocyte
@@ -213,12 +225,6 @@ intersection_of: CL:0000398 ! polygonal cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00001686 ! 
-property_value: IAO:0000589 "macrophage (sensu Diptera) (drosophila)" xsd:string
-intersection_of: CL:0000401 ! macrophage (sensu Diptera)
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005148 ! 
 property_value: IAO:0000589 "neuroepidermoblast (drosophila)" xsd:string
 intersection_of: CL:0000405 ! neuroepidermoblast
@@ -228,12 +234,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00005221 ! 
 property_value: IAO:0000589 "scolopidial ligament cell (drosophila)" xsd:string
 intersection_of: CL:0000407 ! scolopidial ligament cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005219 ! 
-property_value: IAO:0000589 "scolopidial sheath cell (drosophila)" xsd:string
-intersection_of: CL:0000409 ! scolopidial sheath cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -280,8 +280,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00004904 ! 
-property_value: IAO:0000589 "ovarian follicle cell (drosophila)" xsd:string
-intersection_of: CL:0000477 ! ovarian follicle cell
+property_value: IAO:0000589 "follicle cell of egg chamber (drosophila)" xsd:string
+intersection_of: CL:0000477 ! follicle cell of egg chamber
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -327,9 +327,21 @@ intersection_of: CL:0000674 ! interfollicle cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00005133 ! 
-property_value: IAO:0000589 "serotonergic neuron (drosophila)" xsd:string
-intersection_of: CL:0000850 ! serotonergic neuron
+id: FBbt:00001690 ! 
+property_value: IAO:0000589 "embryonic crystal cell (drosophila)" xsd:string
+intersection_of: CL:0000715 ! embryonic crystal cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00004193 ! 
+property_value: IAO:0000589 "compound eye cone cell (drosophila)" xsd:string
+intersection_of: CL:0000718 ! compound eye cone cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005917 ! 
+property_value: IAO:0000589 "lymph gland hemocyte (drosophila)" xsd:string
+intersection_of: CL:0000735 ! lymph gland hemocyte
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -339,9 +351,33 @@ intersection_of: CL:0001658 ! visual pigment cell (sensu Nematoda and Protostomi
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
+id: FBbt:00005812 ! 
+property_value: IAO:0000589 "myotube (drosophila)" xsd:string
+intersection_of: CL:0002372 ! myotube
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005073 ! 
+property_value: IAO:0000589 "somatic muscle cell (drosophila)" xsd:string
+intersection_of: CL:0008004 ! somatic muscle cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005070 ! 
+property_value: IAO:0000589 "visceral muscle cell (drosophila)" xsd:string
+intersection_of: CL:0008007 ! visceral muscle cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
 id: FBbt:00005797 ! 
 property_value: IAO:0000589 "Malpighian tubule stellate cell (drosophila)" xsd:string
 intersection_of: CL:1000155 ! Malpighian tubule stellate cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00004211 ! 
+property_value: IAO:0000589 "compound eye photoreceptor cell (drosophila)" xsd:string
+intersection_of: CL:2000019 ! compound eye photoreceptor cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -367,6 +403,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

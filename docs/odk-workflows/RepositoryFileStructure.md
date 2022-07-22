@@ -54,3 +54,5 @@ These are the components in UBERON
 | -------- | --- |
 | mappings.owl | None |
 | in-subset.owl | None |
+| hra_subset.owl | None |
+| vasculature_class.owl | None |
