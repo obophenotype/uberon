@@ -39,7 +39,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       --profile $(ROBOT_PROFILE)
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference illegal-annotation-property taxon-range orcid-contributor obsolete-replaced_by 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference illegal-annotation-property taxon-range orcid-contributor obsolete-replaced_by xrefs-mesh-pattern 
 SPARQL_EXPORTS =            basic-report 
 ODK_VERSION_MAKEFILE =      v1.3.1
 
