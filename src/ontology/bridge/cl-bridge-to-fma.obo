@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fma
-data-version: 2022-03-26
+data-version: 2022-06-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fma" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the FMA and CL" xsd:string
@@ -281,8 +281,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:84664 ! 
-property_value: IAO:0000589 "peripheral neuron (post-embryonic human)" xsd:string
-intersection_of: CL:0000111 ! peripheral neuron
+property_value: IAO:0000589 "obsolete peripheral neuron (post-embryonic human)" xsd:string
+intersection_of: CL:0000111 ! obsolete peripheral neuron
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1241,8 +1241,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:70967 ! 
-property_value: IAO:0000589 "glomerular visceral epithelial cell (post-embryonic human)" xsd:string
-intersection_of: CL:0000653 ! glomerular visceral epithelial cell
+property_value: IAO:0000589 "podocyte (post-embryonic human)" xsd:string
+intersection_of: CL:0000653 ! podocyte
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -1277,8 +1277,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: FMA:63174 ! 
-property_value: IAO:0000589 "pericyte cell (post-embryonic human)" xsd:string
-intersection_of: CL:0000669 ! pericyte cell
+property_value: IAO:0000589 "pericyte (post-embryonic human)" xsd:string
+intersection_of: CL:0000669 ! pericyte
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2968,12 +2968,6 @@ intersection_of: CL:0002503 ! adventitial cell
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
-id: FMA:83807 ! 
-property_value: IAO:0000589 "nephrocyte (post-embryonic human)" xsd:string
-intersection_of: CL:0002520 ! nephrocyte
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
 id: FMA:62104 ! 
 property_value: IAO:0000589 "vein endothelial cell (post-embryonic human)" xsd:string
 intersection_of: CL:0002543 ! vein endothelial cell
@@ -4264,6 +4258,12 @@ intersection_of: CL:1001611 ! cerebellar neuron
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: FMA:84664 ! 
+property_value: IAO:0000589 "peripheral nervous system neuron (post-embryonic human)" xsd:string
+intersection_of: CL:2000032 ! peripheral nervous system neuron
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: FMA:62364 ! 
 property_value: IAO:0000589 "cochlea auditory hair cell (post-embryonic human)" xsd:string
 intersection_of: CL:4023120 ! cochlea auditory hair cell
@@ -4292,6 +4292,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

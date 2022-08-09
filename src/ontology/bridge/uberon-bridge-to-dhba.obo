@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-dhba
-data-version: 2022-03-26
+data-version: 2022-06-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -4557,6 +4557,12 @@ intersection_of: UBERON:0036164 ! ambient gyrus
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: DHBA:10331 ! 
+property_value: IAO:0000589 "cerebral nuclei (DHBA)" xsd:string
+intersection_of: UBERON:8440012 ! cerebral nuclei
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: DHBA:ENTITY
 name: DHBA entity
 intersection_of: UBERON:0001062 ! anatomical entity
@@ -4579,6 +4585,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

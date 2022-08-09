@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-fbbt
-data-version: 2022-03-26
+data-version: 2022-06-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and Uberon. Note that currently Uberon focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future Uberon may bridge via the arthropod anatomy ontology" xsd:string
@@ -663,18 +663,6 @@ intersection_of: UBERON:0003917 ! arthropod fat body
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00025998 ! 
-property_value: IAO:0000589 "mesoderm-derived structure (drosophila)" xsd:string
-intersection_of: UBERON:0004120 ! mesoderm-derived structure
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00025990 ! 
-property_value: IAO:0000589 "ectoderm-derived structure (drosophila)" xsd:string
-intersection_of: UBERON:0004121 ! ectoderm-derived structure
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005317 ! 
 property_value: IAO:0000589 "gastrula (drosophila)" xsd:string
 intersection_of: UBERON:0004734 ! gastrula
@@ -1056,18 +1044,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00000130 ! 
 property_value: IAO:0000589 "insect visceral mesoderm (drosophila)" xsd:string
 intersection_of: UBERON:6000130 ! insect visceral mesoderm
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00000131 ! 
-property_value: IAO:0000589 "insect mesodermal crest (drosophila)" xsd:string
-intersection_of: UBERON:6000131 ! insect mesodermal crest
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00000132 ! 
-property_value: IAO:0000589 "insect mesodermal crest of segment T3 (drosophila)" xsd:string
-intersection_of: UBERON:6000132 ! insect mesodermal crest of segment T3
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -2013,12 +1989,6 @@ intersection_of: UBERON:6005538 ! insect clypeo-labral primordium
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00005541 ! 
-property_value: IAO:0000589 "insect cardiogenic mesoderm (drosophila)" xsd:string
-intersection_of: UBERON:6005541 ! insect cardiogenic mesoderm
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005558 ! 
 property_value: IAO:0000589 "insect ventral ectoderm (drosophila)" xsd:string
 intersection_of: UBERON:6005558 ! insect ventral ectoderm
@@ -2217,30 +2187,6 @@ intersection_of: UBERON:6017021 ! insect abdominal histoblast anlage
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00025991 ! 
-property_value: IAO:0000589 "insect anterior ectoderm derivative (drosophila)" xsd:string
-intersection_of: UBERON:6025991 ! insect anterior ectoderm derivative
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00025993 ! 
-property_value: IAO:0000589 "insect ventral ectoderm derivative (drosophila)" xsd:string
-intersection_of: UBERON:6025993 ! insect ventral ectoderm derivative
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00026000 ! 
-property_value: IAO:0000589 "insect trunk mesoderm derivative (drosophila)" xsd:string
-intersection_of: UBERON:6026000 ! insect trunk mesoderm derivative
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00026002 ! 
-property_value: IAO:0000589 "insect visceral mesoderm derivative (drosophila)" xsd:string
-intersection_of: UBERON:6026002 ! insect visceral mesoderm derivative
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00040003 ! 
 property_value: IAO:0000589 "insect non-connected developing system (drosophila)" xsd:string
 intersection_of: UBERON:6040003 ! insect non-connected developing system
@@ -2311,6 +2257,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

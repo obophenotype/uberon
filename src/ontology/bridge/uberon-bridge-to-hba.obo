@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-hba
-data-version: 2022-03-26
+data-version: 2022-06-30
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -3441,6 +3441,12 @@ intersection_of: UBERON:0036065 ! cerebellum vermis lobule VIIAt
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
+id: HBA:4275 ! 
+property_value: IAO:0000589 "cerebral nuclei (HBA)" xsd:string
+intersection_of: UBERON:8440012 ! cerebral nuclei
+intersection_of: part_of NCBITaxon:9606
+
+[Term]
 id: HBA:ENTITY
 name: HBA entity
 intersection_of: UBERON:0001062 ! anatomical entity
@@ -3463,6 +3469,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by
