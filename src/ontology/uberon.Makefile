@@ -406,7 +406,7 @@ tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
 	cat $^ | sort | uniq >  $@
 
 imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r -p http://purl.obolibrary.org/obo/OMO_0002000 -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
@@ -1118,6 +1118,8 @@ $(TMPDIR)/merged-composite-%.owl: $(MBASE)
 	$(OWLTOOLS) $(MAKESPMERGE) --merge-import-closure -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/merged-composite-%.owl
 
+# This step removes the logical axioms of a  
+# handful of around 5 classes which are unsatisfiable from SSAOs.
 $(TMPDIR)/stripped-composite-%.owl: $(TMPDIR)/merged-composite-%.owl
 	$(ROBOT) remove -i $< -T unsats.txt --axioms logical -o $@
 
