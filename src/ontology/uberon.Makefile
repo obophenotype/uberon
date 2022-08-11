@@ -109,7 +109,7 @@ tmp/uberon-merged.owl: $(SRC)
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
 $(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
 	$(ROBOT) expand -i $@.tmp \
 		query \
