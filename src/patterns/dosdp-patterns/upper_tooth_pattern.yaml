@@ -1,10 +1,14 @@
 # Naming pattern: upper primary/secondary side tooth number
 
-# insicors get premaxilla and mandible
-# canines, molars, and premolars get maxilla and mandible
+# insicors reside in premaxilla
+# canines, molars, and premolars reside in maxilla
+## premaxilla and maxilla are both subclasses of upper jaw bone
 
-# create upper and lower tooth with subclasses: 'calcareous tooth' and 'part of' some 'dentition'
-# create upper secondary tooth and upper primary tooth with subclass 'upper 'tooth''
+## will need to make tooth first, separately (e.g., molar tooth 1 needs to already exist)
+## in most cases, one will know if it is primary or secondary, as well as if it is upper or lower tooth.
+## need to create combination of lower and primary/secondary, do know need to make them individually
+# create upper secondary tooth and upper primary tooth with subclass: 'calcareous tooth' and 'part of' some 'jaw bone' and 'part of' some 'dentition'
+## not doing side but leaving this here in case side is included in the future
 # create right and left upper inscisor with subclass 'upper incisor'
 # create right and left primary and secondary upper incisor with subclass 'primary upper incisor' and 'secondary upper incisor'
 ---
@@ -28,7 +32,8 @@ relations:
   part_of: 'BFO:0000050'
 
 vars:
-  bone: "'bone of jaw'"  # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
+  bone: "'bone of jaw'"
+  # Could be more specific: "'mandible' or 'premaxilla'" if dosdp_tools can read the OR. # Check with Jim Baloff
   # premaxilla UBERON_0002244
   # maxilla UBERON:0002397
   dentition_type: "'dentition'"
@@ -40,29 +45,26 @@ vars:
   # molar UBERON:0003655
   # premolar UBERON:0007120
 
-data_vars:
-  number: 'xsd:integer'
-  # 1-6
-
 data_list_vars:
   xrefs: 'xsd:string'  # separate multiple entries by "|"
 
 name:
-  text: "Upper %s %s"
+  text: "Upper %s %s" # upper secondary molar tooth 1
   vars:
     - dentition_type
     - tooth
 
 def:
-  text: "Upper %s %s phylogenetically in position %s"
+  text: "A %s %s that is part of an upper jaw region"
+  # A secondary dentition molar tooth 1 that is part of an upper jaw region"
   vars:
     - dentition_type
     - tooth
-    - number
   xrefs: xrefs
 
 equivalentTo:
   text: "%s and ('part_of' some %s) and ('part_of' some %s)"
+  # molar tooth 1 and ('part of' some 'maxilla') and ('part of' some 'secondary dentition')
   vars:
     - tooth
     - bone
