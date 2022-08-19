@@ -109,11 +109,10 @@ tmp/uberon-merged.owl: $(SRC)
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
 $(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
-	$(ROBOT) merge -i $@.tmp \
+	$(ROBOT) expand -i $@.tmp --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 		query \
-			--update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru \
 			--update $(SPARQLDIR)/remove_axioms.ru \
 			--update $(SPARQLDIR)/delete-definition-dot.ru \
 		merge -i imports/ro_import.owl -o $@
@@ -406,7 +405,7 @@ tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
 	cat $^ | sort | uniq >  $@
 
 imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r  -o $@; fi
+	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r -p http://purl.obolibrary.org/obo/OMO_0002000 -o $@; fi
 
 imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
