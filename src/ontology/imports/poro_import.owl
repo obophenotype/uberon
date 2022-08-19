@@ -8,11 +8,12 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sponge="http://purl.obolibrary.org/obo/sponge#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/poro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-09-27/imports/poro_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/poro/releases/2016-09-13/poro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-09-27</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2022-08-19/imports/poro_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/poro/releases/2016-10-06/poro.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-08-19</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -65,6 +66,14 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002582">
         <obo:IAO_0000115>If R &lt;- P o Q is a defining property chain axiom, then (1) R -&gt; P o Q holds and (2) Q is either reflexive or locally reflexive. A corollary of this is that P SubPropertyOf R.</obo:IAO_0000115>
         <rdfs:label>is a defining property chain axiom where second argument is reflexive</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/sponge#DEPRECATED -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/sponge#DEPRECATED">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
     </owl:AnnotationProperty>
     
 
@@ -256,27 +265,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000062 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000062">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>is preceded by</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>takes place after</oboInOwl:hasExactSynonym>
-        <rdfs:label>preceded_by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000063 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000063">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label>precedes</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0000052 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0000052">
@@ -337,28 +325,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/RO_0002002 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002002">
-        <rdfs:label>has boundary</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002087 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002087">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-        <obo:IAO_0000115>X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>directly preceded by</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>is directly preceded by</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>is immediately preceded by</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>starts_at_end_of</oboInOwl:hasExactSynonym>
-        <rdfs:label>immediately_preceded_by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/RO_0002131 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
@@ -395,12 +361,10 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002150">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002323"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000115>X continuous_with Y if and only if X and Y share a fiat boundary.</obo:IAO_0000115>
         <rdfs:label xml:lang="en">continuous with</rdfs:label>
-        <rdfs:label>continuous_with</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -420,7 +384,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002180">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <obo:IAO_0000115>w &apos;has component&apos; p if w &apos;has part&apos; p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type.</obo:IAO_0000115>
-        <rdfs:label>has component</rdfs:label>
         <rdfs:label xml:lang="en">has component</rdfs:label>
     </owl:ObjectProperty>
     
@@ -429,7 +392,6 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002202 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002202">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002258"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002203"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
@@ -446,7 +408,6 @@
         <obo:IAO_0000115>x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y</obo:IAO_0000115>
         <rdfs:label>develops from</rdfs:label>
         <rdfs:label xml:lang="en">develops from</rdfs:label>
-        <rdfs:label>develops_from</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -461,7 +422,6 @@
         <obo:IAO_0000115>inverse of develops from</obo:IAO_0000115>
         <rdfs:label>develops into</rdfs:label>
         <rdfs:label xml:lang="en">develops into</rdfs:label>
-        <rdfs:label>develops_into</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -470,7 +430,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002215">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <obo:IAO_0000115>A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. </obo:IAO_0000115>
@@ -511,9 +470,7 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002221"/>
         <obo:IAO_0000115>x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x</obo:IAO_0000115>
-        <obo:IAO_0000115>x surrounded_by y iff: x is adjacent to y and for every region r adjacent to x, r overlaps y</obo:IAO_0000115>
         <rdfs:label xml:lang="en">surrounded by</rdfs:label>
-        <rdfs:label>surrounded_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -522,15 +479,12 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002163"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000115>x adjacent to y if and only if x and y share a boundary</obo:IAO_0000115>
         <obo:IAO_0000115>x adjacent to y if and only if x and y share a boundary.</obo:IAO_0000115>
-        <obo:IAO_0000115>x adjacent_to y iff: x and y share a boundary</obo:IAO_0000115>
         <rdfs:label>adjacent to</rdfs:label>
         <rdfs:label xml:lang="en">adjacent to</rdfs:label>
-        <rdfs:label>adjacent_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -540,51 +494,7 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002221">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <obo:IAO_0000115>inverse of surrounded by</obo:IAO_0000115>
-        <obo:IAO_0000115>inverse of surrounded_by</obo:IAO_0000115>
-        <rdfs:label>surrounds</rdfs:label>
         <rdfs:label xml:lang="en">surrounds</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002223 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002223">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002224"/>
-        <obo:IAO_0000115>Relation between occurrents, shares a start boundary with.</obo:IAO_0000115>
-        <rdfs:label>starts</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002224 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002224">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label>starts with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002229 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002229">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <obo:IAO_0000115>Relation between occurrents, shares an end boundary with.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>finishes</oboInOwl:hasExactSynonym>
-        <rdfs:label>ends</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002230 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002230">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:label>ends with</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -605,7 +515,6 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002254">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002258"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002255"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -632,7 +541,6 @@
         <obo:IAO_0000115>inverse of has developmental contribution from</obo:IAO_0000115>
         <rdfs:label>developmentally contributes to</rdfs:label>
         <rdfs:label xml:lang="en">developmentally contributes to</rdfs:label>
-        <rdfs:label>developmentally_contributes_to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -806,98 +714,7 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002473">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <obo:IAO_0000115>x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y.</obo:IAO_0000115>
-        <obo:IAO_0000115>x composed_primarily_of y iff: more than half of the mass of x is made from parts of y</obo:IAO_0000115>
         <rdfs:label>composed primarily of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002488 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002488">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002496"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002488"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>begins_to_exist_during</oboInOwl:hasExactSynonym>
-        <rdfs:label>existence starts during</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002489 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002489">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
-        <obo:IAO_0000115>Relation between continuant and occurrent, such that c comes into existence at the start of p.</obo:IAO_0000115>
-        <rdfs:label>existence starts with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002492 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002492">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002497"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002492"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Relation between continuant c and occurrent s, such that every instance of c ceases to exist during some s, if it does not die prematurely.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>ceases_to_exist_during</oboInOwl:hasExactSynonym>
-        <rdfs:label>existence ends during</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002493 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002493">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
-        <obo:IAO_0000115>Relation between continuant and occurrent, such that c ceases to exist at the end of p.</obo:IAO_0000115>
-        <rdfs:label>existence ends with</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002496 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002496">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002496"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002496"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002496"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
-        </owl:propertyChainAxiom>
-        <rdfs:label>existence starts during or after</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002497 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002497">
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002497"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002497"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        </owl:propertyChainAxiom>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002497"/>
-            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000063"/>
-        </owl:propertyChainAxiom>
-        <rdfs:label>existence ends during or before</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -988,7 +805,6 @@
         <obo:IAO_0000115>a produced_by b iff some process that occurs_in b has_output a.</obo:IAO_0000115>
         <rdfs:label>produced by</rdfs:label>
         <rdfs:label xml:lang="en">produced by</rdfs:label>
-        <rdfs:label>produced_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1034,16 +850,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during">
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
-        <rdfs:label>existence starts and ends during</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/depicts -->
 
     <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/depicts"/>
@@ -1058,18 +864,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://org.semanticweb.owlapi/error#Error1 -->
-
-    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error1"/>
-    
-
-
-    <!-- http://org.semanticweb.owlapi/error#Error2 -->
-
-    <owl:Class rdf:about="http://org.semanticweb.owlapi/error#Error2"/>
     
 
 
@@ -3444,6 +3238,7 @@
         <obo:IAO_0000115>A specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface and of some cytoplasmic parts. Each cilium is largely bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored to a basal body.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>eukaryotic flagellum</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>microtubule-based flagellum</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>primary cilium</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasRelatedSynonym>flagellum</oboInOwl:hasRelatedSynonym>
         <rdfs:label>cilium</rdfs:label>
     </owl:Class>
@@ -3754,8 +3549,9 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0032991">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
-        <obo:IAO_0000115>A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which the constituent parts function together.</obo:IAO_0000115>
+        <obo:IAO_0000115>A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>macromolecule complex</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>protein containing complex</oboInOwl:hasExactSynonym>
         <rdfs:label>macromolecular complex</rdfs:label>
     </owl:Class>
     
@@ -4347,7 +4143,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <obo:IAO_0000115>A quality which inheres in a continuant.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>monadic quality of a continuant</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>multiply inhering quality of a physical entity </oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>multiply inhering quality of a physical entity</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>quality of a continuant</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>quality of a single physical entity</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>quality of an object</oboInOwl:hasExactSynonym>
@@ -5118,32 +4914,10 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000000">
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-        <obo:IAO_0000115>An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity.</obo:IAO_0000115>
-        <rdfs:label>processual entity</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002496"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002497"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000071"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism&apos;s own genome.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>biological structure</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>connected biological structure</oboInOwl:hasExactSynonym>
@@ -5162,12 +4936,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002002"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006984"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Anatomical structure that performs a specific function or group of functions [WP].</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>anatomical unit</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>body organ</oboInOwl:hasRelatedSynonym>
@@ -5177,368 +4945,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000066 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000066">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000111"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000071"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The stage of development at which the animal is fully formed, including immaturity and maturity. Includes both sexually immature stage, and adult stage.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>adult stage</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasExactSynonym>fully formed animal stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>juvenile-adult stage</oboInOwl:hasExactSynonym>
-        <rdfs:label>fully formed stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000067 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000067">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A stage that is part of the embryo stage.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>embryonic stage part</oboInOwl:hasExactSynonym>
-        <rdfs:label>embryo stage part</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000068 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000068">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-        <obo:IAO_0000115>A life cycle stage that starts with fertilization and ends with the fully formed embryo.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>embryonic stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>embryogenesis</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>embryo stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000069 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000069">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A distinct juvenile stage many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>larva stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>ammocoete</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>ammocoete stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>bipinnaria</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>bipinnaria stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>caterpillar</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>caterpillar stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>glochidium</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>glochidium stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>grub</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>grub stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>leptocephalus</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>leptocephalus stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>maggot</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>maggot stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>metacestode</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>naiad, nymph</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>naiad, nymph stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>nauplius</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>nauplius stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>nymph</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>nymph stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>planula</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>planula stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>tornaria</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>trochophore</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>trochophore stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>veliger</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>veliger stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>wriggler</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>wriggler stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>zoea</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>zoea stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasRelatedSynonym>larva</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>larval stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000071 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000071">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002229"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>End of the life of an organism.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>death</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>death stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000092 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000092">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000105"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>stage succeeding embryo, including mature structure</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>postembryonic stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>post-hatching stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasRelatedSynonym>postembryonic</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>post-embryonic stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000104 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000104">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002224"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002230"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000071"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>An entire span of an organism&apos;s life, commencing with the zygote stage and ending in the death of the organism.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>entire life cycle</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>entire lifespan</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>life</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>lifespan</oboInOwl:hasExactSynonym>
-        <rdfs:label>life cycle</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000105 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000105">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000000"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A spatiotemporal region encompassing some part of the life cycle of an organism.</obo:IAO_0000115>
-        <oboInOwl:hasNarrowSynonym>developmental stage</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>stage</oboInOwl:hasNarrowSynonym>
-        <rdfs:label>life cycle stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000106 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000106">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002223"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000104"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A stage at which the organism is a single cell produced by means of sexual reproduction.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>1-cell stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>fertilized egg stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>one cell stage</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>fertilized egg stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>one-cell stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>zygote</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>zygotum</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>zygote stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000107 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000107">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002087"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The first few specialized divisions of an activated animal egg; Stage consisting of division of cells in the early embryo. The zygotes of many species undergo rapid cell cycles with no significant growth, producing a cluster of cells the same size as the original zygote. The different cells derived from cleavage are called blastomeres and form a compact mass called the morula. Cleavage ends with the formation of the blastula.</obo:IAO_0000115>
-        <rdfs:label>cleavage stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000108 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000108">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>An early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence.</obo:IAO_0000115>
-        <rdfs:label>blastula stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000109 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000109">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A stage defined by complex and coordinated series of cellular movements that occurs at the end of cleavage during embryonic development of most animals. The details of gastrulation vary from species to species, but usually result in the formation of the three primary germ layers, ectoderm, mesoderm and endoderm.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>blastocystis trilaminaris stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar blastocyst stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar blastoderm stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar disk stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar germ stage</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar stage</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>gastrula stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000110 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000110">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Staged defined by the formation of a tube from the flat layer of ectodermal cells known as the neural plate. This will give rise to the central nervous system.</obo:IAO_0000115>
-        <rdfs:label>neurula stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000111 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000111">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A stage at which the ectoderm, endoderm, and mesoderm develop into the internal organs of the organism.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>segmentation stage</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>organogenesis stage</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000307 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000307">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007010"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Organism at the blastula stage - an early stage of embryonic development in animals. It is produced by cleavage of a fertilized ovum and consists of a spherical layer of around 128 cells surrounding a central fluid-filled cavity called the blastocoel. The blastula follows the morula and precedes the gastrula in the developmental sequence.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>blastula embryo</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>blastosphere</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>blastula</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000105"/>
     
 
 
@@ -5577,12 +4986,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002496"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000111"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function.</obo:IAO_0000115>
@@ -5646,57 +5049,7 @@
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000480 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000480">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Anatomical structure consisting of at least two non-overlapping organs, multi-tissue aggregates or portion of tissues or cells of different types that does not constitute an organism, organ, multi-tissue aggregate, or portion of tissue.</obo:IAO_0000115>
-        <rdfs:label>anatomical group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000922 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000922">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002493"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002493"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Anatomical entity that comprises the organism in the early stages of growth and differentiation that are characterized by cleavage, the laying down of fundamental tissues, and the formation of primitive organs and organ systems. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>embryonic organism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>developing organism</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>developmental tissue</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>embryo</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000480"/>
     
 
 
@@ -5709,12 +5062,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000991"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Anatomical system that has as its parts the organs concerned with reproduction.</obo:IAO_0000115>
@@ -5794,78 +5141,11 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0002050 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002050">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Anatomical structure that is part of an embryo.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>developing embryonic structure</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>embryonic anatomical structure</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>developing structure</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>embryonale Struktur</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>embryonic structures</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>embryonic structure</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0002548 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002548">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000069"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A distinct juvenile form many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle.</obo:IAO_0000115>
         <obo:IAO_0000115>a distinct juvenile form many animals undergo before metamorphosis into adults. Animals with indirect development such as insects, amphibians, or cnidarians typically have a larval phase of their life cycle.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>larval organism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>ammocoete</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>bipinnaria</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>caterpillar</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>glochidium</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>grub</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>leptocephalus</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>maggot</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>naiad</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>nymph</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>planula</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>tadpole</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>trochophore</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>veliger</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>wriggler</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>zoea</oboInOwl:hasNarrowSynonym>
         <rdfs:label>larva</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -5894,82 +5174,6 @@
         <oboInOwl:hasExactSynonym>sex organ</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>genitalia</oboInOwl:hasRelatedSynonym>
         <rdfs:label>reproductive organ</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004455 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004455">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004734"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>An embryo at the neurula stage.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>neurula</oboInOwl:hasExactSynonym>
-        <rdfs:label>neurula embryo</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0004734 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004734">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000307"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#existence_starts_and_ends_during"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Organism at the gastrula stage.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>gastrula embryo</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>blastocystis trilaminaris</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>tri-laminar disc</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>tri-laminar disk</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar blastocyst</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar blastoderm</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar disc</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar disk</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>trilaminar germ</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>gastrula</rdfs:label>
     </owl:Class>
     
 
@@ -6003,36 +5207,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0005291 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005291">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000479"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A portion of tissue that is part of an embryo.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>portion of embryonic tissue</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>developing tissue</oboInOwl:hasRelatedSynonym>
-        <rdfs:label>embryonic tissue</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0005423 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005423">
@@ -6055,12 +5229,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000990"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000991"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Portion of tissue that gives rise to the immature gonad.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>future gonad</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>gonadal primordium</oboInOwl:hasExactSynonym>
@@ -6068,124 +5236,6 @@
         <oboInOwl:hasExactSynonym>undifferentiated gonad</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>immature gonad</oboInOwl:hasRelatedSynonym>
         <rdfs:label>gonad primordium</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006598 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006598">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0005423"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Portion of embryonic tissue determined by fate mapping to become a structure.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>future structure</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>presumptive structures</oboInOwl:hasExactSynonym>
-        <rdfs:label>presumptive structure</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006984 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006984">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000466"/>
-        <obo:IAO_0000115>A two dimensional anatomical structure that is the boundary between an anatomical structure and an anatomical substance, an anatomical space or the organism&apos;s environment. Examples include the surface of your skin, the surface of the lining of your gut; the surface of the endothelium of you aorta that is in contact with blood.n</obo:IAO_0000115>
-        <rdfs:label>anatomical surface</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007010 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007010">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002493"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002493"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000107"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Organism at the cleavage stage.</obo:IAO_0000115>
-        <rdfs:label>cleaving embryo</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0009953 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009953">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002489"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A multicellular organism that existence_starts_with a post-embryonic stage.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>postnatal organism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>TS28 mouse</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>post-hatching organism</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>post-natal organism</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasNarrowSynonym>postnatal mouse</oboInOwl:hasNarrowSynonym>
-        <rdfs:label>post-embryonic organism</rdfs:label>
     </owl:Class>
     
 
@@ -6269,24 +5319,6 @@
         </owl:equivalentClass>
     </owl:Class>
     <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-            </owl:Restriction>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
-            </owl:Restriction>
-        </owl:unionOf>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000104"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
-    <owl:Class>
         <owl:complementOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -6309,16 +5341,6 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002505"/>
             </owl:Restriction>
         </owl:equivalentClass>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000466"/>
-        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error2"/>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
-        <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
     </owl:Restriction>
     <owl:Restriction>
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -6347,16 +5369,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PORO_0000200"/>
-            </owl:Restriction>
-        </owl:disjointWith>
-    </owl:Restriction>
-    <owl:Restriction>
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
-        <owl:disjointWith>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000092"/>
             </owl:Restriction>
         </owl:disjointWith>
     </owl:Restriction>
