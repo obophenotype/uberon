@@ -109,11 +109,10 @@ tmp/uberon-merged.owl: $(SRC)
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
 $(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies --expand-macros -o  $@ &&  $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
-	$(ROBOT) merge -i $@.tmp \
+	$(ROBOT) expand -i $@.tmp --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 		query \
-			--update $(SPARQLDIR)/taxon_constraint_never_in_taxon.ru \
 			--update $(SPARQLDIR)/remove_axioms.ru \
 			--update $(SPARQLDIR)/delete-definition-dot.ru \
 		merge -i imports/ro_import.owl -o $@
