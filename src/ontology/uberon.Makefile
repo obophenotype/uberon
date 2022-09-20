@@ -928,8 +928,6 @@ subsets/life-stages-composite.owl: composite-metazoan.owl
 	$(OWLTOOLS) $@ --extract-ontology-subset --fill-gaps --subset life_stage -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
 	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
 
-#$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon composite-vertebrate ontology (includes species stage ontologies)" -o $@ --reasoner-dispose 2>&1 > $@.LOG
-
 subsets/life-stages-core.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 subsets/life-stages-core.owl: uberon.owl
