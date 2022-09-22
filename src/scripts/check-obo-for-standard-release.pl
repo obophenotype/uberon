@@ -165,10 +165,12 @@ while (<>) {
         if ($2 =~ /^$id/) {
         	flag("circular $1 ref", $id);
         }
-        $edge{$id}{$2}{$1}++;
-        $relUsageMap{$1}++;
-        $n_relationships++;
-        push(@referenced_ids, $2);
+        unless ($1 =~ /^dc-contributor/) {
+          $edge{$id}{$2}{$1}++;
+          $relUsageMap{$1}++;
+          $n_relationships++;
+          push(@referenced_ids, $2);
+        }
     }
     if (/^intersection_of:\s*(.*)/) {
         s@ \{.*\}@@;
