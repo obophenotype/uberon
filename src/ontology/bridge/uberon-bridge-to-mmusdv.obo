@@ -1,78 +1,78 @@
 ontology: uberon/bridge/uberon-bridge-to-mmusdv
-data-version: 2022-03-26
+data-version: 2022-08-19
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
 id: MmusDv:0000002 ! 
 property_value: IAO:0000589 "embryo stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000068 ! embryo stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000001 ! 
 property_value: IAO:0000589 "life cycle (MmusDv)" xsd:string
 intersection_of: UBERON:0000104 ! life cycle
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000000 ! 
 property_value: IAO:0000589 "life cycle stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000105 ! life cycle stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000004 ! 
 property_value: IAO:0000589 "cleavage stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000107 ! cleavage stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000007 ! 
 property_value: IAO:0000589 "blastula stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000108 ! blastula stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000013 ! 
 property_value: IAO:0000589 "gastrula stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000109 ! gastrula stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000017 ! 
 property_value: IAO:0000589 "neurula stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000110 ! neurula stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000018 ! 
 property_value: IAO:0000589 "organogenesis stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000111 ! organogenesis stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000043 ! 
 property_value: IAO:0000589 "sexually immature stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000112 ! sexually immature stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000110 ! 
 property_value: IAO:0000589 "post-juvenile adult stage (MmusDv)" xsd:string
 intersection_of: UBERON:0000113 ! post-juvenile adult stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000031 ! 
 property_value: IAO:0000589 "late embryonic stage (MmusDv)" xsd:string
 intersection_of: UBERON:0007220 ! late embryonic stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:0000096 ! 
 property_value: IAO:0000589 "neonate stage (MmusDv)" xsd:string
 intersection_of: UBERON:0007221 ! neonate stage
-intersection_of: part_of NCBITaxon:10090
+intersection_of: occurs_in NCBITaxon:10090
 
 [Term]
 id: MmusDv:ENTITY
@@ -97,6 +97,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

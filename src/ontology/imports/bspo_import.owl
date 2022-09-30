@@ -7,12 +7,16 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bspo="http://purl.obolibrary.org/obo/bspo#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/imports/bspo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2021-09-27/imports/bspo_import.owl"/>
-        <dc:source rdf:resource="http://purl.obolibrary.org/obo/bspo/releases/2020-05-11/bspo.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-09-27</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2022-06-28/imports/bspo_import.owl"/>
+        <dc:source rdf:resource="http://purl.obolibrary.org/obo/bspo/releases/2022-06-28/bspo-base.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-06-28</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -36,11 +40,49 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/IAO_0100001 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0100001">
         <rdfs:label>term replaced by</rdfs:label>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/bspo#vertebrate -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/bspo#vertebrate">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
@@ -201,6 +243,11 @@
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <oboInOwl:hasDbXref>BFO:0000050</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>part_of</oboInOwl:id>
+        <oboInOwl:shorthand>part_of</oboInOwl:shorthand>
+        <rdfs:label>part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -209,6 +256,11 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <oboInOwl:hasDbXref>BFO:0000051</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>has_part</oboInOwl:id>
+        <oboInOwl:shorthand>has_part</oboInOwl:shorthand>
+        <rdfs:label>has part</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -402,7 +454,7 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000120">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000126"/>
-        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000121"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000121"/>
         <obo:IAO_0000115>X in left side of Y &lt;=&gt; if Y is subdivided into two left and right portions, X is part of the left portion.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0000120</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
@@ -525,12 +577,14 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0000126">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        <owl:propertyDisjointWith rdf:resource="http://purl.obolibrary.org/obo/BSPO_0020001"/>
         <obo:IAO_0000115>X in lateral side of Y &lt;=&gt; if X is in left side of Y or X is in right side of Y. X is often, but not always a paired structure</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0000126</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:id>in_lateral_side_of</oboInOwl:id>
         <oboInOwl:shorthand>in_lateral_side_of</oboInOwl:shorthand>
         <rdfs:label>in lateral side of</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obophenotype/uberon/issues/2453"/>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern</rdfs:seeAlso>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -656,33 +710,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BSPO_0001114 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0001114">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>x preaxial to y iff x is further along the preaxial-postaxial axis than y, towards the postaxial side.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0001114</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>posterior to (developmentally)</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>postaxial_to</oboInOwl:id>
-        <oboInOwl:shorthand>postaxial_to</oboInOwl:shorthand>
-        <rdfs:label>postaxial to</rdfs:label>
-    </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001114"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>x preaxial to y iff x is further along the preaxial-postaxial axis than y, towards the postaxial side.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://medical-dictionary.thefreedictionary.com/postaxial</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001114"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>posterior to (developmentally)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA:th</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BSPO_0001115 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0001115">
@@ -735,12 +762,14 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015012">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000099"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <obo:IAO_0000115>x immediately posterior to y iff x posterior_to y and x is contiguous with y.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0015012</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:id>immediately_posterior_to</oboInOwl:id>
         <oboInOwl:shorthand>immediately_posterior_to</oboInOwl:shorthand>
         <rdfs:label>immediately posterior to</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obophenotype/uberon/issues/2453"/>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015012"/>
@@ -755,12 +784,14 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015014">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000108"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <obo:IAO_0000115>x immediately superficial to y iff x superficial to y and x is contiguous with y.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BSPO:0015014</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
         <oboInOwl:id>immediately_superficial_to</oboInOwl:id>
         <oboInOwl:shorthand>immediately_superficial_to</oboInOwl:shorthand>
         <rdfs:label>immediately superficial to</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obophenotype/uberon/issues/2453"/>
     </owl:ObjectProperty>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015014"/>
@@ -811,26 +842,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BSPO_0015201 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015201">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>nearer to the oral opening of the organism, on the oral-aboral axis.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>BSPO:0015201</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>oral_to</oboInOwl:id>
-        <oboInOwl:shorthand>oral_to</oboInOwl:shorthand>
-        <rdfs:label>oral to</rdfs:label>
-    </owl:ObjectProperty>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015201"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>nearer to the oral opening of the organism, on the oral-aboral axis.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BSPO_0015202 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0015202">
@@ -846,6 +857,26 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0015202"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>nearer to the aboral opening of the organism, on the oral-aboral axis.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BSPO_0020001 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BSPO_0020001">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        <obo:IAO_0000115>X in_central_side Y &lt;=&gt; if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides.</obo:IAO_0000115>
+        <obo:IAO_0000116>This was migrated from http://purl.obolibrary.org/obo/uberon/core#in_central_side_of in Uberon.</obo:IAO_0000116>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-6523-4866"/>
+        <rdfs:label>in central side of</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000059"/>
+        <rdfs:seeAlso rdf:resource="https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0020001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>X in_central_side Y &lt;=&gt; if Y is subdivided into left and right portions around some median divisor, all parts of X are closer to the median divisor than the outermost lateral sides.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -882,7 +913,21 @@
 
     <!-- http://purl.obolibrary.org/obo/RO_0002131 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002131">
+        <obo:IAO_0000115>x overlaps y iff they have some part in common.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>RO:0002131</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>overlaps</oboInOwl:id>
+        <oboInOwl:shorthand>overlaps</oboInOwl:shorthand>
+        <rdfs:comment>&quot;(forall (x y) (iff (overlaps x y) (exists (z) (and (part of z x) (part of z y)))))&quot; CLIF []</rdfs:comment>
+        <rdfs:label>overlaps</rdfs:label>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>x overlaps y iff they have some part in common.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -890,6 +935,11 @@
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002220">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <oboInOwl:hasDbXref>RO:0002220</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>adjacent_to</oboInOwl:id>
+        <oboInOwl:shorthand>adjacent_to</oboInOwl:shorthand>
+        <rdfs:label>adjacent to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -897,161 +947,155 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Classes
+    // Rules
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000054 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000054">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
-        <obo:IAO_0000115>An anatomical region bounded by a plane perpendicular to an axis through the middle.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>FBql:00005841</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>BSPO:0000054</oboInOwl:id>
-        <rdfs:label>anatomical side</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000054"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An anatomical region bounded by a plane perpendicular to an axis through the middle.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000059 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000059">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000054"/>
-        <obo:IAO_0000115>Anatomical side that is centrally located on an organism or structure.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>FBcv:0000056</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FBql:00015851</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>central</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>BSPO:0000059</oboInOwl:id>
-        <rdfs:comment>central is not an axis direction</rdfs:comment>
-        <rdfs:label>central side</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000059"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Anatomical side that is centrally located on an organism or structure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:wd</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000070 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000070">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
-        <obo:IAO_0000115>A 3D region in space without well-defined compartmental boundaries; for example, the dorsal region of an ectoderm.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>FBql:00005841</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>BSPO:0000070</oboInOwl:id>
-        <rdfs:comment>to be merged into CARO</rdfs:comment>
-        <rdfs:label>anatomical region</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A 3D region in space without well-defined compartmental boundaries; for example, the dorsal region of an ectoderm.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:cjm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BSPO_0000075 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BSPO_0000075">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BSPO_0000070"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000059"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000070"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000059"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Anatomical region centrally located on the body or body part.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>FBql:00015851</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>BSPO:0000075</oboInOwl:id>
-        <rdfs:label>central region</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000075"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Anatomical region centrally located on the body or body part.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BSPO:wd</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
-        <obo:IAO_0000115>Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>CARO:0000000</oboInOwl:id>
-        <rdfs:label>anatomical entity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CARO:MAH</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CARO_0000003 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000003">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
-        <obo:IAO_0000115>Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism&apos;s own genome.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>CARO:0000003</oboInOwl:id>
-        <rdfs:label>anatomical structure</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism&apos;s own genome.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CC:DOS</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
-        <obo:IAO_0000115>An anatomical entity that has mass.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>spatial</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>CARO:0000006</oboInOwl:id>
-        <rdfs:label>material anatomical entity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An anatomical entity that has mass.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CC:DOS</oboInOwl:hasDbXref>
-    </owl:Axiom>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>This can&apos;t be added as a property chain because it causes a circularity violation for &apos;part of&apos;.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000120"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000120"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>This can&apos;t be added as a property chain because it causes a circularity violation for &apos;part of&apos;.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000121"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000121"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdfs:comment>This can&apos;t be added as a property chain because it causes a circularity violation for &apos;part of&apos;.</rdfs:comment>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000126"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000126"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
 </rdf:RDF>
 
 

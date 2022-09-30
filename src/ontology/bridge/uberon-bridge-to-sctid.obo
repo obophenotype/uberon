@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-sctid
-data-version: 2022-03-26
+data-version: 2022-08-19
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to SNOMED-CT" xsd:string
 property_value: dc-description "Rough subclass axioms between SNOMED-CT and Uberon. Note that in SNOMED is not open, unlike other ontologies used in bridges here. Consequently, the mappings here are not verified to the same degree." xsd:string
@@ -5459,8 +5459,8 @@ is_a: UBERON:0002108 ! small intestine
 
 [Term]
 id: SCTID:181269000 ! 
-property_value: IAO:0000589 "gall bladder (SCTID)" xsd:string
-is_a: UBERON:0002110 ! gall bladder
+property_value: IAO:0000589 "gallbladder (SCTID)" xsd:string
+is_a: UBERON:0002110 ! gallbladder
 
 [Term]
 id: SCTID:181414000 ! 
@@ -6601,11 +6601,6 @@ is_a: UBERON:0002434 ! pituitary stalk
 id: SCTID:425300001 ! 
 property_value: IAO:0000589 "pituitary stalk (SCTID)" xsd:string
 is_a: UBERON:0002434 ! pituitary stalk
-
-[Term]
-id: SCTID:384772005 ! 
-property_value: IAO:0000589 "primary visual cortex (SCTID)" xsd:string
-is_a: UBERON:0002436 ! primary visual cortex
 
 [Term]
 id: SCTID:361691006 ! 
@@ -10624,8 +10619,8 @@ is_a: UBERON:0004778 ! larynx submucosa
 
 [Term]
 id: SCTID:362197006 ! 
-property_value: IAO:0000589 "gall bladder serosa (SCTID)" xsd:string
-is_a: UBERON:0004783 ! gall bladder serosa
+property_value: IAO:0000589 "gallbladder serosa (SCTID)" xsd:string
+is_a: UBERON:0004783 ! gallbladder serosa
 
 [Term]
 id: SCTID:410433007 ! 
@@ -15698,6 +15693,11 @@ property_value: IAO:0000589 "salpingopharyngeus muscle (SCTID)" xsd:string
 is_a: UBERON:0010937 ! salpingopharyngeus muscle
 
 [Term]
+id: SCTID:29823001 ! 
+property_value: IAO:0000589 "muscle belly (SCTID)" xsd:string
+is_a: UBERON:0010938 ! muscle belly
+
+[Term]
 id: SCTID:360772008 ! 
 property_value: IAO:0000589 "muscle of digastric group (SCTID)" xsd:string
 is_a: UBERON:0010940 ! muscle of digastric group
@@ -20682,6 +20682,11 @@ id: SCTID:13515001 !
 property_value: IAO:0000589 "spleen pulp (SCTID)" xsd:string
 is_a: UBERON:1000023 ! spleen pulp
 
+[Term]
+id: SCTID:384772005 ! 
+property_value: IAO:0000589 "Brodmann (1909) area 17 (SCTID)" xsd:string
+is_a: UBERON:8440010 ! Brodmann (1909) area 17
+
 [Typedef]
 id: part_of
 xref: BFO:0000050
@@ -20689,6 +20694,10 @@ xref: BFO:0000050
 [Typedef]
 id: develops_from
 xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by
