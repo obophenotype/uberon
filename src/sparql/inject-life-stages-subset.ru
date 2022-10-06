@@ -4,11 +4,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 
 INSERT { 
-  ?x <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#life_stage> .
+  ?x  <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#life_stage> .
+  ?y  <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/uberon/core#life_stage> .
 }
 
 WHERE {
   ?x rdfs:label ?label .
+  ?y rdfs:subClassOf* ?x .
   FILTER(STRENDS(?label, "life cycle stage"))
   FILTER(isIRI(?x))
 }
