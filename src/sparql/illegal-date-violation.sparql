@@ -7,7 +7,6 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 # selecting only unique instances of the three variables
 SELECT DISTINCT ?term ?property ?value WHERE
 {
-  ?term rdfs:isDefinedBy <http://purl.obolibrary.org/obo/uberon.owl> .
   VALUES ?property {dct:date dct:issued dct:created}
   # order of the variables in the triple
     ?term ?property ?value .
