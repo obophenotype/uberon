@@ -17,7 +17,7 @@ SELECT ?entity ?property ?value WHERE {
       }
       ?entity ?property ?name .
       OPTIONAL {
-      ?abbr a owl:Axiom;
+        ?abbr a owl:Axiom;
               owl:annotatedSource ?entity;
               owl:annotatedProperty oboInOwl:hasExactSynonym;
               owl:annotatedTarget ?name;
@@ -28,9 +28,9 @@ SELECT ?entity ?property ?value WHERE {
       FILTER (!isBlank(?entity) && !BOUND(?abbr))
       FILTER NOT EXISTS { ?entity owl:deprecated true }
     } GROUP BY ?iname HAVING (?cnt > 1)
-  } .
-  ?entity ?property ?value
+  }
+  ?entity ?property ?value .
   FILTER (!isBlank(?entity))
   FILTER NOT EXISTS { ?entity owl:deprecated true }
   FILTER (UCASE(?value) = ?iname)
-} ORDER BY ?iname ?entity
+} ORDER BY ?entity
