@@ -15,8 +15,9 @@ jobs:
   diff-reports:
     runs-on: macos-latest
     steps:
-      - uses: docker-practice/actions-setup-docker@master
-      - run: |
+      - uses: docker-practice/actions-setup-docker@v1
+      - name: docker test
+        run: |
           set -x
           docker version
       - name: Install ODK

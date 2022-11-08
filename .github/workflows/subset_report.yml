@@ -12,8 +12,9 @@ jobs:
     runs-on: macos-latest
     # container: obolibrary/odkfull:latest
     steps:
-      - uses: docker-practice/actions-setup-docker@master
-      - run: |
+      - uses: docker-practice/actions-setup-docker@v1
+      - name: docker test
+        run: |
           set -x
           docker version
       - name: Install ODK
