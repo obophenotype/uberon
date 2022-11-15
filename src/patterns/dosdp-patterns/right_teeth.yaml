@@ -68,11 +68,11 @@ data_vars:
   region_qualifier: xsd:string # e.g., upper first, lower central
   tooth_stage: xsd:string      # e.g., primary, secondary
   tooth_label: xsd:string      # e.g, molar tooth, incisor tooth
+  FMA_label: xsd:string        # e.g., Right upper third secondary molar tooth
+  FMA_xref: xsd:string         # e.g., FMA:55696
 
 data_list_vars:              # separate multiple entries by "|"
   exact_synonym: xsd:string  # e.g., ADA tooth 1
-  FMA_xref: xsd:string       # e.g., FMA:55696
-  FMA_label: xsd:string      # e.g., Right upper third secondary molar tooth
   creator: xsd:string        # e.g., https://orcid.org/0000-0001-9625-1899
   date_created: xsd:dateTime # e.g., 2022-11-13T00:00:00Z; note: this shows up a string in Protege
   taxon: xsd:string          # e.g., obo:NCBITaxon_9606; note: the full IRI is being used as a value
@@ -93,12 +93,16 @@ annotations:
   - annotationProperty: "hasExactSynonym"
     value: exact_synonym
   - annotationProperty: "hasExactSynonym"
-    value: FMA_label
     xrefs: FMA_xref
+    text: "%s"
+    vars: 
+      - FMA_label
+  - annotationProperty: "hasDbXref"
+    text: "%s" 
+    vars: 
+      - FMA_xref
   - annotationProperty: "present_in_taxon"
     value: taxon
-  - annotationProperty: "hasDbXref"
-    value: FMA_xref
   - annotationProperty: "contributor"
     value: creator
   - annotationProperty: "creation_date"
