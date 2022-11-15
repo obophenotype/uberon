@@ -61,8 +61,8 @@ annotationProperties:
 vars:
   parent_class: "calcareous tooth" #  UBERON:0001091
 
-list_vars:              # separate multiple entries by "|"
-  taxon: "Homo sapiens" # obo:NCBITaxon_9606
+# list_vars:              # separate multiple entries by "|"
+#   taxon: "Homo sapiens" # obo:NCBITaxon_9606; note: this use the string 'Homo sapiens' as a value
 
 data_vars:
   region_qualifier: xsd:string # e.g., upper first, lower central
@@ -74,7 +74,8 @@ data_list_vars:              # separate multiple entries by "|"
   FMA_xref: xsd:string       # e.g., FMA:55696
   FMA_label: xsd:string      # e.g., Right upper third secondary molar tooth
   creator: xsd:string        # e.g., https://orcid.org/0000-0001-9625-1899
-  date_created: xsd:dateTime # e.g., 2022-11-13T00:00:00Z
+  date_created: xsd:dateTime # e.g., 2022-11-13T00:00:00Z; note: this shows up a string in Protege
+  taxon: xsd:string          # e.g., obo:NCBITaxon_9606; note: the full IRI is being used as a value
 
 name:
   text: "%s %s right %s"   # e.g, upper third secondary right molar tooth
