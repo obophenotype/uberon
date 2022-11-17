@@ -4,49 +4,13 @@ pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/right_teeth.yaml
 description: "This pattern defines primary and secondary teeth on the right side of the mouth."
 
 contributors:
-  - https://orcid.org/0000-0001-9625-1899
+  - https://orcid.org/0000-0001-9625-1899 # Bill Duncan
 
 classes:
   "thing": "owl:Thing"
   "Homo sapiens": "NCBITaxon:9606"
   "jaw region": "UBERON:0011595"
   "calcareous tooth": "UBERON:0001091"
-
-  # tooth CURIEs for reference
-  # # central incisors
-  # lower central primary incisor tooth: UBERON:0018595
-  # lower central secondary incisor tooth: UBERON:0018568
-  # upper central primary incisor tooth: UBERON:0018593
-  # upper central secondary incisor tooth: UBERON:0016454
-  # # lateral incisors
-  # lower lateral primary incisor tooth: UBERON:0018596
-  # lower lateral secondary incisor tooth: UBERON:0018570
-  # upper lateral primary incisor tooth: UBERON:0018594
-  # upper lateral secondary incisor tooth: UBERON:0016455
-  # # canines
-  # lower primary canine tooth: UBERON:0018598     
-  # lower secondary canine tooth: UBERON:0018562
-  # upper primary canine tooth: UBERON:0018597
-  # upper secondary canine tooth: UBERON:0018561
-  # # first premolars
-  # lower first secondary premolar tooth: UBERON:0018573
-  # upper first secondary premolar tooth: UBERON:0018571
-  # # second premolars
-  # lower second secondary premolar tooth: UBERON:0018574
-  # upper second secondary premolar tooth: UBERON:0018572
-  # # first molars
-  # lower first primary molar tooth: UBERON:0018589
-  # lower first secondary molar tooth: UBERON:0018578
-  # upper first primary molar tooth: UBERON:0018588
-  # upper first secondary molar tooth: UBERON:0018575
-  # # second molars
-  # lower second primary molar tooth: UBERON:0018600
-  # lower second secondary molar tooth: UBERON:0018579
-  # upper second primary molar tooth: UBERON:0018599
-  # upper second secondary molar tooth: UBERON:0018576
-  # #third molars
-  # lower third secondary molar tooth: UBERON:0018580
-  # upper third secondary molar tooth: UBERON:0018577
 
 relations:
   in right side of: BSPO:0000121
@@ -61,31 +25,27 @@ annotationProperties:
 vars:
   parent_class: "'calcareous tooth'" #  UBERON:0001091
 
-# list_vars:              # separate multiple entries by "|"
-#   taxon: "Homo sapiens" # obo:NCBITaxon_9606; note: this use the string 'Homo sapiens' as a value
-
 data_vars:
   region_qualifier: "xsd:string" # e.g., upper first, lower central
   tooth_stage: "xsd:string"      # e.g., primary, secondary
   tooth_label: "xsd:string"      # e.g, molar tooth, incisor tooth
 
-data_list_vars:              # separate multiple entries by "|"
+data_list_vars:                # separate multiple entries by "|"
   exact_synonym: "xsd:string"  # e.g., ADA tooth 1
   creator: "xsd:string"        # e.g., https://orcid.org/0000-0001-9625-1899
-  date_created: "xsd:dateTime" # e.g., 2022-11-13T00:00:00Z; note: this shows up a string in Protege
+  date_created: "xsd:dateTime" # e.g., 2022-11-13T00:00:00Z; note: this shows up as a string in Protege
   taxon: "xsd:string"          # e.g., obo:NCBITaxon_9606; note: the full IRI is being used as a value
-  FMA_label: "xsd:string"        # e.g., Right upper third secondary molar tooth
-  FMA_xref: "xsd:string"         # e.g., FMA:55696
+  FMA_label: "xsd:string"      # e.g., Right upper third secondary molar tooth
+  FMA_xref: "xsd:string"       # e.g., FMA:55696
 
 name:
-  text: "%s %s right %s"   # e.g, upper third secondary right molar tooth
+  text: "right %s"   # e.g, upper third secondary molar tooth
   vars:
-    - region_qualifier # e.g., upper third
-    - tooth_stage      # e.g., secondary
-    - tooth_label      # e.g., molar tooth
+    - parent_class
 
 def:
   text: "A %s that is in the right side of the mouth."
+  # e.g., A upper third secondary molar tooth that is in the right side of the mouth.
   vars:
     - parent_class
 
@@ -107,5 +67,6 @@ annotations:
 logical_axioms:
   - axiom_type: equivalentTo
     text: "%s and 'in right side of' some 'jaw region'"
+    # e.g., 'upper third secondary molar tooth' and 'in right side of' some 'jaw region'
     vars:
       - parent_class
