@@ -7,10 +7,13 @@ contributors:
   - https://orcid.org/0000-0001-9625-1899 # Bill Duncan
 
 classes:
-  "thing": "owl:Thing"
-  "Homo sapiens": "NCBITaxon:9606"
-  "jaw region": "UBERON:0011595"
-  "calcareous tooth": "UBERON:0001091"
+  thing: "owl:Thing"
+  Homo sapiens: "NCBITaxon:9606"
+  jaw region: "UBERON:0011595"
+  calcareous tooth: "UBERON:0001091"
+  bone of jaw: "UBERON:0012360"
+  maxilla: "UBERON:0002397"
+  mandible: "UBERON:0001684"
 
 relations:
   in right side of: BSPO:0000121
@@ -23,12 +26,8 @@ annotationProperties:
   hasDbXref: "oboInOwl:hasDbXref"
 
 vars:
-  parent_class: "'calcareous tooth'" #  UBERON:0001091
-
-data_vars:
-  region_qualifier: "xsd:string" # e.g., upper first, lower central
-  tooth_stage: "xsd:string"      # e.g., primary, secondary
-  tooth_label: "xsd:string"      # e.g, molar tooth, incisor tooth
+  parent_class: "calcareous tooth" #  UBERON:0001091
+  jaw_part: "bone of jaw"
 
 data_list_vars:                # separate multiple entries by "|"
   exact_synonym: "xsd:string"  # e.g., ADA tooth 1
@@ -44,10 +43,11 @@ name:
     - parent_class
 
 def:
-  text: "A %s that is in the right side of the mouth."
-  # e.g., A upper third secondary molar tooth that is in the right side of the mouth.
+  text: "A %s that is in the right side of the %s."
+  # e.g., A upper third secondary molar tooth that is in the right side of the maxilla.
   vars:
     - parent_class
+    - jaw_part
 
 exact_synonym:
   value: FMA_label
@@ -68,7 +68,8 @@ annotations:
     
 logical_axioms:
   - axiom_type: equivalentTo
-    text: "%s and 'in right side of' some 'jaw region'"
-    # e.g., 'upper third secondary molar tooth' and 'in right side of' some 'jaw region'
+    text: "%s and 'in right side of' some %s"
+    # e.g., 'upper third secondary molar tooth' and 'in right side of' some 'maxilla'
     vars:
       - parent_class
+      - jaw_part
