@@ -26,6 +26,7 @@ jobs:
       - run: |
           set -x
           docker version
+        if: steps.check.outputs.triggered == 'true'
       - name: Install ODK
         run: docker pull obolibrary/odklite
         if: steps.check.outputs.triggered == 'true'
