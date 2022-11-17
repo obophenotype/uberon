@@ -40,7 +40,6 @@ jobs:
         run: |
           cd src/ontology
           docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite robot diff --left ../../master/src/ontology/uberon-edit.obo --left-catalog ../../master/src/ontology/catalog-v001.xml --right uberon-edit.obo --right-catalog catalog-v001.xml -f markdown -o edit-diff.md
-        if: steps.check.outputs.triggered == 'true'
       - name: Upload diff
         if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v3
