@@ -10,7 +10,12 @@ The broad cross-species nature of Uberon means that care needs to be taken to av
 
 ## Taxon Restrictions
 
+Uberon is a cross-species ontology, and editors should be careful when adding taxon restrictions. Terms added to Uberon should be as taxonomically broad as possible, and taxon restrictions should be used carefully. Before adding any taxon restrictions, make sure go through [this guide](https://oboacademy.github.io/obook/explanation/taxon-constraints-explainer/) and understand the implications of the taxon restriction and how to properly add them.
+
 ## Relations Guide
+
+NEED TO EDIT THIS!
+See this [google sheets](https://docs.google.com/spreadsheets/d/1ScwOdD0KAphfmpBLZ9MMJa0jfkmH_uu-UoVEK7Vx2GQ/edit?usp=sharing) for list of relations -> need to select what we want to show here.
 
 ## Defined Classes
 
