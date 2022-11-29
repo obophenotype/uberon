@@ -10,7 +10,7 @@ classes:
   thing: "owl:Thing"
   Homo sapiens: "NCBITaxon:9606"
   calcareous tooth: "UBERON:0001091"
-  bone of jaw: "UBERON:0012360"
+  jaw region: "UBERON:0011595"
   maxilla: "UBERON:0002397"
   mandible: "UBERON:0001684"
 
@@ -28,7 +28,7 @@ annotationProperties:
 
 vars:
   parent_class: "calcareous tooth"       # UBERON:0001091
-  jaw_part: "bone of jaw"                # UBERON:0012360
+  jaw_region: "jaw region"                # UBERON:0011595
   lateral_relation: "in lateral side of" # BSPO:0000126
 
 data_vars:
@@ -50,10 +50,10 @@ name:
 
 def:
   text: "A %s that is in the right side of the %s."
-  # e.g., A upper third secondary molar tooth that is in the right side of the maxilla.
+  # e.g., A upper third secondary molar tooth that is in the right side of the upper jaw region.
   vars:
     - parent_class
-    - jaw_part
+    - jaw_region
 
 exact_synonym:
   value: FMA_label
@@ -79,4 +79,4 @@ logical_axioms:
     vars:
       - parent_class
       - lateral_relation
-      - jaw_part
+      - jaw_region
