@@ -165,11 +165,11 @@ $(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(CO
 # ----------------------------------------
 
 # ext.owl is the release file that includes full imports and inter-ontology axioms
-#ext.owl: $(TMPDIR)/materialized.owl
+#ext.owl: $(EDIT_PREPROCESSED)
 #	$(ROBOT) reason -i $< -r elk relax reduce -r elk annotate --ontology-iri $(URIBASE)/uberon/$@ -V  $(RELEASE)/$@ -o $@
 
 ## TESTING - NEW
-$(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
+$(TMPDIR)/is_ok: $(EDIT_PREPROCESSED)
 	$(OWLTOOLS) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # somewhat awkward: we temporarily inject reflexivity axioms
@@ -183,19 +183,30 @@ TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
 # see https://github.com/obophenotype/uberon/issues/2381
 
-$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
+# $(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
+#	$(ROBOT) merge -i $< -i $(DEVELOPS_FROM_CHAIN) --collapse-import-closure false \
+#		relax \
+#		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
+#		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
+#		unmerge -i $(TMP_REFL) \
+#		unmerge -i $(DEVELOPS_FROM_CHAIN) \
+#		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
+#.PRECIOUS: $(TMPDIR)/materialized.owl
+
+# Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
+ext.owl: $(EDIT_PREPROCESSED)
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+
+$(EDIT_PREPROCESSED): $(SRC)
 	$(ROBOT) merge -i $< -i $(DEVELOPS_FROM_CHAIN) --collapse-import-closure false \
 		relax \
 		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
 		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
 		unmerge -i $(TMP_REFL) \
 		unmerge -i $(DEVELOPS_FROM_CHAIN) \
-		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
-.PRECIOUS: $(TMPDIR)/materialized.owl
+		annotate -O $(URIBASE)/uberon/$@ -V $(RELEASE)/$@ convert --format ofn --output $@ 2>&1 > $@.LOG
 
-# Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
-ext.owl: $(TMPDIR)/materialized.owl
-	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
+
 
 # ----------------------------------------
 # STEP 4: Create uberon.owl and .obo
