@@ -204,6 +204,7 @@ $(EDIT_PREPROCESSED): $(SRC)
 		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
 		unmerge -i $(TMP_REFL) \
 		unmerge -i $(DEVELOPS_FROM_CHAIN) \
+    remove --axioms type \
 		annotate -O $(URIBASE)/uberon/$@ -V $(RELEASE)/$@ convert --format ofn --output $@ 2>&1 > $@.LOG
 
 

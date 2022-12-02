@@ -5,6 +5,7 @@ git_main_branch: master
 repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
+ensure_valid_rdfxml: FALSE
 use_dosdps: TRUE
 export_formats:
   - owl
@@ -14,6 +15,7 @@ namespaces:
   - http://purl.obolibrary.org/obo/UBERON_
   - http://purl.obolibrary.org/obo/uberon#
   - http://purl.obolibrary.org/obo/UBPROP_
+  - http://purl.obolibrary.org/obo/uberon/core#
 release_artefacts:
   - base
   - full
@@ -93,6 +95,7 @@ subset_group:
     - id: euarchontoglires-basic
 robot_java_args: '-Xmx20G'
 robot_report:
+  use_base_iris: true
   release_reports: False
   fail_on: ERROR
   use_labels: False

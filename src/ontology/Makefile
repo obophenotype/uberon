@@ -177,10 +177,10 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/uberon# --base-iri http://purl.obolibrary.org/obo/UBPROP_ --base-iri http://purl.obolibrary.org/obo/uberon/core# --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/uberon# --base-iri http://purl.obolibrary.org/obo/UBPROP_ --base-iri http://purl.obolibrary.org/obo/uberon/core# --print 5 -o $@
 
 # ----------------------------------------
 # Release assets
@@ -198,7 +198,7 @@ RELEASE_ASSETS = \
   $(SUBSET_FILES)
 
 .PHONY: all_assets
-all_assets: $(ASSETS) check_rdfxml_assets
+all_assets: $(ASSETS) 
 
 .PHONY: show_assets
 show_assets:
@@ -714,7 +714,7 @@ $(ONT)-base.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(IMPORT_FILES)
 	reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 	relax \
 	reduce -r ELK \
-	remove --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/uberon# --base-iri http://purl.obolibrary.org/obo/UBPROP_ --axioms external --preserve-structure false --trim false \
+	remove --base-iri http://purl.obolibrary.org/obo/UBERON_ --base-iri http://purl.obolibrary.org/obo/uberon# --base-iri http://purl.obolibrary.org/obo/UBPROP_ --base-iri http://purl.obolibrary.org/obo/uberon/core# --axioms external --preserve-structure false --trim false \
 	$(SHARED_ROBOT_COMMANDS) \
 	annotate --link-annotation http://purl.org/dc/elements/1.1/type http://purl.obolibrary.org/obo/IAO_8000001 \
 		--ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
