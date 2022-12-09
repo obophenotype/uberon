@@ -226,16 +226,6 @@ uberon.json.gz: uberon.json
 	gzip -c $< > $@.tmp && mv $@.tmp $@
 .PRECIOUS: uberon.json.gz
 
-$(ONT)-simple.owl: $(TMPDIR)/materialized.owl $(OTHER_SRC) $(SIMPLESEED) $(IMPORT_FILES)
-	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) \
-		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
-		relax \
-		remove --axioms equivalent \
-		relax \
-		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
-		reduce -r ELK \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru \
-		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
 
 # ----------------------------------------
 # STEP 5: Create basic subset
