@@ -4,8 +4,8 @@ on: issue_comment
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  if: ${{ github.event.issue.pull_request }}
   diff-reports:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: macos-latest
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
