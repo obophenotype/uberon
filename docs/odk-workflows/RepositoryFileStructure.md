@@ -22,7 +22,7 @@ These are the current imports in UBERON
 | envo | http://purl.obolibrary.org/obo/envo.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | bspo | http://purl.obolibrary.org/obo/bspo.owl | None |
-| chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
+| chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
