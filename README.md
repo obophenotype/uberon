@@ -19,6 +19,10 @@ download the compiled versions of the ontology, please visit
 This repository contains the editors version of the ontology
 (src/ontology/uberon-edit.obo), and the material required to make a release.
 
+## GitHub Actions Triggers
+
+To trigger an automated human readable diff, add the following tag to a comment in your pull request: #gogoeditdiff
+
 ## Editors:
 
 See the file [README-editors.txt](bridge/../README-editors.txt)
