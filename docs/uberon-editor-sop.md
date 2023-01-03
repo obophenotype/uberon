@@ -14,8 +14,46 @@ Uberon is a cross-species ontology, and editors should be careful when adding ta
 
 ## Relations Guide
 
-NEED TO EDIT THIS!
-See this [google sheets](https://docs.google.com/spreadsheets/d/1ScwOdD0KAphfmpBLZ9MMJa0jfkmH_uu-UoVEK7Vx2GQ/edit?usp=sharing) for list of relations -> need to select what we want to show here.
+The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but [here's the folder](../patterns/generated))
+
+#### part of
+
+We record anatomical location using `part of`. This means that subject is fully part_of the object. 
+
+Example: 
+[brain endothelium](http://purl.obolibrary.org/obo/UBERON_0013694) subclassOf 'part of' some 'brain'.
+
+means that 
+
+1. All of the brain endothelium is part of the brain. We wouldn't say 'endothelium part_of some brain' as not all endothelium are part of the brain. 
+2. All parts of the brain endothelium are part of the brain (e.g. all cells that are part_of the brain endothelium are also cells that are part_of the brain) 
+3. Brain endothelium are part_of some brain at all times. (Makes more of a difference for cells being part of anatomical structure, e.g. a blood cell is not part_of the brain endothelium because it moves out of the brain endothelium.)
+
+Related Equivalence Pattern: [X_part_of_X](../patterns/generated/X_part_of_X.yaml)
+
+#### has parts
+
+The inverse of [part of](#part_of). 
+In Uberon, preference should be given to using part_of rather that has_part.
+
+#### overlaps
+
+If an anatomical structure have some part in common, but not fully part_of, another structure, we use `overlaps`.
+
+Example:
+[olfactory system](http://purl.obolibrary.org/obo/UBERON_0005725) subclassOf 'overlaps' some 'nervous system'.
+
+means that
+
+1. Part of the olfactory system is part of the nervous system. We wouldn't say 'olfactory system part_of some nervous system' as there are parts of the olfactory system that would not be considered the nervous system.
+2. Not all parts of the olfactory system is part of the nervous system. We wouldn't say 'olfactory gland overlaps some olfactory system' as all of the olfactory gland is considered as part of the olfactory system.
+3. Part of olfactory system are part of the nervous system at all times. If something, for example, develops and migrates out of the structure, we do not use overlaps. (see [develops_from](#develops_from) instead). 
+
+Equivalence patterns aren't used with this relation as it creates vague equivalency.
+
+#### contributes to morphology of
+
+#### develops from
 
 ## Defined Classes
 
