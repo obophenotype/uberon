@@ -97,6 +97,7 @@ tmp/uberon-merged.owl: $(SRC)
 
 # TODO This goal needs to be revised carefully. remove_axioms removes RO labels to avoid duplicates
 # merge -i ro_import then adds them back to ensure they are canonical.
+# Cannot add $(IMPORTDIR)/ro_import.owl as dependency because it cause to be circular with tmp/seed.txt
 # **Hacking_Feb_2022** Notes start here.
 # Issue: Dependency for QC. 
 # OWL files to add to imports on -editor file.  $(COMPONENTSDIR)/disjoint_union_over.ofn - this needs to be made a proper component
@@ -107,7 +108,7 @@ tmp/uberon-merged.owl: $(SRC)
 # $(SCRIPTSDIR)/expand-dbxref-literals.pl 
 ## Turns some CURIES into expanded URI syntax
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
-$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl $(IMPORTDIR)/ro_import.owl
+$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
