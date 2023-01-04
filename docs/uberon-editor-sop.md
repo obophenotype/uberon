@@ -45,7 +45,7 @@ means that
 
 Related Equivalence Pattern: [X_part_of_X](../patterns/generated/X_part_of_X.yaml)
 
-#### has parts
+#### has part
 
 The inverse of [part of](#part_of). 
 In Uberon, preference should be given to using part_of rather that has_part.
@@ -58,6 +58,17 @@ Examples: every skull contributes to morphology of the head which it is a part o
 Counter-example: nuclei do not generally contribute to the morphology of the cell they are part of, as they are buffered by cytoplasm.
 
 #### develops from
+
+We record development using the relation `develops from`. 
+
+Example: [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) subclassOf 'develops from' some 'prosterior neural tube'
+
+means that
+
+1. The spinal cord directly develops from the prosterior neural tube
+2. Given that `develops from` is transitive, and that the prosterior neural tube develops from some the chordal neural plate, the spinal cord is implied to develop from the chordal neural plate. 
+
+Note: `develops from` does not necessarily the subject directly develops from the object, for example, having `'spinal cord' subclassOf 'develops from' some 'chordal neural plate'` is not wrong. You should however strive to get the most direct object and let the inference do the work in linking it to earlier developmental stages. 
 
 ## Defined Classes
 
