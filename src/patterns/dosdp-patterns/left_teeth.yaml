@@ -30,7 +30,8 @@ annotationProperties:
 vars:
   parent_class: "calcareous tooth"  # UBERON:0001091
   jaw_region: "jaw region"          # UBERON:0011595
-  # taxon: "Homo sapiens"             # obo:NCBITaxon_9606 THIS DOESN'T WORK FOR ANNOTATIONS 
+  taxon: "Homo sapiens"             # obo:NCBITaxon_9606
+  creator: "xsd:anyURI"             # e.g., https://orcid.org/0000-0001-9625-1899
   human_preferred: "obo:uberon/core#HUMAN_PREFERRED"
 
 data_vars:
@@ -39,9 +40,9 @@ data_vars:
 
 data_list_vars:                # separate multiple entries by "|"
   synonym: "xsd:string"        # e.g., ADA tooth 1, FDI tooth 18
-  creator: "xsd:anyURI"        # e.g., https://orcid.org/0000-0001-9625-1899
+  # creator: "xsd:anyURI"        # e.g., https://orcid.org/0000-0001-9625-1899
   date_created: "xsd:dateTime" # e.g., 2022-11-13T00:00:00Z; note: this shows up as a string in Protege
-  taxon: "xsd:string"          # e.g., obo:NCBITaxon_9606; note: the full IRI is being used as a value
+  # taxon: "xsd:string"          # e.g., obo:NCBITaxon_9606; note: the full IRI is being used as a value
   FMA_xref: "xsd:string"       # e.g., FMA:55696
 
 name:
@@ -66,11 +67,11 @@ def:
 
 annotations:
   - annotationProperty: present_in_taxon
-    value: taxon
+    var: taxon
   - annotationProperty: hasExactSynonym
     value: synonym
   - annotationProperty: contributor
-    value: creator
+    var: creator
   - annotationProperty: creation_date
     value: date_created
   - annotationProperty: hasExactSynonym
