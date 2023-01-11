@@ -22,24 +22,11 @@ These are the current imports in UBERON
 | envo | http://purl.obolibrary.org/obo/envo.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | bspo | http://purl.obolibrary.org/obo/bspo.owl | None |
-| chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
+| chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
-| ceph | http://purl.obolibrary.org/obo/ceph.owl | None |
-| cteno | http://purl.obolibrary.org/obo/cteno.owl | None |
-| ehdaa2 | https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo | None |
-| emapa | http://purl.obolibrary.org/obo/emapa.owl | None |
-| fbbt | http://purl.obolibrary.org/obo/fbbt.owl | None |
-| fbdv | http://purl.obolibrary.org/obo/fbdv.owl | None |
-| ma | http://purl.obolibrary.org/obo/ma.owl | None |
-| poro | http://purl.obolibrary.org/obo/poro.owl | None |
-| wbbt | http://purl.obolibrary.org/obo/wbbt.owl | None |
-| wbls | http://purl.obolibrary.org/obo/wbls.owl | None |
-| xao | http://purl.obolibrary.org/obo/xao.owl | None |
-| zfa | http://purl.obolibrary.org/obo/zfa.owl | None |
-| caro | http://purl.obolibrary.org/obo/caro.owl | None |
 
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
