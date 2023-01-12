@@ -14,6 +14,7 @@ namespaces:
   - http://purl.obolibrary.org/obo/UBERON_
   - http://purl.obolibrary.org/obo/uberon#
   - http://purl.obolibrary.org/obo/UBPROP_
+  - http://purl.obolibrary.org/obo/uberon/core#
 release_artefacts:
   - base
   - full
@@ -27,41 +28,43 @@ release_artefacts:
   - custom-composite-vertebrate-basic
 edit_format: obo
 import_group:
-  release_imports: TRUE
+  use_base_merging: TRUE
+  slme_individuals: exclude
+  exclude_iri_patterns:
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBA_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
   products:
     - id: pr
+      make_base: TRUE
       mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
     - id: cl
+      use_base: TRUE
     - id: go
-    - id: envo
+      use_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/GO_
+        - http://purl.obolibrary.org/obo/GOREL_
+        - http://purl.obolibrary.org/obo/GOCHE_
+    - id: envo 
+      use_base: TRUE 
     - id: ro
+      use_base: TRUE
     - id: bspo
       use_base: TRUE
     - id: chebi
-      is_large: TRUE
-      use_gzipped: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
     - id: pato
+      use_base: TRUE
     - id: bfo
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
-    # Pipeline dependencies (not directly imported)
-    - id: ceph
-    - id: cteno
-    - id: ehdaa2
-      mirror_from: https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo
-    - id: emapa
-    - id: fbbt
-    - id: fbdv
-    - id: ma
-    - id: poro
-    - id: wbbt
-    - id: wbls
-    - id: xao
-    - id: zfa
-    - id: caro
-    # fma
-    # allen: dhba, dmba, hba, mba, pba
+      use_base: TRUE
 subset_group:
   products:
     - id: appendicular-minimal
@@ -104,6 +107,7 @@ robot_report:
     - orcid-contributor
     - obsolete-replaced_by
     - xrefs-mesh-pattern
+    - label-synonym-polysemy
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
