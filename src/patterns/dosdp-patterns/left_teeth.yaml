@@ -1,4 +1,4 @@
-pattern_name: right__left_teeth
+pattern_name: left_teeth
 pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/left_teeth.yaml
 
 description: "This pattern defines primary and secondary teeth for the left side of the mouth."
@@ -16,7 +16,6 @@ classes:
 
 relations:
   in lateral side of: "BSPO:0000126"
-  in right side of: "BSPO:0000121"
   in left side of: "BSPO:0000120"
 
 annotationProperties:
@@ -36,7 +35,7 @@ vars:
 
 data_vars:
   laterality: "xsd:string"     # e.g., right, left
-  FMA_label: "xsd:string"                # e.g., right upper third secondary molar tooth
+  FMA_label: "xsd:string"                # e.g., left upper third secondary molar tooth
   date_created: "xsd:dateTime" # e.g., 2022-11-13T00:00:00Z; note: this shows up as a string in Protege
   FMA_xref: "xsd:string"       # e.g., FMA:55696
 
@@ -44,14 +43,14 @@ data_list_vars:                # separate multiple entries by "|"
   synonym: "xsd:string"        # e.g., ADA tooth 1, FDI tooth 18
   
 name:
-  text: "%s %s"   # e.g, right upper third secondary molar tooth
+  text: "%s %s"   # e.g, left upper third secondary molar tooth
   vars:
-    - laterality   # e.g., right
-    - parent_class # e.g., right upper third secondary molar tooth
+    - laterality   # e.g., left
+    - parent_class # e.g., left upper third secondary molar tooth
 
 def:
-  text: "A %s that is in the right side of the %s."
-  # e.g., A upper third secondary molar tooth that is in the right side of the upper jaw region.
+  text: "A %s that is in the left side of the %s."
+  # e.g., A upper third secondary molar tooth that is in the left side of the upper jaw region.
   vars:
     - parent_class
     - jaw_region
