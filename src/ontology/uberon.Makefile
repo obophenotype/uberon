@@ -1437,7 +1437,7 @@ copy_additional_files:
 	# cp composite-brain.{obo,owl} $(RELDIR) ;\
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(ASSETS)), ../../$(n))
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
 
 deploy_release:
 	@test $(GHVERSION)
