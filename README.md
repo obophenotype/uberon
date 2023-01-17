@@ -16,9 +16,9 @@ download the compiled versions of the ontology, please visit
 
 ## A note on the taxonomic scope of Uberon
 
-Uberon has a set of upper level terms that are universal.  These are indicated with the [general_subset](http://purl.obolibrary.org/obo/uberon/core#general_subset) tag.  However, 
-Uberon editors will not take requests for terms from outside of the Metazoa.   Plant anatomy term requests should be directed to the [PO](https://obofoundry.org/ontology/po.html), fungal anatomy terms to [FAO](https://obofoundry.org/ontology/FAO.html).  
-Uberon also gives preference to anatomy term requests for vertebrates over invertebrates.  Wherever possible term requesters are encouraged to work directly with existing invertebrate anatomy ontologies to get the terms they need.
+Uberon has a set of upper level terms that are universal. These are indicated with the [common_anatomy](http://purl.obolibrary.org/obo/uberon/core#common_anatomy) tag. However, 
+Uberon editors will not take requests for terms from outside of the Metazoa. Plant anatomy term requests should be directed to the [PO](https://obofoundry.org/ontology/po.html), fungal anatomy terms to [FAO](https://obofoundry.org/ontology/FAO.html).  
+Uberon also gives preference to anatomy term requests for vertebrates over invertebrates. Wherever possible term requesters are encouraged to work directly with existing invertebrate anatomy ontologies to get the terms they need.
 
 ## Content
 
