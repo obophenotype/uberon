@@ -43,7 +43,7 @@ jobs:
         id: vars
         run: |
           echo "branch-name=ochange_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
-          echo "resource=src/ontology/uberon-edit.obo" >> $GITHUB_ENV
+          echo "resource=uberon.obo" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: |
