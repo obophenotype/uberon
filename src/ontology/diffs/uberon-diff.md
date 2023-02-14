@@ -28,6 +28,26 @@
 
 
 
+### B cell of anorectum `http://purl.obolibrary.org/obo/CL_0009050`
+#### Removed
+- [B cell of anorectum](http://purl.obolibrary.org/obo/CL_0009050) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A B cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [B cell of anorectum](http://purl.obolibrary.org/obo/CL_0009050) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A B cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### B cell of appendix `http://purl.obolibrary.org/obo/CL_0009032`
+#### Removed
+- [B cell of appendix](http://purl.obolibrary.org/obo/CL_0009032) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A B cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [B cell of appendix](http://purl.obolibrary.org/obo/CL_0009032) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A B cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### Brodmann area `http://purl.obolibrary.org/obo/UBERON_0013529`
 #### Removed
 - [Brodmann area](http://purl.obolibrary.org/obo/UBERON_0013529) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -88,6 +108,24 @@
 
 
 
+### Peyer's patch lymphocyte `http://purl.obolibrary.org/obo/CL_0009014`
+#### Removed
+- [Peyer's patch lymphocyte](http://purl.obolibrary.org/obo/CL_0009014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9252325" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:23525039" 
+
+#### Added
+- [Peyer's patch lymphocyte](http://purl.obolibrary.org/obo/CL_0009014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9252325" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:23525039" 
+
+
 ### Press, Brewer, Dougherty, Wade and Wandell (2001) visuotopic area V7 `http://purl.obolibrary.org/obo/UBERON_0026776`
 #### Removed
 - [Press, Brewer, Dougherty, Wade and Wandell (2001) visuotopic area V7](http://purl.obolibrary.org/obo/UBERON_0026776) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -110,6 +148,26 @@
 #### Removed
 - [Sommer's sector](http://purl.obolibrary.org/obo/UBERON_0023932) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### T cell of anorectum `http://purl.obolibrary.org/obo/CL_0009051`
+#### Removed
+- [T cell of anorectum](http://purl.obolibrary.org/obo/CL_0009051) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A T cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [T cell of anorectum](http://purl.obolibrary.org/obo/CL_0009051) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A T cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### T cell of appendix `http://purl.obolibrary.org/obo/CL_0009031`
+#### Removed
+- [T cell of appendix](http://purl.obolibrary.org/obo/CL_0009031) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A T cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [T cell of appendix](http://purl.obolibrary.org/obo/CL_0009031) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A T cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
 
 
 ### Tootell and Hadjikhani (2001) LOC/LOP complex `http://purl.obolibrary.org/obo/UBERON_0026775`
@@ -990,290 +1048,276 @@
 
 
 
-### _:genid2147865546 
-
-#### Added
-- _:genid2147865546 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [14595018](http://www.ncbi.nlm.nih.gov/pubmed/14595018) 
-
-- _:genid2147865546 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123600&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376) 
-
-
-### _:genid2147865547 
-
-#### Added
-- _:genid2147865547 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_18](http://en.wikipedia.org/wiki/Brodmann_area_18) 
-
-
-### _:genid2147865548 
-
-#### Added
-- _:genid2147865548 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [retina_gross.html](http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html) 
-
-- _:genid2147865548 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:CL_meeting_20110725" 
-
-
 ### _:genid2147865549 
 
 #### Added
-- _:genid2147865549 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lunge_feeding](http://en.wikipedia.org/wiki/Aquatic_predation#Lunge_feeding) 
+- _:genid2147865549 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pronucleus](http://en.wikipedia.org/wiki/Pronucleus) 
 
 
 ### _:genid2147865550 
 
 #### Added
-- _:genid2147865550 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [full](http://dev.biologists.org/content/128/22/4573.full) 
+- _:genid2147865550 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [56](https://github.com/obophenotype/mouse-anatomy-ontology/issues/56) 
 
 
 ### _:genid2147865551 
 
 #### Added
-- _:genid2147865551 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Gastric_juice](http://en.wikipedia.org/wiki/Gastric_juice) 
+- _:genid2147865551 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Facial_skeleton](http://en.wikipedia.org/wiki/Facial_skeleton) 
 
 
 ### _:genid2147865552 
 
 #### Added
-- _:genid2147865552 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Intermediate_filament](http://en.wikipedia.org/wiki/Intermediate_filament) 
+- _:genid2147865552 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pouch_(marsupial)](http://en.wikipedia.org/wiki/Pouch_(marsupial)) 
 
 
 ### _:genid2147865553 
 
 #### Added
-- _:genid2147865553 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Persistent_left_superior_vena_cava](http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava) 
+- _:genid2147865553 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Eparterial_bronchus](http://en.wikipedia.org/wiki/Eparterial_bronchus) 
 
 
 ### _:genid2147865554 
 
 #### Added
-- _:genid2147865554 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&atid=440764&aid=3413098&group_id=36855](https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3413098&group_id=36855) 
+- _:genid2147865554 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_periolivary_nucleus_.28DPO.29](http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29) 
 
 
 ### _:genid2147865555 
 
 #### Added
-- _:genid2147865555 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Epicondyle](http://en.wikipedia.org/wiki/Epicondyle) 
+- _:genid2147865555 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Primordial_phallus](http://en.wikipedia.org/wiki/Primordial_phallus) 
 
 
 ### _:genid2147865556 
 
 #### Added
-- _:genid2147865556 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Articular](http://en.wikipedia.org/wiki/Articular) 
-
-- _:genid2147865556 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [98](https://github.com/obophenotype/uberon/issues/98) 
+- _:genid2147865556 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [mesoder.htm](http://www.ana.ed.ac.uk/database/humat/notes/extraemb/mesoder.htm) 
 
 
 ### _:genid2147865557 
 
 #### Added
-- _:genid2147865557 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23153189](http://www.ncbi.nlm.nih.gov/pubmed/23153189) 
+- _:genid2147865557 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1264](https://github.com/obophenotype/uberon/issues/1264) 
 
 
 ### _:genid2147865558 
 
 #### Added
-- _:genid2147865558 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezium_(bone)](http://en.wikipedia.org/wiki/Trapezium_(bone)) 
+- _:genid2147865558 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Snout](http://en.wikipedia.org/wiki/Snout) 
 
 
 ### _:genid2147865559 
 
 #### Added
-- _:genid2147865559 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-6601-2165](http://orcid.org/0000-0002-6601-2165) 
+- _:genid2147865559 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezoid_bone](http://en.wikipedia.org/wiki/Trapezoid_bone) 
 
 
 ### _:genid2147865560 
 
 #### Added
-- _:genid2147865560 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3580301&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3580301&group_id=76834&atid=1205376) 
+- _:genid2147865560 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Ligaments](http://en.wikipedia.org/wiki/Temporomandibular_joint#Ligaments) 
 
 
 ### _:genid2147865561 
 
 #### Added
-- _:genid2147865561 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_26](http://en.wikipedia.org/wiki/Brodmann_area_26) 
+- _:genid2147865561 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_28](http://en.wikipedia.org/wiki/Brodmann_area_28) 
 
 
 ### _:genid2147865562 
 
 #### Added
-- _:genid2147865562 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Neurofilament](http://en.wikipedia.org/wiki/Neurofilament) 
+- _:genid2147865562 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147865563 
 
 #### Added
-- _:genid2147865563 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147865563 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147865564 
 
 #### Added
-- _:genid2147865564 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
+- _:genid2147865564 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Common_plantar_digital_arteries](http://en.wikipedia.org/wiki/Common_plantar_digital_arteries) 
 
 
 ### _:genid2147865565 
 
 #### Added
-- _:genid2147865565 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147865565 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Intermediate_filament](http://en.wikipedia.org/wiki/Intermediate_filament) 
 
 
 ### _:genid2147865566 
 
 #### Added
-- _:genid2147865566 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lumbar_spinal_cord](http://en.wikipedia.org/wiki/Lumbar_spinal_cord) 
+- _:genid2147865566 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hepatopancreas](http://en.wikipedia.org/wiki/Digestive_system_of_gastropods#Hepatopancreas) 
 
 
 ### _:genid2147865567 
 
 #### Added
-- _:genid2147865567 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Eparterial_bronchus](http://en.wikipedia.org/wiki/Eparterial_bronchus) 
+- _:genid2147865567 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_39](http://en.wikipedia.org/wiki/Brodmann_area_39) 
 
 
 ### _:genid2147865568 
 
 #### Added
-- _:genid2147865568 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [urinhaute03.html](http://www.embryology.ch/anglais/turinary/urinhaute03.html) 
+- _:genid2147865568 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1755" 
+
+- _:genid2147865568 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1161](https://github.com/obophenotype/uberon/issues/1161) 
 
 
 ### _:genid2147865569 
 
 #### Added
-- _:genid2147865569 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Anal_gland](http://en.wikipedia.org/wiki/Anal_gland) 
+- _:genid2147865569 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
 
 
 ### _:genid2147865570 
 
 #### Added
-- _:genid2147865570 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Primordial_phallus](http://en.wikipedia.org/wiki/Primordial_phallus) 
+- _:genid2147865570 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
 
 
 ### _:genid2147865571 
 
 #### Added
-- _:genid2147865571 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Ligaments](http://en.wikipedia.org/wiki/Temporomandibular_joint#Ligaments) 
+- _:genid2147865571 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Enteric_ganglia](http://en.wikipedia.org/wiki/Enteric_ganglia) 
 
 
 ### _:genid2147865572 
 
 #### Added
-- _:genid2147865572 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Capitate_bone](http://en.wikipedia.org/wiki/Capitate_bone) 
+- _:genid2147865572 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23153189](http://www.ncbi.nlm.nih.gov/pubmed/23153189) 
 
 
 ### _:genid2147865573 
 
 #### Added
-- _:genid2147865573 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123598&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376) 
+- _:genid2147865573 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Rattle](http://en.wikipedia.org/wiki/Rattlesnake#Rattle) 
 
 
 ### _:genid2147865574 
 
 #### Added
-- _:genid2147865574 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Histology](http://en.wikipedia.org/wiki/Sclera#Histology) 
+- _:genid2147865574 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123598&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123598&group_id=76834&atid=1205376) 
 
 
 ### _:genid2147865575 
 
 #### Added
-- _:genid2147865575 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_periolivary_nucleus_.28DPO.29](http://en.wikipedia.org/wiki/Superior_olivary_complex#Dorsal_periolivary_nucleus_.28DPO.29) 
+- _:genid2147865575 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
 
 
 ### _:genid2147865576 
 
 #### Added
-- _:genid2147865576 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Corpus_cavernosum](http://en.wikipedia.org/wiki/Corpus_cavernosum) 
+- _:genid2147865576 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20557782](http://www.ncbi.nlm.nih.gov/pubmed/20557782) 
+
+- _:genid2147865576 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20566102](http://www.ncbi.nlm.nih.gov/pubmed/20566102) 
 
 
 ### _:genid2147865577 
 
 #### Added
-- _:genid2147865577 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_female_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra) 
-
-- _:genid2147865577 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_male_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra) 
+- _:genid2147865577 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [22622577](http://www.ncbi.nlm.nih.gov/pubmed/22622577) 
 
 
 ### _:genid2147865578 
 
 #### Added
-- _:genid2147865578 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Adductor_muscles_of_the_hip](http://en.wikipedia.org/wiki/Adductor_muscles_of_the_hip) 
+- _:genid2147865578 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Proper_plantar_digital_arteries](http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries) 
 
 
 ### _:genid2147865579 
 
 #### Added
-- _:genid2147865579 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Flight_feather](http://en.wikipedia.org/wiki/Flight_feather) 
+- _:genid2147865579 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Coat_(animal)](http://en.wikipedia.org/wiki/Coat_(animal)) 
 
 
 ### _:genid2147865580 
 
 #### Added
-- _:genid2147865580 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pouch_(marsupial)](http://en.wikipedia.org/wiki/Pouch_(marsupial)) 
+- _:genid2147865580 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:dph" 
+
+- _:genid2147865580 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [<https://sourceforge.net/p/geneontology/ontology-requests/9676/>](https://sourceforge.net/p/geneontology/ontology-requests/9676/) 
+
+- _:genid2147865580 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hypoblast](http://en.wikipedia.org/wiki/Hypoblast) 
+
+- _:genid2147865580 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFIN:cvs" 
 
 
 ### _:genid2147865581 
 
 #### Added
-- _:genid2147865581 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
+- _:genid2147865581 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147865582 
 
 #### Added
-- _:genid2147865582 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147865582 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [urinhaute03.html](http://www.embryology.ch/anglais/turinary/urinhaute03.html) 
 
 
 ### _:genid2147865583 
 
 #### Added
-- _:genid2147865583 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezoid_bone](http://en.wikipedia.org/wiki/Trapezoid_bone) 
+- _:genid2147865583 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hamate_bone](http://en.wikipedia.org/wiki/Hamate_bone) 
 
 
 ### _:genid2147865584 
 
 #### Added
-- _:genid2147865584 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Facial_skeleton](http://en.wikipedia.org/wiki/Facial_skeleton) 
+- _:genid2147865584 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [retina_gross.html](http://retina.anatomy.upenn.edu/~lance/eye/retina_gross.html) 
+
+- _:genid2147865584 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:CL_meeting_20110725" 
 
 
 ### _:genid2147865585 
 
 #### Added
-- _:genid2147865585 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_digital_arteries#](http://en.wikipedia.org/wiki/Dorsal_digital_arteries#) 
+- _:genid2147865585 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Corpus_cavernosum](http://en.wikipedia.org/wiki/Corpus_cavernosum) 
 
 
 ### _:genid2147865586 
 
 #### Added
-- _:genid2147865586 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Rattle](http://en.wikipedia.org/wiki/Rattlesnake#Rattle) 
+- _:genid2147865586 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pterion](http://en.wikipedia.org/wiki/Pterion) 
 
 
 ### _:genid2147865587 
 
 #### Added
-- _:genid2147865587 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Snout](http://en.wikipedia.org/wiki/Snout) 
+- _:genid2147865587 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Adductor_muscles_of_the_hip](http://en.wikipedia.org/wiki/Adductor_muscles_of_the_hip) 
 
 
 ### _:genid2147865588 
 
 #### Added
-- _:genid2147865588 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [119](https://github.com/obophenotype/uberon/issues/119) 
+- _:genid2147865588 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [7](https://github.com/obophenotype/uberon/issues/7) 
+
+- _:genid2147865588 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [6](https://github.com/obophenotype/uberon/issues/6) 
 
 
 ### _:genid2147865589 
 
 #### Added
-- _:genid2147865589 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [22622577](http://www.ncbi.nlm.nih.gov/pubmed/22622577) 
+- _:genid2147865589 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Trapezium_(bone)](http://en.wikipedia.org/wiki/Trapezium_(bone)) 
 
 
 ### _:genid2147865590 
 
 #### Added
-- _:genid2147865590 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Coat_(animal)](http://en.wikipedia.org/wiki/Coat_(animal)) 
+- _:genid2147865590 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Neurofilament](http://en.wikipedia.org/wiki/Neurofilament) 
 
 
 ### _:genid2147865591 
 
 #### Added
-- _:genid2147865591 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20557782](http://www.ncbi.nlm.nih.gov/pubmed/20557782) 
-
-- _:genid2147865591 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [20566102](http://www.ncbi.nlm.nih.gov/pubmed/20566102) 
+- _:genid2147865591 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Capitate_bone](http://en.wikipedia.org/wiki/Capitate_bone) 
 
 
 ### _:genid2147865592 
@@ -1287,215 +1331,211 @@
 ### _:genid2147865593 
 
 #### Added
-- _:genid2147865593 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Internal_spermatic_fascia](http://en.wikipedia.org/wiki/Internal_spermatic_fascia) 
+- _:genid2147865593 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
 
 
 ### _:genid2147865594 
 
 #### Added
-- _:genid2147865594 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [7](https://github.com/obophenotype/uberon/issues/7) 
-
-- _:genid2147865594 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [6](https://github.com/obophenotype/uberon/issues/6) 
+- _:genid2147865594 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Gastric_juice](http://en.wikipedia.org/wiki/Gastric_juice) 
 
 
 ### _:genid2147865595 
 
 #### Added
-- _:genid2147865595 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1755" 
-
-- _:genid2147865595 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1161](https://github.com/obophenotype/uberon/issues/1161) 
+- _:genid2147865595 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pisiform_joint](http://en.wikipedia.org/wiki/Pisiform_joint) 
 
 
 ### _:genid2147865596 
 
 #### Added
-- _:genid2147865596 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [<https://sourceforge.net/p/geneontology/ontology-requests/9676/>](https://sourceforge.net/p/geneontology/ontology-requests/9676/) 
-
-- _:genid2147865596 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hypoblast](http://en.wikipedia.org/wiki/Hypoblast) 
-
-- _:genid2147865596 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFIN:cvs" 
-
-- _:genid2147865596 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:dph" 
+- _:genid2147865596 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Internal_spermatic_fascia](http://en.wikipedia.org/wiki/Internal_spermatic_fascia) 
 
 
 ### _:genid2147865597 
 
 #### Added
-- _:genid2147865597 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Proper_plantar_digital_arteries](http://en.wikipedia.org/wiki/Proper_plantar_digital_arteries) 
+- _:genid2147865597 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147865598 
 
 #### Added
-- _:genid2147865598 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [1264](https://github.com/obophenotype/uberon/issues/1264) 
+- _:genid2147865598 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [119](https://github.com/obophenotype/uberon/issues/119) 
 
 
 ### _:genid2147865599 
 
 #### Added
-- _:genid2147865599 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
+- _:genid2147865599 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Flight_feather](http://en.wikipedia.org/wiki/Flight_feather) 
 
 
 ### _:genid2147865600 
 
 #### Added
-- _:genid2147865600 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Common_plantar_digital_arteries](http://en.wikipedia.org/wiki/Common_plantar_digital_arteries) 
+- _:genid2147865600 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pancreaticoduodenal_artery](http://en.wikipedia.org/wiki/Pancreaticoduodenal_artery) 
 
 
 ### _:genid2147865601 
 
 #### Added
-- _:genid2147865601 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hamate_bone](http://en.wikipedia.org/wiki/Hamate_bone) 
+- _:genid2147865601 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Histology](http://en.wikipedia.org/wiki/Sclera#Histology) 
 
 
 ### _:genid2147865602 
 
 #### Added
-- _:genid2147865602 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pronucleus](http://en.wikipedia.org/wiki/Pronucleus) 
+- _:genid2147865602 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [98](https://github.com/obophenotype/uberon/issues/98) 
+
+- _:genid2147865602 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Articular](http://en.wikipedia.org/wiki/Articular) 
 
 
 ### _:genid2147865603 
 
 #### Added
-- _:genid2147865603 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Node_of_ranvier](http://en.wikipedia.org/wiki/Node_of_ranvier) 
+- _:genid2147865603 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3515562&group_id=76834&atid=994726](https://sourceforge.net/tracker/?func=detail&aid=3515562&group_id=76834&atid=994726) 
 
 
 ### _:genid2147865604 
 
 #### Added
-- _:genid2147865604 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147865604 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Dorsal_digital_arteries#](http://en.wikipedia.org/wiki/Dorsal_digital_arteries#) 
 
 
 ### _:genid2147865605 
 
 #### Added
-- _:genid2147865605 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Vertebral_foramen](http://en.wikipedia.org/wiki/Atlas_(anatomy)#Vertebral_foramen) 
+- _:genid2147865605 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&atid=440764&aid=3413098&group_id=36855](https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3413098&group_id=36855) 
 
 
 ### _:genid2147865606 
 
 #### Added
-- _:genid2147865606 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147865606 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Vertebral_foramen](http://en.wikipedia.org/wiki/Atlas_(anatomy)#Vertebral_foramen) 
 
 
 ### _:genid2147865607 
 
 #### Added
-- _:genid2147865607 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
+- _:genid2147865607 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_18](http://en.wikipedia.org/wiki/Brodmann_area_18) 
 
 
 ### _:genid2147865608 
 
 #### Added
-- _:genid2147865608 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Connectivity-Design-Pattern](http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern) 
+- _:genid2147865608 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3580301&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3580301&group_id=76834&atid=1205376) 
 
 
 ### _:genid2147865609 
 
 #### Added
-- _:genid2147865609 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3515562&group_id=76834&atid=994726](https://sourceforge.net/tracker/?func=detail&aid=3515562&group_id=76834&atid=994726) 
+- _:genid2147865609 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Anal_gland](http://en.wikipedia.org/wiki/Anal_gland) 
 
 
 ### _:genid2147865610 
 
 #### Added
-- _:genid2147865610 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Iris_muscle](http://en.wikipedia.org/wiki/Iris_muscle) 
+- _:genid2147865610 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [full](http://dev.biologists.org/content/128/22/4573.full) 
 
 
 ### _:genid2147865611 
 
 #### Added
-- _:genid2147865611 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pancreaticoduodenal_artery](http://en.wikipedia.org/wiki/Pancreaticoduodenal_artery) 
+- _:genid2147865611 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Epicondyle](http://en.wikipedia.org/wiki/Epicondyle) 
 
 
 ### _:genid2147865612 
 
 #### Added
-- _:genid2147865612 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pisiform_joint](http://en.wikipedia.org/wiki/Pisiform_joint) 
+- _:genid2147865612 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lumbar_spinal_cord](http://en.wikipedia.org/wiki/Lumbar_spinal_cord) 
 
 
 ### _:genid2147865613 
 
 #### Added
-- _:genid2147865613 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_28](http://en.wikipedia.org/wiki/Brodmann_area_28) 
+- _:genid2147865613 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147865614 
 
 #### Added
-- _:genid2147865614 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [56](https://github.com/obophenotype/mouse-anatomy-ontology/issues/56) 
+- _:genid2147865614 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_9](http://en.wikipedia.org/wiki/Brodmann_area_9) 
 
 
 ### _:genid2147865615 
 
 #### Added
-- _:genid2147865615 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [feather_evolution.htm](http://people.eku.edu/ritchisong/feather_evolution.htm) 
+- _:genid2147865615 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [21558186](http://www.ncbi.nlm.nih.gov/pubmed/21558186) 
 
 
 ### _:genid2147865616 
 
 #### Added
-- _:genid2147865616 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Pterion](http://en.wikipedia.org/wiki/Pterion) 
+- _:genid2147865616 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-6601-2165](http://orcid.org/0000-0002-6601-2165) 
 
 
 ### _:genid2147865617 
 
 #### Added
-- _:genid2147865617 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_39](http://en.wikipedia.org/wiki/Brodmann_area_39) 
+- _:genid2147865617 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_male_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_male_urethra) 
+
+- _:genid2147865617 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [External_sphincter_muscle_of_female_urethra](http://en.wikipedia.org/wiki/External_sphincter_muscle_of_female_urethra) 
 
 
 ### _:genid2147865618 
 
 #### Added
-- _:genid2147865618 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [mesoder.htm](http://www.ana.ed.ac.uk/database/humat/notes/extraemb/mesoder.htm) 
+- _:genid2147865618 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Iris_muscle](http://en.wikipedia.org/wiki/Iris_muscle) 
 
 
 ### _:genid2147865619 
 
 #### Added
-- _:genid2147865619 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_9](http://en.wikipedia.org/wiki/Brodmann_area_9) 
+- _:genid2147865619 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Lunge_feeding](http://en.wikipedia.org/wiki/Aquatic_predation#Lunge_feeding) 
 
 
 ### _:genid2147865620 
 
 #### Added
-- _:genid2147865620 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Enteric_ganglia](http://en.wikipedia.org/wiki/Enteric_ganglia) 
+- _:genid2147865620 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Node_of_ranvier](http://en.wikipedia.org/wiki/Node_of_ranvier) 
 
 
 ### _:genid2147865621 
 
 #### Added
-- _:genid2147865621 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Hepatopancreas](http://en.wikipedia.org/wiki/Digestive_system_of_gastropods#Hepatopancreas) 
+- _:genid2147865621 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Persistent_left_superior_vena_cava](http://en.wikipedia.org/wiki/Persistent_left_superior_vena_cava) 
 
 
 ### _:genid2147865622 
 
 #### Added
-- _:genid2147865622 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010003" 
+- _:genid2147865622 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [?func=detail&aid=3123600&group_id=76834&atid=1205376](https://sourceforge.net/tracker/?func=detail&aid=3123600&group_id=76834&atid=1205376) 
+
+- _:genid2147865622 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [14595018](http://www.ncbi.nlm.nih.gov/pubmed/14595018) 
 
 
 ### _:genid2147865623 
 
 #### Added
-- _:genid2147865623 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009989" 
+- _:genid2147865623 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [Brodmann_area_26](http://en.wikipedia.org/wiki/Brodmann_area_26) 
 
 
 ### _:genid2147865624 
 
 #### Added
-- _:genid2147865624 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
+- _:genid2147865624 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [23027930](http://www.ncbi.nlm.nih.gov/pubmed/23027930) 
 
 
 ### _:genid2147865625 
 
 #### Added
-- _:genid2147865625 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147865625 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0006943" 
 
 
 ### _:genid2147865626 
 
 #### Added
-- _:genid2147865626 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865626 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147865627 
@@ -1503,363 +1543,381 @@
 #### Added
 - _:genid2147865627 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
+- _:genid2147865627 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+
 
 ### _:genid2147865628 
 
 #### Added
-- _:genid2147865628 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009999" 
+- _:genid2147865628 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1732" 
 
 
 ### _:genid2147865629 
 
 #### Added
-- _:genid2147865629 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000021" 
-
-- _:genid2147865629 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+- _:genid2147865629 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0005289" 
 
 
 ### _:genid2147865630 
 
 #### Added
-- _:genid2147865630 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0034076" 
-
-- _:genid2147865630 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0002482" 
-
-- _:genid2147865630 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007735" 
-
-- _:genid2147865630 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007196" 
+- _:genid2147865630 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Wasila" 
 
 
 ### _:genid2147865631 
 
 #### Added
-- _:genid2147865631 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003832" 
+- _:genid2147865631 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009993" 
 
 
 ### _:genid2147865632 
 
 #### Added
-- _:genid2147865632 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:Wasila" 
+- _:genid2147865632 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147865633 
 
 #### Added
-- _:genid2147865633 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000606" 
+- _:genid2147865633 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3220" 
 
 
 ### _:genid2147865634 
 
 #### Added
-- _:genid2147865634 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147865634 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021751" 
 
 
 ### _:genid2147865635 
 
 #### Added
-- _:genid2147865635 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000864" 
+- _:genid2147865635 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009990" 
 
 
 ### _:genid2147865636 
 
 #### Added
-- _:genid2147865636 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010002" 
+- _:genid2147865636 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009946" 
 
 
 ### _:genid2147865637 
 
 #### Added
-- _:genid2147865637 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
-- _:genid2147865637 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865637 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003227" 
 
 
 ### _:genid2147865638 
 
 #### Added
-- _:genid2147865638 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003226" 
+- _:genid2147865638 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009999" 
 
 
 ### _:genid2147865639 
 
 #### Added
-- _:genid2147865639 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003350" 
+- _:genid2147865639 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2093943" 
 
 
 ### _:genid2147865640 
 
 #### Added
-- _:genid2147865640 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
-- _:genid2147865640 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865640 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0060682" 
 
 
 ### _:genid2147865641 
 
 #### Added
-- _:genid2147865641 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061214" 
+- _:genid2147865641 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009997" 
 
 
 ### _:genid2147865642 
 
 #### Added
-- _:genid2147865642 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021751" 
+- _:genid2147865642 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0002482" 
+
+- _:genid2147865642 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007735" 
+
+- _:genid2147865642 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007196" 
+
+- _:genid2147865642 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0034076" 
 
 
 ### _:genid2147865643 
 
 #### Added
-- _:genid2147865643 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
-
-- _:genid2147865643 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865643 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072003" 
 
 
 ### _:genid2147865644 
 
 #### Added
-- _:genid2147865644 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147865644 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3221" 
 
 
 ### _:genid2147865645 
 
 #### Added
-- _:genid2147865645 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+- _:genid2147865645 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003224" 
 
 
 ### _:genid2147865646 
 
 #### Added
-- _:genid2147865646 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3214" 
+- _:genid2147865646 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007733" 
+
+- _:genid2147865646 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0064792" 
 
 
 ### _:genid2147865647 
 
 #### Added
-- _:genid2147865647 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3220" 
+- _:genid2147865647 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000606" 
 
 
 ### _:genid2147865648 
 
 #### Added
-- _:genid2147865648 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1734" 
+- _:genid2147865648 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147865649 
 
 #### Added
-- _:genid2147865649 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009994" 
+- _:genid2147865649 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EFO:0000240" 
 
 
 ### _:genid2147865650 
 
 #### Added
-- _:genid2147865650 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3223" 
+- _:genid2147865650 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010002" 
 
 
 ### _:genid2147865651 
 
 #### Added
-- _:genid2147865651 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2093943" 
+- _:genid2147865651 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
 
 
 ### _:genid2147865652 
 
 #### Added
-- _:genid2147865652 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009997" 
+- _:genid2147865652 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147865653 
 
 #### Added
-- _:genid2147865653 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009988" 
+- _:genid2147865653 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072166" 
 
 
 ### _:genid2147865654 
 
 #### Added
-- _:genid2147865654 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003227" 
+- _:genid2147865654 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147865655 
 
 #### Added
-- _:genid2147865655 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+- _:genid2147865655 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0000864" 
 
 
 ### _:genid2147865656 
 
 #### Added
-- _:genid2147865656 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021728" 
+- _:genid2147865656 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072165" 
 
 
 ### _:genid2147865657 
 
 #### Added
-- _:genid2147865657 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0089570" 
+- _:genid2147865657 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003350" 
 
 
 ### _:genid2147865658 
 
 #### Added
-- _:genid2147865658 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072003" 
+- _:genid2147865658 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147865659 
 
 #### Added
-- _:genid2147865659 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865659 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061249" 
 
 
 ### _:genid2147865660 
 
 #### Added
-- _:genid2147865660 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+- _:genid2147865660 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147865661 
 
 #### Added
-- _:genid2147865661 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009364" 
+- _:genid2147865661 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3218" 
 
 
 ### _:genid2147865662 
 
 #### Added
+- _:genid2147865662 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
+
 - _:genid2147865662 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
 
 
 ### _:genid2147865663 
 
 #### Added
-- _:genid2147865663 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0005289" 
+- _:genid2147865663 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003226" 
 
 
 ### _:genid2147865664 
 
 #### Added
-- _:genid2147865664 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0007733" 
-
-- _:genid2147865664 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0064792" 
+- _:genid2147865664 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1734" 
 
 
 ### _:genid2147865665 
 
 #### Added
-- _:genid2147865665 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009946" 
+- _:genid2147865665 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009988" 
 
 
 ### _:genid2147865666 
 
 #### Added
-- _:genid2147865666 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009996" 
+- _:genid2147865666 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3223" 
 
 
 ### _:genid2147865667 
 
 #### Added
-- _:genid2147865667 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072165" 
+- _:genid2147865667 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021728" 
 
 
 ### _:genid2147865668 
 
 #### Added
-- _:genid2147865668 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003291" 
+- _:genid2147865668 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
 
 
 ### _:genid2147865669 
 
 #### Added
-- _:genid2147865669 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147865669 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
 
 ### _:genid2147865670 
 
 #### Added
-- _:genid2147865670 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147865670 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003291" 
 
 
 ### _:genid2147865671 
 
 #### Added
-- _:genid2147865671 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3218" 
+- _:genid2147865671 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3214" 
 
 
 ### _:genid2147865672 
 
 #### Added
-- _:genid2147865672 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009993" 
+- _:genid2147865672 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0021729" 
+
+- _:genid2147865672 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000021" 
 
 
 ### _:genid2147865673 
 
 #### Added
-- _:genid2147865673 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
+- _:genid2147865673 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009364" 
 
 
 ### _:genid2147865674 
 
 #### Added
-- _:genid2147865674 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009990" 
+- _:genid2147865674 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0010003" 
 
 
 ### _:genid2147865675 
 
 #### Added
-- _:genid2147865675 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+- _:genid2147865675 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147865676 
 
 #### Added
-- _:genid2147865676 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061249" 
+- _:genid2147865676 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009989" 
 
 
 ### _:genid2147865677 
 
 #### Added
-- _:genid2147865677 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0006943" 
+- _:genid2147865677 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PHENOSCAPE:alex" 
 
 
 ### _:genid2147865678 
 
 #### Added
-- _:genid2147865678 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0060682" 
+- _:genid2147865678 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003225" 
 
 
 ### _:genid2147865679 
 
 #### Added
-- _:genid2147865679 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "neuronames:3221" 
+- _:genid2147865679 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147865680 
 
 #### Added
-- _:genid2147865680 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003225" 
+- _:genid2147865680 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0089570" 
 
 
 ### _:genid2147865681 
 
 #### Added
-- _:genid2147865681 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BIRNLEX:1732" 
+- _:genid2147865681 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0061214" 
 
 
 ### _:genid2147865682 
 
 #### Added
-- _:genid2147865682 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EFO:0000240" 
+- _:genid2147865682 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:DOS" 
+
+- _:genid2147865682 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147865683 
 
 #### Added
-- _:genid2147865683 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0072166" 
+- _:genid2147865683 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:VH" 
 
 
 ### _:genid2147865684 
 
 #### Added
-- _:genid2147865684 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0003224" 
+- _:genid2147865684 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009994" 
+
+
+### _:genid2147865685 
+
+#### Added
+- _:genid2147865685 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
+
+
+### _:genid2147865686 
+
+#### Added
+- _:genid2147865686 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0009996" 
+
+
+### _:genid2147865687 
+
+#### Added
+- _:genid2147865687 [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HP:0003832" 
 
 
 ### accessory nerve fiber bundle `http://purl.obolibrary.org/obo/UBERON_0006117`
@@ -2202,6 +2260,26 @@
 - [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [common_anatomy](http://purl.obolibrary.org/obo/uberon/core#common_anatomy) 
 
 
+### anorectum goblet cell `http://purl.obolibrary.org/obo/CL_0009057`
+#### Removed
+- [anorectum goblet cell](http://purl.obolibrary.org/obo/CL_0009057) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A goblet cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [anorectum goblet cell](http://purl.obolibrary.org/obo/CL_0009057) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A goblet cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### anorectum macrophage `http://purl.obolibrary.org/obo/CL_0009048`
+#### Removed
+- [anorectum macrophage](http://purl.obolibrary.org/obo/CL_0009048) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [anorectum macrophage](http://purl.obolibrary.org/obo/CL_0009048) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### ansa cervicalis `http://purl.obolibrary.org/obo/UBERON_0005430`
 #### Removed
 - [ansa cervicalis](http://purl.obolibrary.org/obo/UBERON_0005430) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -2446,6 +2524,16 @@
 #### Removed
 - [apex of cochlea](http://purl.obolibrary.org/obo/UBERON_0002819) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### appendix macrophage `http://purl.obolibrary.org/obo/CL_0009036`
+#### Removed
+- [appendix macrophage](http://purl.obolibrary.org/obo/CL_0009036) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage located in the vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [appendix macrophage](http://purl.obolibrary.org/obo/CL_0009036) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage located in the vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
 
 
 ### arch of aorta `http://purl.obolibrary.org/obo/UBERON_0001508`
@@ -2722,6 +2810,9 @@
 
 ### bronchiole `http://purl.obolibrary.org/obo/UBERON_0002186`
 #### Removed
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:7410" 
+
 - [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tracheobronchial tree](http://purl.obolibrary.org/obo/UBERON_0007196) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -2730,6 +2821,12 @@
 - [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) 
 
 #### Added
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) [external_ontology_notes](http://purl.obolibrary.org/obo/UBPROP_0000012) "In FMA2 and FMA3, lobular bronchiole is an exact synonym of bronchiole; however, there are two distinct terms for the corresponding epithelium." 
+  - [external_ontology](http://www.geneontology.org/formats/oboInOwl#external_ontology) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "In some texts/references/ontologies, bronchiole has been used as an exact synonym of 'lobular bronchiole'. However, a 'lobular bronchiole' is a segment of a bronchiole." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [2795](https://github.com/obophenotype/uberon/issues/2795) 
+
 - [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [tracheobronchial tree](http://purl.obolibrary.org/obo/UBERON_0007196) 
   - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -3076,6 +3173,26 @@
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0001-5208-3432](https://orcid.org/0000-0001-5208-3432) 
 
 
+### colon goblet cell `http://purl.obolibrary.org/obo/CL_0009039`
+#### Removed
+- [colon goblet cell](http://purl.obolibrary.org/obo/CL_0009039) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A goblet cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [colon goblet cell](http://purl.obolibrary.org/obo/CL_0009039) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A goblet cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### colon macrophage `http://purl.obolibrary.org/obo/CL_0009038`
+#### Removed
+- [colon macrophage](http://purl.obolibrary.org/obo/CL_0009038) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [colon macrophage](http://purl.obolibrary.org/obo/CL_0009038) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### columnar/cuboidal epithelial cell `http://purl.obolibrary.org/obo/CL_0000075`
 #### Removed
 - [columnar/cuboidal epithelial cell](http://purl.obolibrary.org/obo/CL_0000075) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." 
@@ -3338,6 +3455,16 @@
 #### Removed
 - [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### dendritic cell of appendix `http://purl.obolibrary.org/obo/CL_0009034`
+#### Removed
+- [dendritic cell of appendix](http://purl.obolibrary.org/obo/CL_0009034) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A dendritic cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [dendritic cell of appendix](http://purl.obolibrary.org/obo/CL_0009034) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A dendritic cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
 
 
 ### dental epithelium `http://purl.obolibrary.org/obo/UBERON_0003843`
@@ -3653,6 +3780,106 @@
 
 
 
+### endothelial cell of hepatic portal vein `http://purl.obolibrary.org/obo/CL_0009094`
+#### Removed
+- [endothelial cell of hepatic portal vein](http://purl.obolibrary.org/obo/CL_0009094) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a hepatic portal vein." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30348985" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [endothelial cell of hepatic portal vein](http://purl.obolibrary.org/obo/CL_0009094) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a hepatic portal vein." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30348985" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### endothelial cell of placenta `http://purl.obolibrary.org/obo/CL_0009092`
+#### Removed
+- [endothelial cell of placenta](http://purl.obolibrary.org/obo/CL_0009092) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a placenta." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [endothelial cell of placenta](http://purl.obolibrary.org/obo/CL_0009092) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a placenta." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### endothelial cell of respiratory system lymphatic vessel `http://purl.obolibrary.org/obo/CL_0009086`
+#### Removed
+- [endothelial cell of respiratory system lymphatic vessel](http://purl.obolibrary.org/obo/CL_0009086) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a respiratory system lymphatic vessel." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [endothelial cell of respiratory system lymphatic vessel](http://purl.obolibrary.org/obo/CL_0009086) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a respiratory system lymphatic vessel." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### endothelial cell of uterus `http://purl.obolibrary.org/obo/CL_0009095`
+#### Removed
+- [endothelial cell of uterus](http://purl.obolibrary.org/obo/CL_0009095) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a uterus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [endothelial cell of uterus](http://purl.obolibrary.org/obo/CL_0009095) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of a uterus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### enteroendocrine cell of anorectum `http://purl.obolibrary.org/obo/CL_0009063`
+#### Removed
+- [enteroendocrine cell of anorectum](http://purl.obolibrary.org/obo/CL_0009063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [enteroendocrine cell of anorectum](http://purl.obolibrary.org/obo/CL_0009063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### enteroendocrine cell of appendix `http://purl.obolibrary.org/obo/CL_0009030`
+#### Removed
+- [enteroendocrine cell of appendix](http://purl.obolibrary.org/obo/CL_0009030) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal enteroendocrine cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [enteroendocrine cell of appendix](http://purl.obolibrary.org/obo/CL_0009030) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal enteroendocrine cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### enteroendocrine cell of colon `http://purl.obolibrary.org/obo/CL_0009042`
+#### Removed
+- [enteroendocrine cell of colon](http://purl.obolibrary.org/obo/CL_0009042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [enteroendocrine cell of colon](http://purl.obolibrary.org/obo/CL_0009042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### enteroendocrine cell of small intestine `http://purl.obolibrary.org/obo/CL_0009006`
+#### Removed
+- [enteroendocrine cell of small intestine](http://purl.obolibrary.org/obo/CL_0009006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the small intestine." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [enteroendocrine cell of small intestine](http://purl.obolibrary.org/obo/CL_0009006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An enteroendocrine cell that is located in the small intestine." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### entire pharyngeal arch associated mesenchyme `http://purl.obolibrary.org/obo/UBERON_0010046`
 #### Removed
 - [entire pharyngeal arch associated mesenchyme](http://purl.obolibrary.org/obo/UBERON_0010046) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -3755,6 +3982,20 @@
 
 
 
+### epithelial cell of endometrial gland `http://purl.obolibrary.org/obo/CL_0009084`
+#### Removed
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of an endometrial gland." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of an endometrial gland." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
 ### epithelial cell of lung `http://purl.obolibrary.org/obo/CL_0000082`
 #### Removed
 - [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell of the lung." 
@@ -3767,6 +4008,23 @@
 
 ### epithelium of bronchiole `http://purl.obolibrary.org/obo/UBERON_0002051`
 #### Removed
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "epithelial tissue of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole epithelial tissue" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "epithelium of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:62497" 
+
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole epithelium" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) [external_ontology_notes](http://purl.obolibrary.org/obo/UBPROP_0000012) "in FMA2 and FMA3, lobular bronchiole is an exact synonym of bronchiole; however there are two distinct terms for the corresponding epithelium." 
+  - [external_ontology](http://www.geneontology.org/formats/oboInOwl#external_ontology) "FMA"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) SubClassOf [epithelium of bronchus](http://purl.obolibrary.org/obo/UBERON_0002031) 
 
 #### Added
@@ -3777,6 +4035,37 @@
 #### Removed
 - [epithelium of incisor](http://purl.obolibrary.org/obo/UBERON_0003355) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### epithelium of lobular bronchiole `http://purl.obolibrary.org/obo/UBERON_8600001`
+
+#### Added
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole epithelium" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:62497" 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [label](http://www.w3.org/2000/01/rdf-schema#label) "epithelium of lobular bronchiole" 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [date](http://purl.org/dc/terms/date) "2023-02-10T14:26:09Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600001" 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](http://orcid.org/0000-0001-6677-8489) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "epithelium of preterminal bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [16543587](http://www.ncbi.nlm.nih.gov/pubmed/16543587) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelium of the lobular bronchiole." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:62497" 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- Class: [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) EquivalentTo [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000)) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) 
+
+- [epithelium of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600001) SubClassOf [epithelium of bronchiole](http://purl.obolibrary.org/obo/UBERON_0002051) 
 
 
 ### epithelium of lower jaw `http://purl.obolibrary.org/obo/UBERON_0003236`
@@ -4633,6 +4922,68 @@
 
 
 
+### intestinal crypt stem cell of anorectum `http://purl.obolibrary.org/obo/CL_0009061`
+#### Removed
+- [intestinal crypt stem cell of anorectum](http://purl.obolibrary.org/obo/CL_0009061) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [intestinal crypt stem cell of anorectum](http://purl.obolibrary.org/obo/CL_0009061) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### intestinal crypt stem cell of appendix `http://purl.obolibrary.org/obo/CL_0009028`
+#### Removed
+- [intestinal crypt stem cell of appendix](http://purl.obolibrary.org/obo/CL_0009028) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the vermiform appendix. These stem cells reside at the bottom of crypts in the appendix and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [intestinal crypt stem cell of appendix](http://purl.obolibrary.org/obo/CL_0009028) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the vermiform appendix. These stem cells reside at the bottom of crypts in the appendix and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### intestinal crypt stem cell of colon `http://purl.obolibrary.org/obo/CL_0009043`
+#### Removed
+- [intestinal crypt stem cell of colon](http://purl.obolibrary.org/obo/CL_0009043) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [intestinal crypt stem cell of colon](http://purl.obolibrary.org/obo/CL_0009043) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal crypt stem cell that is located in the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### intestinal crypt stem cell of large intestine `http://purl.obolibrary.org/obo/CL_0009016`
+#### Removed
+- [intestinal crypt stem cell of large intestine](http://purl.obolibrary.org/obo/CL_0009016) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [intestinal crypt stem cell of large intestine](http://purl.obolibrary.org/obo/CL_0009016) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### intestinal crypt stem cell of small intestine `http://purl.obolibrary.org/obo/CL_0009017`
+#### Removed
+- [intestinal crypt stem cell of small intestine](http://purl.obolibrary.org/obo/CL_0009017) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [intestinal crypt stem cell of small intestine](http://purl.obolibrary.org/obo/CL_0009017) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20683682" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
 ### isla magna of Calleja `http://purl.obolibrary.org/obo/UBERON_0023868`
 #### Removed
 - [isla magna of Calleja](http://purl.obolibrary.org/obo/UBERON_0023868) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -5348,6 +5699,16 @@
 - [left lower third secondary molar tooth](http://purl.obolibrary.org/obo/UBERON_8490034) SubClassOf [lower third secondary molar tooth](http://purl.obolibrary.org/obo/UBERON_0018580) 
 
 
+### left lung bronchiole `http://purl.obolibrary.org/obo/UBERON_0003539`
+#### Removed
+- [left lung bronchiole](http://purl.obolibrary.org/obo/UBERON_0003539) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole of left lung" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [left lung bronchiole](http://purl.obolibrary.org/obo/UBERON_0003539) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "left lung lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+
 ### left upper central primary incisor tooth `http://purl.obolibrary.org/obo/UBERON_8490046`
 
 #### Added
@@ -5877,6 +6238,32 @@
 
 
 
+### lobular bronchiole `http://purl.obolibrary.org/obo/UBERON_8600000`
+
+#### Added
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](http://orcid.org/0000-0001-6677-8489) 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A conductive airway that branches into terminal bronchioles." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [16543587](http://www.ncbi.nlm.nih.gov/pubmed/16543587) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [27611890](http://www.ncbi.nlm.nih.gov/pubmed/27611890) 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "preterminal bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [16543587](http://www.ncbi.nlm.nih.gov/pubmed/16543587) 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [date](http://purl.org/dc/terms/date) "2023-02-08T13:31:12Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600000" 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [label](http://www.w3.org/2000/01/rdf-schema#label) "lobular bronchiole" 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- Class: [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) 
+
+- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) SubClassOf [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) 
+
+
 ### lobule of pinna `http://purl.obolibrary.org/obo/UBERON_0001847`
 #### Removed
 - [lobule of pinna](http://purl.obolibrary.org/obo/UBERON_0001847) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -5937,6 +6324,20 @@
 
 
 
+### lung pericyte `http://purl.obolibrary.org/obo/CL_0009089`
+#### Removed
+- [lung pericyte](http://purl.obolibrary.org/obo/CL_0009089) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A pericyte cell that is part of a lung." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [lung pericyte](http://purl.obolibrary.org/obo/CL_0009089) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A pericyte cell that is part of a lung." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
 ### lunge feeding organ `http://purl.obolibrary.org/obo/UBERON_0016621`
 #### Removed
 - [lunge feeding organ](http://purl.obolibrary.org/obo/UBERON_0016621) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -5951,6 +6352,30 @@
 
 #### Added
 - [lunge feeding organ papilla](http://purl.obolibrary.org/obo/UBERON_0016622) SubClassOf [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) 
+
+
+### lymphocyte of large intestine lamina propria `http://purl.obolibrary.org/obo/CL_0009018`
+#### Removed
+- [lymphocyte of large intestine lamina propria](http://purl.obolibrary.org/obo/CL_0009018) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that resides in the lamina propria of the large intestine." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [lymphocyte of large intestine lamina propria](http://purl.obolibrary.org/obo/CL_0009018) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that resides in the lamina propria of the large intestine." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
+### lymphocyte of small intestine lamina propria `http://purl.obolibrary.org/obo/CL_0009044`
+#### Removed
+- [lymphocyte of small intestine lamina propria](http://purl.obolibrary.org/obo/CL_0009044) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that resides in the lamina propria of the small intestine. Lamina propria leukocytes and intraepithelial lymphocytes are the effector compartments of the gut mucosal immune system. Lymphocytes circulate through gut associated lymphoid tissues until recruitment by intestinal antigens. They are involved in the gut immune response." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26551552" 
+
+#### Added
+- [lymphocyte of small intestine lamina propria](http://purl.obolibrary.org/obo/CL_0009044) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lymphocyte that resides in the lamina propria of the small intestine. Lamina propria leukocytes and intraepithelial lymphocytes are the effector compartments of the gut mucosal immune system. Lymphocytes circulate through gut associated lymphoid tissues until recruitment by intestinal antigens. They are involved in the gut immune response." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26551552" 
 
 
 ### macula `http://purl.obolibrary.org/obo/UBERON_0000054`
@@ -6241,6 +6666,30 @@
 
 
 
+### mesothelial cell of appendix `http://purl.obolibrary.org/obo/CL_0009029`
+#### Removed
+- [mesothelial cell of appendix](http://purl.obolibrary.org/obo/CL_0009029) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mesothelial cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [mesothelial cell of appendix](http://purl.obolibrary.org/obo/CL_0009029) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mesothelial cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### mesothelial cell of colon `http://purl.obolibrary.org/obo/CL_0009025`
+#### Removed
+- [mesothelial cell of colon](http://purl.obolibrary.org/obo/CL_0009025) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mesothelial cell that is part of the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-4183-8865" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [mesothelial cell of colon](http://purl.obolibrary.org/obo/CL_0009025) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mesothelial cell that is part of the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-4183-8865" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### midbrain cerebral aqueduct `http://purl.obolibrary.org/obo/UBERON_0002289`
 #### Removed
 - [midbrain cerebral aqueduct](http://purl.obolibrary.org/obo/UBERON_0002289) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -6303,6 +6752,32 @@
 
 ### mucosa of bronchiole `http://purl.obolibrary.org/obo/UBERON_0005039`
 #### Removed
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole mucous membrane" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "mucosa of organ of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "mucosa of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "organ mucosa of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole mucosa" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole organ mucosa" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole mucosa of organ" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:263230" 
+
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "mucous membrane of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) SubClassOf [bronchial mucosa](http://purl.obolibrary.org/obo/UBERON_0000410) 
 
 #### Added
@@ -6315,6 +6790,31 @@
 #### Removed
 - [mucosa of epiglottis](http://purl.obolibrary.org/obo/UBERON_0004982) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### mucosa of lobular bronchiole `http://purl.obolibrary.org/obo/UBERON_8600002`
+
+#### Added
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [label](http://www.w3.org/2000/01/rdf-schema#label) "mucosa of lobular bronchiole" 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600002" 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [date](http://purl.org/dc/terms/date) "2023-02-10T14:48:35Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](http://orcid.org/0000-0001-6677-8489) 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mucosa that is part of a lobular bronchiole." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:263230" 
+
+- Class: [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) EquivalentTo [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000)) 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) SubClassOf [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) 
+
+- [mucosa of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600002) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) 
 
 
 ### mucosa of lower lip `http://purl.obolibrary.org/obo/UBERON_0005032`
@@ -6469,6 +6969,20 @@
 #### Removed
 - [neural lobe of neurohypophysis](http://purl.obolibrary.org/obo/UBERON_0003217) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### neuroendocrine cell differentiation involved in prostate gland acinus development `http://purl.obolibrary.org/obo/GO_0060531`
+#### Removed
+- [neuroendocrine cell differentiation involved in prostate gland acinus development](http://purl.obolibrary.org/obo/GO_0060531) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which relatively unspecialized cells acquires specialized structural and functions of a neuroendocrine cell of the prostate gland acinus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18977204" 
+
+#### Added
+- [neuroendocrine cell differentiation involved in prostate gland acinus development](http://purl.obolibrary.org/obo/GO_0060531) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which relatively unspecialized cells acquires specialized structural and functions of a neuroendocrine cell of the prostate gland acinus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [18977204](http://www.ncbi.nlm.nih.gov/pubmed/18977204) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### nidopallium `http://purl.obolibrary.org/obo/UBERON_0007334`
@@ -7252,6 +7766,16 @@
 
 
 
+### plasma cell of appendix `http://purl.obolibrary.org/obo/CL_0009033`
+#### Removed
+- [plasma cell of appendix](http://purl.obolibrary.org/obo/CL_0009033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A plasma cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [plasma cell of appendix](http://purl.obolibrary.org/obo/CL_0009033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A plasma cell that is located in a vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### pole of cerebral hemisphere `http://purl.obolibrary.org/obo/UBERON_0009899`
 #### Removed
 - [pole of cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0009899) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
@@ -7698,6 +8222,48 @@
 #### Removed
 - [prootic bone](http://purl.obolibrary.org/obo/UBERON_0004746) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### prostate gland morphogenesis `http://purl.obolibrary.org/obo/GO_0060512`
+#### Removed
+- [prostate gland morphogenesis](http://purl.obolibrary.org/obo/GO_0060512) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which the anatomical structures of a prostate gland are generated and organized." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18977204" 
+
+#### Added
+- [prostate gland morphogenesis](http://purl.obolibrary.org/obo/GO_0060512) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which the anatomical structures of a prostate gland are generated and organized." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [18977204](http://www.ncbi.nlm.nih.gov/pubmed/18977204) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prostate glandular acinus development `http://purl.obolibrary.org/obo/GO_0060525`
+#### Removed
+- [prostate glandular acinus development](http://purl.obolibrary.org/obo/GO_0060525) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The progression of a glandular acinus of the prostate gland over time, from its initial formation to the mature structure. The glandular acini are the saclike structures of the gland." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18977204" 
+
+#### Added
+- [prostate glandular acinus development](http://purl.obolibrary.org/obo/GO_0060525) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The progression of a glandular acinus of the prostate gland over time, from its initial formation to the mature structure. The glandular acini are the saclike structures of the gland." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [18977204](http://www.ncbi.nlm.nih.gov/pubmed/18977204) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### prostatic bud formation `http://purl.obolibrary.org/obo/GO_0060513`
+#### Removed
+- [prostatic bud formation](http://purl.obolibrary.org/obo/GO_0060513) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The morphogenetic process in which a region of the fetal urogenital sinus epithelium is specified to become the prostate, resulting in prostate bud outgrowth." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18977204" 
+
+#### Added
+- [prostatic bud formation](http://purl.obolibrary.org/obo/GO_0060513) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The morphogenetic process in which a region of the fetal urogenital sinus epithelium is specified to become the prostate, resulting in prostate bud outgrowth." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [18977204](http://www.ncbi.nlm.nih.gov/pubmed/18977204) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### pseudobranchial artery `http://purl.obolibrary.org/obo/UBERON_2005011`
@@ -8324,6 +8890,16 @@
 - [right lower third secondary molar tooth](http://purl.obolibrary.org/obo/UBERON_8490008) SubClassOf [lateral structure](http://purl.obolibrary.org/obo/UBERON_0015212) 
 
 - [right lower third secondary molar tooth](http://purl.obolibrary.org/obo/UBERON_8490008) SubClassOf [lower third secondary molar tooth](http://purl.obolibrary.org/obo/UBERON_0018580) 
+
+
+### right lung bronchiole `http://purl.obolibrary.org/obo/UBERON_0003538`
+#### Removed
+- [right lung bronchiole](http://purl.obolibrary.org/obo/UBERON_0003538) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole of right lung" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [right lung bronchiole](http://purl.obolibrary.org/obo/UBERON_0003538) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "right lung lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 
 
 ### right upper central primary incisor tooth `http://purl.obolibrary.org/obo/UBERON_8490020`
@@ -8993,12 +9569,80 @@
 
 
 
+### smooth muscle cell differentiation involved in prostate glandular acinus development `http://purl.obolibrary.org/obo/GO_0060530`
+#### Removed
+- [smooth muscle cell differentiation involved in prostate glandular acinus development](http://purl.obolibrary.org/obo/GO_0060530) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which a relatively unspecialized cell acquires specialized features of a smooth muscle cell of the prostate glandular acinus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18977204" 
+
+#### Added
+- [smooth muscle cell differentiation involved in prostate glandular acinus development](http://purl.obolibrary.org/obo/GO_0060530) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which a relatively unspecialized cell acquires specialized features of a smooth muscle cell of the prostate glandular acinus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [18977204](http://www.ncbi.nlm.nih.gov/pubmed/18977204) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dph"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### smooth muscle cell of anorectum `http://purl.obolibrary.org/obo/CL_0009052`
+#### Removed
+- [smooth muscle cell of anorectum](http://purl.obolibrary.org/obo/CL_0009052) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [smooth muscle cell of anorectum](http://purl.obolibrary.org/obo/CL_0009052) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle cell that is located in the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### smooth muscle cell of placenta `http://purl.obolibrary.org/obo/CL_0009093`
+#### Removed
+- [smooth muscle cell of placenta](http://purl.obolibrary.org/obo/CL_0009093) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle cell that is part of a placenta." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4183-8865" 
+
+#### Added
+- [smooth muscle cell of placenta](http://purl.obolibrary.org/obo/CL_0009093) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle cell that is part of a placenta." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-3440-1876" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-4183-8865](https://orcid.org/0000-0003-4183-8865) 
+
+
 ### smooth muscle tissue of bronchiole `http://purl.obolibrary.org/obo/UBERON_0004515`
 #### Removed
+- [smooth muscle tissue of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004515) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:261081" 
+
+- [smooth muscle tissue of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004515) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "smooth muscle tissue of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:261081" 
+
 - [smooth muscle tissue of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004515) SubClassOf [bronchus smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004242) 
 
 #### Added
 - [smooth muscle tissue of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004515) SubClassOf [lower respiratory tract smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004233) 
+
+
+### smooth muscle tissue of lobular bronchiole `http://purl.obolibrary.org/obo/UBERON_8600003`
+
+#### Added
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600003" 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](http://orcid.org/0000-0001-6677-8489) 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [label](http://www.w3.org/2000/01/rdf-schema#label) "smooth muscle tissue of lobular bronchiole" 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle tissue that is part of a lobular bronchiole." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:261081" 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [date](http://purl.org/dc/terms/date) "2023-02-10T14:54:06Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- Class: [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) EquivalentTo [smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_0001135) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000)) 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) 
+
+- [smooth muscle tissue of lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600003) SubClassOf [smooth muscle tissue of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004515) 
 
 
 ### solitary tract `http://purl.obolibrary.org/obo/UBERON_0002718`
@@ -9182,10 +9826,50 @@
 
 
 
+### stratified squamous epithelial cell of anal canal `http://purl.obolibrary.org/obo/CL_0009066`
+#### Removed
+- [stratified squamous epithelial cell of anal canal](http://purl.obolibrary.org/obo/CL_0009066) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stratified squamous epithelial cell that is part of the anal canal." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [stratified squamous epithelial cell of anal canal](http://purl.obolibrary.org/obo/CL_0009066) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stratified squamous epithelial cell that is part of the anal canal." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
 ### stratum intermedium of tooth `http://purl.obolibrary.org/obo/UBERON_0007440`
 #### Removed
 - [stratum intermedium of tooth](http://purl.obolibrary.org/obo/UBERON_0007440) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
 
+
+
+### stromal cell of anorectum lamina propria `http://purl.obolibrary.org/obo/CL_0009053`
+#### Removed
+- [stromal cell of anorectum lamina propria](http://purl.obolibrary.org/obo/CL_0009053) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [stromal cell of anorectum lamina propria](http://purl.obolibrary.org/obo/CL_0009053) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the anorectum." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### stromal cell of lamina propria of colon `http://purl.obolibrary.org/obo/CL_0009040`
+#### Removed
+- [stromal cell of lamina propria of colon](http://purl.obolibrary.org/obo/CL_0009040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [stromal cell of lamina propria of colon](http://purl.obolibrary.org/obo/CL_0009040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the colon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
+
+
+### stromal cell of lamina propria of vermiform appendix `http://purl.obolibrary.org/obo/CL_0009035`
+#### Removed
+- [stromal cell of lamina propria of vermiform appendix](http://purl.obolibrary.org/obo/CL_0009035) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0003-3440-1876" 
+
+#### Added
+- [stromal cell of lamina propria of vermiform appendix](http://purl.obolibrary.org/obo/CL_0009035) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stromal cell found in the lamina propria of the vermiform appendix." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0003-3440-1876](http://orcid.org/0000-0003-3440-1876) 
 
 
 ### stylar shelf `http://purl.obolibrary.org/obo/UBERON_0018345`
@@ -9286,6 +9970,12 @@
 
 ### submucosa of bronchiole `http://purl.obolibrary.org/obo/UBERON_0004952`
 #### Removed
+- [submucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004952) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "submucosa of lobular bronchiole" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [submucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004952) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lobular bronchiole submucosa" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [submucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0004952) SubClassOf [submucosa of bronchus](http://purl.obolibrary.org/obo/UBERON_0001957) 
 
 #### Added
