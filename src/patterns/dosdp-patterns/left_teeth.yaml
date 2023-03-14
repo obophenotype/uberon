@@ -1,0 +1,94 @@
+pattern_name: left_teeth
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/left_teeth.yaml
+
+description: "This pattern defines primary and secondary teeth for the left side of the mouth."
+
+contributors:
+  - https://orcid.org/0000-0001-9625-1899 # Bill Duncan
+
+classes:
+  thing: "owl:Thing"
+  Homo sapiens: "NCBITaxon:9606"
+  calcareous tooth: "UBERON:0001091"
+  jaw region: "UBERON:0011595"
+  maxilla: "UBERON:0002397"
+  mandible: "UBERON:0001684"
+
+relations:
+  in lateral side of: "BSPO:0000126"
+  in left side of: "BSPO:0000120"
+
+annotationProperties:
+  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  present_in_taxon: "RO:0002175"
+  contributor: "http://purl.org/dc/terms/contributor"
+  creation_date: "oboInOwl:creation_date"
+  hasDbXref: "oboInOwl:hasDbXref"
+  hasSynonymType: "oboInOwl:hasSynonymType"
+
+vars:
+  parent_class: "calcareous tooth"  # UBERON:0001091
+  jaw_region: "jaw region"          # UBERON:0011595
+  taxon: "Homo sapiens"             # obo:NCBITaxon_9606
+  creator: "https://orcid.org/0000-0001-9625-1899"
+  human_preferred: "obo:uberon/core#HUMAN_PREFERRED"
+
+data_vars:
+  laterality: "xsd:string"     # e.g., right, left
+  FMA_label: "xsd:string"                # e.g., left upper third secondary molar tooth
+  date_created: "xsd:dateTime" # e.g., 2022-11-13T00:00:00Z; note: this shows up as a string in Protege
+  FMA_xref: "xsd:string"       # e.g., FMA:55696
+
+data_list_vars:                # separate multiple entries by "|"
+  synonym: "xsd:string"        # e.g., ADA tooth 1, FDI tooth 18
+  
+name:
+  text: "%s %s"   # e.g, left upper third secondary molar tooth
+  vars:
+    - laterality   # e.g., left
+    - parent_class # e.g., upper third secondary molar tooth
+
+def:
+  text: "A %s that is in the left side of the %s."
+  # e.g., A upper third secondary molar tooth that is in the left side of the upper jaw region.
+  vars:
+    - parent_class
+    - jaw_region
+
+# exact_synonym:
+#   value: FMA_label
+#   xrefs: FMA_xref
+# 
+# xref: 
+#   value: FMA_xref
+
+annotations:
+  - annotationProperty: present_in_taxon
+    var: taxon
+  - annotationProperty: hasExactSynonym
+    value: synonym
+  - annotationProperty: contributor
+    var: creator
+  - annotationProperty: creation_date
+    text: "%s"
+    vars:
+      - date_created
+  - annotationProperty: hasExactSynonym
+    text: "%s"
+    vars:
+      - FMA_label
+    annotations:
+      - annotationProperty: hasDbXref
+        text: "%s"
+        vars:
+          - FMA_xref
+      - annotationProperty: hasSynonymType
+        var: human_preferred
+
+logical_axioms:
+  - axiom_type: equivalentTo
+    text: "%s and ('in left side of' some %s)"
+    # e.g., 'upper third secondary molar tooth' and 'in left side of' some 'upper jaw region'
+    vars:
+      - parent_class
+      - jaw_region
