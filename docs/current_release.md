@@ -6,7 +6,7 @@ For the latest canonical release, please use http://purl.obolibrary.org/obo/uber
 
 For variants of, use the following pattern: 
 
-http://purl.obolibrary.org/obo/uberon-{variant}.{format}
+http://purl.obolibrary.org/obo/uberon/uberon-{variant}.{format}
 
 Where variant is the type (eg base, simple, basic) and format is the file format (eg owl, obo, json)
 
