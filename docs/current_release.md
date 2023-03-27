@@ -4,7 +4,7 @@ For the latest canonical release, please use http://purl.obolibrary.org/obo/uber
 
 # Variants:
 
-For variants of, use the following pattern: 
+For variants of Uberon, use the following pattern: 
 
 http://purl.obolibrary.org/obo/uberon/uberon-{variant}.{format}
 
