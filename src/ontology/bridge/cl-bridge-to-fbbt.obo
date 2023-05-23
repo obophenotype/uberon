@@ -1,5 +1,5 @@
 ontology: uberon/bridge/cl-bridge-to-fbbt
-data-version: 2023-04-19
+data-version: 2023-05-23
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "CL bridge to fbbt" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between the drosophila anatomy ontology and CL. Note that currently CL focuses on chordate anatomy so there are only a minimal set of equivalencies for high level classes. In future CL may bridge via the arthropod anatomy ontology" xsd:string
@@ -12,6 +12,18 @@ property_value: dcterms-references http://purl.obolibrary.org/obo/cl.owl
 id: FBbt:00007002 ! 
 property_value: IAO:0000589 "cell (drosophila)" xsd:string
 intersection_of: CL:0000000 ! cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00004861 ! 
+property_value: IAO:0000589 "germ line stem cell (drosophila)" xsd:string
+intersection_of: CL:0000014 ! germ line stem cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00004929 ! 
+property_value: IAO:0000589 "male germ line stem cell (drosophila)" xsd:string
+intersection_of: CL:0000016 ! male germ line stem cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -81,18 +93,6 @@ intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
-id: FBbt:00004861 ! 
-property_value: IAO:0000589 "germ line stem cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000086 ! germ line stem cell (sensu Nematoda and Protostomia)
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00004929 ! 
-property_value: IAO:0000589 "male germ line stem cell (sensu Nematoda and Protostomia) (drosophila)" xsd:string
-intersection_of: CL:0000087 ! male germ line stem cell (sensu Nematoda and Protostomia)
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
 id: FBbt:00005125 ! 
 property_value: IAO:0000589 "interneuron (drosophila)" xsd:string
 intersection_of: CL:0000099 ! interneuron
@@ -148,8 +148,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00003360 ! 
-property_value: IAO:0000589 "flight muscle cell (drosophila)" xsd:string
-intersection_of: CL:0000196 ! flight muscle cell
+property_value: IAO:0000589 "insect flight muscle cell (drosophila)" xsd:string
+intersection_of: CL:0000196 ! insect flight muscle cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -162,12 +162,6 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00000092 ! 
 property_value: IAO:0000589 "pole cell (drosophila)" xsd:string
 intersection_of: CL:0000301 ! pole cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005038 ! 
-property_value: IAO:0000589 "tracheal epithelial cell (drosophila)" xsd:string
-intersection_of: CL:0000307 ! tracheal epithelial cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -244,14 +238,8 @@ intersection_of: part_of NCBITaxon:7227
 
 [Term]
 id: FBbt:00001691 ! 
-property_value: IAO:0000589 "polygonal cell (drosophila)" xsd:string
-intersection_of: CL:0000398 ! polygonal cell
-intersection_of: part_of NCBITaxon:7227
-
-[Term]
-id: FBbt:00005148 ! 
-property_value: IAO:0000589 "neuroepidermoblast (drosophila)" xsd:string
-intersection_of: CL:0000405 ! neuroepidermoblast
+property_value: IAO:0000589 "obsolete polygonal cell (drosophila)" xsd:string
+intersection_of: CL:0000398 ! obsolete polygonal cell
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
@@ -438,6 +426,12 @@ intersection_of: part_of NCBITaxon:7227
 id: FBbt:00005070 ! 
 property_value: IAO:0000589 "visceral muscle cell (drosophila)" xsd:string
 intersection_of: CL:0008007 ! visceral muscle cell
+intersection_of: part_of NCBITaxon:7227
+
+[Term]
+id: FBbt:00005038 ! 
+property_value: IAO:0000589 "open tracheal system tracheocyte (drosophila)" xsd:string
+intersection_of: CL:0008026 ! open tracheal system tracheocyte
 intersection_of: part_of NCBITaxon:7227
 
 [Term]
