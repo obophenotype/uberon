@@ -8,8 +8,9 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4
+      - uses: actions/stale@v7
         with:
+          operations-per-run: 100
           days-before-issue-stale: 180
           days-before-issue-close: 365
           close-issue-label: 'autoclosed-unfixed'
