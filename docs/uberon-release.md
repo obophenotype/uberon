@@ -41,7 +41,7 @@ Preparation:
 1. Make sure that all changes to master are committed to Github (`git status` should say that there are no modified files)
 1. Locally make sure you have the latest changes from master (`git pull`)
 1. Checkout a new branch (e.g. `git checkout -b release-2021-01-01`)
-1. You may or may not want to refresh your imports as part of your release strategy (see [here](UpdateImports.md))(Note: in UBERON we decouple our imports and releases - we hence advice that you do not update imports)
+1. You may or may not want to refresh your imports as part of your release strategy (see [here](odk-workflows/UpdateImports.md))(Note: in UBERON we decouple our imports and releases - we hence advice that you do not update imports)
 1. Make sure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
 
 To actually run the release, you:
