@@ -95,6 +95,9 @@ test: $(REPORTDIR)/uberon-edit-xp-check reports/bfo-check.txt
 tmp/uberon-merged.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
 
+$(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
+	wget http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl -O $@
+
 # TODO This goal needs to be revised carefully. remove_axioms removes RO labels to avoid duplicates
 # merge -i ro_import then adds them back to ensure they are canonical.
 # Cannot add $(IMPORTDIR)/ro_import.owl as dependency because it cause to be circular with tmp/seed.txt
@@ -108,9 +111,9 @@ tmp/uberon-merged.owl: $(SRC)
 # $(SCRIPTSDIR)/expand-dbxref-literals.pl 
 ## Turns some CURIES into expanded URI syntax
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
-$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
+$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/subset-taxslim-disjoint-over-in-taxon.owl $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/subset-taxslim-disjoint-over-in-taxon.owl issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
 	$(ROBOT) expand -i $@.tmp --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 		query \
@@ -700,7 +703,7 @@ $(TMPDIR)/uberon-taxon-constraints.obo: $(SRC)
 	$(SCRIPTSDIR)/obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | $(SCRIPTSDIR)/obo-filter-tags.pl -t id -t name -t relationship - | $(SCRIPTSDIR)/obo-grep.pl --noheader -r relationship: - > $@.tmp && cat $@.tmp $(COMPONENTSDIR)/taxon-relations.obo > $@
 
 $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
-	$(OWLTOOLS) $< --expand-macros -o $@
+	$(ROBOT) expand --input $< -o $@
 
 # ----------------------------------------
 # SYNTACTIC CHECKS
@@ -744,7 +747,8 @@ $(TMPDIR)/GO.xrf_abbs: $(SRC)
 #  * species anatomy bridge axioms
 # This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
 $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(TMPDIR)/external-disjoints.owl `ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f ofn $@
+	$(OWLTOOLS_CAT_DYNAMIC) $< $(TMPDIR)/external-disjoints.owl `ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f ofn $@.tmp
+	$(ROBOT) expand -i $@.tmp -o $@
 .PRECIOUS: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 
 # uberon bridges to mba and dmba are now manually curated and generated in https://github.com/obophenotype/ABA_Uberon/tree/new_bridge
