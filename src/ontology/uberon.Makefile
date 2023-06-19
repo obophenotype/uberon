@@ -111,9 +111,9 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 # $(SCRIPTSDIR)/expand-dbxref-literals.pl 
 ## Turns some CURIES into expanded URI syntax
 ## TODO: Leave for now but make a ticket for replacment (maybe with SPARQL?)
-$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/subset-taxslim-disjoint-over-in-taxon.owl $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
+$(OWLSRC): tmp/uberon-merged.owl $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(SCRIPTSDIR)/expand-dbxref-literals.pl
 	echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/subset-taxslim-disjoint-over-in-taxon.owl issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
+	$(OWLTOOLS) --no-logging $< $(COMPONENTSDIR)/disjoint_union_over.ofn $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl issues/contributor.owl --merge-support-ontologies -o $@ && $(SCRIPTSDIR)/expand-dbxref-literals.pl $@ > $@.tmp
 	# The previous step seems to be necessary because somehow the expand-dbxref-literals script expects the owtools output.. No idea why
 	$(ROBOT) expand -i $@.tmp --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 		query \
