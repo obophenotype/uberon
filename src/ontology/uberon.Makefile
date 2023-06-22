@@ -1722,15 +1722,15 @@ ALLENS = dmba hba dhba pba mba
 
 allen_all: $(patsubst %,$(TMPDIR)/allen-%.obo,$(ALLENS))
 $(TMPDIR)/allen-dmba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
 $(TMPDIR)/allen-hba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
 $(TMPDIR)/allen-dhba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
 $(TMPDIR)/allen-pba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
 $(TMPDIR)/allen-mba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
 
 $(TMPDIR)/allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
