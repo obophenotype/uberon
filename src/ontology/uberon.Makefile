@@ -254,6 +254,16 @@ subsets/cumbo.obo: subsets/cumbo.owl
 #supercheck.owl: $(TMPDIR)/unreasoned.owl
 #	owltools $(UCAT) $< $(COMPONENTSDIR)/phenoscape-ext.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
+# ----------------------------------------
+# STEP 6: Create common anatomy subset
+# ----------------------------------------
+
+common-anatomy.owl: $(ONT).owl
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: common-anatomy.owl
+	
+
 
 # ----------------------------------------
 # IMPORTS
