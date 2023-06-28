@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2023-05-23/subsets/life-stages-composite.owl
+data-version: uberon/releases/2023-06-27/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -40,6 +40,7 @@ subsetdef: frequent_anatomy_items ""
 subsetdef: frequent_anatomy_items "Frequently Used Anatomy slim"
 subsetdef: FT_new ""
 subsetdef: functional_classification "functional_classification"
+subsetdef: general_cell_types_upper_slim ""
 subsetdef: goantislim_grouping ""
 subsetdef: gocheck_do_not_annotate ""
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
@@ -47,7 +48,6 @@ subsetdef: gocheck_do_not_manually_annotate ""
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr ""
 subsetdef: goslim_aspergillus ""
-subsetdef: goslim_aspergillus "Aspergillus GO slim"
 subsetdef: goslim_candida ""
 subsetdef: goslim_candida "Candida GO slim"
 subsetdef: goslim_ChEMBL ""
@@ -62,7 +62,6 @@ subsetdef: goslim_metagenomics ""
 subsetdef: goslim_mouse ""
 subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
-subsetdef: goslim_plant "Plant GO slim"
 subsetdef: goslim_pombe ""
 subsetdef: goslim_pombe "Fission yeast GO slim"
 subsetdef: goslim_synapse ""
@@ -104,7 +103,6 @@ subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 subsetdef: scalar_slim ""
 subsetdef: sectional_anatomy_items ""
-subsetdef: term_scheduled_for_obsoletion ""
 subsetdef: termgenie_unvetted ""
 subsetdef: TL_lineage_clone ""
 subsetdef: uberon_slim "Uberon slim - subset that excludes obscure terms and deep compositional terms"
@@ -171,7 +169,7 @@ synonymtypedef: TRAIT ""
 synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy"
 synonymtypedef: VFB_SYMBOL ""
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2023-05-23" xsd:string
+property_value: owl:versionInfo "2023-06-27" xsd:string
 
 [Term]
 id: AcarDv:0000000
@@ -4362,6 +4360,7 @@ name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A.11.872]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
@@ -4440,10 +4439,12 @@ name: fibroblast
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://63.198.234.228/OpenFMA/Fibroblast.html, ISBN:0517223651, MESH:A.11.329.228]
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://en.wikipedia.org/wiki/Fibroblast, ISBN:0517223651, MESH:D005347]
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 xref: BTO:0000452
 xref: CALOHA:TS-0362
 xref: FMA:63877
+xref: NCIT:C12482
 xref: VHOG:0001482
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000134 ! mesenchymal cell
@@ -4491,6 +4492,7 @@ is_a: CL:0000012 ! cell by class
 id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:D004847]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
@@ -4561,6 +4563,7 @@ id: CL:0000136
 name: fat cell
 def: "A fat-storing cell found mostly in the abdominal cavity and subcutaneous tissue of mammals. Fat is usually stored in the form of triglycerides." [MESH:A.11.329.114]
 def: "A fat-storing cell found mostly in the abdominal cavity and subcutaneous tissue of mammals. Fat is usually stored in the form of triglycerides." [MESH:D017667]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "adipocyte" EXACT []
 synonym: "adipocyte" RELATED []
@@ -4762,6 +4765,7 @@ id: CL:0000499
 name: stromal cell
 def: "A connective tissue cell of an organ found in the loose connective tissue. These are most often associated with the uterine mucosa and the ovary as well as the hematopoietic system and elsewhere." [GOC:tfm, MESH:D017154]
 def: "A connective tissue cell of an organ found in the loose connective tissue. These are most often associated with the uterine mucosa and the ovary as well as the hematopoietic system and elsewhere." [GOC:tfm, MESH:A.11.329.830]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 xref: BTO:0002064
 xref: FMA:83624
@@ -4789,6 +4793,7 @@ name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [MESH:A.08.663, MESH:D009474]
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
 synonym: "nerve cell" RELATED []
@@ -4872,6 +4877,7 @@ alt_id: FMA:83808
 def: "A myocyte located in the heart. The contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei." [GOC:tfm, ISBN:0323052908]
 def: "Cardiac muscle cells are striated muscle cells that are responsible for heart contraction. In mammals, the contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei." [GOC:mtg_cardiacconduct_nov11, GOC:tfm, ISBN:0323052908, PMID:22426062, PMID:4711263]
 comment: This class encompasses the muscle cells responsible for heart* contraction in both vertebrates and arthropods.  The ultrastucture of a wide range of arthropod heart cells has been examined including spiders, horseshoe crabs, crustaceans (see Sherman, 1973 and refs therein) and insects (see Lehmacher et al (2012) and refs therein).  According to these refs, the cells participating in heart contraction in all cases are transversely striated.  Insects hearts additionally contain ostial cells, also transversely striated muscle cells, but which do not participate in heart contraction.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "cardiac muscle fiber" EXACT [GO:0048739]
 synonym: "cardiac myocyte" EXACT []
@@ -4902,6 +4908,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0001035
 name: bone cell
 def: "A connective tissue cell found in bone." [GO_REF:0000034, GOC:add]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 is_a: CL:0000548 {is_inferred="true"} ! animal cell
 intersection_of: CL:0000548 ! animal cell
@@ -8380,6 +8387,7 @@ namespace: biological_process
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, Wikipedia:Cell_migration]
 xref: Wikipedia:Cell_migration
 is_a: GO:0048870 ! cell motility
+relationship: never_in_taxon NCBITaxon:4890
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24787" xsd:anyURI
 
 [Term]
@@ -24834,10 +24842,13 @@ xref: HsapDv:0000012
 xref: MmusDv:0000017
 xref: XAO:1000006
 is_a: UBERON:0000067 ! obsolete embryo stage part
+relationship: dubious_for_taxon NCBITaxon:7955
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: preceded_by UBERON:0000109 ! gastrula stage
 relationship: simultaneous_with GO:0001841 ! neural tube formation
+property_value: seeAlso "https://github.com/obophenotype/developmental-stage-ontologies/issues/84" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/343" xsd:anyURI
+property_value: taxon_notes "In zebrafish, the times of neurulation and segmentation overlap so extensively there is no distinct neurula period of development, such as occurs largely before segmentation in amphibian embryos." xsd:string
 
 [Term]
 id: UBERON:0000111
@@ -24858,6 +24869,7 @@ is_a: UBERON:0000067 ! obsolete embryo stage part
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: preceded_by UBERON:0000110 ! neurula stage
 relationship: simultaneous_with GO:0048513 ! animal organ development
+property_value: seeAlso "https://github.com/obophenotype/developmental-stage-ontologies/issues/84" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/533" xsd:anyURI
 
 [Term]
@@ -31474,6 +31486,17 @@ property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-ar
 is_a: mereotopologically_related_to ! mereotopologically related to
 
 [Typedef]
+id: connecting_branch_of
+def: "b connecting-branch-of s iff b is connected to s, and there exists some tree-like structure t such that the mereological sum of b plus s is either the same as t or a branching-part-of t." []
+xref: RO:0002252
+property_value: example_of_usage "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is connecting branch of S, and B1-1 as a connecting branch of B1." xsd:string
+property_value: RO:0004036 BFO:0000050
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/2212
+is_a: connected_to ! connected to
+is_a: in_branching_relationship_with ! in branching relationship with
+inverse_of: has_connecting_branch
+
+[Typedef]
 id: connects
 name: connects
 namespace: uberon
@@ -32748,6 +32771,14 @@ created_by: dos
 creation_date: 2017-05-24T09:49:21Z
 
 [Typedef]
+id: has_connecting_branch
+def: "inverse of connecting branch of" []
+subset: RO:0002259
+xref: RO:0002253
+property_value: RO:0004036 BFO:0000051
+is_a: in_branching_relationship_with ! in branching relationship with
+
+[Typedef]
 id: has_cross_section
 name: has cross section
 def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [https://orcid.org/0000-0002-6601-2165]
@@ -33714,6 +33745,7 @@ def: "X in left side of Y <=> if Y is subdivided into two left and right portion
 def: "X in_left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 def: "X in_left_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000120
+xref: NCIT:C25229
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern" xsd:anyURI
 is_a: in_lateral_side_of ! in lateral side of
 disjoint_from: in_right_side_of ! in_right_side_of
@@ -33761,6 +33793,7 @@ def: "X in right side of Y <=> if Y is subdivided into two left and right portio
 def: "X in_right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
 def: "X in_right_side_of Y <=> if Y is subdivided into two left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000121
+xref: NCIT:C25228
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern" xsd:anyURI
 is_a: in_lateral_side_of ! in lateral side of
 
@@ -33771,8 +33804,8 @@ name: in_superficial_part_of
 namespace: spatial
 namespace: uberon
 def: "X superficial part of Y <=> if Y is subdivided into two superficial and deep portions, X is part of the superficial portion." [BSPO:cjm]
-def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [http://orcid.org/0000-0002-6601-2165]
 def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [BSPO:cjm]
+def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001100
 is_a: part_of ! part_of
 
@@ -33903,7 +33936,7 @@ property_value: http://purl.org/spar/cito/citesAsAuthority "http://www.ncbi.nlm.
 property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
 domain: CARO:0000003 ! connected anatomical structure
 inverse_of: innervates ! innervates
-transitive_over: branching_part_of ! branching part of
+transitive_over: branching_part_of ! branching_part_of
 
 [Typedef]
 id: innervates
@@ -34757,6 +34790,7 @@ namespace: uberon
 def: "x proximal to y iff x is closer to the point of attachment with the body than y." [BSPO:cjm]
 comment: The elbow is proximal to the hand, but distal to the shoulder.
 xref: BSPO:0000100
+xref: NCIT:C25236
 property_value: seeAlso FBcv:0000047
 property_value: seeAlso FBql:00005868
 is_transitive: true

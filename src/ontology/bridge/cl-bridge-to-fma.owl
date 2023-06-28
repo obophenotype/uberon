@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2023-05-23/uberon/bridge/cl-bridge-to-fma.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma/2023-06-27/uberon/bridge/cl-bridge-to-fma.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Onard Mejino</dc:contributor>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terry Hayamizu</dc:contributor>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CL editors</dc:creator>
@@ -4439,6 +4439,18 @@
     <!-- http://purl.obolibrary.org/obo/CL_4023120 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023120"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4030055 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4030055"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4030056 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4030056"/>
     
 
 
@@ -16366,6 +16378,26 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FMA_84149 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84149">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_4030056"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">umbrella cell of urothelium (post-embryonic human)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84149</oboInOwl:id>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FMA_84150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84150">
@@ -16382,6 +16414,26 @@
         </owl:equivalentClass>
         <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">basal cell of urothelium (post-embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84150</oboInOwl:id>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FMA_84155 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84155">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_4030055"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">intermediate cell of urothelium (post-embryonic human)</obo:IAO_0000589>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:84155</oboInOwl:id>
     </owl:Class>
     
 
