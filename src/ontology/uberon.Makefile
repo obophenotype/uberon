@@ -254,6 +254,16 @@ subsets/cumbo.obo: subsets/cumbo.owl
 #supercheck.owl: $(TMPDIR)/unreasoned.owl
 #	owltools $(UCAT) $< $(COMPONENTSDIR)/phenoscape-ext.owl --merge-support-ontologies --expand-macros --assert-inferred-subclass-axioms --useIsInferred -o -f functional $@
 
+# ----------------------------------------
+# STEP 6: Create common anatomy subset
+# ----------------------------------------
+
+common-anatomy.owl: $(ONT).owl
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: common-anatomy.owl
+	
+
 
 # ----------------------------------------
 # IMPORTS
@@ -1722,15 +1732,15 @@ ALLENS = dmba hba dhba pba mba
 
 allen_all: $(patsubst %,$(TMPDIR)/allen-%.obo,$(ALLENS))
 $(TMPDIR)/allen-dmba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
 $(TMPDIR)/allen-hba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
 $(TMPDIR)/allen-dhba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
 $(TMPDIR)/allen-pba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
 $(TMPDIR)/allen-mba.json: | $(TMPDIR)
-	wget http://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
+	wget https://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
 
 $(TMPDIR)/allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
