@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ehdaa2
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to ehdaa2" xsd:string
 property_value: dc-description "Equivalence axioms between EHDAA2 and Uberon. EHDAA2 replaces EHDAA" xsd:string
@@ -354,12 +354,6 @@ intersection_of: part_of NCBITaxon:9606
 id: EHDAA2:0003040 ! 
 property_value: IAO:0000589 "acellular anatomical structure (embryonic human)" xsd:string
 intersection_of: UBERON:0000476 ! acellular anatomical structure
-intersection_of: part_of NCBITaxon:9606
-
-[Term]
-id: EHDAA2:0003041 ! 
-property_value: IAO:0000589 "anatomical cluster (embryonic human)" xsd:string
-intersection_of: UBERON:0000477 ! anatomical cluster
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -2194,8 +2188,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0000699 ! 
-property_value: IAO:0000589 "gall bladder (embryonic human)" xsd:string
-intersection_of: UBERON:0002110 ! gall bladder
+property_value: IAO:0000589 "gallbladder (embryonic human)" xsd:string
+intersection_of: UBERON:0002110 ! gallbladder
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -5944,8 +5938,8 @@ intersection_of: part_of NCBITaxon:9606
 
 [Term]
 id: EHDAA2:0000700 ! 
-property_value: IAO:0000589 "gall bladder primordium (embryonic human)" xsd:string
-intersection_of: UBERON:0006242 ! gall bladder primordium
+property_value: IAO:0000589 "gallbladder primordium (embryonic human)" xsd:string
+intersection_of: UBERON:0006242 ! gallbladder primordium
 intersection_of: part_of NCBITaxon:9606
 
 [Term]
@@ -8863,12 +8857,16 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ehdaa2#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ehdaa2#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

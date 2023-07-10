@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-bila
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -86,11 +86,6 @@ equivalent_to: UBERON:0000475 ! organism subdivision
 id: BILA:0000040 ! 
 property_value: IAO:0000589 "acellular anatomical structure (BILA)" xsd:string
 equivalent_to: UBERON:0000476 ! acellular anatomical structure
-
-[Term]
-id: BILA:0000041 ! 
-property_value: IAO:0000589 "anatomical cluster (BILA)" xsd:string
-equivalent_to: UBERON:0000477 ! anatomical cluster
 
 [Term]
 id: BILA:0000042 ! 
@@ -453,12 +448,16 @@ property_value: IAO:0000589 "synchronous hermaphroditic organism (BILA)" xsd:str
 equivalent_to: UBERON:0010899 ! synchronous hermaphroditic organism
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/bila#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/bila#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

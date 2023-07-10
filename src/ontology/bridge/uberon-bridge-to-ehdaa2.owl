@@ -13,7 +13,7 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2/2022-02-21/uberon/bridge/uberon-bridge-to-ehdaa2.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-ehdaa2/2023-06-27/uberon/bridge/uberon-bridge-to-ehdaa2.owl"/>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jonathan Bard</dc:contributor>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uberon editors</dc:creator>
         <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Equivalence axioms between EHDAA2 and Uberon. EHDAA2 replaces EHDAA</dc:description>
@@ -282,11 +282,20 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
-        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ehdaa2#part_of"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000050</oboInOwl:hasDbXref>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:id>
         <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">part_of</oboInOwl:shorthand>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000066 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000066">
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BFO:0000066</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurs_in</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">occurs_in</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -304,23 +313,9 @@
     <!-- http://purl.obolibrary.org/obo/RO_0002225 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002225">
-        <owl:equivalentProperty rdf:resource="http://purl.obolibrary.org/obo/ehdaa2#develops_from"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ehdaa2#develops_from -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ehdaa2#develops_from">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ehdaa2#develops_from</oboInOwl:id>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ehdaa2#part_of -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/ehdaa2#part_of">
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/ehdaa2#part_of</oboInOwl:id>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RO:0002225</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:id>
+        <oboInOwl:shorthand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">develops_from</oboInOwl:shorthand>
     </owl:ObjectProperty>
     
 
@@ -7320,7 +7315,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gall bladder (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gallbladder (embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000699</oboInOwl:id>
     </owl:Class>
     
@@ -7340,7 +7335,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gall bladder primordium (embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gallbladder primordium (embryonic human)</obo:IAO_0000589>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0000700</oboInOwl:id>
     </owl:Class>
     
@@ -23478,26 +23473,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/EHDAA2_0003041 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0003041">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical cluster (embryonic human)</obo:IAO_0000589>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2:0003041</oboInOwl:id>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/EHDAA2_0003042 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/EHDAA2_0003042">
@@ -29927,12 +29902,6 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000476 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000476"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000477 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477"/>
     
 
 

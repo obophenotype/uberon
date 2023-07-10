@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-hao
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -114,12 +114,6 @@ intersection_of: part_of NCBITaxon:7399
 id: HAO:0000040 ! 
 property_value: IAO:0000589 "acellular anatomical structure (hymenoptera)" xsd:string
 intersection_of: UBERON:0000476 ! acellular anatomical structure
-intersection_of: part_of NCBITaxon:7399
-
-[Term]
-id: HAO:0000041 ! 
-property_value: IAO:0000589 "anatomical cluster (hymenoptera)" xsd:string
-intersection_of: UBERON:0000477 ! anatomical cluster
 intersection_of: part_of NCBITaxon:7399
 
 [Term]
@@ -346,8 +340,8 @@ intersection_of: part_of NCBITaxon:7399
 
 [Term]
 id: HAO:0000398 ! 
-property_value: IAO:0000589 "head capsule (hymenoptera)" xsd:string
-intersection_of: UBERON:0003153 ! head capsule
+property_value: IAO:0000589 "insect head capsule (hymenoptera)" xsd:string
+intersection_of: UBERON:0003153 ! insect head capsule
 intersection_of: part_of NCBITaxon:7399
 
 [Term]
@@ -372,12 +366,6 @@ intersection_of: part_of NCBITaxon:7399
 id: HAO:0001095 ! 
 property_value: IAO:0000589 "imaginal disc-derived wing vein (hymenoptera)" xsd:string
 intersection_of: UBERON:0003194 ! imaginal disc-derived wing vein
-intersection_of: part_of NCBITaxon:7399
-
-[Term]
-id: HAO:0000287 ! 
-property_value: IAO:0000589 "egg chamber (hymenoptera)" xsd:string
-intersection_of: UBERON:0003199 ! egg chamber
 intersection_of: part_of NCBITaxon:7399
 
 [Term]
@@ -487,12 +475,16 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/hao#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/hao#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

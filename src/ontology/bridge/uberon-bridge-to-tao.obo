@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-tao
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to tao" xsd:string
 property_value: dc-description "Taxonomic equivalence axioms between TAO and Uberon. Note that TAO is in the process of being merged into the core Uberon, so this mapping will become deprecated" xsd:string
@@ -286,12 +286,6 @@ intersection_of: UBERON:0000476 ! acellular anatomical structure
 intersection_of: part_of NCBITaxon:32443
 
 [Term]
-id: TAO:0001478 ! 
-property_value: IAO:0000589 "anatomical cluster (teleost)" xsd:string
-intersection_of: UBERON:0000477 ! anatomical cluster
-intersection_of: part_of NCBITaxon:32443
-
-[Term]
 id: TAO:0000020 ! 
 property_value: IAO:0000589 "extraembryonic structure (teleost)" xsd:string
 intersection_of: UBERON:0000478 ! extraembryonic structure
@@ -419,8 +413,8 @@ intersection_of: part_of NCBITaxon:32443
 
 [Term]
 id: TAO:0000172 ! 
-property_value: IAO:0000589 "pharyngeal muscle (teleost)" xsd:string
-intersection_of: UBERON:0000933 ! pharyngeal muscle
+property_value: IAO:0000589 "chordate pharyngeal muscle (teleost)" xsd:string
+intersection_of: UBERON:0000933 ! chordate pharyngeal muscle
 intersection_of: part_of NCBITaxon:32443
 
 [Term]
@@ -449,8 +443,8 @@ intersection_of: part_of NCBITaxon:32443
 
 [Term]
 id: TAO:0005065 ! 
-property_value: IAO:0000589 "cardial valve (teleost)" xsd:string
-intersection_of: UBERON:0000946 ! cardial valve
+property_value: IAO:0000589 "cardiac valve (teleost)" xsd:string
+intersection_of: UBERON:0000946 ! cardiac valve
 intersection_of: part_of NCBITaxon:32443
 
 [Term]
@@ -1751,8 +1745,8 @@ intersection_of: part_of NCBITaxon:32443
 
 [Term]
 id: TAO:0000208 ! 
-property_value: IAO:0000589 "gall bladder (teleost)" xsd:string
-intersection_of: UBERON:0002110 ! gall bladder
+property_value: IAO:0000589 "gallbladder (teleost)" xsd:string
+intersection_of: UBERON:0002110 ! gallbladder
 intersection_of: part_of NCBITaxon:32443
 
 [Term]
@@ -5954,12 +5948,16 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/tao#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/tao#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

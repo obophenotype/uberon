@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-aao
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 property_value: dc-title "Uberon bridge to aao" xsd:string
 property_value: dc-description "Equivalence axioms between AAO and Uberon. Note that AAO is in the process of being merged into the core Uberon, so this mapping will become deprecated" xsd:string
@@ -308,12 +308,6 @@ intersection_of: part_of NCBITaxon:8292
 id: AAO:0010268 ! 
 property_value: IAO:0000589 "acellular anatomical structure (amphibian)" xsd:string
 intersection_of: UBERON:0000476 ! acellular anatomical structure
-intersection_of: part_of NCBITaxon:8292
-
-[Term]
-id: AAO:0010009 ! 
-property_value: IAO:0000589 "anatomical cluster (amphibian)" xsd:string
-intersection_of: UBERON:0000477 ! anatomical cluster
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -1884,8 +1878,8 @@ intersection_of: part_of NCBITaxon:8292
 
 [Term]
 id: AAO:0010114 ! 
-property_value: IAO:0000589 "gall bladder (amphibian)" xsd:string
-intersection_of: UBERON:0002110 ! gall bladder
+property_value: IAO:0000589 "gallbladder (amphibian)" xsd:string
+intersection_of: UBERON:0002110 ! gallbladder
 intersection_of: part_of NCBITaxon:8292
 
 [Term]
@@ -4797,12 +4791,16 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/aao#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/aao#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

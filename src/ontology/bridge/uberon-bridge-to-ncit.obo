@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-ncit
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -754,8 +754,8 @@ is_a: UBERON:0000931 ! proctodeum
 
 [Term]
 id: NCIT:C13075 ! 
-property_value: IAO:0000589 "pharyngeal muscle (NCIT)" xsd:string
-is_a: UBERON:0000933 ! pharyngeal muscle
+property_value: IAO:0000589 "chordate pharyngeal muscle (NCIT)" xsd:string
+is_a: UBERON:0000933 ! chordate pharyngeal muscle
 
 [Term]
 id: NCIT:C32086 ! 
@@ -784,8 +784,8 @@ is_a: UBERON:0000945 ! stomach
 
 [Term]
 id: NCIT:C12729 ! 
-property_value: IAO:0000589 "cardial valve (NCIT)" xsd:string
-is_a: UBERON:0000946 ! cardial valve
+property_value: IAO:0000589 "cardiac valve (NCIT)" xsd:string
+is_a: UBERON:0000946 ! cardiac valve
 
 [Term]
 id: NCIT:C12669 ! 
@@ -5094,8 +5094,8 @@ is_a: UBERON:0002108 ! small intestine
 
 [Term]
 id: NCIT:C12377 ! 
-property_value: IAO:0000589 "gall bladder (NCIT)" xsd:string
-is_a: UBERON:0002110 ! gall bladder
+property_value: IAO:0000589 "gallbladder (NCIT)" xsd:string
+is_a: UBERON:0002110 ! gallbladder
 
 [Term]
 id: NCIT:C49195 ! 
@@ -7814,8 +7814,8 @@ is_a: UBERON:0004237 ! blood vessel smooth muscle
 
 [Term]
 id: NCIT:C49483 ! 
-property_value: IAO:0000589 "gall bladder smooth muscle (NCIT)" xsd:string
-is_a: UBERON:0004240 ! gall bladder smooth muscle
+property_value: IAO:0000589 "gallbladder smooth muscle (NCIT)" xsd:string
+is_a: UBERON:0004240 ! gallbladder smooth muscle
 
 [Term]
 id: NCIT:C49213 ! 
@@ -8384,8 +8384,8 @@ is_a: UBERON:0004780 ! gastrointestinal system lamina propria
 
 [Term]
 id: NCIT:C49228 ! 
-property_value: IAO:0000589 "gall bladder lamina propria (NCIT)" xsd:string
-is_a: UBERON:0004781 ! gall bladder lamina propria
+property_value: IAO:0000589 "gallbladder lamina propria (NCIT)" xsd:string
+is_a: UBERON:0004781 ! gallbladder lamina propria
 
 [Term]
 id: NCIT:C119295 ! 
@@ -12933,12 +12933,16 @@ property_value: IAO:0000589 "high endothelial venule (NCIT)" xsd:string
 is_a: UBERON:8410037 ! high endothelial venule
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ncit#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/ncit#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by

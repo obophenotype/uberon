@@ -1,5 +1,5 @@
 ontology: uberon/bridge/uberon-bridge-to-tgma
-data-version: 2022-02-21
+data-version: 2023-06-27
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/references/reference_0000026" xsd:anyURI
 
 [Term]
@@ -120,12 +120,6 @@ intersection_of: part_of NCBITaxon:44484
 id: TGMA:0001841 ! 
 property_value: IAO:0000589 "acellular anatomical structure (TGMA)" xsd:string
 intersection_of: UBERON:0000476 ! acellular anatomical structure
-intersection_of: part_of NCBITaxon:44484
-
-[Term]
-id: TGMA:0001842 ! 
-property_value: IAO:0000589 "anatomical cluster (TGMA)" xsd:string
-intersection_of: UBERON:0000477 ! anatomical cluster
 intersection_of: part_of NCBITaxon:44484
 
 [Term]
@@ -337,12 +331,16 @@ id: only_in_taxon
 xref: RO:0002160
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/tgma#part_of
-equivalent_to: BFO:0000050
+id: part_of
+xref: BFO:0000050
 
 [Typedef]
-id: http://purl.obolibrary.org/obo/tgma#develops_from
-equivalent_to: RO:0002225
+id: develops_from
+xref: RO:0002225
+
+[Typedef]
+id: occurs_in
+xref: BFO:0000066
 
 [Typedef]
 id: foaf-depicted_by
