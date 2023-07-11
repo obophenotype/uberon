@@ -117,7 +117,7 @@ Example: the terms “aorta wall”, “aortic wall” and “wall of aorta” a
 
 Example: “BA” is a related synonym for both 'basilar artery' and 'bed nucleus of the accessory olfactory tract' at the time of this writing. Additionally, within the biomedical domain, it can also represent 'brachial artery' or 'Bone Age', two other distinct concepts with separate OBO ontology terms.
 
-3. Exact synonyms should be unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should not be an exact synonym for any other CL term.
+3. Exact synonyms should be unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should not be an exact synonym for any other Uberon term.
 
 4. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. 
 
