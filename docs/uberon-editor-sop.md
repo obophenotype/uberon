@@ -74,6 +74,35 @@ Note: `develops from` does not necessarily the subject directly develops from th
 
 Sometimes it is useful to define a grouping classes that automatically classify other terms, for example the term "small intestine Peyer's patch" has a logical definition that can be used to automatically classify terms for Peyer's patch in various parts of the small intestine (duodenum, ilium etc). In these case, it is important to use an established pattern (or to extend the established patterns if this is needed).  Established patterns are documented in DOSDP templates  - see: < add link to templates or to MD doc generated from them>
 
+## Cross-references to the literature
+Assertions in textual definitions, evidence provided in comments, and synonyms should be backed up by citing the appropriate literature.
+
+Citations are made by cross-references, that is by adding `http://www.geneontology.org/formats/oboInOwl#hasDbXref` annotations to the definition, comment, and synonym annotations. Add one such annotation per reference, using the CURIE syntax with well-known prefixes:
+
+* `PMID:1234567` for a PubMed identifier;
+* `doi:xx.yyyy/...` for a DOI;
+* `ISBN:...` for a ISBN.
+
+If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
+
+ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.
+
+**Technical details of adding a cross-reference using Protégé**:
+
+For all: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
+
+If the cross-reference can be represented as a CURIE and is not an ORCID: Enter the CURIE, using the bioregistry standard prefix, as a Value on the "Literal" tab. Leave Datatype empty.
+
+Non-CURIE values (e.g., URLs) are discouraged, but when used are also entered the same way, i.e., as a literal string with no Datatype selected.
+
+In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
+
+If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
+
+To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. ORCIDs MUST be entered as an IRI.
+
+The above instructions apply whether the cross-reference is added to another annotation (e.g., annotating a text defintion or comment) or adding to the overall class (i.e., not an annotation of another annotation). 
+
 ## Synonyms
 
 Extensive addition of synonyms helps “findability” of terms when searching. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
