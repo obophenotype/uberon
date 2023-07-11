@@ -74,6 +74,21 @@ Note: `develops from` does not necessarily the subject directly develops from th
 
 Sometimes it is useful to define a grouping classes that automatically classify other terms, for example the term "small intestine Peyer's patch" has a logical definition that can be used to automatically classify terms for Peyer's patch in various parts of the small intestine (duodenum, ilium etc). In these case, it is important to use an established pattern (or to extend the established patterns if this is needed).  Established patterns are documented in DOSDP templates  - see: < add link to templates or to MD doc generated from them>
 
+## Synonyms
+
+Extensive addition of synonyms helps “findability” of terms when searching. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+
+Guidelines on the type of synonyms:
+
+1. Use an _exact_ synonym only when the label and the synonym can be used interchangeably without dispute and refer to the same concept. For example, the terms “aorta wall”, “aortic wall” and “wall of aorta” all refer to the exact same concept and would be considered exact synonyms. Terms that may refer to other concepts, especially within the biomedical domain, should not be annotated as exact synonyms, including abbreviations. A synonym that is an abbreviation should be annotated as a _related_ synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION`). 
+For example, “BA” is a related synonym for both 'basilar artery' and 'bed nucleus of the accessory olfactory tract' at the time of this writing. Additionally, within the biomedical domain, it can also represent 'brachial artery' or 'Bone Age', two other distinct concepts with separate OBO ontology terms.
+2. Exact synonyms should be unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should not be an exact synonym for any other CL term.
+3. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. For example, saying that “peripheral blood mononuclear cell” is a narrow synonym of “mononuclear cell” means that “peripheral blood mononuclear cell“ refers to a narrower concept than “mononuclear cell”, not the other way around.
+4. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be uncler, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
+5. If a synonym includes a mix of abbreviations and words, the _related_ type should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
+For example, “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, amoung many things, the CHEBI term "DG" (7-deazaguanine). 
+Compare the previous example to “EC layer 1”, which should be a _related_ synonym of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.
+
 ## General Tips
 
 Changes to classifications of terms from the 2x, 3x and 4x range, or anything higher up in the hierarchy (e.g. 2 levels above leaf nodes) can create unintended consequences to the ontology (e.g. due to , and it’s best to get a senior ontologist to review (e.g. @cmungall)
