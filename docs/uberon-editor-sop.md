@@ -123,13 +123,13 @@ Example: “BA” is a related synonym for both 'basilar artery' and 'bed nucleu
 
 Example: stating that “trunk wall” is a narrow synonym of 'body wall' means that “trunk wall“ refers to a narrower (i.e., more specific) concept than 'body wall', not the other way around.
 
-5. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be uncler, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
+5. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be unclear, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
 
-6. If a synonym includes a mix of abbreviations and words, the annotation property 'has related synonym' with has_synonym_type abbreviation should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
+6. If a synonym includes a mix of abbreviations and words, the annotation property 'has related synonym' with has_synonym_type "abbreviation" should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
 
-Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, amoung many things, the CHEBI term "DG" (7-deazaguanine).
+Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, among many things, the CHEBI term "DG" (7-deazaguanine).
 
-Compare the previous example to “EC layer 1”, which should be a _related_ synonym of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.
+Compare the previous example to “EC layer 1”, which should be a _related_ synonym (with synonym type "abbreviation") of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.
 
 ## General Tips
 
