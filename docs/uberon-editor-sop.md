@@ -125,7 +125,7 @@ Example: stating that “trunk wall” is a narrow synonym of 'body wall' means 
 
 5. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be uncler, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
 
-6. If a synonym includes a mix of abbreviations and words, the _related_ type should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
+6. If a synonym includes a mix of abbreviations and words, the annotation property 'has related synonym' with has_synonym_type abbreviation should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
 
 Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, amoung many things, the CHEBI term "DG" (7-deazaguanine).
 
