@@ -89,17 +89,18 @@ ORCID identifiers may also be used when the only available source for an asserti
 
 **Technical details of adding a cross-reference using Protégé**:
 
-For all: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
+For CURIEs and ORCIDs: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
 
-If the cross-reference can be represented as a CURIE and is not an ORCID: Enter the CURIE, using the bioregistry standard prefix, as a Value on the "Literal" tab. Leave Datatype empty.
-
-Non-CURIE values (e.g., URLs) are discouraged, but when used are also entered the same way, i.e., as a literal string with no Datatype selected.
+For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
 
 In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
 
-If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
+For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. ORCIDs MUST be entered as an IRI.
+For URLs: In the "Create Annotation" window, select the annotation property **seeAlso** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
+DO NOT use database_cross_reference with a value that is a URL. 
+
+To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
 
 The above instructions apply whether the cross-reference is added to another annotation (e.g., annotating a text defintion or comment) or adding to the overall class (i.e., not an annotation of another annotation). 
 
