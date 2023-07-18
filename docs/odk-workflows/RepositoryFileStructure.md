@@ -41,5 +41,5 @@ These are the components in UBERON
 | -------- | --- |
 | mappings.owl | None |
 | in-subset.owl | None |
-| hra_subset.owl | None |
+| hra_subset.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl |
 | vasculature_class.owl | None |

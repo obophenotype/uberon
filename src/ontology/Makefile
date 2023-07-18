@@ -395,6 +395,16 @@ $(COMPONENTSDIR)/%: | $(COMPONENTSDIR)
 
 
 
+.PHONY: component-download-hra_subset.owl
+component-download-hra_subset.owl: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(COMP) = true ]; then $(ROBOT) merge -I https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $(TMPDIR)/$@.owl; fi
+
+$(COMPONENTSDIR)/hra_subset.owl:  component-download-hra_subset.owl
+	if [ $(COMP) = true ] ; then if cmp -s $(TMPDIR)/component-download-hra_subset.owl.owl $@ ; then echo "Component identical."; else echo "Component is different, updating." && cp $(TMPDIR)/component-download-hra_subset.owl.owl $@; fi; fi
+
+.PRECIOUS: $(COMPONENTSDIR)/hra_subset.owl
+
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
