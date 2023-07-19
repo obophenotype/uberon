@@ -95,7 +95,7 @@ $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-g
 	$(ROBOT) merge -i $< \
 			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
 			-i issues/contributor.owl \
-		expand --no-expand-term http://purl.obolibrary.org/RO_0002175 \
+		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
