@@ -62,7 +62,7 @@ PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic ext basic composite-metazoan composite-metazoan-basic composite-vertebrate composite-vertebrate-basic )
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic ext basic composite-metazoan composite-metazoan-basic composite-vertebrate composite-vertebrate-basic common-anatomy )
 
 # ----------------------------------------
 # Top-level targets
@@ -703,6 +703,12 @@ composite-vertebrate-basic.json: composite-vertebrate-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
+common-anatomy.obo: common-anatomy.owl
+	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+common-anatomy.json: common-anatomy.owl
+	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		convert --check false -f json -o $@.tmp.json &&\
+		mv $@.tmp.json $@
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
@@ -790,6 +796,9 @@ composite-vertebrate.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
 
 composite-vertebrate-basic.owl:
+	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
+
+common-anatomy.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
 # ----------------------------------------
 # Debugging Tools
