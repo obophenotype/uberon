@@ -82,22 +82,17 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 # STEP 2: Reasoning
 # ----------------------------------------
 
-# Somewhat awkward: We temporarily inject reflexivity axioms and property
-# chains, just for the reasoning step; we remove them immediately after so
-# that they don't end up in the released product.
-# For the injection of property chains, see
+# For the temporary injection of property chains, see
 # <https://github.com/obophenotype/uberon/issues/2381>
 
-TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
-uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(TMP_REFL) $(DEVELOPS_FROM_CHAIN)
+uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
 	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 	               -i $(DEVELOPS_FROM_CHAIN) \
 	         relax \
 	         materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
 	         reason -r elk --exclude-duplicate-axioms true \
 	                       --equivalent-classes-allowed asserted-only \
-	         unmerge -i $(TMP_REFL) \
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
 	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
 
