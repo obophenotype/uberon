@@ -36,27 +36,6 @@ MAKEJSON= $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f json $@.tmp &&
 MAKEYAML= $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
-# TRAVIS TOP LEVEL TARGETS
-# ----------------------------------------
-
-# This OWLTools call is designed for running in travis; does not clog stdout
-ELKRUN= $(OWLTOOLS) $< $(QELK) --run-reasoner -r elk -u > $@.tmp || (tail -1000 $@.tmp && exit -1) && (tail -1000 $@.tmp && mv $@.tmp $@)
-
-# materialize takes too long on travis
-#travis_test: ttest-uberon ttest-ext ttest-tax
-# TODO Current travis test does nearly nothing. NICO replace by standard qc tests
-travis_test: $(TMPDIR)/is_ok
-
-ttest-uberon: uberon.owl $(REPORTDIR)/bfo-check.txt
-	$(ELKRUN)
-
-ttest-ext: ext.owl
-	$(ELKRUN)
-
-ttest-tax: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
-	$(ELKRUN)
-
-# ----------------------------------------
 # PREP: catalog
 # ----------------------------------------
 
@@ -72,7 +51,6 @@ update_dynamic_catalog:
 # ----------------------------------------
 # STEP 0: checks
 # ----------------------------------------
-# NOTE: these are bypassed by travis for now, as some rely on ad-hoc perl
 
 checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt \
     $(REPORTDIR)/bfo-check.txt \
@@ -596,7 +574,6 @@ $(REPORTDIR)/%-iconv: %
 	iconv -f UTF-8 -t UTF-8 $< > $@
 
 # run subset of syntax and structure checks used by GO
-# (see .travis.yml for dependencies)
 
 DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check is-symmetric-check
 $(REPORTDIR)/%.obo-gocheck: %.obo $(TMPDIR)/GO.xrf_abbs | $(SCRIPTSDIR)/check-obo-for-standard-release.pl
