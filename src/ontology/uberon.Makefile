@@ -46,7 +46,7 @@ $(CATALOG_DYNAMIC):
 .PHONY: update_dynamic_catalog
 update_dynamic_catalog:
 	echo "STRONG WARNING: You are updating the dynamic catalog. Note that this is done on the basis of a previous run of the pipeline, so all files are expected to be available. Do not do this if you dont know what you are doing."
-	$(SCRIPTSDIR)/make-catalog.pl uberon.owl ext.owl mirror/ncbitaxon.owl imports/*_import.owl mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
+	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # STEP 0: checks
@@ -79,58 +79,27 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
 
 # ----------------------------------------
-# STEP 2: Merging with uberon-bridge-to-bfo.owl
+# STEP 2: Reasoning
 # ----------------------------------------
 
-$(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
-	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGE)/uberon-bridge-to-bfo.owl \
-	         convert -f ofn -o $@
-
-# ----------------------------------------
-# STEP 3: Perform reasoning and create release ext.owl file
-# ----------------------------------------
-
-## TESTING - NEW
-$(TMPDIR)/is_ok: $(TMPDIR)/materialized.owl
-	$(OWLTOOLS) $< --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-
-# somewhat awkward: we temporarily inject reflexivity axioms
-# **Hacking_Feb_2022** Notes start here
-# Background: 
-## This ends up in the release file, reflexivity_axioms.owl temp merge as consistency QC
-## This is only a QC.  Rationale - this would catch some errors because expands part disjointness ()
-## **Hacking_Feb_2022** TODO - rewrite as as expansions from annotation axioms using SPARQL. Expanded axioms --> component (as for taxon restrictions).
+# Somewhat awkward: We temporarily inject reflexivity axioms and property
+# chains, just for the reasoning step; we remove them immediately after so
+# that they don't end up in the released product.
+# For the injection of property chains, see
+# <https://github.com/obophenotype/uberon/issues/2381>
 
 TMP_REFL=$(COMPONENTSDIR)/reflexivity_axioms.owl
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
-# see https://github.com/obophenotype/uberon/issues/2381
-
-$(TMPDIR)/materialized.owl: $(TMPDIR)/unreasoned.owl $(TMP_REFL)
-	$(ROBOT) merge -i $< -i $(DEVELOPS_FROM_CHAIN) --collapse-import-closure false \
-		relax \
-		materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
-		reason -r elk --exclude-duplicate-axioms true --equivalent-classes-allowed asserted-only \
-		unmerge -i $(TMP_REFL) \
-		unmerge -i $(DEVELOPS_FROM_CHAIN) \
-		annotate -O $(URIBASE)/uberon/materialized.owl -V  $(RELEASE)/materialized.owl -o $@ 2>&1 > $@.LOG
-.PRECIOUS: $(TMPDIR)/materialized.owl
-
-# Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
-ext.owl: $(TMPDIR)/materialized.owl
-	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@ 2>&1 > $(TMPDIR)/$@.LOG
-
-# ----------------------------------------
-# STEP 4: Create uberon.owl and .obo
-# ----------------------------------------
-
-# tmp/merged.owl is now the flattening of ext.owl
-# TODO: do we need this intermediate step? Used for subsets
-tmp/merged.owl: ext.owl
-	$(OWLTOOLS) $< --merge-import-closure --set-ontology-id -v $(RELEASE)/$@ $(URIBASE)/uberon/$@ -o $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-uberon.owl: ext.owl
-	$(ROBOT) merge -i $< annotate -O $(URIBASE)/$@ -V  $(RELEASE)/$@ -o $@
+uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(TMP_REFL) $(DEVELOPS_FROM_CHAIN)
+	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
+	               -i $(DEVELOPS_FROM_CHAIN) \
+	         relax \
+	         materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
+	         reason -r elk --exclude-duplicate-axioms true \
+	                       --equivalent-classes-allowed asserted-only \
+	         unmerge -i $(TMP_REFL) \
+	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
+	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
 
 # also do OE check here
 uberon.obo: uberon.owl
@@ -442,7 +411,7 @@ imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
 # MARKDOWN EXPORT
 # ----------------------------------------
 markdown:
-	$(OWLTOOLS) ext.owl --merge-imports-closure --ontology-to-markdown md
+	$(OWLTOOLS) uberon.owl --merge-imports-closure --ontology-to-markdown md
 
 # ----------------------------------------
 # REPORTS
@@ -500,8 +469,8 @@ tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
 	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp &&\
 	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
 
-subsets/%-view.owl: ext.owl contexts/context-%.owl tmp/simple-slim-seed.txt
-	$(OWLTOOLS) ext.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl &&\
+subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
+	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl &&\
 	$(ROBOT) reason --input $@.tmp.owl --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
 		unmerge -i contexts/context-$*.owl \
 		relax \
@@ -659,8 +628,8 @@ $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAM
 $(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
 
-# A full bridge check uses ext plus external ontology and the bridge
-$(REPORTDIR)/full-bridge-check-%.txt: ext.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+# A full bridge check uses uberon plus external ontology and the bridge
+$(REPORTDIR)/full-bridge-check-%.txt: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall says: worth fixing
@@ -679,7 +648,7 @@ $(REPORTDIR)/full-bridge-check-wbbt.txt: | $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
 
 # As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
-$(REPORTDIR)/extra-full-bridge-check-%.txt: ext.owl imports/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(REPORTDIR)/extra-full-bridge-check-%.txt: uberon.owl imports/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall says: worth fixing
@@ -692,15 +661,12 @@ $(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR
 	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
 
 # for debugging:
-$(TMPDIR)/ext-merged-%.owl: ext.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
+$(TMPDIR)/ext-merged-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
 .PRECIOUS: $(TMPDIR)/ext-merged-%.owl
 
 # check for dangling classes
 # TODO: add to Oort
-
-merged.obo: tmp/merged.owl
-	$(ROBOT) convert -i $< --check false -o $@.tmp.obo && mv $@.tmp.obo $@
 
 $(REPORTDIR)/%-orphans: %.obo
 	$(SCRIPTSDIR)/obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | $(SCRIPTSDIR)/obo-grep.pl -r Term - | $(SCRIPTSDIR)/obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | $(SCRIPTSDIR)/obo-grep.pl -r Term - > $@.tmp && (egrep '^(id|name):'  $@.tmp > $@ || echo ok)
@@ -720,7 +686,7 @@ QC_FILES = checks\
     $(REPORTDIR)/taxon-constraint-check.txt\
     $(REPORTDIR)/basic-allcycles\
     $(REPORTDIR)/basic-orphans\
-    $(REPORTDIR)/merged-orphans\
+    $(REPORTDIR)/uberon-orphans\
     $(REPORTDIR)/ext-obscheck.txt\
     $(REPORTDIR)/uberon-dv.txt\
     $(REPORTDIR)/composite-metazoan-dv.txt\
@@ -729,7 +695,7 @@ QC_FILES = checks\
 test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.txt
 
 uberon-qc: $(QC_FILES)
-	cat $(REPORTDIR)/merged-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
+	cat $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
 
 # Disjoint violations
 $(REPORTDIR)/%-dv.txt: %.owl
@@ -761,7 +727,7 @@ TERM_appendicular := UBERON:0002091
 TERM_life_cycle_stage := UBERON:0000105
 
 
-subsets/merged-partonomy.owl: tmp/merged.owl
+subsets/merged-partonomy.owl: uberon.owl
 	$(ROBOT) remove --input $< --axioms "equivalent disjoint type abox" \
               remove --exclude-term BFO:0000050 --select "object-properties" \
 	      -o $@
@@ -826,7 +792,7 @@ subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl
 	$(SUBSETCMD)
 
 # TODO: need to add subclass axioms for all intersections
-subsets/musculoskeletal-full.obo: tmp/merged.owl
+subsets/musculoskeletal-full.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
@@ -846,7 +812,7 @@ subsets/life-stages-core.obo: uberon.owl
 subsets/life-stages-core.owl: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
 
-subsets/immaterial.obo: tmp/merged.owl
+subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
 
@@ -943,7 +909,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # ----------------------------------------
 
 # many external ontologies do not adhere to all uberon constraints
-$(TMPDIR)/ext-weak.owl: ext.owl | $(TMPDIR)
+$(TMPDIR)/ext-weak.owl: uberon.owl | $(TMPDIR)
 	$(OWLTOOLS) $< --merge-imports-closure --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
 
 MBASE = $(TMPDIR)/ext-weak.owl $(TMPDIR)/bridges imports/local-ma.owl imports/local-ehdaa2.owl imports/local-emapa.owl imports/local-xao.owl \
@@ -1059,7 +1025,7 @@ $(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
 	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
 
 # added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
-$(TMPDIR)/uberon-taxmod-%.owl: ext.owl
+$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$*  --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
 .PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
 
@@ -1467,7 +1433,6 @@ clean_uberon:
 	rm -rf ./uberon-full.*
 	rm -rf ./uberon-base.*
 	rm -f uberon.owl uberon.obo BUILDLOGUBERON.txt unsat_all_explanation.md
-	rm -f ext.owl
 
 clean: clean_uberon
 
@@ -1514,7 +1479,6 @@ normalise_release_serialisation_ofn:
 
 normalise_release_serialisation_rdfmxml:
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../ext.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
@@ -1600,7 +1564,7 @@ select_uberon_two_constraints:
 	$(ROBOT) query -i $(SRC) --query ../sparql/select_uberon_two_constraints.sparql $@.tsv
 
 explain_humans:
-	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK --axiom "'nose' SubClassOf owl:Nothing" --explanation $@.md
+	$(ROBOT) merge -i ../../uberon.owl -i contexts/context-human.owl explain --reasoner ELK --axiom "'nose' SubClassOf owl:Nothing" --explanation $@.md
 
 explain_humans_all:
-	$(ROBOT) merge -i ../../ext.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
+	$(ROBOT) merge -i ../../uberon.owl -i contexts/context-human.owl explain --reasoner ELK -M unsatisfiability --unsatisfiable random:10 --explanation $@.md
