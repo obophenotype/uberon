@@ -82,11 +82,6 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 # STEP 2: preparing core release, and merging with phenoscape edit file
 # ----------------------------------------
 
-# tmp/core.owl is imported by phenoscape-ext.owl; the two together make up the complete ontology
-tmp/core.owl: $(SRC)
-	$(OWLTOOLS) $< -o -f ofn $(TMPDIR)/$@ &&\
-	$(ROBOT) merge -i $(TMPDIR)/$@ --collapse-import-closure false annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn -o $@
-
 ## MERGED UNREASONED ONTOLOGY
 ##
 ## TODO - restore Disjoints. _ OLD NOTE.  DELETE?
@@ -701,10 +696,6 @@ $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 $(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
 	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
 	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
-
-# @Deprecated
-$(REPORTDIR)/core-bridge-check-%.txt: tmp/core.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 # for debugging:
 $(TMPDIR)/ext-merged-%.owl: ext.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
@@ -1461,7 +1452,7 @@ feature_diff: reports/robot_main_diff.md
 #### Utility commands ##
 
 .PHONY: quick-qc
-quick-qc: tmp/core.owl $(REPORTDIR)/uberon-edit-obscheck.txt
+quick-qc: $(OWLSRC) $(REPORTDIR)/uberon-edit-obscheck.txt
 	cat $(REPORTDIR)/uberon-edit-obscheck.txt
 
 .PHONY: roundtrip_obo
@@ -1481,7 +1472,7 @@ clean_uberon:
 	rm -rf ./merged_collect*
 	rm -rf ./uberon-full.*
 	rm -rf ./uberon-base.*
-	rm -f uberon.owl uberon.obo tmp/core.owl BUILDLOGUBERON.txt unsat_all_explanation.md
+	rm -f uberon.owl uberon.obo BUILDLOGUBERON.txt unsat_all_explanation.md
 	rm -f ext.owl
 
 clean: clean_uberon
