@@ -79,19 +79,13 @@ $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
 
 # ----------------------------------------
-# STEP 2: preparing core release, and merging with phenoscape edit file
+# STEP 2: Merging with uberon-bridge-to-bfo.owl
 # ----------------------------------------
 
-## MERGED UNREASONED ONTOLOGY
-##
-## TODO - restore Disjoints. _ OLD NOTE.  DELETE?
-## TODO - get rid of declarations and inferred subclass axioms for other ontology classes _OLD NOTE. DELETE?
+$(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGE)/uberon-bridge-to-bfo.owl \
+	         convert -f ofn -o $@
 
-# TODO - Make uberon-bridge-to-bfo.owl a component.  BUT it needs to stay in the bridges directory!
-$(TMPDIR)/unreasoned.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl # $(COMPONENTSDIR)/phenoscape-ext.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies -o -f functional $@
-
-# TODO document collected-* pattern (import files see http://uberon.github.io/downloads.html#multiont)
 # ----------------------------------------
 # STEP 3: Perform reasoning and create release ext.owl file
 # ----------------------------------------
