@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2023-06-27/subsets/life-stages-composite.owl
+data-version: uberon/releases/2023-07-25/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -37,7 +37,6 @@ subsetdef: FB_gloss ""
 subsetdef: feed_aligned "subset of classes that have logical defs text defs and synonyms aligned with FEED"
 subsetdef: FlyTed ""
 subsetdef: frequent_anatomy_items ""
-subsetdef: frequent_anatomy_items "Frequently Used Anatomy slim"
 subsetdef: FT_new ""
 subsetdef: functional_classification "functional_classification"
 subsetdef: general_cell_types_upper_slim ""
@@ -48,6 +47,7 @@ subsetdef: gocheck_do_not_manually_annotate ""
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_agr ""
 subsetdef: goslim_aspergillus ""
+subsetdef: goslim_aspergillus "Aspergillus GO slim"
 subsetdef: goslim_candida ""
 subsetdef: goslim_candida "Candida GO slim"
 subsetdef: goslim_ChEMBL ""
@@ -62,8 +62,8 @@ subsetdef: goslim_metagenomics ""
 subsetdef: goslim_mouse ""
 subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
+subsetdef: goslim_plant "Plant GO slim"
 subsetdef: goslim_pombe ""
-subsetdef: goslim_pombe "Fission yeast GO slim"
 subsetdef: goslim_synapse ""
 subsetdef: goslim_virus ""
 subsetdef: goslim_yeast ""
@@ -163,13 +163,12 @@ synonymtypedef: syngo_official_label ""
 synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for design patterns"
 synonymtypedef: systematic_synonym ""
-synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 synonymtypedef: teleomorph ""
 synonymtypedef: TRAIT ""
-synonymtypedef: vertebrate "synonym typically used in the context of vertebrate anatomy"
+synonymtypedef: vertebrate ""
 synonymtypedef: VFB_SYMBOL ""
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2023-06-27" xsd:string
+property_value: owl:versionInfo "2023-07-25" xsd:string
 
 [Term]
 id: AcarDv:0000000
@@ -321,6 +320,7 @@ id: BFO:0000004
 name: independent continuant
 def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
 def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/017-002"}
+comment: A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.
 is_a: BFO:0000002 ! continuant
 relationship: part_of BFO:0000004 {all_only="true"} ! independent continuant
 property_value: BFO:0000179 "ic" xsd:string
@@ -347,6 +347,7 @@ id: BFO:0000015
 name: process
 def: "An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t." []
 def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/083-003"}
+comment: An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t.
 is_a: BFO:0000003 ! occurrent
 property_value: BFO:0000179 "process" xsd:string
 property_value: BFO:0000180 "Process" xsd:string
@@ -404,6 +405,7 @@ id: BFO:0000020
 name: specifically dependent continuant
 def: "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same." []
 def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" [] {http://purl.obolibrary.org/obo/IAO_0010000="http://purl.obolibrary.org/obo/bfo/axiom/050-003"}
+comment: A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.
 is_a: BFO:0000002 ! continuant
 relationship: part_of BFO:0000020 {all_only="true"} ! specifically dependent continuant
 property_value: BFO:0000179 "sdc" xsd:string
@@ -1573,20 +1575,15 @@ property_value: start_ypb "0.0" xsd:float
 id: CARO:0000000
 name: anatomical entity
 namespace: spatial
-def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex." [CAROC:Brownsville2014]
 def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [CARO:MAH]
-comment: Following BFO, material anatomical entities may have immaterial parts (the lumen of your stomach is part of your stomach).  The granularity limit follows the limits set by the Gene Ontology on the granularity limit for GO:cellular_component. Note that substances produced by an organism (sweat, feaces, urine) do not need to be part of an organism to qualify as an anatomical structure.
-is_a: BFO:0000004 ! independent continuant
 is_obsolete: true
 replaced_by: UBERON:0001062
 
 [Term]
 id: CARO:0000003
 name: anatomical structure
-name: connected anatomical structure
 namespace: spatial
 def: "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." [CC:DOS]
-comment: Note that the definition does not say 'generated exclusively by the co-ordinated expression of the organism's own genome', so this is still valid for cases where normal morphogenesis requires the actions of a facultative symbiont, or some looser dependency such as the a requirement for the presence of gut flora for normal gut development.
 is_a: CARO:0000006 ! material anatomical entity
 is_obsolete: true
 replaced_by: UBERON:0000061
@@ -1606,7 +1603,7 @@ id: CARO:0000014
 name: cell component
 name: cell part
 def: "Anatomical structure that is a direct part of the cell." [CARO:MAH]
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000061 ! connected anatomical structure
 relationship: part_of CL:0000003 ! native cell
 
@@ -4320,7 +4317,7 @@ xref: MESH:D002477
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: GO:0005575 ! cellular_component
 is_a: UBERON:0000061 ! connected anatomical structure
 relationship: directly_develops_from CL:0000000 {all_only="true"} ! cell
@@ -5724,6 +5721,7 @@ relationship: substage_of FBdv:00005321 ! extended germ band stage
 id: FBdv:00004886
 name: oogenesis
 namespace: FlyBase_development_CV
+def: "The complete process of formation and maturation of an ovum or female gemate from a primordial female germ cell." [GO:0048477]
 comment: Temporal ordering number - 10000.
 synonym: "oogenesis stage" EXACT []
 xref: GO:0048477
@@ -6003,6 +6001,7 @@ is_a: FBdv:00005259 ! developmental stage
 id: FBdv:00005287
 name: unfertilized egg stage
 namespace: FlyBase_development_CV
+def: "Developmental stage that starts with ovulation, at the end of oogenesis, until the egg is fertilized by a sperm." [FlyBase:FBrf0158848]
 comment: Temporal ordering number - 10300.
 is_a: FBdv:00005259 ! developmental stage
 relationship: immediately_preceded_by FBdv:00005283 ! oogenesis stage S14
@@ -6013,6 +6012,7 @@ relationship: substage_of FBdv:00005286 ! egg stage
 id: FBdv:00005288
 name: fertilized egg stage
 namespace: FlyBase_development_CV
+def: "Developmental stage that starts with sperm entry until the first mitotic division of the zygote." [FlyBase:FBrf0229233]
 comment: Temporal ordering number - 10.
 subset: life_stage
 is_a: FBdv:00007012 ! life stage
@@ -6963,6 +6963,7 @@ property_value: dcterms-date "2008-12-11T01:19:53Z" xsd:string
 id: FBdv:00007009
 name: developmental process
 namespace: FlyBase_development_CV
+def: "A biological process whose specific outcome is the progression of an integrated living unit (an anatomical structure or an entire organism) over time from an initial condition to a later condition." [GO:0032502]
 xref: GO:0032502
 is_a: FBdv:00007024 ! biological process
 relationship: dc-contributor http://orcid.org/0000-0002-7073-9172
@@ -7095,6 +7096,7 @@ relationship: substage_of FBdv:00005341 ! wandering third instar larval stage
 id: FBdv:00007024
 name: biological process
 namespace: FlyBase_development_CV
+def: "The execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module." [GO:0008150]
 xref: GO:0008150
 is_a: BFO:0000003 ! occurrent
 
@@ -18985,6 +18987,7 @@ name: root
 namespace: ncbi_taxonomy
 synonym: "all" RELATED synonym []
 xref: GC_ID:1
+is_a: BFO:0000040 ! material entity
 
 [Term]
 id: NCBITaxon:117570
@@ -20700,6 +20703,7 @@ synonym: "T200" BROAD [PRO:DNx]
 xref: IUPHARobj:1852
 xref: PIRSF:PIRSF002004
 is_a: PR:000000001 ! protein
+property_value: https://w3id.org/semapv/vocab/crossSpeciesExactMatch PR:P08575
 
 [Term]
 id: PR:000001345
@@ -20715,6 +20719,7 @@ synonym: "ENG" EXACT PRO-short-label [PRO:DNx]
 xref: IUPHARobj:2895
 xref: PIRSF:PIRSF038746
 is_a: PR:000000001 ! protein
+property_value: https://w3id.org/semapv/vocab/crossSpeciesExactMatch PR:P17813
 
 [Term]
 id: PR:000001843
@@ -20729,6 +20734,7 @@ synonym: "Thy-1 antigen" EXACT []
 synonym: "THY1" EXACT PRO-short-label [PRO:DNx]
 xref: PIRSF:PIRSF038777
 is_a: PR:000000001 ! protein
+property_value: https://w3id.org/semapv/vocab/crossSpeciesExactMatch PR:P04216
 
 [Term]
 id: PR:000014841
@@ -20742,6 +20748,7 @@ synonym: "SHH" EXACT PRO-short-label [PRO:DNx]
 synonym: "Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains" EXACT []
 synonym: "ShhNC" EXACT []
 is_a: PR:000000001 ! protein
+property_value: https://w3id.org/semapv/vocab/crossSpeciesExactMatch PR:Q15465
 
 [Term]
 id: PR:000018263
@@ -25018,7 +25025,7 @@ xref: GAID:1294
 xref: MESH:D036703
 xref: OGEM:000006
 xref: Wikipedia:Blastula
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000468 ! multi-cellular organism
 intersection_of: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
@@ -25055,7 +25062,7 @@ xref: MAT:0000025
 xref: MIAA:0000025
 xref: VSAO:0000033
 xref: XAO:0004042
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0011216 ! organ system subdivision
 intersection_of: UBERON:0011216 ! organ system subdivision
 intersection_of: composed_primarily_of UBERON:0001015 ! musculature
@@ -25798,7 +25805,7 @@ xref: Wikipedia:Stomodeum
 xref: XAO:0000269
 xref: ZFA:0001290
 is_a: BFO:0000003 ! occurrent
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0013522 ! subdivision of tube
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
@@ -26004,7 +26011,7 @@ xref: VSAO:0005038
 xref: WBbt:0005737
 xref: Wikipedia:Muscular_system
 xref: ZFA:0000548
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: composed_primarily_of UBERON:0001630 ! muscle organ
 relationship: mutually_spatially_disjoint_with UBERON:0001474 ! bone element
@@ -26053,7 +26060,7 @@ xref: Wikipedia:Nervous_system
 xref: XAO:0000177
 xref: ZFA:0000396
 is_a: BFO:0000003 ! occurrent
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000467 ! anatomical system
 relationship: capable_of GO:0050877 ! nervous system process
 relationship: composed_primarily_of CL:0002319 ! neural cell
@@ -26334,7 +26341,7 @@ xref: VSAO:0000057
 xref: Wikipedia:Bone
 xref: XAO:0000169
 xref: ZFA:0001514
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0004765 ! skeletal element
 intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: composed_primarily_of UBERON:0002481 ! bone tissue
@@ -26382,7 +26389,7 @@ xref: VHOG:0000309
 xref: WBbt:0005743
 xref: ZFA:0000112
 is_a: BFO:0000003 ! occurrent
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000025 ! tube
 relationship: connects UBERON:0000165 ! mouth
 relationship: develops_from UBERON:0007026 ! presumptive gut
@@ -26556,7 +26563,7 @@ xref: VHOG:0001275
 xref: VSAO:0000031
 xref: Wikipedia:Musculoskeletal_system
 xref: XAO:0000168
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000467 ! anatomical system
 relationship: capable_of_part_of GO:0040011 ! locomotion
 relationship: dc-contributor https://github.com/cmungall
@@ -27315,7 +27322,7 @@ namespace: uberon
 def: "An anatomical structure that develops (entirely or partially) from the mesoderm." [https://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "mesodermal derivative" EXACT [FBbt:00025998]
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000061 ! connected anatomical structure
 intersection_of: UBERON:0000061 ! connected anatomical structure
 intersection_of: develops_from UBERON:0000926 ! mesoderm
@@ -27329,7 +27336,7 @@ namespace: uberon
 def: "An anatomical structure that develops (entirely or partially) from the ectoderm." [https://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "ectodermal deriviative" EXACT [FBbt:00025990]
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000061 ! connected anatomical structure
 intersection_of: UBERON:0000061 ! connected anatomical structure
 intersection_of: develops_from UBERON:0000924 ! ectoderm
@@ -27471,7 +27478,7 @@ xref: UMLS:C0017199 {source="ncithesaurus:Gastrula"}
 xref: UMLS:C1284022 {source="ncithesaurus:Trilaminar_Embryonic_Disc"}
 xref: Wikipedia:Gastrula
 xref: Wikipedia:Trilaminar_blastocyst
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000922 ! embryo
 intersection_of: UBERON:0000468 ! multi-cellular organism
 intersection_of: existence_starts_and_ends_during UBERON:0000109 ! gastrula stage
@@ -27491,7 +27498,7 @@ xref: SCTID:309311006
 xref: VSAO:0000015
 xref: XAO:0004038
 xref: ZFA:0005619
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0002384 {source="VSAO"} ! connective tissue
 relationship: develops_from CL:0007001 {date_retrieved="2012-08-14", external_class="VSAO:0000015", source="VSAO"} ! skeletogenic cell
 relationship: part_of UBERON:0004765 ! skeletal element
@@ -27586,7 +27593,7 @@ synonym: "subdivision of alimentary system" RELATED [FMA:71131]
 xref: FBbt:00100315
 xref: FMA:71131
 is_a: BFO:0000003 ! occurrent
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
 intersection_of: subdivision_of UBERON:0001555 ! digestive tract
@@ -27673,7 +27680,7 @@ synonym: "muscle element" RELATED []
 synonym: "musculus" EXACT [FMA:30316]
 xref: EMAPA:32715
 xref: FMA:30316
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000061 ! connected anatomical structure
 relationship: has_part CL:0000187 ! muscle cell
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
@@ -27904,7 +27911,7 @@ xref: FMA:293135
 xref: NCIT:C34232
 xref: UMLS:C1518430 {source="ncithesaurus:Notochordal_Process"}
 xref: VHOG:0001213
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: develops_from UBERON:0000924 {source="EHDAA2"} ! ectoderm
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
@@ -27939,7 +27946,7 @@ xref: AAO:0000471
 xref: EFO:0003437
 xref: TAO:0000416
 xref: ZFA:0000416
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0000925 ! endoderm
@@ -27958,7 +27965,6 @@ synonym: "presumptive structures" EXACT [ZFA:0001116]
 xref: AAO:0000479
 xref: TAO:0001116
 xref: ZFA:0001116
-is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0002050 ! embryonic structure
 intersection_of: UBERON:0005423 ! developing anatomical structure
 intersection_of: has_potential_to_develop_into UBERON:0000061 ! connected anatomical structure
@@ -27978,7 +27984,7 @@ xref: EFO:0003466
 xref: TAO:0001376
 xref: XAO:0004132
 xref: ZFA:0001376
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0000924 ! ectoderm
@@ -27997,7 +28003,7 @@ xref: AAO:0000476
 xref: EFO:0003467
 xref: TAO:0001377
 xref: ZFA:0001377
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0000926 ! mesoderm
@@ -28050,7 +28056,7 @@ xref: BILA:0000084
 xref: NCIT:C34268
 xref: SCTID:360394002
 xref: UMLS:C1514442 {source="ncithesaurus:Primordial_Gut"}
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0001555 ! digestive tract
@@ -28265,7 +28271,7 @@ xref: EFO:0003443
 xref: TAO:0000591
 xref: XAO:0004134
 xref: ZFA:0000591
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 {source="https://github.com/obophenotype/uberon/issues/1277"} ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0003077 {source="https://github.com/obophenotype/uberon/issues/1277"} ! paraxial mesoderm
@@ -28289,7 +28295,7 @@ namespace: uberon
 def: "Mesenchyme with little extracellular matrix." [AEO:JB]
 xref: AEO:0000146
 xref: EHDAA2:0003146
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0003104 {source="AEO"} ! mesenchyme
 relationship: has_part CL:0000057 {source="AEO"} ! fibroblast
 
@@ -28326,7 +28332,7 @@ xref: NCIT:C12418
 xref: SCTID:361355005
 xref: UMLS:C0460004 {source="ncithesaurus:Head_and_Neck"}
 xref: WikipediaCategory:Head_and_neck
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000475 {source="MA"} ! organism subdivision
 relationship: has_part UBERON:0000033 ! head
 relationship: has_part UBERON:0006562 ! pharynx
@@ -28351,7 +28357,7 @@ xref: FMA:55107
 xref: VSAO:0000000
 xref: XAO:0004013
 xref: ZFA:0001501
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0004765 {source="VSAO"} ! skeletal element
 intersection_of: UBERON:0004765 ! skeletal element
 intersection_of: composed_primarily_of UBERON:0002418 ! cartilage tissue
@@ -28404,7 +28410,7 @@ def: "Sum total of mesenchyme in the embryo." [https://github.com/obophenotype/h
 xref: EHDAA2:0001113
 xref: EHDAA:177
 xref: EMAPA:16097
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000477 ! anatomical cluster
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0017650 ! developing mesenchymal structure
@@ -28496,7 +28502,7 @@ name: structure with developmental contribution from neural crest
 namespace: uberon
 def: "An anatomical structure that has some part that develops from the neural crest." [https://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000061 ! connected anatomical structure
 intersection_of: UBERON:0000061 ! connected anatomical structure
 intersection_of: has_developmental_contribution_from UBERON:0002342 ! neural crest
@@ -28507,7 +28513,7 @@ property_value: curator_notes "Grouping term for query purposes" xsd:string
 id: UBERON:0010316
 name: germ layer / neural crest
 namespace: uberon
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0005291 ! embryonic tissue
 relationship: develops_from UBERON:0002532 ! epiblast (generic)
 
@@ -28546,7 +28552,7 @@ name: axial skeletal system
 namespace: uberon
 def: "Subdivision of the skeletal system which consists of the axial skeleton plus associated joints." [https://orcid.org/0000-0002-6601-2165]
 xref: FMA:7483
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0000075 {source="FMA"} ! subdivision of skeletal system
 relationship: has_part UBERON:0000982 ! skeletal joint
 relationship: has_part UBERON:0005944 ! axial skeleton plus cranial skeleton
@@ -28991,7 +28997,7 @@ def: "The primordial mouth region of the developing head." [MP:0003119]
 synonym: "primitive mouth" EXACT [FMA:293105]
 synonym: "primordial mouth" EXACT []
 xref: FMA:293105
-is_a: CARO:0000003 ! connected anatomical structure
+is_a: CARO:0000003 ! anatomical structure
 is_a: UBERON:0002050 ! embryonic structure
 is_a: UBERON:0013522 ! subdivision of tube
 relationship: has_part UBERON:0000925 ! endoderm
@@ -30878,7 +30884,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0012003
 is_a: has_participant ! has participant
-created_by: pg
+created_by: https://orcid.org/0000-0003-1813-6857
 creation_date: 2020-06-08T17:21:33Z
 
 [Typedef]
@@ -30899,7 +30905,7 @@ def: "c 'acts upstream of, negative effect' p if c is enables f, and f is causal
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 xref: RO:0004035
 property_value: RO:0004050 RO:0002263
-property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of,_negative_effect
+property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of,_negative_effect" xsd:anyURI
 holds_over_chain: enables causally_upstream_of,_negative_effect
 is_a: acts_upstream_of ! acts upstream of
 is_a: acts_upstream_of_or_within,_negative_effect ! acts upstream of or within, negative effect
@@ -30913,7 +30919,7 @@ def: "c 'acts upstream of, positive effect' p if c is enables f, and f is causal
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 xref: RO:0004034
 property_value: RO:0004049 RO:0002263
-property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of,_positive_effect
+property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of,_positive_effect" xsd:anyURI
 holds_over_chain: enables causally_upstream_of,_positive_effect
 is_a: acts_upstream_of ! acts upstream of
 is_a: acts_upstream_of_or_within,_positive_effect ! acts upstream of or within, positive effect
@@ -30928,7 +30934,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 synonym: "affects" RELATED []
 xref: RO:0002264
 property_value: example_of_usage "A gene product that has some activity, where that activity may be a part of a pathway or upstream of the pathway." xsd:string
-property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within
+property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within" xsd:anyURI
 holds_over_chain: enables causally_upstream_of_or_within
 is_a: causal_agent_in_process ! causal agent in process
 
@@ -30938,6 +30944,7 @@ name: acts upstream of or within, negative effect
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 xref: RO:0004033
 property_value: RO:0004050 RO:0002264
+property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within,_negative_effect" xsd:anyURI
 holds_over_chain: enables causally_upstream_of_or_within,_negative_effect
 is_a: acts_upstream_of_or_within ! acts upstream of or within
 created_by: https://orcid.org/0000-0002-6601-2165
@@ -30949,7 +30956,7 @@ name: acts upstream of or within, positive effect
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 xref: RO:0004032
 property_value: RO:0004049 RO:0002264
-property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of_or_within,_positive_effect
+property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within,_positive_effect" xsd:anyURI
 holds_over_chain: enables causally_upstream_of_or_within,_positive_effect
 is_a: acts_upstream_of_or_within ! acts upstream of or within
 created_by: https://orcid.org/0000-0002-6601-2165
@@ -31049,8 +31056,8 @@ namespace: uberon
 def: "a is attached to part of b if a is attached to b, or a is attached to some p, where p is part of b." []
 xref: RO:0002177
 property_value: IAO:0000589 "attached to part of (anatomical structure to anatomical structure)" xsd:string
-domain: CARO:0000003 ! connected anatomical structure
-range: CARO:0000003 ! connected anatomical structure
+domain: UBERON:0000061 ! connected anatomical structure
+range: UBERON:0000061 ! connected anatomical structure
 holds_over_chain: attaches_to part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
 is_a: biomechanically_related_to ! biomechanically related to
 is_a: mereotopologically_related_to ! mereotopologically related to
@@ -31081,8 +31088,8 @@ def: "A relation that holds between elements of a musculoskeletal system or its 
 xref: RO:0002567
 property_value: curator_notes "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving the biomechanical processes." xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-domain: CARO:0000003 ! connected anatomical structure
-range: CARO:0000003 ! connected anatomical structure
+domain: UBERON:0000061 ! connected anatomical structure
+range: UBERON:0000061 ! connected anatomical structure
 is_a: functionally_related_to ! functionally related to
 
 [Typedef]
@@ -31307,6 +31314,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002305
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-6601-2165
 property_value: RO:0004050 RO:0002411
+property_value: seeAlso https://wiki.geneontology.org/Causally_upstream_of,_negative_effect
 is_a: causally_upstream_of ! causally upstream of
 is_a: causally_upstream_of_or_within,_negative_effect ! causally upstream of or within, negative effect
 
@@ -31321,6 +31329,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002304
 property_value: http://purl.org/dc/terms/creator https://orcid.org/0000-0002-6601-2165
 property_value: RO:0004049 RO:0002411
+property_value: seeAlso https://wiki.geneontology.org/Causally_upstream_of,_positive_effect
 is_a: causally_upstream_of ! causally upstream of
 is_a: causally_upstream_of_or_within,_positive_effect ! causally upstream of or within, positive effect
 
@@ -31343,6 +31352,7 @@ id: causally_upstream_of_or_within,_negative_effect
 name: causally upstream of or within, negative effect
 xref: RO:0004046
 property_value: RO:0004050 RO:0002418
+property_value: seeAlso "https://wiki.geneontology.org/Causally_upstream_of_or_within,_negative_effect" xsd:anyURI
 is_a: causally_upstream_of_or_within ! causally upstream of or within
 created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-03-13T23:55:05Z
@@ -31352,6 +31362,7 @@ id: causally_upstream_of_or_within,_positive_effect
 name: causally upstream of or within, positive effect
 xref: RO:0004047
 property_value: RO:0004049 RO:0002418
+property_value: seeAlso https://wiki.geneontology.org/Causally_upstream_of_or_within,_positive_effect
 is_a: causally_upstream_of_or_within ! causally upstream of or within
 created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-03-13T23:55:19Z
@@ -31389,7 +31400,7 @@ property_value: IAO:0000118 "inheres_in" xsd:string
 property_value: RO:0001900 RO:0001901
 is_functional: true
 is_a: characteristic_of_part_of ! characteristic of part of
-inverse_of: has_characteristic ! has characteristic
+inverse_of: has_characteristic ! bearer of
 
 [Typedef]
 id: characteristic_of_part_of
@@ -31451,6 +31462,7 @@ is_a: has_part ! has part
 
 [Typedef]
 id: conduit_for
+name: conduit for
 namespace: uberon
 def: "x is a conduit for y iff y overlaps through the lumen_of of x, and y has parts on either side of the lumen of x." []
 subset: ro-eco
@@ -31487,6 +31499,7 @@ is_a: mereotopologically_related_to ! mereotopologically related to
 
 [Typedef]
 id: connecting_branch_of
+name: connecting branch of
 def: "b connecting-branch-of s iff b is connected to s, and there exists some tree-like structure t such that the mereological sum of b plus s is either the same as t or a branching-part-of t." []
 xref: RO:0002252
 property_value: example_of_usage "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is connecting branch of S, and B1-1 as a connecting branch of B1." xsd:string
@@ -31494,7 +31507,7 @@ property_value: RO:0004036 BFO:0000050
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/2212
 is_a: connected_to ! connected to
 is_a: in_branching_relationship_with ! in branching relationship with
-inverse_of: has_connecting_branch
+inverse_of: has_connecting_branch ! has connecting branch
 
 [Typedef]
 id: connects
@@ -31574,11 +31587,22 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 is_a: overlaps ! overlaps
 
 [Typedef]
+id: correlated_with
+name: correlated with
+def: "A relationship that holds between two entities, where the entities exhibit a statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+xref: RO:0002610
+property_value: curator_notes "Groups both positive and negative correlation" xsd:string
+
+[Typedef]
 id: curator_notes
 name: curator note
 name: curator notes
 namespace: uberon
+def: "An administrative note of use for a curator but of no use for a user" []
 xref: IAO:0000232
+property_value: IAO:0000111 "curator note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Alan Ruttenberg" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 is_metadata_tag: true
 
@@ -31736,7 +31760,6 @@ is_a: has_potential_to_developmentally_contribute_to ! has potential to developm
 id: developmentally_induced_by
 name: developmentally induced by
 namespace: uberon
-def: "t1 induced_by t2 if there is a process of developmental induction (GO:0031128) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor anatomical structure type T to T', where T' develops_from T" []
 def: "t1 induced_by t2 if there is a process of developmental induction (GO:0031128) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor material anatomical entity type T to T', where T' develops_from T" []
 xref: RO:0002256
 property_value: curator_notes "We place this under 'developmentally preceded by'. This placement should be examined in the context of reciprocal inductions[cjm]" xsd:string
@@ -31748,10 +31771,8 @@ property_value: IAO:0000118 "induced by" xsd:string
 property_value: IAO:0000119 " Developmental Biology, Gilbert, 8th edition, figure 6.5(F)" xsd:string
 property_value: IAO:0000119 "GO:0001759" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
-domain: CARO:0000003 ! connected anatomical structure
-domain: CARO:0000006 ! material anatomical entity
-range: CARO:0000003 ! connected anatomical structure
-range: CARO:0000006 ! material anatomical entity
+domain: UBERON:0000465 ! material anatomical entity
+range: UBERON:0000465 ! material anatomical entity
 is_a: developmentally_preceded_by ! developmentally preceded by
 inverse_of: developmentally_induces ! developmentally induces
 
@@ -31853,7 +31874,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 "EHDAA2" xsd:string
 property_value: IAO:0000119 "Jonathan Bard, EHDAA2" xsd:string
-domain: CARO:0000000 ! anatomical entity
+domain: UBERON:0001062 ! anatomical entity
 holds_over_chain: directly_develops_from located_in
 is_a: developmentally_preceded_by ! developmentally preceded by
 
@@ -31923,11 +31944,11 @@ is_a: develops_into ! develops into
 [Typedef]
 id: directly_negatively_regulated_by
 name: directly negatively regulated by
-def: "Process(P2) is directly negatively regulated by process(P1) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P2 directly negatively regulated by P1." [GOC:dos]
+def: "Process(P2) is directly negatively regulated by process(P1) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P2 directly negatively regulated by P1." [https://orcid.org/0000-0002-7073-9172]
 xref: RO:0002023
 is_a: directly_regulated_by ! directly regulated by
 inverse_of: directly_negatively_regulates ! directly negatively regulates
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-09-17T13:52:38Z
 
 [Typedef]
@@ -31942,6 +31963,7 @@ xref: RO:0002630
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly negatively regulates (process to process)" xsd:string
 property_value: RO:0004050 RO:0002578
+property_value: seeAlso "https://wiki.geneontology.org/Directly_negatively_regulates" xsd:anyURI
 is_a: directly_regulates ! directly regulates
 is_a: negatively_regulates ! negatively regulates
 
@@ -31961,11 +31983,11 @@ is_a: directly_regulates_activity_of ! directly regulates activity of
 [Typedef]
 id: directly_positively_regulated_by
 name: directly positively regulated by
-def: "Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1." [GOC:dos]
+def: "Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1." [https://orcid.org/0000-0002-7073-9172]
 xref: RO:0002024
 is_a: directly_regulated_by ! directly regulated by
 inverse_of: directly_positively_regulates ! directly positively regulates
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-09-17T13:52:47Z
 
 [Typedef]
@@ -31980,6 +32002,7 @@ xref: RO:0002629
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000589 "directly positively regulates (process to process)" xsd:string
 property_value: RO:0004049 RO:0002578
+property_value: seeAlso "https://wiki.geneontology.org/Directly_positively_regulates" xsd:anyURI
 is_a: directly_regulates ! directly regulates
 is_a: positively_regulates ! positively regulates
 
@@ -31999,11 +32022,11 @@ is_a: directly_regulates_activity_of ! directly regulates activity of
 [Typedef]
 id: directly_regulated_by
 name: directly regulated by
-comment: Process(P2) is directly regulated by process(P1) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2. {xref="GOC:dos"}
+comment: Process(P2) is directly regulated by process(P1) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2. {xref="https://orcid.org/0000-0002-7073-9172"}
 xref: RO:0002022
 is_a: regulated_by ! regulated by
 inverse_of: directly_regulates ! directly regulates
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-09-17T13:52:24Z
 
 [Typedef]
@@ -32169,7 +32192,12 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 id: editor_note
 name: editor note
 namespace: uberon
+def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
 xref: IAO:0000116
+property_value: IAO:0000111 "editor note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obofoundry.org/obo/obi>" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 is_metadata_tag: true
 
@@ -32180,6 +32208,7 @@ def: "inverse of enables" []
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002333
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
+property_value: seeAlso "https://wiki.geneontology.org/Enabled_by" xsd:anyURI
 is_a: functionally_related_to ! functionally related to
 is_a: has_participant ! has participant
 
@@ -32197,6 +32226,7 @@ property_value: IAO:0000118 "executes" xsd:string
 property_value: IAO:0000118 "has" xsd:string
 property_value: IAO:0000118 "is catalyzing" xsd:string
 property_value: IAO:0000118 "is executing" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Enables" xsd:anyURI
 is_a: capable_of ! capable of
 inverse_of: enabled_by ! enabled by
 transitive_over: has_component_activity ! has component activity
@@ -32461,9 +32491,18 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 [Typedef]
 id: example_of_usage
 name: example of usage
+name: ready for release
 namespace: uberon
+def: "A phrase describing how a term should be used and/or a citation to a work which uses it. May also include other kinds of examples that facilitate immediate understanding, such as widely know prototypes or instances of a class, or cases where a relation is said to hold." []
+def: "Class has undergone final review, is ready for use, and will be included in the next release. Any class lacking \"ready_for_release\" should be considered likely to change place in hierarchy, have its definition refined, or be obsoleted in the next release.  Those classes deemed \"ready_for_release\" will also derived from a chain of ancestor classes that are also \"ready_for_release.\"" []
 xref: IAO:0000112
 xref: IAO:0000122
+property_value: IAO:0000111 "example of usage" xsd:string
+property_value: IAO:0000111 "ready for release" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 is_metadata_tag: true
 
@@ -32534,24 +32573,26 @@ is_a: existence_starts_during ! existence starts during
 
 [Typedef]
 id: expressed_in
+name: expressed in
 def: "x expressed in y if and only if there is a gene expression process (GO:0010467) that occurs in y, and one of the following holds: (i) x is a gene, and x is transcribed into a transcript as part of the gene expression process (ii) x is a transcript, and the transcription of x is part of the gene expression process (iii) x is a mature gene product such as a protein, and x was translated or otherwise processes from a transcript that was transcribed as part of this gene expression process" []
 xref: RO:0002206
 property_value: example_of_usage "'neural crest cell'  SubClassOf expresses some 'Wnt1 gene'" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 domain: BFO:0000002 ! continuant
-range: CARO:0000006 ! material anatomical entity
-is_a: genomically_related_to
-inverse_of: expresses
+range: UBERON:0000465 ! material anatomical entity
+is_a: genomically_related_to ! genomically related to
+inverse_of: expresses ! expresses
 transitive_over: part_of ! part_of
 
 [Typedef]
 id: expresses
-def: "Inverse of 'expressed in'" []
+name: expresses
+def: "y expresses x if and only if there is a gene expression process (GO:0010467) that occurs in y, and one of the following holds: (i) x is a gene, and x is transcribed into a transcript as part of the gene expression process (ii) x is a transcript, and x was transcribed from a gene as part of the gene expression process (iii) x is a mature gene product (protein or RNA), and x was translated or otherwise processed from a transcript that was transcribed as part of the gene expression process." []
 xref: RO:0002292
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-is_a: genomically_related_to
+is_a: genomically_related_to ! genomically related to
 
 [Typedef]
 id: extends_fibers_into
@@ -32666,6 +32707,7 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 
 [Typedef]
 id: genomically_related_to
+name: genomically related to
 def: "holds between two entities when some genome-level process such as gene expression is involved. This includes transcriptional, spliceosomal events. These relations can be used between either macromolecule entities (such as regions of nucleic acid) or between their abstract informational counterparts." []
 xref: RO:0002330
 property_value: curator_notes "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving the genome of an organism" xsd:string
@@ -32675,7 +32717,7 @@ range: BFO:0000002 ! continuant
 
 [Typedef]
 id: happens_during
-name: happens_during
+name: happens during
 namespace: FlyBase_development_CV
 comment: X happens_during Y iff: (start(Y) before_or_simultaneous_with start(X)) AND (end(X) before_or_simultaneous_with end(Y))
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
@@ -32686,6 +32728,7 @@ xref: RO:0002092
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "d" xsd:string
 property_value: IAO:0000118 "during" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Happens_during" xsd:anyURI
 is_transitive: true
 
 [Typedef]
@@ -32721,6 +32764,7 @@ is_a: in_branching_relationship_with ! in branching relationship with
 
 [Typedef]
 id: has_characteristic
+name: bearer of
 name: has characteristic
 namespace: external
 def: "Inverse of characteristic_of" []
@@ -32756,7 +32800,7 @@ name: has component activity
 comment: A 'has component activity' B if A is A and B are molecular functions (GO_0003674) and A has_component B.
 xref: RO:0002017
 is_a: has_component_process ! has component process
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-05-24T09:44:33Z
 
 [Typedef]
@@ -32767,11 +32811,12 @@ xref: RO:0002018
 domain: BFO:0000015 ! process
 range: BFO:0000015 ! process
 is_a: has_component ! has component
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-05-24T09:49:21Z
 
 [Typedef]
 id: has_connecting_branch
+name: has connecting branch
 def: "inverse of connecting branch of" []
 subset: RO:0002259
 xref: RO:0002253
@@ -32807,10 +32852,10 @@ xref: RO:0002254
 property_value: example_of_usage "Mammalian thymus has developmental contribution from some pharyngeal pouch 3; Mammalian thymus has developmental contribution from some pharyngeal pouch 4 [Kardong]" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-domain: CARO:0000000 ! anatomical entity
-domain: CARO:0000003 ! connected anatomical structure
-range: CARO:0000000 ! anatomical entity
-range: CARO:0000003 ! connected anatomical structure
+domain: CARO:0000003 ! anatomical structure
+domain: UBERON:0001062 ! anatomical entity
+range: CARO:0000003 ! anatomical structure
+range: UBERON:0001062 ! anatomical entity
 holds_over_chain: has_part develops_from
 is_transitive: true
 is_a: developmentally_preceded_by ! developmentally preceded by
@@ -32823,8 +32868,8 @@ def: "x has developmental potential involving y iff x is capable of a developmen
 xref: RO:0002384
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-domain: CARO:0000000 ! anatomical entity
-range: CARO:0000000 ! anatomical entity
+domain: UBERON:0001062 ! anatomical entity
+range: UBERON:0001062 ! anatomical entity
 is_a: developmentally_related_to ! developmentally related to
 
 [Typedef]
@@ -32833,18 +32878,18 @@ name: has disposition
 def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
 xref: RO:0000091
 domain: BFO:0000004 ! independent continuant
-is_a: has_characteristic ! has characteristic
+is_a: has_characteristic ! bearer of
 inverse_of: disposition_of ! disposition of
 
 [Typedef]
 id: has_effector_activity
 name: has effector activity
-def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." [GOC:dos]
+def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." [https://orcid.org/0000-0002-7073-9172]
 comment: This relation is designed for constructing compound molecular functions, typically in combination with one or more regulatory component activity relations.
 xref: RO:0002025
 is_functional: true
 is_a: has_component_activity ! has component activity
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-09-22T14:14:36Z
 
 [Typedef]
@@ -32904,15 +32949,15 @@ property_value: editor_note "A bearer can have many functions, and its functions
 property_value: example_of_usage "this enzyme has function this catalysis function (more colloquially: this enzyme has this catalysis function)" xsd:string
 property_value: IAO:0000118 "has_function" xsd:string
 domain: BFO:0000004 ! independent continuant
-is_a: has_characteristic ! has characteristic
+is_a: has_characteristic ! bearer of
 
 [Typedef]
 id: has_high_plasma_membrane_amount
 name: has high plasma membrane amount
 def: "A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface." [PMID:19243617]
 xref: RO:0015015
-property_value: dc-contributor http://orcid.org/0000-0003-1617-8244
-property_value: dc-contributor http://orcid.org/0000-0003-1940-6740
+property_value: dc-contributor https://orcid.org/0000-0003-1617-8244
+property_value: dc-contributor https://orcid.org/0000-0003-1940-6740
 property_value: example_of_usage "'Ly-76 high positive erythrocyte' equivalent to 'enucleate erythrocyte' and (has_high_plasma_membrane_amount some 'lymphocyte antigen 76 (mouse)')" xsd:string
 domain: CL:0000000 ! cell
 is_a: has_plasma_membrane_part ! has plasma membrane part
@@ -32930,6 +32975,7 @@ xref: RO:0002233
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "consumes" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Has_input" xsd:anyURI
 domain: BFO:0000015 ! process
 holds_over_chain: starts_with has_input
 is_a: has_participant ! has participant
@@ -32940,8 +32986,8 @@ id: has_low_plasma_membrane_amount
 name: has low plasma membrane amount
 def: "A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface." [PMID:19243617]
 xref: RO:0015016
-property_value: dc-contributor http://orcid.org/0000-0003-1617-8244
-property_value: dc-contributor http://orcid.org/0000-0003-1940-6740
+property_value: dc-contributor https://orcid.org/0000-0003-1617-8244
+property_value: dc-contributor https://orcid.org/0000-0003-1940-6740
 property_value: example_of_usage "'DN2b thymocyte' equivalent to 'DN2 thymocyte' and (has_low_plasma_membrane_amount some 'mast/stem cell growth factor receptor')" xsd:string
 domain: CL:0000000 ! cell
 is_a: has_plasma_membrane_part ! has plasma membrane part
@@ -32975,7 +33021,7 @@ xref: RO:0002373
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 "Wikipedia:Insertion_(anatomy)" xsd:string
 property_value: seeAlso http://dbpedia.org/property/insertion
-domain: CARO:0000003 {http://purl.obolibrary.org/obo/IAO_0000116="We need to import uberon muscle into RO to use as a stricter domain constraint"} ! connected anatomical structure
+domain: UBERON:0000061 {http://purl.obolibrary.org/obo/IAO_0000116="We need to import uberon muscle into RO to use as a stricter domain constraint"} ! connected anatomical structure
 is_a: attaches_to ! attached to
 is_a: biomechanically_related_to ! biomechanically related to
 
@@ -32988,7 +33034,7 @@ xref: RO:0002372
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 "Wikipedia:Insertion_(anatomy)" xsd:string
 property_value: seeAlso http://dbpedia.org/property/origin
-domain: CARO:0000003 {comment="We need to import uberon muscle to create a stricter domain constraint"} ! connected anatomical structure
+domain: UBERON:0000061 {comment="We need to import uberon muscle to create a stricter domain constraint"} ! connected anatomical structure
 is_a: attaches_to ! attached to
 is_a: biomechanically_related_to ! biomechanically related to
 
@@ -33001,7 +33047,7 @@ comment: By convention GO molecular functions are classified by their effector f
 xref: RO:0002014
 is_a: has_regulatory_component_activity ! has regulatory component activity
 is_a: negatively_regulated_by ! negatively regulated by
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-05-24T09:31:01Z
 
 [Typedef]
@@ -33022,7 +33068,10 @@ id: has_ontology_root_term
 name: has ontology root term
 name: preferred_root
 namespace: uberon
+def: "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root." []
 xref: IAO:0000700
+property_value: IAO:0000111 "has ontology root term" xsd:string
+property_value: IAO:0000117 "Nicolas Matentzoglu" xsd:string
 is_metadata_tag: true
 
 [Typedef]
@@ -33038,6 +33087,7 @@ xref: RO:0002234
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "produces" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Has_output" xsd:anyURI
 holds_over_chain: ends_with has_output
 is_a: has_participant ! has participant
 inverse_of: output_of ! output of
@@ -33120,8 +33170,8 @@ property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000117 https://orcid.org/0000-0003-1617-8244
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/19243617
 property_value: RO:0001900 RO:0001901
-domain: CARO:0000006 ! material anatomical entity
-range: CARO:0000006 ! material anatomical entity
+domain: UBERON:0000465 ! material anatomical entity
+range: UBERON:0000465 ! material anatomical entity
 is_a: has_part ! has part
 expand_expression_to: "BFO_0000051 some (GO_0005886 and BFO_0000051 some ?Y)" []
 
@@ -33133,7 +33183,7 @@ comment: By convention GO molecular functions are classified by their effector f
 xref: RO:0002015
 is_a: has_regulatory_component_activity ! has regulatory component activity
 is_a: positively_regulated_by ! positively regulated by
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-05-24T09:31:17Z
 
 [Typedef]
@@ -33178,7 +33228,7 @@ is_a: has_potential_to_develop_into ! has potential to develop into
 id: has_primary_input
 name: has primary input
 namespace: external
-def: "p has primary input c if (a) p has input c and (b) the goal of process is to modify, consume, or transform c." [GOC:cjm, GOC:dph, GOC:kva, GOC:pt] {comment="PMID:27812932"}
+def: "p has primary input c if (a) p has input c and (b) the goal of process is to modify, consume, or transform c." [GOC:dph, GOC:kva, GOC:pt, https://orcid.org/0000-0002-6601-2165] {comment="PMID:27812932"}
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 xref: RO:0004009
 is_a: has_input ! has input
@@ -33201,7 +33251,7 @@ creation_date: 2018-12-13T11:26:17Z
 id: has_primary_output
 name: has primary output
 namespace: external
-def: "p has primary output c if (a) p has output c and (b) the goal of process is to modify, produce, or transform c." [GOC:cjm, GOC:dph, GOC:kva, GOC:pt] {comment="PMID:27812932"}
+def: "p has primary output c if (a) p has output c and (b) the goal of process is to modify, produce, or transform c." [GOC:dph, GOC:kva, GOC:pt, https://orcid.org/0000-0002-6601-2165] {comment="PMID:27812932"}
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 xref: RO:0004008
 is_a: has_output ! has output
@@ -33219,7 +33269,7 @@ property_value: editor_note "A bearer can have many qualities, and its qualities
 property_value: example_of_usage "this apple has quality this red color" xsd:string
 property_value: IAO:0000118 "has_quality" xsd:string
 range: BFO:0000019 ! quality
-is_a: has_characteristic ! has characteristic
+is_a: has_characteristic ! bearer of
 
 [Typedef]
 id: has_regulatory_component_activity
@@ -33229,7 +33279,7 @@ def: "A 'has regulatory component activity' B if A and B are GO molecular functi
 xref: RO:0002013
 is_a: has_component_activity ! has component activity
 is_a: regulated_by ! regulated by
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-05-24T09:30:46Z
 
 [Typedef]
@@ -33250,7 +33300,7 @@ property_value: example_of_usage "this person has role this investigator role (m
 property_value: IAO:0000118 "has_role" xsd:string
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000023 ! role
-is_a: has_characteristic ! has characteristic
+is_a: has_characteristic ! bearer of
 
 [Typedef]
 id: has_skeleton
@@ -33262,9 +33312,9 @@ property_value: curator_notes "The skeleton of a structure may be a true skeleto
 property_value: example_of_usage "Forelimb SubClassOf has_skeleton some 'Forelimb skeleton'" xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "has supporting framework" xsd:string
-domain: CARO:0000003 ! connected anatomical structure
+domain: UBERON:0000061 ! connected anatomical structure
 domain: UBERON:0000475 ! organism subdivision
-range: CARO:0000006 {http://purl.obolibrary.org/obo/IAO_0000116="This should be to a more restricted class, but not the Uberon class may be too restricted since it is a composition-based definition of skeleton rather than functional."} ! material anatomical entity
+range: UBERON:0000465 {http://purl.obolibrary.org/obo/IAO_0000116="This should be to a more restricted class, but not the Uberon class may be too restricted since it is a composition-based definition of skeleton rather than functional."} ! material anatomical entity
 range: UBERON:0010912 ! subdivision of skeleton
 is_a: has_part ! has part
 inverse_of: skeleton_of ! skeleton of
@@ -33273,13 +33323,13 @@ is_asymmetric: true
 [Typedef]
 id: has_soma_location
 name: has soma location
-def: "Relation between a neuron and an anatomical structure that its soma is part of." []
+def: "Relation between a neuron and a material anatomical entity that its soma is part of." []
 xref: RO:0002100
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
 property_value: RO:0001900 RO:0001901
 domain: CL:0000540 ! neuron
-range: CARO:0000003 ! connected anatomical structure
+range: UBERON:0000465 ! material anatomical entity
 is_a: overlaps ! overlaps
 transitive_over: part_of ! part_of
 expand_expression_to: "BFO_0000051 some (\n   GO_0043025 and   BFO_0000050 some ?Y)" []
@@ -33353,7 +33403,7 @@ synonym: "has synaptic input or output in" EXACT []
 xref: RO:0013001
 is_a: has_synaptic_terminal_in ! has synaptic terminal in
 transitive_over: part_of ! part_of
-created_by: http://orcid.org/0000-0002-1373-1705
+created_by: https://orcid.org/0000-0002-1373-1705
 creation_date: 2020-07-17T09:26:52Z
 
 [Typedef]
@@ -33521,7 +33571,7 @@ xref: RO:0002412
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: RO:0002575 RO:0002411
 is_a: causally_upstream_of ! causally upstream of
-is_a: immediately_precedes ! immediately_precedes
+is_a: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_deep_to
@@ -33597,12 +33647,11 @@ property_value: IAO:0000118 "starts_at_end_of" xsd:string
 holds_over_chain: starts_with ends_with
 is_transitive: true
 is_a: preceded_by ! preceded by
-inverse_of: immediately_precedes ! immediately_precedes
+inverse_of: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_precedes
 name: immediately precedes
-name: immediately_precedes
 namespace: external
 namespace: FlyBase_development_CV
 comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
@@ -33873,7 +33922,7 @@ name: indirectly causally upstream of
 def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
 xref: RO:0012011
 is_a: causally_upstream_of ! causally upstream of
-created_by: pg
+created_by: https://orcid.org/0000-0003-1813-6857
 creation_date: 2022-09-26T06:07:17Z
 
 [Typedef]
@@ -33884,6 +33933,7 @@ xref: RO:0002409
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "indirectly inhibits" xsd:string
 property_value: RO:0002579 RO:0002212
+property_value: seeAlso "https://wiki.geneontology.org/Indirectly_negatively_regulates" xsd:anyURI
 holds_over_chain: directly_negatively_regulates directly_negatively_regulates
 holds_over_chain: directly_negatively_regulates indirectly_negatively_regulates
 is_transitive: true
@@ -33899,6 +33949,7 @@ xref: RO:0002407
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "indirectly activates" xsd:string
 property_value: RO:0002579 RO:0002213
+property_value: seeAlso "https://wiki.geneontology.org/Indirectly_positively_regulates" xsd:anyURI
 holds_over_chain: directly_positively_regulates directly_positively_regulates
 holds_over_chain: directly_positively_regulates indirectly_positively_regulates
 holds_over_chain: indirectly_negatively_regulates indirectly_negatively_regulates
@@ -33914,7 +33965,7 @@ def: "p indirectly regulates q iff p is indirectly causally upstream of q and p 
 xref: RO:0012012
 is_a: indirectly_causally_upstream_of ! indirectly causally upstream of
 is_a: regulates ! regulates
-created_by: pg
+created_by: https://orcid.org/0000-0003-1813-6857
 creation_date: 2022-09-26T06:08:01Z
 
 [Typedef]
@@ -33934,9 +33985,9 @@ namespace: uberon
 xref: RO:0002005
 property_value: http://purl.org/spar/cito/citesAsAuthority "http://www.ncbi.nlm.nih.gov/pubmed/22402613" xsd:anyURI
 property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
-domain: CARO:0000003 ! connected anatomical structure
+domain: UBERON:0000061 ! connected anatomical structure
 inverse_of: innervates ! innervates
-transitive_over: branching_part_of ! branching_part_of
+transitive_over: branching_part_of ! branching part of
 
 [Typedef]
 id: innervates
@@ -34008,7 +34059,7 @@ xref: RO:0002331
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
-property_value: seeAlso Involved:in
+property_value: seeAlso "https://wiki.geneontology.org/Involved_in" xsd:anyURI
 holds_over_chain: enables part_of
 is_a: involved_in_or_involved_in_regulation_of ! involved in or involved in regulation of
 is_a: participates_in ! participates in
@@ -34062,12 +34113,13 @@ is_a: involved_in_or_involved_in_regulation_of ! involved in or involved in regu
 [Typedef]
 id: is_active_in
 name: is active in
-def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." [GOC:cjm, GOC:dos]
+def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." [https://orcid.org/0000-0002-6601-2165, https://orcid.org/0000-0002-7073-9172]
 synonym: "enables activity in" EXACT []
 xref: RO:0002432
 property_value: example_of_usage "A protein that enables activity in a cytosol." xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "executes activity in" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Is_active_in" xsd:anyURI
 holds_over_chain: enables occurs_in {http://purl.obolibrary.org/obo/RO_0002581="true"}
 is_a: functionally_related_to ! functionally related to
 is_a: overlaps ! overlaps
@@ -34107,6 +34159,7 @@ property_value: example_of_usage "this rat is located in this cage" xsd:string
 property_value: IAO:0000111 "located in" xsd:string
 property_value: IAO:0000118 "located_in" xsd:string
 property_value: RO:0001900 RO:0001901
+property_value: seeAlso "https://wiki.geneontology.org/Located_in" xsd:anyURI
 domain: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 range: BFO:0000004 {http://purl.obolibrary.org/obo/IAO_0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 is_transitive: true
@@ -34144,7 +34197,7 @@ def: "x lumen_of y iff x is the space or substance that is part of y and does no
 subset: ro-eco
 xref: RO:0002571
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-property_value: IAO:0000119 "GOC:cjm" xsd:string
+property_value: IAO:0000119 https://orcid.org/0000-0002-6601-2165
 range: BFO:0000040 ! material entity
 is_a: part_of ! part_of
 
@@ -34291,7 +34344,7 @@ is_class_level: true
 
 [Typedef]
 id: occurrent_part_of
-name: occurrent_part_of
+name: occurrent part of
 namespace: FlyBase_development_CV
 def: "A part of relation that applies only between occurrents." []
 xref: RO:0002012
@@ -34304,7 +34357,7 @@ name: occurs across
 def: "A relationship between a process and a barrier, where the process occurs in a region spanning the barrier. For cellular processes the barrier is typically a membrane. Examples include transport across a membrane and membrane depolarization." []
 xref: RO:0002021
 is_a: has_part_that_occurs_in ! has part that occurs in
-created_by: dos
+created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-07-20T17:19:37Z
 
 [Typedef]
@@ -34322,6 +34375,7 @@ property_value: IAO:0000118 "occurs_in" xsd:string
 property_value: IAO:0000118 "unfolds in" xsd:string
 property_value: IAO:0000118 "unfolds_in" xsd:string
 property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
+property_value: seeAlso "https://wiki.geneontology.org/Occurs_in" xsd:anyURI
 domain: BFO:0000003 ! occurrent
 range: BFO:0000004 ! independent continuant
 holds_over_chain: part_of occurs_in
@@ -34468,6 +34522,7 @@ property_value: RO:0040042 BFO:0000031
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
 property_value: seeAlso "http://www.obofoundry.org/ro/#OBO_REL:part_of" xsd:string
+property_value: seeAlso "https://wiki.geneontology.org/Part_of" xsd:anyURI
 is_transitive: true
 is_a: overlaps ! overlaps
 inverse_of: has_part ! has part
@@ -34539,6 +34594,17 @@ property_value: editor_note "Axiomatization to GO to be added later" xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000118 "An interaction relation between x and y in which x catalyzes a reaction in which a phosphate group is added to y." xsd:string
 is_a: molecularly_interacts_with ! molecularly interacts with
+
+[Typedef]
+id: positively_correlated_with
+name: positively correlated with
+def: "A relation between entities in which one increases or decreases as the other does the same." []
+xref: RO:0017003
+property_value: dc-contributor https://orcid.org/0000-0003-1909-9269
+property_value: IAO:0000118 "directly correlated with" xsd:string
+is_reflexive: true
+is_symmetric: true
+is_a: correlated_with ! correlated with
 
 [Typedef]
 id: positively_regulated_by
@@ -34866,6 +34932,7 @@ is_a: causally_downstream_of_or_within ! causally downstream of or within
 [Typedef]
 id: regulates
 name: regulates
+name: regulates (processual)
 namespace: external
 def: "p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
@@ -34966,7 +35033,7 @@ xref: RO:0002315
 property_value: example_of_usage "an annotation of gene X to cell differentiation with results_in_maturation_of CL:0000057 (fibroblast) means that at the end of the process the input cell that did not have features of a fibroblast, now has the features of a fibroblast." xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: IAO:0000119 "GOC:mtg_berkeley_2013" xsd:string
-range: CARO:0000003 ! connected anatomical structure
+range: UBERON:0000061 ! connected anatomical structure
 is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
 
@@ -35019,15 +35086,14 @@ id: results_in_developmental_progression_of
 name: results in developmental progression of
 namespace: external
 def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical entity and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
-def: "p results in the developmental progression of s iff p is a developmental process and s is an anatomical structure and p causes s to undergo a change in state at some point along its natural developmental cycle (this cycle starts with its formation, through the mature structure, and ends with its loss)." []
 xref: RO:0002295
 property_value: editor_note "This property and its subproperties are being used primarily for the definition of GO developmental processes. The property hierarchy mirrors the core GO hierarchy. In future we may be able to make do with a more minimal set of properties, but due to the way GO is currently structured we require highly specific relations to avoid incorrect entailments. To avoid this, the corresponding genus terms in GO should be declared mutually disjoint." xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
 property_value: seeAlso Ontology:extensions
 domain: GO:0008150 ! biological_process
-range: CARO:0000000 ! anatomical entity
-range: CARO:0000003 ! connected anatomical structure
+range: CARO:0000003 ! anatomical structure
+range: UBERON:0001062 ! anatomical entity
 is_a: developmentally_related_to ! developmentally related to
 
 [Typedef]
@@ -35079,7 +35145,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0012008
 is_a: results_in_organization_of ! results in organization of
-created_by: pg
+created_by: https://orcid.org/0000-0003-1813-6857
 creation_date: 2021-02-26T07:28:29Z
 
 [Typedef]
@@ -35257,6 +35323,7 @@ name: simultaneous with
 name: simultaneous_with
 namespace: uberon
 def: "Relation between occurrents, shares start and end boundaries." [Allen:is_equal_to, https://orcid.org/0000-0002-6601-2165]
+def: "x simultaneous with y iff ω(x) = ω(y) and ω(α ) = ω(α), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point and '=' indicates the same instance in time." []
 comment: t1 simultaneous_with t2 iff:=  t1 before_or_simultaneous_with t2  and not (t1 before t2)
 subset: ro-eco
 synonym: "coincides_with" EXACT []
@@ -35264,6 +35331,7 @@ synonym: "is_equal_to" EXACT []
 xref: RO:0002082
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
+is_symmetric: true
 is_transitive: true
 is_a: before_or_simultaneous_with ! before or simultaneous with
 is_a: ends ! ends
@@ -35284,8 +35352,8 @@ def: "inverse of has skeleton" []
 subset: RO:0002259
 xref: RO:0002576
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-domain: CARO:0000003 ! connected anatomical structure
-range: CARO:0000003 ! connected anatomical structure
+domain: UBERON:0000061 ! connected anatomical structure
+range: UBERON:0000061 ! connected anatomical structure
 is_a: part_of ! part_of
 
 [Typedef]
@@ -35578,13 +35646,14 @@ comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B 
 
 [Typedef]
 id: substage_of
-name: substage_of
+name: substage of
 namespace: relationship
+def: "A relation between a developmental stage and another, larger developmental stage during which it happens." [FBC:DPG]
 comment: Creating this relation as a temporary fix, pending adding the axiom occurrent_part_of subproperty of happens_during to RO.
 xref: FBdv:00018001
 is_transitive: true
-is_a: happens_during ! happens_during
-is_a: occurrent_part_of ! occurrent_part_of
+is_a: happens_during ! happens during
+is_a: occurrent_part_of ! occurrent part of
 
 [Typedef]
 id: superficial_to
@@ -35685,7 +35754,14 @@ id: term_tracker_item
 name: term tracker item
 namespace: external
 namespace: uberon
+def: "An IRI or similar locator for a request or discussion of an ontology term." []
+comment: The 'tracker item' can associate a tracker with a specific ontology term.
 xref: IAO:0000233
+property_value: example_of_usage "the URI for an OBI Terms ticket at sourceforge, such as https://sourceforge.net/p/obi/obi-terms/772/" xsd:string
+property_value: IAO:0000111 "term tracker item" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
+property_value: IAO:0000119 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
 is_metadata_tag: true
 is_class_level: true
 
@@ -35726,6 +35802,7 @@ is_a: preceded_by ! preceded by
 id: transitively_anteriorly_connected_to
 name: transitively anteriorly connected to
 namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_transitive: true
 
 [Typedef]
@@ -35738,12 +35815,14 @@ is_transitive: true
 id: transitively_distally_connected_to
 name: transitively distally connected to
 namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_transitive: true
 
 [Typedef]
 id: transitively_proximally_connected_to
 name: transitively proximally connected to
 namespace: uberon
+def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_transitive: true
 
 [Typedef]
