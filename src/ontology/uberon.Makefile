@@ -148,9 +148,6 @@ common-anatomy.owl: $(ONT).owl
 mirror/ro.owl: mirror/bspo.owl mirror-ro | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl $< --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
 
-imports/envo_import.owl:
-	echo "ERROR $@ IMPORT CURRENTLY BLOCKED BECAUSE BROKEN UPSTREAM."
-
 ############
 
 # This goal here is needed as a new _intermediate_ for mirrors that need to be fixed
