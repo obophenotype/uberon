@@ -31,9 +31,9 @@ all: uberon-qc
 # COMMANDS
 # ----------------------------------------
 
+# FIXME: Is a custom OBO generation rule needed?
+# https://github.com/obophenotype/uberon/issues/3014
 MAKEOBO=  $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
-MAKEJSON= $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f json $@.tmp && mv $@.tmp $@
-MAKEYAML= $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f yaml $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # PREP: catalog
@@ -100,10 +100,6 @@ uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAI
 uberon.obo: uberon.owl
 	$(MAKEOBO)
 .PRECIOUS: uberon.obo
-
-uberon.yaml: uberon.owl
-	$(MAKEYAML)
-.PRECIOUS: uberon.yaml
 
 uberon.json.gz: uberon.json
 	gzip -c $< > $@.tmp && mv $@.tmp $@
