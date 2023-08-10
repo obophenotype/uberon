@@ -143,12 +143,6 @@ common-anatomy.owl: $(ONT).owl
 #
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
-# merge BSPO into RO
-# get rid of it
-mirror/bspo.owl: mirror-bspo | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) merge -I $(URIBASE)/bspo/bspo-base.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/bspo.owl
-
 # Probably no reason to merge them first
 # --add-obo-shorthand-to-properties: remove this to add mappings into remove
 mirror/ro.owl: mirror/bspo.owl mirror-ro | $(MIRRORDIR)
