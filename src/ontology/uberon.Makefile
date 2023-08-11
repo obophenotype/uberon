@@ -859,9 +859,7 @@ $(REPORTDIR)/%-synclash: %.obo
 $(TMPDIR)/update-stages: $(SRC) | $(TMPDIR)
 	rm -rf $(TMPDIR)/developmental-stage-ontologies && \
 	cd $(TMPDIR) && \
-	git clone https://github.com/obophenotype/developmental-stage-ontologies.git && \
-	cd developmental-stage-ontologies/src && make OWLTOOLS=owltools all ssso-merged.obo -B && cd ../../../ && \
-	touch $@
+	git clone https://github.com/obophenotype/developmental-stage-ontologies.git
 
 CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard $(TMPDIR)/developmental-stage-ontologies/*/*-uberon.obo))
 
