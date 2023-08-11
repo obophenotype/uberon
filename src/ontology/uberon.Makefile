@@ -143,10 +143,10 @@ common-anatomy.owl: $(ONT).owl
 #
 # The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
-# Probably no reason to merge them first
-# --add-obo-shorthand-to-properties: remove this to add mappings into remove
-mirror/ro.owl: mirror/bspo.owl mirror-ro | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ro.owl $< --merge-support-ontologies --merge-imports-closure --add-obo-shorthand-to-properties -o $@ && touch $@; fi
+# We add OBO shorthands to the RO mirror before merging it with the other mirrors
+# FIXME: https://github.com/obophenotype/uberon/issues/3016
+mirror/ro.owl: mirror-ro | $(MIRRORDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS) $(TMPDIR)/mirror-ro.owl --add-obo-shorthand-to-properties -o $@ ; fi
 
 ############
 
