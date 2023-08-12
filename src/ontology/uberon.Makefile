@@ -333,43 +333,6 @@ imports/local-ceph.owl:
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
 
 
-# Import module for RO
-# No TBox; use an OP seed that is derived from a separate sparql query
-tmp/ro_seed.txt: imports/ro_terms.txt reports/uberon-edit-object-properties.csv
-	cat $^ | sort | uniq >  $@
-
-imports/ro_import.owl: mirror/ro.owl $(TMPDIR)/seed.owl tmp/ro_seed.txt
-	if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -m BOT -T tmp/ro_seed.txt --individuals exclude annotate -O $(ONTBASE)/$@ -a $(DC)/title "Relations Ontology Module for Uberon" -o $@.tmp.owl && $(OWLTOOLS_NO_CAT) $@.tmp.owl --remove-tbox --remove-annotation-assertions -l -d -r -p http://purl.obolibrary.org/obo/OMO_0002000 -o $@; fi
-
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" \
-		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-imports/nbo_import.owl: mirror/nbo.owl imports/nbo_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/nbo_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/UBERON_*>" \
-		remove --select "<http://purl.obolibrary.org/obo/UBPROP_*>" \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-imports/fbbt_import.owl: mirror/fbbt.owl imports/fbbt_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/fbbt_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru --update $(SPARQLDIR)/remove_axioms.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-# CL - take **everything**
-imports/cl_import.owl: $(TMPDIR)/cl-core.obo $(OWLSRC)
-	if [ $(IMP) = true ]; then $(OWLTOOLS) $<  --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ -o $@; fi
-
-%_import.obo: %_import.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< --add-obo-shorthand-to-properties -o -f obo --no-check $@; fi
-
 # ----------------------------------------
 # MARKDOWN EXPORT
 # ----------------------------------------
