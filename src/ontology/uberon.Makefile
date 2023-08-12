@@ -148,27 +148,38 @@ common-anatomy.owl: $(ONT).owl
 mirror/ro.owl: mirror-ro | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS) $(TMPDIR)/mirror-ro.owl --add-obo-shorthand-to-properties -o $@ ; fi
 
-############
-
-# This goal here is needed as a new _intermediate_ for mirrors that need to be fixed
-# by hacking into their OBO format representations.
+# Some mirrors need corrections before they can be used by the
+# composite-* pipelines and currently these corrections are done by
+# hacking the OBO representation of the original ontologies.
+# Here we create OBO versions of the original mirrors as needed...
 $(TMPDIR)/mirror-%.obo: mirror-% | $(TMPDIR)
-	if [ $(IMP) = true ] && [ $(MIR) = true ]; then $(ROBOT) convert --input $(TMPDIR)/mirror-$*.owl --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo; fi
+	if [ $(IMP) = true ] && [ $(MIR) = true ]; then \
+		$(ROBOT) convert -i $(TMPDIR)/mirror-$*.owl \
+		                 --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		                 -o $@.tmp.obo && \
+		grep -v ^owl-axioms $@.tmp.obo > $@ && \
+		rm $@.tmp.obo ; \
+	fi
 
-# Filter only EMAPA classes
-# EMAPA using a list flat ids for stages, these are mapped to MmusDv ids by fix-emapa-stages.pl
-# It would be useful to make a combined stage ontology, but than make it filterable by species (subsets)
+# ... and now we can joyfully hack them!
+# Hacked mirror 1: EMAPA
+# This hack is used to re-generate imports/local-emapa.owl, but this
+# never happens automatically. It is not part of the normal imports
+# pipeline, so it is not invoked when doing a refresh-imports.
+# The corresponding rules are invoked during the release process (as
+# prerequisites of the composite-* pipeline), but normally both MIR and
+# IMP are false at this point, so no commands are executed. The rules
+# themselves are necessary to trigger the cloning of the
+# developmental-stage-ontologies repository, though.
+# Step 1: Map EMAPA stage IDs to MmusDv
 $(TMPDIR)/fixed-emapa.obo: $(TMPDIR)/mirror-emapa.obo
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | $(SCRIPTSDIR)/fix-emapa-stages.pl  > $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
+		$(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | \
+		$(SCRIPTSDIR)/fix-emapa-stages.pl > $@; \
+	fi
 
-# stages must be mapped to MmusDv
-# We should add releate targets to stage ontology repo makefile.
-# Most stage ontologies in the stage ontology do not have PURls
-# We not to review the stage repo, in particular make sure that ontologies like ZFS are updated correctly
-$(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo: $(TMPDIR)/update-stages
-	test -f $@
-
-mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo
+# Step 2: Merge with MmusDv to create the final, fixed mirror
+mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/update-stages
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
 		$(ROBOT) merge -i $(TMPDIR)/fixed-emapa.obo \
 		               -i $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo \
