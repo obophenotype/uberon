@@ -175,12 +175,6 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/developmental-stage-ontolo
 		         convert -f ofn -o $@ ; \
 	fi
 
-$(TMPDIR)/fixed-ehdaa2.obo: $(TMPDIR)/mirror-ehdaa2.obo | $(SCRIPTSDIR)/obo-grep.pl $(SCRIPTSDIR)/fix-ehdaa2-stages.pl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(SCRIPTSDIR)/obo-grep.pl -r 'id: (EHDAA2|AEO)' $< | $(SCRIPTSDIR)/fix-ehdaa2-stages.pl | grep -v ^alt_id > $@; fi
-
-mirror/%.obo: mirror/%.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(MAKEOBO); fi
-
 
 ####################################
 ### Local Ontology dependencies ####
