@@ -135,18 +135,120 @@ common-anatomy.owl: $(ONT).owl
 
 
 # ----------------------------------------
-# IMPORTS
+# MIRRORS
 # ----------------------------------------
-
-# imports can be built independently of the main release.
-# (although pre-processing of the source is done first)
-#
-# The typical pipeline (see uberon-qc) is to first make imports, then the rest of the release
 
 # We add OBO shorthands to the RO mirror before merging it with the other mirrors
 # FIXME: https://github.com/obophenotype/uberon/issues/3016
 mirror/ro.owl: mirror-ro | $(MIRRORDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS) $(TMPDIR)/mirror-ro.owl --add-obo-shorthand-to-properties -o $@ ; fi
+
+# All the following mirrors are needed, not for imports, but for
+# Uberon-specific pipelines (especially the composite-* stuff).
+# That's why they are not handled by the ODK-generated Makefile.
+
+## ONTOLOGY: ceph
+.PHONY: mirror-ceph
+.PRECIOUS: $(MIRRORDIR)/ceph.owl
+mirror-ceph: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ceph.owl --create-dirs -o $(MIRRORDIR)/ceph.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/ceph.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: cteno
+.PHONY: mirror-cteno
+.PRECIOUS: $(MIRRORDIR)/cteno.owl
+mirror-cteno: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/cteno.owl --create-dirs -o $(MIRRORDIR)/cteno.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/cteno.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: ehdaa2
+.PHONY: mirror-ehdaa2
+.PRECIOUS: $(MIRRORDIR)/ehdaa2.owl
+mirror-ehdaa2: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: emapa
+.PHONY: mirror-emapa
+.PRECIOUS: $(MIRRORDIR)/emapa.owl
+mirror-emapa: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/emapa.owl --create-dirs -o $(MIRRORDIR)/emapa.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/emapa.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: fbbt
+.PHONY: mirror-fbbt
+.PRECIOUS: $(MIRRORDIR)/fbbt.owl
+mirror-fbbt: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbbt.owl --create-dirs -o $(MIRRORDIR)/fbbt.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/fbbt.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: fbdv
+.PHONY: mirror-fbdv
+.PRECIOUS: $(MIRRORDIR)/fbdv.owl
+mirror-fbdv: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbdv.owl --create-dirs -o $(MIRRORDIR)/fbdv.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/fbdv.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: ma
+.PHONY: mirror-ma
+.PRECIOUS: $(MIRRORDIR)/ma.owl
+mirror-ma: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ma.owl --create-dirs -o $(MIRRORDIR)/ma.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/ma.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: poro
+.PHONY: mirror-poro
+.PRECIOUS: $(MIRRORDIR)/poro.owl
+mirror-poro: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/poro.owl --create-dirs -o $(MIRRORDIR)/poro.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/poro.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: wbbt
+.PHONY: mirror-wbbt
+.PRECIOUS: $(MIRRORDIR)/wbbt.owl
+mirror-wbbt: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbbt.owl --create-dirs -o $(MIRRORDIR)/wbbt.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/wbbt.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: wbls
+.PHONY: mirror-wbls
+.PRECIOUS: $(MIRRORDIR)/wbls.owl
+mirror-wbls: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbls.owl --create-dirs -o $(MIRRORDIR)/wbls.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/wbls.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: xao
+.PHONY: mirror-xao
+.PRECIOUS: $(MIRRORDIR)/xao.owl
+mirror-xao: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/xao.owl --create-dirs -o $(MIRRORDIR)/xao.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/xao.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: zfa
+.PHONY: mirror-zfa
+.PRECIOUS: $(MIRRORDIR)/zfa.owl
+mirror-zfa: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/zfa.owl --create-dirs -o $(MIRRORDIR)/zfa.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/zfa.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: caro
+.PHONY: mirror-caro
+.PRECIOUS: $(MIRRORDIR)/caro.owl
+mirror-caro: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/caro.owl --create-dirs -o $(MIRRORDIR)/caro.owl --retry 4 --max-time 200 &&\
+		$(ROBOT) convert -i $(MIRRORDIR)/caro.owl -o $@.tmp.owl &&\
+		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 # Some mirrors need corrections before they can be used by the
 # composite-* pipelines and currently these corrections are done by
@@ -187,146 +289,18 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/update-stages
 	fi
 
 
-####################################
-### Local Ontology dependencies ####
-####################################
-# these are hacked mirrors
+# ----------------------------------------
+# "LOCAL" IMPORTS
+# ----------------------------------------
 
-## ONTOLOGY: ceph
-.PHONY: mirror-ceph
-.PRECIOUS: $(MIRRORDIR)/ceph.owl
-mirror-ceph: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ceph.owl --create-dirs -o $(MIRRORDIR)/ceph.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/ceph.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+# The following imports are used in Uberon-specific pipelines. They are
+# *not* updated as part of the refresh-imports pipeline. In fact, they
+# are normally never updated automatically, since Uberon-specific
+# pipelines are typically run with IMP set to false.
 
-
-## ONTOLOGY: cteno
-.PHONY: mirror-cteno
-.PRECIOUS: $(MIRRORDIR)/cteno.owl
-mirror-cteno: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/cteno.owl --create-dirs -o $(MIRRORDIR)/cteno.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/cteno.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: ehdaa2
-.PHONY: mirror-ehdaa2
-.PRECIOUS: $(MIRRORDIR)/ehdaa2.owl
-mirror-ehdaa2: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I https://raw.githubusercontent.com/cmungall/human-developmental-anatomy-ontology/uberon/src/ontology/ehdaa2-edit.obo -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: emapa
-.PHONY: mirror-emapa
-.PRECIOUS: $(MIRRORDIR)/emapa.owl
-mirror-emapa: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/emapa.owl --create-dirs -o $(MIRRORDIR)/emapa.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/emapa.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: fbbt
-.PHONY: mirror-fbbt
-.PRECIOUS: $(MIRRORDIR)/fbbt.owl
-mirror-fbbt: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbbt.owl --create-dirs -o $(MIRRORDIR)/fbbt.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/fbbt.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: fbdv
-.PHONY: mirror-fbdv
-.PRECIOUS: $(MIRRORDIR)/fbdv.owl
-mirror-fbdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/fbdv.owl --create-dirs -o $(MIRRORDIR)/fbdv.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/fbdv.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: ma
-.PHONY: mirror-ma
-.PRECIOUS: $(MIRRORDIR)/ma.owl
-mirror-ma: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/ma.owl --create-dirs -o $(MIRRORDIR)/ma.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/ma.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: poro
-.PHONY: mirror-poro
-.PRECIOUS: $(MIRRORDIR)/poro.owl
-mirror-poro: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/poro.owl --create-dirs -o $(MIRRORDIR)/poro.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/poro.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: wbbt
-.PHONY: mirror-wbbt
-.PRECIOUS: $(MIRRORDIR)/wbbt.owl
-mirror-wbbt: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbbt.owl --create-dirs -o $(MIRRORDIR)/wbbt.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/wbbt.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: wbls
-.PHONY: mirror-wbls
-.PRECIOUS: $(MIRRORDIR)/wbls.owl
-mirror-wbls: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/wbls.owl --create-dirs -o $(MIRRORDIR)/wbls.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/wbls.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: xao
-.PHONY: mirror-xao
-.PRECIOUS: $(MIRRORDIR)/xao.owl
-mirror-xao: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/xao.owl --create-dirs -o $(MIRRORDIR)/xao.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/xao.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: zfa
-.PHONY: mirror-zfa
-.PRECIOUS: $(MIRRORDIR)/zfa.owl
-mirror-zfa: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/zfa.owl --create-dirs -o $(MIRRORDIR)/zfa.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/zfa.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-
-## ONTOLOGY: caro
-.PHONY: mirror-caro
-.PRECIOUS: $(MIRRORDIR)/caro.owl
-mirror-caro: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/caro.owl --create-dirs -o $(MIRRORDIR)/caro.owl --retry 4 --max-time 200 &&\
-		$(ROBOT) convert -i $(MIRRORDIR)/caro.owl -o $@.tmp.owl &&\
-		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
-
-# FEDERATED ONTOLOGY MIRRORING
-# TODO removed disjoint axioms from poro, see https://github.com/obophenotype/uberon/issues/1799
-imports/local-poro.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@; fi
-imports/local-cteno.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
-imports/local-ceph.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
-
-# NON-ORTHOGONAL ONTOLOGY MIRRORING
-
-## Devloper notes: Local files are used for a bunch of quality checks, and the composite file
-## Not anywhere in normal uberon.
-
-## Map legacy OBO-format ObjectProperties to their BFO/RO intended equivalent
-## a mirror is just a mirror, and local-mirror is a file with all that wrangling needed to message it into the right form. local- files are needed in composite file generation.
-## 
-## TODO: many ontologies may have fixed their legacy properties
-## TODO: Shouldnt bridge generation be a depenency for this goal? eg $(BRIDGEDIR)/uberon-bridge-to-caro.owl
-# Probably renaming local- to composite, as all of the local stuff is used for composite
+# Map legacy OBO-format object properties to their BFO/RO equivalent
+# FIXME: this may no longer be needed for some of these imports
+# (https://github.com/obophenotype/uberon/issues/3017)
 imports/local-%.owl: mirror/%.owl
 	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
     --rename-entity $(URIBASE)/$*#develops_in $(URIBASE)/RO_0002203 \
@@ -347,8 +321,17 @@ imports/local-%.owl: mirror/%.owl
     --rename-entity $(URIBASE)/$*#constitutional_part_of $(URIBASE)/BFO_0000050\
     --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@; fi
 
-imports/local-%.obo: imports/local-%.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< -o -f obo $@; fi
+# These imports don't need the object property mapping, but still
+# require some specific axiom-removal
+# FIXME: check whether this is really still required
+# (https://github.com/obophenotype/uberon/issues/3017)
+imports/local-poro.owl:
+	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@; fi
+imports/local-cteno.owl:
+	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+imports/local-ceph.owl:
+	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+
 
 # Import module for RO
 # No TBox; use an OP seed that is derived from a separate sparql query
