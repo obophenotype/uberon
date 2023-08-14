@@ -334,10 +334,80 @@ imports/local-ceph.owl:
 
 
 # ----------------------------------------
-# MARKDOWN EXPORT
+# UNRELEASED PRODUCTS
 # ----------------------------------------
+
+# This section is intended to regroup rules that create files that are
+# not generated during a normal pipeline and that are never released,
+# but that someone may want to explicitly generate locally. This does
+# not include unreleased *reports*.
+
+# Markdown export
 markdown:
 	$(OWLTOOLS) uberon.owl --merge-imports-closure --ontology-to-markdown md
+
+
+# nh-%: Composite product with no "homology" relation
+# ----------------------------------------
+nh-%.obo: composite-%.obo
+	egrep -v 'relationship: (homologous_to|evolved_from)' $< > $@
+
+nh-%.owl: mh-%.obo
+	$(ROBOT) convert -i $< --check false -f obo -o $@
+
+
+# Extract taxon constraints (experimental, for propagation to GO?)
+# ----------------------------------------
+$(TMPDIR)/uberon-taxon-constraints.obo: $(SRC)
+	$(SCRIPTSDIR)/obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | \
+		$(SCRIPTSDIR)/obo-filter-tags.pl -t id -t name -t relationship - | \
+		$(SCRIPTSDIR)/obo-grep.pl --noheader -r relationship: - > $@.tmp && \
+		cat $@.tmp $(COMPONENTSDIR)/taxon_relations.obo > $@
+
+$(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
+	$(OWLTOOLS) $< --expand-macros -o $@
+
+
+# %-xf: Product without "non-subclass cross-references"?
+%-xf.obo: %.obo
+	egrep -v '^xref: (OpenCyc|http)' $< > $@
+
+
+# %-noext: Product with only UBERON terms
+# (if you need this, consider using uberon-base instead)
+%-noext.obo: %.obo
+	$(SCRIPTSDIR)/obo-grep.pl -r 'id: UBERON:' $< > $@.tmp && mv $@.tmp $@
+
+
+# %-names: Complete list of all term names in a product
+%-names.txt: %.obo
+	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
+
+
+# uberon-nif-merged: Uberon merged with the NIF Gross Anatomy
+# FIXME: currently broken, and of dubious usefulness
+# (https://github.com/obophenotype/uberon/issues/3018)
+# ----------------------------------------
+$(TMPDIR)/NIF-GrossAnatomy-src.owl:
+	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
+
+$(TMPDIR)/NIF-GrossAnatomy.owl: $(TMPDIR)/NIF-GrossAnatomy-src.owl
+	perl -npe 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@http://purl.obolibrary.org/obo/NIF_GrossAnatomy_@g' $< > $@
+
+$(TMPDIR)/NIF-GrossAnatomy-orig.obo: $(TMPDIR)/NIF-GrossAnatomy.owl
+	$(ROBOT) convert -i $< --check false -f obo -o $@
+
+$(TMPDIR)/NIF-GrossAnatomy.obo: $(TMPDIR)/NIF-GrossAnatomy-orig.obo
+	$(SCRIPTSDIR)/fix-nif-ga.pl $< > $@
+
+uberon-nif-merged.owl: uberon.owl $(TMPDIR)/NIF-GrossAnatomy.obo $(BRIDGEDIR)/uberon-bridge-to-nif_gross_anatomy.owl
+	$(OWLTOOLS) $^ --merge-support-ontologies \
+		       --reasoner elk --merge-equivalent-classes -f -t UBERON -o $@.tmp && \
+		grep -v '<oboInOwl:id' $@.tmp > $@
+
+uberon-nif-merged.obo:  uberon-nif-merged.owl
+	$(ROBOT) convert -i $< --check false -f obo -o $@
+
 
 # ----------------------------------------
 # REPORTS
@@ -377,15 +447,6 @@ reports/uberon-%.csv: uberon.owl ../sparql/%.sparql
 reports/uberon-edit-%.csv: $(OWLSRC) ../sparql/%.sparql
 	$(ROBOT) query -i $< --query ../sparql/$*.sparql  $@.tmp && $(SCRIPTSDIR)/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
-# nh-% : no -homology relations
-#
-# match pattern for any relation to be filtered out
-XSPECIES_RE = -m '/(RO_0002158|evolved_from)/'
-nh-%.obo: composite-%.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@.tmp && egrep -v 'relationship: (homologous_to|evolved_from)' $@.tmp > $@
-
-nh-%.owl: nh-%.obo
-	$(OWLTOOLS) $< -o $@.tmp && mv $@.tmp $@
 
 
 
@@ -427,18 +488,6 @@ reports/stages-%-report.tsv: subsets/%-view.owl
 
 branches: reports/branches-nerve.png reports/branches-artery.png
 
-# ----------------------------------------
-# EXTRACT TCs
-# ----------------------------------------
-
-
-
-# experimental: for propagation to GO
-$(TMPDIR)/uberon-taxon-constraints.obo: $(SRC)
-	$(SCRIPTSDIR)/obo-filter-relationships.pl -t only_in_taxon -t never_in_taxon $<  | $(SCRIPTSDIR)/obo-filter-tags.pl -t id -t name -t relationship - | $(SCRIPTSDIR)/obo-grep.pl --noheader -r relationship: - > $@.tmp && cat $@.tmp $(COMPONENTSDIR)/taxon-relations.obo > $@
-
-$(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
-	$(OWLTOOLS) $< --expand-macros -o $@
 
 # ----------------------------------------
 # SYNTACTIC CHECKS
@@ -741,14 +790,6 @@ subsets/life-stages-core.owl: uberon.owl
 subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
-
-# ----------------------------------------
-# HISTORIC/LEGACY, NEEDS PRESERVED
-# ----------------------------------------
-
-# get rid of non subclass xrefs
-%-xf.obo: %.obo
-	egrep -v '^xref: (OpenCyc|http)' $< > $@
 
 
 # ----------------------------------------
@@ -1165,40 +1206,6 @@ $(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
 	$(ROBOT) remove -i $@ --prefix "DHBA: http://purl.obolibrary.org/obo/DHBA_" $(UNSATS) --axioms logical -o $@.tmp.obo && mv $@.tmp.obo $@
 
-# ----------------------------------------
-# NIF
-# ----------------------------------------
-NIF =
-$(TMPDIR)/NIF-GrossAnatomy-src.owl:
-	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
-$(TMPDIR)/NIF-GrossAnatomy.owl: $(TMPDIR)/NIF-GrossAnatomy-src.owl
-	perl -npe 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@http://purl.obolibrary.org/obo/NIF_GrossAnatomy_@g' $< > $@
-
-$(TMPDIR)/NIF-GrossAnatomy-orig.obo: $(TMPDIR)/NIF-GrossAnatomy.owl
-	$(OWLTOOLS) $< -o -f obo $@
-$(TMPDIR)/NIF-GrossAnatomy.obo: $(TMPDIR)/NIF-GrossAnatomy-orig.obo
-	$(SCRIPTSDIR)/fix-nif-ga.pl $< > $@
-
-uberon-nif-combined.owl: uberon.owl
-	$(OWLTOOLS) $< $(BRIDGEDIR)/uberon-bridge-to-nif_grossanatomy.owl $(TMPDIR)/NIF-GrossAnatomy.owl --merge-support-ontologies -o $@
-
-# TODO maybe we dont need nif-c anymore
-uberon-nif-merged.owl: uberon-nif-combined.obo
-	$(OWLTOOLS) $< --reasoner elk  --merge-equivalent-classes -f  -t UBERON -o $@.tmp && grep -v '<oboInOwl:id' $@.tmp > $@
-
-uberon-nif-merged.obo:  uberon-nif-merged.owl
-	$(OWLTOOLS) $< -o -f obo --no-check $@
-
-
-# ----------------------------------------
-# UTIL
-# ----------------------------------------
-
-%-noext.obo: %.obo
-	$(SCRIPTSDIR)/obo-grep.pl -r 'id: UBERON:' $< > $@.tmp && mv $@.tmp $@
-
-%-names.txt: %.obo
-	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 # ----------------------------------------
 # ROBOT PATTERNS AND TEMPLATES
