@@ -1076,9 +1076,6 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
 $(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
 	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 
-$(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt
-	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b uberon-ext ext-xref.obo
-
 # Bridges to MBA and DMBA are now manually curated and generated in
 # https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
 # Note: the bridges are generated in new_bridge branch - this might
