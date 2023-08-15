@@ -494,8 +494,6 @@ $(REPORTDIR)/%-iconv: %
 	iconv -f UTF-8 -t UTF-8 $< > $@
 
 # Run a subset of the syntax and structure checks used by GO
-# FIXME: Remove dependency to GO's GO.xrf_abbs file
-# (https://github.com/obophenotype/uberon/issues/2999)
 DISABLED_GO_CHECKS = multiply-labeled-edge \
 		     valid-id-space \
 		     isa-incomplete \
@@ -505,13 +503,11 @@ DISABLED_GO_CHECKS = multiply-labeled-edge \
 		     ontology-declaration-check \
 		     referenced-id-syntax-check \
 		     owl-axiom-check \
-		     is-symmetric-check
-$(REPORTDIR)/%.obo-gocheck: %.obo $(TMPDIR)/GO.xrf_abbs | $(SCRIPTSDIR)/check-obo-for-standard-release.pl
-	$(SCRIPTSDIR)/check-obo-for-standard-release.pl --xref-abbs $(TMPDIR)/GO.xrf_abbs \
+		     is-symmetric-check \
+		     xrf-abbs-check
+$(REPORTDIR)/%.obo-gocheck: %.obo | $(SCRIPTSDIR)/check-obo-for-standard-release.pl
+	$(SCRIPTSDIR)/check-obo-for-standard-release.pl \
 		$(patsubst %,--disable-%,$(DISABLED_GO_CHECKS)) $< > $@.tmp && mv $@.tmp $@
-
-$(TMPDIR)/GO.xrf_abbs: $(SRC)
-	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
 
 # Check for orphans
 $(REPORTDIR)/%-orphans: %.obo
