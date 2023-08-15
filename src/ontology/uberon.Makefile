@@ -1076,14 +1076,6 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
 $(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
 	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 
-# TODO @cmungall EMAP is dead, we can get rid of that. Rip out EMAP xrefs?
-# TODO check not imported in collected (@matentzn)
-$(BRIDGEDIR)/uberon-bridge-to-emap.obo: mapping_EMAP_to_EMAPA.txt $(TMPDIR)/update-stages
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-.PRECIOUS: $(BRIDGEDIR)/uberon-bridge-to-emap.obo
-$(BRIDGEDIR)/uberon-bridge-to-emap.owl: $(BRIDGEDIR)/uberon-bridge-to-emap.obo
-	$(MAKEOBO)
-
 $(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt
 	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b uberon-ext ext-xref.obo
 
@@ -1202,13 +1194,6 @@ aspell:
 
 %-ispellcheck: % | aspell
 	aspell check --home-dir . $<
-
-
-#mapping_EMAP_to_EMAPA.txt:
-#	wget ftp://lausanne.isb-sib.ch/pub/databases/Bgee/general/mapping_EMAP_to_EMAPA.txt
-# TODO EMAP is long enpough dead remove from makefile
-mapping_EMAP_to_EMAPA.txt:
-	wget ftp://ftp.hgu.mrc.ac.uk/pub/MouseAtlas/Anatomy/EMAP-EMAPA.txt -O $@
 
 
 # ----------------------------------------
