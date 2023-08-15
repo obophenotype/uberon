@@ -599,22 +599,6 @@ $(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoint
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(TMPDIR)/external-disjoints.owl `ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 
-# uberon bridges to mba and dmba are now manually curated and generated in https://github.com/obophenotype/ABA_Uberon/tree/new_bridge
-# Note: the bridges are generated in new_bridge branch - this might change in the future, if it breaks here, please check ABA_Uberon repo to make sure that the new bridges are appropriately linked
-# This will be replaced by a build function after migration from ABA_uberon repo, see: https://github.com/obophenotype/uberon/issues/2537
-
-UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
-$(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
-$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@; fi
-
-UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
-$(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
-$(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
-
 # see above
 $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
@@ -841,28 +825,6 @@ subsets/immaterial.obo: uberon.owl
 
 
 
-# ----------------------------------------
-# CL (to be replaced)
-# ----------------------------------------
-
-# core: the full ontology, excluding external classes, but including references to these
-# TODO: use --make-subset-by-properties
-# note: requires symlink to cl directory
-$(TMPDIR)/cl-core.obo: $(SRC)
-	$(OWLTOOLS) $(URIBASE)/cl.owl  --make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 --remove-external-classes -k CL --remove-dangling --remove-axiom-annotations --remove-imports-declarations -o -f obo --no-check $@
-
-# TODO - this may replace the above BUT need to preserve dangling axioms
-cl-core-new.obo: cell-ontology/cl.obo
-	$(OWLTOOLS) $< --make-subset-by-properties BFO:0000050 RO:0002202 RO:0002215 // --remove-axioms -t DisjointClasses -o -f obo $@
-
-# this is required for bridging axioms; ZFA inverts the usual directionality
-# TODO review directionality!!!
-$(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv &&\
-	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; fi
-
-
-
 
 # ----------------------------------------
 # COMPOSITE STAGES
@@ -1027,6 +989,8 @@ $(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 # BRIDGES
 # ----------------------------------------
 
+# Generating cross-refs with FBbt from SSSOM
+# ----------------------------------------
 # Download the FBbt mapping file
 .PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
 $(TMPDIR)/fbbt-mappings.sssom.tsv:
@@ -1041,35 +1005,76 @@ mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
 $(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
 
-# seed.owl is never released - it is used to seed module extraction
-$(TMPDIR)/seed.owl: $(OWLSRC) $(TMPDIR)/cl-core.obo # $(COMPONENTSDIR)/phenoscape-ext.owl
-	$(OWLTOOLS) $(OWLSRC) $(TMPDIR)/cl-core.obo --merge-support-ontologies -o -f functional $@
 
-# this is used for xrefs for bridge files
-# The mappings component is forcefully merged, because the
-# make-bridge-ontologies-from-xrefs.pl script, which will make use
-# of the generated seed.obo file, has no understanding of imports.
-$(TMPDIR)/seed.obo: $(SRC)
-	$(OWLTOOLS) $< \
-		--merge-import http://purl.obolibrary.org/obo/uberon/components/mappings.owl \
-		-o -f obo --no-check $@.tmp && \
+# Prepare Uberon and CL sources
+# ----------------------------------------
+# Uberon: We need to forcefully merge the mappings component generated
+# from the FBbt mappings so that the FBbt cross-references will be
+# visible to the bridge-generating script.
+$(TMPDIR)/seed.obo: $(SRC) $(COMPONENTSDIR)/mappings.owl
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/mappings.owl --collapse-import-closure false \
+		 convert -f obo --check false -o $@.tmp && \
 		$(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
-$(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
-	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
+# CL (step 1): We take the full ontology, excluding external classes,
+# but including references to those
+$(TMPDIR)/cl-core.obo: $(SRC)
+	$(OWLTOOLS) $(URIBASE)/cl.owl \
+		--make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 \
+		--remove-external-classes -k CL \
+		--remove-dangling --remove-axiom-annotations --remove-imports-declarations \
+		-o -f obo --no-check $@
+
+# CL: (step 2): We add the header tags that the bridge-generating script
+# is relying upon
+$(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
+	if [ $(BRI) = true ]; then \
+		egrep '^(idspace|treat-)' $(SRC) > $@.tmp && \
+		cat $< >> $@.tmp && \
+		$(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; \
+	fi
+
+# ZFA requires special treatment because most xrefs between CL and ZFA
+# are on the ZFA side, so they need to be extracted and inverted before
+# we can generate the ZFA bridges out of them.
+# FIXME: This is currently broken: the step below does not extract
+# anything, which is probably why the CL-to-ZFA bridge is almost empty
+# (https://github.com/obophenotype/uberon/issues/1813)
+$(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
+		$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv && \
+		cat $@_xrefs_to_zfa.tsv | tail -n +2 | \
+		$(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; \
+	fi
+
+
+# Building the bridges
+# ----------------------------------------
+# Most bridges are built here, by a script that extracts xrefs from
+# the source files prepared above and derives the bridges from them.
+$(TMPDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(REPORTDIR)/life-cycle-xrefs.txt $(CUSTOM_BRIDGES)
+	if [ $(BRI) = true ]; then \
+		cd $(BRIDGEDIR) && \
+		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt ../$(TMPDIR)/seed.obo && \
+		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && \
+		cd .. && touch $@; \
+	fi
+
+# The above script creates OBO bridges, turn them to OWL
 $(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
 	$(OWLTOOLS) $< --remove-annotation-assertions -o $@
 
-make-bridge-ontologies-from-xrefs.pl:
-	cp $(SCRIPTSDIR)/make-bridge-ontologies-from-xrefs.pl $@
 
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl $(BRIDGEDIR)/uberon-bridge-to-dmba.owl $(BRIDGEDIR)/uberon-bridge-to-mba.obo $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
+# Special bridges
+# ----------------------------------------
+# All bridges that are not generated by the xref-based script.
 
-$(TMPDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt $(CUSTOM_BRIDGES)
-	if [ $(BRI) = true ]; then cd $(BRIDGEDIR) && perl ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt ../$(TMPDIR)/seed.obo && perl ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && cd .. && touch $@; fi
+CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
+		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo \
+		 $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl
 
-$(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
-	if [ $(BRI) = true ]; then egrep '^(idspace|treat-)' $(SRC) > $@.tmp && cat $< >> $@.tmp && $(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; fi
+$(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
+	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
 
 # TODO @cmungall EMAP is dead, we can get rid of that. Rip out EMAP xrefs?
 # TODO check not imported in collected (@matentzn)
@@ -1082,13 +1087,28 @@ $(BRIDGEDIR)/uberon-bridge-to-emap.owl: $(BRIDGEDIR)/uberon-bridge-to-emap.obo
 $(BRIDGEDIR)/uberon-ext-bridge-to-zfa.obo: $(BRIDGEDIR)/ext-xref.obo make-bridge-ontologies-from-xrefs.pl $(REPORTDIR)/life-cycle-xrefs.txt
 	cd bridge && ../make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b uberon-ext ext-xref.obo
 
-# see #157
-# TODO @matentzn dont spend much time but perhaps make ticket
-ext-xref-conflict.obo:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
+# Bridges to MBA and DMBA are now manually curated and generated in
+# https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
+# Note: the bridges are generated in new_bridge branch - this might
+# change in the future, if it breaks here, please check ABA_Uberon repo
+# to make sure that the new bridges are appropriately linked.
+UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
+UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
-ext-xref-conflict2.obo:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
+$(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
+	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
+
+$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
+	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@; fi
+
+$(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
+	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
+
+$(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
+	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
+
+
+
 
 .PHONY: release-diff
 release-diff:
