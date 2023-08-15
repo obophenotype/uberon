@@ -412,44 +412,159 @@ uberon-nif-merged.obo:  uberon-nif-merged.owl
 # ----------------------------------------
 # REPORTS
 # ----------------------------------------
-Drerio = NCBITaxon:7955
-Xenopus = NCBITaxon:8353
-Human = NCBITaxon:9606
-Dmel = NCBITaxon:7227
+
+# This section regroup all rules that create reports. Not all of those
+# reports are released, and not all are automatically generated as part
+# of the normal pipeline.
+
+# Reports of closest inferred parent through object properties.
+# For an object property REL, such a report gives for every class C the
+# closest class P such as "C is_a REL some P" holds.
+# ----------------------------------------
+
 RPT_TAXA_ARGS =
 RPT_STAGE_RELS = RO:0002496 RO:0002497
-
-
-
 
 reports/%-part-of-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000050 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-part-of-parents.tsv
+
 reports/%-has-part-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --log-error  --export-parents -p BFO:0000051 $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-has-part-parents.tsv
+
 reports/%-dev-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --export-parents -p RO:0002202 RO:0002494 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-dev-parents.tsv
+
 reports/%-tax-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --export-parents -p RO:0002162 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-tax-parents.tsv
+
 reports/%-stage-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --log-error --export-parents -p $(RPT_STAGE_RELS) $(RPT_TAXA_ARGS) -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-stage-parents.tsv
+
 reports/%-function-parents.tsv: %.owl
 	$(OWLTOOLS) $< --reasoner elk --reasoner mexr --export-parents -p RO:0002328 -o $@.tmp && mv $@.tmp $@
 .PRECIOUS: reports/%-function-parents.tsv
 
+# Similar to %-stage-parent above, but limited to a view
+reports/stages-%-report.tsv: subsets/%-view.owl
+	$(OWLTOOLS) $<  --reasoner mexr --export-parents -p $(RPT_STAGE_RELS) -o $@.tmp && mv $@.tmp $@
+
+# Similar to %-part-of-parents above, but limited to a view
+reports/part-%-report.tsv: subsets/%-view.owl
+	$(OWLTOOLS) $< --reasoner mexr --export-parents -p BFO:0000050 -o $@.tmp && mv $@.tmp $@
+
+
+# Generate the two reports above for a set of views
+# ----------------------------------------
+RPT_SPECIES = human mouse xenopus metazoan
+
+reports/stages: $(patsubst %,reports/stages-%-report.tsv,$(RPT_SPECIES))
+
+reports/parts: $(patsubst %,reports/part-%-report.tsv,$(RPT_SPECIES))
+
+
+# Various reports obtained by applying a SPARQL query
+# ----------------------------------------
 reports/uberon-%.csv: uberon.owl ../sparql/%.sparql
 	$(ROBOT) query -i $< --query ../sparql/$*.sparql  $@.tmp && $(SCRIPTSDIR)/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
+# Same, but for the (preprocessed) -edit file rather than the main product
 reports/uberon-edit-%.csv: $(OWLSRC) ../sparql/%.sparql
 	$(ROBOT) query -i $< --query ../sparql/$*.sparql  $@.tmp && $(SCRIPTSDIR)/curiefy-purls.pl $@.tmp > $@ && rm $@.tmp
 
+# Same as the first rule above, but IDs are not CURIEfied
+reports/%.csv: ../sparql/%.sparql uberon.owl
+	$(ROBOT) merge -i $< query -s $< $@ -f csv
+
+
+# OBO checks (checks that requires an input file in OBO format)
+# ----------------------------------------
+%.obo-allchecks: $(REPORTDIR)/%.obo-OWL-check $(REPORTDIR)/%.obo-gocheck $(REPORTDIR)/%.obo-iconv
+
+# Check that an OBO-formatted product can be parsed back by the OWL API
+$(REPORTDIR)/%.obo-OWL-check: %.obo
+	$(ROBOT) merge -i $<
+
+# Check for non UTF-8 characters
+$(REPORTDIR)/%-iconv: %
+	iconv -f UTF-8 -t UTF-8 $< > $@
+
+# Run a subset of the syntax and structure checks used by GO
+# FIXME: Remove dependency to GO's GO.xrf_abbs file
+# (https://github.com/obophenotype/uberon/issues/2999)
+DISABLED_GO_CHECKS = multiply-labeled-edge \
+		     valid-id-space \
+		     isa-incomplete \
+		     ascii-check \
+		     has-definition \
+		     bad-pmid \
+		     ontology-declaration-check \
+		     referenced-id-syntax-check \
+		     owl-axiom-check \
+		     is-symmetric-check
+$(REPORTDIR)/%.obo-gocheck: %.obo $(TMPDIR)/GO.xrf_abbs | $(SCRIPTSDIR)/check-obo-for-standard-release.pl
+	$(SCRIPTSDIR)/check-obo-for-standard-release.pl --xref-abbs $(TMPDIR)/GO.xrf_abbs \
+		$(patsubst %,--disable-%,$(DISABLED_GO_CHECKS)) $< > $@.tmp && mv $@.tmp $@
+
+$(TMPDIR)/GO.xrf_abbs: $(SRC)
+	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
+
+# Check for orphans
+$(REPORTDIR)/%-orphans: %.obo
+	$(SCRIPTSDIR)/obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | \
+		$(SCRIPTSDIR)/obo-grep.pl -r Term - | \
+		$(SCRIPTSDIR)/obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | \
+		$(SCRIPTSDIR)/obo-grep.pl -r Term - > $@.tmp && \
+		(egrep '^(id|name):'  $@.tmp > $@ || echo ok)
+
+# Syntactick check on intersection_of definitions
+$(REPORTDIR)/%-xp-check: %.obo
+	$(SCRIPTSDIR)/obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && exit 1)
+
+# Check for use of obsoleted terms
+$(REPORTDIR)/%-obscheck.txt: %.obo
+	(($(SCRIPTSDIR)/obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) 2>&1 > $@
+
+
+# Cycle detection checks
+# ----------------------------------------
+
+$(REPORTDIR)/%-cycles: %.obo
+	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
+
+src-cycles:
+	$(OWLTOOLS) $(SRC) --list-cycles -f $(TMPDIR)/testcycles.tmp
+
+$(REPORTDIR)/%-allcycles: %.owl
+	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
+
+$(REPORTDIR)/basic-allcycles: basic.owl
+	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
+
+test: $(REPORTDIR)/basic-allcycles
+
+
+# Other checks
+# ----------------------------------------
+
+# List of terms cross-referenced to one of Uberon's "life cycle" terms
+$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
+	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
+	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
+
+# Disjoint violations
+$(REPORTDIR)/%-dv.txt: %.owl
+	$(OWLTOOLS) --no-debug $<  $(QELK) --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 
 
+# ----------------------------------------
+# TEMP MARKER, END OF REPORTS SECTION
+# ----------------------------------------
 
 # We need to add CL terms to the seed as well, because CL terms also go into the slim..
 tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
@@ -473,47 +588,7 @@ subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
 subsets/metazoan-view.owl: basic.owl
 	cp $< $@
 
-# note: drosophila too slow....
-RPT_SPECIES = human mouse xenopus metazoan
 
-reports/stages: $(patsubst %,reports/stages-%-report.tsv,$(RPT_SPECIES))
-	echo done
-reports/parts: $(patsubst %,reports/part-%-report.tsv,$(RPT_SPECIES))
-	echo done
-
-reports/stages-%-report.tsv: subsets/%-view.owl
-	$(OWLTOOLS) $<  --reasoner mexr --export-parents -p $(RPT_STAGE_RELS) -o $@.tmp && mv $@.tmp $@
-
-# experimental....
-
-branches: reports/branches-nerve.png reports/branches-artery.png
-
-
-# ----------------------------------------
-# SYNTACTIC CHECKS
-# ----------------------------------------
-
-# mostly for checking OBO files
-# the outputs of these targets are not consumed, used only for diagnostics
-
-%.obo-allchecks: $(REPORTDIR)/%.obo-OWL-check $(REPORTDIR)/%.obo-gocheck $(REPORTDIR)/%.obo-iconv
-
-# check OWLAPI can parse the .obo output
-$(REPORTDIR)/%.obo-OWL-check: %.obo
-	$(OWLTOOLS) $<
-
-# test any file for non UTF-8 characters
-$(REPORTDIR)/%-iconv: %
-	iconv -f UTF-8 -t UTF-8 $< > $@
-
-# run subset of syntax and structure checks used by GO
-
-DISABLE= multiply-labeled-edge valid-id-space isa-incomplete ascii-check has-definition bad-pmid ontology-declaration-check referenced-id-syntax-check owl-axiom-check is-symmetric-check
-$(REPORTDIR)/%.obo-gocheck: %.obo $(TMPDIR)/GO.xrf_abbs | $(SCRIPTSDIR)/check-obo-for-standard-release.pl
-	$(SCRIPTSDIR)/check-obo-for-standard-release.pl --xref-abbs $(TMPDIR)/GO.xrf_abbs $(patsubst %,--disable-%,$(DISABLE)) $< > $@.tmp && mv $@.tmp $@
-
-$(TMPDIR)/GO.xrf_abbs: $(SRC)
-	wget http://geneontology.org/doc/GO.xrf_abbs -O $@ && touch $@
 
 # ----------------------------------------
 # Taxonomy and external AO validation
@@ -631,26 +706,11 @@ $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@ || true
 
-$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
-	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
-	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
-
 # for debugging:
 $(TMPDIR)/ext-merged-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
 .PRECIOUS: $(TMPDIR)/ext-merged-%.owl
 
-# check for dangling classes
-# TODO: add to Oort
-
-$(REPORTDIR)/%-orphans: %.obo
-	$(SCRIPTSDIR)/obo-grep.pl --neg -r "(is_a|intersection_of|is_obsolete):" $< | $(SCRIPTSDIR)/obo-grep.pl -r Term - | $(SCRIPTSDIR)/obo-grep.pl --neg -r "id: UBERON:(0001062|0000000)" - | $(SCRIPTSDIR)/obo-grep.pl -r Term - > $@.tmp && (egrep '^(id|name):'  $@.tmp > $@ || echo ok)
-
-
-
-# TODO: add to Oort
-$(REPORTDIR)/%-xp-check: %.obo
-	$(SCRIPTSDIR)/obo-check-xps.pl $< > $@ 2> $@.err || (echo "problems" && exit 1)
 
 QC_FILES = checks\
     $(TMPDIR)/bridges\
@@ -672,13 +732,6 @@ test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.tx
 uberon-qc: $(QC_FILES)
 	cat $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
 
-# Disjoint violations
-$(REPORTDIR)/%-dv.txt: %.owl
-	$(OWLTOOLS) --no-debug $<  $(QELK) --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
-
-# TODO - need closure for taxslim too
-$(REPORTDIR)/%-obscheck.txt: %.obo
-	(($(SCRIPTSDIR)/obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) 2>&1 > $@
 
 
 # ----------------------------------------
@@ -813,30 +866,7 @@ $(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
 	cat $@_xrefs_to_zfa.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; fi
 
 
-# ----------------------------------------
-# OBO-BASIC CHECKS
-# ----------------------------------------
 
-# NOTE: we should be able to replace these with oort now
-# TODO @matentzn remove cycle. We need to check basic for cycles ideally in basic file. High priority. Maybe ontobio.
-$(REPORTDIR)/%-cycles: %.obo
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
-src-cycles:
-	$(OWLTOOLS) $(SRC) --list-cycles -f $(TMPDIR)/testcyles.tmp
-
-$(REPORTDIR)/%-allcycles: %.owl
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
-# TODO @matentzn make ticket with report
-$(REPORTDIR)/basic-allcycles: basic.owl
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
-test: $(REPORTDIR)/basic-allcycles
-
-# TODO @matentzn - like mondo, make sure that there are no label/exact syn clashes, use ROBOT
-$(REPORTDIR)/%-synclash: %.obo
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 
 # ----------------------------------------
 # COMPOSITE STAGES
@@ -1286,11 +1316,6 @@ $(MODDIR)/%.obo: $(MODDIR)/%.owl
 $(MODDIR)/%-new.obo: $(MODDIR)/%.owl $(OWLSRC)
 	$(OWLTOOLS) $^ --diff -f obo -s -u  --o1r $@ --o2r $(MODDIR)/%-missing.obo
 
-# ----------------------------------------
-# SPARQL
-# ----------------------------------------
-reports/%.csv: ../sparql/%.sparql uberon.owl
-	$(ROBOT) merge -i $< query -s $< $@ -f csv
 
 # ----------------------------------------
 # BLAZEGRAPH
