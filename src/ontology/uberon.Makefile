@@ -356,6 +356,15 @@ $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
 	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 
+# Uberon merged with an external ontology and its corresponding bridge
+# (for debugging)
+$(TMPDIR)/ext-merged-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl
+	$(ROBOT) merge -i $< -i imports/local-$*.owl \
+		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
+		       -o $@
+.PRECIOUS: $(TMPDIR)/ext-merged-%.owl
+
+
 # uberon-nif-merged: Uberon merged with the NIF Gross Anatomy
 # FIXME: currently broken, and of dubious usefulness
 # (https://github.com/obophenotype/uberon/issues/3018)
@@ -530,109 +539,134 @@ $(REPORTDIR)/%-dv.txt: %.owl
 
 
 # ----------------------------------------
-# Taxonomy and external AO validation
+# BRIDGE CHECKS
 # ----------------------------------------
 
-# first generate a merged ontology consisting of
-#  * core uberon
-#  * external-disjoints.owl
-#  * species anatomy bridge axioms
-# This can be used to reveal both internal inconsistencies within uberon, and the improper linking of a species AO class to an uberon class with a taxon constraint
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(TMPDIR)/external-disjoints.owl `ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl` --merge-support-ontologies -o -f ofn $@
+# Overall "all-bridge" check
+# ----------------------------------------
+
+# We create a merged ontology consisting of
+# (1) Uberon itself;
+# (2) the external-disjoints component;
+# (3) all the bridges to Uberon (except the EMAP bridge, which should
+#     probably be removed entirely from the repo anyway).
+# This can be used to reveal both internal inconsistencies within
+# Uberon, and the improper linking of a species AO class to an Uberon
+# class with a taxon constraints.
+ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
+		 convert -f ofn -o $@
 .PRECIOUS: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 
-# see above
-$(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-	#echo "STRONG WARNING: Skipped $@."
+$(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
+	$(ROBOT) reason -i $< -r ELK > $@
 
-# BRIDGE CHECKS.
-# these can be used to validate on a per-bridge file basis. There are a variety of flavours:
+
+# Individual bridge checks
+# ----------------------------------------
+# These can be used to validate on a per-bridge file basis. There are
+# a variety of flavours:
 #
-# * quick bridge tests ignore the axioms in the external ontology (but include the bridge axioms themselves)
-# * standard bridge tests use the logical axioms in the external ontology
-# * full bridge tests do the above using the constructed ext ontology
-# * extra full bridge tests also throw in the set of all pending disjoints. Only 'gold star' external ontologies will pass this.
+# * quick bridge tests ignore the axioms in the external ontology (but
+#   include the bridge axioms themselves);
+# * standard bridge tests use the logical axioms in the external
+#   ontology;
+# * full bridge tests do the above using the constructed ext ontology;
+# * extra full bridge tests also throw in the set of all pending
+#   disjoints (only 'gold star' external ontologies will pass this).
 #
-# note at this time we don't expect all full-bridge tests to pass. This is because the disjointness axioms are
-# very strong and even seemingly minor variations in representation across ontologies can lead to unsatisfiable classes
+# Note at this time we don't expect all full-bridge tests to pass. This
+# is because the disjointness axioms are very strong and even seemingly
+# minor variations in representation across ontologies can lead to
+# unsatisfiable classes.
+#
+# FIXME: It's unclear what the difference between "standard" and "full"
+# is supposed to be; in their current implementations below, they are
+# actually the same (https://github.com/obophenotype/uberon/issues/3022).
 
 # gold glub
 EXTRA_FULL_CHECK_AO_LIST = caro
 
 # silver club
-FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST)  wbls wbbt
+FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST) wbls wbbt
 
 # premier execs
 CHECK_AO_LIST = $(FULL_CHECK_AO_LIST)
 
 # economy
-QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma  ma emapa bfo
+QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma ma emapa bfo
 
 quick-bridge-checks: $(patsubst %,$(REPORTDIR)/quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
 bridge-checks: $(patsubst %,$(REPORTDIR)/bridge-check-%.txt,$(CHECK_AO_LIST))
 full-bridge-checks: $(patsubst %,$(REPORTDIR)/full-bridge-check-%.txt,$(CHECK_AO_LIST))
 extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.txt,$(EXTRA_FULL_CHECK_AO_LIST))
 
-##$(REPORTDIR)/bfo-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
-# TODO @cmungall: worth fixing!
-# TODO @matentzn: use ROBOT merge instead and dump debug modules..
-$(REPORTDIR)/bfo-check.txt: $(OWLSRC) mirror/ro.owl mirror/bfo.owl
-	$(ROBOT) merge -i $(OWLSRC) -I $(URIBASE)/bfo.owl -I $(URIBASE)/ro.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
-
-bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-
-# A quick bridge check uses only uberon plus taxon constraints plus bridging axioms, *not* the axioms in the source ontology itself
+# A quick bridge check uses only uberon plus taxon constraints plus
+# bridging axioms, *not* the axioms in the source ontology itself.
+# FIXME: This is absolutely not what the rule below is doing!
+# (https://github.com/obophenotype/uberon/issues/3022)
 $(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
-aaa:
-	make IMP=false PAT=false MIR=false $(REPORTDIR)/quick-bridge-check-caro.txt
 
-# A bridge check uses uberon (no TCs) plus external ontology and the bridge
+# A (standard) bridge check uses uberon (no TCs) plus external ontology and
+# the bridge
 $(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< imports/local-$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies -o -f ofn $@
 .PRECIOUS: $(REPORTDIR)/bridge-check-%.owl
+
 $(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
 
 $(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
 
+
 # A full bridge check uses uberon plus external ontology and the bridge
 $(REPORTDIR)/full-bridge-check-%.txt: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@.tmp && mv $@.tmp $@
 
-# TODO @cmungall says: worth fixing
-$(REPORTDIR)/full-bridge-check-caro.txt: |  $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
-
-# TODO @cmungall says: worth fixing
-$(REPORTDIR)/full-bridge-check-wbls.txt: | $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
-
-# TODO @cmungall says: worth fixing
-$(REPORTDIR)/full-bridge-check-wbbt.txt: | $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
 
 # As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
 $(REPORTDIR)/extra-full-bridge-check-%.txt: uberon.owl imports/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
 
-# TODO @cmungall says: worth fixing
+
+# Failing bridge checks
+# ----------------------------------------
+# We override the generic rules above for some external ontologies to
+# allow the pipeline to continue despite their bridge check failing.
+
+$(REPORTDIR)/full-bridge-check-caro.txt: |  $(CATALOG_DYNAMIC)
+	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
+	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
+
+$(REPORTDIR)/full-bridge-check-wbls.txt: | $(CATALOG_DYNAMIC)
+	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
+	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
+
+$(REPORTDIR)/full-bridge-check-wbbt.txt: | $(CATALOG_DYNAMIC)
+	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
+	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
+
 $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
 	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@ || true
 
-# for debugging:
-$(TMPDIR)/ext-merged-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-imports-closure  --merge-support-ontologies -o $@
-.PRECIOUS: $(TMPDIR)/ext-merged-%.owl
+
+# BFO bridge checks
+# ----------------------------------------
+# BFO is not covered by the generic rules above (which focus on
+# taxon-specific external ontologies), so we deal with it here.
+
+$(REPORTDIR)/bfo-check.txt: $(OWLSRC) mirror/ro.owl mirror/bfo.owl
+	$(ROBOT) merge -i $(OWLSRC) -I $(URIBASE)/bfo.owl -I $(URIBASE)/ro.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
+
+bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
+	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+
 
 
 QC_FILES = checks\
