@@ -107,34 +107,6 @@ uberon.json.gz: uberon.json
 
 
 # ----------------------------------------
-# STEP 5: Create basic subset
-# ----------------------------------------
-
-# FIXME: https://github.com/obophenotype/uberon/issues/3013
-basic.owl:  uberon-basic.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-basic.obo: basic.owl
-	$(MAKEOBO)
-
-subsets/cumbo.owl: basic.owl
-	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
-subsets/cumbo.obo: subsets/cumbo.owl
-	$(MAKEOBO)
-
-
-# ----------------------------------------
-# STEP 6: Create common anatomy subset
-# ----------------------------------------
-
-common-anatomy.owl: $(ONT).owl
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: common-anatomy.owl
-	
-
-
-# ----------------------------------------
 # MIRRORS
 # ----------------------------------------
 
@@ -557,35 +529,6 @@ $(REPORTDIR)/%-dv.txt: %.owl
 	$(OWLTOOLS) --no-debug $<  $(QELK) --run-reasoner -r elk -u > $@.tmp && grep UNSAT $@.tmp > $@
 
 
-
-# ----------------------------------------
-# TEMP MARKER, END OF REPORTS SECTION
-# ----------------------------------------
-
-# We need to add CL terms to the seed as well, because CL terms also go into the slim..
-tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
-	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp &&\
-	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
-
-subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
-	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl &&\
-	$(ROBOT) reason --input $@.tmp.owl --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		unmerge -i contexts/context-$*.owl \
-		relax \
-		remove --axioms equivalent \
-		relax \
-		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
-		reduce -r ELK \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-view.owl
-
-subsets/metazoan-view.owl: basic.owl
-	cp $< $@
-
-
-
 # ----------------------------------------
 # Taxonomy and external AO validation
 # ----------------------------------------
@@ -715,9 +658,18 @@ uberon-qc: $(QC_FILES)
 
 
 # ----------------------------------------
-# SUBSETS
+# SUBSETS & VIEWS
 # ----------------------------------------
+
+# Create a seed from the standard (ODK-generated) Uberon seed to which
+# we add CL terms. This seed is used by several subsets below.
+tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
+	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp && \
+	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
+
+
 # System-specific subsets
+# ----------------------------------------
 
 TERM_nephron := UBERON:0001285
 TERM_musculoskeletal := UBERON:0002204
@@ -734,14 +686,15 @@ TERM_renal := UBERON:0001008
 TERM_appendicular := UBERON:0002091
 TERM_life_cycle_stage := UBERON:0000105
 
+# Subset generation command
+SUBSETCMD=$(OWLTOOLS) $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
 
+# Source file for all the subsets generated below
 subsets/merged-partonomy.owl: uberon.owl
 	$(ROBOT) remove --input $< --axioms "equivalent disjoint type abox" \
-              remove --exclude-term BFO:0000050 --select "object-properties" \
-	      -o $@
+		 remove --exclude-term BFO:0000050 --select "object-properties" \
+		        -o $@
 .PRECIOUS: subsets/merged-partonomy.owl
-
-SUBSETCMD=$(OWLTOOLS) $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
 
 subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl
 	$(eval TERM_ID := $(TERM_appendicular))
@@ -801,28 +754,138 @@ subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl
 
 # TODO: need to add subclass axioms for all intersections
 subsets/musculoskeletal-full.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ "$(PART_OF) some UBERON_0002204" -o -f obo file://`pwd`/$@  --reasoner-dispose
+	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ \
+		    "$(PART_OF) some UBERON_0002204" \
+		    -o -f obo file://`pwd`/$@  --reasoner-dispose
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d  "$(PART_OF) some UBERON_0000033" --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo --no-check $@ --reasoner-dispose 2>&1 > $@.LOG
+	$(OWLTOOLS) $< --reasoner-query -r elk -d "$(PART_OF) some UBERON_0000033" \
+		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
+		    -o -f obo --no-check $@ --reasoner-dispose 2>&1 > $@.LOG
+
+
+# Life stages subsets
+# ----------------------------------------
 
 # TODO - switch to purls for OWL once released
-subsets/subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo $(TMPDIR)/developmental-stage-ontologies/src/hsapdv/hsapdv.obo
-	$(OWLTOOLS) $< $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo $(TMPDIR)/developmental-stage-ontologies/src/hsapdv/hsapdv.obo --merge-support-ontologies -o file://`pwd`/$@
+subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo $(TMPDIR)/developmental-stage-ontologies/src/hsapdv/hsapdv.obo
+	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl
-	$(ROBOT) query --input $< --update $(SPARQLDIR)/inject-life-stages-subset.ru --update $(SPARQLDIR)/inject-subset-declaration.ru --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
-	$(OWLTOOLS) $@ --extract-ontology-subset --fill-gaps --subset life_stage -o $@.tmp.owl && mv $@.tmp.owl $@ &&\
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) query --input $< \
+		       --update $(SPARQLDIR)/inject-life-stages-subset.ru \
+		       --update $(SPARQLDIR)/inject-subset-declaration.ru \
+		       --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+	$(OWLTOOLS) $@ --extract-ontology-subset --fill-gaps --subset life_stage \
+		       -o $@.tmp.owl && mv $@.tmp.owl $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          -o $@.tmp.owl && mv $@.tmp.owl $@
 
 subsets/life-stages-core.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
+	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
+		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
+		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
+		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
+
 subsets/life-stages-core.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' --make-ontology-from-results $(URIBASE)/uberon/$@ --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
+	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
+		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
+		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
+		    -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
+
+
+# Taxon subsets
+# ----------------------------------------
+
+all_taxmods: $(TAXMODSDIR)/uberon-taxmod-amniote.obo $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.obo
+
+$(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl: $(TMPDIR)/uberon-taxmod-314146.owl
+	cp $< $@
+
+$(TAXMODSDIR)/uberon-taxmod-amniote.owl: $(TMPDIR)/uberon-taxmod-32524.owl
+	cp $< $@
+
+$(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
+	cp $< $@
+
+subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
+	$(ROBOT) reason --input $< \
+		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		 relax \
+		 remove --axioms equivalent \
+		 relax \
+		 filter --term-file tmp/simple-slim-seed.txt \
+		        --select "annotations ontology anonymous self" --trim true --signature true \
+		 reduce -r ELK \
+		 query --update ../sparql/inject-subset-declaration.ru \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-basic.owl
+
+$(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
+	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
+
+# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
+$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
+	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$* \
+		    --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling \
+		    --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
+.PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
+
+
+# Other subsets
+# ----------------------------------------
+
+# Basic subset
+# FIXME: https://github.com/obophenotype/uberon/issues/3013
+basic.owl:  uberon-basic.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
+basic.obo: basic.owl
+	$(MAKEOBO)
+
+# Cumbo subset
+subsets/cumbo.owl: basic.owl
+	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
+
+subsets/cumbo.obo: subsets/cumbo.owl
+	$(MAKEOBO)
+
+# Common anatony subset
+common-anatomy.owl: $(ONT).owl
+	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy \
+		    -o $@.tmp.owl && mv $@.tmp.owl $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: common-anatomy.owl
 
 subsets/immaterial.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466  --make-ontology-from-results $(URIBASE)/uberon/$@ -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
+	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
+		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
+		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
+subsets/metazoan-view.owl: basic.owl
+	cp $< $@
+
+# The first step is a simple "merge+reason", but it still requires
+# Owltools because ROBOT has no equivalent to the -x option to simply
+# ignore unsatisfiable classes without erroring out.
+subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
+	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure \
+		    $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl && \
+	$(ROBOT) reason --input $@.tmp.owl \
+		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+		 unmerge -i contexts/context-$*.owl \
+		 relax \
+		 remove --axioms equivalent \
+		 relax \
+		 filter --term-file tmp/simple-slim-seed.txt \
+		        --select "annotations ontology anonymous self" --trim true --signature true \
+		 reduce -r ELK \
+		 query --update ../sparql/inject-subset-declaration.ru \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
+.PRECIOUS: subsets/%-view.owl
 
 
 
@@ -948,41 +1011,6 @@ composite-metazoan-basic.owl: composite-metazoan.owl
 composite-vertebrate-basic.owl: composite-vertebrate.owl
 	$(OWLTOOLS) $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@ &&\
 	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert --check false -f owl -o $@.tmp.owl && mv $@.tmp.owl $@
-
-# ----------------------------------------
-# TAXON MODULES
-# ----------------------------------------
-
-all_taxmods: $(TAXMODSDIR)/uberon-taxmod-amniote.obo $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.obo
-
-$(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl: $(TMPDIR)/uberon-taxmod-314146.owl
-	cp $< $@
-$(TAXMODSDIR)/uberon-taxmod-amniote.owl: $(TMPDIR)/uberon-taxmod-32524.owl
-	cp $< $@
-$(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
-	cp $< $@
-
-subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
-	$(ROBOT) reason --input $< --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		relax \
-		remove --axioms equivalent \
-		relax \
-		filter --term-file tmp/simple-slim-seed.txt --select "annotations ontology anonymous self" --trim true --signature true \
-		reduce -r ELK \
-		query --update ../sparql/inject-subset-declaration.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-basic.owl
-
-$(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
-	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
-
-# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
-$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$*  --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
-.PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
-
-
 
 
 # ----------------------------------------
