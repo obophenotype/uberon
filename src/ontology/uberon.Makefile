@@ -946,11 +946,6 @@ MAKESPMERGE= --catalog-xml $(CATALOG)\
   --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl\
  $(URIBASE)/uberon/$(BRIDGEDIR)/collected-$*.owl
 
-# bundled: collect all ontologies and do a basic (non-species) import closure merge
-# primarily for testing: not released
-bundled-%.owl: $(MBASE)
-	$(OWLTOOLS) $(MAKESPMERGE) --merge-import-closure -o -f ofn $@
-.PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
 
 # stage1 of composite build: do a species merge, but no additional reasoning
 $(TMPDIR)/merged-composite-%.owl: $(MBASE)
