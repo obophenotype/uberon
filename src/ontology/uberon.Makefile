@@ -356,15 +356,6 @@ $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
 	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 
-# Uberon merged with an external ontology and its corresponding bridge
-# (for debugging)
-$(TMPDIR)/ext-merged-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl
-	$(ROBOT) merge -i $< -i imports/local-$*.owl \
-		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
-		       -o $@
-.PRECIOUS: $(TMPDIR)/ext-merged-%.owl
-
-
 # uberon-nif-merged: Uberon merged with the NIF Gross Anatomy
 # FIXME: currently broken, and of dubious usefulness
 # (https://github.com/obophenotype/uberon/issues/3018)
