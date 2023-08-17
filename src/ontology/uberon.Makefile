@@ -566,25 +566,6 @@ $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.o
 
 # Individual bridge checks
 # ----------------------------------------
-# These can be used to validate on a per-bridge file basis. There are
-# a variety of flavours:
-#
-# * quick bridge tests ignore the axioms in the external ontology (but
-#   include the bridge axioms themselves);
-# * standard bridge tests use the logical axioms in the external
-#   ontology;
-# * full bridge tests do the above using the constructed ext ontology;
-# * extra full bridge tests also throw in the set of all pending
-#   disjoints (only 'gold star' external ontologies will pass this).
-#
-# Note at this time we don't expect all full-bridge tests to pass. This
-# is because the disjointness axioms are very strong and even seemingly
-# minor variations in representation across ontologies can lead to
-# unsatisfiable classes.
-#
-# FIXME: It's unclear what the difference between "standard" and "full"
-# is supposed to be; in their current implementations below, they are
-# actually the same (https://github.com/obophenotype/uberon/issues/3022).
 
 # gold glub
 EXTRA_FULL_CHECK_AO_LIST = caro
@@ -605,33 +586,40 @@ extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.tx
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
-# FIXME: This is absolutely not what the rule below is doing!
-# (https://github.com/obophenotype/uberon/issues/3022)
-$(REPORTDIR)/quick-bridge-check-%.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
+		 reason -r ELK > $@
 
 
-# A (standard) bridge check uses uberon (no TCs) plus external ontology and
-# the bridge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl imports/local-%.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< imports/local-$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies -o -f ofn $@
+# A (standard) bridge check uses uberon, the taxon constraints, the
+# bridge itself, and the corresponding external ontology.
+# For this check, we separate the production of the merged ontology
+# from the production of the report.
+# 1. The merge
+$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(IMPORTDIR)/local-%.owl
+	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
+		       -i $(IMPORTDIR)/local-$*.owl \
+		 convert -f ofn -o $@
 .PRECIOUS: $(REPORTDIR)/bridge-check-%.owl
 
-$(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
+# 2. The reasoner's report (this is the actual check)
+$(REPORTDIR)/bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl
+	$(ROBOT) reason -i $< -r ELK > $@
 
-$(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $< $(QELK) --run-reasoner -r elk -u -e > $@.tmp && mv $@.tmp $@
-
-
-# A full bridge check uses uberon plus external ontology and the bridge
-$(REPORTDIR)/full-bridge-check-%.txt: uberon.owl $(TMPDIR)/bridges $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@.tmp && mv $@.tmp $@
+# 3. The reasoner's explanations for any unsats
+# (only generated on request, not part of the check)
+$(REPORTDIR)/expl-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl
+	$(ROBOT) explain -i $< -M unsatisfiability -u all -r ELK -e $@
 
 
-# As above, but include pending disjoints. This is a very strict check and we don't expect this to pass for lots of ssAOs.
-$(REPORTDIR)/extra-full-bridge-check-%.txt: uberon.owl imports/local-%.owl $(BRIDGEDIR)/uberon-bridge-to-%.owl $(COMPONENTSDIR)/pending-disjoints.obo $(TMPDIR)/external-disjoints.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@.tmp && mv $@.tmp $@
+# An extra-full bridge check is the same as a standard bridge check, but
+# includes pending disjoints. This is a very strict check and we don't
+# expect it to pass for lots of taxon-specific ontologies.
+$(REPORTDIR)/extra-full-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(COMPONENTSDIR)/pending-disjoints.obo
+	$(ROBOT) merge $(foreach prereq, $^, -i $(prereq)) \
+		 reason -r ELK > $@
 
 
 # Failing bridge checks
