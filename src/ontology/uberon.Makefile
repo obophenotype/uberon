@@ -906,99 +906,167 @@ $(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo
 
 
 # ----------------------------------------
-# COMPOSITE ANATOMY: PREPROCESSING
+# COMPOSITE ANATOMY
 # ----------------------------------------
+# Warning: you are entering the composite pipeline, the lair of Uberon's
+# final boss; now would be a good time to save your progression before
+# going any further.
 
-composites: composite-metazoan.obo composite-vertebrate.obo
+# All the dependencies used to create the entire composite-metazoan:
+# - "weakened" Uberon (as created below);
+# - the bridges to the external ontologies;
+# - the external ontologies themselves.
+MBASE = $(TMPDIR)/ext-weak.owl \
+	$(TMPDIR)/bridges \
+	$(IMPORTDIR)/local-ceph.owl \
+	$(IMPORTDIR)/local-cteno.owl \
+	$(IMPORTDIR)/local-ehdaa2.owl \
+	$(IMPORTDIR)/local-emapa.owl \
+	$(IMPORTDIR)/local-fbbt.owl \
+	$(IMPORTDIR)/local-fbdv.owl \
+	$(IMPORTDIR)/local-ma.owl \
+	$(IMPORTDIR)/local-poro.owl \
+	$(IMPORTDIR)/local-wbbt.owl \
+	$(IMPORTDIR)/local-wbls.owl \
+	$(IMPORTDIR)/local-xao.owl \
+	$(IMPORTDIR)/local-zfa.owl \
+	$(TMPDIR)/allen-dhba.obo \
+	$(TMPDIR)/allen-dmba.obo \
+	$(TMPDIR)/allen-hba.obo \
+	$(TMPDIR)/allen-mba.obo \
+	$(TMPDIR)/allen-pba.obo
 
 
-
-# ----------------------------------------
-# COMPOSITE ANATOMY: BUILDING
-# ----------------------------------------
-
-# many external ontologies do not adhere to all uberon constraints
+# Step 1: Create a "weakened" version of Uberon stripped of all
+# disjointness axioms, because many external ontologies do not adhere to
+# all uberon constraints
 $(TMPDIR)/ext-weak.owl: uberon.owl | $(TMPDIR)
-	$(OWLTOOLS) $< --merge-imports-closure --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms -o $@
+	$(OWLTOOLS) $< --merge-imports-closure --remove-axioms -t DisjointClasses \
+		    --remove-equivalent-to-nothing-axioms -o $@
 
-MBASE = $(TMPDIR)/ext-weak.owl $(TMPDIR)/bridges imports/local-ma.owl imports/local-ehdaa2.owl imports/local-emapa.owl imports/local-xao.owl \
-	imports/local-zfa.owl imports/local-fbbt.owl imports/local-fbdv.owl \
-	imports/local-wbbt.owl imports/local-wbls.owl imports/local-ceph.owl \
-	imports/local-cteno.owl imports/local-poro.owl $(TMPDIR)/allen-mba.obo $(TMPDIR)/allen-pba.obo $(TMPDIR)/allen-hba.obo \
-	$(TMPDIR)/allen-dmba.obo $(TMPDIR)/allen-dhba.obo uberon.owl
-
-# A subset of OPs will be turned into taxon GCIs
-
-MERGESPECIES =\
-  --merge-species-ontology -s 'mouse' -t NCBITaxon:10090 -q $(TAXON_GCI_RELS) \
-  --merge-species-ontology -s 'human' -t NCBITaxon:9606 -q $(TAXON_GCI_RELS) \
-  --merge-species-ontology -s 'primate' -t NCBITaxon:9443 \
-  --merge-species-ontology -s 'Xenopus' -t NCBITaxon:8353 \
-  --merge-species-ontology -s 'Danio' -t NCBITaxon:7954 \
-  --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
-  --merge-species-ontology -s 'C elegans' -t NCBITaxon:6237 \
-
-MERGE_EQSETS =  --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 5  -l UBERON 10 -l CL 9 -d UBERON 10 -d CL 9
-
-MAKESPMERGE= --catalog-xml $(CATALOG)\
-  --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl\
-  --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl\
-  --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl\
- $(URIBASE)/uberon/$(BRIDGEDIR)/collected-$*.owl
-
-
-# stage1 of composite build: do a species merge, but no additional reasoning
+# Step 2: A simple merge without additional reasoning
+# Hack: We redirect some IRIs to make sure that:
+# - we really use the weakened version of Uberon;
+# - we do _not_ merge FMA and its bridge.
 $(TMPDIR)/merged-composite-%.owl: $(MBASE)
-	$(OWLTOOLS) $(MAKESPMERGE) --merge-import-closure -o -f ofn $@
+	$(OWLTOOLS) --catalog-xml $(CATALOG) \
+		    --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl \
+		    --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl \
+		    --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl \
+		    $(BRIDGEDIR)/collected-$*.owl \
+		    --merge-import-closure \
+		    -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/merged-composite-%.owl
 
-# This step removes the logical axioms of a  
-# handful of around 5 classes which are unsatisfiable from SSAOs.
+# Step 2.5: Remove the logical axioms of a handful of around 5 classes
+# which are unsatisfiable from SSAOs.
 $(TMPDIR)/stripped-composite-%.owl: $(TMPDIR)/merged-composite-%.owl
 	$(ROBOT) remove -i $< -T unsats.txt --axioms logical -o $@
 
+# Step 3: We use some Owltools deep magic to merge equivalent classes
+# between Uberon/CL and the taxon-specific ontologies.
+# This is the core part of the pipeline. For more details about what it
+# does, please see the description of a "composite" ontology:
+# - <https://github.com/obophenotype/uberon/wiki/Multi-species-composite-ontologies>
+# and Owltools' source code, especially the following classes:
+# - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/SpeciesMergeUtil.java>
+# - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/EquivalenceSetMergeUtil.java>
 $(TMPDIR)/unreasoned-composite-%.owl: $(TMPDIR)/stripped-composite-%.owl
-	$(OWLTOOLS) $< --reasoner elk $(MERGESPECIES) $(MERGE_EQSETS) -o -f ofn $@
+	$(OWLTOOLS) $< \
+		    --reasoner elk \
+		    --merge-species-ontology -s 'mouse'      -t NCBITaxon:10090 -q $(TAXON_GCI_RELS) \
+		    --merge-species-ontology -s 'human'      -t NCBITaxon:9606  -q $(TAXON_GCI_RELS) \
+		    --merge-species-ontology -s 'primate'    -t NCBITaxon:9443 \
+		    --merge-species-ontology -s 'Xenopus'    -t NCBITaxon:8353 \
+		    --merge-species-ontology -s 'Danio'      -t NCBITaxon:7954 \
+		    --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
+		    --merge-species-ontology -s 'C elegans'  -t NCBITaxon:6237 \
+		    --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 5 \
+		                             -l UBERON 10 -l CL 9 \
+		                             -d UBERON 10 -d CL 9 \
+		    -o -f ofn $@
 .PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
 
-
-# stage 2 (final) of composite build: reason
+# Step 3: Standard reasoning step
 composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
+	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
+		 relax \
+		 reduce -r ELK \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: composite-%.owl
 
-# composute obo is made from owl
-composite-%.obo: composite-%.owl
-	$(OWLTOOLS) $< --add-obo-shorthand-to-properties --set-ontology-id  -v $(RELEASE)/$@ $(ONTBASE)/$@ -o -f obo --no-check $@.tmp && grep -v ^owl-axioms: $@.tmp > $@
-
-## **Hacking_Feb_2022** This still needs fixing. Needed by Begee: # Used directly by Bgee, see https://github.com/obophenotype/uberon/issues/1501
-## This makes a composite of Uberon + various subontologies but does so in a clever way that avoids building a lattic-ey ontology.
-### **Hacking_Feb_2022** TODO: the details of this need to be documented (in an earlier step - OWLtools does the important work - building unreasoned-composite-%.owl & upstream.
+# ODK insanity: This rule is EXACTLY the same as the rule above,
+# composite-metazoan does not require any special treatment compared to
+# the other composite-% products. But because the ODK-generated Makefile
+# defines a non-implicit rule with that target, we MUST override it with
+# a non-implicit rule -- the implicit rule above is not enough. So we
+# have no other choice but to duplicate the rule. Note to future
+# maintainers: any change to "step 3" rule above MUST be replicated in
+# this rule as well!
 composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: composite-%.owl
+	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
+		 relax \
+		 reduce -r ELK \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          -o $@.tmp.owl && mv $@.tmp.owl $@
 
-## **Hacking_Feb_2022** TODO Ditch this goal.  No longer needed by BeGee
+# Likewise.
 composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
-	$(ROBOT) reason -r ELK -i $< --equivalent-classes-allowed all relax reduce -r ELK annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: composite-vertebrate.owl
+	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
+		 relax \
+		 reduce -r ELK \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          -o $@.tmp.owl && mv $@.tmp.owl $@
 
-composite-metazoan-last-release.owl:
-	wget http://svn.code.sf.net/p/obo/svn/uberon/releases/2020-09-16/composite-metazoan.owl -O $@
+# Step 3.1: OBO version
+# Here again We are overriding the standard OWL-to-OBO rules set forth
+# by the ODK (https://github.com/obophenotype/uberon/issues/3014)
+composite-%.obo: composite-%.owl
+	$(OWLTOOLS) $< --add-obo-shorthand-to-properties \
+		    --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ \
+		    -o -f obo --no-check $@.tmp && \
+		grep -v ^owl-axioms: $@.tmp > $@
 
-reports/release-diff-composite.txt: composite-metazoan-last-release.owl composite-metazoan.owl
+
+# Some special products derived from the products generated above
+# ----------------------------------------
+
+composite-metazoan-basic.owl: composite-metazoan.owl
+	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
+		    --make-subset-by-properties -f $(BASICRELS) \
+		    -o -f obo --no-check $@.tmp && \
+	grep -v '^owl-axioms:' $@.tmp > $@ && \
+	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert --check false -f owl -o $@.tmp && \
+	mv $@.tmp $@
+
+composite-vertebrate-basic.owl: composite-vertebrate.owl
+	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
+		    --make-subset-by-properties -f $(BASICRELS) \
+		    -o -f obo --no-check $@.tmp && \
+	grep -v '^owl-axioms:' $@.tmp > $@ && \
+	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert --check false -f owl -o $@.tmp && \
+	mv $@.tmp $@
+
+
+# Helper commands for composite-* stuff
+# ----------------------------------------
+
+# Create a diff with the latest released version
+$(TMPDIR)/composite-metazoan-last-release.owl:
+	wget https://github.com/obophenotype/uberon/releases/latest/download/composite-metazoan.owl -O $@
+
+reports/release-diff-composite.txt: $(TMPDIR)/composite-metazoan-last-release.owl composite-metazoan.owl
 	$(ROBOT) diff --left composite-metazoan-last-release.owl --right composite-metazoan.owl -o $@
 
 .PHONY: composite-diff
 composite-diff: reports/release-diff-composite.txt
 
-composite-metazoan-basic.owl: composite-metazoan.owl
-	$(OWLTOOLS) $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@ &&\
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert --check false -f owl -o $@.tmp.owl && mv $@.tmp.owl $@
 
-composite-vertebrate-basic.owl: composite-vertebrate.owl
-	$(OWLTOOLS) $<  --extract-mingraph --remove-axiom-annotations --make-subset-by-properties -f $(BASICRELS) --set-ontology-id $(URIBASE)/uberon/composite-metazoan-basic.owl -o -f obo --no-check $@.tmp && mv $@.tmp  $@.tmp2 && grep -v '^owl-axioms:' $@.tmp2 > $@ &&\
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert --check false -f owl -o $@.tmp.owl && mv $@.tmp.owl $@
+# Saves someone the hassle of typing 'make composite-metazoan.obo composite-vertebrate.obo'
+composites: composite-metazoan.obo composite-vertebrate.obo
 
 
 # ----------------------------------------
