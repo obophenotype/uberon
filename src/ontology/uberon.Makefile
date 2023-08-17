@@ -640,15 +640,23 @@ $(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
 
 # BFO bridge checks
 # ----------------------------------------
-# BFO is not covered by the generic rules above (which focus on
-# taxon-specific external ontologies), so we deal with it here.
+# BFO needs special treatment because we don't have a "local-bfo.owl" or
+# a "local-ro.owl" mirror as we do for the taxons-specific ontologies;
+# and since these checks are typically run with MIR=false, they would
+# fail using the rules above because mirror/bfo.owl and mirror/ro.owl
+# would be nowhere to be found. So here we load these external
+# ontologies from their online locations.
 
-$(REPORTDIR)/bfo-check.txt: $(OWLSRC) mirror/ro.owl mirror/bfo.owl
-	$(ROBOT) merge -i $(OWLSRC) -I $(URIBASE)/bfo.owl -I $(URIBASE)/ro.owl -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl reason --reasoner ELK --equivalent-classes-allowed asserted-only
+$(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
+		       -I $(URIBASE)/bfo.owl -I $(URIBASE)/ro.owl \
+		 reason -r ELK --equivalent-classes-allowed asserted-only > $@
 
-bfo-basic-check.txt: basic.owl $(CATALOG_DYNAMIC)
-	$(OWLTOOLS_CAT_DYNAMIC) $(URIBASE)/bfo.owl $< $(BRIDGEDIR)/uberon-bridge-to-bfo.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u > $@.tmp && mv $@.tmp $@
-
+# Similar to above, but with the basic product and without RO
+$(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
+		       -I $(URIBASE)/bfo.owl \
+		 reason -r ELK > $@
 
 
 QC_FILES = checks\
