@@ -567,22 +567,16 @@ $(REPORTDIR)/taxon-constraint-check.txt: $(TMPDIR)/uberon-edit-plus-tax-equivs.o
 # Individual bridge checks
 # ----------------------------------------
 
-# gold glub
+# There are three flavours of bridge checks (see below). Here we define
+# whhich bridges are subjected to which checks.
 EXTRA_FULL_CHECK_AO_LIST = caro
-
-# silver club
-FULL_CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST) wbls wbbt
-
-# premier execs
-CHECK_AO_LIST = $(FULL_CHECK_AO_LIST)
-
-# economy
+CHECK_AO_LIST = $(EXTRA_FULL_CHECK_AO_LIST) wbls wbbt
 QUICK_CHECK_AO_LIST = $(CHECK_AO_LIST) fbbt zfa xao fma ma emapa bfo
 
-quick-bridge-checks: $(patsubst %,$(REPORTDIR)/quick-bridge-check-%.txt,$(FULL_CHECK_AO_LIST))
-bridge-checks: $(patsubst %,$(REPORTDIR)/bridge-check-%.txt,$(CHECK_AO_LIST))
-full-bridge-checks: $(patsubst %,$(REPORTDIR)/full-bridge-check-%.txt,$(CHECK_AO_LIST))
-extra-full-bridge-checks: $(patsubst %,$(REPORTDIR)/extra-full-bridge-check-%.txt,$(EXTRA_FULL_CHECK_AO_LIST))
+quick-bridge-checks: $(foreach ao, $(QUICK_CHECK_AO_LIST), $(REPORTDIR)/quick-bridge-check-$(ao).txt)
+bridge-checks: $(foreach ao, $(CHECK_AO_LIST), $(REPORTDIR)/bridge-check-$(ao).txt)
+extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR)/extra-full-bridge-check-$(ao).txt)
+
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
@@ -661,7 +655,6 @@ QC_FILES = checks\
     $(TMPDIR)/bridges\
     quick-bridge-checks\
     bridge-checks\
-    full-bridge-checks\
     extra-full-bridge-checks\
     $(REPORTDIR)/taxon-constraint-check.txt\
     $(REPORTDIR)/basic-allcycles\
