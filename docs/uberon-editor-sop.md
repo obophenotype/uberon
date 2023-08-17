@@ -97,8 +97,8 @@ In cases where more than one CURIE is available for a resource, either is accept
 
 For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-For URLs: In the "Create Annotation" window, select the annotation property **seeAlso** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
-DO NOT use database_cross_reference with a value that is a URL. 
+For URLs: In the "Create Annotation" window, select the annotation property **seeAlso** (`rdfs:seeAlso`). Enter the URL as a literal string. DO NOT use database_cross_reference with a value that is a URL. Note: In OWL-based files (like cl-edit.owl), Datatype `xsd:anyURI` is also selected; however, in OBO-based files (like uberon-edit.obo) these always become strings, so no selection needs to be made for Datatype in Uberon. Datatype selection is planned to be implemented in a future OBO revision, and updates can be checked at https://github.com/owlcollab/oboformat/issues/128.
+
 
 To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
 
