@@ -890,19 +890,20 @@ $(TMPDIR)/update-stages: $(SRC) | $(TMPDIR)
 	cd $(TMPDIR) && \
 	git clone https://github.com/obophenotype/developmental-stage-ontologies.git
 
-CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard $(TMPDIR)/developmental-stage-ontologies/*/*-uberon.obo))
-
-# "entity_xref_idspace(X,U,'UBERON')" -no_pred -label -select U-X
-# this is a basic xref query, all xrefs TO an uberon ID. The TSV output is col1:UberonID col2:speciesSpecificStageTermID
 $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo: $(TMPDIR)/update-stages
 	test -f $@
 
 $(TMPDIR)/merged-stages-xrefs.obo: $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo
-	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv
-	cat $@_xrefs_to_uberon.tsv | tail -n +2 | $(SCRIPTSDIR)/tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
+	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo \
+		       --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv
+	cat $@_xrefs_to_uberon.tsv | tail -n +2 | \
+		$(SCRIPTSDIR)/tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
 
-$(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo $(TMPDIR)/update-stages
-	$(OWLTOOLS_NO_CAT) $(CSTAGES) $(TMPDIR)/merged-stages-xrefs.obo --merge-support-ontologies -o -f obo --no-check $@
+$(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo
+	$(ROBOT) merge -i tmp/developmental-stage-ontologies/src/ssso-merged-uberon.obo \
+		       -i $(TMPDIR)/merged-stages-xrefs.obo \
+		 convert -f obo --check false -o $@
+
 
 # ----------------------------------------
 # COMPOSITE ANATOMY: PREPROCESSING
