@@ -616,28 +616,6 @@ $(REPORTDIR)/extra-full-bridge-check-%.txt: $(REPORTDIR)/bridge-check-%.owl $(CO
 		 reason -r ELK > $@
 
 
-# Failing bridge checks
-# ----------------------------------------
-# We override the generic rules above for some external ontologies to
-# allow the pipeline to continue despite their bridge check failing.
-
-$(REPORTDIR)/full-bridge-check-caro.txt: |  $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
-
-$(REPORTDIR)/full-bridge-check-wbls.txt: | $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
-
-$(REPORTDIR)/full-bridge-check-wbbt.txt: | $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $< $(URIBASE)/$*.owl $(BRIDGEDIR)/uberon-bridge-to-$*.owl $(TMPDIR)/external-disjoints.owl --merge-support-ontologies $(QELK) --run-reasoner -r elk -u -m $(REPORTDIR)/debug-full-bridge-check-$*.owl  > $@ || true
-
-$(REPORTDIR)/extra-full-bridge-check-caro.txt: | $(CATALOG_DYNAMIC)
-	echo "STRONG WARNING $@ currently set to NOT FAIL because of unsatisfiable classes!"
-	$(OWLTOOLS_CAT_DYNAMIC) --no-debug $^  --merge-support-ontologies $(QELK) --run-reasoner -r elk -u $(ROPTS) > $@ || true
-
-
 # BFO bridge checks
 # ----------------------------------------
 # BFO needs special treatment because we don't have a "local-bfo.owl" or
