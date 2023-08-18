@@ -85,6 +85,8 @@ Citations are made by cross-references, that is by adding `http://www.geneontolo
 
 If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
 
+If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D054326, NOT MESH:A07.015.908.194.500.
+
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.
 
 **Technical details of adding a cross-reference using Protégé**:
@@ -97,8 +99,8 @@ In cases where more than one CURIE is available for a resource, either is accept
 
 For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-For URLs: In the "Create Annotation" window, select the annotation property **seeAlso** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
-DO NOT use database_cross_reference with a value that is a URL. 
+For URLs: In the "Create Annotation" window, select the annotation property **'see also'** (`rdfs:seeAlso`). Enter the URL as a literal string. DO NOT use database_cross_reference with a value that is a URL. Note: In OWL-based files (like cl-edit.owl), Datatype `xsd:anyURI` is also selected; however, in OBO-based files (like uberon-edit.obo) these always become strings, so no selection needs to be made for Datatype in Uberon. Datatype selection is planned to be implemented in a future OBO revision, and updates can be checked at https://github.com/owlcollab/oboformat/issues/128.
+
 
 To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
 

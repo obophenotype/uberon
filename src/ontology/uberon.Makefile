@@ -1291,6 +1291,13 @@ $(TMPDIR)/hra_subset.owl:
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
+3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
+$(TMPDIR)/hra_depiction_3d_images.owl:
+	wget $(3D_IMAGES_COMP_URL) -O $@
+
+$(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
