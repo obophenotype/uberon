@@ -19,13 +19,10 @@ RELEASE =              $(URIBASE)/uberon/releases/$(TODAY)
 QELK =                 --silence-elk
 PART_OF =              BFO_0000050
 
-BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
-RELSIM = BFO:0000050 RO:0002202 immediate_transformation_of
-TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-
 
 all: uberon-qc
 	echo "make $@ succeeded..."
+
 
 # ----------------------------------------
 # COMMANDS
@@ -1063,6 +1060,7 @@ $(TMPDIR)/stripped-composite-%.owl: $(TMPDIR)/merged-composite-%.owl
 # and Owltools' source code, especially the following classes:
 # - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/SpeciesMergeUtil.java>
 # - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/EquivalenceSetMergeUtil.java>
+TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 $(TMPDIR)/unreasoned-composite-%.owl: $(TMPDIR)/stripped-composite-%.owl
 	$(OWLTOOLS) $< \
 		    --reasoner elk \
@@ -1123,6 +1121,7 @@ composite-%.obo: composite-%.owl
 
 # Some special products derived from the products generated above
 # ----------------------------------------
+BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 
 composite-metazoan-basic.owl: composite-metazoan.owl
 	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
