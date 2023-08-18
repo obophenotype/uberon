@@ -1141,9 +1141,7 @@ $(REPORTDIR)/%-synclash: %.obo
 $(TMPDIR)/update-stages: $(SRC) | $(TMPDIR)
 	rm -rf $(TMPDIR)/developmental-stage-ontologies && \
 	cd $(TMPDIR) && \
-	git clone https://github.com/obophenotype/developmental-stage-ontologies.git && \
-	cd developmental-stage-ontologies/src && make OWLTOOLS=owltools all ssso-merged.obo -B && cd ../../../ && \
-	touch $@
+	git clone https://github.com/obophenotype/developmental-stage-ontologies.git
 
 CSTAGES := $(filter-out %bridge-to-uberon.obo, $(wildcard $(TMPDIR)/developmental-stage-ontologies/*/*-uberon.obo))
 #CSTAGES := $(wildcard $(TMPDIR)/developmental-stage-ontologies/*/*-uberon.obo)
@@ -1793,6 +1791,13 @@ $(TMPDIR)/hra_subset.owl:
 	wget $(HRA_SUBSET_URL) -O $@
 
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
+3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
+$(TMPDIR)/hra_depiction_3d_images.owl:
+	wget $(3D_IMAGES_COMP_URL) -O $@
+
+$(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 # ----------------------------------------
