@@ -1181,17 +1181,9 @@ $(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
 
 
-
-
-.PHONY: release-diff
-release-diff:
-	cd diffs && make all
-
 # ----------------------------------------
 # RELEASE DEPLOYMENT
 # ----------------------------------------
-
-#RELDIR=../..
 
 DEPLOY_GH=true
 
@@ -1200,8 +1192,7 @@ uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 .PHONY: copy_additional_files
 copy_additional_files:
@@ -1209,8 +1200,6 @@ copy_additional_files:
 	mkdir -p ../../bridge
 	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
 	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
-	# TODO @matentzn. Verify removal of following
-	# cp composite-brain.{obo,owl} $(RELDIR) ;\
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
@@ -1220,19 +1209,10 @@ deploy_release:
 	ls -alt $(MAIN_FILES_RELEASE)
 	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
 
+.PHONY: release-diff
+release-diff:
+	cd diffs && make all
 
-
-# ----------------------------------------
-# RELEASE
-# ----------------------------------------
-
-# TODO @matentzn revive
-$(BRIDGEDIR)/caro-bridge-to-zfa.obo:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-
-# TODO @matentzn revive
-$(BRIDGEDIR)/caro-bridge-to-xao.obo:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
 
 
 
