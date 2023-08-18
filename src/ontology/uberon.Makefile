@@ -1467,10 +1467,6 @@ cl_mondo_merged.owl:
 	$(ROBOT) merge -i uberon.owl -I $(URIBASE)/cl.owl -o $@
 
 
-#### Temporary exclusions
-
-reports/composite-metazoan-dv.txt:
-	echo "ERROR ERROR WARNING ERROR: $@ currently fails!" && touch $@
 
 OLDLOCATION=http://svn.code.sf.net/p/obo/svn/uberon/releases/2020-09-16
 diffr-%:
