@@ -123,9 +123,6 @@ $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-g
 		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
-$(TMPDIR)/NORMALIZE.obo: $(SRC)
-	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
-
 # Step 2: Reasoning.
 # For the temporary injection of property chains, see
 # <https://github.com/obophenotype/uberon/issues/2381>
@@ -1329,34 +1326,21 @@ release-diff:
 	cd diffs && make all
 
 
-
-
-# ///////////////////////
-# ///////////////////////
-# ///  odds and ends ////
-# ///////////////////////
-# ///////////////////////
-
 # ----------------------------------------
-# SPELLCHECK
+# UTILITY COMMANDS
 # ----------------------------------------
 
-# notes:
-# to add to a dict
-# yes a | aspell check --home-dir . obo-syntax.html
-#
-# setting --home-dir to . will cause the dictionary .aspell.en.pws  in this directory to be used
+# Spellchecking
+# ----------------------------------------
 
-# interactive
+# Interactive spell check
 ispellcheck: $(SRC)-ispellcheck
 
-# batch
+# Batch mode spell check
 spellcheck: $(SRC)-spellcheck
 
-# TODO: @cmungall likes this -> unix spell check we need a solution for all of OBO (ROBOT)
-# IF does not work, remove from here.
-# Nico says: Makes too much noise. Future work
-
+# Warning: this won't work with future ODK version where workflows are
+# run without root privileges by default!
 .PHONY: aspell
 aspell:
 	apt-get install -y aspell
@@ -1368,15 +1352,44 @@ aspell:
 	aspell check --home-dir . $<
 
 
+# OBO format tricks
+# ----------------------------------------
+.PHONY: roundtrip_obo
+roundtrip_obo: $(SRC)
+	$(ROBOT) convert -i $< -o $(TMPDIR)/roundtrip.obo.tmp.obo && \
+	mv $(TMPDIR)/roundtrip.obo.tmp.obo $(TMPDIR)/roundtrip.obo && \
+	diff -i $< $(TMPDIR)/roundtrip.obo
 
+$(TMPDIR)/NORMALIZE.obo: $(SRC)
+	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
+
+.PHONY: normalize
+normalize: $(TMPDIR)/NORMALIZE.obo
+	mv $< $(SRC)
+	echo "WARNING: $(SRC) has been overwritten! Please carefully check your diff before you commit!"
+
+
+# Cleaning up
+# ----------------------------------------
+clean_uberon:
+	rm -rf ./*.tmp
+	rm -rf ./*.tmp1
+	rm -rf ./*.tmp2
+	rm -rf ./composite-*
+	rm -rf ./merged_collect*
+	rm -rf ./uberon-full.*
+	rm -rf ./uberon-base.*
+	rm -f uberon.owl uberon.obo BUILDLOGUBERON.txt unsat_all_explanation.md
+
+clean: clean_uberon
 
 
 # ----------------------------------------
-# BLAZEGRAPH
+# PURGATORY
 # ----------------------------------------
-
-#############################################
-############ Nico hacks #####################
+# Everything that does not belong to any of the sections above.
+# May include both actually useful stuff and stuff that nobody
+# remembers why it was written in the first place.
 
 TEMPLATESDIR=templates
 
@@ -1414,29 +1427,6 @@ reports/robot_release_diff.md: $(TMPDIR)/$(ONT)-obo.obo $(TMPDIR)/$(ONT)-obo-mai
 feature_diff: reports/robot_main_diff.md
 
 
-########################
-#### Utility commands ##
-
-.PHONY: roundtrip_obo
-roundtrip_obo: $(SRC)
-	$(ROBOT) convert -i $< -o $(TMPDIR)/roundtrip.obo.tmp.obo && mv $(TMPDIR)/roundtrip.obo.tmp.obo $(TMPDIR)/roundtrip.obo && diff -i $< $(TMPDIR)/roundtrip.obo
-
-.PHONY: normalize
-normalize: $(TMPDIR)/NORMALIZE.obo
-	mv $< $(SRC)
-	echo "WARNING: $(SRC) has been overwritten! Please carefully check your diff before you commit!"
-
-clean_uberon:
-	rm -rf ./*.tmp
-	rm -rf ./*.tmp1
-	rm -rf ./*.tmp2
-	rm -rf ./composite-*
-	rm -rf ./merged_collect*
-	rm -rf ./uberon-full.*
-	rm -rf ./uberon-base.*
-	rm -f uberon.owl uberon.obo BUILDLOGUBERON.txt unsat_all_explanation.md
-
-clean: clean_uberon
 
 explain:
 	$(ROBOT) explain --input $(TMPDIR)/unreasoned-composite-metazoan.owl --reasoner ELK \
