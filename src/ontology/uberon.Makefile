@@ -1358,66 +1358,6 @@ aspell:
 
 
 
-# ----------------------------------------
-# DEAD SIMPLE DESIGN PATTERNS
-# ----------------------------------------
-MODDIR=modules
-
-MODS = luminal_space_of gland_duct gland_acinus endochondral_bone endochondral_cartilage
-
-# OWL->CSV
-PSRC = $(SRC)
-
-
-# NEW: reverse engineer using patternizer
-patternizer:
-	pl2sparql   -e -c patterns/patternizer_conf.pl -A void.ttl -i ext doall
-
-# reverse engineer CSV from uberon axioms and DOSDPs
-modules/%.csv: $(PSRC)
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-.PRECIOUS: modules/%.csv
-
-modules/new-%.csv: $(PSRC)
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-.PRECIOUS: modules/%.csv
-
-# currently, the pattern source is prolog - generate dosdp yaml from this
-$(PATTERNDIR)/%.yaml: patterns/uberon_patterns.pro
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-.PRECIOUS: $(PATTERNDIR)/%.yaml
-
-# compare ldef with lexical aspect
-modules/conflict_analysis.tsv:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-
-# some patterns are paired: check for missing members of pairs
-modules/missing.txt:
-	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
-
-
-
-all_modules: all_modules_omn all_modules_owl all_modules_obo all_modules_new
-all_modules_owl: $(patsubst %, $(MODDIR)/%.owl, $(MODS))
-all_modules_omn: $(patsubst %, $(MODDIR)/%.omn, $(MODS))
-all_modules_obo: $(patsubst %, $(MODDIR)/%.obo, $(MODS))
-all_modules_new: $(patsubst %, $(MODDIR)/%-new.obo, $(MODS))
-
-$(MODDIR)/%.omn: $(MODDIR)/%.csv $(PATTERNDIR)/%.yaml
-	apply-pattern.py -s label -P curie_map.yaml -b http://purl.obolibrary.org/obo/ -i $< -p $(PATTERNDIR)/$*.yaml -G $(MODDIR)/$*-gci.owl > $@.tmp && mv $@.tmp $@
-
-# need to go via RDF due to OWLAPI bug
-$(MODDIR)/%.rdf: $(MODDIR)/%.omn $(MODDIR)/%-gci.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies --set-ontology-id $(URIBASE)/uberon/$@ -o  $@
-
-$(MODDIR)/%.owl: $(MODDIR)/%.rdf
-	$(OWLTOOLS) $< -o -f ofn $@
-
-$(MODDIR)/%.obo: $(MODDIR)/%.owl
-	$(OWLTOOLS) $< -o -f obo $@.tmp && grep -v ^owl-axioms $@.tmp > $@
-
-$(MODDIR)/%-new.obo: $(MODDIR)/%.owl $(OWLSRC)
-	$(OWLTOOLS) $^ --diff -f obo -s -u  --o1r $@ --o2r $(MODDIR)/%-missing.obo
 
 
 # ----------------------------------------
