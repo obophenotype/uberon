@@ -624,6 +624,12 @@ $(REPORTDIR)/%-dv.txt: %.owl
 # Overall "all-bridge" check
 # ----------------------------------------
 
+# The disjointness axioms are maintained in a OBO file, but the checks
+# below use an OWL version.
+$(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
+	$(ROBOT) convert -i $< -f owl -o $@
+.PRECIOUS: $(TMPDIR)/external-disjoints.owl
+
 # We create a merged ontology consisting of
 # (1) Uberon itself;
 # (2) the external-disjoints component;
@@ -1366,10 +1372,6 @@ aspell:
 
 #############################################
 ############ Nico hacks #####################
-
-$(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
-	$(ROBOT) convert -i $< -f owl -o $@
-.PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
 TEMPLATESDIR=templates
 
