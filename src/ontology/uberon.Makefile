@@ -1032,7 +1032,7 @@ $(TMPDIR)/ext-weak.owl: uberon.owl | $(TMPDIR)
 # Hack: We redirect some IRIs to make sure that:
 # - we really use the weakened version of Uberon;
 # - we do _not_ merge FMA and its bridge.
-$(TMPDIR)/merged-composite-%.owl: $(MBASE)
+$(TMPDIR)/merged-composite-%.owl: $(MBASE) $(TMPDIR)/update-stages
 	$(OWLTOOLS) --catalog-xml $(CATALOG) \
 		    --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl \
 		    --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl \
