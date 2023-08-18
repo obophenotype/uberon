@@ -1226,10 +1226,6 @@ deploy_release:
 # RELEASE
 # ----------------------------------------
 
-# See: http://code.google.com/p/caro2/issues/detail?id=10
-$(BRIDGEDIR)/fbbt-nd.obo: mirror/fbbt.obo
-	grep -v ^disjoint $< | perl -npe 's@^ontology: fbbt@ontology: uberon/fbbt-nd@' > $@.tmp && $(OWLTOOLS) $@.tmp -o -f obo $@
-
 # TODO @matentzn revive
 $(BRIDGEDIR)/caro-bridge-to-zfa.obo:
 	echo "STRONG WARNING: $@ skipped, because there is no more blip." && touch $@
