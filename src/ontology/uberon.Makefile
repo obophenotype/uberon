@@ -531,6 +531,24 @@ $(REPORTDIR)/%-xp-check: %.obo
 $(REPORTDIR)/%-obscheck.txt: %.obo
 	(($(SCRIPTSDIR)/obo-map-ids.pl --ignore-self-refs --use-consider --use-replaced_by $< $<) > /dev/null) 2>&1 > $@
 
+.PHONY: obocheck
+obocheck:
+	fastobo-validator uberon-edit.obo
+
+.PHONY: test_obo_serialisation
+test_obo_serialisation:
+	$(ROBOT) convert -i $(SRC) -f obo -o $(TMPDIR)/uberon_make_sure_serialisable_as_obo.obo
+
+.PHONY: test_obsolete
+test_obsolete:
+	! grep "! obsolete" uberon-edit.obo
+
+.PHONY: test_owlaxioms
+test_owlaxioms:
+	! grep "owl-axioms: " uberon-edit.obo
+
+test: obocheck test_obo_serialisation test_obsolete test_owlaxioms
+
 
 # Cycle detection checks
 # ----------------------------------------
@@ -1545,28 +1563,6 @@ normalise_release:
 
 normalise_robot: .FORCE
 	$(ROBOT) convert -i $(SRC) -f obo --check false -o $(SRC)
-
-test_obo_serialisation:
-	$(ROBOT) convert -i $(SRC) -f obo -o $(TMPDIR)/uberon_make_sure_serialisable_as_obo.obo
-
-test: test_obo_serialisation 
-
-.PHONY: obocheck
-obocheck:
-	fastobo-validator uberon-edit.obo
-test: obocheck
-
-.PHONY: test_obsolete
-test_obsolete:
-	! grep "! obsolete" uberon-edit.obo
-
-test: test_obsolete
-
-.PHONY: test_owlaxioms
-test_owlaxioms:
-	! grep "owl-axioms: " uberon-edit.obo
-
-test: test_owlaxioms
 
 docs/releases.md: uberon-odk.yaml
 	echo "All the things to generate the release.md file and the sep. pages for each release."
