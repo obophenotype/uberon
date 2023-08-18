@@ -35,18 +35,27 @@ all: uberon-qc
 # https://github.com/obophenotype/uberon/issues/3014
 MAKEOBO=  $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
 
-# ----------------------------------------
-# PREP: catalog
-# ----------------------------------------
 
+# ----------------------------------------
+# XML CATALOG
+# ----------------------------------------
 
 $(CATALOG_DYNAMIC):
-	echo "From this day (12 March 2021) forward, $(CATALOG_DYNAMIC) is maintained manually. If you must updated it, plus run 'make update_dynamic_catalog'. Please review the diff carefully as some entries (like ro_import.owl) are omitted by the process."
+	@echo "From this day (12 March 2021) forward, $(CATALOG_DYNAMIC) is maintained"
+	@echo "manually. If you must update it, run 'make update_dynamic_catalog'."
+	@echo "Please review the diff carefully as some entries may be omitted."
 
 .PHONY: update_dynamic_catalog
 update_dynamic_catalog:
-	echo "STRONG WARNING: You are updating the dynamic catalog. Note that this is done on the basis of a previous run of the pipeline, so all files are expected to be available. Do not do this if you dont know what you are doing."
-	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && mv $@.tmp $@
+	@echo "WARNING: You are updating the dynamic catalog. Note that this is done on"
+	@echo "WARNING: the basis of a previous run of WARNING: the pipeline, so all"
+	@echo "WARNING: files are expected to be available. Do not do this if you dont"
+	@echo "WARNING: know what you are doing."
+	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl \
+		mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo \
+		$(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && \
+		mv $@.tmp $@
+
 
 # ----------------------------------------
 # STEP 0: checks
