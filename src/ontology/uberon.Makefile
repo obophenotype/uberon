@@ -103,6 +103,11 @@ uberon-qc: checks \
 		$(REPORTDIR)/uberon-dv.txt \
 		$(REPORTDIR)/composite-metazoan-dv.txt
 
+quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
+	cat $(REPORTDIR)/uberon-edit-obscheck.txt
+
+.PHONY: checks uberon-qc quick-qc
+
 
 # ----------------------------------------
 # BUILDING UBERON ITSELF
@@ -1411,10 +1416,6 @@ feature_diff: reports/robot_main_diff.md
 
 ########################
 #### Utility commands ##
-
-.PHONY: quick-qc
-quick-qc: $(OWLSRC) $(REPORTDIR)/uberon-edit-obscheck.txt
-	cat $(REPORTDIR)/uberon-edit-obscheck.txt
 
 .PHONY: roundtrip_obo
 roundtrip_obo: $(SRC)
