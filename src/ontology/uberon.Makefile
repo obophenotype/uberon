@@ -105,10 +105,10 @@ uberon-qc: checks \
 
 
 # ----------------------------------------
-# STEP 1: pre-processing
+# BUILDING UBERON ITSELF
 # ----------------------------------------
-# Merge the edit file file with imports, component of disjointness axioms,
-# and list of contributors, then expand macros.
+# Step 1: Preprocessing. We Merge the edit file file with imports,
+# disjointness axioms, and list of contributors, then expand macros.
 # FIXME: Need explanation for not expanding RO:0002175 specifically.
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
@@ -121,13 +121,9 @@ $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-g
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
 
-# ----------------------------------------
-# STEP 2: Reasoning
-# ----------------------------------------
-
+# Step 2: Reasoning.
 # For the temporary injection of property chains, see
 # <https://github.com/obophenotype/uberon/issues/2381>
-
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
 uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
 	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
@@ -139,6 +135,7 @@ uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAI
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
 	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
 
+# Step 2.1: Generating other formats.
 # also do OE check here
 uberon.obo: uberon.owl
 	$(MAKEOBO)
@@ -1107,7 +1104,7 @@ composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
 		          -o $@.tmp.owl && mv $@.tmp.owl $@
 
 # Step 3.1: OBO version
-# Here again We are overriding the standard OWL-to-OBO rules set forth
+# Here again we are overriding the standard OWL-to-OBO rules set forth
 # by the ODK (https://github.com/obophenotype/uberon/issues/3014)
 composite-%.obo: composite-%.owl
 	$(OWLTOOLS) $< --add-obo-shorthand-to-properties \
