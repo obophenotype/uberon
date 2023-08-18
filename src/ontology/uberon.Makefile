@@ -312,7 +312,7 @@ imports/local-ceph.owl:
 # This section is intended to regroup rules that create files that are
 # not generated during a normal pipeline and that are never released,
 # but that someone may want to explicitly generate locally. This does
-# not include unreleased *reports*.
+# not include unreleased *reports* and *views/subsets*.
 
 # Markdown export
 markdown:
@@ -879,6 +879,23 @@ subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
 		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
 .PRECIOUS: subsets/%-view.owl
 
+%-partview.owl: %.owl
+	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level \
+		    --bpvo --reflexive --prefix "" --suffix " part" -r elk -p BFO:0000050 --replace \
+		    --set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
+
+%-exprview.owl: %.owl
+	$(OWLTOOLS) $< $(URIBASE)/ro.owl --merge-support-ontologies \
+		--remove-subset grouping_class --remove-subset upper_level \
+		--bpvo --prefix " expressed in" --suffix "" -r elk -p BFO:0000050 --replace \
+		--set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
+
+%-homolview.owl: %.owl
+	$(OWLTOOLS) $< $(URIBASE)/ro.owl homologous-to-part-of.obo --merge-support-ontologies \
+		--remove-subset grouping_class --remove-subset upper_level \
+		--bpvo --prefix " expressed in" --suffix "" -r elk -p UBREL:0002000 --replace \
+		--set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
+
 
 
 # ----------------------------------------
@@ -1251,20 +1268,6 @@ aspell:
 
 %-ispellcheck: % | aspell
 	aspell check --home-dir . $<
-
-
-# ----------------------------------------
-# VIEWS
-# ----------------------------------------
-%-partview.owl: %.owl
-	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level --bpvo --reflexive --prefix "" --suffix " part" -r elk -p BFO:0000050 --replace --set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
-##	owltools $< --bpvo --prefix "" --suffix " part" -r elk -p BFO:0000050 --set-ontology-id $(URIBASE)/uberon/$@ -o $@
-
-%-exprview.owl: %.owl
-	$(OWLTOOLS) $< $(URIBASE)/ro.owl --merge-support-ontologies  --remove-subset grouping_class --remove-subset upper_level --bpvo  --prefix " expressed in" --suffix "" -r elk -p BFO:0000050 --replace --set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
-
-%-homolview.owl: %.owl
-	$(OWLTOOLS) $< $(URIBASE)/ro.owl homologous-to-part-of.obo --merge-support-ontologies  --remove-subset grouping_class --remove-subset upper_level --bpvo  --prefix " expressed in" --suffix "" -r elk -p UBREL:0002000 --replace --set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
 
 
 # ----------------------------------------
