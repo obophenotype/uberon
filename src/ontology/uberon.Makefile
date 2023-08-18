@@ -58,17 +58,51 @@ update_dynamic_catalog:
 
 
 # ----------------------------------------
-# STEP 0: checks
+# TESTS/QC
 # ----------------------------------------
+# This section defines the composition of the test suites (i.e., which
+# checks are performed). The checks themselves are defined elsewhere in
+# this Makefile (mostly in the REPORTS section further below).
 
-checks: $(REPORTDIR)/uberon-edit-xp-check $(REPORTDIR)/uberon-edit-obscheck.txt \
-    $(REPORTDIR)/bfo-check.txt \
-    $(REPORTDIR)/uberon.obo-OWL-check \
-    $(REPORTDIR)/uberon-obscheck.txt \
-    $(REPORTDIR)/uberon-orphans \
-    $(REPORTDIR)/uberon-synclash
+# This target is invoked as part of the automated CI workflow.
+# To include a specific check/report in the CI workflow, add it
+# to the pre-requisites here.
+test: $(REPORTDIR)/basic-allcycles \
+	$(REPORTDIR)/bfo-check.txt \
+	$(REPORTDIR)/taxon-constraint-check.txt \
+	$(REPORTDIR)/uberon-edit-xp-check \
+	obocheck \
+	test_obo_serialisation \
+	test_obsolete \
+	test_owlaxioms
 
-test: $(REPORTDIR)/uberon-edit-xp-check reports/bfo-check.txt
+# The other targets are manually triggered.
+# 'checks' is a subset of 'uberon-qc'.
+checks: $(REPORTDIR)/bfo-check.txt \
+	$(REPORTDIR)/uberon-edit-obscheck.txt \
+	$(REPORTDIR)/uberon-edit-xp-check \
+	$(REPORTDIR)/uberon-obscheck.txt \
+	$(REPORTDIR)/uberon-orphans \
+	$(REPORTDIR)/uberon.obo-OWL-check
+
+uberon-qc: checks \
+	quick-bridge-checks \
+	bridge-checks \
+	extra-full-bridge-checks \
+	$(REPORTDIR)/basic-allcycles \
+	$(REPORTDIR)/basic-orphans \
+	$(REPORTDIR)/composite-metazoan-dv.txt \
+	$(REPORTDIR)/taxon-constraint-check.txt \
+	$(REPORTDIR)/uberon-dv.txt \
+	$(REPORTDIR)/uberon-orphans \
+	$(REPORTDIR)/stages
+	cat $(REPORTDIR)/uberon-orphans \
+		$(REPORTDIR)/uberon-edit-obscheck.txt \
+		$(REPORTDIR)/uberon-edit-xp-check \
+		$(REPORTDIR)/uberon-orphans \
+		$(REPORTDIR)/uberon-dv.txt \
+		$(REPORTDIR)/composite-metazoan-dv.txt
+
 
 # ----------------------------------------
 # STEP 1: pre-processing
@@ -556,8 +590,6 @@ test_obsolete:
 test_owlaxioms:
 	! grep "owl-axioms: " uberon-edit.obo
 
-test: obocheck test_obo_serialisation test_obsolete test_owlaxioms
-
 
 # Cycle detection checks
 # ----------------------------------------
@@ -573,8 +605,6 @@ $(REPORTDIR)/%-allcycles: %.owl
 
 $(REPORTDIR)/basic-allcycles: basic.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
-test: $(REPORTDIR)/basic-allcycles
 
 
 # Other checks
@@ -687,27 +717,6 @@ $(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.ow
 	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 		       -I $(URIBASE)/bfo.owl \
 		 reason -r ELK > $@
-
-
-QC_FILES = checks\
-    $(TMPDIR)/bridges\
-    quick-bridge-checks\
-    bridge-checks\
-    extra-full-bridge-checks\
-    $(REPORTDIR)/taxon-constraint-check.txt\
-    $(REPORTDIR)/basic-allcycles\
-    $(REPORTDIR)/basic-orphans\
-    $(REPORTDIR)/uberon-orphans\
-    $(REPORTDIR)/ext-obscheck.txt\
-    $(REPORTDIR)/uberon-dv.txt\
-    $(REPORTDIR)/composite-metazoan-dv.txt\
-    reports/stages
-
-test: $(REPORTDIR)/taxon-constraint-check.txt #$(REPORTDIR)/bridge-check-caro.txt
-
-uberon-qc: $(QC_FILES)
-	cat $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-edit-obscheck.txt  $(REPORTDIR)/uberon-edit-xp-check.err  $(REPORTDIR)/uberon-orphans $(REPORTDIR)/uberon-synclash $(REPORTDIR)/uberon-dv.txt $(REPORTDIR)/composite-metazoan-dv.txt
-
 
 
 # ----------------------------------------
