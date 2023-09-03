@@ -1177,30 +1177,34 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 
 
 # ----------------------------------------
-# BRIDGES
+# SSSOM MAPPINGS
 # ----------------------------------------
+# Some foreign ontologies are providing their own mapping sets. We fetch
+# them and store them into mappings/ONT-mappings.ssom.tsv.
 
+# The following ontologies publish their own mapping sets.
+EXTERNAL_SSSOM_PROVIDERS = fbbt
 
-# Generating cross-refs with FBbt from SSSOM
-# ----------------------------------------
-# Download the FBbt mapping file
-.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
-$(TMPDIR)/fbbt-mappings.sssom.tsv:
-	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+# All the sets coming from the above ontologies.
+EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
 
-# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
-# (no update if the downloaded file is absent or identical to the one we already have)
-mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+# Fetch a fresh version of a foreign mapping set. This generic rule
+# assumes the foreign ontology is publishing its set at a predictable
+# location. Override this rule if a given ontology publishes its set at
+# a different location.
+.PHONY: $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(provider)-mappings)
+$(TMPDIR)/%.sssom.tsv: %-mappings
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv ; fi
+
+# Refresh the mapping set in mappings/ with the one freshly downloaded,
+# if it is different.
+mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
 	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
 
-# Generate cross-references from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: $(SRC) mappings/fbbt-mappings.sssom.tsv $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:sssom-inject -i $< \
-		                    --sssom mappings/fbbt-mappings.sssom.tsv \
-		                    --invert --only-subject-in UBERON --check-subject \
-		                    --hasdbxref --no-merge --bridge-file $@ \
-		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
+# ----------------------------------------
+# BRIDGES
+# ----------------------------------------
 
 # Prepare Uberon and CL sources
 # ----------------------------------------
@@ -1318,6 +1322,18 @@ $(TMPDIR)/hra_depiction_3d_images.owl:
 
 $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
+
+# The mappings.owl component contains cross-references to foreign
+# ontologies that provide their own mappings as a SSSOM set. This
+# component ensures those mappings are visible to Uberon editors and
+# users.
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:sssom-inject -i $< \
+		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		                    --invert --only-subject-in UBERON --check-subject \
+		                    --hasdbxref --no-merge --bridge-file $@ \
+		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
 # ----------------------------------------
