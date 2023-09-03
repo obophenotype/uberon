@@ -1194,8 +1194,12 @@ mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
 	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
 
 # Generate cross-references from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
-	awk -f ../scripts/sssom2xrefs.awk $< > $@
+$(COMPONENTSDIR)/mappings.owl: $(SRC) mappings/fbbt-mappings.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:sssom-inject -i $< \
+		                    --sssom mappings/fbbt-mappings.sssom.tsv \
+		                    --invert --only-subject-in UBERON --check-subject \
+		                    --hasdbxref --no-merge --bridge-file $@ \
+		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
 # Prepare Uberon and CL sources
