@@ -107,6 +107,22 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 
 
 # ----------------------------------------
+# ROBOT PLUGINS
+# ----------------------------------------
+
+# All ROBOT plugins should go into that directory. The variable is
+# exported into the environment so that plugins are available to
+# all calls to ROBOT.
+ROBOT_PLUGINS_DIRECTORY = $(TMPDIR)/plugins
+export ROBOT_PLUGINS_DIRECTORY
+
+# Make sure the SSSOM plugin for ROBOT is available.
+$(TMPDIR)/plugins/sssom.jar:
+	mkdir -p $(TMPDIR)/plugins
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.4.1/sssom-robot-plugin-0.4.1.jar
+
+
+# ----------------------------------------
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 # Step 1: Preprocessing. We Merge the edit file file with imports,
@@ -1163,6 +1179,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # ----------------------------------------
 # BRIDGES
 # ----------------------------------------
+
 
 # Generating cross-refs with FBbt from SSSOM
 # ----------------------------------------
