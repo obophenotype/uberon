@@ -1206,75 +1206,66 @@ mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
 # BRIDGES
 # ----------------------------------------
 
-# Prepare Uberon and CL sources
-# ----------------------------------------
-# Uberon: We need to forcefully merge the mappings component generated
-# from the FBbt mappings so that the FBbt cross-references will be
-# visible to the bridge-generating script.
+# 1. Extract cross-references from Uberon/CL and turn them to a SSSOM
+# mapping set.
+# Several cross-references are using OBO prefixes that are unknown to
+# ROBOT and not declared in Uberon/CL, so they need to be explicitly
+# declared here (otherwise xref-extract would ignore them).
+$(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $< -i mirror/cl.owl --collapse-import-closure false \
+		 sssom:xref-extract --mapping-file $@ \
+		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_' \
+		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'  \
+		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'  \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_' \
+		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_' \
+		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'  \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_'
+
+# 2. Likewise, but from ZFA (ZFA is the source of truth for the CL-ZFA
+# mappings).
+$(TMPDIR)/zfa.sssom.tsv: mirror/zfa.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:xref-extract -i $< --mapping-file $@
+
+# 3. Compile all mapping sets and generate the bridges.
+# Note that merging CL here is not strictly necessary, but doing so
+# allows sssom-inject to filter out any mapping with an inexistent or
+# obsolete Uberon/CL class.
+$(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
+		   $(TMPDIR)/uberon-cl.sssom.tsv $(TMPDIR)/zfa.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
+		   $(TMPDIR)/plugins/sssom.jar $(BRIDGEDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
+		   $(CUSTOM_BRIDGES)
+	$(ROBOT) merge -i $(SRC) -i mirror/cl.owl \
+		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-cl.sssom.tsv \
+		                    --sssom $(TMPDIR)/zfa.sssom.tsv \
+		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		                    --ruleset $(BRIDGEDIR)/bridges.rules \
+		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch
+
+# The above step creates RDF/XML bridges, turn them to OBO.
+# FIXME: Is this really necessary? Previously the OBO files were an
+# intermediate towards the final bridge files in OWL, but now we can
+# generate bridge files in OWL (or any format we want) directly, so
+# I don't think we need to carry over OBO files.
+$(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
+	$(ROBOT) convert -i $< --check false -f obo -o $@
+
+
+# seed.obo: This has no longer anything to do with generating the
+# bridges, but we need to keep that around for now as it is also used
+# to generate the "life cycle" report elsewhere.
 $(TMPDIR)/seed.obo: $(SRC) $(COMPONENTSDIR)/mappings.owl
 	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/mappings.owl --collapse-import-closure false \
 		 convert -f obo --check false -o $@.tmp && \
 		$(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
-# CL (step 1): We take the full ontology, excluding external classes,
-# but including references to those
-$(TMPDIR)/cl-core.obo: $(SRC)
-	$(OWLTOOLS) $(URIBASE)/cl.owl \
-		--make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 \
-		--remove-external-classes -k CL \
-		--remove-dangling --remove-axiom-annotations --remove-imports-declarations \
-		-o -f obo --no-check $@
-
-# CL: (step 2): We add the header tags that the bridge-generating script
-# is relying upon
-$(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
-	if [ $(BRI) = true ]; then \
-		egrep '^(idspace|treat-)' $(SRC) > $@.tmp && \
-		cat $< >> $@.tmp && \
-		$(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; \
-	fi
-
-# ZFA requires special treatment because most xrefs between CL and ZFA
-# are on the ZFA side, so they need to be extracted and inverted before
-# we can generate the ZFA bridges out of them.
-# FIXME: This is currently broken: the step below does not extract
-# anything, which is probably why the CL-to-ZFA bridge is almost empty
-# (https://github.com/obophenotype/uberon/issues/1813)
-$(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
-		$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv && \
-		cat $@_xrefs_to_zfa.tsv | tail -n +2 | \
-		$(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; \
-	fi
-
-
-# Building the bridges
-# ----------------------------------------
-# Most bridges are built here, by a script that extracts xrefs from
-# the source files prepared above and derives the bridges from them.
-$(TMPDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(REPORTDIR)/life-cycle-xrefs.txt $(CUSTOM_BRIDGES)
-	if [ $(BRI) = true ]; then \
-		cd $(BRIDGEDIR) && \
-		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt ../$(TMPDIR)/seed.obo && \
-		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && \
-		cd .. && touch $@; \
-	fi
-
-# The above script creates OBO bridges, turn them to OWL
-$(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
-	$(OWLTOOLS) $< --remove-annotation-assertions -o $@
-
 
 # Special bridges
 # ----------------------------------------
-# All bridges that are not generated by the xref-based script.
+# All bridges that are not generated from SSSOM sets.
 
 CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl
-
-$(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
-	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
+		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
 
 # Bridges to MBA and DMBA are now manually curated and generated in
 # https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
