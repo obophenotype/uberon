@@ -623,8 +623,8 @@ $(REPORTDIR)/basic-allcycles: basic.owl
 # ----------------------------------------
 
 # List of terms cross-referenced to one of Uberon's "life cycle" terms
-$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
-	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
+$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(SRC)
+	$(ROBOT) reason -i $(SRC) query --use-graphs true --query $< $@.tmp.tsv
 	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
 
 # Disjoint violations
@@ -1255,15 +1255,6 @@ $(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
 # I don't think we need to carry over OBO files.
 $(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
 	$(ROBOT) convert -i $< --check false -f obo -o $@
-
-
-# seed.obo: This has no longer anything to do with generating the
-# bridges, but we need to keep that around for now as it is also used
-# to generate the "life cycle" report elsewhere.
-$(TMPDIR)/seed.obo: $(SRC) $(COMPONENTSDIR)/mappings.owl
-	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/mappings.owl --collapse-import-closure false \
-		 convert -f obo --check false -o $@.tmp && \
-		$(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
 
 
 # Special bridges
