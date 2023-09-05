@@ -1249,7 +1249,7 @@ $(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
 		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-cl.sssom.tsv \
 		                    --sssom $(TMPDIR)/zfa.sssom.tsv \
 		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		                    --ruleset $(BRIDGEDIR)/bridges.rules \
+		                    --ruleset $(TMPDIR)/bridges.rules \
 		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch
 
 # The above step creates RDF/XML bridges, turn them to OBO.
