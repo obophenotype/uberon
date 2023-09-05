@@ -1206,6 +1206,10 @@ mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
 # BRIDGES
 # ----------------------------------------
 
+# Those bridges are generated separately (see below).
+CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
+		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
+
 # 1. Extract cross-references from Uberon/CL and turn them to a SSSOM
 # mapping set.
 # Several cross-references are using OBO prefixes that are unknown to
@@ -1257,12 +1261,9 @@ $(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
 	$(ROBOT) convert -i $< --check false -f obo -o $@
 
 
-# Special bridges
+# Custom bridges
 # ----------------------------------------
 # All bridges that are not generated from SSSOM sets.
-
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
 
 # Bridges to MBA and DMBA are now manually curated and generated in
 # https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
