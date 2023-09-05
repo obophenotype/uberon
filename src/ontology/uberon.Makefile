@@ -1215,8 +1215,16 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
 # Several cross-references are using OBO prefixes that are unknown to
 # ROBOT and not declared in Uberon/CL, so they need to be explicitly
 # declared here (otherwise xref-extract would ignore them).
+# The bridge generation pipeline is typically run with MIR=false, so
+# mirror/cl.owl may not be available; if so, we fallback to download it
+# directly from the PURL source.
 $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) merge -i $< -i mirror/cl.owl --collapse-import-closure false \
+	if [ -f mirror/cl.owl ]; then \
+		CL_INPUT='-i mirror/cl.owl' ; \
+	else \
+		CL_INPUT='-I http://purl.obolibrary.org/obo/cl/cl-base.owl' ; \
+	fi && \
+	$(ROBOT) merge -i $< $$CL_INPUT --collapse-import-closure false \
 		 sssom:xref-extract --mapping-file $@ \
 		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_' \
 		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'  \
@@ -1229,7 +1237,12 @@ $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
 # 2. Likewise, but from ZFA (ZFA is the source of truth for the CL-ZFA
 # mappings).
 $(TMPDIR)/zfa.sssom.tsv: mirror/zfa.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:xref-extract -i $< --mapping-file $@
+	if [ -f mirror/zfa.owl ]; then \
+		ZFA_INPUT='-i mirror/zfa.owl' ; \
+	else \
+		ZFA_INPUT='-I http://purl.obolibrary.org/obo/zfa/zfa-base.owl' ; \
+	fi && \
+	$(ROBOT) merge $$ZFA_INPUT sssom:xref-extract --mapping-file $@
 
 # 3. Prepare the ruleset file.
 # The ruleset file is maintained with M4 macros to make it more easily
@@ -1245,7 +1258,12 @@ $(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
 		   $(TMPDIR)/uberon-cl.sssom.tsv $(TMPDIR)/zfa.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
 		   $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
 		   $(CUSTOM_BRIDGES)
-	$(ROBOT) merge -i $(SRC) -i mirror/cl.owl \
+	if [ -f mirror/cl.owl ]; then \
+		CL_INPUT='-i mirror/cl.owl' ; \
+	else \
+		CL_INPUT='-I http://purl.obolibrary.org/obo/cl/cl-base.owl' ; \
+	fi && \
+	$(ROBOT) merge -i $(SRC) $$CL_INPUT \
 		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-cl.sssom.tsv \
 		                    --sssom $(TMPDIR)/zfa.sssom.tsv \
 		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
