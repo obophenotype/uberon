@@ -1,0 +1,85 @@
+# Naming pattern: primary/secondary lower side number tooth
+# {upper, lower} {primary,secondary} {tooth}
+# def: {tooth} and part-of some {upper,lower} jaw region and part-of some {primary,secondary} dentition
+
+# all lower teeth reside in mandible, which is a subclass of lower jaw bone
+
+## will need to make tooth first, separately (e.g., molar tooth 1 needs to already exist)
+## in most cases, one will know if it is primary or secondary, as well as if it is upper or lower tooth.
+## need to create combination of lower and primary/secondary, do know need to make them individually
+# create upper and lower tooth with subclasses: 'calcareous tooth' and 'part of' some 'dentition'
+# create upper secondary tooth and upper primary tooth with subclass 'upper 'tooth''
+## not doing side but leaving this here in case side is included in the future
+# create right and left upper inscisor with subclass 'upper incisor'
+# create right and left primary and secondary upper incisor with subclass 'primary upper incisor' and 'secondary upper incisor'
+---
+contributors:
+  - https://orcid.org/0000-0003-2699-3066  # Meghan A. Balk
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+
+
+# lower teeth
+pattern_name: lower_teeth
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/lower_teeth.yaml
+
+description: "This defines lower teeth."
+
+classes:
+  bone_of_jaw: 'UBERON:0012360'  # Add ID for bone
+  dentition_type: 'UBERON:0003672'
+  calcareous_tooth: 'UBERON:0001091'
+
+relations:
+  part_of: 'BFO:0000050'
+
+annotationProperties:
+  exact_synonym: oio:hasExactSynonym
+  xref: oio:hasDbXref
+
+vars:
+  jaw: 'bone_of_jaw'
+  # mandible UBERON:0001684
+  dentition: 'dentition_type'
+  # primary UBERON:0007116
+  # secondary UBERON:0007774
+  tooth: 'calcareous_tooth'
+  # incisor UBERON_0001098
+  # canine UBERON:0003674
+  # molar UBERON:0003655
+  # premolar UBERON:0007120
+  your_syn: "xsd:string"
+
+data_list_vars:
+  xrefs: "'xref'"  # separate multiple entries by "|"
+
+name:
+  text: "%s lower %s"
+    # secondary lower first molar tooth
+  vars:
+    - dentition
+    - tooth
+
+def:
+  text: "A %s %s that is part of a lower jaw region."
+  # A secondary dentition molar tooth 1 that is part of a lower jaw region
+  vars:
+    - dentition
+    - tooth
+  annotations:
+    - annotationProperty: xref
+      value: xrefs
+
+annotations:
+
+  - annotationProperty: exact_synonym
+    text: "%s"
+    vars:
+      - your_syn
+
+equivalentTo:
+  text: "%s and ('part_of' some %s) and ('part_of' some %s)"
+  # molar tooth 1 and ('part of' some 'mandible') and ('part of' some 'secondary dentition')
+  vars:
+    - tooth
+    - jaw
+    - dentition
