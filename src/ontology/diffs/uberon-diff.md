@@ -1368,6 +1368,14 @@
 - [ammonium import across plasma membrane](http://purl.obolibrary.org/obo/GO_0140157) SubClassOf [ammonium transmembrane transport](http://purl.obolibrary.org/obo/GO_0072488) 
 
 
+### amniotic cavity `http://purl.obolibrary.org/obo/UBERON_0000301`
+#### Removed
+- [amniotic cavity](http://purl.obolibrary.org/obo/UBERON_0000301) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [amniotic fluid](http://purl.obolibrary.org/obo/UBERON_0000173) 
+
+#### Added
+- [amniotic cavity](http://purl.obolibrary.org/obo/UBERON_0000301) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [amniotic fluid](http://purl.obolibrary.org/obo/UBERON_0000173) 
+
+
 ### anatomical structure `http://purl.obolibrary.org/obo/CARO_0000003`
 #### Removed
 - [anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "spatial" 
@@ -1851,6 +1859,16 @@
 
 - [biomechanically related to](http://purl.obolibrary.org/obo/RO_0002567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002567" 
 
+
+
+### blood sinus of vibrissa `http://purl.obolibrary.org/obo/UBERON_0034941`
+#### Removed
+- [blood sinus of vibrissa](http://purl.obolibrary.org/obo/UBERON_0034941) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178) 
+
+#### Added
+- [blood sinus of vibrissa](http://purl.obolibrary.org/obo/UBERON_0034941) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [blood](http://purl.obolibrary.org/obo/UBERON_0000178) 
+
+- [blood sinus of vibrissa](http://purl.obolibrary.org/obo/UBERON_0034941) SubClassOf [protein-containing material entity](http://purl.obolibrary.org/obo/PR_000050567) 
 
 
 ### cadherin-5 `http://purl.obolibrary.org/obo/PR_000001444`
@@ -3525,6 +3543,16 @@ We also have the outstanding issue of how to aim different definitions to differ
 #### Added
 - [enucleate erythrocyte](http://purl.obolibrary.org/obo/CL_0000595) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RBC" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+
+### epididymal lumen `http://purl.obolibrary.org/obo/UBERON_0035956`
+#### Removed
+- [epididymal lumen](http://purl.obolibrary.org/obo/UBERON_0035956) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [seminal fluid](http://purl.obolibrary.org/obo/UBERON_0006530) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+
+#### Added
+- [epididymal lumen](http://purl.obolibrary.org/obo/UBERON_0035956) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [seminal fluid](http://purl.obolibrary.org/obo/UBERON_0006530) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
 
 ### epiphysis `http://purl.obolibrary.org/obo/UBERON_0001437`
@@ -8456,6 +8484,14 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 
 
 
+### ovarian fossa `http://purl.obolibrary.org/obo/UBERON_0016883`
+#### Removed
+- [ovarian fossa](http://purl.obolibrary.org/obo/UBERON_0016883) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+
+#### Added
+- [ovarian fossa](http://purl.obolibrary.org/obo/UBERON_0016883) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+
+
 ### pain receptor cell `http://purl.obolibrary.org/obo/CL_0000198`
 
 #### Added
@@ -8521,6 +8557,14 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 
 
 
+### pericardial cavity `http://purl.obolibrary.org/obo/UBERON_0001074`
+#### Removed
+- [pericardial cavity](http://purl.obolibrary.org/obo/UBERON_0001074) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) 
+
+#### Added
+- [pericardial cavity](http://purl.obolibrary.org/obo/UBERON_0001074) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) 
+
+
 ### perivascular cell `http://purl.obolibrary.org/obo/CL_4033054`
 
 #### Added
@@ -8550,6 +8594,14 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 - [perivascular macrophage](http://purl.obolibrary.org/obo/CL_0000881) SubClassOf [perivascular cell](http://purl.obolibrary.org/obo/CL_4033054) 
 
 
+### perivascular space `http://purl.obolibrary.org/obo/UBERON_0014930`
+#### Removed
+- [perivascular space](http://purl.obolibrary.org/obo/UBERON_0014930) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+
+#### Added
+- [perivascular space](http://purl.obolibrary.org/obo/UBERON_0014930) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+
+
 ### phosphorylates `http://purl.obolibrary.org/obo/RO_0002447`
 #### Removed
 - [phosphorylates](http://purl.obolibrary.org/obo/RO_0002447) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "phosphorylates" 
@@ -8574,6 +8626,14 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 #### Removed
 - [photoreceptor outer segment](http://purl.obolibrary.org/obo/GO_0001750) SubClassOf [anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001062) 
 
+
+
+### pituitary fossa `http://purl.obolibrary.org/obo/UBERON_0006667`
+#### Removed
+- [pituitary fossa](http://purl.obolibrary.org/obo/UBERON_0006667) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) 
+
+#### Added
+- [pituitary fossa](http://purl.obolibrary.org/obo/UBERON_0006667) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) 
 
 
 ### pituitary gland `http://purl.obolibrary.org/obo/UBERON_0000007`
@@ -14609,6 +14669,18 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 
 
 
+### spermaceti organ `http://purl.obolibrary.org/obo/UBERON_0009756`
+#### Removed
+- [spermaceti organ](http://purl.obolibrary.org/obo/UBERON_0009756) EquivalentTo [organ](http://purl.obolibrary.org/obo/UBERON_0000062) and ([contains](http://purl.obolibrary.org/obo/RO_0001019) some [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755)) 
+
+- [spermaceti organ](http://purl.obolibrary.org/obo/UBERON_0009756) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755) 
+
+#### Added
+- [spermaceti organ](http://purl.obolibrary.org/obo/UBERON_0009756) EquivalentTo [organ](http://purl.obolibrary.org/obo/UBERON_0000062) and ([location of](http://purl.obolibrary.org/obo/RO_0001015) some [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755)) 
+
+- [spermaceti organ](http://purl.obolibrary.org/obo/UBERON_0009756) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755) 
+
+
 ### spondin-1 `http://purl.obolibrary.org/obo/PR_000015557`
 #### Removed
 - [spondin-1](http://purl.obolibrary.org/obo/PR_000015557) [crossSpeciesExactMatch](https://w3id.org/semapv/vocab/crossSpeciesExactMatch) [spondin-1 (human)](http://purl.obolibrary.org/obo/PR_Q9HCB6) 
@@ -14621,6 +14693,20 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 
 - [stroma of bone marrow](http://purl.obolibrary.org/obo/UBERON_0007195) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
+
+
+### subarachnoid space `http://purl.obolibrary.org/obo/UBERON_0000315`
+#### Removed
+- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ISBN:0471888893" 
+
+- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+
+#### Added
+- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ISBN:0471888893" 
+
+- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
 
 
 ### sulfate import across plasma membrane `http://purl.obolibrary.org/obo/GO_1902434`
@@ -15055,3 +15141,9 @@ Annotations: expand_assertion_to &quot;DisjointClasses: (http://purl.obolibrary.
 #### Removed
 - [vascular endothelial growth factor receptor 2](http://purl.obolibrary.org/obo/PR_000002112) [crossSpeciesExactMatch](https://w3id.org/semapv/vocab/crossSpeciesExactMatch) [vascular endothelial growth factor receptor 2 (human)](http://purl.obolibrary.org/obo/PR_P35968) 
 
+
+
+### vibrissal follicle-sinus complex `http://purl.obolibrary.org/obo/UBERON_0034942`
+
+#### Added
+- [vibrissal follicle-sinus complex](http://purl.obolibrary.org/obo/UBERON_0034942) SubClassOf [protein-containing material entity](http://purl.obolibrary.org/obo/PR_000050567) 
