@@ -1227,13 +1227,19 @@ $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
 $(TMPDIR)/zfa.sssom.tsv: mirror/zfa.owl $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:xref-extract -i $< --mapping-file $@
 
+# 3. Prepare the ruleset file.
+# The ruleset file is maintained with M4 macros to make it more easily
+# editable, so we need to expand the macros first.
+$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
+	m4 $^ > $@
+
 # 3. Compile all mapping sets and generate the bridges.
 # Note that merging CL here is not strictly necessary, but doing so
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
 $(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
 		   $(TMPDIR)/uberon-cl.sssom.tsv $(TMPDIR)/zfa.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
-		   $(TMPDIR)/plugins/sssom.jar $(BRIDGEDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
+		   $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
 		   $(CUSTOM_BRIDGES)
 	$(ROBOT) merge -i $(SRC) -i mirror/cl.owl \
 		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-cl.sssom.tsv \
