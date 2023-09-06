@@ -119,7 +119,7 @@ export ROBOT_PLUGINS_DIRECTORY
 # Make sure the SSSOM plugin for ROBOT is available.
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.4.1/sssom-robot-plugin-0.4.1.jar
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.4.2/sssom-robot-plugin-0.4.2.jar
 
 
 # ----------------------------------------
@@ -1226,14 +1226,15 @@ $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
 		CL_INPUT='-I http://purl.obolibrary.org/obo/cl/cl-base.owl' ; \
 	fi && \
 	$(ROBOT) merge -i $< $$CL_INPUT --collapse-import-closure false \
-		 sssom:xref-extract --mapping-file $@ \
-		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_' \
-		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'  \
-		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'  \
-		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_' \
-		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_' \
-		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'  \
-		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_'
+		 sssom:xref-extract --mapping-file $@ --drop-duplicates \
+		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
+		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
+		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'   \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
+		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'   \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+	> $(REPORTDIR)/xrefs-extraction.txt
 
 # 2. Likewise, but from ZFA (ZFA is the source of truth for the CL-ZFA
 # mappings).
