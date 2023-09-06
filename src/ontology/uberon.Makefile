@@ -1226,7 +1226,7 @@ $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) mirror/cl.owl $(TMPDIR)/plugins/sssom.jar
 		CL_INPUT='-I http://purl.obolibrary.org/obo/cl/cl-base.owl' ; \
 	fi && \
 	$(ROBOT) merge -i $< $$CL_INPUT --collapse-import-closure false \
-		 sssom:xref-extract --mapping-file $@ --drop-duplicates \
+		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
 		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
 		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
 		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'   \
@@ -1347,7 +1347,8 @@ $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.
 $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:sssom-inject -i $< \
 		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		                    --invert --only-subject-in UBERON --check-subject \
+		                    --invert --only-subject-in UBERON \
+		                    --check-subject --drop-duplicate-objects \
 		                    --hasdbxref --no-merge --bridge-file $@ \
 		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 

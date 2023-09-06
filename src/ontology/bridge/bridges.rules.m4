@@ -60,6 +60,9 @@ subject==UBERON:* || subject==CL:* -> invert();
 # Ignore any mapping to an inexistent or obsolete UBERON/CL class.
 predicate==* -> check_object_existence();
 
+# Do not allow a same foreign term to be mapped with more than one UBERON/CL class.
+!cardinality==*:1 -> stop();
+
 # Ignore any mapping with a predicate other than those four.
 !(predicate==skos:exactMatch
   || predicate==skos:narrowMatch
