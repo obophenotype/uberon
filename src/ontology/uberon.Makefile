@@ -1268,7 +1268,8 @@ $(TMPDIR)/bridges: $(SRC) mirror/cl.owl \
 		                    --sssom $(TMPDIR)/zfa.sssom.tsv \
 		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		                    --ruleset $(TMPDIR)/bridges.rules \
-		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch
+		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
+	touch $@
 
 # The above step creates RDF/XML bridges, turn them to OBO.
 # FIXME: Is this really necessary? Previously the OBO files were an
