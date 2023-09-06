@@ -1205,6 +1205,7 @@ mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
 # ----------------------------------------
 # BRIDGES
 # ----------------------------------------
+ifeq ($(BRI),true)
 
 # Those bridges are generated separately (see below).
 CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
@@ -1303,6 +1304,12 @@ $(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
 
 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
+
+else # BRI=false
+# Skip the production of bridges entirely.
+$(TMPDIR)/bridges:
+	touch $@
+endif
 
 
 # ----------------------------------------
