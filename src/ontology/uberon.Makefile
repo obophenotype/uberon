@@ -113,12 +113,12 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 # Step 1: Preprocessing. We Merge the edit file file with imports,
 # disjointness axioms, and list of contributors, then expand macros
 # (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl
+$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(MIRRORDIR)/ncbitaxon.owl
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(ROBOT) merge -i $< \
 			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
 			-i issues/contributor.owl \
-			-i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+            -i $(MIRRORDIR)/ncbitaxon.owl \
 		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
@@ -1302,13 +1302,6 @@ $(TMPDIR)/hra_depiction_3d_images.owl:
 
 $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
-# Disjointness axioms over taxons.
-# FIXME: Not treated as a "component", but it should be, since it is
-# merged early in the pipeline (preprocessing step) and therefore ends
-# up in all products.
-$(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
-	wget http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl -O $@
 
 
 # ----------------------------------------
