@@ -1,0 +1,17 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix label: <http://www.w3.org/2000/01/rdf-schema#label>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?property (MIN(?label) as ?p_label) (COUNT(?property) as ?usage) (SAMPLE(?s1) as ?class1) (SAMPLE(?s2) as ?class2)
+WHERE {
+  ?property a owl:ObjectProperty .
+  ?property rdfs:label ?label .
+  ?s1 rdfs:subClassOf ?x .
+  ?x rdf:type owl:Restriction ;
+		owl:onProperty ?property;
+		owl:someValuesFrom ?s2 .
+}
+GROUP BY ?property
+ORDER BY DESC (COUNT(?property))

@@ -29,7 +29,6 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | Tiago Lubiana Alves (@lubianat) |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New Term Requests. |
 | Wasila Dahdul (@wdahdul) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
 | Yvonne Bradford (@ybradford) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
-| Bradley Varner (@bvarner-ebi) | [Cell Annotation Platform]() | 1 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New cell types & edits for CAP |
 
 
 ## Past team members and major contributors
