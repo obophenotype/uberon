@@ -113,12 +113,11 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 # Step 1: Preprocessing. We Merge the edit file file with imports,
 # disjointness axioms, and list of contributors, then expand macros
 # (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv $(MIRRORDIR)/ncbitaxon.owl
+$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(ROBOT) merge -i $< \
 			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
 			-i issues/contributor.owl \
-            -i $(MIRRORDIR)/ncbitaxon.owl \
 		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
@@ -631,10 +630,19 @@ $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 	$(ROBOT) convert -i $< -f owl -o $@
 .PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
+# We get a version of the NCBITaxon slim that includes disjointness
+# axioms between taxons. For the checks below, we need the *entire*
+# slim, not just the classes that are used in Uberon. So to avoid making
+# Uberon itself needlessly large, the slim will only be merged as part
+# of the checks.
+$(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
+	wget -O $@ http://purl.obolibrary.org/obo/ncbitaxon/taxslim-disjoint-over-in-taxon.owl
+
 # We create a merged ontology consisting of
 # (1) Uberon itself;
 # (2) the external-disjoints component;
-# (3) all the bridges to Uberon (except the EMAP bridge, which should
+# (3) the taxslim including inter-taxon disjointness axioms;
+# (4) all the bridges to Uberon (except the EMAP bridge, which should
 #     probably be removed entirely from the repo anyway);
 # and we expand RO:0002175 (which was left unexpanded at the
 # preprocessing step, as it is only required for this check).
@@ -642,8 +650,11 @@ $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 # Uberon, and the improper linking of a species AO class to an Uberon
 # class with a taxon constraints.
 ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl \
+					   $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+					   $(TMPDIR)/bridges
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
 		 expand \
 		 convert -f ofn -o $@
@@ -669,8 +680,12 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
-$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
+				       $(TMPDIR)/external-disjoints.owl \
+				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+				       $(TMPDIR)/bridges
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		 reason -r ELK > $@
 
@@ -680,8 +695,13 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl $(TMPDIR)/external-disjoints.o
 # For this check, we separate the production of the merged ontology
 # from the production of the report.
 # 1. The merge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(IMPORTDIR)/local-%.owl
+$(REPORTDIR)/bridge-check-%.owl: uberon.owl \
+				 $(TMPDIR)/external-disjoints.owl \
+				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+				 $(TMPDIR)/bridges \
+				 $(IMPORTDIR)/local-%.owl
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		       -i $(IMPORTDIR)/local-$*.owl \
 		 convert -f ofn -o $@
