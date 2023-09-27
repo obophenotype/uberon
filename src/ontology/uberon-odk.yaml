@@ -20,7 +20,6 @@ release_artefacts:
   - full
   - simple
   - basic
-  - custom-ext
   - custom-basic
   - custom-composite-metazoan
   - custom-composite-metazoan-basic
@@ -66,6 +65,10 @@ import_group:
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: nbo
       use_base: TRUE
+    - id: orcidio
+      mirror_from: https://w3id.org/orcidio/orcidio.owl
+      base_iris:
+        - https://orcid.org/
 subset_group:
   products:
     - id: appendicular-minimal
@@ -109,6 +112,7 @@ robot_report:
     - obsolete-replaced_by
     - xrefs-mesh-pattern
     - label-synonym-polysemy
+    - id-format
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
@@ -122,3 +126,4 @@ components:
     - filename: hra_subset.owl
       source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl
     - filename: vasculature_class.owl
+    - filename: hra_depiction_3d_images.owl
