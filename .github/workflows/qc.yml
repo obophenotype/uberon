@@ -34,7 +34,7 @@ jobs:
         run: |
           cd src/ontology
           mkdir -p tmp reports mirror
-          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx11G' -e JAVA_OPTS='-Xmx11G' --rm obolibrary/odklite make BRI=false MIR=false IMP=false test > TESTLOG.log
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx10G' -e JAVA_OPTS='-Xmx10G' --rm obolibrary/odklite make BRI=false MIR=false IMP=false test > TESTLOG.log
         env:
           DEFAULT_BRANCH: master
       - name: Last rows of QC report
