@@ -19,18 +19,24 @@ jobs:
   ontology_qc:
     # The type of runner that the job will run on
     runs-on: macos-latest
-    container: obolibrary/odkfull:v1.4.3
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
+      - uses: docker-practice/actions-setup-docker@master
+      - run: |
+          set -x
+          docker version
+      - name: Install ODK
+        run: docker pull obolibrary/odklite
+      # Checks-out current branch
+      - uses: actions/checkout@v3
       - name: Run ontology QC checks
+        run: |
+          cd src/ontology
+          mkdir -p tmp reports mirror
+          docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx9G' -e JAVA_OPTS='-Xmx9G' --rm obolibrary/odklite make BRI=false MIR=false IMP=false test > TESTLOG.log
         env:
           DEFAULT_BRANCH: master
-          ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx10G' BRI=false MIR=false IMP=false test > TESTLOG.log
       - name: Last rows of QC report
         if: ${{ failure() }}
         run: tail -20 src/ontology/TESTLOG.log
