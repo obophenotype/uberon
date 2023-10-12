@@ -140,11 +140,18 @@ $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-g
 # For the temporary injection of property chains, see
 # <https://github.com/obophenotype/uberon/issues/2381>
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
+# The 'materialize' step is too resource-intensive for the GitHub
+# Action runners, so we leave it out when running online QC checks, see
+# <https://github.com/obophenotype/uberon/pull/3087#issuecomment-1755553647>
+ifeq ($(GH_ACTION),true)
+MATERIALIZE=
+else
+MATERIALIZE = materialize -T $(CONFIGDIR)/basic_properties.txt -r elk
+endif
 uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
 	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 	               -i $(DEVELOPS_FROM_CHAIN) \
-	         relax \
-	         materialize -T $(CONFIGDIR)/basic_properties.txt -r elk \
+	         relax $(MATERIALIZE) \
 	         reason -r elk --exclude-duplicate-axioms true \
 	                       --equivalent-classes-allowed asserted-only \
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
