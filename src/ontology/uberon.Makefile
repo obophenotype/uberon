@@ -124,6 +124,9 @@ $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-g
 # For the temporary injection of property chains, see
 # <https://github.com/obophenotype/uberon/issues/2381>
 DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
+# The 'materialize' step is too resource-intensive for the GitHub
+# Action runners, so we leave it out when running online QC checks, see
+# <https://github.com/obophenotype/uberon/pull/3087#issuecomment-1755553647>
 ifeq ($(GH_ACTION),true)
 MATERIALIZE=
 else
