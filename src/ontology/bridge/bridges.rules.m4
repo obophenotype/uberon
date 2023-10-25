@@ -7,7 +7,6 @@ prefix BSPO:      <http://purl.obolibrary.org/obo/BSPO_>
 prefix CARO:      <http://purl.obolibrary.org/obo/CARO_>
 prefix CL:        <http://purl.obolibrary.org/obo/CL_>
 prefix DHBA:      <http://purl.obolibrary.org/obo/DHBA_>
-prefix EFO:       <http://purl.obolibrary.org/obo/EFO_>
 prefix EHDAA2:    <http://purl.obolibrary.org/obo/EHDAA2_>
 prefix EMAPA:     <http://purl.obolibrary.org/obo/EMAPA_>
 prefix FBbt:      <http://purl.obolibrary.org/obo/FBbt_>
@@ -83,7 +82,6 @@ BRIDGE(AEO)
 BRIDGE(BFO)
 BRIDGE(BSPO)
 BRIDGE(CARO)
-BRIDGE(EFO)
 BRIDGE(GO)
 BRIDGE(NCIT)
 BRIDGE(OG)
