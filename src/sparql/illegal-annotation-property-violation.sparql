@@ -75,7 +75,6 @@ SELECT DISTINCT ?annotation WHERE {
     <http://www.w3.org/2000/01/rdf-schema#seeAlso>,
     <http://www.w3.org/2004/02/skos/core#closeMatch>,
     <http://www.w3.org/2002/07/owl#deprecated>,
-    <http://xmlns.com/foaf/0.1/depicted_by>,
     <http://xmlns.com/foaf/0.1/depiction>
   ))
   FILTER (isIRI(?subj) && STRSTARTS(str(?subj), "http://purl.obolibrary.org/obo/UBERON_"))
