@@ -638,20 +638,20 @@ $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 .PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
 # All the checks below need the taxslim-disjoint-over-in-taxon.owl,
-# which should have been downloaded into mirror/ncbitaxon.owl by the
-# standard ODK import pipeline. So ideally, all the checks below should
-# just have to depend on mirror/ncbitaxon.owl. But the QC checks are run
-# under MIR=false IMP=false, so while the rule would be invoked by Make
-# it would not result in the mirror being downloaded if it is not
-# already available.
+# which should have been downloaded into mirror/ncbitaxondisjoints.owl
+# by the standard ODK import pipeline. So ideally, all the checks below
+# should just have to depend on mirror/ncbitaxondisjoints.owl. But the
+# QC checks are run under MIR=false IMP=false, so while the rule would
+# be invoked by Make it would not result in the mirror being downloaded
+# if it is not already available.
 # So instead, we make the checks depend on another file, and here we
 # 1. force the download of the mirror if it is not already there;
 # 2. create a link to that mirror.
 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
-	if [ ! -f $(MIRRORDIR)/ncbitaxon.owl ]; then \
-		$(MAKE) $(MIRRORDIR)/ncbitaxon.owl MIR=true IMP=true ; \
+	if [ ! -f $(MIRRORDIR)/ncbitaxondisjoints.owl ]; then \
+		$(MAKE) $(MIRRORDIR)/ncbitaxondisjoints.owl MIR=true IMP=true ; \
 	fi && \
-	ln -f -s ../$(MIRRORDIR)/ncbitaxon.owl $@
+	ln -f -s ../$(MIRRORDIR)/ncbitaxondisjoints.owl $@
 
 # We create a merged ontology consisting of
 # (1) Uberon itself;
