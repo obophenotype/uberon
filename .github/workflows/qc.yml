@@ -28,17 +28,16 @@ jobs:
 
       - name: Run ontology QC checks
         id: check
+        continue-on-error: true
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
         run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=false MIR=false IMP=false test > TESTLOG.log
-      - name: Last rows of QC report
-        if: ${{ failure() }}
-        run: tail -20 src/ontology/TESTLOG.log
 
       - name: Reason over taxon constraints
         id: explaintc
-        if: steps.check.outputs.status >= 1
+        continue-on-error: true
+        if: steps.check.outcome == 'failure'
         run: |
           if [ -s src/ontology/reports/taxon-constraint-check.txt ] then
             robot explain -i src/ontology/tmp/uberon-edit-plus-tax-equivs.owl -M unsatisfiability -u all -r ELK -e taxon-unsats.md
@@ -48,9 +47,15 @@ jobs:
             exit 1
           fi
       - name: Post explanation for taxon constraint violations
-        if: steps.explaintc.outputs.status >= 1
+        if: steps.explaintc.outcome == 'failure'
         uses: NejcZdovc/comment-pr@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           file: "comment.md"
           identifier: "TAXON_CONSTRAINTS_REASONING"
+
+      - name: Last rows of QC report
+        if: steps.check.outcome == 'failure'
+        run: |
+          tail -20 src/ontology/TESTLOG.log
+          exit 1
