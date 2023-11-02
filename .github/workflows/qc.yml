@@ -39,7 +39,7 @@ jobs:
         continue-on-error: true
         if: steps.check.outcome == 'failure'
         run: |
-          if [ -s src/ontology/reports/taxon-constraint-check.txt ] then
+          if [ -s src/ontology/reports/taxon-constraint-check.txt ]; then
             robot explain -i src/ontology/tmp/uberon-edit-plus-tax-equivs.owl -M unsatisfiability -u all -r ELK -e taxon-unsats.md
             echo "<details>\n<summary>This PR violates some taxon constraints. Here is what the reasoner has to say:</summary>\n" > comment.md
             cat taxon-unsats.md >> comment.md
