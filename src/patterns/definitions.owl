@@ -7,9 +7,11 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/uberon/patterns/definitions.owl>
-<http://purl.obolibrary.org/obo/uberon/releases/2023-07-24/patterns/definitions.owl>
-Annotation(owl:versionInfo "2023-07-24")
+<http://purl.obolibrary.org/obo/uberon/releases/2023-11-07/patterns/definitions.owl>
+Annotation(owl:versionInfo "2023-11-07")
 
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001533>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001535>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001709>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001710>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0016454>))
@@ -92,6 +94,7 @@ Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8490050>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8490051>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BSPO_0000120>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BSPO_0000121>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002252>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0002175>))
 Declaration(AnnotationProperty(<http://purl.org/dc/terms/contributor>))
@@ -105,6 +108,10 @@ Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#has
 ############################
 #   Classes
 ############################
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_0001535> (<http://purl.obolibrary.org/obo/UBERON_0001535>)
+
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001535> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002252> <http://purl.obolibrary.org/obo/UBERON_0001533>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_8490000> (right upper third secondary molar tooth)
 
