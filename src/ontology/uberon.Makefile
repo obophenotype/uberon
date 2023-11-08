@@ -1328,8 +1328,10 @@ HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validatio
 $(TMPDIR)/hra_subset.owl:
 	wget $(HRA_SUBSET_URL) -O $@
 
+ifeq ($(strip $(MIR)),true)
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+endif
 
 3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
 $(TMPDIR)/hra_depiction_3d_images.owl:
