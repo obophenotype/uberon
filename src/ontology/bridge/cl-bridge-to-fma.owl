@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fma.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2023-09-07/bridge/cl-bridge-to-fma.owl"/>
-        <dc:contributor>Onard Mejino</dc:contributor>
-        <dc:contributor>Terry Hayamizu</dc:contributor>
-        <dc:creator>CL editors</dc:creator>
-        <dc:description>Taxonomic equivalence axioms between the FMA and CL.</dc:description>
-        <dc:title>CL bridge to fma</dc:title>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2023-11-13/bridge/cl-bridge-to-fma.owl"/>
+        <terms:contributor>Onard Mejino</terms:contributor>
+        <terms:contributor>Terry Hayamizu</terms:contributor>
+        <terms:creator>CL editors</terms:creator>
+        <terms:description>Taxonomic equivalence axioms between the FMA and CL.</terms:description>
+        <terms:title>CL bridge to fma</terms:title>
     </owl:Ontology>
     
 
@@ -36,27 +36,27 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
+    <!-- http://purl.org/dc/terms/contributor -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/creator -->
+    <!-- http://purl.org/dc/terms/creator -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/description -->
+    <!-- http://purl.org/dc/terms/description -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/title -->
+    <!-- http://purl.org/dc/terms/title -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -751,6 +751,12 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000365 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000365"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000415 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000415"/>
     
 
 
@@ -2932,6 +2938,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0010012 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0010012"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0017005 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0017005"/>
@@ -3991,6 +4003,12 @@
     <!-- http://purl.obolibrary.org/obo/CL_1001611 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_1001611"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_2000032 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_2000032"/>
     
 
 
@@ -12271,6 +12289,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FMA_72300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_72300">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000415"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>diploid cell (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FMA_72395 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_72395">
@@ -12741,7 +12778,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589>mammary alveolar cell (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589>lactocyte (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13083,7 +13120,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589>mammary alveolar cell (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589>lactocyte (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -14475,6 +14512,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FMA_83601 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_83601">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000623"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>natural killer cell (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FMA_83617 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_83617">
@@ -14775,6 +14831,25 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589>regulatory T cell (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FMA_84104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84104">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0010012"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>cerebral cortex neuron (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -15459,6 +15534,25 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589>sensory neuron (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FMA_84664 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FMA_84664">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_2000032"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>peripheral nervous system neuron (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -16686,5 +16780,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 

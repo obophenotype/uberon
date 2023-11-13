@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-zfa.owl#"
      xml:base="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-zfa.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-zfa.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2023-09-07/bridge/cl-bridge-to-zfa.owl"/>
-        <dc:contributor>Melissa Haendel</dc:contributor>
-        <dc:contributor>Veri Van Slyke</dc:contributor>
-        <dc:contributor>Yvonne Bradford</dc:contributor>
-        <dc:creator>CL editors</dc:creator>
-        <dc:description>Taxonomic equivalence axioms between ZFA and CL.</dc:description>
-        <dc:title>CL bridge to zfa</dc:title>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2023-11-13/bridge/cl-bridge-to-zfa.owl"/>
+        <terms:contributor>Melissa Haendel</terms:contributor>
+        <terms:contributor>Veri Van Slyke</terms:contributor>
+        <terms:contributor>Yvonne Bradford</terms:contributor>
+        <terms:creator>CL editors</terms:creator>
+        <terms:description>Taxonomic equivalence axioms between ZFA and CL.</terms:description>
+        <terms:title>CL bridge to zfa</terms:title>
     </owl:Ontology>
     
 
@@ -37,27 +37,27 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/contributor -->
+    <!-- http://purl.org/dc/terms/contributor -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/creator -->
+    <!-- http://purl.org/dc/terms/creator -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/description -->
+    <!-- http://purl.org/dc/terms/description -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/title -->
+    <!-- http://purl.org/dc/terms/title -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -239,9 +239,9 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CL_0002371 -->
+    <!-- http://purl.obolibrary.org/obo/CL_0002377 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002371"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002377"/>
     
 
 
@@ -440,6 +440,25 @@
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_7954 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ZFA_0001725 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0001725">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002377"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>immature Schwann cell (zebrafish)</obo:IAO_0000589>
+    </owl:Class>
     
 
 
@@ -1241,25 +1260,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/ZFA_0009386 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0009386">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002371"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7954"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <obo:IAO_0000589>somatic cell (zebrafish)</obo:IAO_0000589>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/ZFA_0009387 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/ZFA_0009387">
@@ -1546,5 +1546,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.25) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
 

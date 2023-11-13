@@ -125,9 +125,10 @@ $(TMPDIR)/plugins/sssom.jar:
 # ----------------------------------------
 # BUILDING UBERON ITSELF
 # ----------------------------------------
+
 # Step 1: Preprocessing. We Merge the edit file file with imports,
-# disjointness axioms, and list of contributors, then expand macros.
-# FIXME: Need explanation for not expanding RO:0002175 specifically.
+# disjointness axioms, and list of contributors, then expand macros
+# (except RO:0002175, which only needs to be expanded for QC purposes).
 $(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
 	$(ROBOT) merge -i $< \
@@ -433,7 +434,7 @@ $(TMPDIR)/uberon-taxon-constraints.obo: $(SRC)
 		cat $@.tmp $(COMPONENTSDIR)/taxon_relations.obo > $@
 
 $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
-	$(OWLTOOLS) $< --expand-macros -o $@
+	$(ROBOT) expand --input $< -o $@
 
 
 # %-xf: Product without "non-subclass cross-references"?
@@ -652,18 +653,41 @@ $(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
 	$(ROBOT) convert -i $< -f owl -o $@
 .PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
+# All the checks below need the taxslim-disjoint-over-in-taxon.owl,
+# which should have been downloaded into mirror/ncbitaxondisjoints.owl
+# by the standard ODK import pipeline. So ideally, all the checks below
+# should just have to depend on mirror/ncbitaxondisjoints.owl. But the
+# QC checks are run under MIR=false IMP=false, so while the rule would
+# be invoked by Make it would not result in the mirror being downloaded
+# if it is not already available.
+# So instead, we make the checks depend on another file, and here we
+# 1. force the download of the mirror if it is not already there;
+# 2. create a link to that mirror.
+$(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
+	if [ ! -f $(MIRRORDIR)/ncbitaxondisjoints.owl ]; then \
+		$(MAKE) $(MIRRORDIR)/ncbitaxondisjoints.owl MIR=true IMP=true ; \
+	fi && \
+	ln -f -s ../$(MIRRORDIR)/ncbitaxondisjoints.owl $@
+
 # We create a merged ontology consisting of
 # (1) Uberon itself;
 # (2) the external-disjoints component;
-# (3) all the bridges to Uberon (except the EMAP bridge, which should
-#     probably be removed entirely from the repo anyway).
+# (3) the taxslim including inter-taxon disjointness axioms;
+# (4) all the bridges to Uberon (except the EMAP bridge, which should
+#     probably be removed entirely from the repo anyway);
+# and we expand RO:0002175 (which was left unexpanded at the
+# preprocessing step, as it is only required for this check).
 # This can be used to reveal both internal inconsistencies within
 # Uberon, and the improper linking of a species AO class to an Uberon
 # class with a taxon constraints.
 ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl \
+					   $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+					   $(TMPDIR)/bridges
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
+		 expand \
 		 convert -f ofn -o $@
 .PRECIOUS: $(TMPDIR)/uberon-edit-plus-tax-equivs.owl
 
@@ -687,8 +711,12 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
-$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges
+$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
+				       $(TMPDIR)/external-disjoints.owl \
+				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+				       $(TMPDIR)/bridges
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		 reason -r ELK > $@
 
@@ -698,8 +726,13 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl $(TMPDIR)/external-disjoints.o
 # For this check, we separate the production of the merged ontology
 # from the production of the report.
 # 1. The merge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl $(TMPDIR)/external-disjoints.owl $(TMPDIR)/bridges $(IMPORTDIR)/local-%.owl
+$(REPORTDIR)/bridge-check-%.owl: uberon.owl \
+				 $(TMPDIR)/external-disjoints.owl \
+				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
+				 $(TMPDIR)/bridges \
+				 $(IMPORTDIR)/local-%.owl
 	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		       -i $(IMPORTDIR)/local-$*.owl \
 		 convert -f ofn -o $@
@@ -1323,8 +1356,10 @@ HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validatio
 $(TMPDIR)/hra_subset.owl:
 	wget $(HRA_SUBSET_URL) -O $@
 
+ifeq ($(strip $(MIR)),true)
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+endif
 
 3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
 $(TMPDIR)/hra_depiction_3d_images.owl:
