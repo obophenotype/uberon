@@ -1223,7 +1223,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # them and store them into mappings/ONT-mappings.ssom.tsv.
 
 # The following ontologies publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa
 
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
@@ -1242,6 +1242,28 @@ mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
 	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
 
 
+# Special cases for ontologies that do no provide a ready-to-use set
+# ------------------------------------------------------------------
+
+# The CL set is to be extracted from cross-references. In order to do
+# that, we need to first merge Uberon with CL, because the treat-xrefs-
+# annotations are only in Uberon; then we need to remove the Uberon
+# terms to avoid extracting the cross-references from them as well.
+mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl --collapse-import-closure false \
+		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
+		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+	> $(REPORTDIR)/cl-xrefs-extraction.txt
+
+# Likewise, the ZFA set (which is the source of truth for the CL-ZFA
+# mappings) is to be extracted from cross-references in ZFA.
+mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
+	> $(REPORTDIR)/zfa-xrefs-extraction.txt
+
+
 # ----------------------------------------
 # BRIDGES
 # ----------------------------------------
@@ -1251,16 +1273,13 @@ ifeq ($(BRI),true)
 CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
 		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
 
-# 1. Extract cross-references from Uberon/CL and turn them to a SSSOM
+# 1. Extract cross-references from Uberon and turn them to a SSSOM
 # mapping set.
 # Several cross-references are using OBO prefixes that are unknown to
 # ROBOT and not declared in Uberon/CL, so they need to be explicitly
 # declared here (otherwise xref-extract would ignore them).
-# The bridge generation pipeline is typically run with IMP=false, so
-# mirror/cl.owl may not be available; so we forcibly refresh it.
-$(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
-	$(MAKE) $(MIRRORDIR)/cl.owl MIR=true IMP=true
-	$(ROBOT) merge -i $< -i $(MIRRORDIR)/cl.owl --collapse-import-closure false \
+$(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $< --collapse-import-closure false \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
 		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
 		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
@@ -1269,15 +1288,9 @@ $(TMPDIR)/uberon-cl.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
 		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
-	> $(REPORTDIR)/xrefs-extraction.txt
+	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
-# 2. Likewise, but from ZFA (ZFA is the source of truth for the CL-ZFA
-# mappings).
-$(TMPDIR)/zfa.sssom.tsv: $(TMPDIR)/plugins/sssom.jar
-	$(MAKE) $(MIRRORDIR)/zfa.owl MIR=true IMP=true
-	$(ROBOT) merge -i $(MIRRORDIR)/zfa.owl sssom:xref-extract --mapping-file $@
-
-# 3. Prepare the ruleset file.
+# 2. Prepare the ruleset file.
 # The ruleset file is maintained with M4 macros to make it more easily
 # editable, so we need to expand the macros first.
 $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
@@ -1287,14 +1300,12 @@ $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
 # Note that merging CL here is not strictly necessary, but doing so
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
-$(TMPDIR)/bridges: $(SRC) \
-		   $(TMPDIR)/uberon-cl.sssom.tsv $(TMPDIR)/zfa.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
+$(TMPDIR)/bridges: $(SRC) $(TMPDIR)/uberon-mappings.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
 		   $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
 		   $(CUSTOM_BRIDGES)
 	$(MAKE) $(MIRRORDIR)/cl.owl MIR=true IMP=true
 	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl \
-		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-cl.sssom.tsv \
-		                    --sssom $(TMPDIR)/zfa.sssom.tsv \
+		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
 		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		                    --ruleset $(TMPDIR)/bridges.rules \
 		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
