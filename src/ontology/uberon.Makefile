@@ -1482,6 +1482,18 @@ clean_uberon:
 clean: clean_uberon
 
 
+# Helper commands for refreshing mapping sets and bridges
+# ----------------------------------------
+
+.PHONY: refresh-mappings
+refresh-mappings:
+	$(MAKE) MIR=true IMP=true $(EXTERNAL_SSSOM_SETS)
+
+.PHONY: refresh-bridges
+refresh-bridges:
+	$(MAKE) MIR=true IMP=true BRI=true tmp/bridges
+
+
 # ----------------------------------------
 # PURGATORY
 # ----------------------------------------
