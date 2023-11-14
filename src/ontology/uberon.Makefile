@@ -1270,8 +1270,8 @@ endif
 ifeq ($(BRI),true)
 
 # Those bridges are generated separately (see below).
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo
+CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
+		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 
 # 1. Extract cross-references from Uberon and turn them to a SSSOM
 # mapping set.
@@ -1341,12 +1341,6 @@ $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
 	$(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@
 endif
-
-$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
-	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@
-
-$(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
-	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@
 
 else # BRI=false
 # Skip the production of bridges entirely.
