@@ -190,9 +190,9 @@ i| `uberon-bridge-to-sctid.owl` | SNOMED CT (SCTID) | SCTID xrefs in Uberon |
 This section is a (very) brief overview of the pipeline that generates
 the bridge files.
 
-The pipeline may be triggered by invoking the Make target `tmp/bridges`
-(whilst in the in `src/ontology` directory, where the Makefile is
-located). Here is what happens then:
+The pipeline may be triggered by invoking the Make target
+`refresh-bridges` (whilst in the in `src/ontology` directory, where the
+Makefile is located). Here is what happens then:
 
 1. Production of a SSSOM mapping set from the Uberon and CL
    cross-references. The Uberon `-edit` file is merged with the mirrored
@@ -223,3 +223,13 @@ located). Here is what happens then:
    will be written to the `uberon-bridge-to-zfa.owl` bridge file).
 7. Fetching the custom bridges. Independently of all the previous steps,
    the “custom” bridges are fetched from their upstream source.
+
+Note that steps 2, 3, and 7 only happen when the Make variable `IMP` is
+set to `true` (which is always the case when the pipeline is explicitly
+triggered with `make refresh-bridges`). When `IMP` is set to `false`,
+the bridge files are re-generated using only locally available resources
+previously committed to the repository.
+
+Uberon maintainers should run `make refresh-bridges` periodically to
+refresh external resources and commit refreshed versions to the
+repository, similarly to what is needed to refresh the imports.
