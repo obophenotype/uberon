@@ -1332,17 +1332,21 @@ $(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
 UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
 UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
+# Only refresh those bridges when we explicitly allow refreshing
+# external resources (IMP=true).
+ifeq ($(strip $(IMP)),true)
 $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
-
-$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@; fi
+	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
+	$(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@
+endif
+
+$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
+	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@
 
 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
+	$(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@
 
 else # BRI=false
 # Skip the production of bridges entirely.
