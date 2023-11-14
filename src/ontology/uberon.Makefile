@@ -1228,18 +1228,16 @@ EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
 
+# We only refresh external resources under IMP=true
+ifeq ($(strip $(IMP)),true)
+
 # Fetch a fresh version of a foreign mapping set. This generic rule
 # assumes the foreign ontology is publishing its set at a predictable
 # location. Override this rule if a given ontology publishes its set at
 # a different location.
 .PHONY: $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(provider)-mappings)
-$(TMPDIR)/%.sssom.tsv: %-mappings
-	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv ; fi
-
-# Refresh the mapping set in mappings/ with the one freshly downloaded,
-# if it is different.
-mappings/%-mappings.sssom.tsv: $(TMPDIR)/%.sssom.tsv
-	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+mappings/%-mappings.sssom.tsv: %-mappings
+	wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv
 
 
 # Special cases for ontologies that do no provide a ready-to-use set
@@ -1262,6 +1260,8 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sss
 mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
 	> $(REPORTDIR)/zfa-xrefs-extraction.txt
+
+endif
 
 
 # ----------------------------------------
