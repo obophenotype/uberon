@@ -18,10 +18,10 @@ primordium](http://purl.obolibrary.org/obo/UBERON_0005564)
 of](http://purl.obolibrary.org/obo/BFO_0000050) a
 [Danio](http://purl.obolibrary.org/obo/NCBITaxon_7954) (NCBITaxon:7954).
 
-Such a bridge may be used by anyone who wants to merge Uberon and FBbt
-to obtain an integrated ontology in which the _Drosophila_-specific
-terms in FBbt are properly linked to their taxon-neutral counterparts in
-Uberon. Internally, Uberon itself is using those bridges to produce the
+Such a bridge may be used by anyone who wants to merge Uberon and ZFA to
+obtain an integrated ontology in which the _Danio_-specific terms in ZFA
+are properly linked to their taxon-neutral counterparts in Uberon.
+Internally, Uberon itself is using those bridges to produce the
 [combined multispecies ontologies](combined_multispecies.md) such as
 `composite-metazoan`.
 
@@ -69,7 +69,7 @@ example `ZFA`) must be declared in an ontology-level annotation that
 will indicate the signification of the mapping. In the case of ZFA, the
 declaration is as follows:
 
-> Annotation(oboInOwl:treat-xrefs-as-reverse-genus-differentia "ZFA part\_of NCBITaxon:7954)
+> Annotation(oboInOwl:treat-xrefs-as-reverse-genus-differentia "ZFA part\_of NCBITaxon:7954")
 
 and it indicates that any mapping between a Uberon term and a term from
 ZFA should result, when producing the bridge files, in a axiom that
