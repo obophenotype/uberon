@@ -1259,6 +1259,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sss
 # mappings) is to be extracted from cross-references in ZFA.
 mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
+		                    -v --drop-duplicates \
 	> $(REPORTDIR)/zfa-xrefs-extraction.txt
 
 endif
