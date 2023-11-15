@@ -1326,12 +1326,11 @@ $(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
 # All bridges that are not generated from SSSOM sets.
 
 # Bridges to MBA and DMBA are now manually curated and generated in
-# https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
-# Note: the bridges are generated in new_bridge branch - this might
-# change in the future, if it breaks here, please check ABA_Uberon repo
-# to make sure that the new bridges are appropriately linked.
-UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
-UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
+# https://github.com/brain-bican/mouse_brain_atlas_ontology and
+# https://github.com/brain-bican/developing_mouse_brain_atlas_ontology,
+# respectively.
+UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
+UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/brain-bican/developing_mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
 # Only refresh those bridges when we explicitly allow refreshing
 # external resources (IMP=true).
