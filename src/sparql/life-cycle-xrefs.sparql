@@ -16,4 +16,5 @@ SELECT DISTINCT ?xref WHERE {
     ?sub rdfs:subClassOf* life_cycle_stage: . 
   }
   ?sub oboInOwl:hasDbXref ?xref .
+  FILTER NOT EXISTS { ?sub owl:deprecated ?v }
 }

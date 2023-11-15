@@ -107,6 +107,22 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 
 
 # ----------------------------------------
+# ROBOT PLUGINS
+# ----------------------------------------
+
+# All ROBOT plugins should go into that directory. The variable is
+# exported into the environment so that plugins are available to
+# all calls to ROBOT.
+ROBOT_PLUGINS_DIRECTORY = $(TMPDIR)/plugins
+export ROBOT_PLUGINS_DIRECTORY
+
+# Make sure the SSSOM plugin for ROBOT is available.
+$(TMPDIR)/plugins/sssom.jar:
+	mkdir -p $(TMPDIR)/plugins
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.0/sssom-robot-plugin-0.6.0.jar
+
+
+# ----------------------------------------
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
@@ -615,8 +631,8 @@ $(REPORTDIR)/basic-allcycles: basic.owl
 # ----------------------------------------
 
 # List of terms cross-referenced to one of Uberon's "life cycle" terms
-$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(TMPDIR)/seed.obo
-	$(ROBOT) reason -i $(TMPDIR)/seed.obo query --use-graphs true --query $< $@.tmp.tsv
+$(REPORTDIR)/life-cycle-xrefs.txt: $(SPARQLDIR)/life-cycle-xrefs.sparql $(SRC)
+	$(ROBOT) reason -i $(SRC) query --use-graphs true --query $< $@.tmp.tsv
 	sed -e '/?xref/d' -e 's/"//g' <$@.tmp.tsv >$@ && rm $@.tmp.tsv
 
 # Disjoint violations
@@ -1201,115 +1217,136 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 
 
 # ----------------------------------------
+# SSSOM MAPPINGS
+# ----------------------------------------
+# Some foreign ontologies are providing their own mapping sets. We fetch
+# them and store them into mappings/ONT-mappings.ssom.tsv.
+
+# The following ontologies publish their own mapping sets.
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa
+
+# All the sets coming from the above ontologies.
+EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
+
+# We only refresh external resources under IMP=true
+ifeq ($(strip $(IMP)),true)
+
+# Fetch a fresh version of a foreign mapping set. This generic rule
+# assumes the foreign ontology is publishing its set at a predictable
+# location. Override this rule if a given ontology publishes its set at
+# a different location.
+.PHONY: $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(provider)-mappings)
+mappings/%-mappings.sssom.tsv: %-mappings
+	wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv
+
+
+# Special cases for ontologies that do no provide a ready-to-use set
+# ------------------------------------------------------------------
+
+# The CL set is to be extracted from cross-references. In order to do
+# that, we need to first merge Uberon with CL, because the treat-xrefs-
+# annotations are only in Uberon; then we need to remove the Uberon
+# terms to avoid extracting the cross-references from them as well.
+mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl --collapse-import-closure false \
+		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
+		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+	> $(REPORTDIR)/cl-xrefs-extraction.txt
+
+# Likewise, the ZFA set (which is the source of truth for the CL-ZFA
+# mappings) is to be extracted from cross-references in ZFA.
+mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
+		                    -v --drop-duplicates \
+	> $(REPORTDIR)/zfa-xrefs-extraction.txt
+
+endif
+
+
+# ----------------------------------------
 # BRIDGES
 # ----------------------------------------
+ifeq ($(BRI),true)
 
-# Generating cross-refs with FBbt from SSSOM
+# Those bridges are generated separately (see below).
+CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
+		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
+
+# 1. Extract cross-references from Uberon and turn them to a SSSOM
+# mapping set.
+# Several cross-references are using OBO prefixes that are unknown to
+# ROBOT and not declared in Uberon/CL, so they need to be explicitly
+# declared here (otherwise xref-extract would ignore them).
+$(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $< --collapse-import-closure false \
+		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
+		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
+		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
+		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'   \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
+		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'   \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+	> $(REPORTDIR)/uberon-xrefs-extraction.txt
+
+# 2. Prepare the ruleset file.
+# The ruleset file is maintained with M4 macros to make it more easily
+# editable, so we need to expand the macros first.
+$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
+	m4 $^ > $@
+
+# 3. Compile all mapping sets and generate the bridges.
+# Note that merging CL here is not strictly necessary, but doing so
+# allows sssom-inject to filter out any mapping with an inexistent or
+# obsolete Uberon/CL class.
+$(TMPDIR)/bridges: $(SRC) $(TMPDIR)/uberon-mappings.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
+		   $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
+		   $(CUSTOM_BRIDGES)
+	$(MAKE) $(MIRRORDIR)/cl.owl MIR=true IMP=true
+	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl \
+		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
+		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		                    --ruleset $(TMPDIR)/bridges.rules \
+		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
+	touch $@
+
+# The above step creates RDF/XML bridges, turn them to OBO.
+# FIXME: Is this really necessary? Previously the OBO files were an
+# intermediate towards the final bridge files in OWL, but now we can
+# generate bridge files in OWL (or any format we want) directly, so
+# I don't think we need to carry over OBO files.
+$(BRIDGEDIR)/%.obo: $(BRIDGEDIR)/%.owl
+	$(ROBOT) convert -i $< --check false -f obo -o $@
+
+
+# Custom bridges
 # ----------------------------------------
-# Download the FBbt mapping file
-.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
-$(TMPDIR)/fbbt-mappings.sssom.tsv:
-	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
-
-# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
-# (no update if the downloaded file is absent or identical to the one we already have)
-mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
-	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
-
-# Generate cross-references from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
-	awk -f ../scripts/sssom2xrefs.awk $< > $@
-
-
-# Prepare Uberon and CL sources
-# ----------------------------------------
-# Uberon: We need to forcefully merge the mappings component generated
-# from the FBbt mappings so that the FBbt cross-references will be
-# visible to the bridge-generating script.
-$(TMPDIR)/seed.obo: $(SRC) $(COMPONENTSDIR)/mappings.owl
-	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/mappings.owl --collapse-import-closure false \
-		 convert -f obo --check false -o $@.tmp && \
-		$(SCRIPTSDIR)/obo-grep.pl --neg -r is_obsolete $@.tmp > $@
-
-# CL (step 1): We take the full ontology, excluding external classes,
-# but including references to those
-$(TMPDIR)/cl-core.obo: $(SRC)
-	$(OWLTOOLS) $(URIBASE)/cl.owl \
-		--make-subset-by-properties -n BFO:0000050 BFO:0000051 RO:0002202 RO:0002215 \
-		--remove-external-classes -k CL \
-		--remove-dangling --remove-axiom-annotations --remove-imports-declarations \
-		-o -f obo --no-check $@
-
-# CL: (step 2): We add the header tags that the bridge-generating script
-# is relying upon
-$(TMPDIR)/cl-with-xrefs.obo: $(TMPDIR)/cl-core.obo $(SCRIPTSDIR)/expand-idspaces.pl
-	if [ $(BRI) = true ]; then \
-		egrep '^(idspace|treat-)' $(SRC) > $@.tmp && \
-		cat $< >> $@.tmp && \
-		$(SCRIPTSDIR)/expand-idspaces.pl $@.tmp > $@; \
-	fi
-
-# ZFA requires special treatment because most xrefs between CL and ZFA
-# are on the ZFA side, so they need to be extracted and inverted before
-# we can generate the ZFA bridges out of them.
-# FIXME: This is currently broken: the step below does not extract
-# anything, which is probably why the CL-to-ZFA bridge is almost empty
-# (https://github.com/obophenotype/uberon/issues/1813)
-$(TMPDIR)/cl-zfa-xrefs.obo: mirror/zfa.owl
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
-		$(ROBOT) query -i $< --query ../sparql/zfa-xrefs-to-cl.sparql $@_xrefs_to_zfa.tsv && \
-		cat $@_xrefs_to_zfa.tsv | tail -n +2 | \
-		$(SCRIPTSDIR)/tbl2obolinks.pl --rel xref - > $@.tmp && mv $@.tmp $@; \
-	fi
-
-
-# Building the bridges
-# ----------------------------------------
-# Most bridges are built here, by a script that extracts xrefs from
-# the source files prepared above and derives the bridges from them.
-$(TMPDIR)/bridges: $(TMPDIR)/seed.obo $(TMPDIR)/cl-with-xrefs.obo $(TMPDIR)/cl-zfa-xrefs.obo $(REPORTDIR)/life-cycle-xrefs.txt $(CUSTOM_BRIDGES)
-	if [ $(BRI) = true ]; then \
-		cd $(BRIDGEDIR) && \
-		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt ../$(TMPDIR)/seed.obo && \
-		perl ../../scripts/make-bridge-ontologies-from-xrefs.pl -l ../$(REPORTDIR)/life-cycle-xrefs.txt -b cl ../$(TMPDIR)/cl-with-xrefs.obo ../$(TMPDIR)/cl-zfa-xrefs.obo && \
-		cd .. && touch $@; \
-	fi
-
-# The above script creates OBO bridges, turn them to OWL
-$(BRIDGEDIR)/%.owl: $(BRIDGEDIR)/%.obo
-	$(OWLTOOLS) $< --remove-annotation-assertions -o $@
-
-
-# Special bridges
-# ----------------------------------------
-# All bridges that are not generated by the xref-based script.
-
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-dmba.obo \
-		 $(BRIDGEDIR)/uberon-bridge-to-nifstd.owl
-
-$(BRIDGEDIR)/uberon-bridge-to-nifstd.obo: $(SRC)
-	$(SCRIPTSDIR)/xref-to-equiv.pl uberon/$(BRIDGEDIR)/uberon-bridge-to-nifstd http://uri.neuinfo.org/nif/nifstd/  $< > $@.tmp && mv $@.tmp $@
+# All bridges that are not generated from SSSOM sets.
 
 # Bridges to MBA and DMBA are now manually curated and generated in
-# https://github.com/obophenotype/ABA_Uberon/tree/new_bridge.
-# Note: the bridges are generated in new_bridge branch - this might
-# change in the future, if it breaks here, please check ABA_Uberon repo
-# to make sure that the new bridges are appropriately linked.
-UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
-UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/obophenotype/ABA_Uberon/master/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
+# https://github.com/brain-bican/mouse_brain_atlas_ontology and
+# https://github.com/brain-bican/developing_mouse_brain_atlas_ontology,
+# respectively.
+UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-mba.owl"
+UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/brain-bican/developing_mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
+# Only refresh those bridges when we explicitly allow refreshing
+# external resources (IMP=true).
+ifeq ($(strip $(IMP)),true)
 $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
-
-$(BRIDGEDIR)/uberon-bridge-to-mba.obo: $(BRIDGEDIR)/uberon-bridge-to-mba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-mba.owl --output $@; fi
+	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl: $(SRC)
-	if [ $(BRI) = true ]; then $(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@; fi
+	$(ROBOT) annotate -I $(UBERON_BRIDGE_DMBA) --ontology-iri $(ONTBASE)/$@ -o $@
+endif
 
-$(BRIDGEDIR)/uberon-bridge-to-dmba.obo: $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
-	if [ $(BRI) = true ]; then $(ROBOT) convert --input $(BRIDGEDIR)/uberon-bridge-to-dmba.owl --output $@; fi
+else # BRI=false
+# Skip the production of bridges entirely.
+$(TMPDIR)/bridges:
+	touch $@
+endif
 
 
 # ----------------------------------------
@@ -1339,6 +1376,19 @@ $(TMPDIR)/hra_depiction_3d_images.owl:
 
 $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
+
+# The mappings.owl component contains cross-references to foreign
+# ontologies that provide their own mappings as a SSSOM set. This
+# component ensures those mappings are visible to Uberon editors and
+# users.
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:sssom-inject -i $< \
+		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		                    --invert --only-subject-in UBERON \
+		                    --check-subject --drop-duplicate-objects \
+		                    --hasdbxref --no-merge --bridge-file $@ \
+		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
 # ----------------------------------------
@@ -1430,6 +1480,22 @@ clean_uberon:
 	rm -f uberon.owl uberon.obo BUILDLOGUBERON.txt unsat_all_explanation.md
 
 clean: clean_uberon
+
+
+# Helper commands for refreshing external resources
+# ----------------------------------------
+
+.PHONY: refresh-mappings
+refresh-mappings:
+	$(MAKE) MIR=true IMP=true $(EXTERNAL_SSSOM_SETS)
+
+.PHONY: refresh-bridges
+refresh-bridges:
+	$(MAKE) MIR=true IMP=true BRI=true tmp/bridges
+
+.PHONY: refresh-external-resources
+refresh-external-resources:
+	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports tmp/bridges
 
 
 # ----------------------------------------
