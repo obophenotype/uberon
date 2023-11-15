@@ -137,6 +137,12 @@ Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus
 
 Compare the previous example to “EC layer 1”, which should be a _related_ synonym (with synonym type "abbreviation") of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.
 
+## Design Pattern Usage with DOSDP
+
+The use of Dead Simple OWL Design Patterns (DOSDP, [Osumi-Sutherland et al., 2017](https://doi.org/10.1186/s13326-017-0126-0)) is an integral part of the Uberon ontology development process, providing a streamlined approach to automate the creation of terms, classification, and relationships. Automating term creation and classification through DOSDP significantly speeds up the ontology development process, and it ensures consistent application of design patterns, reducing the likelihood of errors and discrepancies in term definitions and relationships. DOSDP design patterns are adaptable, providing flexibility for ontology expansion and modification while adhering to standardized formats.
+
+A list of DOSDP patterns and how to implement them can be found in the [design pattern documentation](bridge/../docs/design_pattern_documentation.md).
+
 ## General Tips
 
 Changes to classifications of terms from the 2x, 3x and 4x range, or anything higher up in the hierarchy (e.g. 2 levels above leaf nodes) can create unintended consequences to the ontology (e.g. due to , and it’s best to get a senior ontologist to review (e.g. @cmungall)
