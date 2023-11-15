@@ -1483,7 +1483,7 @@ clean_uberon:
 clean: clean_uberon
 
 
-# Helper commands for refreshing mapping sets and bridges
+# Helper commands for refreshing external resources
 # ----------------------------------------
 
 .PHONY: refresh-mappings
@@ -1493,6 +1493,10 @@ refresh-mappings:
 .PHONY: refresh-bridges
 refresh-bridges:
 	$(MAKE) MIR=true IMP=true BRI=true tmp/bridges
+
+.PHONY: refresh-external-resources
+refresh-external-resources:
+	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports tmp/bridges
 
 
 # ----------------------------------------
