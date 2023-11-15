@@ -1,8 +1,8 @@
 # Design Pattern Documentation
 
-The Uberon ontology is composed of a large number of terms, classifications and relationships, which continue to increase. As manually maintaining all these classifications and relationships would be an arduous task, a substantial portion of the maintenance is automated. This automation depends, to a significant extent, on the systematic application of design patterns.
+The Uberon ontology is composed of a large number of terms, classifications and relationships, which continue to increase. As maintaining manually all these classifications and relationships would be an arduous task, a substantial portion of the maintenance is automated. This automation depends, to a significant extent, on the systematic application of design patterns.
 
-Uberon uses **Dead simple OWL design patterns** ([DOSDP](https://jbiomedsem.biomedcentral.com/articles/10.1186/s13326-017-0126-0)) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.
+Uberon uses **Dead simple OWL design patterns** (DOSDP, [Osumi-Sutherland *et al.*, 2017](https://doi.org/10.1186/s13326-017-0126-0)) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.
 
 All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obophenotype/uberon/tree/master/src/patterns/dosdp-patterns), while the editable tables are located in [/src/patterns/data/default](https://github.com/obophenotype/uberon/tree/master/src/patterns/data/default).
 

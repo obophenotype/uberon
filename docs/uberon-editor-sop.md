@@ -139,7 +139,7 @@ Compare the previous example to “EC layer 1”, which should be a _related_ sy
 
 ## Design Pattern Usage with DOSDP
 
-The use of Dead Simple OWL Design Patterns (DOSDP, [Osumi-Sutherland et al., 2017](https://doi.org/10.1186/s13326-017-0126-0)) is an integral part of the Uberon ontology development process, providing a streamlined approach to automate the creation of terms, classification, and relationships. Automating term creation and classification through DOSDP significantly speeds up the ontology development process, and it ensures consistent application of design patterns, reducing the likelihood of errors and discrepancies in term definitions and relationships. DOSDP design patterns are adaptable, providing flexibility for ontology expansion and modification while adhering to standardized formats.
+The use of Dead Simple OWL Design Patterns (DOSDP, [Osumi-Sutherland *et al.*, 2017](https://doi.org/10.1186/s13326-017-0126-0)) is an integral part of the Uberon ontology development process, providing a streamlined approach to automate the creation of terms, classification, and relationships. Automating term creation and classification through DOSDP significantly speeds up the ontology development process, and it ensures consistent application of design patterns, reducing the likelihood of errors and discrepancies in term definitions and relationships. DOSDP design patterns are adaptable, providing flexibility for ontology expansion and modification while adhering to standardized formats.
 
 A list of DOSDP patterns and how to implement them can be found in the [design pattern documentation](bridge/../design_pattern_documentation.md).
 
