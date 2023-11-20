@@ -119,7 +119,7 @@ export ROBOT_PLUGINS_DIRECTORY
 # Make sure the SSSOM plugin for ROBOT is available.
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.0/sssom-robot-plugin-0.6.0.jar
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.1/sssom-robot-plugin-0.6.1.jar
 
 
 # ----------------------------------------
@@ -1251,6 +1251,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sss
 	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl --collapse-import-closure false \
 		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
+		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
 	> $(REPORTDIR)/cl-xrefs-extraction.txt
@@ -1260,6 +1261,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sss
 mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
 		                    -v --drop-duplicates \
+		                    --set-id "$(ONTBASE)/mappings/zfa-mappings.sssom.tsv" \
 	> $(REPORTDIR)/zfa-xrefs-extraction.txt
 
 endif
@@ -1306,10 +1308,10 @@ $(TMPDIR)/bridges: $(SRC) $(TMPDIR)/uberon-mappings.sssom.tsv $(EXTERNAL_SSSOM_S
 		   $(CUSTOM_BRIDGES)
 	$(MAKE) $(MIRRORDIR)/cl.owl MIR=true IMP=true
 	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl \
-		 sssom:sssom-inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
-		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		                    --ruleset $(TMPDIR)/bridges.rules \
-		                    --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
+		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
+		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		              --ruleset $(TMPDIR)/bridges.rules \
+		              --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
 	touch $@
 
 # The above step creates RDF/XML bridges, turn them to OBO.
@@ -1383,12 +1385,12 @@ $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.
 # component ensures those mappings are visible to Uberon editors and
 # users.
 $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:sssom-inject -i $< \
-		                    $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		                    --invert --only-subject-in UBERON \
-		                    --check-subject --drop-duplicate-objects \
-		                    --hasdbxref --no-merge --bridge-file $@ \
-		                    --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
+	$(ROBOT) sssom:inject -i $< \
+		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		              --invert --only-subject-in UBERON \
+		              --check-subject --drop-duplicate-objects \
+		              --hasdbxref --no-merge --bridge-file $@ \
+		              --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
 # ----------------------------------------
