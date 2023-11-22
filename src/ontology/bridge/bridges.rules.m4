@@ -11,7 +11,7 @@ prefix EHDAA2:    <http://purl.obolibrary.org/obo/EHDAA2_>
 prefix EMAPA:     <http://purl.obolibrary.org/obo/EMAPA_>
 prefix FBbt:      <http://purl.obolibrary.org/obo/FBbt_>
 prefix FBdv:      <http://purl.obolibrary.org/obo/FBdv_>
-prefix FMA:       <http://purl.obolibrary.org/obo/FMA_>
+prefix FMA:       <http://purl.org/sig/ont/fma/fma>
 prefix GO:        <http://purl.obolibrary.org/obo/GO_>
 prefix HAO:       <http://purl.obolibrary.org/obo/HAO_>
 prefix HBA:       <http://purl.obolibrary.org/obo/HBA_>
