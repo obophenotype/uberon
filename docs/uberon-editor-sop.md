@@ -146,8 +146,6 @@ Uberon uses **Dead simple OWL design patterns** (DOSDP, [Osumi-Sutherland *et al
 
 All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obophenotype/uberon/tree/master/src/patterns/dosdp-patterns), while the editable tables are located in [/src/patterns/data/default](https://github.com/obophenotype/uberon/tree/master/src/patterns/data/default).
 
-The purpose of this document is to describe the existing patterns to make them more accessible to the users.
-
 ### Connecting vessels
  Pattern name: vessel_connecting_branch_of_vessel_pattern.yaml
 
