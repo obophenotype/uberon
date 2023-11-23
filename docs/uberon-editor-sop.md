@@ -149,7 +149,7 @@ All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obo
 The purpose of this document is to describe the existing patterns to make them more accessible to the users.
 
 ### Connecting vessels
- Pattern name: branching_vasculature_pattern.yaml
+ Pattern name: vessel_connecting_branch_of_vessel_pattern.yaml
 
 Blood and lymphatic vessels are tubes that convey body fluids through the tissues and organs, forming branching or networked structures. The relation between a vessel and its branches can be recorded in many multiple ways:
 
