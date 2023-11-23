@@ -151,7 +151,7 @@ The purpose of this document is to describe the existing patterns to make them m
 ### Connecting vessels
  Pattern name: vessel_connecting_branch_of_vessel_pattern.yaml
 
-Blood and lymphatic vessels are tubes that convey body fluids through the tissues and organs, forming branching or networked structures. The relation between a vessel and its branches can be recorded in many multiple ways:
+Blood and lymphatic vessels are tubes that convey body fluids through the tissues and organs, forming branching or networked structures. The relation between a vessel and its branches can be recorded in several ways:
 
 - [RO:0002375](http://purl.obolibrary.org/obo/RO_0002375) in branching relationship with
     - [RO:0002252](http://purl.obolibrary.org/obo/RO_0002252) connecting branch of
