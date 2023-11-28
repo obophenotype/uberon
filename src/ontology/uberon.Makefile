@@ -375,7 +375,7 @@ imports/local-ceph.owl:
 # institute's brain-map.org.
 
 ALLENS = dmba hba dhba pba mba
-allen_all: $(patsubst %,$(TMPDIR)/allen-%.obo,$(ALLENS))
+allen_all: $(patsubst %,$(IMPORTDIR)/local-allen-%.obo,$(ALLENS))
 
 $(TMPDIR)/allen-dmba.json: | $(TMPDIR)
 	wget https://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
@@ -392,11 +392,11 @@ $(TMPDIR)/allen-pba.json: | $(TMPDIR)
 $(TMPDIR)/allen-mba.json: | $(TMPDIR)
 	wget https://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
 
-$(TMPDIR)/allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
+$(IMPORTDIR)/local-allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
 
 ALLEN_UNSATS=--term DHBA:146035008 --term DHBA:146035004 --term DHBA:146035012
-$(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo.pl
+$(IMPORTDIR)/local-allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo.pl
 	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
 	$(ROBOT) remove -i $@ --prefix "DHBA: http://purl.obolibrary.org/obo/DHBA_" \
 		        $(ALLEN_UNSATS) --axioms logical \
