@@ -160,7 +160,7 @@ Blood and lymphatic vessels are tubes that convey body fluids through the tissue
     - [RO:0002381](http://purl.obolibrary.org/obo/RO_0002381) main stem of
     - [RO:0002569](http://purl.obolibrary.org/obo/RO_0002569) has branching part
 
-However, while it is useful to have this wide range of object properties to record relations between branches, it can also lead to misuse. A clear example is the misuse of 'branching part of', which is a subclass of 'part of', but it has been used extensively for branches that are no longer part of the stem.
+However, while it is useful to have this wide range of object properties to record relations between branches, it can also lead to selecting a property that does not accurately reflect the relationship between subject and object. An example of this is the misuse of '[branching part of](http://purl.obolibrary.org/obo/RO_0002380)', which is a subclass of 'part of', but it has been used extensively for branches that are no longer part of the stem.
 
 Therefore, we need standarization for how branching relationships should be recorded in Uberon. The object property 'connecting branch of' is a subproperty of 'connected to' and should be used to describe the relation between a branching vessel and the stem vessel. Ex:
 
