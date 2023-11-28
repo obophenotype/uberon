@@ -368,6 +368,14 @@ imports/local-cteno.owl:
 imports/local-ceph.owl:
 	$(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
 
+# Local copy of CL -- no special treatment required
+imports/local-cl.owl:
+	curl -L -o $@ http://purl.obolibrary.org/obo/cl/cl-base.owl
+
+# Local copy of the Uberon version of the ontology of developmental stages
+imports/local-ssso.obo:
+	curl -L -o $@ https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo
+
 
 # Allen imports
 # ----------------------------------------
@@ -1251,8 +1259,8 @@ mappings/%-mappings.sssom.tsv: %-mappings
 # that, we need to first merge Uberon with CL, because the treat-xrefs-
 # annotations are only in Uberon; then we need to remove the Uberon
 # terms to avoid extracting the cross-references from them as well.
-mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl --collapse-import-closure false \
+mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl --collapse-import-closure false \
 		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
 		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
@@ -1262,8 +1270,8 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(MIRRORDIR)/cl.owl $(TMPDIR)/plugins/sss
 
 # Likewise, the ZFA set (which is the source of truth for the CL-ZFA
 # mappings) is to be extracted from cross-references in ZFA.
-mappings/zfa-mappings.sssom.tsv: $(MIRRORDIR)/zfa.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:xref-extract -i $(MIRRORDIR)/zfa.owl --mapping-file $@ \
+mappings/zfa-mappings.sssom.tsv: $(IMPORTDIR)/local-zfa.owl $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:xref-extract -i $(IMPORTDIR)/local-zfa.owl --mapping-file $@ \
 		                    -v --drop-duplicates \
 		                    --set-id "$(ONTBASE)/mappings/zfa-mappings.sssom.tsv" \
 	> $(REPORTDIR)/zfa-xrefs-extraction.txt
@@ -1307,11 +1315,10 @@ $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
 # Note that merging CL here is not strictly necessary, but doing so
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
-$(TMPDIR)/bridges: $(SRC) $(TMPDIR)/uberon-mappings.sssom.tsv $(EXTERNAL_SSSOM_SETS) \
-		   $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
-		   $(CUSTOM_BRIDGES)
-	$(MAKE) $(MIRRORDIR)/cl.owl MIR=true IMP=true
-	$(ROBOT) merge -i $(SRC) -i $(MIRRORDIR)/cl.owl \
+$(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/uberon-mappings.sssom.tsv \
+		   $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules \
+		   $(BRIDGEDIR)/bridges.dispatch $(CUSTOM_BRIDGES)
+	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl \
 		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(TMPDIR)/bridges.rules \
