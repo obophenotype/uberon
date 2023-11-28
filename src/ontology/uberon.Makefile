@@ -327,6 +327,7 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/update-stages
 # ----------------------------------------
 # "LOCAL" IMPORTS
 # ----------------------------------------
+ifeq ($(strip $(IMP)),true)
 
 # The following imports are used in Uberon-specific pipelines. They are
 # *not* updated as part of the refresh-imports pipeline. In fact, they
@@ -337,7 +338,7 @@ mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/update-stages
 # FIXME: this may no longer be needed for some of these imports
 # (https://github.com/obophenotype/uberon/issues/3017)
 imports/local-%.owl: mirror/%.owl
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
+	$(OWLTOOLS_NO_CAT) $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
     --rename-entity $(URIBASE)/$*#develops_in $(URIBASE)/RO_0002203 \
     --rename-entity $(URIBASE)/$*#develops_from $(URIBASE)/RO_0002202 \
     --rename-entity $(URIBASE)/$*#preceded_by $(URIBASE)/RO_0002087 \
@@ -354,18 +355,18 @@ imports/local-%.owl: mirror/%.owl
     --rename-entity $(URIBASE)/$*#regional_part_of $(URIBASE)/BFO_0000050 \
     --rename-entity $(URIBASE)/$*#systemic_part_of $(URIBASE)/BFO_0000050 \
     --rename-entity $(URIBASE)/$*#constitutional_part_of $(URIBASE)/BFO_0000050\
-    --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@; fi
+    --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
 
 # These imports don't need the object property mapping, but still
 # require some specific axiom-removal
 # FIXME: check whether this is really still required
 # (https://github.com/obophenotype/uberon/issues/3017)
 imports/local-poro.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@; fi
+	$(OWLTOOLS_NO_CAT) $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@
 imports/local-cteno.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+	$(OWLTOOLS_NO_CAT) $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
 imports/local-ceph.owl:
-	if [ $(IMP) = true ]; then $(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@; fi
+	$(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
 
 
 # Allen imports
@@ -400,6 +401,9 @@ $(TMPDIR)/allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo
 	$(ROBOT) remove -i $@ --prefix "DHBA: http://purl.obolibrary.org/obo/DHBA_" \
 		        $(ALLEN_UNSATS) --axioms logical \
 			-o $@.tmp.obo && mv $@.tmp.obo $@
+
+
+endif # IMP=true
 
 
 # ----------------------------------------
