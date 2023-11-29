@@ -452,7 +452,14 @@ $(IMPORTDIR)/local-allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen
 			-o $@.tmp.obo && mv $@.tmp.obo $@
 
 
-endif # IMP=true
+# Allow quickly refreshing all "local" imports
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa
+all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl) allen_all
+
+else # IMP=false
+all_local_imports:
+
+endif
 
 
 # ----------------------------------------
@@ -1549,7 +1556,7 @@ refresh-bridges:
 
 .PHONY: refresh-external-resources
 refresh-external-resources:
-	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports tmp/bridges
+	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports all_local_imports tmp/bridges
 
 
 # ----------------------------------------
