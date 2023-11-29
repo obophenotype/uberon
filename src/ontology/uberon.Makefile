@@ -341,47 +341,84 @@ ifeq ($(strip $(IMP)),true)
 # are normally never updated automatically, since Uberon-specific
 # pipelines are typically run with IMP set to false.
 
-# Map legacy OBO-format object properties to their BFO/RO equivalent
-# FIXME: this may no longer be needed for some of these imports
-# (https://github.com/obophenotype/uberon/issues/3017)
+# By default, we would like to simply use the mirrored ontology as it
+# is, but to avoid injecting random crap, we make a pseudo-base.
+.PRECIOUS: imports/local-%.owl
 imports/local-%.owl: mirror/%.owl
-	$(OWLTOOLS_NO_CAT) $< $(BRIDGEDIR)/uberon-bridge-to-caro.owl $(BRIDGEDIR)/cl-bridge-to-caro.owl --rename-entities-via-equivalent-classes --repair-relations \
-    --rename-entity $(URIBASE)/$*#develops_in $(URIBASE)/RO_0002203 \
-    --rename-entity $(URIBASE)/$*#develops_from $(URIBASE)/RO_0002202 \
-    --rename-entity $(URIBASE)/$*#preceded_by $(URIBASE)/RO_0002087 \
-    --rename-entity $(URIBASE)/$*#starts_at_end_of $(URIBASE)/RO_0002087 \
-    --rename-entity $(URIBASE)/$*#connected_to $(URIBASE)/RO_0002170 \
-    --rename-entity $(URIBASE)/$*#start $(URIBASE)/RO_0002496 \
-    --rename-entity $(URIBASE)/$*#end $(URIBASE)/RO_0002497 \
-    --rename-entity $(URIBASE)/$*#start_stage $(URIBASE)/RO_0002496 \
-    --rename-entity $(URIBASE)/$*#end_stage $(URIBASE)/RO_0002497 \
-    --rename-entity $(URIBASE)/$*#releases_neurotransmitter $(URIBASE)/RO_0002111  \
-    --rename-entity $(URIBASE)/$*#develops_directly_from $(URIBASE)/RO_0002207   \
-    --rename-entity $(URIBASE)/$*#electrically_synapsed_to $(URIBASE)/RO_0002003 \
-    --rename-entity $(URIBASE)/$*#part_of $(URIBASE)/BFO_0000050 \
-    --rename-entity $(URIBASE)/$*#regional_part_of $(URIBASE)/BFO_0000050 \
-    --rename-entity $(URIBASE)/$*#systemic_part_of $(URIBASE)/BFO_0000050 \
-    --rename-entity $(URIBASE)/$*#constitutional_part_of $(URIBASE)/BFO_0000050\
-    --remove-axioms -t DisjointClasses --remove-axioms -t ObjectPropertyRange --remove-axioms -t ObjectPropertyDomain --remove-annotation-assertions -l -s -d -o -f ofn $@
+	$(ROBOT) remove -i $< \
+		        --base-iri $(URIBASE)/$(shell echo $* | tr [a-z] [A-Z]) \
+		        --axioms external --preserve-structure false --trim false \
+		        -o $@
 
-# These imports don't need the object property mapping, but still
-# require some specific axiom-removal
-# FIXME: check whether this is really still required
-# (https://github.com/obophenotype/uberon/issues/3017)
-imports/local-poro.owl:
-	$(OWLTOOLS_NO_CAT) $(URIBASE)/poro.owl --merge-imports-closure  --remove-axioms -t DisjointClasses --remove-equivalent-to-nothing-axioms --remove-annotation-assertions -l -s -d -o $@
-imports/local-cteno.owl:
-	$(OWLTOOLS_NO_CAT) $(URIBASE)/cteno.owl --remove-import-declaration $(URIBASE)/uberon/ext.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
-imports/local-ceph.owl:
-	$(OWLTOOLS_NO_CAT) $(URIBASE)/ceph.owl --remove-import-declaration $(URIBASE)/ceph/imports/uberon_import.owl --merge-imports-closure --remove-annotation-assertions -l -s -d -o $@
+# We need a special case for FBbt/dv because of the mixed-case prefix
+imports/local-fb%.owl: mirror/fb%.owl
+	$(ROBOT) remove -i $< --base-iri $(URIBASE)/FB \
+		        --axioms external --preserve-structure false --trim false \
+		        -o $@
 
-# Local copy of CL -- no special treatment required
-imports/local-cl.owl:
-	curl -L -o $@ http://purl.obolibrary.org/obo/cl/cl-base.owl
+# Ditto for WBbt/ls
+imports/local-wb%.owl: mirror/wb%.owl
+	$(ROBOT) remove -i $< --base-iri $(URIBASE)/WB \
+		        --axioms external --preserve-structure false --trim false \
+		        -o $@
 
-# Local copy of the Uberon version of the ontology of developmental stages
-imports/local-ssso.obo:
-	curl -L -o $@ https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo
+# For EHDAA2, we need to preserve the AEO classes as well
+imports/local-ehdaa2.owl: mirror/ehdaa2.owl
+	$(ROBOT) remove -i $< \
+		        --base-iri $(URIBASE)/EHDAA2_ --base-iri $(URIBASE)/AEO_ \
+		        --axioms external --preserve-structure false --trim false \
+		        -o $@
+
+# For the life stages ontology, by construction it includes classes from
+# all over the place, and we need to preserve most of them. We do not
+# preserve the FBdv and WBls classes however, since they are provided
+# by local-fbdv and local-wbls respectively.
+SSSO_PREFIXES = BtauDv DpseDv DsimDv GgalDv GgorDv HsapDv MdomDv MmulDv MmusDv OariDv PpanDv PtroDv RnorDv SscrDv ZFS
+imports/local-ssso.owl: mirror/ssso.owl
+	$(ROBOT) remove -i $< \
+		        $(foreach pfx,$(SSSO_PREFIXES),--base-iri $(URIBASE)/$(pfx)) \
+		        --axioms external --preserve-structure false --trim false \
+		        -o $@
+
+# For the following ontologies, in addition to removing axioms about
+# external entities we also need to replace some old-style properties.
+# ----------------------------------------
+imports/local-emapa.owl: mirror/emapa.owl properties-map.tsv
+	$(ROBOT) rename -i $< --mappings properties-map.tsv \
+		        --allow-missing-entities true \
+		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
+		        --preserve-structure false --trim false -o $@
+
+imports/local-ma.owl: mirror/ma.owl properties-map.tsv
+	$(ROBOT) rename -i $< --mappings properties-map.tsv \
+		        --allow-missing-entities true \
+		 remove --base-iri $(URIBASE)/MA_ --axioms external \
+		        --preserve-structure false --trim false -o $@
+
+imports/local-xao.owl: mirror/xao.owl properties-map.tsv
+	$(ROBOT) rename -i $< --mappings properties-map.tsv \
+		        --allow-missing-entities true \
+		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
+		        --preserve-structure false --trim false -o $@
+
+# And for those ones, we also remove the imports. They were last
+# refreshed in 2016, we don't want to bring in old issues from old
+# versions of Uberon, CL, RO, etc.
+# ----------------------------------------
+imports/local-poro.owl: mirror/poro.owl
+	$(ROBOT) remove -i $< --select imports --trim false \
+		 remove --base-iri $(URIBASE)/PORO_ --axioms external \
+		        --preserve-structure false --trim false -o $@
+
+imports/local-cteno.owl: mirror/cteno.owl
+	$(ROBOT) remove -i $< --select imports --trim false \
+		 remove --base-iri $(URIBASE)/CTENO_ --axioms external \
+		        --preserve-structure false --trim false -o $@
+
+imports/local-ceph.owl: mirror/ceph.owl
+	$(ROBOT) remove -i $< --select imports --trim false \
+		 remove --base-iri $(URIBASE)/CEPH_ --axioms external \
+		        --preserve-structure false --trim false -o $@
 
 
 # Allen imports
