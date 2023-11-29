@@ -55,8 +55,7 @@ update_dynamic_catalog:
 	@echo "WARNING: files are expected to be available. Do not do this if you dont"
 	@echo "WARNING: know what you are doing."
 	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl \
-		mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl $(TMPDIR)/allen-*.obo \
-		$(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo > $@.tmp && \
+		mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl > $@.tmp && \
 		mv $@.tmp $@
 
 
