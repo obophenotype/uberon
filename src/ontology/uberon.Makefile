@@ -24,6 +24,12 @@ all: uberon-qc
 	echo "make $@ succeeded..."
 
 
+# Enable second expansion of prerequisites (GNU Make only!).
+# We need this to expand the COLLECTED_*_SOURCES variables in the
+# composite pipeline.
+.SECONDEXPANSION:
+
+
 # ----------------------------------------
 # COMMANDS
 # ----------------------------------------
@@ -120,6 +126,11 @@ export ROBOT_PLUGINS_DIRECTORY
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
 	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.1/sssom-robot-plugin-0.6.1.jar
+
+# Ditto for the specific Uberon plugin
+$(TMPDIR)/plugins/uberon.jar:
+	mkdir -p $(TMPDIR)/plugins
+	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.1.0/uberon.jar
 
 
 # ----------------------------------------
@@ -1113,119 +1124,135 @@ $(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo
 # ----------------------------------------
 # COMPOSITE ANATOMY
 # ----------------------------------------
-# Warning: you are entering the composite pipeline, the lair of Uberon's
-# final boss; now would be a good time to save your progression before
-# going any further.
 
-# All the dependencies used to create the entire composite-metazoan:
-# - "weakened" Uberon (as created below);
-# - the bridges to the external ontologies;
-# - the external ontologies themselves.
-MBASE = $(TMPDIR)/ext-weak.owl \
-	$(TMPDIR)/bridges \
-	$(IMPORTDIR)/local-ceph.owl \
-	$(IMPORTDIR)/local-cteno.owl \
-	$(IMPORTDIR)/local-ehdaa2.owl \
-	$(IMPORTDIR)/local-emapa.owl \
-	$(IMPORTDIR)/local-fbbt.owl \
-	$(IMPORTDIR)/local-fbdv.owl \
-	$(IMPORTDIR)/local-ma.owl \
-	$(IMPORTDIR)/local-poro.owl \
-	$(IMPORTDIR)/local-wbbt.owl \
-	$(IMPORTDIR)/local-wbls.owl \
-	$(IMPORTDIR)/local-xao.owl \
-	$(IMPORTDIR)/local-zfa.owl \
-	$(TMPDIR)/allen-dhba.obo \
-	$(TMPDIR)/allen-dmba.obo \
-	$(TMPDIR)/allen-hba.obo \
-	$(TMPDIR)/allen-mba.obo \
-	$(TMPDIR)/allen-pba.obo
+# Source files for the collected/composite ontologies
+# ----------------------------------------
+COLLECTED_drosophila_SOURCES =       $(IMPORTDIR)/local-fbbt.owl \
+				     $(IMPORTDIR)/local-fbdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-fbbt.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-fbdv.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-fbbt.owl
+
+COLLECTED_worm_SOURCES =             $(IMPORTDIR)/local-wbbt.owl \
+				     $(IMPORTDIR)/local-wbls.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-wbbt.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-wbls.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-wbbt.owl
+
+COLLECTED_zebrafish_SOURCES =        $(IMPORTDIR)/local-zfa.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-zfa.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-zfa.owl
+
+COLLECTED_xenopus_SOURCES =          $(IMPORTDIR)/local-xao.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-xao.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-xao.owl
+
+COLLECTED_human_SOURCES =            $(IMPORTDIR)/local-ehdaa2.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-ehdaa2.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-aeo.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-ehdaa2.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl
+
+COLLECTED_mouse_SOURCES =            $(IMPORTDIR)/local-emapa.owl \
+				     $(IMPORTDIR)/local-mmusdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-emapa.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl
+
+# In principle this should also include FMA and its bridges, but we have
+# been excluded those for a while
+COLLECTED_adult_mammal_SOURCES =     $(IMPORTDIR)/local-ma.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-ma.owl \
+				     $(BRIDGEDIR)/cl-bridge-to-ma.owl
+
+COLLECTED_embryonic_mammal_SOURCES = $(COLLECTED_human_SOURCES) \
+				     $(COLLECTED_mouse_SOURCES)
+
+COLLECTED_mammal_SOURCES =           $(COLLECTED_adult_mammal_SOURCES) \
+				     $(COLLECTED_embryonic_mammal_SOURCES) \
+				     $(IMPORTDIR)/local-allen-dhba.obo \
+				     $(IMPORTDIR)/local-allen-dmba.obo \
+				     $(IMPORTDIR)/local-allen-hba.obo \
+				     $(IMPORTDIR)/local-allen-mba.obo \
+				     $(IMPORTDIR)/local-allen-pba.obo \
+				     $(BRIDGEDIR)/uberon-bridge-to-dhba.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-dmba.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hba.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-pba.owl
+
+COLLECTED_zfa_plus_mammal_SOURCES =  $(COLLECTED_mammal_SOURCES) \
+				     $(COLLECTED_zebrafish_SOURCES)
+
+COLLECTED_anamniote_SOURCES =        $(COLLECTED_zebrafish_SOURCES) \
+				     $(COLLECTED_xenopus_SOURCES)
+
+COLLECTED_amniote_SOURCES =          $(COLLECTED_mammal_SOURCES)
+
+COLLECTED_tetrapod_SOURCES =         $(COLLECTED_amniote_SOURCES) \
+				     $(COLLECTED_xenopus_SOURCES)
+
+COLLECTED_vertebrate_SOURCES =       $(COLLECTED_tetrapod_SOURCES) \
+				     $(COLLECTED_zebrafish_SOURCES)
+
+COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
+				     $(COLLECTED_drosophila_SOURCES) \
+				     $(COLLECTED_worm_SOURCES) \
+				     $(IMPORTDIR)/local-ssso.owl \
+				     $(IMPORTDIR)/local-ceph.owl \
+				     $(IMPORTDIR)/local-cteno.owl \
+				     $(IMPORTDIR)/local-poro.owl
 
 
-# Step 1: Create a "weakened" version of Uberon stripped of all
-# disjointness axioms, because many external ontologies do not adhere to
-# all uberon constraints
-$(TMPDIR)/ext-weak.owl: uberon.owl | $(TMPDIR)
-	$(OWLTOOLS) $< --merge-imports-closure --remove-axioms -t DisjointClasses \
-		    --remove-equivalent-to-nothing-axioms -o $@
+# Composite pipeline proper
+# ----------------------------------------
 
-# Step 2: A simple merge without additional reasoning
-# Hack: We redirect some IRIs to make sure that:
-# - we really use the weakened version of Uberon;
-# - we do _not_ merge FMA and its bridge.
-$(TMPDIR)/merged-composite-%.owl: $(MBASE) $(TMPDIR)/update-stages
-	$(OWLTOOLS) --catalog-xml $(CATALOG) \
-		    --map-ontology-iri $(URIBASE)/uberon.owl $(TMPDIR)/ext-weak.owl \
-		    --map-ontology-iri $(URIBASE)/fma.owl $(COMPONENTSDIR)/null.owl \
-		    --map-ontology-iri $(URIBASE)/uberon/bridge/uberon-bridge-to-fma.owl $(COMPONENTSDIR)/null.owl \
-		    $(BRIDGEDIR)/collected-$*.owl \
-		    --merge-import-closure \
-		    -o -f ofn $@
-.PRECIOUS: $(TMPDIR)/merged-composite-%.owl
+# Step 1: Create a "collected" ontology, which is simply a merge of
+# Uberon, CL, the CARO bridges, and the components listed in the
+# COLLECTED_*_SOURCES variables above.
+.PRECIOUS: $(TMPDIR)/collected-%.owl
+$(TMPDIR)/collected-%.owl: uberon.owl $(IMPORTDIR)/local-cl.owl \
+		 $(BRIDGEDIR)/uberon-bridge-to-caro.owl \
+		 $(BRIDGEDIR)/cl-bridge-to-caro.owl \
+		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
+	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
-# Step 2.5: Remove the logical axioms of a handful of around 5 classes
-# which are unsatisfiable from SSAOs.
-$(TMPDIR)/stripped-composite-%.owl: $(TMPDIR)/merged-composite-%.owl
-	$(ROBOT) remove -i $< -T unsats.txt --axioms logical -o $@
-
-# Step 3: We use some Owltools deep magic to merge equivalent classes
-# between Uberon/CL and the taxon-specific ontologies.
-# This is the core part of the pipeline. For more details about what it
-# does, please see the description of a "composite" ontology:
-# - <https://github.com/obophenotype/uberon/wiki/Multi-species-composite-ontologies>
-# and Owltools' source code, especially the following classes:
-# - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/SpeciesMergeUtil.java>
-# - <https://github.com/owlcollab/owltools/blob/master/OWLTools-Core/src/main/java/owltools/mooncat/EquivalenceSetMergeUtil.java>
+# Step 2: Create a "composite" ontology. This is the core of the
+# composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
+# which provides the 'merge-species' and 'merge-equivalent-sets'
+# commands.
+# The pipeline starts by removing all the disjointness axioms, because
+# many external ontologies do not adhere to all Uberon constraints.
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-$(TMPDIR)/unreasoned-composite-%.owl: $(TMPDIR)/stripped-composite-%.owl
-	$(OWLTOOLS) $< \
-		    --reasoner elk \
-		    --merge-species-ontology -s 'mouse'      -t NCBITaxon:10090 -q $(TAXON_GCI_RELS) \
-		    --merge-species-ontology -s 'human'      -t NCBITaxon:9606  -q $(TAXON_GCI_RELS) \
-		    --merge-species-ontology -s 'primate'    -t NCBITaxon:9443 \
-		    --merge-species-ontology -s 'Xenopus'    -t NCBITaxon:8353 \
-		    --merge-species-ontology -s 'Danio'      -t NCBITaxon:7954 \
-		    --merge-species-ontology -s 'Drosophila' -t NCBITaxon:7227 \
-		    --merge-species-ontology -s 'C elegans'  -t NCBITaxon:6237 \
-		    --merge-equivalence-sets -s UBERON 10 -s CL 9 -s CARO 5 \
-		                             -l UBERON 10 -l CL 9 \
-		                             -d UBERON 10 -d CL 9 \
-		    -o -f ofn $@
-.PRECIOUS: $(TMPDIR)/unreasoned-composite-%.owl
-
-# Step 3: Standard reasoning step
-composite-%.owl: $(TMPDIR)/unreasoned-composite-%.owl
-	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
+.PRECIOUS: $(TMPDIR)/composite-%.owl
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
+	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+		 uberon:merge-species -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
+		 uberon:merge-species -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
+		 uberon:merge-species -s 'primate'    -t NCBITaxon:9443 \
+		 uberon:merge-species -s 'Xenopus'    -t NCBITaxon:8353 \
+		 uberon:merge-species -s 'Danio'      -t NCBITaxon:7954 \
+		 uberon:merge-species -s 'Drosophila' -t NCBITaxon:7227 \
+		 uberon:merge-species -s 'C elegans'  -t NCBITaxon:6237 \
+		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
+		                              -l UBERON=10 -l CL=9 \
+		                              -d UBERON=10 -d CL=9 \
+		 reason -r ELK --equivalent-classes-allowed all \
 		 relax \
-		 reduce -r ELK \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: composite-%.owl
+		 reduce -r ELK -o $@
 
-# ODK insanity: This rule is EXACTLY the same as the rule above,
-# composite-metazoan does not require any special treatment compared to
-# the other composite-% products. But because the ODK-generated Makefile
-# defines a non-implicit rule with that target, we MUST override it with
-# a non-implicit rule -- the implicit rule above is not enough. So we
-# have no other choice but to duplicate the rule. Note to future
-# maintainers: any change to "step 3" rule above MUST be replicated in
-# this rule as well!
-composite-metazoan.owl: $(TMPDIR)/unreasoned-composite-metazoan.owl
-	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
-		 relax \
-		 reduce -r ELK \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
+# Step 3: Annotate the result of step 2. This is a separate step only so
+# that we can have explicit rules for composite-metazoan and
+# composite-vertebrate, because the ODK-generated Makefile already
+# defines a non-implicit rules with those targets.
+composite-%.owl: $(TMPDIR)/composite-%.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
-# Likewise.
-composite-vertebrate.owl: $(TMPDIR)/unreasoned-composite-vertebrate.owl
-	$(ROBOT) reason -i $< -r ELK --equivalent-classes-allowed all \
-		 relax \
-		 reduce -r ELK \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
-
-# Step 3.1: OBO version
+# Step 4: OBO version
 # Here again we are overriding the standard OWL-to-OBO rules set forth
 # by the ODK (https://github.com/obophenotype/uberon/issues/3014)
 composite-%.obo: composite-%.owl
