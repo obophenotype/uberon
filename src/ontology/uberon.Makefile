@@ -292,6 +292,20 @@ mirror-ssso: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
 		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
 
+## ONTOLOGY: mmusdv
+.PHONY: mirror-mmusdv
+.PRECIOUS: $(MIRRORDIR)/mmusdv.owl
+mirror-mmusdv: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/mmusdv.owl --create-dirs -o $(MIRRORDIR)/mmusdv-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/mmusdv-download.owl -o $(TMPDIR)/$@.owl; fi
+
+## ONTOLOGY: hsapdv
+.PHONY: mirror-hsapdv
+.PRECIOUS: $(MIRRORDIR)/hsapdv.owl
+mirror-hsapdv: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/hsapdv.owl --create-dirs -o $(MIRRORDIR)/hsapdv-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/hsapdv-download.owl -o $(TMPDIR)/$@.owl; fi
+
 
 # ----------------------------------------
 # "LOCAL" IMPORTS
@@ -321,6 +335,18 @@ imports/local-fb%.owl: mirror/fb%.owl
 # Ditto for WBbt/ls
 imports/local-wb%.owl: mirror/wb%.owl
 	$(ROBOT) remove -i $< --base-iri $(URIBASE)/WB \
+		        --axioms external --preserve-structure false --trim false \
+		 convert -f ofn -o $@
+
+# Ditto for MmusDv
+imports/local-mmusdv.owl: mirror/mmusdv.owl
+	$(ROBOT) remove -i $< --base-iri $(URIBASE)/MmusDv_ \
+		        --axioms external --preserve-structure false --trim false \
+		 convert -f ofn -o $@
+
+# Ditto for HsapDv
+imports/local-hsapdv.owl: mirror/hsapdv.owl
+	$(ROBOT) remove -i $< --base-iri $(URIBASE)/HsapDv_ \
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
@@ -915,7 +941,7 @@ subsets/vertebrate-head.obo: composite-vertebrate.owl
 # ----------------------------------------
 
 # TODO - switch to purls for OWL once released
-subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo $(TMPDIR)/developmental-stage-ontologies/src/hsapdv/hsapdv.obo
+subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(IMPORTDIR)/local-mmusdv.owl $(IMPORTDIR)/local-hsapdv.owl
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl
