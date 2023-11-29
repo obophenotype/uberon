@@ -310,26 +310,26 @@ imports/local-%.owl: mirror/%.owl
 	$(ROBOT) remove -i $< \
 		        --base-iri $(URIBASE)/$(shell echo $* | tr [a-z] [A-Z]) \
 		        --axioms external --preserve-structure false --trim false \
-		        -o $@
+		 convert -f ofn -o $@
 
 # We need a special case for FBbt/dv because of the mixed-case prefix
 imports/local-fb%.owl: mirror/fb%.owl
 	$(ROBOT) remove -i $< --base-iri $(URIBASE)/FB \
 		        --axioms external --preserve-structure false --trim false \
-		        -o $@
+		 convert -f ofn -o $@
 
 # Ditto for WBbt/ls
 imports/local-wb%.owl: mirror/wb%.owl
 	$(ROBOT) remove -i $< --base-iri $(URIBASE)/WB \
 		        --axioms external --preserve-structure false --trim false \
-		        -o $@
+		 convert -f ofn -o $@
 
 # For EHDAA2, we need to preserve the AEO classes as well
 imports/local-ehdaa2.owl: mirror/ehdaa2.owl
 	$(ROBOT) remove -i $< \
 		        --base-iri $(URIBASE)/EHDAA2_ --base-iri $(URIBASE)/AEO_ \
 		        --axioms external --preserve-structure false --trim false \
-		        -o $@
+		 convert -f ofn -o $@
 
 # For the life stages ontology, by construction it includes classes from
 # all over the place, and we need to preserve most of them. We do not
@@ -340,7 +340,7 @@ imports/local-ssso.owl: mirror/ssso.owl
 	$(ROBOT) remove -i $< \
 		        $(foreach pfx,$(SSSO_PREFIXES),--base-iri $(URIBASE)/$(pfx)) \
 		        --axioms external --preserve-structure false --trim false \
-		        -o $@
+		 convert -f ofn -o $@
 
 # For the following ontologies, in addition to removing axioms about
 # external entities we also need to replace some old-style properties.
@@ -352,19 +352,22 @@ imports/local-emapa.owl: mirror/emapa.owl $(IMPORTDIR)/map-properties.tsv
 		 rename --mappings $(IMPORTDIR)/map-mouse-stages.tsv \
 		        --allow-missing-entities true \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 imports/local-ma.owl: mirror/ma.owl $(IMPORTDIR)/map-properties.tsv
 	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
 		        --allow-missing-entities true --allow-duplicates true \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 imports/local-xao.owl: mirror/xao.owl $(IMPORTDIR)/map-properties.tsv
 	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
 		        --allow-missing-entities true --allow-duplicates true \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 # And for those ones, we also remove the imports. They were last
 # refreshed in 2016, we don't want to bring in old issues from old
@@ -373,17 +376,20 @@ imports/local-xao.owl: mirror/xao.owl $(IMPORTDIR)/map-properties.tsv
 imports/local-poro.owl: mirror/poro.owl
 	$(ROBOT) remove -i $< --select imports --trim false \
 		 remove --base-iri $(URIBASE)/PORO_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 imports/local-cteno.owl: mirror/cteno.owl
 	$(ROBOT) remove -i $< --select imports --trim false \
 		 remove --base-iri $(URIBASE)/CTENO_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 imports/local-ceph.owl: mirror/ceph.owl
 	$(ROBOT) remove -i $< --select imports --trim false \
 		 remove --base-iri $(URIBASE)/CEPH_ --axioms external \
-		        --preserve-structure false --trim false -o $@
+		        --preserve-structure false --trim false \
+		 convert -f ofn -o $@
 
 
 # Allen imports
