@@ -285,6 +285,13 @@ mirror-caro: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/caro-download.owl -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
+## ONTOLOGY: ssso
+.PHONY: mirror-ssso
+.PRECIOUS: $(MIRRORDIR)/ssso.owl
+mirror-ssso: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
+
 # Some mirrors need corrections before they can be used by the
 # composite-* pipelines and currently these corrections are done by
 # hacking the OBO representation of the original ontologies.
