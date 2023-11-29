@@ -292,44 +292,6 @@ mirror-ssso: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
 		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
 
-# Some mirrors need corrections before they can be used by the
-# composite-* pipelines and currently these corrections are done by
-# hacking the OBO representation of the original ontologies.
-# Here we create OBO versions of the original mirrors as needed...
-$(TMPDIR)/mirror-%.obo: mirror-% | $(TMPDIR)
-	if [ $(IMP) = true ] && [ $(MIR) = true ]; then \
-		$(ROBOT) convert -i $(TMPDIR)/mirror-$*.owl \
-		                 --check false -f obo $(OBO_FORMAT_OPTIONS) \
-		                 -o $@.tmp.obo && \
-		grep -v ^owl-axioms $@.tmp.obo > $@ && \
-		rm $@.tmp.obo ; \
-	fi
-
-# ... and now we can joyfully hack them!
-# Hacked mirror 1: EMAPA
-# This hack is used to re-generate imports/local-emapa.owl, but this
-# never happens automatically. It is not part of the normal imports
-# pipeline, so it is not invoked when doing a refresh-imports.
-# The corresponding rules are invoked during the release process (as
-# prerequisites of the composite-* pipeline), but normally both MIR and
-# IMP are false at this point, so no commands are executed. The rules
-# themselves are necessary to trigger the cloning of the
-# developmental-stage-ontologies repository, though.
-# Step 1: Map EMAPA stage IDs to MmusDv
-$(TMPDIR)/fixed-emapa.obo: $(TMPDIR)/mirror-emapa.obo
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
-		$(SCRIPTSDIR)/obo-grep.pl -r 'id: EMAPA' $< | \
-		$(SCRIPTSDIR)/fix-emapa-stages.pl > $@; \
-	fi
-
-# Step 2: Merge with MmusDv to create the final, fixed mirror
-mirror/emapa.owl: $(TMPDIR)/fixed-emapa.obo $(TMPDIR)/update-stages
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then \
-		$(ROBOT) merge -i $(TMPDIR)/fixed-emapa.obo \
-		               -i $(TMPDIR)/developmental-stage-ontologies/src/mmusdv/mmusdv.obo \
-		         convert -f ofn -o $@ ; \
-	fi
-
 
 # ----------------------------------------
 # "LOCAL" IMPORTS
@@ -383,21 +345,24 @@ imports/local-ssso.owl: mirror/ssso.owl
 # For the following ontologies, in addition to removing axioms about
 # external entities we also need to replace some old-style properties.
 # ----------------------------------------
-imports/local-emapa.owl: mirror/emapa.owl properties-map.tsv
-	$(ROBOT) rename -i $< --mappings properties-map.tsv \
+# EMAPA also needs translation between TS-style stages to MmusDv stages
+imports/local-emapa.owl: mirror/emapa.owl $(IMPORTDIR)/map-properties.tsv
+	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
+		        --allow-missing-entities true --allow-duplicates true \
+		 rename --mappings $(IMPORTDIR)/map-mouse-stages.tsv \
 		        --allow-missing-entities true \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
 		        --preserve-structure false --trim false -o $@
 
-imports/local-ma.owl: mirror/ma.owl properties-map.tsv
-	$(ROBOT) rename -i $< --mappings properties-map.tsv \
-		        --allow-missing-entities true \
+imports/local-ma.owl: mirror/ma.owl $(IMPORTDIR)/map-properties.tsv
+	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
+		        --allow-missing-entities true --allow-duplicates true \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
 		        --preserve-structure false --trim false -o $@
 
-imports/local-xao.owl: mirror/xao.owl properties-map.tsv
-	$(ROBOT) rename -i $< --mappings properties-map.tsv \
-		        --allow-missing-entities true \
+imports/local-xao.owl: mirror/xao.owl $(IMPORTDIR)/map-properties.tsv
+	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
+		        --allow-missing-entities true --allow-duplicates true \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
 		        --preserve-structure false --trim false -o $@
 
