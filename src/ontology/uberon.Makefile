@@ -1216,6 +1216,12 @@ $(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTD
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
+# Step 1b: collected-metazoan is not merely an intermediate towards
+# composite-metazoan, it is also a released artefact.
+collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
+	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
 # Step 2: Create a "composite" ontology. This is the core of the
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
