@@ -1095,31 +1095,6 @@ subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
 		--set-ontology-id $(URIBASE)/uberon/$@ -o -f ttl $@
 
 
-
-# ----------------------------------------
-# COMPOSITE STAGES
-# ----------------------------------------
-
-$(TMPDIR)/update-stages: $(SRC) | $(TMPDIR)
-	rm -rf $(TMPDIR)/developmental-stage-ontologies && \
-	cd $(TMPDIR) && \
-	git clone https://github.com/obophenotype/developmental-stage-ontologies.git
-
-$(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo: $(TMPDIR)/update-stages
-	test -f $@
-
-$(TMPDIR)/merged-stages-xrefs.obo: $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo
-	$(ROBOT) query -i $(TMPDIR)/developmental-stage-ontologies/src/ssso-merged.obo \
-		       --query ../sparql/xrefs-to-uberon.sparql $@_xrefs_to_uberon.tsv
-	cat $@_xrefs_to_uberon.tsv | tail -n +2 | \
-		$(SCRIPTSDIR)/tbl2obolinks.pl -k  --rel xref - > $@.tmp && mv $@.tmp $@
-
-$(TMPDIR)/composite-stages.obo: $(TMPDIR)/merged-stages-xrefs.obo
-	$(ROBOT) merge -i tmp/developmental-stage-ontologies/src/ssso-merged-uberon.obo \
-		       -i $(TMPDIR)/merged-stages-xrefs.obo \
-		 convert -f obo --check false -o $@
-
-
 # ----------------------------------------
 # COMPOSITE ANATOMY
 # ----------------------------------------
