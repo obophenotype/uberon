@@ -1210,7 +1210,7 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 # Uberon, CL, the CARO bridges, and the components listed in the
 # COLLECTED_*_SOURCES variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
-$(TMPDIR)/collected-%.owl: uberon.owl $(IMPORTDIR)/local-cl.owl \
+$(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
 		 $(BRIDGEDIR)/uberon-bridge-to-caro.owl \
 		 $(BRIDGEDIR)/cl-bridge-to-caro.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
