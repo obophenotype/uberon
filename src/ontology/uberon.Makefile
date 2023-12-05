@@ -523,31 +523,6 @@ $(TMPDIR)/uberon-taxon-constraints.owl: $(TMPDIR)/uberon-taxon-constraints.obo
 	grep ^name: $< | grep -v obsolete | perl -npe 's@name: @@' > $@.tmp && sort -u $@.tmp > $@
 
 
-# uberon-nif-merged: Uberon merged with the NIF Gross Anatomy
-# FIXME: currently broken, and of dubious usefulness
-# (https://github.com/obophenotype/uberon/issues/3018)
-# ----------------------------------------
-$(TMPDIR)/NIF-GrossAnatomy-src.owl:
-	wget http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl -O $@
-
-$(TMPDIR)/NIF-GrossAnatomy.owl: $(TMPDIR)/NIF-GrossAnatomy-src.owl
-	perl -npe 's@http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#@http://purl.obolibrary.org/obo/NIF_GrossAnatomy_@g' $< > $@
-
-$(TMPDIR)/NIF-GrossAnatomy-orig.obo: $(TMPDIR)/NIF-GrossAnatomy.owl
-	$(ROBOT) convert -i $< --check false -f obo -o $@
-
-$(TMPDIR)/NIF-GrossAnatomy.obo: $(TMPDIR)/NIF-GrossAnatomy-orig.obo
-	$(SCRIPTSDIR)/fix-nif-ga.pl $< > $@
-
-uberon-nif-merged.owl: uberon.owl $(TMPDIR)/NIF-GrossAnatomy.obo $(BRIDGEDIR)/uberon-bridge-to-nif_gross_anatomy.owl
-	$(OWLTOOLS) $^ --merge-support-ontologies \
-		       --reasoner elk --merge-equivalent-classes -f -t UBERON -o $@.tmp && \
-		grep -v '<oboInOwl:id' $@.tmp > $@
-
-uberon-nif-merged.obo:  uberon-nif-merged.owl
-	$(ROBOT) convert -i $< --check false -f obo -o $@
-
-
 # ----------------------------------------
 # REPORTS
 # ----------------------------------------
