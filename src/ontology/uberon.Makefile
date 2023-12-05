@@ -1359,12 +1359,12 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 $(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) merge -i $< --collapse-import-closure false \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
-		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
+		                    --prefix 'DHBA:  https://purl.brain-bican.org/ontology/dhbao/DHBA_' \
 		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
-		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'   \
+		                    --prefix 'HBA:   https://purl.brain-bican.org/ontology/hbao/HBA_' \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
-		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'   \
+		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
