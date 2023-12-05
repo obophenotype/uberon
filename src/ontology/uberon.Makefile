@@ -1204,7 +1204,7 @@ collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
 # The pipeline starts by removing all the disjointness axioms, because
 # many external ontologies do not adhere to all Uberon constraints.
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-MERGESPECIES_OPTS = -d -x -g
+MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
 $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
 	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
