@@ -124,7 +124,7 @@ export ROBOT_PLUGINS_DIRECTORY
 # Make sure the SSSOM plugin for ROBOT is available.
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.1/sssom-robot-plugin-0.6.1.jar
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.2/sssom-robot-plugin-0.6.2.jar
 
 # Ditto for the specific Uberon plugin
 $(TMPDIR)/plugins/uberon.jar:
@@ -1429,9 +1429,8 @@ $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.
 $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:inject -i $< \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		              --invert --only-subject-in UBERON \
-		              --check-subject --drop-duplicate-objects \
-		              --hasdbxref --no-merge --bridge-file $@ \
+		              --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
+		              --no-merge --bridge-file $@ \
 		              --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
