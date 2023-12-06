@@ -129,7 +129,7 @@ $(TMPDIR)/plugins/sssom.jar:
 # Ditto for the specific Uberon plugin
 $(TMPDIR)/plugins/uberon.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.1.0/uberon.jar
+	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
 
 
 # ----------------------------------------
@@ -1179,16 +1179,17 @@ collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
 # The pipeline starts by removing all the disjointness axioms, because
 # many external ontologies do not adhere to all Uberon constraints.
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
+MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
 $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
 	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
-		 uberon:merge-species -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species -s 'primate'    -t NCBITaxon:9443 \
-		 uberon:merge-species -s 'Xenopus'    -t NCBITaxon:8353 \
-		 uberon:merge-species -s 'Danio'      -t NCBITaxon:7954 \
-		 uberon:merge-species -s 'Drosophila' -t NCBITaxon:7227 \
-		 uberon:merge-species -s 'C elegans'  -t NCBITaxon:6237 \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'    -t NCBITaxon:9443 \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Xenopus'    -t NCBITaxon:8353 \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Danio'      -t NCBITaxon:7954 \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Drosophila' -t NCBITaxon:7227 \
+		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'C elegans'  -t NCBITaxon:6237 \
 		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
 		                              -l UBERON=10 -l CL=9 \
 		                              -d UBERON=10 -d CL=9 \
