@@ -192,6 +192,41 @@ mirror/ro.owl: mirror-ro | $(MIRRORDIR)
 # Uberon-specific pipelines (especially the composite-* stuff).
 # That's why they are not handled by the ODK-generated Makefile.
 
+## ONTOLOGY: allen-dhba
+.PHONY: mirror-allen-dhba
+.PRECIOUS: $(MIRRORDIR)/allen-dhba.owl
+mirror-allen-dhba: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/brain-bican/developing_human_brain_atlas_ontology/raw/main/dhbao-base.owl --create-dirs -o $(MIRRORDIR)/allen-dhba-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/allen-dhba-download.owl -o $(TMPDIR)/$@.owl ; fi
+
+## ONTOLOGY: allen-dmba
+.PHONY: mirror-allen-dmba
+.PRECIOUS: $(MIRRORDIR)/allen-dmba.owl
+mirror-allen-dmba: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/brain-bican/developing_mouse_brain_atlas_ontology/raw/main/dmbao-base.owl --create-dirs -o $(MIRRORDIR)/allen-dmba-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/allen-dmba-download.owl -o $(TMPDIR)/$@.owl ; fi
+
+## ONTOLOGY: allen-hba
+.PHONY: mirror-allen-hba
+.PRECIOUS: $(MIRRORDIR)/allen-hba.owl
+mirror-allen-hba: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/brain-bican/human_brain_atlas_ontology/raw/main/hbao-base.owl --create-dirs -o $(MIRRORDIR)/allen-hba-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/allen-hba-download.owl -o $(TMPDIR)/$@.owl ; fi
+
+## ONTOLOGY: allen-mba
+.PHONY: mirror-allen-mba
+.PRECIOUS: $(MIRRORDIR)/allen-mba.owl
+mirror-allen-mba: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/brain-bican/mouse_brain_atlas_ontology/raw/main/mbao-base.owl --create-dirs -o $(MIRRORDIR)/allen-mba-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/allen-mba-download.owl -o $(TMPDIR)/$@.owl ; fi
+
+## ONTOLOGY: allen-pba
+.PHONY: mirror-allen-pba
+.PRECIOUS: $(MIRRORDIR)/allen-pba.owl
+mirror-allen-pba: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/brain-bican/primate_brain_atlas_ontology/raw/main/pbao-base.owl --create-dirs -o $(MIRRORDIR)/allen-pba-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(MIRRORDIR)/allen-pba-download.owl -o $(TMPDIR)/$@.owl ; fi
+
 ## ONTOLOGY: ceph
 .PHONY: mirror-ceph
 .PRECIOUS: $(MIRRORDIR)/ceph.owl
@@ -367,6 +402,13 @@ imports/local-ehdaa2.owl: mirror/ehdaa2.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
+# Allen ontologies
+imports/local-allen-%.owl: mirror/allen-%.owl
+	$(ROBOT) remove -i $< \
+		        --base-iri https://purl.brain-bican.org/ontology/$*o/$(shell echo $* | tr [a-z] [A-Z])_ \
+		        --axioms external --preserve-structure false --trim false \
+		 convert -f ofn -o $@
+
 # For the life stages ontology, by construction it includes classes from
 # all over the place, and we need to preserve most of them. We do not
 # preserve the FBdv and WBls classes however, since they are provided
@@ -426,40 +468,6 @@ imports/local-ceph.owl: mirror/ceph.owl
 		 remove --base-iri $(URIBASE)/CEPH_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
-
-
-# Allen imports
-# ----------------------------------------
-# Those imports are custom-generated from data exported from the Allen
-# institute's brain-map.org.
-
-ALLENS = dmba hba dhba pba mba
-allen_all: $(patsubst %,$(IMPORTDIR)/local-allen-%.obo,$(ALLENS))
-
-$(TMPDIR)/allen-dmba.json: | $(TMPDIR)
-	wget https://api.brain-map.org/api/v2/structure_graph_download/17.json -O $@
-
-$(TMPDIR)/allen-hba.json: | $(TMPDIR)
-	wget https://api.brain-map.org/api/v2/structure_graph_download/10.json -O $@
-
-$(TMPDIR)/allen-dhba.json: | $(TMPDIR)
-	wget https://api.brain-map.org/api/v2/structure_graph_download/16.json -O $@
-
-$(TMPDIR)/allen-pba.json: | $(TMPDIR)
-	wget https://api.brain-map.org/api/v2/structure_graph_download/8.json -O $@
-
-$(TMPDIR)/allen-mba.json: | $(TMPDIR)
-	wget https://api.brain-map.org/api/v2/structure_graph_download/1.json -O $@
-
-$(IMPORTDIR)/local-allen-%.obo: $(TMPDIR)/allen-%.json $(SCRIPTSDIR)/allen-json2obo.pl
-	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
-
-ALLEN_UNSATS=--term DHBA:146035008 --term DHBA:146035004 --term DHBA:146035012
-$(IMPORTDIR)/local-allen-dhba.obo: $(TMPDIR)/allen-dhba.json $(SCRIPTSDIR)/allen-json2obo.pl
-	$(SCRIPTSDIR)/allen-json2obo.pl $< > $@
-	$(ROBOT) remove -i $@ --prefix "DHBA: http://purl.obolibrary.org/obo/DHBA_" \
-		        $(ALLEN_UNSATS) --axioms logical \
-			-o $@.tmp.obo && mv $@.tmp.obo $@
 
 
 # Allow quickly refreshing all "local" imports
@@ -1119,11 +1127,11 @@ COLLECTED_embryonic_mammal_SOURCES = $(COLLECTED_human_SOURCES) \
 
 COLLECTED_mammal_SOURCES =           $(COLLECTED_adult_mammal_SOURCES) \
 				     $(COLLECTED_embryonic_mammal_SOURCES) \
-				     $(IMPORTDIR)/local-allen-dhba.obo \
-				     $(IMPORTDIR)/local-allen-dmba.obo \
-				     $(IMPORTDIR)/local-allen-hba.obo \
-				     $(IMPORTDIR)/local-allen-mba.obo \
-				     $(IMPORTDIR)/local-allen-pba.obo \
+				     $(IMPORTDIR)/local-allen-dhba.owl \
+				     $(IMPORTDIR)/local-allen-dmba.owl \
+				     $(IMPORTDIR)/local-allen-hba.owl \
+				     $(IMPORTDIR)/local-allen-mba.owl \
+				     $(IMPORTDIR)/local-allen-pba.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-dhba.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-dmba.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
@@ -1327,12 +1335,12 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 $(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) merge -i $< --collapse-import-closure false \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
-		                    --prefix 'DHBA:  http://purl.obolibrary.org/obo/DHBA_'  \
+		                    --prefix 'DHBA:  https://purl.brain-bican.org/ontology/dhbao/DHBA_' \
 		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
-		                    --prefix 'HBA:   http://purl.obolibrary.org/obo/HBA_'   \
+		                    --prefix 'HBA:   https://purl.brain-bican.org/ontology/hbao/HBA_' \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
-		                    --prefix 'PBA:   http://purl.obolibrary.org/obo/PBA_'   \
+		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
