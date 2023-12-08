@@ -471,8 +471,9 @@ imports/local-ceph.owl: mirror/ceph.owl
 
 
 # Allow quickly refreshing all "local" imports
-LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa
-all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl) allen_all
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa \
+		allen-hba allen-dhba allen-mba allen-dmba allen-pba
+all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl)
 
 else # IMP=false
 all_local_imports:
