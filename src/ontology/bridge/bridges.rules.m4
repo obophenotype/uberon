@@ -6,7 +6,7 @@ prefix BFO:       <http://purl.obolibrary.org/obo/BFO_>
 prefix BSPO:      <http://purl.obolibrary.org/obo/BSPO_>
 prefix CARO:      <http://purl.obolibrary.org/obo/CARO_>
 prefix CL:        <http://purl.obolibrary.org/obo/CL_>
-prefix DHBA:      <http://purl.obolibrary.org/obo/DHBA_>
+prefix DHBA:      <https://purl.brain-bican.org/ontology/dhbao/DHBA_>
 prefix EHDAA2:    <http://purl.obolibrary.org/obo/EHDAA2_>
 prefix EMAPA:     <http://purl.obolibrary.org/obo/EMAPA_>
 prefix FBbt:      <http://purl.obolibrary.org/obo/FBbt_>
@@ -14,7 +14,7 @@ prefix FBdv:      <http://purl.obolibrary.org/obo/FBdv_>
 prefix FMA:       <http://purl.obolibrary.org/obo/FMA_>
 prefix GO:        <http://purl.obolibrary.org/obo/GO_>
 prefix HAO:       <http://purl.obolibrary.org/obo/HAO_>
-prefix HBA:       <http://purl.obolibrary.org/obo/HBA_>
+prefix HBA:       <https://purl.brain-bican.org/ontology/hbao/HBA_>
 prefix HsapDv:    <http://purl.obolibrary.org/obo/HsapDv_>
 prefix IAO:       <http://purl.obolibrary.org/obo/IAO_>
 prefix KUPO:      <http://purl.obolibrary.org/obo/KUPO_>
@@ -25,7 +25,7 @@ prefix NCIT:      <http://purl.obolibrary.org/obo/NCIT_>
 prefix OG:        <http://purl.obolibrary.org/obo/OG_>
 prefix OGES:      <http://purl.obolibrary.org/obo/OGES_>
 prefix OIO:       <http://www.geneontology.org/formats/oboInOwl#>
-prefix PBA:       <http://purl.obolibrary.org/obo/PBA_>
+prefix PBA:       <https://purl.brain-bican.org/ontology/pbao/PBA_>
 prefix RO:        <http://purl.obolibrary.org/obo/RO_>
 prefix SCTID:     <http://purl.obolibrary.org/obo/SCTID_>
 prefix SPD:       <http://purl.obolibrary.org/obo/SPD_>
