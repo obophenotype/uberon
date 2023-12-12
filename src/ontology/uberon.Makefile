@@ -124,7 +124,7 @@ export ROBOT_PLUGINS_DIRECTORY
 # Make sure the SSSOM plugin for ROBOT is available.
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.7.1/sssom-robot-plugin-0.7.1.jar
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.7.2/sssom-robot-plugin-0.7.2.jar
 
 # Ditto for the specific Uberon plugin
 $(TMPDIR)/plugins/uberon.jar:
@@ -1380,6 +1380,7 @@ $(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/uberon-mappings.ss
 		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(TMPDIR)/bridges.rules \
+		              --exclude-rule xrefs \
 		              --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
 	touch $@
 
@@ -1457,6 +1458,7 @@ $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/s
 	$(ROBOT) sssom:inject -i $< \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
+		              --error-on-unshortenable-iris \
 		              --no-merge --bridge-file $@ \
 		              --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
