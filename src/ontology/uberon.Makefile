@@ -124,7 +124,7 @@ export ROBOT_PLUGINS_DIRECTORY
 # Make sure the SSSOM plugin for ROBOT is available.
 $(TMPDIR)/plugins/sssom.jar:
 	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.6.1/sssom-robot-plugin-0.6.1.jar
+	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.7.2/sssom-robot-plugin-0.7.2.jar
 
 # Ditto for the specific Uberon plugin
 $(TMPDIR)/plugins/uberon.jar:
@@ -1275,7 +1275,7 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # them and store them into mappings/ONT-mappings.ssom.tsv.
 
 # The following ontologies publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa biomappings
 
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
@@ -1290,6 +1290,24 @@ ifeq ($(strip $(IMP)),true)
 .PHONY: $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(provider)-mappings)
 mappings/%-mappings.sssom.tsv: %-mappings
 	wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv
+
+# Special case for the Biomappings set which is provided with the
+# metadata in a separate file. We assemble a single YAML+TSV file and
+# we also filter out anything that has nothing to do with Uberon: the
+# set is quite large and we commit it to the repository, so we want to
+# keep it to the minimum stuff we actually need.
+# (We do the filtering with sed because "sssom dosql" is WAY too slow
+# for what it does.)
+mappings/biomappings-mappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
+					 $(TMPDIR)/biomappings.sssom.yml
+	sed 's/^/#/' $(TMPDIR)/biomappings.sssom.yml > $@
+	sed -n '1p; /UBERON:/p' $(TMPDIR)/biomappings.sssom.tsv >> $@
+
+$(TMPDIR)/biomappings.sssom.tsv:
+	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
+
+$(TMPDIR)/biomappings.sssom.yml:
+	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.yml
 
 
 # Special cases for ontologies that do no provide a ready-to-use set
@@ -1362,6 +1380,7 @@ $(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/uberon-mappings.ss
 		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(TMPDIR)/bridges.rules \
+		              --exclude-rule xrefs \
 		              --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
 	touch $@
 
@@ -1438,9 +1457,9 @@ $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.
 $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:inject -i $< \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
-		              --invert --only-subject-in UBERON \
-		              --check-subject --drop-duplicate-objects \
-		              --hasdbxref --no-merge --bridge-file $@ \
+		              --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
+		              --error-on-unshortenable-iris \
+		              --no-merge --bridge-file $@ \
 		              --bridge-iri http://purl.obolibrary.org/obo/uberon/components/mappings.owl
 
 
