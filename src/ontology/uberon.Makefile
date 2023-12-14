@@ -1296,12 +1296,13 @@ mappings/%-mappings.sssom.tsv: %-mappings
 # we also filter out anything that has nothing to do with Uberon: the
 # set is quite large and we commit it to the repository, so we want to
 # keep it to the minimum stuff we actually need.
-# (We do the filtering with sed because "sssom dosql" is WAY too slow
-# for what it does.)
 mappings/biomappings-mappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
 					 $(TMPDIR)/biomappings.sssom.yml
-	sed 's/^/#/' $(TMPDIR)/biomappings.sssom.yml > $@
-	sed -n '1p; /UBERON:/p' $(TMPDIR)/biomappings.sssom.tsv >> $@
+	sssom-cli --input $< --prefix 'UBERON=http://purl.obolibrary.org/obo/UBERON_' \
+		  --rule '!(subject==UBERON:* || object==UBERON:*) -> stop()' \
+		  --rule 'object==UBERON:* -> invert()' \
+		  --include-all | \
+	sssom-cli --mangle-iris obo --output $@
 
 $(TMPDIR)/biomappings.sssom.tsv:
 	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
