@@ -32,3 +32,5 @@ To trigger an automated human readable diff, add the following tag to a comment 
 ## Editors:
 
 See the file [README-editors.txt](bridge/../README-editors.txt)
+
+See the [Standard Operating Procedure for Uberon Curators](bridge/../docs/uberon-editor-sop.md).
