@@ -424,19 +424,19 @@ imports/local-ssso.owl: mirror/ssso.owl
 # external entities we also need to replace some old-style properties.
 # ----------------------------------------
 # EMAPA also needs translation between TS-style stages to MmusDv stages
-imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv
+imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv
+imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv
+imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
 		        --preserve-structure false --trim false \
