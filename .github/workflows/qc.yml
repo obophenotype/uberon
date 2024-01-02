@@ -19,18 +19,45 @@ jobs:
   ontology_qc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.4
-
+    container: obolibrary/odkfull:v1.4.3
+    permissions:
+      contents: read
+      pull-requests: write
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Run ontology QC checks
+        id: check
+        continue-on-error: true
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' BRI=false MIR=false IMP=false test > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test > TESTLOG.log
+
+      - name: Reason over taxon constraints
+        id: explaintc
+        continue-on-error: true
+        if: steps.check.outcome == 'failure'
+        run: |
+          if [ -s src/ontology/reports/taxon-constraint-check.txt ]; then
+            robot explain -i src/ontology/tmp/uberon-edit-plus-tax-equivs.owl -M unsatisfiability -u all -r ELK -e taxon-unsats.md
+            echo "<details>\n<summary>This PR violates some taxon constraints. Here is what the reasoner has to say:</summary>\n" > comment.md
+            cat taxon-unsats.md >> comment.md
+            echo "</details>" >> comment.md
+            exit 1
+          fi
+      - name: Post explanation for taxon constraint violations
+        if: steps.explaintc.outcome == 'failure'
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          file: "../../comment.md"
+          identifier: "TAXON_CONSTRAINTS_REASONING"
+
       - name: Last rows of QC report
-        if: ${{ failure() }}
-        run: tail -20 src/ontology/TESTLOG.log
+        if: steps.check.outcome == 'failure'
+        run: |
+          tail -20 src/ontology/TESTLOG.log
+          exit 1

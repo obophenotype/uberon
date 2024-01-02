@@ -20,12 +20,13 @@ release_artefacts:
   - full
   - simple
   - basic
-  - custom-ext
   - custom-basic
+  - custom-collected-metazoan
   - custom-composite-metazoan
   - custom-composite-metazoan-basic
   - custom-composite-vertebrate
   - custom-composite-vertebrate-basic
+  - custom-common-anatomy
 edit_format: obo
 import_group:
   use_base_merging: TRUE
@@ -44,7 +45,8 @@ import_group:
     - id: cl
       use_base: TRUE
     - id: go
-      use_base: TRUE
+      make_base: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/go/go-base.owl
       base_iris:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
@@ -63,8 +65,16 @@ import_group:
     - id: bfo
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: ncbitaxondisjoints
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
     - id: nbo
       use_base: TRUE
+    - id: orcidio
+      mirror_from: https://w3id.org/orcidio/orcidio.owl
+      base_iris:
+        - https://orcid.org/
+    - id: omo
+      module_type: mirror
 subset_group:
   products:
     - id: appendicular-minimal
@@ -108,6 +118,7 @@ robot_report:
     - obsolete-replaced_by
     - xrefs-mesh-pattern
     - label-synonym-polysemy
+    - id-format
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
@@ -120,3 +131,4 @@ components:
     - filename: in-subset.owl
     - filename: hra_subset.owl
     - filename: vasculature_class.owl
+    - filename: hra_depiction_3d_images.owl
