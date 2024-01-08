@@ -1161,12 +1161,10 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 # ----------------------------------------
 
 # Step 1: Create a "collected" ontology, which is simply a merge of
-# Uberon, CL, the CARO bridges, and the components listed in the
-# COLLECTED_*_SOURCES variables above.
+# Uberon, CL, and the components listed in the COLLECTED_*_SOURCES
+# variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
 $(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
-		 $(BRIDGEDIR)/uberon-bridge-to-caro.owl \
-		 $(BRIDGEDIR)/cl-bridge-to-caro.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
