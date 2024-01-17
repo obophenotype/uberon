@@ -136,15 +136,13 @@ $(TMPDIR)/plugins/uberon.jar:
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
-# Step 1: Preprocessing. We Merge the edit file file with imports,
-# disjointness axioms, and list of contributors, then expand macros
-# (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
+# Step 1: Preprocessing. We Merge the edit file file with imports and
+# list of contributors, then expand macros (except RO:0002175, which
+# only needs to be expanded for QC purposes).
+$(OWLSRC): $(SRC) $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(ROBOT) merge -i $< \
-			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
-			-i issues/contributor.owl \
-		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
+	$(ROBOT) merge -i $< -i issues/contributor.owl \
+		 expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
 # Step 2: Reasoning.
