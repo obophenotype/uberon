@@ -136,15 +136,13 @@ $(TMPDIR)/plugins/uberon.jar:
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
-# Step 1: Preprocessing. We Merge the edit file file with imports,
-# disjointness axioms, and list of contributors, then expand macros
-# (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
+# Step 1: Preprocessing. We Merge the edit file file with imports and
+# list of contributors, then expand macros (except RO:0002175, which
+# only needs to be expanded for QC purposes).
+$(OWLSRC): $(SRC) $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(ROBOT) merge -i $< \
-			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
-			-i issues/contributor.owl \
-		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
+	$(ROBOT) merge -i $< -i issues/contributor.owl \
+		 expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
 # Step 2: Reasoning.
@@ -1160,33 +1158,37 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 # Composite pipeline proper
 # ----------------------------------------
 
+# Set to false to keep disjointness axioms in collected/composite
+# products. Such axioms are stripped by default because too many
+# taxon-specific ontologies are inconsistent with Uberon.
+COMPOSITE_STRIP_DISJOINTS=true
+ifeq ($(COMPOSITE_STRIP_DISJOINTS),true)
+COMPOSITE_STRIPPING_COMMAND = remove --axioms "DisjointClasses DisjointUnion"
+endif
+
 # Step 1: Create a "collected" ontology, which is simply a merge of
-# Uberon, CL, the CARO bridges, and the components listed in the
-# COLLECTED_*_SOURCES variables above.
+# Uberon, CL, and the components listed in the COLLECTED_*_SOURCES
+# variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
 $(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
-		 $(BRIDGEDIR)/uberon-bridge-to-caro.owl \
-		 $(BRIDGEDIR)/cl-bridge-to-caro.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
 # Step 1b: collected-metazoan is not merely an intermediate towards
 # composite-metazoan, it is also a released artefact.
 collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # Step 2: Create a "composite" ontology. This is the core of the
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
-# The pipeline starts by removing all the disjointness axioms, because
-# many external ontologies do not adhere to all Uberon constraints.
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
 $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'    -t NCBITaxon:9443 \
