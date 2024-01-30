@@ -1321,6 +1321,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugi
 		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/cl-xrefs-extraction.txt
 
 # Likewise, the ZFA set (which is the source of truth for the CL-ZFA
@@ -1358,6 +1359,7 @@ $(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
 		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
 # 2. Prepare the ruleset file.
