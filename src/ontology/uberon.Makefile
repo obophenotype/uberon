@@ -1020,9 +1020,6 @@ subsets/immaterial.obo: uberon.owl
 		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
 		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
 
-subsets/metazoan-view.owl: uberon-basic.owl
-	cp $< $@
-
 # The first step is a simple "merge+reason", but it still requires
 # Owltools because ROBOT has no equivalent to the -x option to simply
 # ignore unsatisfiable classes without erroring out.
