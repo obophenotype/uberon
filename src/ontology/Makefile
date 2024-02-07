@@ -62,7 +62,7 @@ PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.
 
 FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
-RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic basic collected-metazoan composite-metazoan composite-metazoan-basic composite-vertebrate composite-vertebrate-basic common-anatomy )
+RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic collected-metazoan composite-metazoan composite-metazoan-basic composite-vertebrate composite-vertebrate-basic common-anatomy )
 
 # ----------------------------------------
 # Top-level targets
@@ -129,7 +129,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-composite life-stages-core life-stages-minimal merged-partonomy metazoan-view mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal renal-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
+SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-composite life-stages-core life-stages-minimal merged-partonomy mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal renal-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -701,12 +701,6 @@ $(ONT)-basic.json: $(ONT)-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
-basic.obo: basic.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-basic.json: basic.owl
-	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		convert --check false -f json -o $@.tmp.json &&\
-		mv $@.tmp.json $@
 collected-metazoan.obo: collected-metazoan.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 collected-metazoan.json: collected-metazoan.owl
@@ -813,9 +807,6 @@ $(ONT)-basic.owl: $(EDIT_PREPROCESSED) $(OTHER_SRC) $(SIMPLESEED) $(KEEPRELATION
 		filter --term-file $(SIMPLESEED) --select "annotations ontology anonymous self" --trim true --signature true \
 		reduce -r ELK \
 		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
-
-basic.owl:
-	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
 
 collected-metazoan.owl:
 	echo "ERROR: You have configured a custom release artefact ($@); this release artefact needs to be define in uberon.Makefile!" && false
