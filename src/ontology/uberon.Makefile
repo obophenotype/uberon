@@ -1003,14 +1003,6 @@ $(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 # Other subsets
 # ----------------------------------------
 
-# Basic subset
-# FIXME: https://github.com/obophenotype/uberon/issues/3013
-basic.owl:  uberon-basic.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-basic.obo: basic.owl
-	$(MAKEOBO)
-
 # Cumbo subset
 subsets/cumbo.owl: basic.owl
 	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
