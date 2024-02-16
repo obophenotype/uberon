@@ -69,7 +69,7 @@ update_dynamic_catalog:
 # This target is invoked as part of the automated CI workflow.
 # To include a specific check/report in the CI workflow, add it
 # to the pre-requisites here.
-test: $(REPORTDIR)/basic-allcycles \
+test: $(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/bfo-check.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
 	$(REPORTDIR)/uberon-edit-xp-check \
@@ -91,7 +91,7 @@ uberon-qc: checks \
 	quick-bridge-checks \
 	bridge-checks \
 	extra-full-bridge-checks \
-	$(REPORTDIR)/basic-allcycles \
+	$(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/basic-orphans \
 	$(REPORTDIR)/composite-metazoan-dv.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
@@ -670,9 +670,6 @@ src-cycles:
 $(REPORTDIR)/%-allcycles: %.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
 
-$(REPORTDIR)/basic-allcycles: basic.owl
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
 
 # Other checks
 # ----------------------------------------
@@ -818,7 +815,7 @@ $(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 		 reason -r ELK --equivalent-classes-allowed asserted-only > $@
 
 # Similar to above, but with the basic product and without RO
-$(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+$(REPORTDIR)/bfo-basic-check.txt: uberon-basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 		       -I $(URIBASE)/bfo.owl \
 		 reason -r ELK > $@
@@ -1003,16 +1000,8 @@ $(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 # Other subsets
 # ----------------------------------------
 
-# Basic subset
-# FIXME: https://github.com/obophenotype/uberon/issues/3013
-basic.owl:  uberon-basic.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-basic.obo: basic.owl
-	$(MAKEOBO)
-
 # Cumbo subset
-subsets/cumbo.owl: basic.owl
+subsets/cumbo.owl: uberon-basic.owl
 	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
 
 subsets/cumbo.obo: subsets/cumbo.owl
@@ -1030,9 +1019,6 @@ subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
 		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
 		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-subsets/metazoan-view.owl: basic.owl
-	cp $< $@
 
 # The first step is a simple "merge+reason", but it still requires
 # Owltools because ROBOT has no equivalent to the -x option to simply
@@ -1321,6 +1307,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugi
 		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/cl-xrefs-extraction.txt
 
 # Likewise, the ZFA set (which is the source of truth for the CL-ZFA
@@ -1358,6 +1345,7 @@ $(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
 		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
 # 2. Prepare the ruleset file.
@@ -1649,7 +1637,7 @@ normalise_release_serialisation_ofn:
 	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/xenopus-view.owl
 
 normalise_release_serialisation_rdfmxml:
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
