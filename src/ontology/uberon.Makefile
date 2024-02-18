@@ -1425,15 +1425,8 @@ DEPLOY_GH=true
 .PHONY: uberon
 uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
-	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
-.PHONY: copy_additional_files
-copy_additional_files:
-	rm -rf ../../bridge
-	mkdir -p ../../bridge
-	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
