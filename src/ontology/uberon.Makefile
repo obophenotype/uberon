@@ -31,15 +31,6 @@ all: uberon-qc
 
 
 # ----------------------------------------
-# COMMANDS
-# ----------------------------------------
-
-# FIXME: Is a custom OBO generation rule needed?
-# https://github.com/obophenotype/uberon/issues/3014
-MAKEOBO=  $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
-
-
-# ----------------------------------------
 # XML CATALOG
 # ----------------------------------------
 
@@ -165,12 +156,6 @@ uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAI
 	                       --equivalent-classes-allowed asserted-only \
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
 	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
-
-# Step 2.1: Generating other formats.
-# also do OE check here
-uberon.obo: uberon.owl
-	$(MAKEOBO)
-.PRECIOUS: uberon.obo
 
 uberon.json.gz: uberon.json
 	gzip -c $< > $@.tmp && mv $@.tmp $@
@@ -1004,9 +989,6 @@ $(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 subsets/cumbo.owl: uberon-basic.owl
 	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
 
-subsets/cumbo.obo: subsets/cumbo.owl
-	$(MAKEOBO)
-
 # Common anatony subset
 common-anatomy.owl: $(ONT).owl
 	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy \
@@ -1199,15 +1181,6 @@ composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-# Step 4: OBO version
-# Here again we are overriding the standard OWL-to-OBO rules set forth
-# by the ODK (https://github.com/obophenotype/uberon/issues/3014)
-composite-%.obo: composite-%.owl
-	$(OWLTOOLS) $< --add-obo-shorthand-to-properties \
-		    --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ \
-		    -o -f obo --no-check $@.tmp && \
-		grep -v ^owl-axioms: $@.tmp > $@
 
 
 # Some special products derived from the products generated above
