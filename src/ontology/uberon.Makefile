@@ -676,12 +676,6 @@ $(REPORTDIR)/%-dv.txt: %.owl
 # Overall "all-bridge" check
 # ----------------------------------------
 
-# The disjointness axioms are maintained in a OBO file, but the checks
-# below use an OWL version.
-$(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
-	$(ROBOT) convert -i $< -f owl -o $@
-.PRECIOUS: $(TMPDIR)/external-disjoints.owl
-
 # All the checks below need the taxslim-disjoint-over-in-taxon.owl,
 # which should have been downloaded into mirror/ncbitaxondisjoints.owl
 # by the standard ODK import pipeline. So ideally, all the checks below
@@ -710,10 +704,11 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 # Uberon, and the improper linking of a species AO class to an Uberon
 # class with a taxon constraints.
 ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl \
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) \
+					   $(COMPONENTSDIR)/external-disjoints.obo \
 					   $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 					   $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
 		 expand \
@@ -741,10 +736,10 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
 $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
-				       $(TMPDIR)/external-disjoints.owl \
+				       $(COMPONENTSDIR)/external-disjoints.obo \
 				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				       $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		 reason -r ELK > $@
@@ -756,11 +751,11 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
 # from the production of the report.
 # 1. The merge
 $(REPORTDIR)/bridge-check-%.owl: uberon.owl \
-				 $(TMPDIR)/external-disjoints.owl \
+				 $(COMPONENTSDIR)/external-disjoints.obo \
 				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				 $(TMPDIR)/bridges \
 				 $(IMPORTDIR)/local-%.owl
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		       -i $(IMPORTDIR)/local-$*.owl \
@@ -1430,16 +1425,8 @@ DEPLOY_GH=true
 .PHONY: uberon
 uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
-	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
-.PHONY: copy_additional_files
-copy_additional_files:
-	rm -rf ../../bridge
-	mkdir -p ../../bridge
-	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
-	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
