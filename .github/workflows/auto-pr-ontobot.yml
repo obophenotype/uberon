@@ -6,7 +6,30 @@ on:
     types: [ opened, edited ]
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      phraseExists: ${{ steps.check-body.outputs.result }}
+    steps:
+      - name: Check if issue body contains 'Hey ontobot'
+        id: check-body
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+            if (!issue.data.body) {
+              console.log('Issue body is empty or null');
+              return false;
+            }
+            return issue.data.body.toLowerCase().includes('hey ontobot');
+  
   build:
+    needs: check
+    if: needs.check.outputs.phraseExists == 'true'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -24,7 +47,7 @@ jobs:
         id: gh-script-issue
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const issue_number = context.issue.number
             const repo = context.repo.owner+"/"+context.repo.repo
@@ -34,7 +57,7 @@ jobs:
         id: gh-script-repo
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const repo = context.repo.owner+"/"+context.repo.repo
             return repo
@@ -55,7 +78,7 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} \
+          -g ${{ secrets.ONTOBOT_TOKEN }} \
           -p UBERON
 
       - name: Create Pull Request
@@ -70,4 +93,4 @@ jobs:
           committer: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
-          # token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.ONTOBOT_TOKEN }}

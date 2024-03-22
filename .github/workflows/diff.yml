@@ -20,7 +20,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: docker-practice/actions-setup-docker@master
+      - uses: better0fdead/actions-setup-docker@better0fdead/increase-timeout
         if: steps.check.outputs.triggered == 'true'
       - run: |
           set -x
@@ -30,7 +30,7 @@ jobs:
         run: docker pull obolibrary/odklite
         if: steps.check.outputs.triggered == 'true'
       # Checks-out current branch
-      - uses: xt0rted/pull-request-comment-branch@v1
+      - uses: xt0rted/pull-request-comment-branch@v2.0.0
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -92,12 +92,11 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
       - name: Post reasoned comment
         if: steps.check.outputs.triggered == 'true'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        uses: NejcZdovc/comment-pr@v1.1.1
+        uses: NejcZdovc/comment-pr@v2.0.0
         with:
           file: "../../comment.md"
           identifier: "REASONED"
+          github_token: ${{secrets.GITHUB_TOKEN}}
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
       - name: Download edit diff
@@ -110,12 +109,11 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
       - name: Post comment
         if: steps.check.outputs.triggered == 'true'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        uses: NejcZdovc/comment-pr@v1.1.1
+        uses: NejcZdovc/comment-pr@v2.0.0
         with:
           file: "../../edit-comment.md"
           identifier: "UNREASONED"
+          github_token: ${{secrets.GITHUB_TOKEN}}
 
 
 

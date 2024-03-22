@@ -1,0 +1,22 @@
+pattern_name: vessel_connecting_branch_of_vessel_pattern
+pattern_iri: http://purl.obolibrary.org/obo/uberon/src/patterns/vessel_connecting_branch_of_vessel_pattern.yaml
+
+description: A vessel that is branching from another vessel (stem vessel), and it is NOT part of it, it is a 'connecting branch of' the stem vessel.
+#examples: vertebral artery(UBERON:0001535) is a connecting branch of subclavian artery(UBERON:0001533)
+
+contributors:
+  - https://orcid.org/0000-0001-6677-8489
+
+classes:
+  vessel: "UBERON:0000055"
+
+relations:
+  connecting_branch_of: "RO:0002252"
+
+vars:
+  stem_vessel: "'vessel'"
+
+subClassOf:
+  text: "'connecting_branch_of' some %s"
+  vars:
+    - stem_vessel
