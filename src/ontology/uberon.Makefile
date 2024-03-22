@@ -1383,26 +1383,6 @@ $(COMPONENTSDIR)/in-subset.owl: $(SRC) $(TEMPLATEDIR)/in-subset.template.tsv
 		 annotate --ontology-iri $(ONTBASE)/$@ \
 		          --output $(COMPONENTSDIR)/in-subset.owl
 
-$(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-ifeq ($(strip $(MIR)),true)
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-endif
-
-3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
-$(TMPDIR)/hra_depiction_3d_images.owl:
-	wget $(3D_IMAGES_COMP_URL) -O $@
-
-$(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
-
 # The mappings.owl component contains cross-references to foreign
 # ontologies that provide their own mappings as a SSSOM set. This
 # component ensures those mappings are visible to Uberon editors and

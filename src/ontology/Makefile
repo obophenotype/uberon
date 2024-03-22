@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                c8fa86ab8f984cb6c9ea20468b4ae4ff2e446501d9c361b8a3993841a38177eb
+CONFIG_HASH=                5b43938035885714e882948608e09a43483b1e19dbe9e3bf1559f6869da6ea6a
 
 
 # ----------------------------------------
@@ -467,10 +467,35 @@ component-download-hra_subset.owl: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(COMP) = true ]; then $(ROBOT) merge -I https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl \
 	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $(TMPDIR)/$@.owl; fi
 
-$(COMPONENTSDIR)/hra_subset.owl:  component-download-hra_subset.owl
-	if [ $(COMP) = true ] ; then if cmp -s $(TMPDIR)/component-download-hra_subset.owl.owl $@ ; then echo "Component identical."; else echo "Component is different, updating." && cp $(TMPDIR)/component-download-hra_subset.owl.owl $@; fi; fi
+$(COMPONENTSDIR)/hra_subset.owl: component-download-hra_subset.owl
+	if [ $(COMP) = true ]; then if cmp -s $(TMPDIR)/component-download-hra_subset.owl.owl $(TMPDIR)/component-download-hra_subset.owl.tmp.owl ; then echo "Component identical."; \
+      else echo "Component is different, updating." &&\
+		cp $(TMPDIR)/component-download-hra_subset.owl.owl $(TMPDIR)/component-download-hra_subset.owl.tmp.owl &&\
+		$(ROBOT) annotate -i $(TMPDIR)/component-download-hra_subset.owl.owl --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@; fi; fi
 
 .PRECIOUS: $(COMPONENTSDIR)/hra_subset.owl
+
+
+$(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.tsv
+	if [ $(COMP) = true ] ; then $(ROBOT) template --input imports/merged_import.owl \
+		$(patsubst %, --template %, $^) \
+		$(ANNOTATE_CONVERT_FILE); fi
+
+.PRECIOUS: $(COMPONENTSDIR)/vasculature_class.owl
+
+
+.PHONY: component-download-hra_depiction_3d_images.owl
+component-download-hra_depiction_3d_images.owl: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(COMP) = true ]; then $(ROBOT) merge -I https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl \
+	annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $(TMPDIR)/$@.owl; fi
+
+$(COMPONENTSDIR)/hra_depiction_3d_images.owl: component-download-hra_depiction_3d_images.owl
+	if [ $(COMP) = true ]; then if cmp -s $(TMPDIR)/component-download-hra_depiction_3d_images.owl.owl $(TMPDIR)/component-download-hra_depiction_3d_images.owl.tmp.owl ; then echo "Component identical."; \
+      else echo "Component is different, updating." &&\
+		cp $(TMPDIR)/component-download-hra_depiction_3d_images.owl.owl $(TMPDIR)/component-download-hra_depiction_3d_images.owl.tmp.owl &&\
+		$(ROBOT) annotate -i $(TMPDIR)/component-download-hra_depiction_3d_images.owl.owl --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@; fi; fi
+
+.PRECIOUS: $(COMPONENTSDIR)/hra_depiction_3d_images.owl
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------

@@ -131,4 +131,9 @@ components:
     - filename: hra_subset.owl
       source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl
     - filename: vasculature_class.owl
+      use_template: True
+      template_options: --input imports/merged_import.owl
+      templates:
+        - vasculature_class.tsv
     - filename: hra_depiction_3d_images.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl
