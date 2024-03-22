@@ -31,15 +31,6 @@ all: uberon-qc
 
 
 # ----------------------------------------
-# COMMANDS
-# ----------------------------------------
-
-# FIXME: Is a custom OBO generation rule needed?
-# https://github.com/obophenotype/uberon/issues/3014
-MAKEOBO=  $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
-
-
-# ----------------------------------------
 # XML CATALOG
 # ----------------------------------------
 
@@ -69,7 +60,7 @@ update_dynamic_catalog:
 # This target is invoked as part of the automated CI workflow.
 # To include a specific check/report in the CI workflow, add it
 # to the pre-requisites here.
-test: $(REPORTDIR)/basic-allcycles \
+test: $(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/bfo-check.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
 	$(REPORTDIR)/uberon-edit-xp-check \
@@ -91,7 +82,7 @@ uberon-qc: checks \
 	quick-bridge-checks \
 	bridge-checks \
 	extra-full-bridge-checks \
-	$(REPORTDIR)/basic-allcycles \
+	$(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/basic-orphans \
 	$(REPORTDIR)/composite-metazoan-dv.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
@@ -136,15 +127,13 @@ $(TMPDIR)/plugins/uberon.jar:
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
-# Step 1: Preprocessing. We Merge the edit file file with imports,
-# disjointness axioms, and list of contributors, then expand macros
-# (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
+# Step 1: Preprocessing. We Merge the edit file file with imports and
+# list of contributors, then expand macros (except RO:0002175, which
+# only needs to be expanded for QC purposes).
+$(OWLSRC): $(SRC) $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
-	$(ROBOT) merge -i $< \
-			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
-			-i issues/contributor.owl \
-		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
+	$(ROBOT) merge -i $< -i issues/contributor.owl \
+		 expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
 # Step 2: Reasoning.
@@ -167,12 +156,6 @@ uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAI
 	                       --equivalent-classes-allowed asserted-only \
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
 	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
-
-# Step 2.1: Generating other formats.
-# also do OE check here
-uberon.obo: uberon.owl
-	$(MAKEOBO)
-.PRECIOUS: uberon.obo
 
 uberon.json.gz: uberon.json
 	gzip -c $< > $@.tmp && mv $@.tmp $@
@@ -424,25 +407,20 @@ imports/local-ssso.owl: mirror/ssso.owl
 # external entities we also need to replace some old-style properties.
 # ----------------------------------------
 # EMAPA also needs translation between TS-style stages to MmusDv stages
-imports/local-emapa.owl: mirror/emapa.owl $(IMPORTDIR)/map-properties.tsv
-	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
-		        --allow-missing-entities true --allow-duplicates true \
-		 rename --mappings $(IMPORTDIR)/map-mouse-stages.tsv \
-		        --allow-missing-entities true \
+imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-ma.owl: mirror/ma.owl $(IMPORTDIR)/map-properties.tsv
-	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
-		        --allow-missing-entities true --allow-duplicates true \
+imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-xao.owl: mirror/xao.owl $(IMPORTDIR)/map-properties.tsv
-	$(ROBOT) rename -i $< --mappings $(IMPORTDIR)/map-properties.tsv \
-		        --allow-missing-entities true --allow-duplicates true \
+imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
@@ -677,9 +655,6 @@ src-cycles:
 $(REPORTDIR)/%-allcycles: %.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
 
-$(REPORTDIR)/basic-allcycles: basic.owl
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
 
 # Other checks
 # ----------------------------------------
@@ -700,12 +675,6 @@ $(REPORTDIR)/%-dv.txt: %.owl
 
 # Overall "all-bridge" check
 # ----------------------------------------
-
-# The disjointness axioms are maintained in a OBO file, but the checks
-# below use an OWL version.
-$(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
-	$(ROBOT) convert -i $< -f owl -o $@
-.PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
 # All the checks below need the taxslim-disjoint-over-in-taxon.owl,
 # which should have been downloaded into mirror/ncbitaxondisjoints.owl
@@ -735,10 +704,11 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 # Uberon, and the improper linking of a species AO class to an Uberon
 # class with a taxon constraints.
 ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl \
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) \
+					   $(COMPONENTSDIR)/external-disjoints.obo \
 					   $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 					   $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
 		 expand \
@@ -766,10 +736,10 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
 $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
-				       $(TMPDIR)/external-disjoints.owl \
+				       $(COMPONENTSDIR)/external-disjoints.obo \
 				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				       $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		 reason -r ELK > $@
@@ -781,11 +751,11 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
 # from the production of the report.
 # 1. The merge
 $(REPORTDIR)/bridge-check-%.owl: uberon.owl \
-				 $(TMPDIR)/external-disjoints.owl \
+				 $(COMPONENTSDIR)/external-disjoints.obo \
 				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				 $(TMPDIR)/bridges \
 				 $(IMPORTDIR)/local-%.owl
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		       -i $(IMPORTDIR)/local-$*.owl \
@@ -825,7 +795,7 @@ $(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 		 reason -r ELK --equivalent-classes-allowed asserted-only > $@
 
 # Similar to above, but with the basic product and without RO
-$(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+$(REPORTDIR)/bfo-basic-check.txt: uberon-basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 		       -I $(URIBASE)/bfo.owl \
 		 reason -r ELK > $@
@@ -1010,20 +980,9 @@ $(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
 # Other subsets
 # ----------------------------------------
 
-# Basic subset
-# FIXME: https://github.com/obophenotype/uberon/issues/3013
-basic.owl:  uberon-basic.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-basic.obo: basic.owl
-	$(MAKEOBO)
-
 # Cumbo subset
-subsets/cumbo.owl: basic.owl
+subsets/cumbo.owl: uberon-basic.owl
 	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
-
-subsets/cumbo.obo: subsets/cumbo.owl
-	$(MAKEOBO)
 
 # Common anatony subset
 common-anatomy.owl: $(ONT).owl
@@ -1037,9 +996,6 @@ subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
 		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
 		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-subsets/metazoan-view.owl: basic.owl
-	cp $< $@
 
 # The first step is a simple "merge+reason", but it still requires
 # Owltools because ROBOT has no equivalent to the -x option to simply
@@ -1165,33 +1121,37 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 # Composite pipeline proper
 # ----------------------------------------
 
+# Set to false to keep disjointness axioms in collected/composite
+# products. Such axioms are stripped by default because too many
+# taxon-specific ontologies are inconsistent with Uberon.
+COMPOSITE_STRIP_DISJOINTS=true
+ifeq ($(COMPOSITE_STRIP_DISJOINTS),true)
+COMPOSITE_STRIPPING_COMMAND = remove --axioms "DisjointClasses DisjointUnion"
+endif
+
 # Step 1: Create a "collected" ontology, which is simply a merge of
-# Uberon, CL, the CARO bridges, and the components listed in the
-# COLLECTED_*_SOURCES variables above.
+# Uberon, CL, and the components listed in the COLLECTED_*_SOURCES
+# variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
 $(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
-		 $(BRIDGEDIR)/uberon-bridge-to-caro.owl \
-		 $(BRIDGEDIR)/cl-bridge-to-caro.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
 # Step 1b: collected-metazoan is not merely an intermediate towards
 # composite-metazoan, it is also a released artefact.
 collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # Step 2: Create a "composite" ontology. This is the core of the
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
-# The pipeline starts by removing all the disjointness axioms, because
-# many external ontologies do not adhere to all Uberon constraints.
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
 $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'    -t NCBITaxon:9443 \
@@ -1216,15 +1176,6 @@ composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-# Step 4: OBO version
-# Here again we are overriding the standard OWL-to-OBO rules set forth
-# by the ODK (https://github.com/obophenotype/uberon/issues/3014)
-composite-%.obo: composite-%.owl
-	$(OWLTOOLS) $< --add-obo-shorthand-to-properties \
-		    --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ \
-		    -o -f obo --no-check $@.tmp && \
-		grep -v ^owl-axioms: $@.tmp > $@
 
 
 # Some special products derived from the products generated above
@@ -1325,6 +1276,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugi
 		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
 		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/cl-xrefs-extraction.txt
 
 # Likewise, the ZFA set (which is the source of truth for the CL-ZFA
@@ -1362,6 +1314,7 @@ $(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
 		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
 		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
 		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
 # 2. Prepare the ruleset file.
@@ -1473,16 +1426,8 @@ DEPLOY_GH=true
 .PHONY: uberon
 uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
-	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
 	$(MAKE) release-diff
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
-.PHONY: copy_additional_files
-copy_additional_files:
-	rm -rf ../../bridge
-	mkdir -p ../../bridge
-	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
-	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
@@ -1653,7 +1598,7 @@ normalise_release_serialisation_ofn:
 	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/xenopus-view.owl
 
 normalise_release_serialisation_rdfmxml:
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl

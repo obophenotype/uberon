@@ -2,12 +2,12 @@
 
 ## Left
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2023-10-27/uberon.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2024-01-18/uberon.owl`
 - Loaded from: `file:/work/src/ontology/diffs/uberon-lastbuild.owl`
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2023-12-08/uberon.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2024-02-20/uberon.owl`
 - Loaded from: `file:/work/src/ontology/diffs/../../../uberon.owl`
 
 ### Ontology imports 
@@ -15,1067 +15,1926 @@
 
 
 ### Ontology annotations 
-#### Removed
-- [treat-xrefs-as-equivalent](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-equivalent) "EFO" 
 
-- [treat-xrefs-as-reverse-genus-differentia](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-reverse-genus-differentia) "FBbt part_of NCBITaxon:7227" 
+
+
+### Aristotle's lantern `http://purl.obolibrary.org/obo/UBERON_0008253`
 
 #### Added
-- [treat-xrefs-as-is_a](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-is_a) "BFO" 
+- [Aristotle's lantern](http://purl.obolibrary.org/obo/UBERON_0008253) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
-- [treat-xrefs-as-reverse-genus-differentia](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-reverse-genus-differentia) "KUPO part_of NCBITaxon:9606" 
+
+### B cell `http://purl.obolibrary.org/obo/CL_0000236`
+
+#### Added
+- [B cell](http://purl.obolibrary.org/obo/CL_0000236) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### B-2 B cell `http://purl.obolibrary.org/obo/CL_0000822`
+
+#### Added
+- [B-2 B cell](http://purl.obolibrary.org/obo/CL_0000822) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### CD14-positive monocyte `http://purl.obolibrary.org/obo/CL_0001054`
+
+#### Added
+- [CD14-positive monocyte](http://purl.obolibrary.org/obo/CL_0001054) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### CD14-positive, CD16-positive monocyte `http://purl.obolibrary.org/obo/CL_0002397`
+
+#### Added
+- [CD14-positive, CD16-positive monocyte](http://purl.obolibrary.org/obo/CL_0002397) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### CD34-positive, CD38-negative hematopoietic stem cell `http://purl.obolibrary.org/obo/CL_0001024`
+
+#### Added
+- [CD34-positive, CD38-negative hematopoietic stem cell](http://purl.obolibrary.org/obo/CL_0001024) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### D-amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0046416`
+#### Removed
+- [D-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0046416) SubClassOf [organic substance metabolic process](http://purl.obolibrary.org/obo/GO_0071704) 
+
+#### Added
+- [D-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0046416) SubClassOf [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) 
+
+
+### DN1 thymic pro-T cell `http://purl.obolibrary.org/obo/CL_0000894`
+
+#### Added
+- [DN1 thymic pro-T cell](http://purl.obolibrary.org/obo/CL_0000894) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### DNA binding `http://purl.obolibrary.org/obo/GO_0003677`
+#### Removed
+- [DNA binding](http://purl.obolibrary.org/obo/GO_0003677) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [DNA binding](http://purl.obolibrary.org/obo/GO_0003677) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### DNA recombination `http://purl.obolibrary.org/obo/GO_0006310`
+#### Removed
+- [DNA recombination](http://purl.obolibrary.org/obo/GO_0006310) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [DNA recombination](http://purl.obolibrary.org/obo/GO_0006310) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### GABAergic amacrine cell `http://purl.obolibrary.org/obo/CL_4030027`
+
+#### Added
+- [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### GABAergic neuron `http://purl.obolibrary.org/obo/CL_0000617`
+
+#### Added
+- [GABAergic neuron](http://purl.obolibrary.org/obo/CL_0000617) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### GCIs 
 #### Removed
-- [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606)) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [eyeball of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0010230)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ocular adnexa](http://purl.obolibrary.org/obo/UBERON_0035639)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [orbital region](http://purl.obolibrary.org/obo/UBERON_0004088) 
 
-  - [cases](http://www.geneontology.org/formats/oboInOwl#cases) "15%" 
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [submucosa](http://purl.obolibrary.org/obo/UBERON_0000009)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dermatological-muscosal system](http://purl.obolibrary.org/obo/UBERON_0012125) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sebaceous gland](http://purl.obolibrary.org/obo/UBERON_0001821)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [arrector muscle of hair](http://purl.obolibrary.org/obo/UBERON_0002033)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hair follicle](http://purl.obolibrary.org/obo/UBERON_0002073)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pilosebaceous unit](http://purl.obolibrary.org/obo/UBERON_0011932) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cortex of hair](http://purl.obolibrary.org/obo/UBERON_0002077)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hair medulla](http://purl.obolibrary.org/obo/UBERON_0005184)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hair shaft](http://purl.obolibrary.org/obo/UBERON_0002074) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory primordium epithelium](http://purl.obolibrary.org/obo/UBERON_0036072)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory primordium mesenchyme](http://purl.obolibrary.org/obo/UBERON_0036073)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory primordium](http://purl.obolibrary.org/obo/UBERON_0008947) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [integument](http://purl.obolibrary.org/obo/UBERON_0002199) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [peripheral nervous system](http://purl.obolibrary.org/obo/UBERON_0000010)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vibrissa follicle](http://purl.obolibrary.org/obo/UBERON_0010419)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [blood sinus of vibrissa](http://purl.obolibrary.org/obo/UBERON_0034941)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vibrissal follicle-sinus complex](http://purl.obolibrary.org/obo/UBERON_0034942) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather vane](http://purl.obolibrary.org/obo/UBERON_0008287)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather rachis](http://purl.obolibrary.org/obo/UBERON_0008288)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather shaft](http://purl.obolibrary.org/obo/UBERON_0011784) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [central tendon of diaphragm](http://purl.obolibrary.org/obo/UBERON_0006670)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [crus of diaphragm](http://purl.obolibrary.org/obo/UBERON_0014765)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [costal diaphragm](http://purl.obolibrary.org/obo/UBERON_0035831)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dentate gyrus of hippocampal formation](http://purl.obolibrary.org/obo/UBERON_0001885)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Ammon's horn](http://purl.obolibrary.org/obo/UBERON_0001954)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [subiculum](http://purl.obolibrary.org/obo/UBERON_0002191)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hippocampal formation](http://purl.obolibrary.org/obo/UBERON_0002421) 
+
+- ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdominal cavity](http://purl.obolibrary.org/obo/UBERON_0003684)) or ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pelvic cavity](http://purl.obolibrary.org/obo/UBERON_0008203)) EquivalentTo [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdominopelvic cavity](http://purl.obolibrary.org/obo/UBERON_0035819) 
+
+
+
+### Golgi membrane `http://purl.obolibrary.org/obo/GO_0000139`
 
 #### Added
-- [cranial suture](http://purl.obolibrary.org/obo/UBERON_0003685) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Mammalia](http://purl.obolibrary.org/obo/NCBITaxon_40674)) SubClassOf [developmentally induced by](http://purl.obolibrary.org/obo/RO_0002256) some [dura mater](http://purl.obolibrary.org/obo/UBERON_0002363) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:16496288" 
-
-- [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606)) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
-
-  - [cases](http://www.geneontology.org/formats/oboInOwl#cases) "15%" 
+- [Golgi membrane](http://purl.obolibrary.org/obo/GO_0000139) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Golgi apparatus](http://purl.obolibrary.org/obo/GO_0005794) 
 
 
-### adrenal tissue `http://purl.obolibrary.org/obo/UBERON_0018303`
+### IgG memory B cell `http://purl.obolibrary.org/obo/CL_0000979`
+
+#### Added
+- [IgG memory B cell](http://purl.obolibrary.org/obo/CL_0000979) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### IgG-negative class switched memory B cell `http://purl.obolibrary.org/obo/CL_0002117`
+
+#### Added
+- [IgG-negative class switched memory B cell](http://purl.obolibrary.org/obo/CL_0002117) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### L-amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0170034`
+
+#### Added
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid anabolism" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid formation" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of L-amino acids, the L-enantiomers of amino acids." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:edw" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170034" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid biosynthesis" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid synthesis" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-11-20T23:42:06Z" 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) [label](http://www.w3.org/2000/01/rdf-schema#label) "L-amino acid biosynthetic process" 
+
+- Class: [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) EquivalentTo [biosynthetic process](http://purl.obolibrary.org/obo/GO_0009058) and ([has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869)) 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) SubClassOf [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) SubClassOf [has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869) 
+
+- [L-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170034) SubClassOf [alpha-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_1901607) 
+
+
+### L-amino acid catabolic process `http://purl.obolibrary.org/obo/GO_0170035`
+
+#### Added
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170035" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of an L-amino acid." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:edw" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [label](http://www.w3.org/2000/01/rdf-schema#label) "L-amino acid catabolic process" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-11-21T00:55:07Z" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid breakdown" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid catabolism" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid degradation" 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- Class: [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) EquivalentTo [catabolic process](http://purl.obolibrary.org/obo/GO_0009056) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869)) 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) SubClassOf [alpha-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_1901606) 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) SubClassOf [has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869) 
+
+- [L-amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170035) SubClassOf [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) 
+
+
+### L-amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0170033`
+
+#### Added
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [label](http://www.w3.org/2000/01/rdf-schema#label) "L-amino acid metabolic process" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving an L-amino acid." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:edw" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-alpha-amino acid metabolism" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L-amino acid metabolism" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170033" 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-11-20T23:41:23Z" 
+
+- Class: [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) EquivalentTo [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) and ([has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869)) 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) SubClassOf [alpha-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_1901605) 
+
+- [L-amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170033) SubClassOf [has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [L-alpha-amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_59869) 
+
+
+### L6b glutamatergic cortical neuron `http://purl.obolibrary.org/obo/CL_4023038`
+
+#### Added
+- [L6b glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023038) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Langerhans cell `http://purl.obolibrary.org/obo/CL_0000453`
+
+#### Added
+- [Langerhans cell](http://purl.obolibrary.org/obo/CL_0000453) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Leydig cell `http://purl.obolibrary.org/obo/CL_0000178`
+
+#### Added
+- [Leydig cell](http://purl.obolibrary.org/obo/CL_0000178) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### MHC-II-positive classical monocyte `http://purl.obolibrary.org/obo/CL_0002470`
+
+#### Added
+- [MHC-II-positive classical monocyte](http://purl.obolibrary.org/obo/CL_0002470) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Merkel cell `http://purl.obolibrary.org/obo/CL_0000242`
+
+#### Added
+- [Merkel cell](http://purl.obolibrary.org/obo/CL_0000242) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Mueller cell `http://purl.obolibrary.org/obo/CL_0000636`
+
+#### Added
+- [Mueller cell](http://purl.obolibrary.org/obo/CL_0000636) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### PP cell `http://purl.obolibrary.org/obo/CL_0000696`
+
+#### Added
+- [PP cell](http://purl.obolibrary.org/obo/CL_0000696) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Purkinje cell `http://purl.obolibrary.org/obo/CL_0000121`
+
+#### Added
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### RNA binding `http://purl.obolibrary.org/obo/GO_0003723`
 #### Removed
-- [adrenal tissue](http://purl.obolibrary.org/obo/UBERON_0018303) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:a7bf197b-0db2-467e-824e-be45b39e2672" 
+- [RNA binding](http://purl.obolibrary.org/obo/GO_0003723) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
+#### Added
+- [RNA binding](http://purl.obolibrary.org/obo/GO_0003723) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### RNA metabolic process `http://purl.obolibrary.org/obo/GO_0016070`
+#### Removed
+- [RNA metabolic process](http://purl.obolibrary.org/obo/GO_0016070) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [RNA metabolic process](http://purl.obolibrary.org/obo/GO_0016070) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### Rules 
+#### Removed
+- [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?mf, ?mf2), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?eff, ?mf2) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "if effector directly positively regulates X,  its parent MF directly positively regulates X" 
+
+- [causally upstream of](http://purl.obolibrary.org/obo/RO_0002411)(?x, ?y), [overlaps](http://purl.obolibrary.org/obo/RO_0002131)(?x, ?y) -> [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?x), [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?y) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "'causally upstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties)." 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has regulatory component activity](http://purl.obolibrary.org/obo/RO_0002013)(?D, ?C) -> [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct reg edge from input to regulatory subfunction" 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "If a molecular function (X) has a regulatory subfunction, then any gene product which is an input to that subfunction has an activity that directly_regulates X.  Note:  this is intended for cases where the regaultory subfunction is protein binding, so it could be tightened with an additional clause to specify this." 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has positive regulatory component activity](http://purl.obolibrary.org/obo/RO_0002015)(?D, ?C) -> [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct positive reg edge from input to regulatory subfunction" 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has negative regulatory component activity](http://purl.obolibrary.org/obo/RO_0002014)(?D, ?C) -> [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct neg reg edge from input to regulatory subfunction" 
+
+- [biological_process](http://purl.obolibrary.org/obo/GO_0008150)(?z), [part_of](http://purl.obolibrary.org/obo/BFO_0000050)(?y, ?z), [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?y) -> [involved in](http://purl.obolibrary.org/obo/RO_0002331)(?x, ?z) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "involved in BP" 
+
+  - [isRuleEnabled](http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled) true 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "GP(X)-enables-&gt;MF(Y)-part_of-&gt;BP(Z) =&gt; GP(X) involved_in BP(Z) e.g. if X enables 'protein kinase activity' and Y 'part of' 'signal tranduction' then X involved in 'signal transduction'" 
+
+- [molecular_function](http://purl.obolibrary.org/obo/GO_0003674)(?y), [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?y), [has part](http://purl.obolibrary.org/obo/BFO_0000051)(?y, ?z) -> [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?z) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "enabling an MF enables its parts" 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "GP(X)-enables-&gt;MF(Y)-has_part-&gt;MF(Z) =&gt; GP(X) enables MF(Z),
+e.g.  if GP X enables ATPase coupled transporter activity' and 'ATPase coupled transporter activity' has_part 'ATPase activity' then GP(X) enables 'ATPase activity'" 
+
+- [has input](http://purl.obolibrary.org/obo/RO_0002233)(?mf, ?in), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [has input](http://purl.obolibrary.org/obo/RO_0002233)(?eff, ?in) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "Input of effector is input of its parent MF" 
+
+- [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?a1, ?a2), [kinase activity](http://purl.obolibrary.org/obo/GO_0016301)(?a1), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?a1, ?g1), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?a2, ?g2) -> [phosphorylates](http://purl.obolibrary.org/obo/RO_0002447)(?g1, ?g2) 
+
+- [has input](http://purl.obolibrary.org/obo/RO_0002233)(?eff, ?in), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [has input](http://purl.obolibrary.org/obo/RO_0002233)(?mf, ?in) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "effector input is compound function input" 
+
+- [causally downstream of](http://purl.obolibrary.org/obo/RO_0002404)(?x, ?y), [overlaps](http://purl.obolibrary.org/obo/RO_0002131)(?x, ?y) -> [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?x), [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?y) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "'causally downstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties)." 
+
+- [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff), [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?mf, ?mf2) -> [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?eff, ?mf2) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "if effector directly regulates X,  its parent MF directly regulates X" 
+
+- [positively regulates](http://purl.obolibrary.org/obo/RO_0002213)(?x, ?y), [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?y, ?z) -> [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?z) 
+
+- [positively regulates](http://purl.obolibrary.org/obo/RO_0002213)(?y, ?z), [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?y) -> [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?z) 
+
+- [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff), [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?mf, ?mf2) -> [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?eff, ?mf2) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "if effector directly negatively regulates X,  its parent MF directly negatively regulates X" 
+
+- [has component](http://purl.obolibrary.org/obo/RO_0002180)(?w, ?p), [process](http://purl.obolibrary.org/obo/BFO_0000015)(?w), [process](http://purl.obolibrary.org/obo/BFO_0000015)(?p) -> [has component process](http://purl.obolibrary.org/obo/RO_0002018)(?w, ?p) 
+
+#### Added
+- [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?a1, ?a2), [kinase activity](http://purl.obolibrary.org/obo/GO_0016301)(?a1), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?a1, ?g1), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?a2, ?g2) -> [phosphorylates](http://purl.obolibrary.org/obo/RO_0002447)(?g1, ?g2) 
+
+- [causally upstream of](http://purl.obolibrary.org/obo/RO_0002411)(?x, ?y), [overlaps](http://purl.obolibrary.org/obo/RO_0002131)(?x, ?y) -> [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?x), [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?y) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "'causally upstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties)." 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has regulatory component activity](http://purl.obolibrary.org/obo/RO_0002013)(?D, ?C) -> [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct reg edge from input to regulatory subfunction" 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "If a molecular function (X) has a regulatory subfunction, then any gene product which is an input to that subfunction has an activity that directly_regulates X.  Note:  this is intended for cases where the regaultory subfunction is protein binding, so it could be tightened with an additional clause to specify this." 
+
+- [biological_process](http://purl.obolibrary.org/obo/GO_0008150)(?z), [part_of](http://purl.obolibrary.org/obo/BFO_0000050)(?y, ?z), [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?y) -> [involved in](http://purl.obolibrary.org/obo/RO_0002331)(?x, ?z) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "involved in BP" 
+
+  - [isRuleEnabled](http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled) true 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "GP(X)-enables-&gt;MF(Y)-part_of-&gt;BP(Z) =&gt; GP(X) involved_in BP(Z) e.g. if X enables 'protein kinase activity' and Y 'part of' 'signal tranduction' then X involved in 'signal transduction'" 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has negative regulatory component activity](http://purl.obolibrary.org/obo/RO_0002014)(?D, ?C) -> [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct neg reg edge from input to regulatory subfunction" 
+
+- [has input](http://purl.obolibrary.org/obo/RO_0002233)(?eff, ?in), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [has input](http://purl.obolibrary.org/obo/RO_0002233)(?mf, ?in) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "effector input is compound function input" 
+
+- [molecular_function](http://purl.obolibrary.org/obo/GO_0003674)(?y), [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?y), [has part](http://purl.obolibrary.org/obo/BFO_0000051)(?y, ?z) -> [enables](http://purl.obolibrary.org/obo/RO_0002327)(?x, ?z) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "enabling an MF enables its parts" 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "GP(X)-enables-&gt;MF(Y)-has_part-&gt;MF(Z) =&gt; GP(X) enables MF(Z),
+e.g.  if GP X enables ATPase coupled transporter activity' and 'ATPase coupled transporter activity' has_part 'ATPase activity' then GP(X) enables 'ATPase activity'" 
+
+- [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff), [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?mf, ?mf2) -> [directly regulates](http://purl.obolibrary.org/obo/RO_0002578)(?eff, ?mf2) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "if effector directly regulates X,  its parent MF directly regulates X" 
+
+- [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff), [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?mf, ?mf2) -> [directly negatively regulates](http://purl.obolibrary.org/obo/RO_0002630)(?eff, ?mf2) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "if effector directly negatively regulates X,  its parent MF directly negatively regulates X" 
+
+- [has input](http://purl.obolibrary.org/obo/RO_0002233)(?mf, ?in), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [has input](http://purl.obolibrary.org/obo/RO_0002233)(?eff, ?in) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "Input of effector is input of its parent MF" 
+
+- [causally downstream of](http://purl.obolibrary.org/obo/RO_0002404)(?x, ?y), [overlaps](http://purl.obolibrary.org/obo/RO_0002131)(?x, ?y) -> [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?x), [Nothing](http://www.w3.org/2002/07/owl#Nothing)(?y) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "'causally downstream of' and 'overlaps' should be disjoint properties (a SWRL rule is required because these are non-simple properties)." 
+
+- [has component](http://purl.obolibrary.org/obo/RO_0002180)(?w, ?p), [process](http://purl.obolibrary.org/obo/BFO_0000015)(?w), [process](http://purl.obolibrary.org/obo/BFO_0000015)(?p) -> [has component process](http://purl.obolibrary.org/obo/RO_0002018)(?w, ?p) 
+
+- [positively regulates](http://purl.obolibrary.org/obo/RO_0002213)(?x, ?y), [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?y, ?z) -> [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?z) 
+
+- [positively regulates](http://purl.obolibrary.org/obo/RO_0002213)(?y, ?z), [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?y) -> [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212)(?x, ?z) 
+
+- [input of](http://purl.obolibrary.org/obo/RO_0002352)(?B, ?C), [enabled by](http://purl.obolibrary.org/obo/RO_0002333)(?A, ?B), [has positive regulatory component activity](http://purl.obolibrary.org/obo/RO_0002015)(?D, ?C) -> [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?A, ?D) 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "inferring direct positive reg edge from input to regulatory subfunction" 
+
+- [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?mf, ?mf2), [has effector activity](http://purl.obolibrary.org/obo/RO_0002025)(?mf, ?eff) -> [directly positively regulates](http://purl.obolibrary.org/obo/RO_0002629)(?eff, ?mf2) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "if effector directly positively regulates X,  its parent MF directly positively regulates X" 
+
+
+### Schwann cell `http://purl.obolibrary.org/obo/CL_0002573`
+
+#### Added
+- [Schwann cell](http://purl.obolibrary.org/obo/CL_0002573) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Schwann cell precursor `http://purl.obolibrary.org/obo/CL_0002375`
+
+#### Added
+- [Schwann cell precursor](http://purl.obolibrary.org/obo/CL_0002375) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### Sertoli cell `http://purl.obolibrary.org/obo/CL_0000216`
+
+#### Added
+- [Sertoli cell](http://purl.obolibrary.org/obo/CL_0000216) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### T cell `http://purl.obolibrary.org/obo/CL_0000084`
+
+#### Added
+- [T cell](http://purl.obolibrary.org/obo/CL_0000084) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### abdominal aorta artery `http://purl.obolibrary.org/obo/UBERON_0012254`
+
+#### Added
+- [abdominal aorta artery](http://purl.obolibrary.org/obo/UBERON_0012254) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdominal aorta](http://purl.obolibrary.org/obo/UBERON_0001516) 
+
+
+### abdominal cavity `http://purl.obolibrary.org/obo/UBERON_0003684`
+
+#### Added
+- [abdominal cavity](http://purl.obolibrary.org/obo/UBERON_0003684) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdomen](http://purl.obolibrary.org/obo/UBERON_0000916) 
+
+
+### abdominal external oblique muscle `http://purl.obolibrary.org/obo/UBERON_0005442`
+
+#### Added
+- [abdominal external oblique muscle](http://purl.obolibrary.org/obo/UBERON_0005442) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [external oblique pre-muscle mass](http://purl.obolibrary.org/obo/UBERON_0010975) 
+
+
+### abdominopelvic cavity `http://purl.obolibrary.org/obo/UBERON_0035819`
+
+#### Added
+- [abdominopelvic cavity](http://purl.obolibrary.org/obo/UBERON_0035819) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdominal segment of trunk](http://purl.obolibrary.org/obo/UBERON_0002417) 
+
+
+### abnormal_slim `http://purl.obolibrary.org/obo/pato#abnormal_slim`
+#### Removed
+- AnnotationProperty: [abnormal_slim](http://purl.obolibrary.org/obo/pato#abnormal_slim) 
+
+- [abnormal_slim](http://purl.obolibrary.org/obo/pato#abnormal_slim) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
+
+
+
+### accessory XI nerve `http://purl.obolibrary.org/obo/UBERON_0002019`
+
+#### Added
+- [accessory XI nerve](http://purl.obolibrary.org/obo/UBERON_0002019) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### accessory hemiazygos vein `http://purl.obolibrary.org/obo/UBERON_0006665`
+
+#### Added
+- [accessory hemiazygos vein](http://purl.obolibrary.org/obo/UBERON_0006665) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### accessory nerve cord of dorsal region `http://purl.obolibrary.org/obo/UBERON_0035607`
+
+#### Added
+- [accessory nerve cord of dorsal region](http://purl.obolibrary.org/obo/UBERON_0035607) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsum](http://purl.obolibrary.org/obo/UBERON_0001137) 
+
+
+### accessory olfactory bulb `http://purl.obolibrary.org/obo/UBERON_0004069`
+
+#### Added
+- [accessory olfactory bulb](http://purl.obolibrary.org/obo/UBERON_0004069) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### acellular membrane `http://purl.obolibrary.org/obo/UBERON_0005764`
+
+#### Added
+- [acellular membrane](http://purl.obolibrary.org/obo/UBERON_0005764) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
+
+
+### acetabular labrum `http://purl.obolibrary.org/obo/UBERON_0011958`
+
+#### Added
+- [acetabular labrum](http://purl.obolibrary.org/obo/UBERON_0011958) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### acinar cell `http://purl.obolibrary.org/obo/CL_0000622`
+
+#### Added
+- [acinar cell](http://purl.obolibrary.org/obo/CL_0000622) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### acinar cell of salivary gland `http://purl.obolibrary.org/obo/CL_0002623`
+
+#### Added
+- [acinar cell of salivary gland](http://purl.obolibrary.org/obo/CL_0002623) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### acyl binding `http://purl.obolibrary.org/obo/GO_0000035`
+#### Removed
+- [acyl binding](http://purl.obolibrary.org/obo/GO_0000035) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+#### Added
+- [acyl binding](http://purl.obolibrary.org/obo/GO_0000035) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/21211"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [acyl binding](http://purl.obolibrary.org/obo/GO_0000035) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
+
+
+### adenine import across plasma membrane `http://purl.obolibrary.org/obo/GO_0098702`
+#### Removed
+- [adenine import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098702) SubClassOf [import into cell](http://purl.obolibrary.org/obo/GO_0098657) 
+
+
+
+### adipocyte `http://purl.obolibrary.org/obo/CL_0000136`
+
+#### Added
+- [adipocyte](http://purl.obolibrary.org/obo/CL_0000136) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### adipocyte of breast `http://purl.obolibrary.org/obo/CL_0002617`
+
+#### Added
+- [adipocyte of breast](http://purl.obolibrary.org/obo/CL_0002617) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### adipocyte of epicardial fat of left ventricle `http://purl.obolibrary.org/obo/CL_1000311`
+
+#### Added
+- [adipocyte of epicardial fat of left ventricle](http://purl.obolibrary.org/obo/CL_1000311) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### adrenal gland capsule `http://purl.obolibrary.org/obo/UBERON_0002052`
+
+#### Added
+- [adrenal gland capsule](http://purl.obolibrary.org/obo/UBERON_0002052) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369) 
+
+
+### adventitial cell `http://purl.obolibrary.org/obo/CL_0002503`
+
+#### Added
+- [adventitial cell](http://purl.obolibrary.org/obo/CL_0002503) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### afferent portion of pharyngeal arch artery `http://purl.obolibrary.org/obo/UBERON_2000716`
+
+#### Added
+- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363) 
+
+- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### afferent spiracular artery `http://purl.obolibrary.org/obo/UBERON_0017616`
-#### Removed
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [respiratory system artery](http://purl.obolibrary.org/obo/UBERON_0003469) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
 
 #### Added
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
+- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### alary cartilage `http://purl.obolibrary.org/obo/UBERON_3000002`
+### air capillary of parabronchus `http://purl.obolibrary.org/obo/UBERON_0012087`
+
+#### Added
+- [air capillary of parabronchus](http://purl.obolibrary.org/obo/UBERON_0012087) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### alisphenoid bone `http://purl.obolibrary.org/obo/UBERON_0006721`
+
+#### Added
+- [alisphenoid bone](http://purl.obolibrary.org/obo/UBERON_0006721) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [basicranium](http://purl.obolibrary.org/obo/UBERON_0002517) 
+
+
+### alpha-amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_1901607`
 #### Removed
-- [alary cartilage](http://purl.obolibrary.org/obo/UBERON_3000002) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [alpha-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_1901607) SubClassOf [amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0008652) 
 
+#### Added
+- [alpha-amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_1901607) SubClassOf [organic substance biosynthetic process](http://purl.obolibrary.org/obo/GO_1901576) 
 
 
 ### alveolar artery `http://purl.obolibrary.org/obo/UBERON_0009654`
-#### Removed
-- [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
-- [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
 - [alveolar artery](http://purl.obolibrary.org/obo/UBERON_0009654) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### amygdala `http://purl.obolibrary.org/obo/UBERON_0001876`
+### alveolar primary septum `http://purl.obolibrary.org/obo/UBERON_0005314`
 
 #### Added
-- [amygdala](http://purl.obolibrary.org/obo/UBERON_0001876) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [amygdala](http://purl.obolibrary.org/obo/UBERON_0001876) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [alveolar primary septum](http://purl.obolibrary.org/obo/UBERON_0005314) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lung saccule](http://purl.obolibrary.org/obo/UBERON_0000116) 
 
 
-### amygdala excitatory neuron `http://purl.obolibrary.org/obo/CL_4023039`
+### alveolar secondary septum `http://purl.obolibrary.org/obo/UBERON_0005315`
+
+#### Added
+- [alveolar secondary septum](http://purl.obolibrary.org/obo/UBERON_0005315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lung saccule](http://purl.obolibrary.org/obo/UBERON_0000116) 
+
+
+### amacrine cell `http://purl.obolibrary.org/obo/CL_0000561`
+
+#### Added
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0008652`
 #### Removed
-- [amygdala excitatory neuron](http://purl.obolibrary.org/obo/CL_4023039) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+- [amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0008652) SubClassOf [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) 
 
 
 
-### amygdala pyramidal neuron `http://purl.obolibrary.org/obo/CL_4023110`
+### amino acid catabolic process `http://purl.obolibrary.org/obo/GO_0009063`
 #### Removed
-- [amygdala pyramidal neuron](http://purl.obolibrary.org/obo/CL_4023110) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+- [amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0009063) SubClassOf [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) 
 
 
 
-### amygdalohippocampal area `http://purl.obolibrary.org/obo/UBERON_0034673`
+### amino acid import across plasma membrane `http://purl.obolibrary.org/obo/GO_0089718`
+#### Removed
+- [amino acid import across plasma membrane](http://purl.obolibrary.org/obo/GO_0089718) SubClassOf [import into cell](http://purl.obolibrary.org/obo/GO_0098657) 
+
+
+
+### amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0006520`
+#### Removed
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) EquivalentTo [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) and ([has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [amino-acid anion](http://purl.obolibrary.org/obo/CHEBI_37022)) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) SubClassOf [carboxylic acid metabolic process](http://purl.obolibrary.org/obo/GO_0019752) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) SubClassOf [has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [amino-acid anion](http://purl.obolibrary.org/obo/CHEBI_37022) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) SubClassOf [organonitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_1901564) 
 
 #### Added
-- [amygdalohippocampal area](http://purl.obolibrary.org/obo/UBERON_0034673) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
-- [amygdalohippocampal area](http://purl.obolibrary.org/obo/UBERON_0034673) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) EquivalentTo [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) and ([has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_35238)) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) SubClassOf [has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [amino acid zwitterion](http://purl.obolibrary.org/obo/CHEBI_35238) 
+
+- [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) SubClassOf [organic substance metabolic process](http://purl.obolibrary.org/obo/GO_0071704) 
 
 
-### anatomical entity `http://purl.obolibrary.org/obo/UBERON_0001062`
+### anal fin distal radial element `http://purl.obolibrary.org/obo/UBERON_2100646`
 
 #### Added
-- [anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001062) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BFO:0000004" 
+- [anal fin distal radial element](http://purl.obolibrary.org/obo/UBERON_2100646) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### anal fold `http://purl.obolibrary.org/obo/UBERON_0012293`
+
+#### Added
+- [anal fold](http://purl.obolibrary.org/obo/UBERON_0012293) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### anal sac gland secretion `http://purl.obolibrary.org/obo/UBERON_0013212`
+#### Removed
+- [anal sac gland secretion](http://purl.obolibrary.org/obo/UBERON_0013212) EquivalentTo [secretion of exocrine gland](http://purl.obolibrary.org/obo/UBERON_0000456) and ([produced by](http://purl.obolibrary.org/obo/RO_0003001) some [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253)) 
+
+- [anal sac gland secretion](http://purl.obolibrary.org/obo/UBERON_0013212) SubClassOf [produced by](http://purl.obolibrary.org/obo/RO_0003001) some [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) 
+
+#### Added
+- [anal sac gland secretion](http://purl.obolibrary.org/obo/UBERON_0013212) EquivalentTo [secretion of exocrine gland](http://purl.obolibrary.org/obo/UBERON_0000456) and ([produced by](http://purl.obolibrary.org/obo/RO_0003001) some [gland of anal canal](http://purl.obolibrary.org/obo/UBERON_0004760)) 
+
+- [anal sac gland secretion](http://purl.obolibrary.org/obo/UBERON_0013212) SubClassOf [produced by](http://purl.obolibrary.org/obo/RO_0003001) some [gland of anal canal](http://purl.obolibrary.org/obo/UBERON_0004760) 
+
+
+### anatomical conduit space `http://purl.obolibrary.org/obo/UBERON_0013686`
+
+#### Added
+- [anatomical conduit space](http://purl.obolibrary.org/obo/UBERON_0013686) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anatomical conduit](http://purl.obolibrary.org/obo/UBERON_0004111) 
+
+
+### anatomical line along groove `http://purl.obolibrary.org/obo/UBERON_0014764`
+
+#### Added
+- [anatomical line along groove](http://purl.obolibrary.org/obo/UBERON_0014764) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [surface groove](http://purl.obolibrary.org/obo/UBERON_0006846) 
+
+
+### anatomical structure development `http://purl.obolibrary.org/obo/GO_0048856`
+
+#### Added
+- [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
 
 
 ### anatomical surface region `http://purl.obolibrary.org/obo/UBERON_0036215`
+
+#### Added
+- [anatomical surface region](http://purl.obolibrary.org/obo/UBERON_0036215) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
+
+
+### angular vein `http://purl.obolibrary.org/obo/UBERON_0014686`
+
+#### Added
+- [angular vein](http://purl.obolibrary.org/obo/UBERON_0014686) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ankle connective tissue `http://purl.obolibrary.org/obo/UBERON_0003596`
+
+#### Added
+- [ankle connective tissue](http://purl.obolibrary.org/obo/UBERON_0003596) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of tarsal region](http://purl.obolibrary.org/obo/UBERON_0010695) 
+
+
+### annular ligament of stapes `http://purl.obolibrary.org/obo/UBERON_0018161`
+
+#### Added
+- [annular ligament of stapes](http://purl.obolibrary.org/obo/UBERON_0018161) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### anococcygeus muscle `http://purl.obolibrary.org/obo/UBERON_0012649`
+
+#### Added
+- [anococcygeus muscle](http://purl.obolibrary.org/obo/UBERON_0012649) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### anterior chamber swim bladder `http://purl.obolibrary.org/obo/UBERON_2001277`
+
+#### Added
+- [anterior chamber swim bladder](http://purl.obolibrary.org/obo/UBERON_2001277) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### anterior facial vein `http://purl.obolibrary.org/obo/UBERON_0035675`
+
+#### Added
+- [anterior facial vein](http://purl.obolibrary.org/obo/UBERON_0035675) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### anterior limiting lamina of cornea `http://purl.obolibrary.org/obo/UBERON_0004370`
+
+#### Added
+- [anterior limiting lamina of cornea](http://purl.obolibrary.org/obo/UBERON_0004370) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### anterior subdivision of masseter `http://purl.obolibrary.org/obo/UBERON_0011314`
+
+#### Added
+- [anterior subdivision of masseter](http://purl.obolibrary.org/obo/UBERON_0011314) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
+
+
+### anterior uvea `http://purl.obolibrary.org/obo/UBERON_0011892`
+
+#### Added
+- [anterior uvea](http://purl.obolibrary.org/obo/UBERON_0011892) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### anterior vena cava `http://purl.obolibrary.org/obo/UBERON_0001585`
+
+#### Added
+- [anterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001585) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### antihelix `http://purl.obolibrary.org/obo/UBERON_0016466`
+
+#### Added
+- [antihelix](http://purl.obolibrary.org/obo/UBERON_0016466) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### antimicrobial humoral response `http://purl.obolibrary.org/obo/GO_0019730`
 #### Removed
-- [anatomical surface region](http://purl.obolibrary.org/obo/UBERON_0036215) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "AEO:0000154" 
-
-
-
-### anatomical system `http://purl.obolibrary.org/obo/UBERON_0000467`
+- [antimicrobial humoral response](http://purl.obolibrary.org/obo/GO_0019730) SubClassOf [defense response to other organism](http://purl.obolibrary.org/obo/GO_0098542) 
 
 #### Added
-- [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [antimicrobial humoral response](http://purl.obolibrary.org/obo/GO_0019730) SubClassOf [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) 
 
 
-### angular gyrus `http://purl.obolibrary.org/obo/UBERON_0002686`
+### antitragus `http://purl.obolibrary.org/obo/UBERON_0016467`
 
 #### Added
-- [angular gyrus](http://purl.obolibrary.org/obo/UBERON_0002686) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [angular gyrus](http://purl.obolibrary.org/obo/UBERON_0002686) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [antitragus](http://purl.obolibrary.org/obo/UBERON_0016467) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
-### anterior amygdaloid area `http://purl.obolibrary.org/obo/UBERON_0002890`
+### aorta `http://purl.obolibrary.org/obo/UBERON_0000947`
 
 #### Added
-- [anterior amygdaloid area](http://purl.obolibrary.org/obo/UBERON_0002890) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [anterior amygdaloid area](http://purl.obolibrary.org/obo/UBERON_0002890) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [aorta](http://purl.obolibrary.org/obo/UBERON_0000947) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### anterior cerebral artery `http://purl.obolibrary.org/obo/UBERON_0001624`
-#### Removed
-- [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
+### aortic smooth muscle cell `http://purl.obolibrary.org/obo/CL_0002539`
 
 #### Added
-- [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
-
-
-### anterior choroidal artery `http://purl.obolibrary.org/obo/UBERON_0014696`
-#### Removed
-- [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-#### Added
-- [anterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014696) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### anterior communicating artery `http://purl.obolibrary.org/obo/UBERON_0006764`
-#### Removed
-- [anterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0006764) EquivalentTo [communicating artery](http://purl.obolibrary.org/obo/UBERON_0006347) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624)) 
-
-- [anterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0006764) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [anterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0006764) EquivalentTo [communicating artery](http://purl.obolibrary.org/obo/UBERON_0006347) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624)) 
-
-- [anterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0006764) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [anterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0006764) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### anterior cortical amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0034991`
-
-#### Added
-- [anterior cortical amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0034991) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [anterior cortical amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0034991) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### anterior cruciate ligament of knee joint `http://purl.obolibrary.org/obo/UBERON_0003671`
-#### Removed
-- [anterior cruciate ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0003671) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [anterior cruciate ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0003671) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### anterior inferior cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0009689`
-#### Removed
-- [anterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009689) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [anterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009689) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### anterior maxillary process `http://purl.obolibrary.org/obo/UBERON_3000015`
-#### Removed
-- [anterior maxillary process](http://purl.obolibrary.org/obo/UBERON_3000015) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-#### Added
-- [anterior maxillary process](http://purl.obolibrary.org/obo/UBERON_3000015) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-
-### anterior meningeal artery `http://purl.obolibrary.org/obo/UBERON_0010251`
-#### Removed
-- [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anterior ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0012318) 
-
-- [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0012318) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
-
-- [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-#### Added
-- [anterior meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010251) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0012318) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
-
-
-### anterior nasal wall `http://purl.obolibrary.org/obo/UBERON_3000016`
-#### Removed
-- [anterior nasal wall](http://purl.obolibrary.org/obo/UBERON_3000016) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-#### Added
-- [anterior nasal wall](http://purl.obolibrary.org/obo/UBERON_3000016) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-
-### anterior nuclear group `http://purl.obolibrary.org/obo/UBERON_0002788`
-
-#### Added
-- [anterior nuclear group](http://purl.obolibrary.org/obo/UBERON_0002788) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [anterior nuclear group](http://purl.obolibrary.org/obo/UBERON_0002788) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### anterior parietal artery `http://purl.obolibrary.org/obo/UBERON_0035462`
-#### Removed
-- [anterior parietal artery](http://purl.obolibrary.org/obo/UBERON_0035462) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [anterior parietal artery](http://purl.obolibrary.org/obo/UBERON_0035462) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### anterior prenasal cartilage `http://purl.obolibrary.org/obo/UBERON_3010827`
-#### Removed
-- [anterior prenasal cartilage](http://purl.obolibrary.org/obo/UBERON_3010827) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### anterior spinal artery `http://purl.obolibrary.org/obo/UBERON_0005431`
-#### Removed
-- [anterior spinal artery](http://purl.obolibrary.org/obo/UBERON_0005431) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-
-#### Added
-- [anterior spinal artery](http://purl.obolibrary.org/obo/UBERON_0005431) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-
-
-### anterior temporal artery `http://purl.obolibrary.org/obo/UBERON_0035225`
-#### Removed
-- [anterior temporal artery](http://purl.obolibrary.org/obo/UBERON_0035225) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [anterior temporal artery](http://purl.obolibrary.org/obo/UBERON_0035225) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### anterior transverse temporal gyrus `http://purl.obolibrary.org/obo/UBERON_0002773`
-
-#### Added
-- [anterior transverse temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002773) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [anterior transverse temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002773) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### anterolateral ligament of knee `http://purl.obolibrary.org/obo/UBERON_0014899`
-#### Removed
-- [anterolateral ligament of knee](http://purl.obolibrary.org/obo/UBERON_0014899) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [anterolateral ligament of knee](http://purl.obolibrary.org/obo/UBERON_0014899) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### apex of paracone `http://purl.obolibrary.org/obo/UBERON_0018272`
-#### Removed
-- [apex of paracone](http://purl.obolibrary.org/obo/UBERON_0018272) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:78630a15-e3fb-49ab-8cf5-22f3a640a2c7" 
-
+- [aortic smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002539) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### appendicular artery `http://purl.obolibrary.org/obo/UBERON_0039215`
-#### Removed
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) 
-
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) 
 
 #### Added
 - [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) 
 
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### arcuate artery of foot `http://purl.obolibrary.org/obo/UBERON_0034927`
-#### Removed
-- [arcuate artery of foot](http://purl.obolibrary.org/obo/UBERON_0034927) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [arcuate artery of foot](http://purl.obolibrary.org/obo/UBERON_0034927) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
-
-- [arcuate artery of foot](http://purl.obolibrary.org/obo/UBERON_0034927) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### appendix testis `http://purl.obolibrary.org/obo/UBERON_0006651`
 
 #### Added
-- [arcuate artery of foot](http://purl.obolibrary.org/obo/UBERON_0034927) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [arcuate artery of foot](http://purl.obolibrary.org/obo/UBERON_0034927) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [appendix testis](http://purl.obolibrary.org/obo/UBERON_0006651) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### arterial system `http://purl.obolibrary.org/obo/UBERON_0004572`
+### arrector muscle of hair `http://purl.obolibrary.org/obo/UBERON_0002033`
 
 #### Added
-- [arterial system](http://purl.obolibrary.org/obo/UBERON_0004572) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [arterial system](http://purl.obolibrary.org/obo/UBERON_0004572) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [arrector muscle of hair](http://purl.obolibrary.org/obo/UBERON_0002033) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### artery of lower lip `http://purl.obolibrary.org/obo/UBERON_0003471`
-#### Removed
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### artery of lip `http://purl.obolibrary.org/obo/UBERON_0009657`
 
 #### Added
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [artery of lip](http://purl.obolibrary.org/obo/UBERON_0009657) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### artery of upper lip `http://purl.obolibrary.org/obo/UBERON_0003470`
-#### Removed
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### aryepiglottic fold `http://purl.obolibrary.org/obo/UBERON_0014385`
 
 #### Added
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [aryepiglottic fold](http://purl.obolibrary.org/obo/UBERON_0014385) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
-### arthropod tibia `http://purl.obolibrary.org/obo/UBERON_0003131`
-#### Removed
-- [arthropod tibia](http://purl.obolibrary.org/obo/UBERON_0003131) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [insect leg](http://purl.obolibrary.org/obo/UBERON_0005895) 
-
-
-
-### ascending cervical artery `http://purl.obolibrary.org/obo/UBERON_0012322`
-#### Removed
-- [ascending cervical artery](http://purl.obolibrary.org/obo/UBERON_0012322) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior thyroid artery](http://purl.obolibrary.org/obo/UBERON_0007149) 
-
-- [ascending cervical artery](http://purl.obolibrary.org/obo/UBERON_0012322) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior thyroid artery](http://purl.obolibrary.org/obo/UBERON_0007149) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
+### astrocyte `http://purl.obolibrary.org/obo/CL_0000127`
 
 #### Added
-- [ascending cervical artery](http://purl.obolibrary.org/obo/UBERON_0012322) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior thyroid artery](http://purl.obolibrary.org/obo/UBERON_0007149) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
+- [astrocyte](http://purl.obolibrary.org/obo/CL_0000127) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### atlantal spinal nerve foramen `http://purl.obolibrary.org/obo/UBERON_0018267`
-#### Removed
-- [atlantal spinal nerve foramen](http://purl.obolibrary.org/obo/UBERON_0018267) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:4fd613b3-3fd4-422e-a2f7-d7a2cde79d60" 
+### astrocyte of the cerebellum `http://purl.obolibrary.org/obo/CL_0002603`
 
+#### Added
+- [astrocyte of the cerebellum](http://purl.obolibrary.org/obo/CL_0002603) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### astrocyte of the cerebral cortex `http://purl.obolibrary.org/obo/CL_0002605`
+
+#### Added
+- [astrocyte of the cerebral cortex](http://purl.obolibrary.org/obo/CL_0002605) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### atlanto-occipital joint `http://purl.obolibrary.org/obo/UBERON_0000220`
+
+#### Added
+- [atlanto-occipital joint](http://purl.obolibrary.org/obo/UBERON_0000220) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cervical region of vertebral column](http://purl.obolibrary.org/obo/UBERON_0006072) 
+
+
+### atrioventricular canal `http://purl.obolibrary.org/obo/UBERON_0002087`
+
+#### Added
+- [atrioventricular canal](http://purl.obolibrary.org/obo/UBERON_0002087) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive atrioventricular canal](http://purl.obolibrary.org/obo/UBERON_0007279) 
+
+
+### atrioventricular node `http://purl.obolibrary.org/obo/UBERON_0002352`
+
+#### Added
+- [atrioventricular node](http://purl.obolibrary.org/obo/UBERON_0002352) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### atrioventricular valve `http://purl.obolibrary.org/obo/UBERON_0002133`
+
+#### Added
+- [atrioventricular valve](http://purl.obolibrary.org/obo/UBERON_0002133) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### atrium auricular region `http://purl.obolibrary.org/obo/UBERON_0006618`
+
+#### Added
+- [atrium auricular region](http://purl.obolibrary.org/obo/UBERON_0006618) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### auricular artery `http://purl.obolibrary.org/obo/UBERON_0009655`
+
+#### Added
+- [auricular artery](http://purl.obolibrary.org/obo/UBERON_0009655) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### auricular blood vessel `http://purl.obolibrary.org/obo/UBERON_0020550`
+
+#### Added
+- [auricular blood vessel](http://purl.obolibrary.org/obo/UBERON_0020550) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### auricular muscle `http://purl.obolibrary.org/obo/UBERON_0001595`
+
+#### Added
+- [auricular muscle](http://purl.obolibrary.org/obo/UBERON_0001595) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### auricular vein `http://purl.obolibrary.org/obo/UBERON_0006197`
+
+#### Added
+- [auricular vein](http://purl.obolibrary.org/obo/UBERON_0006197) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### autonomic ganglion `http://purl.obolibrary.org/obo/UBERON_0001805`
 
 #### Added
-- [autonomic ganglion](http://purl.obolibrary.org/obo/UBERON_0001805) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [autonomic ganglion](http://purl.obolibrary.org/obo/UBERON_0001805) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [autonomic ganglion](http://purl.obolibrary.org/obo/UBERON_0001805) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### axial skeletal system `http://purl.obolibrary.org/obo/UBERON_0011137`
-#### Removed
-- [axial skeletal system](http://purl.obolibrary.org/obo/UBERON_0011137) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [axial skeleton plus cranial skeleton](http://purl.obolibrary.org/obo/UBERON_0005944) 
+### autonomic nerve `http://purl.obolibrary.org/obo/UBERON_0034728`
 
+#### Added
+- [autonomic nerve](http://purl.obolibrary.org/obo/UBERON_0034728) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) 
+
+
+### autonomic neuron `http://purl.obolibrary.org/obo/CL_0000107`
+
+#### Added
+- [autonomic neuron](http://purl.obolibrary.org/obo/CL_0000107) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### axial musculature `http://purl.obolibrary.org/obo/UBERON_0013700`
+
+#### Added
+- [axial musculature](http://purl.obolibrary.org/obo/UBERON_0013700) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### axillary artery `http://purl.obolibrary.org/obo/UBERON_0001394`
 
 #### Added
-- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) 
+- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### basilar artery `http://purl.obolibrary.org/obo/UBERON_0001633`
+### axillary vein `http://purl.obolibrary.org/obo/UBERON_0000985`
+
+#### Added
+- [axillary vein](http://purl.obolibrary.org/obo/UBERON_0000985) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### axochord `http://purl.obolibrary.org/obo/UBERON_0035147`
+
+#### Added
+- [axochord](http://purl.obolibrary.org/obo/UBERON_0035147) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive axochord](http://purl.obolibrary.org/obo/UBERON_0035148) 
+
+
+### azygos vein `http://purl.obolibrary.org/obo/UBERON_0001594`
+
+#### Added
+- [azygos vein](http://purl.obolibrary.org/obo/UBERON_0001594) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### barrel cortex `http://purl.obolibrary.org/obo/UBERON_0010415`
+
+#### Added
+- [barrel cortex](http://purl.obolibrary.org/obo/UBERON_0010415) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### basal cell `http://purl.obolibrary.org/obo/CL_0000646`
+
+#### Added
+- [basal cell](http://purl.obolibrary.org/obo/CL_0000646) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### basal cell of epidermis `http://purl.obolibrary.org/obo/CL_0002187`
+
+#### Added
+- [basal cell of epidermis](http://purl.obolibrary.org/obo/CL_0002187) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### basal cell of prostate epithelium `http://purl.obolibrary.org/obo/CL_0002341`
+
+#### Added
+- [basal cell of prostate epithelium](http://purl.obolibrary.org/obo/CL_0002341) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### basal epithelial cell of prostatic duct `http://purl.obolibrary.org/obo/CL_0002236`
+
+#### Added
+- [basal epithelial cell of prostatic duct](http://purl.obolibrary.org/obo/CL_0002236) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### basal epithelial cell of tracheobronchial tree `http://purl.obolibrary.org/obo/CL_0002329`
+
+#### Added
+- [basal epithelial cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002329) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bipolar neuron `http://purl.obolibrary.org/obo/CL_0000103`
+
+#### Added
+- [bipolar neuron](http://purl.obolibrary.org/obo/CL_0000103) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bladder cell `http://purl.obolibrary.org/obo/CL_1001319`
+
+#### Added
+- [bladder cell](http://purl.obolibrary.org/obo/CL_1001319) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bladder urothelial cell `http://purl.obolibrary.org/obo/CL_1001428`
+
+#### Added
+- [bladder urothelial cell](http://purl.obolibrary.org/obo/CL_1001428) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### blood `http://purl.obolibrary.org/obo/UBERON_0000178`
+
+#### Added
+- [blood](http://purl.obolibrary.org/obo/UBERON_0000178) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive blood](http://purl.obolibrary.org/obo/UBERON_0006596) 
+
+
+### blood cell `http://purl.obolibrary.org/obo/CL_0000081`
+
+#### Added
+- [blood cell](http://purl.obolibrary.org/obo/CL_0000081) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### blood coagulation `http://purl.obolibrary.org/obo/GO_0007596`
 #### Removed
-- [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
+- [blood coagulation](http://purl.obolibrary.org/obo/GO_0007596) EquivalentTo [coagulation](http://purl.obolibrary.org/obo/GO_0050817) and ([has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [blood clot](http://purl.obolibrary.org/obo/UBERON_0010210)) 
+
+- [blood coagulation](http://purl.obolibrary.org/obo/GO_0007596) SubClassOf [has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [blood clot](http://purl.obolibrary.org/obo/UBERON_0010210) 
 
 #### Added
-- [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+- [blood coagulation](http://purl.obolibrary.org/obo/GO_0007596) EquivalentTo [coagulation](http://purl.obolibrary.org/obo/GO_0050817) and ([results in assembly of](http://purl.obolibrary.org/obo/RO_0002588) some [blood clot](http://purl.obolibrary.org/obo/UBERON_0010210)) 
 
-- [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-
-
-### basolateral amygdaloid nuclear complex `http://purl.obolibrary.org/obo/UBERON_0006107`
-
-#### Added
-- [basolateral amygdaloid nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006107) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [basolateral amygdaloid nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006107) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [blood coagulation](http://purl.obolibrary.org/obo/GO_0007596) SubClassOf [results in assembly of](http://purl.obolibrary.org/obo/RO_0002588) some [blood clot](http://purl.obolibrary.org/obo/UBERON_0010210) 
 
 
-### bed nucleus of stria terminalis `http://purl.obolibrary.org/obo/UBERON_0001880`
+### blood vessel endothelial cell `http://purl.obolibrary.org/obo/CL_0000071`
 
 #### Added
-- [bed nucleus of stria terminalis](http://purl.obolibrary.org/obo/UBERON_0001880) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [bed nucleus of stria terminalis](http://purl.obolibrary.org/obo/UBERON_0001880) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [blood vessel endothelial cell](http://purl.obolibrary.org/obo/CL_0000071) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### bicipital surface `http://purl.obolibrary.org/obo/UBERON_0018305`
-#### Removed
-- [bicipital surface](http://purl.obolibrary.org/obo/UBERON_0018305) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1aa93660-3c3d-4aff-94fa-93ea38c82df8" 
-
-
-
-### blood vessel `http://purl.obolibrary.org/obo/UBERON_0001981`
+### bone marrow cell `http://purl.obolibrary.org/obo/CL_0002092`
 
 #### Added
-- [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [bone marrow cell](http://purl.obolibrary.org/obo/CL_0002092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### blood vessel smooth muscle `http://purl.obolibrary.org/obo/UBERON_0004237`
+### brachial artery `http://purl.obolibrary.org/obo/UBERON_0001398`
 
 #### Added
-- [blood vessel smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004237) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [blood vessel smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004237) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### body proper `http://purl.obolibrary.org/obo/UBERON_0013702`
+### brachiocephalic artery `http://purl.obolibrary.org/obo/UBERON_0001529`
 
 #### Added
-- [body proper](http://purl.obolibrary.org/obo/UBERON_0013702) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [brachiocephalic artery](http://purl.obolibrary.org/obo/UBERON_0001529) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [body proper](http://purl.obolibrary.org/obo/UBERON_0013702) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### brachiocephalic vein `http://purl.obolibrary.org/obo/UBERON_0003711`
+
+#### Added
+- [brachiocephalic vein](http://purl.obolibrary.org/obo/UBERON_0003711) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### brain `http://purl.obolibrary.org/obo/UBERON_0000955`
+
+#### Added
+- [brain](http://purl.obolibrary.org/obo/UBERON_0000955) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future brain](http://purl.obolibrary.org/obo/UBERON_0006238) 
+
+
+### brain pericyte `http://purl.obolibrary.org/obo/CL_2000043`
+
+#### Added
+- [brain pericyte](http://purl.obolibrary.org/obo/CL_2000043) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### brainstem motor neuron `http://purl.obolibrary.org/obo/CL_2000047`
+
+#### Added
+- [brainstem motor neuron](http://purl.obolibrary.org/obo/CL_2000047) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
 
 
 ### branch of anterior cerebral artery `http://purl.obolibrary.org/obo/UBERON_0035380`
-#### Removed
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624)) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) 
 
 #### Added
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624)) 
-
 - [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [branch of anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035380) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001624) 
 
 
 ### branch of basilar artery `http://purl.obolibrary.org/obo/UBERON_0035489`
-#### Removed
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-
-- [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [branch of basilar artery](http://purl.obolibrary.org/obo/UBERON_0035489) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### branch of brachial artery `http://purl.obolibrary.org/obo/UBERON_0035359`
-#### Removed
-- [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398)) 
-
-- [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398) 
-
-- [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398) 
 
 #### Added
-- [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398)) 
-
-- [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [brachial artery](http://purl.obolibrary.org/obo/UBERON_0001398) 
-
 - [branch of brachial artery](http://purl.obolibrary.org/obo/UBERON_0035359) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### branch of external carotid artery `http://purl.obolibrary.org/obo/UBERON_0035398`
-#### Removed
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
-
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
 
 #### Added
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
-
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-
 - [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of external carotid artery](http://purl.obolibrary.org/obo/UBERON_0035398) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
 
 ### branch of internal carotid artery `http://purl.obolibrary.org/obo/UBERON_0035237`
-#### Removed
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) EquivalentTo [carotid artery segment](http://purl.obolibrary.org/obo/UBERON_0005396) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
 
 #### Added
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) EquivalentTo [carotid artery segment](http://purl.obolibrary.org/obo/UBERON_0005396) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
-- [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
 - [branch of internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0035237) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### branch of left coronary artery `http://purl.obolibrary.org/obo/UBERON_0035395`
-#### Removed
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626)) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [heart blood vessel](http://purl.obolibrary.org/obo/UBERON_0003498) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) 
 
 #### Added
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626)) 
-
 - [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035395) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) 
 
 
 ### branch of middle cerebral artery `http://purl.obolibrary.org/obo/UBERON_0035350`
-#### Removed
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627)) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627)) 
-
 - [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [branch of middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035350) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
 
 
 ### branch of posterior cerebral artery `http://purl.obolibrary.org/obo/UBERON_0035508`
-#### Removed
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636)) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636)) 
-
 - [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [branch of posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0035508) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) 
 
 
 ### branch of posterior tibial artery `http://purl.obolibrary.org/obo/UBERON_0035292`
-#### Removed
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538)) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [hindlimb blood vessel](http://purl.obolibrary.org/obo/UBERON_0003516) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538)) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538) 
-
-- [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [branch of posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0035292) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### branch of ulnar artery `http://purl.obolibrary.org/obo/UBERON_0035304`
-#### Removed
-- [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406)) 
-
-- [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406) 
-
-- [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406) 
 
 #### Added
-- [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406)) 
-
 - [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
-
-- [branch of ulnar artery](http://purl.obolibrary.org/obo/UBERON_0035304) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406) 
 
 
 ### branch of vertebral artery `http://purl.obolibrary.org/obo/UBERON_0035307`
-#### Removed
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535)) 
-
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
 
 #### Added
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535)) 
-
 - [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
 
-- [branch of vertebral artery](http://purl.obolibrary.org/obo/UBERON_0035307) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### bronchopulmonary segment `http://purl.obolibrary.org/obo/UBERON_8600017`
+### bronchial artery `http://purl.obolibrary.org/obo/UBERON_0002040`
 
 #### Added
-- [bronchopulmonary segment](http://purl.obolibrary.org/obo/UBERON_8600017) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [bronchial artery](http://purl.obolibrary.org/obo/UBERON_0002040) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [bronchopulmonary segment](http://purl.obolibrary.org/obo/UBERON_8600017) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### bronchial epithelial cell `http://purl.obolibrary.org/obo/CL_0002328`
+
+#### Added
+- [bronchial epithelial cell](http://purl.obolibrary.org/obo/CL_0002328) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bronchial goblet cell `http://purl.obolibrary.org/obo/CL_1000312`
+
+#### Added
+- [bronchial goblet cell](http://purl.obolibrary.org/obo/CL_1000312) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bronchial smooth muscle cell `http://purl.obolibrary.org/obo/CL_0002598`
+
+#### Added
+- [bronchial smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002598) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### bronchial vein `http://purl.obolibrary.org/obo/UBERON_0001592`
+
+#### Added
+- [bronchial vein](http://purl.obolibrary.org/obo/UBERON_0001592) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### bronchiole `http://purl.obolibrary.org/obo/UBERON_0002186`
+
+#### Added
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tracheobronchial tree](http://purl.obolibrary.org/obo/UBERON_0007196) 
+
+
+### bronchus fibroblast of lung `http://purl.obolibrary.org/obo/CL_2000093`
+
+#### Added
+- [bronchus fibroblast of lung](http://purl.obolibrary.org/obo/CL_2000093) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### brush cell `http://purl.obolibrary.org/obo/CL_0002204`
+
+#### Added
+- [brush cell](http://purl.obolibrary.org/obo/CL_0002204) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### brush cell of epithelium proper of large intestine `http://purl.obolibrary.org/obo/CL_0002203`
+
+#### Added
+- [brush cell of epithelium proper of large intestine](http://purl.obolibrary.org/obo/CL_0002203) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### brush cell of trachea `http://purl.obolibrary.org/obo/CL_0002207`
+
+#### Added
+- [brush cell of trachea](http://purl.obolibrary.org/obo/CL_0002207) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### brush cell of trachebronchial tree `http://purl.obolibrary.org/obo/CL_0002075`
+
+#### Added
+- [brush cell of trachebronchial tree](http://purl.obolibrary.org/obo/CL_0002075) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### buccal artery `http://purl.obolibrary.org/obo/UBERON_0001618`
-#### Removed
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616)) 
-
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616)) 
-
 - [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
-
-### calcareous egg tooth `http://purl.obolibrary.org/obo/UBERON_0018277`
-#### Removed
-- [calcareous egg tooth](http://purl.obolibrary.org/obo/UBERON_0018277) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1dda372d-155b-4362-9858-bf816ab51d78" 
-
-
-
-### caniniform region `http://purl.obolibrary.org/obo/UBERON_0018273`
-#### Removed
-- [caniniform region](http://purl.obolibrary.org/obo/UBERON_0018273) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:e6de828b-9063-4e42-848b-ae9d4bdb7161" 
-
-
-
-### capsular process `http://purl.obolibrary.org/obo/UBERON_3000059`
-#### Removed
-- [capsular process](http://purl.obolibrary.org/obo/UBERON_3000059) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### buccal nerve `http://purl.obolibrary.org/obo/UBERON_0013646`
 
 #### Added
-- [capsular process](http://purl.obolibrary.org/obo/UBERON_3000059) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [buccal nerve](http://purl.obolibrary.org/obo/UBERON_0013646) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) 
 
 
-### cardiac ganglion `http://purl.obolibrary.org/obo/UBERON_0014463`
-
-#### Added
-- [cardiac ganglion](http://purl.obolibrary.org/obo/UBERON_0014463) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [cardiac ganglion](http://purl.obolibrary.org/obo/UBERON_0014463) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### cardiovascular system `http://purl.obolibrary.org/obo/UBERON_0004535`
+### bulbus arteriosus inner layer `http://purl.obolibrary.org/obo/UBERON_2005068`
 
 #### Added
-- [cardiovascular system](http://purl.obolibrary.org/obo/UBERON_0004535) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [bulbus arteriosus inner layer](http://purl.obolibrary.org/obo/UBERON_2005068) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
-- [cardiovascular system](http://purl.obolibrary.org/obo/UBERON_0004535) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### bulbus arteriosus middle layer `http://purl.obolibrary.org/obo/UBERON_2005067`
+
+#### Added
+- [bulbus arteriosus middle layer](http://purl.obolibrary.org/obo/UBERON_2005067) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### calcareous tooth `http://purl.obolibrary.org/obo/UBERON_0001091`
+
+#### Added
+- [calcareous tooth](http://purl.obolibrary.org/obo/UBERON_0001091) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [tooth bud](http://purl.obolibrary.org/obo/UBERON_0008281) 
+
+
+### calcarine artery `http://purl.obolibrary.org/obo/UBERON_0035183`
+
+#### Added
+- [calcarine artery](http://purl.obolibrary.org/obo/UBERON_0035183) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### calcium ion import `http://purl.obolibrary.org/obo/GO_0070509`
+
+#### Added
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23015"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [label](http://www.w3.org/2000/01/rdf-schema#label) "calcium ion import" 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "calcium ion uptake" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mah" 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of calcium ions into a cell or organelle." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mah" 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "transmembrane calcium influx" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tb" 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0070509" 
+
+- Class: [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) SubClassOf [has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [calcium(2+)](http://purl.obolibrary.org/obo/CHEBI_29108) 
+
+- [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) SubClassOf [calcium ion transport](http://purl.obolibrary.org/obo/GO_0006816) 
+
+
+### calcium ion import across plasma membrane `http://purl.obolibrary.org/obo/GO_0098703`
+
+#### Added
+- [calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098703) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/24965"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098703) SubClassOf [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) 
+
+- [calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098703) SubClassOf [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) 
+
+
+### calcium ion import into cytosol `http://purl.obolibrary.org/obo/GO_1902656`
+
+#### Added
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-01-22T13:41:11Z" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of calcium ion into a cytosol." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:vw" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000075" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [label](http://www.w3.org/2000/01/rdf-schema#label) "calcium ion import into cytosol" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "pr" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "calcium import into cytosol" 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1902656" 
+
+- Class: [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) SubClassOf [calcium ion transport](http://purl.obolibrary.org/obo/GO_0006816) 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) SubClassOf [has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [calcium(2+)](http://purl.obolibrary.org/obo/CHEBI_29108) 
+
+- [calcium ion import into cytosol](http://purl.obolibrary.org/obo/GO_1902656) SubClassOf [has target end location](http://purl.obolibrary.org/obo/RO_0002339) some [cytosol](http://purl.obolibrary.org/obo/GO_0005829) 
+
+
+### camera-type eye photoreceptor cell `http://purl.obolibrary.org/obo/CL_0010009`
+
+#### Added
+- [camera-type eye photoreceptor cell](http://purl.obolibrary.org/obo/CL_0010009) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### canal of Schlemm `http://purl.obolibrary.org/obo/UBERON_0004029`
+
+#### Added
+- [canal of Schlemm](http://purl.obolibrary.org/obo/UBERON_0004029) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### capillary endothelial cell `http://purl.obolibrary.org/obo/CL_0002144`
+
+#### Added
+- [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### capsule of lens `http://purl.obolibrary.org/obo/UBERON_0001804`
+
+#### Added
+- [capsule of lens](http://purl.obolibrary.org/obo/UBERON_0001804) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lens of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0000965) 
+
+
+### capsule of liver `http://purl.obolibrary.org/obo/UBERON_0016479`
+
+#### Added
+- [capsule of liver](http://purl.obolibrary.org/obo/UBERON_0016479) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+
+
+### capsule of lymph node `http://purl.obolibrary.org/obo/UBERON_0002194`
+
+#### Added
+- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029) 
+
+
+### capsule of ovary `http://purl.obolibrary.org/obo/UBERON_0001307`
+
+#### Added
+- [capsule of ovary](http://purl.obolibrary.org/obo/UBERON_0001307) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+
+
+### capsule of thymus `http://purl.obolibrary.org/obo/UBERON_0002122`
+
+#### Added
+- [capsule of thymus](http://purl.obolibrary.org/obo/UBERON_0002122) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) 
+
+
+### carbohydrate derivative metabolic process `http://purl.obolibrary.org/obo/GO_1901135`
+#### Removed
+- [carbohydrate derivative metabolic process](http://purl.obolibrary.org/obo/GO_1901135) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [carbohydrate derivative metabolic process](http://purl.obolibrary.org/obo/GO_1901135) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### carbohydrate import across plasma membrane `http://purl.obolibrary.org/obo/GO_0098704`
+#### Removed
+- [carbohydrate import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098704) SubClassOf [import into cell](http://purl.obolibrary.org/obo/GO_0098657) 
+
+
+
+### carbohydrate metabolic process `http://purl.obolibrary.org/obo/GO_0005975`
+#### Removed
+- [carbohydrate metabolic process](http://purl.obolibrary.org/obo/GO_0005975) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [carbohydrate metabolic process](http://purl.obolibrary.org/obo/GO_0005975) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### carbon dioxide binding `http://purl.obolibrary.org/obo/GO_1902670`
+#### Removed
+- [carbon dioxide binding](http://purl.obolibrary.org/obo/GO_1902670) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+#### Added
+- [carbon dioxide binding](http://purl.obolibrary.org/obo/GO_1902670) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/21211"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [carbon dioxide binding](http://purl.obolibrary.org/obo/GO_1902670) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
+
+
+### cardiac atrium `http://purl.obolibrary.org/obo/UBERON_0002081`
+
+#### Added
+- [cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002081) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0010227) 
+
+
+### cardiac endothelial cell `http://purl.obolibrary.org/obo/CL_0010008`
+
+#### Added
+- [cardiac endothelial cell](http://purl.obolibrary.org/obo/CL_0010008) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cardiac mesenchymal cell `http://purl.obolibrary.org/obo/CL_0000569`
+
+#### Added
+- [cardiac mesenchymal cell](http://purl.obolibrary.org/obo/CL_0000569) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cardiac muscle cell `http://purl.obolibrary.org/obo/CL_0000746`
+
+#### Added
+- [cardiac muscle cell](http://purl.obolibrary.org/obo/CL_0000746) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cardiac muscle myoblast `http://purl.obolibrary.org/obo/CL_0000513`
+
+#### Added
+- [cardiac muscle myoblast](http://purl.obolibrary.org/obo/CL_0000513) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cardiac neuron `http://purl.obolibrary.org/obo/CL_0010022`
+
+#### Added
+- [cardiac neuron](http://purl.obolibrary.org/obo/CL_0010022) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [cardiac neuron](http://purl.obolibrary.org/obo/CL_0010022) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### cardiac valve cell `http://purl.obolibrary.org/obo/CL_1000147`
+
+#### Added
+- [cardiac valve cell](http://purl.obolibrary.org/obo/CL_1000147) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cardiac vein `http://purl.obolibrary.org/obo/UBERON_0004148`
+
+#### Added
+- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cardiac ventricle `http://purl.obolibrary.org/obo/UBERON_0002082`
+
+#### Added
+- [cardiac ventricle](http://purl.obolibrary.org/obo/UBERON_0002082) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future cardiac ventricle](http://purl.obolibrary.org/obo/UBERON_0006283) 
 
 
 ### caroticotympanic artery `http://purl.obolibrary.org/obo/UBERON_0007693`
-#### Removed
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
 #### Added
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [caroticotympanic artery](http://purl.obolibrary.org/obo/UBERON_0007693) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### cartilage of nasal septum `http://purl.obolibrary.org/obo/UBERON_0003407`
+### carotid sinus nerve `http://purl.obolibrary.org/obo/UBERON_0009009`
+
+#### Added
+- [carotid sinus nerve](http://purl.obolibrary.org/obo/UBERON_0009009) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [glossopharyngeal nerve](http://purl.obolibrary.org/obo/UBERON_0001649) 
+
+
+### catalytic activity, acting on DNA `http://purl.obolibrary.org/obo/GO_0140097`
 #### Removed
-- [cartilage of nasal septum](http://purl.obolibrary.org/obo/UBERON_0003407) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [catalytic activity, acting on DNA](http://purl.obolibrary.org/obo/GO_0140097) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [catalytic activity, acting on DNA](http://purl.obolibrary.org/obo/GO_0140097) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### cartilago ectochoanalis `http://purl.obolibrary.org/obo/UBERON_3000068`
+### catalytic activity, acting on RNA `http://purl.obolibrary.org/obo/GO_0140098`
 #### Removed
-- [cartilago ectochoanalis](http://purl.obolibrary.org/obo/UBERON_3000068) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [catalytic activity, acting on RNA](http://purl.obolibrary.org/obo/GO_0140098) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [catalytic activity, acting on RNA](http://purl.obolibrary.org/obo/GO_0140098) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### cartilago infranarina `http://purl.obolibrary.org/obo/UBERON_3000069`
+### catalytic activity, acting on a protein `http://purl.obolibrary.org/obo/GO_0140096`
 #### Removed
-- [cartilago infranarina](http://purl.obolibrary.org/obo/UBERON_3000069) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [catalytic activity, acting on a protein](http://purl.obolibrary.org/obo/GO_0140096) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [catalytic activity, acting on a protein](http://purl.obolibrary.org/obo/GO_0140096) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
+### caudal appendage `http://purl.obolibrary.org/obo/UBERON_2002130`
 
-### cartilago retronarina `http://purl.obolibrary.org/obo/UBERON_3000079`
-#### Removed
-- [cartilago retronarina](http://purl.obolibrary.org/obo/UBERON_3000079) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
+#### Added
+- [caudal appendage](http://purl.obolibrary.org/obo/UBERON_2002130) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### caudal artery `http://purl.obolibrary.org/obo/UBERON_0003086`
-#### Removed
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [post-anal tail](http://purl.obolibrary.org/obo/UBERON_0007812)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805)) 
-
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
-
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [trunk blood vessel](http://purl.obolibrary.org/obo/UBERON_0003513) 
-
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
-
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [post-anal tail](http://purl.obolibrary.org/obo/UBERON_0007812)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805)) 
-
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [caudal artery](http://purl.obolibrary.org/obo/UBERON_0003086) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
 
-
-### caudal melanophore spot `http://purl.obolibrary.org/obo/UBERON_0018308`
-#### Removed
-- [caudal melanophore spot](http://purl.obolibrary.org/obo/UBERON_0018308) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:a8fd6c8c-5029-4740-8e0c-99856641de75" 
-
-
-
-### caudate nucleus `http://purl.obolibrary.org/obo/UBERON_0001873`
+### caudal ganglionic eminence derived GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023070`
 
 #### Added
-- [caudate nucleus](http://purl.obolibrary.org/obo/UBERON_0001873) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [caudate nucleus](http://purl.obolibrary.org/obo/UBERON_0001873) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### caudal humeral circumflex vein `http://purl.obolibrary.org/obo/UBERON_0006200`
+
+#### Added
+- [caudal humeral circumflex vein](http://purl.obolibrary.org/obo/UBERON_0006200) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### caudal rod `http://purl.obolibrary.org/obo/UBERON_2002129`
+
+#### Added
+- [caudal rod](http://purl.obolibrary.org/obo/UBERON_2002129) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### cavernous artery `http://purl.obolibrary.org/obo/UBERON_0000457`
-#### Removed
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
 #### Added
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
 - [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
 
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### celiac ganglion `http://purl.obolibrary.org/obo/UBERON_0002262`
+### cavity of cardiac chamber `http://purl.obolibrary.org/obo/UBERON_0035763`
 
 #### Added
-- [celiac ganglion](http://purl.obolibrary.org/obo/UBERON_0002262) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [celiac ganglion](http://purl.obolibrary.org/obo/UBERON_0002262) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [cavity of cardiac chamber](http://purl.obolibrary.org/obo/UBERON_0035763) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac chamber](http://purl.obolibrary.org/obo/UBERON_0004151) 
 
 
-### central amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002883`
+### cavity of feather follicle `http://purl.obolibrary.org/obo/UBERON_0011805`
 
 #### Added
-- [central amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002883) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [central amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002883) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [cavity of feather follicle](http://purl.obolibrary.org/obo/UBERON_0011805) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather follicle](http://purl.obolibrary.org/obo/UBERON_0011782) 
 
 
-### central figure of scute `http://purl.obolibrary.org/obo/UBERON_0018309`
+### cavity of feather shaft `http://purl.obolibrary.org/obo/UBERON_0011799`
+
+#### Added
+- [cavity of feather shaft](http://purl.obolibrary.org/obo/UBERON_0011799) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather shaft](http://purl.obolibrary.org/obo/UBERON_0011784) 
+
+
+### cavity of left atrium `http://purl.obolibrary.org/obo/UBERON_0016513`
+
+#### Added
+- [cavity of left atrium](http://purl.obolibrary.org/obo/UBERON_0016513) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [left cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002079) 
+
+
+### cavity of left ventricle `http://purl.obolibrary.org/obo/UBERON_0016514`
+
+#### Added
+- [cavity of left ventricle](http://purl.obolibrary.org/obo/UBERON_0016514) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [heart left ventricle](http://purl.obolibrary.org/obo/UBERON_0002084) 
+
+
+### cavity of right atrium `http://purl.obolibrary.org/obo/UBERON_0016522`
+
+#### Added
+- [cavity of right atrium](http://purl.obolibrary.org/obo/UBERON_0016522) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [right cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002078) 
+
+
+### cavity of right ventricle `http://purl.obolibrary.org/obo/UBERON_0016509`
+
+#### Added
+- [cavity of right ventricle](http://purl.obolibrary.org/obo/UBERON_0016509) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [heart right ventricle](http://purl.obolibrary.org/obo/UBERON_0002080) 
+
+
+### cell `http://purl.obolibrary.org/obo/CL_0000000`
+
+#### Added
+- [cell](http://purl.obolibrary.org/obo/CL_0000000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cell adhesion `http://purl.obolibrary.org/obo/GO_0007155`
 #### Removed
-- [central figure of scute](http://purl.obolibrary.org/obo/UBERON_0018309) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:56dad3b4-46b2-4823-a7b2-88a10ef98ae3" 
+- [cell adhesion](http://purl.obolibrary.org/obo/GO_0007155) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
+#### Added
+- [cell adhesion](http://purl.obolibrary.org/obo/GO_0007155) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cell adhesion mediator activity `http://purl.obolibrary.org/obo/GO_0098631`
+#### Removed
+- [cell adhesion mediator activity](http://purl.obolibrary.org/obo/GO_0098631) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cell adhesion mediator activity](http://purl.obolibrary.org/obo/GO_0098631) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cell death `http://purl.obolibrary.org/obo/GO_0008219`
+#### Removed
+- [cell death](http://purl.obolibrary.org/obo/GO_0008219) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO.  When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms." 
+
+#### Added
+- [cell death](http://purl.obolibrary.org/obo/GO_0008219) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO. When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms." 
+
+
+### cell motility `http://purl.obolibrary.org/obo/GO_0048870`
+#### Removed
+- [cell motility](http://purl.obolibrary.org/obo/GO_0048870) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cell motility](http://purl.obolibrary.org/obo/GO_0048870) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cell of skeletal muscle `http://purl.obolibrary.org/obo/CL_0000188`
+
+#### Added
+- [cell of skeletal muscle](http://purl.obolibrary.org/obo/CL_0000188) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cell periphery `http://purl.obolibrary.org/obo/GO_0071944`
+#### Removed
+- [cell periphery](http://purl.obolibrary.org/obo/GO_0071944) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The broad region around and including the plasma membrane of a cell,  encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:pdt" 
+
+#### Added
+- [cell periphery](http://purl.obolibrary.org/obo/GO_0071944) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The broad region around and including the plasma membrane of a cell, encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:pdt" 
+
+
+### cell projection `http://purl.obolibrary.org/obo/GO_0042995`
+#### Removed
+- [cell projection](http://purl.obolibrary.org/obo/GO_0042995) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cell projection](http://purl.obolibrary.org/obo/GO_0042995) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cell projection organization `http://purl.obolibrary.org/obo/GO_0030030`
+#### Removed
+- [cell projection organization](http://purl.obolibrary.org/obo/GO_0030030) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cell projection organization](http://purl.obolibrary.org/obo/GO_0030030) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cellular anatomical entity `http://purl.obolibrary.org/obo/GO_0110165`
+
+#### Added
+- [cellular anatomical entity](http://purl.obolibrary.org/obo/GO_0110165) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### cellular modified amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0006575`
+#### Removed
+- [cellular modified amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006575) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cellular modified amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006575) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cellular nitrogen compound metabolic process `http://purl.obolibrary.org/obo/GO_0034641`
+
+#### Added
+- [cellular nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0034641) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [cellular nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0034641) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+
+### cellular_component `http://purl.obolibrary.org/obo/GO_0005575`
+#### Removed
+- [cellular_component](http://purl.obolibrary.org/obo/GO_0005575) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of  cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:pdt" 
+
+#### Added
+- [cellular_component](http://purl.obolibrary.org/obo/GO_0005575) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:pdt" 
+
+
+### cellxgene_subset `http://purl.obolibrary.org/obo/cl#cellxgene_subset`
+
+#### Added
+- AnnotationProperty: [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
+
+
+### central incisor tooth `http://purl.obolibrary.org/obo/UBERON_0018551`
+
+#### Added
+- [central incisor tooth](http://purl.obolibrary.org/obo/UBERON_0018551) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [incisor region of dentition](http://purl.obolibrary.org/obo/UBERON_0018645) 
+
+
+### central nervous system `http://purl.obolibrary.org/obo/UBERON_0001017`
+
+#### Added
+- [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future central nervous system](http://purl.obolibrary.org/obo/UBERON_0016879) 
+
+
+### central nervous system macrophage `http://purl.obolibrary.org/obo/CL_0000878`
+
+#### Added
+- [central nervous system macrophage](http://purl.obolibrary.org/obo/CL_0000878) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### central retinal artery `http://purl.obolibrary.org/obo/UBERON_0001620`
-#### Removed
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
 
 #### Added
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
+- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [hyaloid artery](http://purl.obolibrary.org/obo/UBERON_0002270) 
 
-### centromedian nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0002972`
+
+### central retinal vein `http://purl.obolibrary.org/obo/UBERON_0001673`
 
 #### Added
-- [centromedian nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002972) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [central retinal vein](http://purl.obolibrary.org/obo/UBERON_0001673) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [hyaloid vein](http://purl.obolibrary.org/obo/UBERON_0006011) 
 
-- [centromedian nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002972) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [central retinal vein](http://purl.obolibrary.org/obo/UBERON_0001673) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### cephalic dermal scale `http://purl.obolibrary.org/obo/UBERON_0018310`
+### central tendon of diaphragm `http://purl.obolibrary.org/obo/UBERON_0006670`
+
+#### Added
+- [central tendon of diaphragm](http://purl.obolibrary.org/obo/UBERON_0006670) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future central tendon](http://purl.obolibrary.org/obo/UBERON_0006239) 
+
+
+### centrilobular region hepatocyte `http://purl.obolibrary.org/obo/CL_0019029`
+
+#### Added
+- [centrilobular region hepatocyte](http://purl.obolibrary.org/obo/CL_0019029) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ceratobranchial 5 tooth `http://purl.obolibrary.org/obo/UBERON_2000694`
+
+#### Added
+- [ceratobranchial 5 tooth](http://purl.obolibrary.org/obo/UBERON_2000694) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cerebellar Golgi cell `http://purl.obolibrary.org/obo/CL_0000119`
+
+#### Added
+- [cerebellar Golgi cell](http://purl.obolibrary.org/obo/CL_0000119) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0003472`
+
+#### Added
+- [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cerebellar granule cell `http://purl.obolibrary.org/obo/CL_0001031`
+
+#### Added
+- [cerebellar granule cell](http://purl.obolibrary.org/obo/CL_0001031) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [cerebellar granule cell](http://purl.obolibrary.org/obo/CL_0001031) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [cerebellar granule cell precursor](http://purl.obolibrary.org/obo/CL_0002362) 
+
+
+### cerebellar neuron `http://purl.obolibrary.org/obo/CL_1001611`
+
+#### Added
+- [cerebellar neuron](http://purl.obolibrary.org/obo/CL_1001611) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### cerebellar vein `http://purl.obolibrary.org/obo/UBERON_0001668`
+
+#### Added
+- [cerebellar vein](http://purl.obolibrary.org/obo/UBERON_0001668) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cerebral artery `http://purl.obolibrary.org/obo/UBERON_0004449`
+
+#### Added
+- [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cerebral cortex GABAergic interneuron `http://purl.obolibrary.org/obo/CL_0010011`
+
+#### Added
+- [cerebral cortex GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0010011) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cerebral cortex endothelial cell `http://purl.obolibrary.org/obo/CL_1001602`
+
+#### Added
+- [cerebral cortex endothelial cell](http://purl.obolibrary.org/obo/CL_1001602) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cerebral cortex neuron `http://purl.obolibrary.org/obo/CL_0010012`
+
+#### Added
+- [cerebral cortex neuron](http://purl.obolibrary.org/obo/CL_0010012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [cerebral cortex neuron](http://purl.obolibrary.org/obo/CL_0010012) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### cerebral vein `http://purl.obolibrary.org/obo/UBERON_0001663`
+
+#### Added
+- [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cervical cavity `http://purl.obolibrary.org/obo/UBERON_0013761`
+
+#### Added
+- [cervical cavity](http://purl.obolibrary.org/obo/UBERON_0013761) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterine cervix](http://purl.obolibrary.org/obo/UBERON_0000002) 
+
+
+### cholangiocyte `http://purl.obolibrary.org/obo/CL_1000488`
+
+#### Added
+- [cholangiocyte](http://purl.obolibrary.org/obo/CL_1000488) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### chondrocyte `http://purl.obolibrary.org/obo/CL_0000138`
+
+#### Added
+- [chondrocyte](http://purl.obolibrary.org/obo/CL_0000138) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### chorda tympani branch of facial nerve `http://purl.obolibrary.org/obo/UBERON_0009675`
+
+#### Added
+- [chorda tympani branch of facial nerve](http://purl.obolibrary.org/obo/UBERON_0009675) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial nerve](http://purl.obolibrary.org/obo/UBERON_0001647) 
+
+
+### chorionic floating villus `http://purl.obolibrary.org/obo/UBERON_8600032`
+
+#### Added
+- [chorionic floating villus](http://purl.obolibrary.org/obo/UBERON_8600032) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chorionic villous tree](http://purl.obolibrary.org/obo/UBERON_8600026) 
+
+
+### chorionic stem villus `http://purl.obolibrary.org/obo/UBERON_8600027`
+
+#### Added
+- [chorionic stem villus](http://purl.obolibrary.org/obo/UBERON_8600027) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chorionic villous tree](http://purl.obolibrary.org/obo/UBERON_8600026) 
+
+
+### chorionic trophoblast cell `http://purl.obolibrary.org/obo/CL_0011101`
+
+#### Added
+- [chorionic trophoblast cell](http://purl.obolibrary.org/obo/CL_0011101) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### chorionic villous tree `http://purl.obolibrary.org/obo/UBERON_8600026`
+
+#### Added
+- [chorionic villous tree](http://purl.obolibrary.org/obo/UBERON_8600026) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### chorioretinal region `http://purl.obolibrary.org/obo/UBERON_0019207`
+
+#### Added
+- [chorioretinal region](http://purl.obolibrary.org/obo/UBERON_0019207) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### choroid plexus epithelial cell `http://purl.obolibrary.org/obo/CL_0000706`
+
+#### Added
+- [choroid plexus epithelial cell](http://purl.obolibrary.org/obo/CL_0000706) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### choroidal artery `http://purl.obolibrary.org/obo/UBERON_0013151`
+
+#### Added
+- [choroidal artery](http://purl.obolibrary.org/obo/UBERON_0013151) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### chromaffin cell `http://purl.obolibrary.org/obo/CL_0000166`
+
+#### Added
+- [chromaffin cell](http://purl.obolibrary.org/obo/CL_0000166) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### chromosome `http://purl.obolibrary.org/obo/GO_0005694`
 #### Removed
-- [cephalic dermal scale](http://purl.obolibrary.org/obo/UBERON_0018310) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:94f0b1bc-80a4-4342-8b3b-c101c07a8f6d" 
+- [chromosome](http://purl.obolibrary.org/obo/GO_0005694) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [chromosome](http://purl.obolibrary.org/obo/GO_0005694) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### cephalic spine `http://purl.obolibrary.org/obo/UBERON_0017621`
+### chromosome segregation `http://purl.obolibrary.org/obo/GO_0007059`
 #### Removed
-- [cephalic spine](http://purl.obolibrary.org/obo/UBERON_0017621) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "cephalic spines" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:8c052198-acff-4165-b1a0-fd6bb2de6e10" 
+- [chromosome segregation](http://purl.obolibrary.org/obo/GO_0007059) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [cephalic spine](http://purl.obolibrary.org/obo/UBERON_0017621) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "cephalic spines" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [chromosome segregation](http://purl.obolibrary.org/obo/GO_0007059) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### cerebellar nuclear complex `http://purl.obolibrary.org/obo/UBERON_0002130`
-
-#### Added
-- [cerebellar nuclear complex](http://purl.obolibrary.org/obo/UBERON_0002130) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [cerebellar nuclear complex](http://purl.obolibrary.org/obo/UBERON_0002130) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### cerebrocerebellum `http://purl.obolibrary.org/obo/UBERON_0014644`
+### ciliary muscle cell `http://purl.obolibrary.org/obo/CL_1000443`
 
 #### Added
-- [cerebrocerebellum](http://purl.obolibrary.org/obo/UBERON_0014644) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [cerebrocerebellum](http://purl.obolibrary.org/obo/UBERON_0014644) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [ciliary muscle cell](http://purl.obolibrary.org/obo/CL_1000443) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002834`
+### ciliated cell `http://purl.obolibrary.org/obo/CL_0000064`
 
 #### Added
-- [cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002834) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002834) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cervical ganglion `http://purl.obolibrary.org/obo/UBERON_0001991`
+### ciliated cell of the bronchus `http://purl.obolibrary.org/obo/CL_0002332`
 
 #### Added
-- [cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001991) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001991) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [ciliated cell of the bronchus](http://purl.obolibrary.org/obo/CL_0002332) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cervical rib `http://purl.obolibrary.org/obo/UBERON_0018144`
-#### Removed
-- [cervical rib](http://purl.obolibrary.org/obo/UBERON_0018144) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:d522e981-3a43-4cab-9862-4344b5c3ff22" 
-
-
-
-### cervicothoracic ganglion `http://purl.obolibrary.org/obo/UBERON_0002441`
+### ciliated columnar cell of tracheobronchial tree `http://purl.obolibrary.org/obo/CL_0002145`
 
 #### Added
-- [cervicothoracic ganglion](http://purl.obolibrary.org/obo/UBERON_0002441) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [cervicothoracic ganglion](http://purl.obolibrary.org/obo/UBERON_0002441) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cheek `http://purl.obolibrary.org/obo/UBERON_0001567`
+### ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_0000067`
 
 #### Added
-- [cheek](http://purl.obolibrary.org/obo/UBERON_0001567) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) 
+- [ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0000067) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cheek scale `http://purl.obolibrary.org/obo/UBERON_0018312`
-#### Removed
-- [cheek scale](http://purl.obolibrary.org/obo/UBERON_0018312) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:ad1e8bd6-4d61-4902-aeb8-3f72123c14df" 
-
-
-
-### cheek scale row `http://purl.obolibrary.org/obo/UBERON_0018313`
-#### Removed
-- [cheek scale row](http://purl.obolibrary.org/obo/UBERON_0018313) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:27bd04e2-8af0-496b-871b-b54a50c35aac" 
-
-
-
-### choanal groove `http://purl.obolibrary.org/obo/UBERON_0018314`
-#### Removed
-- [choanal groove](http://purl.obolibrary.org/obo/UBERON_0018314) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:40f3ccb2-6447-4d14-b3db-b1c4bb41464b" 
-
-
-
-### chorionic mesenchyme `http://purl.obolibrary.org/obo/UBERON_0003265`
-#### Removed
-- [chorionic mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003265) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [chorionic mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003265) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### chorionic plate blood vessel `http://purl.obolibrary.org/obo/UBERON_8600021`
+### class switched memory B cell `http://purl.obolibrary.org/obo/CL_0000972`
 
 #### Added
-- [chorionic plate blood vessel](http://purl.obolibrary.org/obo/UBERON_8600021) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [chorionic plate blood vessel](http://purl.obolibrary.org/obo/UBERON_8600021) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [class switched memory B cell](http://purl.obolibrary.org/obo/CL_0000972) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### chorionic villus `http://purl.obolibrary.org/obo/UBERON_0007106`
-#### Removed
-- [chorionic villus](http://purl.obolibrary.org/obo/UBERON_0007106) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [chorionic villus](http://purl.obolibrary.org/obo/UBERON_0007106) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### choroidal guanine tapetum `http://purl.obolibrary.org/obo/UBERON_0010246`
-#### Removed
-- [choroidal guanine tapetum](http://purl.obolibrary.org/obo/UBERON_0010246) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Elasmobranchii](http://purl.obolibrary.org/obo/NCBITaxon_7778) 
+### classical monocyte `http://purl.obolibrary.org/obo/CL_0000860`
 
 #### Added
-- [choroidal guanine tapetum](http://purl.obolibrary.org/obo/UBERON_0010246) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Chondrichthyes](http://purl.obolibrary.org/obo/NCBITaxon_7777) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "doi:10.1017/S0025315400024760" 
+- [classical monocyte](http://purl.obolibrary.org/obo/CL_0000860) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### circulatory system `http://purl.obolibrary.org/obo/UBERON_0001009`
-
-#### Added
-- [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### circumflex branch of left coronary artery `http://purl.obolibrary.org/obo/UBERON_0035422`
-#### Removed
-- [circumflex branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035422) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### club cell `http://purl.obolibrary.org/obo/CL_0000158`
 
 #### Added
-- [circumflex branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035422) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [circumflex branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035422) SubClassOf [heart blood vessel](http://purl.obolibrary.org/obo/UBERON_0003498) 
-
-- [circumflex branch of left coronary artery](http://purl.obolibrary.org/obo/UBERON_0035422) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### clasper plate `http://purl.obolibrary.org/obo/UBERON_0018315`
-#### Removed
-- [clasper plate](http://purl.obolibrary.org/obo/UBERON_0018315) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:775935c7-8289-426c-8c03-c1f82348dbc5" 
-
+- [club cell](http://purl.obolibrary.org/obo/CL_0000158) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### cochlea auditory hair cell `http://purl.obolibrary.org/obo/CL_4023120`
@@ -1084,538 +1943,1230 @@
 - [cochlea auditory hair cell](http://purl.obolibrary.org/obo/CL_4023120) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
 
 
-### common hepatic artery `http://purl.obolibrary.org/obo/UBERON_0005436`
-#### Removed
-- [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
+### cochlear nerve `http://purl.obolibrary.org/obo/UBERON_0004727`
 
-- [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
+#### Added
+- [cochlear nerve](http://purl.obolibrary.org/obo/UBERON_0004727) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vestibulocochlear nerve](http://purl.obolibrary.org/obo/UBERON_0001648) 
+
+
+### cochlear nucleus `http://purl.obolibrary.org/obo/UBERON_0001720`
+
+#### Added
+- [cochlear nucleus](http://purl.obolibrary.org/obo/UBERON_0001720) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### coelemic cavity lumen `http://purl.obolibrary.org/obo/UBERON_0002323`
+
+#### Added
+- [coelemic cavity lumen](http://purl.obolibrary.org/obo/UBERON_0002323) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future coelemic cavity lumen](http://purl.obolibrary.org/obo/UBERON_0003886) 
+
+- [coelemic cavity lumen](http://purl.obolibrary.org/obo/UBERON_0002323) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [coelom](http://purl.obolibrary.org/obo/UBERON_0011997) 
+
+
+### coelom `http://purl.obolibrary.org/obo/UBERON_0011997`
+
+#### Added
+- [coelom](http://purl.obolibrary.org/obo/UBERON_0011997) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### colic artery `http://purl.obolibrary.org/obo/UBERON_0035548`
+
+#### Added
+- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### collagen fibril binding `http://purl.obolibrary.org/obo/GO_0098633`
+#### Removed
+- [collagen fibril binding](http://purl.obolibrary.org/obo/GO_0098633) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+#### Added
+- [collagen fibril binding](http://purl.obolibrary.org/obo/GO_0098633) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/21211"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [collagen fibril binding](http://purl.obolibrary.org/obo/GO_0098633) SubClassOf [extracellular matrix binding](http://purl.obolibrary.org/obo/GO_0050840) 
+
+
+### collagen secreting cell `http://purl.obolibrary.org/obo/CL_0000667`
+
+#### Added
+- [collagen secreting cell](http://purl.obolibrary.org/obo/CL_0000667) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### colon epithelial cell `http://purl.obolibrary.org/obo/CL_0011108`
+
+#### Added
+- [colon epithelial cell](http://purl.obolibrary.org/obo/CL_0011108) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### colon goblet cell `http://purl.obolibrary.org/obo/CL_0009039`
+
+#### Added
+- [colon goblet cell](http://purl.obolibrary.org/obo/CL_0009039) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### colon macrophage `http://purl.obolibrary.org/obo/CL_0009038`
+
+#### Added
+- [colon macrophage](http://purl.obolibrary.org/obo/CL_0009038) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### columnar/cuboidal epithelial cell `http://purl.obolibrary.org/obo/CL_0000075`
+
+#### Added
+- [columnar/cuboidal epithelial cell](http://purl.obolibrary.org/obo/CL_0000075) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### columnella muscle `http://purl.obolibrary.org/obo/UBERON_0008284`
+
+#### Added
+- [columnella muscle](http://purl.obolibrary.org/obo/UBERON_0008284) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### common carotid artery plus branches `http://purl.obolibrary.org/obo/UBERON_0001530`
+
+#### Added
+- [common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001530) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### common crus `http://purl.obolibrary.org/obo/UBERON_2005411`
+#### Removed
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [provenance_notes](http://purl.obolibrary.org/obo/UBPROP_0000004) "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "http://purl.obolibrary.org/obo/tao.owl" 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [label](http://www.w3.org/2000/01/rdf-schema#label) "common crus" 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0005411" 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) SubClassOf [duct](http://purl.obolibrary.org/obo/UBERON_0000058) 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pars superior ear](http://purl.obolibrary.org/obo/UBERON_2005409) 
+
+#### Added
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete common crus" 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0013764" 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted as it is redundant with 'common crus of semircular duct'." 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [common crus](http://purl.obolibrary.org/obo/UBERON_2005411) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3161"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### common dendritic progenitor `http://purl.obolibrary.org/obo/CL_0001029`
+
+#### Added
+- [common dendritic progenitor](http://purl.obolibrary.org/obo/CL_0001029) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### common fibular nerve `http://purl.obolibrary.org/obo/UBERON_0001324`
+
+#### Added
+- [common fibular nerve](http://purl.obolibrary.org/obo/UBERON_0001324) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sciatic nerve](http://purl.obolibrary.org/obo/UBERON_0001322) 
+
+
+### common hepatic artery `http://purl.obolibrary.org/obo/UBERON_0005436`
 
 #### Added
 - [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
 
-
-### condyle of femur `http://purl.obolibrary.org/obo/UBERON_0009980`
+### common hepatic duct `http://purl.obolibrary.org/obo/UBERON_0001175`
 
 #### Added
-- [condyle of femur](http://purl.obolibrary.org/obo/UBERON_0009980) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [condyle of femur](http://purl.obolibrary.org/obo/UBERON_0009980) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [common hepatic duct](http://purl.obolibrary.org/obo/UBERON_0001175) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future common hepatic duct](http://purl.obolibrary.org/obo/UBERON_0010081) 
 
 
-### connecting branch of `http://purl.obolibrary.org/obo/RO_0002252`
+### common hepatic lymph node `http://purl.obolibrary.org/obo/UBERON_0038691`
 
 #### Added
-- [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) [id](http://www.geneontology.org/formats/oboInOwl#id) "connecting_branch_of" 
-
-- [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [common hepatic lymph node](http://purl.obolibrary.org/obo/UBERON_0038691) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### corpus callosum `http://purl.obolibrary.org/obo/UBERON_0002336`
+### common iliac vein `http://purl.obolibrary.org/obo/UBERON_0001139`
 
 #### Added
-- [corpus callosum](http://purl.obolibrary.org/obo/UBERON_0002336) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [corpus callosum](http://purl.obolibrary.org/obo/UBERON_0002336) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [common iliac vein](http://purl.obolibrary.org/obo/UBERON_0001139) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [posterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) 
 
 
-### corpus luteum `http://purl.obolibrary.org/obo/UBERON_0002512`
-#### Removed
-- [corpus luteum](http://purl.obolibrary.org/obo/UBERON_0002512) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Mammalia](http://purl.obolibrary.org/obo/NCBITaxon_40674) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
+### common lymphoid progenitor `http://purl.obolibrary.org/obo/CL_0000051`
 
 #### Added
-- [corpus luteum](http://purl.obolibrary.org/obo/UBERON_0002512) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Vertebrata <vertebrates>](http://purl.obolibrary.org/obo/NCBITaxon_7742) 
+- [common lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000051) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### cortical amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002891`
-
-#### Added
-- [cortical amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002891) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [cortical amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002891) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### cranial bone `http://purl.obolibrary.org/obo/UBERON_0004766`
-#### Removed
-- [cranial bone](http://purl.obolibrary.org/obo/UBERON_0004766) SubClassOf [head bone](http://purl.obolibrary.org/obo/UBERON_0003457) 
+### common myeloid progenitor `http://purl.obolibrary.org/obo/CL_0000049`
 
 #### Added
-- [cranial bone](http://purl.obolibrary.org/obo/UBERON_0004766) SubClassOf [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) 
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### common tendinous ring `http://purl.obolibrary.org/obo/UBERON_0014796`
+
+#### Added
+- [common tendinous ring](http://purl.obolibrary.org/obo/UBERON_0014796) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### communicating branch of spinal nerve `http://purl.obolibrary.org/obo/UBERON_0017642`
+
+#### Added
+- [communicating branch of spinal nerve](http://purl.obolibrary.org/obo/UBERON_0017642) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spinal nerve trunk](http://purl.obolibrary.org/obo/UBERON_0005476) 
+
+
+### compound eye retinal cell `http://purl.obolibrary.org/obo/CL_0009001`
+
+#### Added
+- [compound eye retinal cell](http://purl.obolibrary.org/obo/CL_0009001) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) 
+
+
+### compressor glandulae muscle `http://purl.obolibrary.org/obo/UBERON_0013114`
+
+#### Added
+- [compressor glandulae muscle](http://purl.obolibrary.org/obo/UBERON_0013114) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cone retinal bipolar cell `http://purl.obolibrary.org/obo/CL_0000752`
+
+#### Added
+- [cone retinal bipolar cell](http://purl.obolibrary.org/obo/CL_0000752) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### conjunctival epithelial cell `http://purl.obolibrary.org/obo/CL_1000432`
+
+#### Added
+- [conjunctival epithelial cell](http://purl.obolibrary.org/obo/CL_1000432) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### conjunctival space `http://purl.obolibrary.org/obo/UBERON_0015155`
+
+#### Added
+- [conjunctival space](http://purl.obolibrary.org/obo/UBERON_0015155) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [conjunctiva](http://purl.obolibrary.org/obo/UBERON_0001811) 
+
+
+### connective tissue cell `http://purl.obolibrary.org/obo/CL_0002320`
+
+#### Added
+- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### contractile cell `http://purl.obolibrary.org/obo/CL_0000183`
+
+#### Added
+- [contractile cell](http://purl.obolibrary.org/obo/CL_0000183) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### conventional dendritic cell `http://purl.obolibrary.org/obo/CL_0000990`
+
+#### Added
+- [conventional dendritic cell](http://purl.obolibrary.org/obo/CL_0000990) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cord blood hematopoietic stem cell `http://purl.obolibrary.org/obo/CL_2000095`
+
+#### Added
+- [cord blood hematopoietic stem cell](http://purl.obolibrary.org/obo/CL_2000095) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### corneal epithelial cell `http://purl.obolibrary.org/obo/CL_0000575`
+
+#### Added
+- [corneal epithelial cell](http://purl.obolibrary.org/obo/CL_0000575) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### corneal epithelium `http://purl.obolibrary.org/obo/UBERON_0001772`
+
+#### Added
+- [corneal epithelium](http://purl.obolibrary.org/obo/UBERON_0001772) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cornea](http://purl.obolibrary.org/obo/UBERON_0000964) 
+
+
+### cornual diverticulum `http://purl.obolibrary.org/obo/UBERON_0013074`
+
+#### Added
+- [cornual diverticulum](http://purl.obolibrary.org/obo/UBERON_0013074) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [horn](http://purl.obolibrary.org/obo/UBERON_0006967) 
+
+
+### coronary artery `http://purl.obolibrary.org/obo/UBERON_0001621`
+
+#### Added
+- [coronary artery](http://purl.obolibrary.org/obo/UBERON_0001621) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### coronary ligament of liver `http://purl.obolibrary.org/obo/UBERON_0013138`
+
+#### Added
+- [coronary ligament of liver](http://purl.obolibrary.org/obo/UBERON_0013138) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### coronary sinus `http://purl.obolibrary.org/obo/UBERON_0005438`
+
+#### Added
+- [coronary sinus](http://purl.obolibrary.org/obo/UBERON_0005438) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cortical cell of adrenal gland `http://purl.obolibrary.org/obo/CL_0002097`
+
+#### Added
+- [cortical cell of adrenal gland](http://purl.obolibrary.org/obo/CL_0002097) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cortical interneuron `http://purl.obolibrary.org/obo/CL_0008031`
+
+#### Added
+- [cortical interneuron](http://purl.obolibrary.org/obo/CL_0008031) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### cortical thymic epithelial cell `http://purl.obolibrary.org/obo/CL_0002364`
+
+#### Added
+- [cortical thymic epithelial cell](http://purl.obolibrary.org/obo/CL_0002364) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### costo-cervical trunk `http://purl.obolibrary.org/obo/UBERON_0004688`
+
+#### Added
+- [costo-cervical trunk](http://purl.obolibrary.org/obo/UBERON_0004688) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### cranial ganglion `http://purl.obolibrary.org/obo/UBERON_0001714`
 
 #### Added
-- [cranial ganglion](http://purl.obolibrary.org/obo/UBERON_0001714) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [cranial ganglion](http://purl.obolibrary.org/obo/UBERON_0001714) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [cranial ganglion](http://purl.obolibrary.org/obo/UBERON_0001714) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### cranial suture `http://purl.obolibrary.org/obo/UBERON_0003685`
-#### Removed
-- [cranial suture](http://purl.obolibrary.org/obo/UBERON_0003685) SubClassOf [developmentally induced by](http://purl.obolibrary.org/obo/RO_0002256) some [dura mater](http://purl.obolibrary.org/obo/UBERON_0002363) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:16496288" 
-
-
-
-### cranium `http://purl.obolibrary.org/obo/UBERON_0003128`
-#### Removed
-- [cranium](http://purl.obolibrary.org/obo/UBERON_0003128) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skull](http://purl.obolibrary.org/obo/UBERON_0003129) 
+### cranial nerve nucleus `http://purl.obolibrary.org/obo/UBERON_0000126`
 
 #### Added
-- [cranium](http://purl.obolibrary.org/obo/UBERON_0003128) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Myxinidae](http://purl.obolibrary.org/obo/NCBITaxon_7762) 
+- [cranial nerve nucleus](http://purl.obolibrary.org/obo/UBERON_0000126) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### cremasteric artery `http://purl.obolibrary.org/obo/UBERON_0034693`
-#### Removed
-- [cremasteric artery](http://purl.obolibrary.org/obo/UBERON_0034693) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [cremasteric artery](http://purl.obolibrary.org/obo/UBERON_0034693) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### cranial neuron projection bundle `http://purl.obolibrary.org/obo/UBERON_0034713`
 
 #### Added
-- [cremasteric artery](http://purl.obolibrary.org/obo/UBERON_0034693) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [cranial neuron projection bundle](http://purl.obolibrary.org/obo/UBERON_0034713) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [cremasteric artery](http://purl.obolibrary.org/obo/UBERON_0034693) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [cranial neuron projection bundle](http://purl.obolibrary.org/obo/UBERON_0034713) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
 
 
-### crista intermedia `http://purl.obolibrary.org/obo/UBERON_3000113`
-#### Removed
-- [crista intermedia](http://purl.obolibrary.org/obo/UBERON_3000113) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### cremaster muscle `http://purl.obolibrary.org/obo/UBERON_0008488`
 
 #### Added
-- [crista intermedia](http://purl.obolibrary.org/obo/UBERON_3000113) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [cremaster muscle](http://purl.obolibrary.org/obo/UBERON_0008488) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### crista subnasalis `http://purl.obolibrary.org/obo/UBERON_3000117`
-#### Removed
-- [crista subnasalis](http://purl.obolibrary.org/obo/UBERON_3000117) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### crico-esophageal tendon `http://purl.obolibrary.org/obo/UBERON_0011165`
 
 #### Added
-- [crista subnasalis](http://purl.obolibrary.org/obo/UBERON_3000117) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [crico-esophageal tendon](http://purl.obolibrary.org/obo/UBERON_0011165) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### crista supraorbitalis `http://purl.obolibrary.org/obo/UBERON_3000118`
-#### Removed
-- [crista supraorbitalis](http://purl.obolibrary.org/obo/UBERON_3000118) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### cutaneous appendage `http://purl.obolibrary.org/obo/UBERON_0000021`
 
 #### Added
-- [crista supraorbitalis](http://purl.obolibrary.org/obo/UBERON_3000118) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [cutaneous appendage](http://purl.obolibrary.org/obo/UBERON_0000021) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### cuboid facet of calcaneum `http://purl.obolibrary.org/obo/UBERON_0018316`
+### cystic vein `http://purl.obolibrary.org/obo/UBERON_0035392`
+
+#### Added
+- [cystic vein](http://purl.obolibrary.org/obo/UBERON_0035392) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### cytoplasm `http://purl.obolibrary.org/obo/GO_0005737`
 #### Removed
-- [cuboid facet of calcaneum](http://purl.obolibrary.org/obo/UBERON_0018316) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:a3287636-2522-466e-9310-942cc1f3cd35" 
+- [cytoplasm](http://purl.obolibrary.org/obo/GO_0005737) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cytoplasm](http://purl.obolibrary.org/obo/GO_0005737) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### decidua `http://purl.obolibrary.org/obo/UBERON_0002450`
+### cytoskeletal protein binding `http://purl.obolibrary.org/obo/GO_0008092`
 #### Removed
-- [decidua](http://purl.obolibrary.org/obo/UBERON_0002450) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [cytoskeletal protein binding](http://purl.obolibrary.org/obo/GO_0008092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
-- [decidua](http://purl.obolibrary.org/obo/UBERON_0002450) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+#### Added
+- [cytoskeletal protein binding](http://purl.obolibrary.org/obo/GO_0008092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
+
+### cytoskeleton `http://purl.obolibrary.org/obo/GO_0005856`
+#### Removed
+- [cytoskeleton](http://purl.obolibrary.org/obo/GO_0005856) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cytoskeleton](http://purl.obolibrary.org/obo/GO_0005856) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cytoskeleton organization `http://purl.obolibrary.org/obo/GO_0007010`
+#### Removed
+- [cytoskeleton organization](http://purl.obolibrary.org/obo/GO_0007010) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [cytoskeleton organization](http://purl.obolibrary.org/obo/GO_0007010) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### cytosolic transport `http://purl.obolibrary.org/obo/GO_0016482`
+
+#### Added
+- [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26386"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### decidual cell `http://purl.obolibrary.org/obo/CL_2000002`
+
+#### Added
+- [decidual cell](http://purl.obolibrary.org/obo/CL_2000002) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### decussation of trochlear nerve `http://purl.obolibrary.org/obo/UBERON_0002787`
+
+#### Added
+- [decussation of trochlear nerve](http://purl.obolibrary.org/obo/UBERON_0002787) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### deep artery of clitoris `http://purl.obolibrary.org/obo/UBERON_0008322`
-#### Removed
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
 
 #### Added
 - [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### deep artery of penis `http://purl.obolibrary.org/obo/UBERON_0008321`
-#### Removed
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### deep circumflex iliac vein `http://purl.obolibrary.org/obo/UBERON_0001360`
 
 #### Added
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [deep circumflex iliac vein](http://purl.obolibrary.org/obo/UBERON_0001360) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### deep auricular artery `http://purl.obolibrary.org/obo/UBERON_0014695`
-#### Removed
-- [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### deep dorsal vein of clitoris `http://purl.obolibrary.org/obo/UBERON_0006690`
 
 #### Added
-- [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [deep dorsal vein of clitoris](http://purl.obolibrary.org/obo/UBERON_0006690) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### deep cervical artery `http://purl.obolibrary.org/obo/UBERON_0012321`
-#### Removed
-- [deep cervical artery](http://purl.obolibrary.org/obo/UBERON_0012321) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [costo-cervical trunk](http://purl.obolibrary.org/obo/UBERON_0004688) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [deep cervical artery](http://purl.obolibrary.org/obo/UBERON_0012321) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [costo-cervical trunk](http://purl.obolibrary.org/obo/UBERON_0004688) 
+### deep dorsal vein of penis `http://purl.obolibrary.org/obo/UBERON_0006656`
 
 #### Added
-- [deep cervical artery](http://purl.obolibrary.org/obo/UBERON_0012321) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [costo-cervical trunk](http://purl.obolibrary.org/obo/UBERON_0004688) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### deep circumflex iliac artery `http://purl.obolibrary.org/obo/UBERON_0009040`
-#### Removed
-- [deep circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009040) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### deep facial vein `http://purl.obolibrary.org/obo/UBERON_0035659`
 
 #### Added
-- [deep circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009040) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### deep external pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007316`
-#### Removed
-- [deep external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007316) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [deep external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007316) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [deep external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007316) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [deep facial vein](http://purl.obolibrary.org/obo/UBERON_0035659) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### deep femoral artery `http://purl.obolibrary.org/obo/UBERON_0001355`
-#### Removed
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060)) 
-
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060)) 
-
 - [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
 
-- [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+### deep fibular nerve `http://purl.obolibrary.org/obo/UBERON_0035207`
+
+#### Added
+- [deep fibular nerve](http://purl.obolibrary.org/obo/UBERON_0035207) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [common fibular nerve](http://purl.obolibrary.org/obo/UBERON_0001324) 
+
+
+### deep part of masseter muscle `http://purl.obolibrary.org/obo/UBERON_0010995`
+
+#### Added
+- [deep part of masseter muscle](http://purl.obolibrary.org/obo/UBERON_0010995) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
+
+
+### deep part of temporalis `http://purl.obolibrary.org/obo/UBERON_0011306`
+
+#### Added
+- [deep part of temporalis](http://purl.obolibrary.org/obo/UBERON_0011306) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
 
 
 ### deep temporal artery `http://purl.obolibrary.org/obo/UBERON_0035041`
-#### Removed
-- [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
-- [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [deep temporal artery](http://purl.obolibrary.org/obo/UBERON_0035041) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### deferent duct artery `http://purl.obolibrary.org/obo/UBERON_0005192`
-#### Removed
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) 
-
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
-
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [umbilical artery](http://purl.obolibrary.org/obo/UBERON_0001310) 
-
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [umbilical artery](http://purl.obolibrary.org/obo/UBERON_0001310) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### deep temporal nerve `http://purl.obolibrary.org/obo/UBERON_0011327`
 
 #### Added
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [deep temporal nerve](http://purl.obolibrary.org/obo/UBERON_0011327) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) 
 
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
 
+### defense response to other organism `http://purl.obolibrary.org/obo/GO_0098542`
+#### Removed
+- [defense response to other organism](http://purl.obolibrary.org/obo/GO_0098542) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [defense response to other organism](http://purl.obolibrary.org/obo/GO_0098542) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### defense response to symbiont `http://purl.obolibrary.org/obo/GO_0140546`
+
+#### Added
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/20261"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Reactions triggered in response to the presence of a symbiont that act to protect or prevent damage to the host." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:pg" 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "pg" 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-11-11T17:19:06Z" 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0140546" 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) [label](http://www.w3.org/2000/01/rdf-schema#label) "defense response to symbiont" 
+
+- Class: [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) 
+
+- [defense response to symbiont](http://purl.obolibrary.org/obo/GO_0140546) SubClassOf [defense response to other organism](http://purl.obolibrary.org/obo/GO_0098542) 
+
+
+### deferent duct artery `http://purl.obolibrary.org/obo/UBERON_0005192`
+
+#### Added
 - [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### dermatocranium `http://purl.obolibrary.org/obo/UBERON_0003113`
+### dendrite membrane `http://purl.obolibrary.org/obo/GO_0032590`
+
+#### Added
+- [dendrite membrane](http://purl.obolibrary.org/obo/GO_0032590) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dendrite](http://purl.obolibrary.org/obo/GO_0030425) 
+
+
+### dendritic cell `http://purl.obolibrary.org/obo/CL_0000451`
+
+#### Added
+- [dendritic cell](http://purl.obolibrary.org/obo/CL_0000451) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### dentine `http://purl.obolibrary.org/obo/UBERON_0001751`
+
+#### Added
+- [dentine](http://purl.obolibrary.org/obo/UBERON_0001751) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [pre-dentine](http://purl.obolibrary.org/obo/UBERON_0011587) 
+
+
+### depressor labii inferioris `http://purl.obolibrary.org/obo/UBERON_0001581`
+
+#### Added
+- [depressor labii inferioris](http://purl.obolibrary.org/obo/UBERON_0001581) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199) 
+
+
+### dermal superficial region `http://purl.obolibrary.org/obo/UBERON_2001183`
+
+#### Added
+- [dermal superficial region](http://purl.obolibrary.org/obo/UBERON_2001183) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### dermis `http://purl.obolibrary.org/obo/UBERON_0002067`
+
+#### Added
+- [dermis](http://purl.obolibrary.org/obo/UBERON_0002067) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future dermis](http://purl.obolibrary.org/obo/UBERON_0010083) 
+
+
+### dermis microvascular lymphatic vessel endothelial cell `http://purl.obolibrary.org/obo/CL_2000041`
+
+#### Added
+- [dermis microvascular lymphatic vessel endothelial cell](http://purl.obolibrary.org/obo/CL_2000041) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### detoxification `http://purl.obolibrary.org/obo/GO_0098754`
 #### Removed
-- [dermatocranium](http://purl.obolibrary.org/obo/UBERON_0003113) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Gnathostomata <vertebrates>](http://purl.obolibrary.org/obo/NCBITaxon_7776) 
+- [detoxification](http://purl.obolibrary.org/obo/GO_0098754) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [dermatocranium](http://purl.obolibrary.org/obo/UBERON_0003113) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Vertebrata <vertebrates>](http://purl.obolibrary.org/obo/NCBITaxon_7742) 
+- [detoxification](http://purl.obolibrary.org/obo/GO_0098754) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### digestive system `http://purl.obolibrary.org/obo/UBERON_0001007`
+### developmental cell growth `http://purl.obolibrary.org/obo/GO_0048588`
 
 #### Added
-- [digestive system](http://purl.obolibrary.org/obo/UBERON_0001007) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [developmental cell growth](http://purl.obolibrary.org/obo/GO_0048588) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
 
-- [digestive system](http://purl.obolibrary.org/obo/UBERON_0001007) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [developmental cell growth](http://purl.obolibrary.org/obo/GO_0048588) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### deviation (from_normal) `http://purl.obolibrary.org/obo/PATO_0000069`
+#### Removed
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000069" 
+
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) [label](http://www.w3.org/2000/01/rdf-schema#label) "deviation (from_normal)" 
+
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [attribute_slim](http://purl.obolibrary.org/obo/pato#attribute_slim) 
+
+- Class: [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) 
+
+- [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) SubClassOf [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) 
+
+
+
+### diaphragm `http://purl.obolibrary.org/obo/UBERON_0001103`
+
+#### Added
+- [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future diaphragm](http://purl.obolibrary.org/obo/UBERON_0010084) 
+
+
+### diapophysis of neural arch `http://purl.obolibrary.org/obo/UBERON_0011653`
+
+#### Added
+- [diapophysis of neural arch](http://purl.obolibrary.org/obo/UBERON_0011653) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### diastema between lower central incisors `http://purl.obolibrary.org/obo/UBERON_0035117`
+
+#### Added
+- [diastema between lower central incisors](http://purl.obolibrary.org/obo/UBERON_0035117) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skeleton of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003278) 
+
+
+### diastema between upper central incisors `http://purl.obolibrary.org/obo/UBERON_0035116`
+
+#### Added
+- [diastema between upper central incisors](http://purl.obolibrary.org/obo/UBERON_0035116) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skeleton of upper jaw](http://purl.obolibrary.org/obo/UBERON_0003277) 
+
+
+### diencephalon `http://purl.obolibrary.org/obo/UBERON_0001894`
+
+#### Added
+- [diencephalon](http://purl.obolibrary.org/obo/UBERON_0001894) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future diencephalon](http://purl.obolibrary.org/obo/UBERON_0006222) 
+
+
+### different in magnitude relative to `http://purl.obolibrary.org/obo/RO_0015006`
+#### Removed
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0015006" 
+
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) [label](http://www.w3.org/2000/01/rdf-schema#label) "different in magnitude relative to" 
+
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-6601-2165" 
+
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "different_in_magnitude_relative_to" 
+
+- ObjectProperty: [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) 
+
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) Domain [quality](http://purl.obolibrary.org/obo/PATO_0000001) 
+
+- [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) Range [quality](http://purl.obolibrary.org/obo/PATO_0000001) 
+
+
+
+### digastric branch of facial nerve `http://purl.obolibrary.org/obo/UBERON_0011315`
+
+#### Added
+- [digastric branch of facial nerve](http://purl.obolibrary.org/obo/UBERON_0011315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial nerve](http://purl.obolibrary.org/obo/UBERON_0001647) 
 
 
 ### digestive tract `http://purl.obolibrary.org/obo/UBERON_0001555`
 
 #### Added
-- [digestive tract](http://purl.obolibrary.org/obo/UBERON_0001555) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [digestive tract](http://purl.obolibrary.org/obo/UBERON_0001555) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [digestive tract](http://purl.obolibrary.org/obo/UBERON_0001555) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive gut](http://purl.obolibrary.org/obo/UBERON_0007026) 
 
 
-### digestive tract epithelium `http://purl.obolibrary.org/obo/UBERON_0003929`
-#### Removed
-- [digestive tract epithelium](http://purl.obolibrary.org/obo/UBERON_0003929) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00047143" 
+### digit connective tissue `http://purl.obolibrary.org/obo/UBERON_0015791`
+
+#### Added
+- [digit connective tissue](http://purl.obolibrary.org/obo/UBERON_0015791) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [digit mesenchyme](http://purl.obolibrary.org/obo/UBERON_0010702) 
 
 
+### dilatator pupillae `http://purl.obolibrary.org/obo/UBERON_0001608`
 
-### distal epiphysis of femur `http://purl.obolibrary.org/obo/UBERON_0004406`
-#### Removed
-- [distal epiphysis of femur](http://purl.obolibrary.org/obo/UBERON_0004406) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+#### Added
+- [dilatator pupillae](http://purl.obolibrary.org/obo/UBERON_0001608) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [distal epiphysis of femur](http://purl.obolibrary.org/obo/UBERON_0004406) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
+### directly supplies and drains `http://purl.obolibrary.org/obo/RO_0020103`
+
+#### Added
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [label](http://www.w3.org/2000/01/rdf-schema#label) "directly supplies and drains" 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [example of usage](http://purl.obolibrary.org/obo/IAO_0000112) "alveolar capillary directly supplies and drains some alveolus" 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [date](http://purl.org/dc/terms/date) "2024-02-01T10:09:59Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0020103" 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "x directly supplies and drains y if and only if x is a capillary, y is an anatomical entity, and x directly supplies and drains y." 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "directly_supplies_and_drains" 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) [contributor](http://purl.org/dc/terms/contributor) [Aleix Puig-Barbé](https://orcid.org/0000-0001-6677-8489) 
+
+- ObjectProperty: [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) Domain [capillary](http://purl.obolibrary.org/obo/UBERON_0001982) 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) Range [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) SubPropertyOf: [supplies](http://purl.obolibrary.org/obo/RO_0002178) 
+
+- [directly supplies and drains](http://purl.obolibrary.org/obo/RO_0020103) SubPropertyOf: [drains](http://purl.obolibrary.org/obo/RO_0002179) 
+
+
+### dopaminergic neuron `http://purl.obolibrary.org/obo/CL_0000700`
+
+#### Added
+- [dopaminergic neuron](http://purl.obolibrary.org/obo/CL_0000700) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### dorsal artery of clitoris `http://purl.obolibrary.org/obo/UBERON_0008323`
-#### Removed
-- [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-
-- [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
 
 #### Added
-- [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [dorsal artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008323) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### dorsal artery of penis `http://purl.obolibrary.org/obo/UBERON_0001340`
-#### Removed
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### dorsal fin distal radial element `http://purl.obolibrary.org/obo/UBERON_2100936`
 
 #### Added
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [dorsal fin distal radial element](http://purl.obolibrary.org/obo/UBERON_2100936) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### dorsal osteoderm `http://purl.obolibrary.org/obo/UBERON_0018317`
-#### Removed
-- [dorsal osteoderm](http://purl.obolibrary.org/obo/UBERON_0018317) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2e068f89-ba31-4035-b718-01a2728a7346" 
-
-
-
-### dorsal plus ventral thalamus `http://purl.obolibrary.org/obo/UBERON_0001897`
+### dorsal metatarsal vein `http://purl.obolibrary.org/obo/UBERON_0001549`
 
 #### Added
-- [dorsal plus ventral thalamus](http://purl.obolibrary.org/obo/UBERON_0001897) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [dorsal plus ventral thalamus](http://purl.obolibrary.org/obo/UBERON_0001897) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [dorsal metatarsal vein](http://purl.obolibrary.org/obo/UBERON_0001549) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0000044`
+### dorsal motor nucleus of vagus nerve `http://purl.obolibrary.org/obo/UBERON_0002870`
 
 #### Added
-- [dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0000044) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0000044) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [dorsal motor nucleus of vagus nerve](http://purl.obolibrary.org/obo/UBERON_0002870) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future dorsal motor nucleus of vagus](http://purl.obolibrary.org/obo/UBERON_0010127) 
 
 
-### dorsal thalamus `http://purl.obolibrary.org/obo/UBERON_0004703`
+### dorsal nerve of clitoris `http://purl.obolibrary.org/obo/UBERON_0019198`
 
 #### Added
-- [dorsal thalamus](http://purl.obolibrary.org/obo/UBERON_0004703) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [dorsal thalamus](http://purl.obolibrary.org/obo/UBERON_0004703) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [dorsal nerve of clitoris](http://purl.obolibrary.org/obo/UBERON_0019198) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0011390) 
 
 
-### dorsalis pedis artery `http://purl.obolibrary.org/obo/UBERON_0001539`
-#### Removed
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
-
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
+### dorsal nerve of penis `http://purl.obolibrary.org/obo/UBERON_0019197`
 
 #### Added
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [dorsal nerve of penis](http://purl.obolibrary.org/obo/UBERON_0019197) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0011390) 
 
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [anterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001537) 
+
+### dorsal ramus of spinal nerve `http://purl.obolibrary.org/obo/UBERON_0006839`
+
+#### Added
+- [dorsal ramus of spinal nerve](http://purl.obolibrary.org/obo/UBERON_0006839) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spinal nerve trunk](http://purl.obolibrary.org/obo/UBERON_0005476) 
+
+
+### dorsal venous arch `http://purl.obolibrary.org/obo/UBERON_0008783`
+
+#### Added
+- [dorsal venous arch](http://purl.obolibrary.org/obo/UBERON_0008783) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### duct epithelial cell `http://purl.obolibrary.org/obo/CL_0000068`
+
+#### Added
+- [duct epithelial cell](http://purl.obolibrary.org/obo/CL_0000068) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### ductus venosus `http://purl.obolibrary.org/obo/UBERON_0002083`
-#### Removed
-- [ductus venosus](http://purl.obolibrary.org/obo/UBERON_0002083) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [left umbilical vein](http://purl.obolibrary.org/obo/UBERON_0005459) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "cjm" 
-
-- [ductus venosus](http://purl.obolibrary.org/obo/UBERON_0002083) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [left umbilical vein](http://purl.obolibrary.org/obo/UBERON_0005459) 
 
 #### Added
 - [ductus venosus](http://purl.obolibrary.org/obo/UBERON_0002083) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [ductus venosus](http://purl.obolibrary.org/obo/UBERON_0002083) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [left umbilical vein](http://purl.obolibrary.org/obo/UBERON_0005459) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "cjm" 
+
+### dulla `http://purl.obolibrary.org/obo/UBERON_0013656`
+
+#### Added
+- [dulla](http://purl.obolibrary.org/obo/UBERON_0013656) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
-### ear hair cell `http://purl.obolibrary.org/obo/CL_0002374`
-#### Removed
-- [ear hair cell](http://purl.obolibrary.org/obo/CL_0002374) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+### duodenum glandular cell `http://purl.obolibrary.org/obo/CL_1001589`
 
+#### Added
+- [duodenum glandular cell](http://purl.obolibrary.org/obo/CL_1001589) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### dura mater `http://purl.obolibrary.org/obo/UBERON_0002363`
+
+#### Added
+- [dura mater](http://purl.obolibrary.org/obo/UBERON_0002363) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [ectomeninx](http://purl.obolibrary.org/obo/UBERON_0007647) 
+
+
+### early T lineage precursor `http://purl.obolibrary.org/obo/CL_0002425`
+
+#### Added
+- [early T lineage precursor](http://purl.obolibrary.org/obo/CL_0002425) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### early lymphoid progenitor `http://purl.obolibrary.org/obo/CL_0000936`
+
+#### Added
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ectoderm `http://purl.obolibrary.org/obo/UBERON_0000924`
+
+#### Added
+- [ectoderm](http://purl.obolibrary.org/obo/UBERON_0000924) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive ectoderm](http://purl.obolibrary.org/obo/UBERON_0006601) 
+
+
+### efferent portion of pharyngeal arch artery `http://purl.obolibrary.org/obo/UBERON_2000202`
+
+#### Added
+- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363) 
 
 
 ### efferent spiracular artery `http://purl.obolibrary.org/obo/UBERON_0017617`
+
+#### Added
+- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### eggshell `http://purl.obolibrary.org/obo/UBERON_0005079`
+
+#### Added
+- [eggshell](http://purl.obolibrary.org/obo/UBERON_0005079) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [shelled egg](http://purl.obolibrary.org/obo/UBERON_0007379) 
+
+
+### elastica externa of notochord `http://purl.obolibrary.org/obo/UBERON_0013655`
+
+#### Added
+- [elastica externa of notochord](http://purl.obolibrary.org/obo/UBERON_0013655) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [notochord](http://purl.obolibrary.org/obo/UBERON_0002328) 
+
+
+### elbow connective tissue `http://purl.obolibrary.org/obo/UBERON_0003574`
+
+#### Added
+- [elbow connective tissue](http://purl.obolibrary.org/obo/UBERON_0003574) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of elbow](http://purl.obolibrary.org/obo/UBERON_0003318) 
+
+
+### embryonic fibroblast `http://purl.obolibrary.org/obo/CL_2000042`
+
+#### Added
+- [embryonic fibroblast](http://purl.obolibrary.org/obo/CL_2000042) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### embryonic post-anal tail `http://purl.obolibrary.org/obo/UBERON_0007144`
+
+#### Added
+- [embryonic post-anal tail](http://purl.obolibrary.org/obo/UBERON_0007144) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [post-anal tail bud](http://purl.obolibrary.org/obo/UBERON_0002533) 
+
+
+### endocardial cell `http://purl.obolibrary.org/obo/CL_0002350`
+
+#### Added
+- [endocardial cell](http://purl.obolibrary.org/obo/CL_0002350) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endocardium `http://purl.obolibrary.org/obo/UBERON_0002165`
+
+#### Added
+- [endocardium](http://purl.obolibrary.org/obo/UBERON_0002165) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive endocardium](http://purl.obolibrary.org/obo/UBERON_0007280) 
+
+
+### endocervix `http://purl.obolibrary.org/obo/UBERON_0000458`
+
+#### Added
+- [endocervix](http://purl.obolibrary.org/obo/UBERON_0000458) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterine cervix](http://purl.obolibrary.org/obo/UBERON_0000002) 
+
+
+### endocrine cell `http://purl.obolibrary.org/obo/CL_0000163`
+
+#### Added
+- [endocrine cell](http://purl.obolibrary.org/obo/CL_0000163) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endocrine pancreas `http://purl.obolibrary.org/obo/UBERON_0000016`
+
+#### Added
+- [endocrine pancreas](http://purl.obolibrary.org/obo/UBERON_0000016) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### endoderm `http://purl.obolibrary.org/obo/UBERON_0000925`
+
+#### Added
+- [endoderm](http://purl.obolibrary.org/obo/UBERON_0000925) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive endoderm](http://purl.obolibrary.org/obo/UBERON_0006595) 
+
+
+### endometrial cavity `http://purl.obolibrary.org/obo/UBERON_0035465`
+
+#### Added
+- [endometrial cavity](http://purl.obolibrary.org/obo/UBERON_0035465) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [body of uterus](http://purl.obolibrary.org/obo/UBERON_0009853) 
+
+
+### endoneurium `http://purl.obolibrary.org/obo/UBERON_0000123`
+
+#### Added
+- [endoneurium](http://purl.obolibrary.org/obo/UBERON_0000123) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nerve fiber](http://purl.obolibrary.org/obo/UBERON_0006134) 
+
+
+### endothelial cell `http://purl.obolibrary.org/obo/CL_0000115`
+
+#### Added
+- [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of artery `http://purl.obolibrary.org/obo/CL_1000413`
+
+#### Added
+- [endothelial cell of artery](http://purl.obolibrary.org/obo/CL_1000413) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of coronary artery `http://purl.obolibrary.org/obo/CL_2000018`
+
+#### Added
+- [endothelial cell of coronary artery](http://purl.obolibrary.org/obo/CL_2000018) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of hepatic sinusoid `http://purl.obolibrary.org/obo/CL_1000398`
+
+#### Added
+- [endothelial cell of hepatic sinusoid](http://purl.obolibrary.org/obo/CL_1000398) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of lymphatic vessel `http://purl.obolibrary.org/obo/CL_0002138`
+
+#### Added
+- [endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_0002138) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of pericentral hepatic sinusoid `http://purl.obolibrary.org/obo/CL_0019022`
+
+#### Added
+- [endothelial cell of pericentral hepatic sinusoid](http://purl.obolibrary.org/obo/CL_0019022) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of periportal hepatic sinusoid `http://purl.obolibrary.org/obo/CL_0019021`
+
+#### Added
+- [endothelial cell of periportal hepatic sinusoid](http://purl.obolibrary.org/obo/CL_0019021) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of placenta `http://purl.obolibrary.org/obo/CL_0009092`
+
+#### Added
+- [endothelial cell of placenta](http://purl.obolibrary.org/obo/CL_0009092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of sinusoid `http://purl.obolibrary.org/obo/CL_0002262`
+
+#### Added
+- [endothelial cell of sinusoid](http://purl.obolibrary.org/obo/CL_0002262) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of uterus `http://purl.obolibrary.org/obo/CL_0009095`
+
+#### Added
+- [endothelial cell of uterus](http://purl.obolibrary.org/obo/CL_0009095) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of vascular tree `http://purl.obolibrary.org/obo/CL_0002139`
+
+#### Added
+- [endothelial cell of vascular tree](http://purl.obolibrary.org/obo/CL_0002139) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### endothelial cell of venule `http://purl.obolibrary.org/obo/CL_1000414`
+
+#### Added
+- [endothelial cell of venule](http://purl.obolibrary.org/obo/CL_1000414) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enteric neuron `http://purl.obolibrary.org/obo/CL_0007011`
+
+#### Added
+- [enteric neuron](http://purl.obolibrary.org/obo/CL_0007011) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enteric smooth muscle cell `http://purl.obolibrary.org/obo/CL_0002504`
+
+#### Added
+- [enteric smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002504) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enteroendocrine cell `http://purl.obolibrary.org/obo/CL_0000164`
+
+#### Added
+- [enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000164) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enteroendocrine cell of colon `http://purl.obolibrary.org/obo/CL_0009042`
+
+#### Added
+- [enteroendocrine cell of colon](http://purl.obolibrary.org/obo/CL_0009042) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enteroendocrine cell of small intestine `http://purl.obolibrary.org/obo/CL_0009006`
+
+#### Added
+- [enteroendocrine cell of small intestine](http://purl.obolibrary.org/obo/CL_0009006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enthesis `http://purl.obolibrary.org/obo/UBERON_0035845`
+
+#### Added
+- [enthesis](http://purl.obolibrary.org/obo/UBERON_0035845) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### entopterygoid tooth `http://purl.obolibrary.org/obo/UBERON_2001633`
+
+#### Added
+- [entopterygoid tooth](http://purl.obolibrary.org/obo/UBERON_2001633) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### enucleate erythrocyte `http://purl.obolibrary.org/obo/CL_0000595`
+
+#### Added
+- [enucleate erythrocyte](http://purl.obolibrary.org/obo/CL_0000595) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### enucleated reticulocyte `http://purl.obolibrary.org/obo/CL_0002422`
+
+#### Added
+- [enucleated reticulocyte](http://purl.obolibrary.org/obo/CL_0002422) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ependymal cell `http://purl.obolibrary.org/obo/CL_0000065`
+
+#### Added
+- [ependymal cell](http://purl.obolibrary.org/obo/CL_0000065) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epicardial adipocyte `http://purl.obolibrary.org/obo/CL_1000309`
+
+#### Added
+- [epicardial adipocyte](http://purl.obolibrary.org/obo/CL_1000309) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epidermal Langerhans cell `http://purl.obolibrary.org/obo/CL_0002457`
+
+#### Added
+- [epidermal Langerhans cell](http://purl.obolibrary.org/obo/CL_0002457) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epidermal cell `http://purl.obolibrary.org/obo/CL_0000362`
+
+#### Added
+- [epidermal cell](http://purl.obolibrary.org/obo/CL_0000362) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epididymal lumen `http://purl.obolibrary.org/obo/UBERON_0035956`
+
+#### Added
+- [epididymal lumen](http://purl.obolibrary.org/obo/UBERON_0035956) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epididymis](http://purl.obolibrary.org/obo/UBERON_0001301) 
+
+
+### epigastric artery `http://purl.obolibrary.org/obo/UBERON_0006349`
+
+#### Added
+- [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### epigastric vein `http://purl.obolibrary.org/obo/UBERON_0006356`
+
+#### Added
+- [epigastric vein](http://purl.obolibrary.org/obo/UBERON_0006356) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### epihyoideum `http://purl.obolibrary.org/obo/UBERON_0036270`
+
+#### Added
+- [epihyoideum](http://purl.obolibrary.org/obo/UBERON_0036270) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### epinephrine binding `http://purl.obolibrary.org/obo/GO_0051379`
 #### Removed
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([drains](http://purl.obolibrary.org/obo/RO_0002179) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [craniocervical region vein](http://purl.obolibrary.org/obo/UBERON_0009141) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [respiratory system artery](http://purl.obolibrary.org/obo/UBERON_0003469) 
+- [epinephrine binding](http://purl.obolibrary.org/obo/GO_0051379) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
 
 #### Added
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([drains](http://purl.obolibrary.org/obo/RO_0002179) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
+- [epinephrine binding](http://purl.obolibrary.org/obo/GO_0051379) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/21211"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [vein](http://purl.obolibrary.org/obo/UBERON_0001638) 
-
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [epinephrine binding](http://purl.obolibrary.org/obo/GO_0051379) SubClassOf [hormone binding](http://purl.obolibrary.org/obo/GO_0042562) 
 
 
-### eighth cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002844`
+### epithelial cell `http://purl.obolibrary.org/obo/CL_0000066`
 
 #### Added
-- [eighth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002844) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [eighth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002844) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### eighth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002851`
+### epithelial cell of alveolus of lung `http://purl.obolibrary.org/obo/CL_0010003`
 
 #### Added
-- [eighth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002851) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [eighth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002851) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [epithelial cell of alveolus of lung](http://purl.obolibrary.org/obo/CL_0010003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### eleventh thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002854`
+### epithelial cell of esophagus `http://purl.obolibrary.org/obo/CL_0002252`
 
 #### Added
-- [eleventh thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002854) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [eleventh thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002854) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [epithelial cell of esophagus](http://purl.obolibrary.org/obo/CL_0002252) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### enteric plexus `http://purl.obolibrary.org/obo/UBERON_0000429`
+### epithelial cell of exocrine pancreas `http://purl.obolibrary.org/obo/CL_1001433`
 
 #### Added
-- [enteric plexus](http://purl.obolibrary.org/obo/UBERON_0000429) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [enteric plexus](http://purl.obolibrary.org/obo/UBERON_0000429) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [epithelial cell of exocrine pancreas](http://purl.obolibrary.org/obo/CL_1001433) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### entocarotid fossa `http://purl.obolibrary.org/obo/UBERON_0018318`
-#### Removed
-- [entocarotid fossa](http://purl.obolibrary.org/obo/UBERON_0018318) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0ac04df7-2f9b-4c8a-bb52-f46b396e82b9" 
-
-
-
-### epithelium `http://purl.obolibrary.org/obo/UBERON_0000483`
-#### Removed
-- [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+### epithelial cell of glomerular capsule `http://purl.obolibrary.org/obo/CL_1000450`
 
 #### Added
-- [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Metazoa](http://purl.obolibrary.org/obo/NCBITaxon_33208) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "http://palaeos.com/metazoa/porifera/homoscleromorpha.html" 
+- [epithelial cell of glomerular capsule](http://purl.obolibrary.org/obo/CL_1000450) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### epithelium of nasal septum `http://purl.obolibrary.org/obo/UBERON_0003356`
-#### Removed
-- [epithelium of nasal septum](http://purl.obolibrary.org/obo/UBERON_0003356) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### epithelial cell of lacrimal sac `http://purl.obolibrary.org/obo/CL_1000436`
 
+#### Added
+- [epithelial cell of lacrimal sac](http://purl.obolibrary.org/obo/CL_1000436) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of large intestine `http://purl.obolibrary.org/obo/CL_0002253`
+
+#### Added
+- [epithelial cell of large intestine](http://purl.obolibrary.org/obo/CL_0002253) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of lower respiratory tract `http://purl.obolibrary.org/obo/CL_0002632`
+
+#### Added
+- [epithelial cell of lower respiratory tract](http://purl.obolibrary.org/obo/CL_0002632) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of lung `http://purl.obolibrary.org/obo/CL_0000082`
+
+#### Added
+- [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of nephron `http://purl.obolibrary.org/obo/CL_1000449`
+
+#### Added
+- [epithelial cell of nephron](http://purl.obolibrary.org/obo/CL_1000449) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of prostate `http://purl.obolibrary.org/obo/CL_0002231`
+
+#### Added
+- [epithelial cell of prostate](http://purl.obolibrary.org/obo/CL_0002231) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of proximal tubule `http://purl.obolibrary.org/obo/CL_0002306`
+
+#### Added
+- [epithelial cell of proximal tubule](http://purl.obolibrary.org/obo/CL_0002306) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of small intestine `http://purl.obolibrary.org/obo/CL_0002254`
+
+#### Added
+- [epithelial cell of small intestine](http://purl.obolibrary.org/obo/CL_0002254) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of stratum germinativum of esophagus `http://purl.obolibrary.org/obo/CL_1000447`
+
+#### Added
+- [epithelial cell of stratum germinativum of esophagus](http://purl.obolibrary.org/obo/CL_1000447) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of sweat gland `http://purl.obolibrary.org/obo/CL_1000448`
+
+#### Added
+- [epithelial cell of sweat gland](http://purl.obolibrary.org/obo/CL_1000448) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of thymus `http://purl.obolibrary.org/obo/CL_0002293`
+
+#### Added
+- [epithelial cell of thymus](http://purl.obolibrary.org/obo/CL_0002293) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of urethra `http://purl.obolibrary.org/obo/CL_1000296`
+
+#### Added
+- [epithelial cell of urethra](http://purl.obolibrary.org/obo/CL_1000296) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial cell of uterus `http://purl.obolibrary.org/obo/CL_0002149`
+
+#### Added
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### epithelial fate stem cell `http://purl.obolibrary.org/obo/CL_0000036`
+
+#### Added
+- [epithelial fate stem cell](http://purl.obolibrary.org/obo/CL_0000036) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### erythroblast `http://purl.obolibrary.org/obo/CL_0000765`
+
+#### Added
+- [erythroblast](http://purl.obolibrary.org/obo/CL_0000765) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### erythrocyte `http://purl.obolibrary.org/obo/CL_0000232`
+
+#### Added
+- [erythrocyte](http://purl.obolibrary.org/obo/CL_0000232) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### erythroid lineage cell `http://purl.obolibrary.org/obo/CL_0000764`
+
+#### Added
+- [erythroid lineage cell](http://purl.obolibrary.org/obo/CL_0000764) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### erythroid progenitor cell `http://purl.obolibrary.org/obo/CL_0000038`
+
+#### Added
+- [erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000038) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### erythroid progenitor cell, mammalian `http://purl.obolibrary.org/obo/CL_0001066`
+
+#### Added
+- [erythroid progenitor cell, mammalian](http://purl.obolibrary.org/obo/CL_0001066) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### esophageal artery `http://purl.obolibrary.org/obo/UBERON_0035539`
+
+#### Added
+- [esophageal artery](http://purl.obolibrary.org/obo/UBERON_0035539) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thoracic aorta](http://purl.obolibrary.org/obo/UBERON_0001515) 
 
 
 ### esophagus `http://purl.obolibrary.org/obo/UBERON_0001043`
 
 #### Added
-- [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### establishment or maintenance of cell polarity `http://purl.obolibrary.org/obo/GO_0007163`
+#### Removed
+- [establishment or maintenance of cell polarity](http://purl.obolibrary.org/obo/GO_0007163) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [establishment or maintenance of cell polarity](http://purl.obolibrary.org/obo/GO_0007163) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
 ### ethmoidal artery `http://purl.obolibrary.org/obo/UBERON_0005193`
-#### Removed
-- [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA-abduced" 
-
-- [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
 
 #### Added
-- [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA-abduced" 
-
 - [ethmoidal artery](http://purl.obolibrary.org/obo/UBERON_0005193) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### excretory system `http://purl.obolibrary.org/obo/UBERON_8450002`
+### eukaryotic cell `http://purl.obolibrary.org/obo/CL_0000255`
 
 #### Added
-- [excretory system](http://purl.obolibrary.org/obo/UBERON_8450002) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [excretory system](http://purl.obolibrary.org/obo/UBERON_8450002) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### exoccipital-atlas joint `http://purl.obolibrary.org/obo/UBERON_0017157`
-#### Removed
-- [exoccipital-atlas joint](http://purl.obolibrary.org/obo/UBERON_0017157) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "atlanto-exoccipital joint" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:372c02ad-f2bd-4cf8-b55c-9b686c3d62f4" 
+### exocytic vesicle membrane `http://purl.obolibrary.org/obo/GO_0099501`
 
 #### Added
-- [exoccipital-atlas joint](http://purl.obolibrary.org/obo/UBERON_0017157) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "atlanto-exoccipital joint" 
+- [exocytic vesicle membrane](http://purl.obolibrary.org/obo/GO_0099501) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [exocytic vesicle](http://purl.obolibrary.org/obo/GO_0070382) 
 
 
-### extensor pollicis brevis muscle `http://purl.obolibrary.org/obo/UBERON_0017618`
-#### Removed
-- [extensor pollicis brevis muscle](http://purl.obolibrary.org/obo/UBERON_0017618) SubClassOf [extrinsic extensor muscle of manus](http://purl.obolibrary.org/obo/UBERON_0011024) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "UBERONTEMP" 
+### external anal region `http://purl.obolibrary.org/obo/UBERON_0012469`
 
 #### Added
-- [extensor pollicis brevis muscle](http://purl.obolibrary.org/obo/UBERON_0017618) SubClassOf [extrinsic extensor muscle of manus](http://purl.obolibrary.org/obo/UBERON_0011024) 
+- [external anal region](http://purl.obolibrary.org/obo/UBERON_0012469) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### external pudendal artery `http://purl.obolibrary.org/obo/UBERON_0013137`
@@ -1623,2625 +3174,5952 @@
 #### Added
 - [external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0013137) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0013137) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
+
+### external pudendal vein `http://purl.obolibrary.org/obo/UBERON_0018253`
+
+#### Added
+- [external pudendal vein](http://purl.obolibrary.org/obo/UBERON_0018253) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### external urethral sphincter `http://purl.obolibrary.org/obo/UBERON_0004919`
+
+#### Added
+- [external urethral sphincter](http://purl.obolibrary.org/obo/UBERON_0004919) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### extracellular matrix `http://purl.obolibrary.org/obo/GO_0031012`
+#### Removed
+- [extracellular matrix](http://purl.obolibrary.org/obo/GO_0031012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [extracellular matrix](http://purl.obolibrary.org/obo/GO_0031012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### extracellular region `http://purl.obolibrary.org/obo/GO_0005576`
+#### Removed
+- [extracellular region](http://purl.obolibrary.org/obo/GO_0005576) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [extracellular region](http://purl.obolibrary.org/obo/GO_0005576) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### extracellular space `http://purl.obolibrary.org/obo/GO_0005615`
+#### Removed
+- [extracellular space](http://purl.obolibrary.org/obo/GO_0005615) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [extracellular space](http://purl.obolibrary.org/obo/GO_0005615) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### extracellular structure organization `http://purl.obolibrary.org/obo/GO_0043062`
+#### Removed
+- [extracellular structure organization](http://purl.obolibrary.org/obo/GO_0043062) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [extracellular structure organization](http://purl.obolibrary.org/obo/GO_0043062) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
 ### extraembryonic portion of umbilical artery `http://purl.obolibrary.org/obo/UBERON_0011693`
-#### Removed
-- [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [extraembryonic portion of umbilical artery](http://purl.obolibrary.org/obo/UBERON_0011693) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### extramural oviduct `http://purl.obolibrary.org/obo/UBERON_0018319`
-#### Removed
-- [extramural oviduct](http://purl.obolibrary.org/obo/UBERON_0018319) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:a9598e4a-b173-43af-96ef-20f80182c8fd" 
-
-
-
-### extremitas anterior `http://purl.obolibrary.org/obo/UBERON_3000155`
-#### Removed
-- [extremitas anterior](http://purl.obolibrary.org/obo/UBERON_3000155) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### extrinsic muscle of tongue `http://purl.obolibrary.org/obo/UBERON_0001575`
 
 #### Added
-- [extremitas anterior](http://purl.obolibrary.org/obo/UBERON_3000155) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [extrinsic muscle of tongue](http://purl.obolibrary.org/obo/UBERON_0001575) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [extrinsic tongue pre-muscle mass](http://purl.obolibrary.org/obo/UBERON_0011332) 
 
 
-### facial artery `http://purl.obolibrary.org/obo/UBERON_0001612`
-#### Removed
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [face](http://purl.obolibrary.org/obo/UBERON_0001456)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
-
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
+### eye photoreceptor cell `http://purl.obolibrary.org/obo/CL_0000287`
 
 #### Added
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [face](http://purl.obolibrary.org/obo/UBERON_0001456)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
+- [eye photoreceptor cell](http://purl.obolibrary.org/obo/CL_0000287) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
+
+### eyelid connective tissue `http://purl.obolibrary.org/obo/UBERON_0003581`
+
+#### Added
+- [eyelid connective tissue](http://purl.obolibrary.org/obo/UBERON_0003581) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [eyelid mesenchyme](http://purl.obolibrary.org/obo/UBERON_0010330) 
+
+
+### eyelid muscle `http://purl.obolibrary.org/obo/UBERON_0003660`
+
+#### Added
+- [eyelid muscle](http://purl.obolibrary.org/obo/UBERON_0003660) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### facial nucleus `http://purl.obolibrary.org/obo/UBERON_0000127`
+
+#### Added
+- [facial nucleus](http://purl.obolibrary.org/obo/UBERON_0000127) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future facial nucleus](http://purl.obolibrary.org/obo/UBERON_0010123) 
+
+
+### facial vein `http://purl.obolibrary.org/obo/UBERON_0001653`
+
+#### Added
+- [facial vein](http://purl.obolibrary.org/obo/UBERON_0001653) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### falciform ligament `http://purl.obolibrary.org/obo/UBERON_0001247`
+
+#### Added
+- [falciform ligament](http://purl.obolibrary.org/obo/UBERON_0001247) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### fallopian tube `http://purl.obolibrary.org/obo/UBERON_0003889`
+
+#### Added
+- [fallopian tube](http://purl.obolibrary.org/obo/UBERON_0003889) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal female genitalia](http://purl.obolibrary.org/obo/UBERON_0003975) 
+
+
+### falx cerebri `http://purl.obolibrary.org/obo/UBERON_0006059`
+
+#### Added
+- [falx cerebri](http://purl.obolibrary.org/obo/UBERON_0006059) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future falx cerebri](http://purl.obolibrary.org/obo/UBERON_0010090) 
+
+
+### fast muscle cell `http://purl.obolibrary.org/obo/CL_0000190`
+
+#### Added
+- [fast muscle cell](http://purl.obolibrary.org/obo/CL_0000190) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### feather barb `http://purl.obolibrary.org/obo/UBERON_0008294`
+
+#### Added
+- [feather barb](http://purl.obolibrary.org/obo/UBERON_0008294) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather shaft](http://purl.obolibrary.org/obo/UBERON_0011784) 
+
+
+### feather barbicel `http://purl.obolibrary.org/obo/UBERON_0012127`
+
+#### Added
+- [feather barbicel](http://purl.obolibrary.org/obo/UBERON_0012127) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather barbule](http://purl.obolibrary.org/obo/UBERON_0008295) 
+
+
+### feather barbule `http://purl.obolibrary.org/obo/UBERON_0008295`
+
+#### Added
+- [feather barbule](http://purl.obolibrary.org/obo/UBERON_0008295) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [feather barb](http://purl.obolibrary.org/obo/UBERON_0008294) 
+
+
+### feather muscle `http://purl.obolibrary.org/obo/UBERON_0011792`
+
+#### Added
+- [feather muscle](http://purl.obolibrary.org/obo/UBERON_0011792) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### female germ cell `http://purl.obolibrary.org/obo/CL_0000021`
+
+#### Added
+- [female germ cell](http://purl.obolibrary.org/obo/CL_0000021) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### femoral artery `http://purl.obolibrary.org/obo/UBERON_0002060`
-#### Removed
-- [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
-
-- [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
-
-- [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
 - [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
-
-- [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### fetal membrane `http://purl.obolibrary.org/obo/UBERON_0005630`
+### fenestrated cell `http://purl.obolibrary.org/obo/CL_0000666`
 
 #### Added
-- [fetal membrane](http://purl.obolibrary.org/obo/UBERON_0005630) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fetal membrane](http://purl.obolibrary.org/obo/UBERON_0005630) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### fifth cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002842`
+### fibroblast `http://purl.obolibrary.org/obo/CL_0000057`
 
 #### Added
-- [fifth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002842) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fifth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002842) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fibroblast](http://purl.obolibrary.org/obo/CL_0000057) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### fifth lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002859`
+### fibroblast of breast `http://purl.obolibrary.org/obo/CL_4006000`
 
 #### Added
-- [fifth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002859) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fifth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002859) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fibroblast of breast](http://purl.obolibrary.org/obo/CL_4006000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### fifth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002848`
+### fibroblast of cardiac tissue `http://purl.obolibrary.org/obo/CL_0002548`
 
 #### Added
-- [fifth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002848) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [fifth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002848) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [fibroblast of cardiac tissue](http://purl.obolibrary.org/obo/CL_0002548) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### first cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002838`
+### fibroblast of lung `http://purl.obolibrary.org/obo/CL_0002553`
 
 #### Added
-- [first cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002838) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [first cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002838) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fibroblast of lung](http://purl.obolibrary.org/obo/CL_0002553) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### first lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002857`
+### fibroblast of mammary gland `http://purl.obolibrary.org/obo/CL_0002555`
 
 #### Added
-- [first lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002857) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [first lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002857) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fibroblast of mammary gland](http://purl.obolibrary.org/obo/CL_0002555) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### first sacral dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002860`
+### fibrocyte `http://purl.obolibrary.org/obo/CL_0000135`
 
 #### Added
-- [first sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002860) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [first sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002860) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [fibrocyte](http://purl.obolibrary.org/obo/CL_0000135) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### first thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002845`
+### fibrous membrane of synovial tendon sheath `http://purl.obolibrary.org/obo/UBERON_0011234`
 
 #### Added
-- [first thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002845) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [first thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002845) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [fibrous membrane of synovial tendon sheath](http://purl.obolibrary.org/obo/UBERON_0011234) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tendon sheath](http://purl.obolibrary.org/obo/UBERON_0000304) 
 
 
-### flexor cruris lateralis muscle `http://purl.obolibrary.org/obo/UBERON_0017156`
-#### Removed
-- [flexor cruris lateralis muscle](http://purl.obolibrary.org/obo/UBERON_0017156) SubClassOf [flexor muscle](http://purl.obolibrary.org/obo/UBERON_0000366) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "UBERONTEMP" 
+### fin fold pectoral fin bud `http://purl.obolibrary.org/obo/UBERON_2005316`
 
 #### Added
-- [flexor cruris lateralis muscle](http://purl.obolibrary.org/obo/UBERON_0017156) SubClassOf [flexor muscle](http://purl.obolibrary.org/obo/UBERON_0000366) 
+- [fin fold pectoral fin bud](http://purl.obolibrary.org/obo/UBERON_2005316) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
-### flexor sesamoid `http://purl.obolibrary.org/obo/UBERON_0018320`
-#### Removed
-- [flexor sesamoid](http://purl.obolibrary.org/obo/UBERON_0018320) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:d4bf48eb-10b0-4a4b-982a-55fe6154c741" 
-
-
-
-### foramen for glossopharyngeal nerve `http://purl.obolibrary.org/obo/UBERON_0018321`
-#### Removed
-- [foramen for glossopharyngeal nerve](http://purl.obolibrary.org/obo/UBERON_0018321) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:9ca0bda7-9111-4f59-bc72-5d47bc3d7d61" 
-
-
-
-### fourth cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002841`
+### floor plate `http://purl.obolibrary.org/obo/UBERON_0003079`
 
 #### Added
-- [fourth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002841) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fourth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002841) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [floor plate](http://purl.obolibrary.org/obo/UBERON_0003079) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive floor plate](http://purl.obolibrary.org/obo/UBERON_0007286) 
 
 
-### fourth lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0003943`
+### floor plate of neural tube `http://purl.obolibrary.org/obo/UBERON_0003306`
 
 #### Added
-- [fourth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0003943) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fourth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0003943) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [floor plate of neural tube](http://purl.obolibrary.org/obo/UBERON_0003306) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
-### fourth phalanx `http://purl.obolibrary.org/obo/UBERON_0018322`
-#### Removed
-- [fourth phalanx](http://purl.obolibrary.org/obo/UBERON_0018322) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:a8b5fbe4-0d00-4464-97ee-81ffd58a44f8" 
-
-
-
-### fourth sacral spinal ganglion `http://purl.obolibrary.org/obo/UBERON_0007713`
+### follicular B cell `http://purl.obolibrary.org/obo/CL_0000843`
 
 #### Added
-- [fourth sacral spinal ganglion](http://purl.obolibrary.org/obo/UBERON_0007713) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [fourth sacral spinal ganglion](http://purl.obolibrary.org/obo/UBERON_0007713) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [follicular B cell](http://purl.obolibrary.org/obo/CL_0000843) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### fourth thoracic spinal ganglion `http://purl.obolibrary.org/obo/UBERON_0007712`
+### foramen cecum of tongue `http://purl.obolibrary.org/obo/UBERON_0006699`
 
 #### Added
-- [fourth thoracic spinal ganglion](http://purl.obolibrary.org/obo/UBERON_0007712) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [fourth thoracic spinal ganglion](http://purl.obolibrary.org/obo/UBERON_0007712) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [foramen cecum of tongue](http://purl.obolibrary.org/obo/UBERON_0006699) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future foramen cecum](http://purl.obolibrary.org/obo/UBERON_0001761) 
 
 
-### foveola of retina `http://purl.obolibrary.org/obo/UBERON_0018107`
+### forebrain `http://purl.obolibrary.org/obo/UBERON_0001890`
 
 #### Added
-- [foveola of retina](http://purl.obolibrary.org/obo/UBERON_0018107) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [forebrain](http://purl.obolibrary.org/obo/UBERON_0001890) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future forebrain](http://purl.obolibrary.org/obo/UBERON_0006240) 
 
-- [foveola of retina](http://purl.obolibrary.org/obo/UBERON_0018107) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### forebrain radial glial cell `http://purl.obolibrary.org/obo/CL_0013000`
+
+#### Added
+- [forebrain radial glial cell](http://purl.obolibrary.org/obo/CL_0013000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### forelimb connective tissue `http://purl.obolibrary.org/obo/UBERON_0003588`
+
+#### Added
+- [forelimb connective tissue](http://purl.obolibrary.org/obo/UBERON_0003588) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [forelimb mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003859) 
+
+
+### fornix of brain `http://purl.obolibrary.org/obo/UBERON_0000052`
+
+#### Added
+- [fornix of brain](http://purl.obolibrary.org/obo/UBERON_0000052) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### fraction A pre-pro B cell `http://purl.obolibrary.org/obo/CL_0002045`
+
+#### Added
+- [fraction A pre-pro B cell](http://purl.obolibrary.org/obo/CL_0002045) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### frontal nerve (branch of ophthalmic) `http://purl.obolibrary.org/obo/UBERON_0000942`
+
+#### Added
+- [frontal nerve (branch of ophthalmic)](http://purl.obolibrary.org/obo/UBERON_0000942) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic nerve](http://purl.obolibrary.org/obo/UBERON_0000348) 
+
+
+### frontal process of zygomatic bone `http://purl.obolibrary.org/obo/UBERON_0012110`
+
+#### Added
+- [frontal process of zygomatic bone](http://purl.obolibrary.org/obo/UBERON_0012110) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### future trigeminal ganglion `http://purl.obolibrary.org/obo/UBERON_0006304`
+
+#### Added
+- [future trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0006304) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [trigeminal placode complex](http://purl.obolibrary.org/obo/UBERON_0003070) 
 
 
 ### ganglion `http://purl.obolibrary.org/obo/UBERON_0000045`
 
 #### Added
-- [ganglion](http://purl.obolibrary.org/obo/UBERON_0000045) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [ganglion](http://purl.obolibrary.org/obo/UBERON_0000045) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive ganglion](http://purl.obolibrary.org/obo/UBERON_0003869) 
 
-- [ganglion](http://purl.obolibrary.org/obo/UBERON_0000045) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### ganglion interneuron `http://purl.obolibrary.org/obo/CL_0000397`
+
+#### Added
+- [ganglion interneuron](http://purl.obolibrary.org/obo/CL_0000397) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### gastric vein `http://purl.obolibrary.org/obo/UBERON_0004450`
+
+#### Added
+- [gastric vein](http://purl.obolibrary.org/obo/UBERON_0004450) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### gastroduodenal artery `http://purl.obolibrary.org/obo/UBERON_0010132`
-#### Removed
-- [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
-
-- [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
 #### Added
 - [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-- [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### germinal center `http://purl.obolibrary.org/obo/UBERON_0010754`
+### gastroepiploic artery `http://purl.obolibrary.org/obo/UBERON_0009025`
 
 #### Added
-- [germinal center](http://purl.obolibrary.org/obo/UBERON_0010754) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [germinal center](http://purl.obolibrary.org/obo/UBERON_0010754) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0009025) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### glossopharyngeal ganglion `http://purl.obolibrary.org/obo/UBERON_0001701`
+### generation of precursor metabolites and energy `http://purl.obolibrary.org/obo/GO_0006091`
+#### Removed
+- [generation of precursor metabolites and energy](http://purl.obolibrary.org/obo/GO_0006091) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [glossopharyngeal ganglion](http://purl.obolibrary.org/obo/UBERON_0001701) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [generation of precursor metabolites and energy](http://purl.obolibrary.org/obo/GO_0006091) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
-- [glossopharyngeal ganglion](http://purl.obolibrary.org/obo/UBERON_0001701) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### genital swelling `http://purl.obolibrary.org/obo/UBERON_0011754`
+
+#### Added
+- [genital swelling](http://purl.obolibrary.org/obo/UBERON_0011754) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### germ cell `http://purl.obolibrary.org/obo/CL_0000586`
+
+#### Added
+- [germ cell](http://purl.obolibrary.org/obo/CL_0000586) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### germinal center B cell `http://purl.obolibrary.org/obo/CL_0000844`
+
+#### Added
+- [germinal center B cell](http://purl.obolibrary.org/obo/CL_0000844) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### gill lamella `http://purl.obolibrary.org/obo/UBERON_2000211`
+
+#### Added
+- [gill lamella](http://purl.obolibrary.org/obo/UBERON_2000211) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### girdle skeleton `http://purl.obolibrary.org/obo/UBERON_0010719`
+
+#### Added
+- [girdle skeleton](http://purl.obolibrary.org/obo/UBERON_0010719) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### gland lumen `http://purl.obolibrary.org/obo/UBERON_0034905`
+
+#### Added
+- [gland lumen](http://purl.obolibrary.org/obo/UBERON_0034905) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [gland](http://purl.obolibrary.org/obo/UBERON_0002530) 
+
+
+### gland of anal canal `http://purl.obolibrary.org/obo/UBERON_0004760`
+#### Removed
+- [gland of anal canal](http://purl.obolibrary.org/obo/UBERON_0004760) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "gland of anal canal" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+#### Added
+- [gland of anal canal](http://purl.obolibrary.org/obo/UBERON_0004760) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "gland of anal sac" 
+
+
+### gland of anal sac `http://purl.obolibrary.org/obo/UBERON_0011253`
+#### Removed
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "anal sac gland" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Anal_gland" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [label](http://www.w3.org/2000/01/rdf-schema#label) "gland of anal sac" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C32068" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "musk gland" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "anal gland" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:91610001" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UMLS:C0162322" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ncithesaurus:Anal_Gland" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "castor sac" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCBITaxon:29132" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [taxonomic disambiguation](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) EquivalentTo [exocrine gland](http://purl.obolibrary.org/obo/UBERON_0002365) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anal sac](http://purl.obolibrary.org/obo/UBERON_0008978)) 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anal sac](http://purl.obolibrary.org/obo/UBERON_0008978) 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) SubClassOf [scent gland](http://purl.obolibrary.org/obo/UBERON_0011252) 
+
+#### Added
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete gland of anal sac" 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3159"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted as it seems to refer to the same concept as 'gland of anal canal'." 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [gland of anal sac](http://purl.obolibrary.org/obo/UBERON_0011253) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0004760" 
+
+
+### glandular cell of esophagus `http://purl.obolibrary.org/obo/CL_0002657`
+
+#### Added
+- [glandular cell of esophagus](http://purl.obolibrary.org/obo/CL_0002657) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glandular epithelial cell `http://purl.obolibrary.org/obo/CL_0000150`
+
+#### Added
+- [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glans penis `http://purl.obolibrary.org/obo/UBERON_0001299`
+
+#### Added
+- [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future glans penis](http://purl.obolibrary.org/obo/UBERON_0013239) 
+
+
+### glial cell `http://purl.obolibrary.org/obo/CL_0000125`
+
+#### Added
+- [glial cell](http://purl.obolibrary.org/obo/CL_0000125) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glioblast `http://purl.obolibrary.org/obo/CL_0000030`
+
+#### Added
+- [glioblast](http://purl.obolibrary.org/obo/CL_0000030) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### globus pallidus `http://purl.obolibrary.org/obo/UBERON_0001875`
+
+#### Added
+- [globus pallidus](http://purl.obolibrary.org/obo/UBERON_0001875) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [diencephalon](http://purl.obolibrary.org/obo/UBERON_0001894) 
+
+
+### glomerular capillary `http://purl.obolibrary.org/obo/UBERON_0004212`
+
+#### Added
+- [glomerular capillary](http://purl.obolibrary.org/obo/UBERON_0004212) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### glomerular capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1001005`
+
+#### Added
+- [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glomerular endothelial cell `http://purl.obolibrary.org/obo/CL_0002188`
+
+#### Added
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glutamatergic neuron `http://purl.obolibrary.org/obo/CL_0000679`
+
+#### Added
+- [glutamatergic neuron](http://purl.obolibrary.org/obo/CL_0000679) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### glutamine family amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0009084`
+#### Removed
+- [glutamine family amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0009084) SubClassOf [organonitrogen compound biosynthetic process](http://purl.obolibrary.org/obo/GO_1901566) 
+
+- [glutamine family amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0009084) SubClassOf [organic acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0016053) 
+
+#### Added
+- [glutamine family amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0009084) SubClassOf [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) 
+
+
+### glutamine family amino acid catabolic process `http://purl.obolibrary.org/obo/GO_0009065`
+#### Removed
+- [glutamine family amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0009065) SubClassOf [organic acid catabolic process](http://purl.obolibrary.org/obo/GO_0016054) 
+
+- [glutamine family amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0009065) SubClassOf [organonitrogen compound catabolic process](http://purl.obolibrary.org/obo/GO_1901565) 
+
+#### Added
+- [glutamine family amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0009065) SubClassOf [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) 
+
+
+### glutamine family amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0009064`
+
+#### Added
+- [glutamine family amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0009064) SubClassOf [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) 
+
+
+### goblet cell `http://purl.obolibrary.org/obo/CL_0000160`
+
+#### Added
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### gonadal vein `http://purl.obolibrary.org/obo/UBERON_0003848`
+
+#### Added
+- [gonadal vein](http://purl.obolibrary.org/obo/UBERON_0003848) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### goslim_prokaryote `http://purl.obolibrary.org/obo/go#goslim_prokaryote`
+
+#### Added
+- AnnotationProperty: [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+- [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
+
+
+### granule cell `http://purl.obolibrary.org/obo/CL_0000120`
+
+#### Added
+- [granule cell](http://purl.obolibrary.org/obo/CL_0000120) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### granulocyte `http://purl.obolibrary.org/obo/CL_0000094`
+
+#### Added
+- [granulocyte](http://purl.obolibrary.org/obo/CL_0000094) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### granulocyte monocyte progenitor cell `http://purl.obolibrary.org/obo/CL_0000557`
+
+#### Added
+- [granulocyte monocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000557) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### granulocytopoietic cell `http://purl.obolibrary.org/obo/CL_0002191`
+
+#### Added
+- [granulocytopoietic cell](http://purl.obolibrary.org/obo/CL_0002191) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### granulosa cell `http://purl.obolibrary.org/obo/CL_0000501`
+
+#### Added
+- [granulosa cell](http://purl.obolibrary.org/obo/CL_0000501) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### great auricular nerve `http://purl.obolibrary.org/obo/UBERON_0008833`
+
+#### Added
+- [great auricular nerve](http://purl.obolibrary.org/obo/UBERON_0008833) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cervical nerve plexus](http://purl.obolibrary.org/obo/UBERON_0003725) 
+
+
+### greater omentum `http://purl.obolibrary.org/obo/UBERON_0005448`
+
+#### Added
+- [greater omentum](http://purl.obolibrary.org/obo/UBERON_0005448) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### greater palatine artery `http://purl.obolibrary.org/obo/UBERON_0006664`
-#### Removed
-- [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
 - [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [greater palatine artery](http://purl.obolibrary.org/obo/UBERON_0006664) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
-
-### habenular nucleus `http://purl.obolibrary.org/obo/UBERON_0008993`
+### gubernaculum (male or female) `http://purl.obolibrary.org/obo/UBERON_0004346`
 
 #### Added
-- [habenular nucleus](http://purl.obolibrary.org/obo/UBERON_0008993) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [habenular nucleus](http://purl.obolibrary.org/obo/UBERON_0008993) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [gubernaculum (male or female)](http://purl.obolibrary.org/obo/UBERON_0004346) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### heart plus pericardium `http://purl.obolibrary.org/obo/UBERON_0015410`
+### hair follicular keratinocyte `http://purl.obolibrary.org/obo/CL_2000092`
 
 #### Added
-- [heart plus pericardium](http://purl.obolibrary.org/obo/UBERON_0015410) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [hair follicular keratinocyte](http://purl.obolibrary.org/obo/CL_2000092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [heart plus pericardium](http://purl.obolibrary.org/obo/UBERON_0015410) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### head connective tissue `http://purl.obolibrary.org/obo/UBERON_0003566`
+
+#### Added
+- [head connective tissue](http://purl.obolibrary.org/obo/UBERON_0003566) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [head mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005253) 
+
+
+### heart left ventricle `http://purl.obolibrary.org/obo/UBERON_0002084`
+
+#### Added
+- [heart left ventricle](http://purl.obolibrary.org/obo/UBERON_0002084) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### heart right ventricle `http://purl.obolibrary.org/obo/UBERON_0002080`
+
+#### Added
+- [heart right ventricle](http://purl.obolibrary.org/obo/UBERON_0002080) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### heart tube `http://purl.obolibrary.org/obo/UBERON_0004141`
+
+#### Added
+- [heart tube](http://purl.obolibrary.org/obo/UBERON_0004141) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [primitive heart tube](http://purl.obolibrary.org/obo/UBERON_0005498) 
 
 
 ### helicine branch of uterine artery `http://purl.obolibrary.org/obo/UBERON_0015173`
-#### Removed
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) EquivalentTo [helicine artery](http://purl.obolibrary.org/obo/UBERON_0015177) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493)) 
-
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) 
-
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) 
-
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) EquivalentTo [helicine artery](http://purl.obolibrary.org/obo/UBERON_0015177) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493)) 
-
 - [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [helicine branch of uterine artery](http://purl.obolibrary.org/obo/UBERON_0015173) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) 
 
-
-### hematopoietic system `http://purl.obolibrary.org/obo/UBERON_0002390`
+### hematopoietic cell `http://purl.obolibrary.org/obo/CL_0000988`
 
 #### Added
-- [hematopoietic system](http://purl.obolibrary.org/obo/UBERON_0002390) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [hematopoietic system](http://purl.obolibrary.org/obo/UBERON_0002390) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [hematopoietic cell](http://purl.obolibrary.org/obo/CL_0000988) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### hemipenal sheath `http://purl.obolibrary.org/obo/UBERON_4100111`
-#### Removed
-- [hemipenal sheath](http://purl.obolibrary.org/obo/UBERON_4100111) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hemipenial sheath" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:382249cd-df28-48b2-ba1a-38dc059b3d0c" 
-
-- [hemipenal sheath](http://purl.obolibrary.org/obo/UBERON_4100111) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "sheath of hemipenis" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:382249cd-df28-48b2-ba1a-38dc059b3d0c" 
+### hematopoietic multipotent progenitor cell `http://purl.obolibrary.org/obo/CL_0000837`
 
 #### Added
-- [hemipenal sheath](http://purl.obolibrary.org/obo/UBERON_4100111) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "sheath of hemipenis" 
-
-- [hemipenal sheath](http://purl.obolibrary.org/obo/UBERON_4100111) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hemipenial sheath" 
+- [hematopoietic multipotent progenitor cell](http://purl.obolibrary.org/obo/CL_0000837) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### hippocampal formation `http://purl.obolibrary.org/obo/UBERON_0002421`
+### hematopoietic precursor cell `http://purl.obolibrary.org/obo/CL_0008001`
 
 #### Added
-- [hippocampal formation](http://purl.obolibrary.org/obo/UBERON_0002421) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [hippocampal formation](http://purl.obolibrary.org/obo/UBERON_0002421) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [hematopoietic precursor cell](http://purl.obolibrary.org/obo/CL_0008001) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### horn of hemipenis `http://purl.obolibrary.org/obo/UBERON_0017294`
-#### Removed
-- [horn of hemipenis](http://purl.obolibrary.org/obo/UBERON_0017294) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hemipenis horn" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:faea86d9-5281-441b-be89-0f0be1d49129" 
-
-- [horn of hemipenis](http://purl.obolibrary.org/obo/UBERON_0017294) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hemipenis horns" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:faea86d9-5281-441b-be89-0f0be1d49129" 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+### hematopoietic stem cell `http://purl.obolibrary.org/obo/CL_0000037`
 
 #### Added
-- [horn of hemipenis](http://purl.obolibrary.org/obo/UBERON_0017294) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hemipenis horns" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
-
-- [horn of hemipenis](http://purl.obolibrary.org/obo/UBERON_0017294) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hemipenis horn" 
+- [hematopoietic stem cell](http://purl.obolibrary.org/obo/CL_0000037) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### hyoid articular area `http://purl.obolibrary.org/obo/UBERON_0018323`
-#### Removed
-- [hyoid articular area](http://purl.obolibrary.org/obo/UBERON_0018323) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:e1c1764a-61b5-4dce-8a59-7ca5a9de0a0b" 
-
-
-
-### hypochordal radial `http://purl.obolibrary.org/obo/UBERON_0018324`
-#### Removed
-- [hypochordal radial](http://purl.obolibrary.org/obo/UBERON_0018324) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:df278a3c-58fe-4442-9611-22473117a50d" 
-
-
-
-### hypoconid `http://purl.obolibrary.org/obo/UBERON_0018279`
-#### Removed
-- [hypoconid](http://purl.obolibrary.org/obo/UBERON_0018279) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:af7baeed-9ce1-4f9b-87d2-a1ee4f414cba" 
-
-
-
-### ileal artery `http://purl.obolibrary.org/obo/UBERON_0005628`
-#### Removed
-- [ileal artery](http://purl.obolibrary.org/obo/UBERON_0005628) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+### hepatic artery `http://purl.obolibrary.org/obo/UBERON_0001193`
 
 #### Added
-- [ileal artery](http://purl.obolibrary.org/obo/UBERON_0005628) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+- [hepatic artery](http://purl.obolibrary.org/obo/UBERON_0001193) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hepatic sinusoid `http://purl.obolibrary.org/obo/UBERON_0001281`
+
+#### Added
+- [hepatic sinusoid](http://purl.obolibrary.org/obo/UBERON_0001281) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hepatic stellate cell `http://purl.obolibrary.org/obo/CL_0000632`
+
+#### Added
+- [hepatic stellate cell](http://purl.obolibrary.org/obo/CL_0000632) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### hepatic vein `http://purl.obolibrary.org/obo/UBERON_0001143`
+
+#### Added
+- [hepatic vein](http://purl.obolibrary.org/obo/UBERON_0001143) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hepatoblast `http://purl.obolibrary.org/obo/CL_0005026`
+
+#### Added
+- [hepatoblast](http://purl.obolibrary.org/obo/CL_0005026) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### hepatocyte `http://purl.obolibrary.org/obo/CL_0000182`
+
+#### Added
+- [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### high nuclear/cytoplasmic ratio `http://purl.obolibrary.org/obo/PATO_0040072`
+
+#### Added
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high N:C ratio" 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "http://orcid.org/0000-0001-5208-3432" 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [label](http://www.w3.org/2000/01/rdf-schema#label) "high nuclear/cytoplasmic ratio" 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0040072" 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "A high nuclear/cytolasmic ratio is 70% or higher." 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality inhering in a cell by virtue of the cell having a high nuclear/cytoplasmic ratio." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://lymerick.net/blood-cells.pdf" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:NC_ratio&amp;oldid=931936284" 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- Class: [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) 
+
+- [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) SubClassOf [cellular quality](http://purl.obolibrary.org/obo/PATO_0001396) 
+
+
+### high-arched `http://purl.obolibrary.org/obo/PATO_0002162`
+#### Removed
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A concave quality inhering in a bearer by virtue of the bearer's forming or resembling an arch of an increased apical height." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002162" 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2009-11-26T02:34:06Z" 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) [label](http://www.w3.org/2000/01/rdf-schema#label) "high-arched" 
+
+- Class: [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) EquivalentTo [arched](http://purl.obolibrary.org/obo/PATO_0001594) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [high-arched](http://purl.obolibrary.org/obo/PATO_0002162) SubClassOf [arched](http://purl.obolibrary.org/obo/PATO_0001594) 
+
+
+
+### hindbrain `http://purl.obolibrary.org/obo/UBERON_0002028`
+
+#### Added
+- [hindbrain](http://purl.obolibrary.org/obo/UBERON_0002028) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive hindbrain](http://purl.obolibrary.org/obo/UBERON_0007277) 
+
+
+### hindgut `http://purl.obolibrary.org/obo/UBERON_0001046`
+
+#### Added
+- [hindgut](http://purl.obolibrary.org/obo/UBERON_0001046) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hindlimb connective tissue `http://purl.obolibrary.org/obo/UBERON_0003589`
+
+#### Added
+- [hindlimb connective tissue](http://purl.obolibrary.org/obo/UBERON_0003589) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [hindlimb mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003860) 
+
+
+### hip connective tissue `http://purl.obolibrary.org/obo/UBERON_0003576`
+
+#### Added
+- [hip connective tissue](http://purl.obolibrary.org/obo/UBERON_0003576) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of hip](http://purl.obolibrary.org/obo/UBERON_0003320) 
+
+
+### hippocampal neuron `http://purl.obolibrary.org/obo/CL_0002608`
+
+#### Added
+- [hippocampal neuron](http://purl.obolibrary.org/obo/CL_0002608) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### hippocampus stratum lacunosum moleculare `http://purl.obolibrary.org/obo/UBERON_0007640`
+
+#### Added
+- [hippocampus stratum lacunosum moleculare](http://purl.obolibrary.org/obo/UBERON_0007640) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Ammon's horn](http://purl.obolibrary.org/obo/UBERON_0001954) 
+
+
+### hump `http://purl.obolibrary.org/obo/UBERON_0013657`
+
+#### Added
+- [hump](http://purl.obolibrary.org/obo/UBERON_0013657) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### hyaloid artery `http://purl.obolibrary.org/obo/UBERON_0002270`
+
+#### Added
+- [hyaloid artery](http://purl.obolibrary.org/obo/UBERON_0002270) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hydrolase activity `http://purl.obolibrary.org/obo/GO_0016787`
+#### Removed
+- [hydrolase activity](http://purl.obolibrary.org/obo/GO_0016787) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [hydrolase activity](http://purl.obolibrary.org/obo/GO_0016787) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### hydroxyapatite binding `http://purl.obolibrary.org/obo/GO_0046848`
+#### Removed
+- [hydroxyapatite binding](http://purl.obolibrary.org/obo/GO_0046848) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+#### Added
+- [hydroxyapatite binding](http://purl.obolibrary.org/obo/GO_0046848) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/21211"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [hydroxyapatite binding](http://purl.obolibrary.org/obo/GO_0046848) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
+
+
+### hyoid artery `http://purl.obolibrary.org/obo/UBERON_0005608`
+
+#### Added
+- [hyoid artery](http://purl.obolibrary.org/obo/UBERON_0005608) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hyoid muscle `http://purl.obolibrary.org/obo/UBERON_0005493`
+
+#### Added
+- [hyoid muscle](http://purl.obolibrary.org/obo/UBERON_0005493) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### hypochord `http://purl.obolibrary.org/obo/UBERON_0003058`
+
+#### Added
+- [hypochord](http://purl.obolibrary.org/obo/UBERON_0003058) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive hypochord](http://purl.obolibrary.org/obo/UBERON_0006599) 
+
+
+### hypophysial artery `http://purl.obolibrary.org/obo/UBERON_0035403`
+
+#### Added
+- [hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035403) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ileal goblet cell `http://purl.obolibrary.org/obo/CL_1000326`
+
+#### Added
+- [ileal goblet cell](http://purl.obolibrary.org/obo/CL_1000326) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [ileal goblet cell](http://purl.obolibrary.org/obo/CL_1000326) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ileal epithelium](http://purl.obolibrary.org/obo/UBERON_0008345) 
 
 
 ### ileocolic artery `http://purl.obolibrary.org/obo/UBERON_0001197`
-#### Removed
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
 
 #### Added
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
 - [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+### iliac artery `http://purl.obolibrary.org/obo/UBERON_0005609`
+
+#### Added
+- [iliac artery](http://purl.obolibrary.org/obo/UBERON_0005609) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### ilioischiadic foramen `http://purl.obolibrary.org/obo/UBERON_0018326`
-#### Removed
-- [ilioischiadic foramen](http://purl.obolibrary.org/obo/UBERON_0018326) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:63e09c69-ac98-49ba-b232-2da5c7b19019" 
+### iliac vein `http://purl.obolibrary.org/obo/UBERON_0005610`
 
+#### Added
+- [iliac vein](http://purl.obolibrary.org/obo/UBERON_0005610) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ilio-marsupialis muscle `http://purl.obolibrary.org/obo/UBERON_0013715`
+
+#### Added
+- [ilio-marsupialis muscle](http://purl.obolibrary.org/obo/UBERON_0013715) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### iliolumbar artery `http://purl.obolibrary.org/obo/UBERON_0001313`
-#### Removed
-- [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
 - [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-- [iliolumbar artery](http://purl.obolibrary.org/obo/UBERON_0001313) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
+### iliolumbar vein `http://purl.obolibrary.org/obo/UBERON_0001320`
+
+#### Added
+- [iliolumbar vein](http://purl.obolibrary.org/obo/UBERON_0001320) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### incisive process of premaxilla `http://purl.obolibrary.org/obo/UBERON_0017249`
+### iliopsoas `http://purl.obolibrary.org/obo/UBERON_0001999`
+
+#### Added
+- [iliopsoas](http://purl.obolibrary.org/obo/UBERON_0001999) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### imaginal disc `http://purl.obolibrary.org/obo/UBERON_0000939`
+
+#### Added
+- [imaginal disc](http://purl.obolibrary.org/obo/UBERON_0000939) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### immature B cell `http://purl.obolibrary.org/obo/CL_0000816`
+
+#### Added
+- [immature B cell](http://purl.obolibrary.org/obo/CL_0000816) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### immature Schwann cell `http://purl.obolibrary.org/obo/CL_0002377`
+
+#### Added
+- [immature Schwann cell](http://purl.obolibrary.org/obo/CL_0002377) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### immature T cell `http://purl.obolibrary.org/obo/CL_0002420`
+
+#### Added
+- [immature T cell](http://purl.obolibrary.org/obo/CL_0002420) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### import across plasma membrane `http://purl.obolibrary.org/obo/GO_0098739`
+
+#### Added
+- [import across plasma membrane](http://purl.obolibrary.org/obo/GO_0098739) SubClassOf [import into cell](http://purl.obolibrary.org/obo/GO_0098657) 
+
+
+### increased acidity `http://purl.obolibrary.org/obo/PATO_0001844`
 #### Removed
-- [incisive process of premaxilla](http://purl.obolibrary.org/obo/UBERON_0017249) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:b0379d68-e54b-4dac-851c-0336cfb85a8f" 
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001843](http://purl.obolibrary.org/obo/PATO_0001843) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An acidity which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001844" 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high acidity" 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased acidity" 
+
+- Class: [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) EquivalentTo [acidity](http://purl.obolibrary.org/obo/PATO_0001842) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased acidity](http://purl.obolibrary.org/obo/PATO_0001844) SubClassOf [acidity](http://purl.obolibrary.org/obo/PATO_0001842) 
 
 
 
-### incisura fossa `http://purl.obolibrary.org/obo/UBERON_0018328`
+### increased coiling `http://purl.obolibrary.org/obo/PATO_0001795`
 #### Removed
-- [incisura fossa](http://purl.obolibrary.org/obo/UBERON_0018328) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:9976c3c2-76ad-4a5a-8eeb-453bf0b47aec" 
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A coiling which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high coiling" 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased coiling" 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cell_quality](http://purl.obolibrary.org/obo/pato#cell_quality) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001795" 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001796](http://purl.obolibrary.org/obo/PATO_0001796) 
+
+- Class: [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) EquivalentTo [coiled](http://purl.obolibrary.org/obo/PATO_0000404) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased coiling](http://purl.obolibrary.org/obo/PATO_0001795) SubClassOf [coiled](http://purl.obolibrary.org/obo/PATO_0000404) 
 
 
 
-### independent continuant `http://purl.obolibrary.org/obo/BFO_0000004`
-
-#### Added
-- [independent continuant](http://purl.obolibrary.org/obo/BFO_0000004) [IAO_0000589](http://purl.obolibrary.org/obo/IAO_0000589) "anatomical entity (BFO)" 
-
-
-### inferior alveolar artery `http://purl.obolibrary.org/obo/UBERON_0014693`
+### increased contractility `http://purl.obolibrary.org/obo/PATO_0001580`
 #### Removed
-- [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high contractility" 
 
-#### Added
-- [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased contractility" 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [disposition_slim](http://purl.obolibrary.org/obo/pato#disposition_slim) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A contractility which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATO:GVG" 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001581](http://purl.obolibrary.org/obo/PATO_0001581) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001580" 
+
+- Class: [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) EquivalentTo [contractile](http://purl.obolibrary.org/obo/PATO_0001690) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) SubClassOf [contractile](http://purl.obolibrary.org/obo/PATO_0001690) 
+
+- [increased contractility](http://purl.obolibrary.org/obo/PATO_0001580) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
 
 
-### inferior epigastric artery `http://purl.obolibrary.org/obo/UBERON_0001354`
+
+### increased curvature `http://purl.obolibrary.org/obo/PATO_0001592`
 #### Removed
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153)) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001592" 
 
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001593](http://purl.obolibrary.org/obo/PATO_0001593) 
 
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
 
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased curvature" 
 
-#### Added
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153)) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A curvature which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATO:GVG" 
 
-- [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external iliac artery](http://purl.obolibrary.org/obo/UBERON_0001308) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
 
+- Class: [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) 
 
-### inferior frontal sulcus `http://purl.obolibrary.org/obo/UBERON_0002761`
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) EquivalentTo [curved](http://purl.obolibrary.org/obo/PATO_0000406) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
 
-#### Added
-- [inferior frontal sulcus](http://purl.obolibrary.org/obo/UBERON_0002761) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) SubClassOf [curved](http://purl.obolibrary.org/obo/PATO_0000406) 
 
-- [inferior frontal sulcus](http://purl.obolibrary.org/obo/UBERON_0002761) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
 
-
-### inferior glossopharyngeal IX ganglion `http://purl.obolibrary.org/obo/UBERON_0005360`
-
-#### Added
-- [inferior glossopharyngeal IX ganglion](http://purl.obolibrary.org/obo/UBERON_0005360) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [inferior glossopharyngeal IX ganglion](http://purl.obolibrary.org/obo/UBERON_0005360) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [increased curvature](http://purl.obolibrary.org/obo/PATO_0001592) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
 
 
-### inferior hypophysial artery `http://purl.obolibrary.org/obo/UBERON_0035492`
+
+### increased elasticity `http://purl.obolibrary.org/obo/PATO_0002287`
 #### Removed
-- [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
 
-- [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2011-03-30T11:50:21Z" 
 
-- [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An elasticity which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
 
-- [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased elasticity" 
 
-#### Added
-- [inferior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035492) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002287" 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0002288](http://purl.obolibrary.org/obo/PATO_0002288) 
+
+- Class: [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) EquivalentTo [elastic](http://purl.obolibrary.org/obo/PATO_0001171) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) SubClassOf [elastic](http://purl.obolibrary.org/obo/PATO_0001171) 
+
+- [increased elasticity](http://purl.obolibrary.org/obo/PATO_0002287) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
 
 
-### inferior mesenteric ganglion `http://purl.obolibrary.org/obo/UBERON_0005453`
 
-#### Added
-- [inferior mesenteric ganglion](http://purl.obolibrary.org/obo/UBERON_0005453) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [inferior mesenteric ganglion](http://purl.obolibrary.org/obo/UBERON_0005453) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### inferior olivary complex `http://purl.obolibrary.org/obo/UBERON_0002127`
-
-#### Added
-- [inferior olivary complex](http://purl.obolibrary.org/obo/UBERON_0002127) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [inferior olivary complex](http://purl.obolibrary.org/obo/UBERON_0002127) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### inferior pancreaticoduodenal artery `http://purl.obolibrary.org/obo/UBERON_0001195`
+### increased flexibility `http://purl.obolibrary.org/obo/PATO_0001776`
 #### Removed
-- [inferior pancreaticoduodenal artery](http://purl.obolibrary.org/obo/UBERON_0001195) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased flexibility" 
 
-#### Added
-- [inferior pancreaticoduodenal artery](http://purl.obolibrary.org/obo/UBERON_0001195) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high flexibility" 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001776" 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001777](http://purl.obolibrary.org/obo/PATO_0001777) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [disposition_slim](http://purl.obolibrary.org/obo/pato#disposition_slim) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A flexibility which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- Class: [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) EquivalentTo [flexible](http://purl.obolibrary.org/obo/PATO_0001544) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) SubClassOf [flexible](http://purl.obolibrary.org/obo/PATO_0001544) 
+
+- [increased flexibility](http://purl.obolibrary.org/obo/PATO_0001776) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
 
 
-### inferior parietal cortex `http://purl.obolibrary.org/obo/UBERON_0006088`
 
-#### Added
-- [inferior parietal cortex](http://purl.obolibrary.org/obo/UBERON_0006088) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [inferior parietal cortex](http://purl.obolibrary.org/obo/UBERON_0006088) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### inferior prenasal cartilage `http://purl.obolibrary.org/obo/UBERON_3000234`
+### increased in magnitude relative to `http://purl.obolibrary.org/obo/RO_0015007`
 #### Removed
-- [inferior prenasal cartilage](http://purl.obolibrary.org/obo/UBERON_3000234) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased in magnitude relative to" 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "increased_in_magnitude_relative_to" 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'." 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) &gt; magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-6601-2165" 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0015007" 
+
+- ObjectProperty: [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) Domain [quality](http://purl.obolibrary.org/obo/PATO_0000001) 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) Range [quality](http://purl.obolibrary.org/obo/PATO_0000001) 
+
+- [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) SubPropertyOf: [different in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015006) 
 
 
 
-### inferior suprarenal artery `http://purl.obolibrary.org/obo/UBERON_0002056`
+### increased nucleus size `http://purl.obolibrary.org/obo/CL_0017505`
 #### Removed
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) EquivalentTo [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184)) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) [contributor](http://purl.org/dc/terms/contributor) [Terrence F Meehan](https://orcid.org/0000-0003-1980-3228) 
 
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased nucleus size" 
 
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2009-12-23T10:53:24Z" 
 
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm" 
 
-#### Added
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) EquivalentTo [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184)) 
+- Class: [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) 
 
-- [inferior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0002056) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) EquivalentTo [nucleus](http://purl.obolibrary.org/obo/GO_0005634) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [increased size](http://purl.obolibrary.org/obo/PATO_0000586)) 
 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) SubClassOf [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [increased size](http://purl.obolibrary.org/obo/PATO_0000586) 
 
-### inferior vagus X ganglion `http://purl.obolibrary.org/obo/UBERON_0005363`
-
-#### Added
-- [inferior vagus X ganglion](http://purl.obolibrary.org/obo/UBERON_0005363) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [inferior vagus X ganglion](http://purl.obolibrary.org/obo/UBERON_0005363) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) SubClassOf [nucleus](http://purl.obolibrary.org/obo/GO_0005634) 
 
 
-### inferior vesical artery `http://purl.obolibrary.org/obo/UBERON_0001311`
+
+### increased object quality `http://purl.obolibrary.org/obo/PATO_0002305`
 #### Removed
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality of an object that has a value that is increased compared to normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
 
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2011-06-16T06:54:01Z" 
 
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002305" 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0002303](http://purl.obolibrary.org/obo/PATO_0002303) 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased object quality" 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- Class: [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) EquivalentTo [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) SubClassOf [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) SubClassOf [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) 
+
+- [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+
+
+### increased occurrence `http://purl.obolibrary.org/obo/PATO_0002051`
+#### Removed
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2009-03-26T11:10:11Z" 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0002052](http://purl.obolibrary.org/obo/PATO_0002052) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002051" 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "increased incidence" 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An occurrence which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased occurrence" 
+
+- Class: [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) EquivalentTo [occurrence](http://purl.obolibrary.org/obo/PATO_0000057) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) SubClassOf [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) SubClassOf [occurrence](http://purl.obolibrary.org/obo/PATO_0000057) 
+
+- [increased occurrence](http://purl.obolibrary.org/obo/PATO_0002051) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+
+
+### increased process quality `http://purl.obolibrary.org/obo/PATO_0002304`
+#### Removed
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2011-06-16T06:53:08Z" 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0002302](http://purl.obolibrary.org/obo/PATO_0002302) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased process quality" 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002304" 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality of a process that has a value that is increased compared to normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- Class: [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) EquivalentTo [process quality](http://purl.obolibrary.org/obo/PATO_0001236) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) SubClassOf [process quality](http://purl.obolibrary.org/obo/PATO_0001236) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) SubClassOf [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) 
+
+- [increased process quality](http://purl.obolibrary.org/obo/PATO_0002304) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+
+
+### increased quality `http://purl.obolibrary.org/obo/PATO_0002300`
+#### Removed
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2011-06-16T06:39:43Z" 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality that has a value that is increased compared to normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0002300" 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0002301](http://purl.obolibrary.org/obo/PATO_0002301) 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased quality" 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) [contributor](http://purl.org/dc/terms/contributor) [Georgios V. Gkoutos](https://orcid.org/0000-0002-2061-091X) 
+
+- Class: [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) EquivalentTo [quality](http://purl.obolibrary.org/obo/PATO_0000001) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased quality](http://purl.obolibrary.org/obo/PATO_0002300) SubClassOf [deviation (from_normal)](http://purl.obolibrary.org/obo/PATO_0000069) 
+
+
+
+### increased size `http://purl.obolibrary.org/obo/PATO_0000586`
+#### Removed
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0000587](http://purl.obolibrary.org/obo/PATO_0000587) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "enlarged" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000586" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "large" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "expanded" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A size quality which is relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased size" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "PATO:0001202" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "big" 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "great" 
+
+- Class: [increased size](http://purl.obolibrary.org/obo/PATO_0000586) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) EquivalentTo [size](http://purl.obolibrary.org/obo/PATO_0000117) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) SubClassOf [size](http://purl.obolibrary.org/obo/PATO_0000117) 
+
+- [increased size](http://purl.obolibrary.org/obo/PATO_0000586) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+
+
+### increased viscosity `http://purl.obolibrary.org/obo/PATO_0001693`
+#### Removed
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high viscosity" 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001693" 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [disposition_slim](http://purl.obolibrary.org/obo/pato#disposition_slim) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased viscosity" 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A viscosity which relatively high." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0001694](http://purl.obolibrary.org/obo/PATO_0001694) 
+
+- Class: [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) EquivalentTo [viscous](http://purl.obolibrary.org/obo/PATO_0000998) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) SubClassOf [viscous](http://purl.obolibrary.org/obo/PATO_0000998) 
+
+- [increased viscosity](http://purl.obolibrary.org/obo/PATO_0001693) SubClassOf [increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+
+
+### inferior alveolar nerve `http://purl.obolibrary.org/obo/UBERON_0018405`
 
 #### Added
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
+- [inferior alveolar nerve](http://purl.obolibrary.org/obo/UBERON_0018405) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lingual nerve](http://purl.obolibrary.org/obo/UBERON_0003721) 
+
+
+### inferior branch of oculomotor nerve `http://purl.obolibrary.org/obo/UBERON_0015161`
+
+#### Added
+- [inferior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015161) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) 
+
+
+### inferior mesenteric nerve plexus `http://purl.obolibrary.org/obo/UBERON_0035770`
+
+#### Added
+- [inferior mesenteric nerve plexus](http://purl.obolibrary.org/obo/UBERON_0035770) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### inferior nasal concha `http://purl.obolibrary.org/obo/UBERON_0005922`
+
+#### Added
+- [inferior nasal concha](http://purl.obolibrary.org/obo/UBERON_0005922) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### inferior ophthalmic vein `http://purl.obolibrary.org/obo/UBERON_0011193`
+
+#### Added
+- [inferior ophthalmic vein](http://purl.obolibrary.org/obo/UBERON_0011193) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### inferior rectal artery `http://purl.obolibrary.org/obo/UBERON_0001357`
+
+#### Added
+- [inferior rectal artery](http://purl.obolibrary.org/obo/UBERON_0001357) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [anal part of perineum](http://purl.obolibrary.org/obo/UBERON_0006867) 
+
+
+### inferior salivatory nucleus `http://purl.obolibrary.org/obo/UBERON_0002872`
+
+#### Added
+- [inferior salivatory nucleus](http://purl.obolibrary.org/obo/UBERON_0002872) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future inferior salivatory nucleus](http://purl.obolibrary.org/obo/UBERON_0010124) 
+
+
+### infra-orbital nerve `http://purl.obolibrary.org/obo/UBERON_0018408`
+
+#### Added
+- [infra-orbital nerve](http://purl.obolibrary.org/obo/UBERON_0018408) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) 
 
 
 ### infraorbital artery `http://purl.obolibrary.org/obo/UBERON_0004646`
-#### Removed
-- [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
-- [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
 - [infraorbital artery](http://purl.obolibrary.org/obo/UBERON_0004646) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### infrapatellar fat pad `http://purl.obolibrary.org/obo/UBERON_0016400`
+### inhibitory interneuron `http://purl.obolibrary.org/obo/CL_0000498`
+
+#### Added
+- [inhibitory interneuron](http://purl.obolibrary.org/obo/CL_0000498) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### inorganic ion import across plasma membrane `http://purl.obolibrary.org/obo/GO_0099587`
 #### Removed
-- [infrapatellar fat pad](http://purl.obolibrary.org/obo/UBERON_0016400) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [infrapatellar fat pad](http://purl.obolibrary.org/obo/UBERON_0016400) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [inorganic ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_0099587) SubClassOf [import into cell](http://purl.obolibrary.org/obo/GO_0098657) 
 
 
 
-### integument `http://purl.obolibrary.org/obo/UBERON_0002199`
-
-#### Added
-- [integument](http://purl.obolibrary.org/obo/UBERON_0002199) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [integument](http://purl.obolibrary.org/obo/UBERON_0002199) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### integumental system `http://purl.obolibrary.org/obo/UBERON_0002416`
+### insect dorsal ectoderm derivative `http://purl.obolibrary.org/obo/UBERON_6007046`
+#### Removed
+- [insect dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) SubClassOf [multicellular anatomical structure](http://purl.obolibrary.org/obo/UBERON_0010000) 
 
 #### Added
-- [integumental system](http://purl.obolibrary.org/obo/UBERON_0002416) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [insect dorsal ectoderm derivative](http://purl.obolibrary.org/obo/UBERON_6007046) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An insect embryonic structure that develops from the dorsal ectoderm." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:9783540570790" 
 
-- [integumental system](http://purl.obolibrary.org/obo/UBERON_0002416) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-
-### internal capsule of telencephalon `http://purl.obolibrary.org/obo/UBERON_0001887`
+### insect embryonic/larval lymph gland `http://purl.obolibrary.org/obo/UBERON_6001668`
 
 #### Added
-- [internal capsule of telencephalon](http://purl.obolibrary.org/obo/UBERON_0001887) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [insect embryonic/larval lymph gland](http://purl.obolibrary.org/obo/UBERON_6001668) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
-- [internal capsule of telencephalon](http://purl.obolibrary.org/obo/UBERON_0001887) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### intercostal artery `http://purl.obolibrary.org/obo/UBERON_0005612`
+
+#### Added
+- [intercostal artery](http://purl.obolibrary.org/obo/UBERON_0005612) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thoracic aorta](http://purl.obolibrary.org/obo/UBERON_0001515) 
+
+
+### intercostal muscle `http://purl.obolibrary.org/obo/UBERON_0001111`
+
+#### Added
+- [intercostal muscle](http://purl.obolibrary.org/obo/UBERON_0001111) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### intercostal vein `http://purl.obolibrary.org/obo/UBERON_0012197`
+
+#### Added
+- [intercostal vein](http://purl.obolibrary.org/obo/UBERON_0012197) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### interlobar artery `http://purl.obolibrary.org/obo/UBERON_0009885`
+
+#### Added
+- [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### interlobar vein `http://purl.obolibrary.org/obo/UBERON_0009887`
+
+#### Added
+- [interlobar vein](http://purl.obolibrary.org/obo/UBERON_0009887) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### interlobular artery `http://purl.obolibrary.org/obo/UBERON_0004723`
+
+#### Added
+- [interlobular artery](http://purl.obolibrary.org/obo/UBERON_0004723) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### interlobular duct `http://purl.obolibrary.org/obo/UBERON_0014716`
+
+#### Added
+- [interlobular duct](http://purl.obolibrary.org/obo/UBERON_0014716) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### intermediate monocyte `http://purl.obolibrary.org/obo/CL_0002393`
+
+#### Added
+- [intermediate monocyte](http://purl.obolibrary.org/obo/CL_0002393) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### internal anal region `http://purl.obolibrary.org/obo/UBERON_0012361`
+
+#### Added
+- [internal anal region](http://purl.obolibrary.org/obo/UBERON_0012361) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### internal carotid artery `http://purl.obolibrary.org/obo/UBERON_0001532`
+
+#### Added
+- [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001530) 
 
 
 ### internal pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007315`
-#### Removed
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
 
 #### Added
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
 - [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### internal thoracic artery `http://purl.obolibrary.org/obo/UBERON_0002456`
-#### Removed
-- [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
+### internal pudendal vein `http://purl.obolibrary.org/obo/UBERON_0018252`
 
 #### Added
-- [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
+- [internal pudendal vein](http://purl.obolibrary.org/obo/UBERON_0018252) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### interpterygoid vacuity `http://purl.obolibrary.org/obo/UBERON_0018330`
-#### Removed
-- [interpterygoid vacuity](http://purl.obolibrary.org/obo/UBERON_0018330) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:c459b036-bbb9-4e8b-8a2b-530b761b6603" 
-
-
-
-### intraramal joint `http://purl.obolibrary.org/obo/UBERON_0018331`
-#### Removed
-- [intraramal joint](http://purl.obolibrary.org/obo/UBERON_0018331) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0f283c26-49e5-42e7-8ae1-e391eda7e4ce" 
-
-
-
-### jaw mesenchyme `http://purl.obolibrary.org/obo/UBERON_0034995`
-#### Removed
-- [jaw mesenchyme](http://purl.obolibrary.org/obo/UBERON_0034995) SubClassOf [head mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005253) 
+### internal thoracic vein `http://purl.obolibrary.org/obo/UBERON_0001589`
 
 #### Added
-- [jaw mesenchyme](http://purl.obolibrary.org/obo/UBERON_0034995) SubClassOf [mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003104) 
+- [internal thoracic vein](http://purl.obolibrary.org/obo/UBERON_0001589) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### interneuron `http://purl.obolibrary.org/obo/CL_0000099`
+
+#### Added
+- [interneuron](http://purl.obolibrary.org/obo/CL_0000099) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### interstitial cell of Cajal `http://purl.obolibrary.org/obo/CL_0002088`
+
+#### Added
+- [interstitial cell of Cajal](http://purl.obolibrary.org/obo/CL_0002088) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal bulb `http://purl.obolibrary.org/obo/UBERON_2001076`
+
+#### Added
+- [intestinal bulb](http://purl.obolibrary.org/obo/UBERON_2001076) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### intestinal crypt stem cell `http://purl.obolibrary.org/obo/CL_0002250`
+
+#### Added
+- [intestinal crypt stem cell](http://purl.obolibrary.org/obo/CL_0002250) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal crypt stem cell of colon `http://purl.obolibrary.org/obo/CL_0009043`
+
+#### Added
+- [intestinal crypt stem cell of colon](http://purl.obolibrary.org/obo/CL_0009043) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal crypt stem cell of large intestine `http://purl.obolibrary.org/obo/CL_0009016`
+
+#### Added
+- [intestinal crypt stem cell of large intestine](http://purl.obolibrary.org/obo/CL_0009016) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal crypt stem cell of small intestine `http://purl.obolibrary.org/obo/CL_0009017`
+
+#### Added
+- [intestinal crypt stem cell of small intestine](http://purl.obolibrary.org/obo/CL_0009017) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal enteroendocrine cell `http://purl.obolibrary.org/obo/CL_1001516`
+
+#### Added
+- [intestinal enteroendocrine cell](http://purl.obolibrary.org/obo/CL_1001516) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal epithelial cell `http://purl.obolibrary.org/obo/CL_0002563`
+
+#### Added
+- [intestinal epithelial cell](http://purl.obolibrary.org/obo/CL_0002563) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestinal tuft cell `http://purl.obolibrary.org/obo/CL_0019032`
+
+#### Added
+- [intestinal tuft cell](http://purl.obolibrary.org/obo/CL_0019032) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intestine goblet cell `http://purl.obolibrary.org/obo/CL_0019031`
+
+#### Added
+- [intestine goblet cell](http://purl.obolibrary.org/obo/CL_0019031) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### intracellular phosphate ion homeostasis `http://purl.obolibrary.org/obo/GO_0030643`
+
+#### Added
+- [intracellular phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0030643) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26429"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [intracellular phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0030643) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "intracellular phosphate homeostasis" 
+
+- [intracellular phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0030643) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular Pi homeostasis" 
+
+
+### intracellular protein transport `http://purl.obolibrary.org/obo/GO_0006886`
+#### Removed
+- [intracellular protein transport](http://purl.obolibrary.org/obo/GO_0006886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [intracellular protein transport](http://purl.obolibrary.org/obo/GO_0006886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### intracellular signal transduction `http://purl.obolibrary.org/obo/GO_0035556`
+#### Removed
+- [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:signaling" 
+
+- [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signaling chain" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:3527303782" 
+
+- [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:signaling" 
+
+- [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade" 
+
+
+
+### intracellular signal transduction involved in positive regulation of cell growth `http://purl.obolibrary.org/obo/GO_1905427`
+#### Removed
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2016-09-07T18:15:01Z" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signal transduction involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signaling chain involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signal transduction involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signaling chain involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signaling chain involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1905427" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [label](http://www.w3.org/2000/01/rdf-schema#label) "intracellular signal transduction involved in positive regulation of cell growth" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any intracellular signal transduction that is involved in positive regulation of cell growth." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000060" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15917811" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:vw" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:al" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular protein kinase cascade involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signaling chain involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "dph" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signaling chain involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling cascade involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signal transduction involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in activation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction pathway involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "protein kinase cascade involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "intracellular signal transduction involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "intracellular signaling chain involved in up regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in upregulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in up-regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular signaling pathway involved in positive regulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "signal transduction via intracellular signaling cascade involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "signal transmission via intracellular cascade involved in stimulation of cell growth" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- Class: [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) EquivalentTo [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_0030307)) 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) SubClassOf [intracellular signal transduction](http://purl.obolibrary.org/obo/GO_0035556) 
+
+- [intracellular signal transduction involved in positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_1905427) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [positive regulation of cell growth](http://purl.obolibrary.org/obo/GO_0030307) 
+
+
+
+### intrahepatic cholangiocyte `http://purl.obolibrary.org/obo/CL_0002538`
+
+#### Added
+- [intrahepatic cholangiocyte](http://purl.obolibrary.org/obo/CL_0002538) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ion binding `http://purl.obolibrary.org/obo/GO_0043167`
+#### Removed
+- [ion binding](http://purl.obolibrary.org/obo/GO_0043167) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+#### Added
+- [ion binding](http://purl.obolibrary.org/obo/GO_0043167) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
+
+
+### ionocyte `http://purl.obolibrary.org/obo/CL_0005006`
+
+#### Added
+- [ionocyte](http://purl.obolibrary.org/obo/CL_0005006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### jejunal artery `http://purl.obolibrary.org/obo/UBERON_0018255`
-#### Removed
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
-
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
-
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
+
+### jejunal goblet cell `http://purl.obolibrary.org/obo/CL_1000325`
+
+#### Added
+- [jejunal goblet cell](http://purl.obolibrary.org/obo/CL_1000325) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [jejunal epithelium](http://purl.obolibrary.org/obo/UBERON_0000400) 
 
 
-### jugal bar `http://purl.obolibrary.org/obo/UBERON_0018332`
+### jejunal vein `http://purl.obolibrary.org/obo/UBERON_0001216`
+
+#### Added
+- [jejunal vein](http://purl.obolibrary.org/obo/UBERON_0001216) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### jugular vein `http://purl.obolibrary.org/obo/UBERON_0004711`
+
+#### Added
+- [jugular vein](http://purl.obolibrary.org/obo/UBERON_0004711) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### keratinocyte `http://purl.obolibrary.org/obo/CL_0000312`
+
+#### Added
+- [keratinocyte](http://purl.obolibrary.org/obo/CL_0000312) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### keratocyte `http://purl.obolibrary.org/obo/CL_0002363`
+
+#### Added
+- [keratocyte](http://purl.obolibrary.org/obo/CL_0002363) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney `http://purl.obolibrary.org/obo/UBERON_0002113`
 #### Removed
-- [jugal bar](http://purl.obolibrary.org/obo/UBERON_0018332) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1f2675bb-5831-4804-9e83-de3be1eb2a73" 
+- [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A paired organ of the urinary tract which has the production of urine as its primary function." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://anatomy.uams.edu/anatomyhtml/kidney.html" 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Kidney" 
 
+#### Added
+- [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) [contributor](http://purl.org/dc/terms/contributor) [Ellen Quardokus](https://orcid.org/0000-0001-7655-4833) 
 
-### keel `http://purl.obolibrary.org/obo/UBERON_0018307`
-#### Removed
-- [keel](http://purl.obolibrary.org/obo/UBERON_0018307) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:ab8d6483-aa3e-480c-a8dc-339e727946fa" 
+- [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A paired organ of the urinary tract that produces urine and maintains bodily fluid homeostasis, blood pressure, pH levels, red blood cell production and skeleton mineralization." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://anatomy.uams.edu/anatomyhtml/kidney.html" 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://www.kidney.org/kidneydisease/top-5-jobs-kidneys-do" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25140012" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35003210" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Kidney" 
+
+- [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) [contributor](http://purl.org/dc/terms/contributor) [Sanjay Jain](https://orcid.org/0000-0003-2804-127X) 
 
 
 ### kidney afferent arteriole endothelial cell `http://purl.obolibrary.org/obo/CL_1001096`
-#### Removed
-- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) SubClassOf [interlobulary artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001216) 
 
 #### Added
-- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) SubClassOf [endothelial cell of artery](http://purl.obolibrary.org/obo/CL_1000413) 
-
-
-### kidney afferent arteriole smooth muscle cell `http://purl.obolibrary.org/obo/CL_1001097`
-#### Removed
-- [kidney afferent arteriole smooth muscle cell](http://purl.obolibrary.org/obo/CL_1001097) SubClassOf [interlobulary artery smooth muscle cell](http://purl.obolibrary.org/obo/CL_1001217) 
-
+- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### kidney arcuate artery `http://purl.obolibrary.org/obo/UBERON_0001552`
-#### Removed
-- [kidney arcuate artery](http://purl.obolibrary.org/obo/UBERON_0001552) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) 
-
-- [kidney arcuate artery](http://purl.obolibrary.org/obo/UBERON_0001552) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) 
 
 #### Added
 - [kidney arcuate artery](http://purl.obolibrary.org/obo/UBERON_0001552) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [kidney arcuate artery](http://purl.obolibrary.org/obo/UBERON_0001552) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) 
+
+### kidney arcuate vein `http://purl.obolibrary.org/obo/UBERON_0004719`
+
+#### Added
+- [kidney arcuate vein](http://purl.obolibrary.org/obo/UBERON_0004719) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### koniocellular cell `http://purl.obolibrary.org/obo/CL_4023187`
-#### Removed
-- [koniocellular cell](http://purl.obolibrary.org/obo/CL_4023187) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+### kidney capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1000892`
+
+#### Added
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
+### kidney capsule `http://purl.obolibrary.org/obo/UBERON_0002015`
 
-### labial cartilage `http://purl.obolibrary.org/obo/UBERON_0018333`
-#### Removed
-- [labial cartilage](http://purl.obolibrary.org/obo/UBERON_0018333) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:dab1de8a-9ec0-4e71-b7ec-8507bcbaccad" 
+#### Added
+- [kidney capsule](http://purl.obolibrary.org/obo/UBERON_0002015) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
 
+
+### kidney cell `http://purl.obolibrary.org/obo/CL_1000497`
+
+#### Added
+- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney collecting duct cell `http://purl.obolibrary.org/obo/CL_1001225`
+
+#### Added
+- [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney collecting duct epithelial cell `http://purl.obolibrary.org/obo/CL_1000454`
+
+#### Added
+- [kidney collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000454) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney collecting duct principal cell `http://purl.obolibrary.org/obo/CL_1001431`
+
+#### Added
+- [kidney collecting duct principal cell](http://purl.obolibrary.org/obo/CL_1001431) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney connecting tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000768`
+
+#### Added
+- [kidney connecting tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000768) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney connecting tubule principal cell `http://purl.obolibrary.org/obo/CL_4030018`
+
+#### Added
+- [kidney connecting tubule principal cell](http://purl.obolibrary.org/obo/CL_4030018) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney cortex artery cell `http://purl.obolibrary.org/obo/CL_1001045`
+
+#### Added
+- [kidney cortex artery cell](http://purl.obolibrary.org/obo/CL_1001045) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney cortex tubule cell `http://purl.obolibrary.org/obo/CL_1000615`
+
+#### Added
+- [kidney cortex tubule cell](http://purl.obolibrary.org/obo/CL_1000615) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney distal convoluted tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000849`
+
+#### Added
+- [kidney distal convoluted tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000849) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney efferent arteriole endothelial cell `http://purl.obolibrary.org/obo/CL_1001099`
+
+#### Added
+- [kidney efferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001099) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney epithelial cell `http://purl.obolibrary.org/obo/CL_0002518`
+
+#### Added
+- [kidney epithelial cell](http://purl.obolibrary.org/obo/CL_0002518) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney glomerular epithelial cell `http://purl.obolibrary.org/obo/CL_1000510`
+
+#### Added
+- [kidney glomerular epithelial cell](http://purl.obolibrary.org/obo/CL_1000510) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney interstitial cell `http://purl.obolibrary.org/obo/CL_1000500`
+
+#### Added
+- [kidney interstitial cell](http://purl.obolibrary.org/obo/CL_1000500) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney interstitial fibroblast `http://purl.obolibrary.org/obo/CL_1000692`
+
+#### Added
+- [kidney interstitial fibroblast](http://purl.obolibrary.org/obo/CL_1000692) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle ascending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001016`
+
+#### Added
+- [kidney loop of Henle ascending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001016) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle cortical thick ascending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001109`
+
+#### Added
+- [kidney loop of Henle cortical thick ascending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001109) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle epithelial cell `http://purl.obolibrary.org/obo/CL_1000909`
+
+#### Added
+- [kidney loop of Henle epithelial cell](http://purl.obolibrary.org/obo/CL_1000909) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle medullary thick ascending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001108`
+
+#### Added
+- [kidney loop of Henle medullary thick ascending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001108) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle thick ascending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001106`
+
+#### Added
+- [kidney loop of Henle thick ascending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001106) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle thin ascending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001107`
+
+#### Added
+- [kidney loop of Henle thin ascending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001107) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney loop of Henle thin descending limb epithelial cell `http://purl.obolibrary.org/obo/CL_1001111`
+
+#### Added
+- [kidney loop of Henle thin descending limb epithelial cell](http://purl.obolibrary.org/obo/CL_1001111) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney nerve cell `http://purl.obolibrary.org/obo/CL_1000606`
+
+#### Added
+- [kidney nerve cell](http://purl.obolibrary.org/obo/CL_1000606) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### kidney pelvis urothelial cell `http://purl.obolibrary.org/obo/CL_1000703`
+
+#### Added
+- [kidney pelvis urothelial cell](http://purl.obolibrary.org/obo/CL_1000703) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney proximal convoluted tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000838`
+
+#### Added
+- [kidney proximal convoluted tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000838) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### kidney proximal straight tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000839`
+
+#### Added
+- [kidney proximal straight tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000839) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### knee connective tissue `http://purl.obolibrary.org/obo/UBERON_0003577`
+
+#### Added
+- [knee connective tissue](http://purl.obolibrary.org/obo/UBERON_0003577) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of knee](http://purl.obolibrary.org/obo/UBERON_0003321) 
+
+
+### labyrinthine artery `http://purl.obolibrary.org/obo/UBERON_0018231`
+
+#### Added
+- [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### lacrimal artery `http://purl.obolibrary.org/obo/UBERON_0001622`
-#### Removed
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
 #### Added
 - [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### lacrimal canaliculus `http://purl.obolibrary.org/obo/UBERON_0001770`
-#### Removed
-- [lacrimal canaliculus](http://purl.obolibrary.org/obo/UBERON_0001770) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "TODO - resolve lacrimal canaliculus vs lacrimal duct" 
+### lacrimal nerve `http://purl.obolibrary.org/obo/UBERON_0011096`
 
 #### Added
-- [lacrimal canaliculus](http://purl.obolibrary.org/obo/UBERON_0001770) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lacrimal duct" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:1587341026" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://www.bartleby.com/lit-hub/anatomy-of-the-human-body/fig-896/" 
+- [lacrimal nerve](http://purl.obolibrary.org/obo/UBERON_0011096) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic nerve](http://purl.obolibrary.org/obo/UBERON_0000348) 
 
 
-### lacrimal drainage system `http://purl.obolibrary.org/obo/UBERON_0001850`
-#### Removed
-- [lacrimal drainage system](http://purl.obolibrary.org/obo/UBERON_0001850) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "TODO - resolve lacrimal canaliculus vs larcimal duct" 
-
-
-
-### lamina precerebralis `http://purl.obolibrary.org/obo/UBERON_3000263`
-#### Removed
-- [lamina precerebralis](http://purl.obolibrary.org/obo/UBERON_3000263) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### lacrimal vein `http://purl.obolibrary.org/obo/UBERON_0018256`
 
 #### Added
-- [lamina precerebralis](http://purl.obolibrary.org/obo/UBERON_3000263) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [lacrimal vein](http://purl.obolibrary.org/obo/UBERON_0018256) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### lamina superior `http://purl.obolibrary.org/obo/UBERON_3000264`
-#### Removed
-- [lamina superior](http://purl.obolibrary.org/obo/UBERON_3000264) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### lactocyte `http://purl.obolibrary.org/obo/CL_0002325`
 
 #### Added
-- [lamina superior](http://purl.obolibrary.org/obo/UBERON_3000264) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [lactocyte](http://purl.obolibrary.org/obo/CL_0002325) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### lateral amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002886`
-
-#### Added
-- [lateral amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [lateral amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002886) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### lateral condyle of quadrate `http://purl.obolibrary.org/obo/UBERON_0018334`
-#### Removed
-- [lateral condyle of quadrate](http://purl.obolibrary.org/obo/UBERON_0018334) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:65292031-1a72-4f0a-a385-a479e6a8625f" 
-
-
-
-### lateral dorsal aorta canal `http://purl.obolibrary.org/obo/UBERON_0018335`
-#### Removed
-- [lateral dorsal aorta canal](http://purl.obolibrary.org/obo/UBERON_0018335) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:6f18830d-27e9-4de6-a1a6-34253907bbfe" 
-
-
-
-### lateral geniculate body `http://purl.obolibrary.org/obo/UBERON_0001926`
+### lamina terminalis of cerebral hemisphere `http://purl.obolibrary.org/obo/UBERON_0015117`
 
 #### Added
-- [lateral geniculate body](http://purl.obolibrary.org/obo/UBERON_0001926) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [lateral geniculate body](http://purl.obolibrary.org/obo/UBERON_0001926) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [lamina terminalis of cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0015117) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lamina terminalis of neural tube](http://purl.obolibrary.org/obo/UBERON_0005078) 
 
 
-### lateral palpebral artery `http://purl.obolibrary.org/obo/UBERON_0014772`
-#### Removed
-- [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) 
+### large intestine crypt goblet cell `http://purl.obolibrary.org/obo/CL_1000321`
 
 #### Added
-- [lateral palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014772) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [large intestine crypt goblet cell](http://purl.obolibrary.org/obo/CL_1000321) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epithelium of crypt of Lieberkuhn of large intestine](http://purl.obolibrary.org/obo/UBERON_0022281) 
 
 
-### lateral posterior nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0002983`
+### large intestine goblet cell `http://purl.obolibrary.org/obo/CL_1000320`
 
 #### Added
-- [lateral posterior nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002983) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [lateral posterior nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002983) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [large intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000320) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### lateral ventricle neuron `http://purl.obolibrary.org/obo/CL_1001582`
+### large pre-B-II cell `http://purl.obolibrary.org/obo/CL_0000957`
+
+#### Added
+- [large pre-B-II cell](http://purl.obolibrary.org/obo/CL_0000957) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lateral forebrain bundle telencephalon `http://purl.obolibrary.org/obo/UBERON_2000779`
 #### Removed
-- [lateral ventricle neuron](http://purl.obolibrary.org/obo/CL_1001582) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+- [lateral forebrain bundle telencephalon](http://purl.obolibrary.org/obo/UBERON_2000779) SubClassOf [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) 
 
+#### Added
+- [lateral forebrain bundle telencephalon](http://purl.obolibrary.org/obo/UBERON_2000779) SubClassOf [white matter of telencephalon](http://purl.obolibrary.org/obo/UBERON_0011299) 
+
+
+### lateral ganglionic eminence derived neuron `http://purl.obolibrary.org/obo/CL_4023035`
+
+#### Added
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) [contributor](http://purl.org/dc/terms/contributor) "https://orcid.org/0000-0001-7258-9596" 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) [label](http://www.w3.org/2000/01/rdf-schema#label) "lateral ganglionic eminence derived neuron"@en 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) [contributor](http://purl.org/dc/terms/contributor) "https://orcid.org/0000-0002-7073-9172" 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "LGE-derived neuron" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:10377350" 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A neuron that is derived from a precursor cell in the lateral ganglion eminence." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "wikipediaversioned:Ganglionic_eminence&amp;oldid=1186824360" 
+
+- Class: [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) EquivalentTo [neuron](http://purl.obolibrary.org/obo/CL_0000540) and ([develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lateral ganglionic eminence](http://purl.obolibrary.org/obo/UBERON_0004025)) 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) SubClassOf [neuron](http://purl.obolibrary.org/obo/CL_0000540) 
+
+- [lateral ganglionic eminence derived neuron](http://purl.obolibrary.org/obo/CL_4023035) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lateral ganglionic eminence](http://purl.obolibrary.org/obo/UBERON_0004025) 
+
+
+### lateral incisor tooth `http://purl.obolibrary.org/obo/UBERON_0018552`
+
+#### Added
+- [lateral incisor tooth](http://purl.obolibrary.org/obo/UBERON_0018552) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [incisor region of dentition](http://purl.obolibrary.org/obo/UBERON_0018645) 
+
+
+### lateral line ganglion neuron `http://purl.obolibrary.org/obo/CL_2000031`
+
+#### Added
+- [lateral line ganglion neuron](http://purl.obolibrary.org/obo/CL_2000031) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### lateral marginal vein `http://purl.obolibrary.org/obo/UBERON_0001548`
+
+#### Added
+- [lateral marginal vein](http://purl.obolibrary.org/obo/UBERON_0001548) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lateral pterygoid nerve `http://purl.obolibrary.org/obo/UBERON_0013647`
+
+#### Added
+- [lateral pterygoid nerve](http://purl.obolibrary.org/obo/UBERON_0013647) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [buccal nerve](http://purl.obolibrary.org/obo/UBERON_0013646) 
+
+
+### lateral structure `http://purl.obolibrary.org/obo/UBERON_0015212`
+
+#### Added
+- [lateral structure](http://purl.obolibrary.org/obo/UBERON_0015212) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [material anatomical entity](http://purl.obolibrary.org/obo/UBERON_0000465) 
+
+
+### lateral thoracic artery `http://purl.obolibrary.org/obo/UBERON_0001396`
+
+#### Added
+- [lateral thoracic artery](http://purl.obolibrary.org/obo/UBERON_0001396) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lateral thoracic vein `http://purl.obolibrary.org/obo/UBERON_0002088`
+
+#### Added
+- [lateral thoracic vein](http://purl.obolibrary.org/obo/UBERON_0002088) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lateral vaginal canal `http://purl.obolibrary.org/obo/UBERON_0013523`
+
+#### Added
+- [lateral vaginal canal](http://purl.obolibrary.org/obo/UBERON_0013523) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lateroobronchus `http://purl.obolibrary.org/obo/UBERON_0012088`
+
+#### Added
+- [lateroobronchus](http://purl.obolibrary.org/obo/UBERON_0012088) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### left bundle branch `http://purl.obolibrary.org/obo/UBERON_0005986`
+
+#### Added
+- [left bundle branch](http://purl.obolibrary.org/obo/UBERON_0005986) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bundle of His](http://purl.obolibrary.org/obo/UBERON_0002353) 
+
+
+### left cardiac atrium `http://purl.obolibrary.org/obo/UBERON_0002079`
+
+#### Added
+- [left cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002079) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### left colic artery `http://purl.obolibrary.org/obo/UBERON_8410022`
-#### Removed
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
 
 #### Added
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-
 - [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
+### left colic vein `http://purl.obolibrary.org/obo/UBERON_8410017`
+
+#### Added
+- [left colic vein](http://purl.obolibrary.org/obo/UBERON_8410017) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### left gastric artery `http://purl.obolibrary.org/obo/UBERON_0001192`
-#### Removed
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
-
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
-
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
 - [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
 
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### left gastroepiploic artery `http://purl.obolibrary.org/obo/UBERON_0035830`
-#### Removed
-- [left gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035830) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-
-- [left gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035830) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [left gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035830) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### left gastric lymph node `http://purl.obolibrary.org/obo/UBERON_0037580`
 
 #### Added
-- [left gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035830) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [left gastric lymph node](http://purl.obolibrary.org/obo/UBERON_0037580) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### ligament of knee joint `http://purl.obolibrary.org/obo/UBERON_0011088`
-#### Removed
-- [ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0011088) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+### left horn of sinus venosus `http://purl.obolibrary.org/obo/UBERON_0005091`
 
-- [ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0011088) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+#### Added
+- [left horn of sinus venosus](http://purl.obolibrary.org/obo/UBERON_0005091) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sinus venosus](http://purl.obolibrary.org/obo/UBERON_0002063) 
 
+
+### left inguinal part of abdomen `http://purl.obolibrary.org/obo/UBERON_0035410`
+
+#### Added
+- [left inguinal part of abdomen](http://purl.obolibrary.org/obo/UBERON_0035410) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdomen](http://purl.obolibrary.org/obo/UBERON_0000916) 
+
+
+### left nipple `http://purl.obolibrary.org/obo/UBERON_0013772`
+
+#### Added
+- [left nipple](http://purl.obolibrary.org/obo/UBERON_0013772) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [body proper](http://purl.obolibrary.org/obo/UBERON_0013702) 
+
+
+### left pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001652`
+
+#### Added
+- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### left subcostal vein `http://purl.obolibrary.org/obo/UBERON_0035252`
+
+#### Added
+- [left subcostal vein](http://purl.obolibrary.org/obo/UBERON_0035252) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lens epithelial cell `http://purl.obolibrary.org/obo/CL_0002224`
+
+#### Added
+- [lens epithelial cell](http://purl.obolibrary.org/obo/CL_0002224) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lens fiber cell `http://purl.obolibrary.org/obo/CL_0011004`
+
+#### Added
+- [lens fiber cell](http://purl.obolibrary.org/obo/CL_0011004) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### leptomeningeal cell `http://purl.obolibrary.org/obo/CL_0000708`
+
+#### Added
+- [leptomeningeal cell](http://purl.obolibrary.org/obo/CL_0000708) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### leptomeninx `http://purl.obolibrary.org/obo/UBERON_0000391`
+
+#### Added
+- [leptomeninx](http://purl.obolibrary.org/obo/UBERON_0000391) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [endomeninx](http://purl.obolibrary.org/obo/UBERON_0007646) 
+
+
+### lesser sac cavity `http://purl.obolibrary.org/obo/UBERON_0005252`
+
+#### Added
+- [lesser sac cavity](http://purl.obolibrary.org/obo/UBERON_0005252) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lesser sac](http://purl.obolibrary.org/obo/UBERON_0001341) 
+
+
+### leukocyte `http://purl.obolibrary.org/obo/CL_0000738`
+
+#### Added
+- [leukocyte](http://purl.obolibrary.org/obo/CL_0000738) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### life-death temporal boundary `http://purl.obolibrary.org/obo/UBERON_0035944`
+
+#### Added
+- [life-death temporal boundary](http://purl.obolibrary.org/obo/UBERON_0035944) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) 
+
+
+### ligament of vertebral column `http://purl.obolibrary.org/obo/UBERON_0011136`
+
+#### Added
+- [ligament of vertebral column](http://purl.obolibrary.org/obo/UBERON_0011136) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### limb connective tissue `http://purl.obolibrary.org/obo/UBERON_0003587`
+
+#### Added
+- [limb connective tissue](http://purl.obolibrary.org/obo/UBERON_0003587) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [limb mesenchyme](http://purl.obolibrary.org/obo/UBERON_0009749) 
 
 
 ### lingual artery `http://purl.obolibrary.org/obo/UBERON_0001610`
-#### Removed
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "AA" 
 
 #### Added
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "AA" 
+- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) 
 
 
-### lingual cusp of tooth `http://purl.obolibrary.org/obo/UBERON_0016929`
-#### Removed
-- [lingual cusp of tooth](http://purl.obolibrary.org/obo/UBERON_0016929) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0ea3066e-0c22-417b-8ac4-91c2aacba792" 
-
-
-
-### lower deciduous premolar 5 `http://purl.obolibrary.org/obo/UBERON_0018281`
-#### Removed
-- [lower deciduous premolar 5](http://purl.obolibrary.org/obo/UBERON_0018281) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:ebd28885-699a-4637-9112-4ff68ddb6299" 
-
-
-
-### lower molar 3 `http://purl.obolibrary.org/obo/UBERON_0018282`
-#### Removed
-- [lower molar 3](http://purl.obolibrary.org/obo/UBERON_0018282) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:d55a3eec-6055-46eb-84c5-0e03f25b0122" 
-
-
-
-### lower motor neuron `http://purl.obolibrary.org/obo/CL_0008039`
-#### Removed
-- [lower motor neuron](http://purl.obolibrary.org/obo/CL_0008039) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### lower pharyngobranchial toothplate `http://purl.obolibrary.org/obo/UBERON_0018283`
-#### Removed
-- [lower pharyngobranchial toothplate](http://purl.obolibrary.org/obo/UBERON_0018283) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:25ba6edf-9fd6-45cc-ad06-7952cb6cd227" 
-
-
-
-### lower premolar 1 `http://purl.obolibrary.org/obo/UBERON_0018284`
-#### Removed
-- [lower premolar 1](http://purl.obolibrary.org/obo/UBERON_0018284) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:31f522c3-c02f-42a7-b998-4881dffb8536" 
-
-
-
-### lower premolar 2 `http://purl.obolibrary.org/obo/UBERON_0018285`
-#### Removed
-- [lower premolar 2](http://purl.obolibrary.org/obo/UBERON_0018285) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:51fc0a23-6be1-4341-9048-34863ba2cadd" 
-
-
-
-### lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002836`
+### lingual nerve `http://purl.obolibrary.org/obo/UBERON_0003721`
 
 #### Added
-- [lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002836) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002836) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [lingual nerve](http://purl.obolibrary.org/obo/UBERON_0003721) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) 
 
 
-### luminal layer of epithelium `http://purl.obolibrary.org/obo/UBERON_0011945`
+### lingual tonsil `http://purl.obolibrary.org/obo/UBERON_0007250`
 
 #### Added
-- [luminal layer of epithelium](http://purl.obolibrary.org/obo/UBERON_0011945) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [luminal layer of epithelium](http://purl.obolibrary.org/obo/UBERON_0011945) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [lingual tonsil](http://purl.obolibrary.org/obo/UBERON_0007250) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [posterior part of tongue](http://purl.obolibrary.org/obo/UBERON_0010033) 
 
 
-### lymphatic capillary `http://purl.obolibrary.org/obo/UBERON_0006842`
+### lingual vein `http://purl.obolibrary.org/obo/UBERON_0006634`
 
 #### Added
-- [lymphatic capillary](http://purl.obolibrary.org/obo/UBERON_0006842) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [lymphatic capillary](http://purl.obolibrary.org/obo/UBERON_0006842) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [lingual vein](http://purl.obolibrary.org/obo/UBERON_0006634) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### macula `http://purl.obolibrary.org/obo/UBERON_0000054`
-
-#### Added
-- [macula](http://purl.obolibrary.org/obo/UBERON_0000054) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [macula](http://purl.obolibrary.org/obo/UBERON_0000054) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### magnocellular neurosecretory cell `http://purl.obolibrary.org/obo/CL_0011003`
+### lipid binding `http://purl.obolibrary.org/obo/GO_0008289`
 #### Removed
-- [magnocellular neurosecretory cell](http://purl.obolibrary.org/obo/CL_0011003) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### main ciliary ganglion `http://purl.obolibrary.org/obo/UBERON_0002058`
+- [lipid binding](http://purl.obolibrary.org/obo/GO_0008289) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [main ciliary ganglion](http://purl.obolibrary.org/obo/UBERON_0002058) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [main ciliary ganglion](http://purl.obolibrary.org/obo/UBERON_0002058) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [lipid binding](http://purl.obolibrary.org/obo/GO_0008289) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### mammalian cervical vertebra 3 `http://purl.obolibrary.org/obo/UBERON_0004612`
+### lipid metabolic process `http://purl.obolibrary.org/obo/GO_0006629`
 #### Removed
-- [mammalian cervical vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004612) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "third cervical vertebra of axial skeleton" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:aeb6ac70-fd18-403d-a0b9-dd03942c7812" 
-
-- [mammalian cervical vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004612) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "cervical vertebrae 3" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:aeb6ac70-fd18-403d-a0b9-dd03942c7812" 
+- [lipid metabolic process](http://purl.obolibrary.org/obo/GO_0006629) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [mammalian cervical vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004612) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "cervical vertebrae 3" 
-
-- [mammalian cervical vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004612) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "third cervical vertebra of axial skeleton" 
+- [lipid metabolic process](http://purl.obolibrary.org/obo/GO_0006629) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### mammary gland `http://purl.obolibrary.org/obo/UBERON_0001911`
+### liver dendritic cell `http://purl.obolibrary.org/obo/CL_2000055`
 
 #### Added
-- [mammary gland](http://purl.obolibrary.org/obo/UBERON_0001911) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [mammary gland](http://purl.obolibrary.org/obo/UBERON_0001911) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [liver dendritic cell](http://purl.obolibrary.org/obo/CL_2000055) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### mammillary body `http://purl.obolibrary.org/obo/UBERON_0002206`
+### lobar bronchus `http://purl.obolibrary.org/obo/UBERON_0002183`
 
 #### Added
-- [mammillary body](http://purl.obolibrary.org/obo/UBERON_0002206) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [mammillary body](http://purl.obolibrary.org/obo/UBERON_0002206) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [lobar bronchus](http://purl.obolibrary.org/obo/UBERON_0002183) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### mammillary body neuron `http://purl.obolibrary.org/obo/CL_4023074`
+### lobar bronchus connective tissue `http://purl.obolibrary.org/obo/UBERON_0003591`
+
+#### Added
+- [lobar bronchus connective tissue](http://purl.obolibrary.org/obo/UBERON_0003591) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lobar bronchus mesenchyme](http://purl.obolibrary.org/obo/UBERON_0004884) 
+
+
+### lobe of thyroid gland `http://purl.obolibrary.org/obo/UBERON_0001118`
 #### Removed
-- [mammillary body neuron](http://purl.obolibrary.org/obo/CL_4023074) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### mammillothalamic tract of hypothalamus `http://purl.obolibrary.org/obo/UBERON_0002990`
+- [lobe of thyroid gland](http://purl.obolibrary.org/obo/UBERON_0001118) SubClassOf [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) 
 
 #### Added
-- [mammillothalamic tract of hypothalamus](http://purl.obolibrary.org/obo/UBERON_0002990) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [mammillothalamic tract of hypothalamus](http://purl.obolibrary.org/obo/UBERON_0002990) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [lobe of thyroid gland](http://purl.obolibrary.org/obo/UBERON_0001118) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
 
 
-### mandibular symphyseal tooth `http://purl.obolibrary.org/obo/UBERON_0018299`
+### long ciliary nerve `http://purl.obolibrary.org/obo/UBERON_0022301`
+
+#### Added
+- [long ciliary nerve](http://purl.obolibrary.org/obo/UBERON_0022301) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nasociliary nerve](http://purl.obolibrary.org/obo/UBERON_0022300) 
+
+
+### longus colli muscle `http://purl.obolibrary.org/obo/UBERON_0001121`
+
+#### Added
+- [longus colli muscle](http://purl.obolibrary.org/obo/UBERON_0001121) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lower arm connective tissue `http://purl.obolibrary.org/obo/UBERON_0004268`
+
+#### Added
+- [lower arm connective tissue](http://purl.obolibrary.org/obo/UBERON_0004268) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of forearm](http://purl.obolibrary.org/obo/UBERON_0003327) 
+
+
+### lower leg connective tissue `http://purl.obolibrary.org/obo/UBERON_0004270`
+
+#### Added
+- [lower leg connective tissue](http://purl.obolibrary.org/obo/UBERON_0004270) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lower leg mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005259) 
+
+
+### lumbar rib `http://purl.obolibrary.org/obo/UBERON_0018145`
+
+#### Added
+- [lumbar rib](http://purl.obolibrary.org/obo/UBERON_0018145) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lumbar vertebra 2 `http://purl.obolibrary.org/obo/UBERON_0004618`
+
+#### Added
+- [lumbar vertebra 2](http://purl.obolibrary.org/obo/UBERON_0004618) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lumbar vertebra 3 `http://purl.obolibrary.org/obo/UBERON_0004619`
+
+#### Added
+- [lumbar vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004619) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lumbar vertebra 4 `http://purl.obolibrary.org/obo/UBERON_0004620`
+
+#### Added
+- [lumbar vertebra 4](http://purl.obolibrary.org/obo/UBERON_0004620) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lumbar vertebra 5 `http://purl.obolibrary.org/obo/UBERON_0004621`
+
+#### Added
+- [lumbar vertebra 5](http://purl.obolibrary.org/obo/UBERON_0004621) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lumen of central canal of spinal cord `http://purl.obolibrary.org/obo/UBERON_0009572`
+
+#### Added
+- [lumen of central canal of spinal cord](http://purl.obolibrary.org/obo/UBERON_0009572) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neural tube lumen](http://purl.obolibrary.org/obo/UBERON_0003842) 
+
+
+### lumen of epithelial sac `http://purl.obolibrary.org/obo/UBERON_0007473`
+
+#### Added
+- [lumen of epithelial sac](http://purl.obolibrary.org/obo/UBERON_0007473) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epithelial sac](http://purl.obolibrary.org/obo/UBERON_0007499) 
+
+
+### lumen of hemipenial sheath `http://purl.obolibrary.org/obo/UBERON_0017160`
+
+#### Added
+- [lumen of hemipenial sheath](http://purl.obolibrary.org/obo/UBERON_0017160) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hemipenal sheath](http://purl.obolibrary.org/obo/UBERON_4100111) 
+
+
+### lumen of intestine `http://purl.obolibrary.org/obo/UBERON_0018543`
+
+#### Added
+- [lumen of intestine](http://purl.obolibrary.org/obo/UBERON_0018543) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+
+
+### luminal epithelial cell of mammary gland `http://purl.obolibrary.org/obo/CL_0002326`
+
+#### Added
+- [luminal epithelial cell of mammary gland](http://purl.obolibrary.org/obo/CL_0002326) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung ciliated cell `http://purl.obolibrary.org/obo/CL_1000271`
+
+#### Added
+- [lung ciliated cell](http://purl.obolibrary.org/obo/CL_1000271) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung connective tissue `http://purl.obolibrary.org/obo/UBERON_0000114`
+
+#### Added
+- [lung connective tissue](http://purl.obolibrary.org/obo/UBERON_0000114) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [lung mesenchyme](http://purl.obolibrary.org/obo/UBERON_0004883) 
+
+
+### lung goblet cell `http://purl.obolibrary.org/obo/CL_1000143`
+
+#### Added
+- [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung macrophage `http://purl.obolibrary.org/obo/CL_1001603`
+
+#### Added
+- [lung macrophage](http://purl.obolibrary.org/obo/CL_1001603) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung microvascular endothelial cell `http://purl.obolibrary.org/obo/CL_2000016`
+
+#### Added
+- [lung microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000016) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung neuroendocrine cell `http://purl.obolibrary.org/obo/CL_1000223`
+
+#### Added
+- [lung neuroendocrine cell](http://purl.obolibrary.org/obo/CL_1000223) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [lung neuroendocrine cell](http://purl.obolibrary.org/obo/CL_1000223) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### lung pericyte `http://purl.obolibrary.org/obo/CL_0009089`
+
+#### Added
+- [lung pericyte](http://purl.obolibrary.org/obo/CL_0009089) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lung secretory cell `http://purl.obolibrary.org/obo/CL_1000272`
+
+#### Added
+- [lung secretory cell](http://purl.obolibrary.org/obo/CL_1000272) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lymph `http://purl.obolibrary.org/obo/UBERON_0002391`
+
+#### Added
+- [lymph](http://purl.obolibrary.org/obo/UBERON_0002391) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [interstitial fluid](http://purl.obolibrary.org/obo/UBERON_0000913) 
+
+
+### lymph node artery `http://purl.obolibrary.org/obo/UBERON_8410034`
+
+#### Added
+- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lymph node vein `http://purl.obolibrary.org/obo/UBERON_8410033`
+
+#### Added
+- [lymph node vein](http://purl.obolibrary.org/obo/UBERON_8410033) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### lymphocyte `http://purl.obolibrary.org/obo/CL_0000542`
 #### Removed
-- [mandibular symphyseal tooth](http://purl.obolibrary.org/obo/UBERON_0018299) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2f99ad4b-d842-4ae9-8886-87ee98811fe5" 
+- [lymphocyte](http://purl.obolibrary.org/obo/CL_0000542) EquivalentTo [leukocyte](http://purl.obolibrary.org/obo/CL_0000738) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [neutrophillic cytoplasm](http://purl.obolibrary.org/obo/CL_0017500)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [heterochromatin](http://purl.obolibrary.org/obo/GO_0000792)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [mononucleate](http://purl.obolibrary.org/obo/PATO_0001407)) 
 
+- [lymphocyte](http://purl.obolibrary.org/obo/CL_0000542) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) 
+
+#### Added
+- [lymphocyte](http://purl.obolibrary.org/obo/CL_0000542) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [lymphocyte](http://purl.obolibrary.org/obo/CL_0000542) EquivalentTo [leukocyte](http://purl.obolibrary.org/obo/CL_0000738) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [neutrophillic cytoplasm](http://purl.obolibrary.org/obo/CL_0017500)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [heterochromatin](http://purl.obolibrary.org/obo/GO_0000792)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [mononucleate](http://purl.obolibrary.org/obo/PATO_0001407)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072)) 
+
+- [lymphocyte](http://purl.obolibrary.org/obo/CL_0000542) SubClassOf [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) 
+
+
+### lymphoid lineage restricted progenitor cell `http://purl.obolibrary.org/obo/CL_0000838`
+
+#### Added
+- [lymphoid lineage restricted progenitor cell](http://purl.obolibrary.org/obo/CL_0000838) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### lytic vacuole membrane `http://purl.obolibrary.org/obo/GO_0098852`
+
+#### Added
+- [lytic vacuole membrane](http://purl.obolibrary.org/obo/GO_0098852) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lytic vacuole](http://purl.obolibrary.org/obo/GO_0000323) 
+
+
+### macroglial cell `http://purl.obolibrary.org/obo/CL_0000126`
+
+#### Added
+- [macroglial cell](http://purl.obolibrary.org/obo/CL_0000126) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### macromolecule metabolic process `http://purl.obolibrary.org/obo/GO_0043170`
+
+#### Added
+- [macromolecule metabolic process](http://purl.obolibrary.org/obo/GO_0043170) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [macromolecule metabolic process](http://purl.obolibrary.org/obo/GO_0043170) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+
+### macrophage `http://purl.obolibrary.org/obo/CL_0000235`
+
+#### Added
+- [macrophage](http://purl.obolibrary.org/obo/CL_0000235) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### macrophage dendritic cell progenitor `http://purl.obolibrary.org/obo/CL_0002009`
+
+#### Added
+- [macrophage dendritic cell progenitor](http://purl.obolibrary.org/obo/CL_0002009) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### macula densa epithelial cell `http://purl.obolibrary.org/obo/CL_1000850`
+
+#### Added
+- [macula densa epithelial cell](http://purl.obolibrary.org/obo/CL_1000850) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### main bronchus `http://purl.obolibrary.org/obo/UBERON_0002182`
+
+#### Added
+- [main bronchus](http://purl.obolibrary.org/obo/UBERON_0002182) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### main bronchus connective tissue `http://purl.obolibrary.org/obo/UBERON_0003590`
+
+#### Added
+- [main bronchus connective tissue](http://purl.obolibrary.org/obo/UBERON_0003590) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of main bronchus](http://purl.obolibrary.org/obo/UBERON_0009504) 
+
+
+### male germ cell `http://purl.obolibrary.org/obo/CL_0000015`
+
+#### Added
+- [male germ cell](http://purl.obolibrary.org/obo/CL_0000015) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### malleal ligament `http://purl.obolibrary.org/obo/UBERON_0018156`
+
+#### Added
+- [malleal ligament](http://purl.obolibrary.org/obo/UBERON_0018156) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### mammary bud `http://purl.obolibrary.org/obo/UBERON_0005333`
+
+#### Added
+- [mammary bud](http://purl.obolibrary.org/obo/UBERON_0005333) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mammary placode](http://purl.obolibrary.org/obo/UBERON_0005311) 
+
+
+### mammary gland connective tissue `http://purl.obolibrary.org/obo/UBERON_0003584`
+
+#### Added
+- [mammary gland connective tissue](http://purl.obolibrary.org/obo/UBERON_0003584) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of mammary gland](http://purl.obolibrary.org/obo/UBERON_0003326) 
+
+
+### mammary gland epithelial cell `http://purl.obolibrary.org/obo/CL_0002327`
+
+#### Added
+- [mammary gland epithelial cell](http://purl.obolibrary.org/obo/CL_0002327) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mammillotectal axonal tract `http://purl.obolibrary.org/obo/UBERON_0006697`
+
+#### Added
+- [mammillotectal axonal tract](http://purl.obolibrary.org/obo/UBERON_0006697) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### mammillotegmental axonal tract `http://purl.obolibrary.org/obo/UBERON_0006698`
+
+#### Added
+- [mammillotegmental axonal tract](http://purl.obolibrary.org/obo/UBERON_0006698) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### mandibular nerve `http://purl.obolibrary.org/obo/UBERON_0000375`
+
+#### Added
+- [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0001645) 
+
+
+### manual digit connective tissue `http://purl.obolibrary.org/obo/UBERON_0003597`
+
+#### Added
+- [manual digit connective tissue](http://purl.obolibrary.org/obo/UBERON_0003597) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [manual digit mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005257) 
+
+
+### manus connective tissue `http://purl.obolibrary.org/obo/UBERON_0003598`
+
+#### Added
+- [manus connective tissue](http://purl.obolibrary.org/obo/UBERON_0003598) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of handplate](http://purl.obolibrary.org/obo/UBERON_0009523) 
 
 
 ### masseteric artery `http://purl.obolibrary.org/obo/UBERON_0013648`
-#### Removed
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
 
 #### Added
 - [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### maxillary shank `http://purl.obolibrary.org/obo/UBERON_0018336`
-#### Removed
-- [maxillary shank](http://purl.obolibrary.org/obo/UBERON_0018336) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:d176af29-e3f6-4cfa-a8ee-d26740652bfd" 
-
-
-
-### medial amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002892`
+### masseteric nerve `http://purl.obolibrary.org/obo/UBERON_0011321`
 
 #### Added
-- [medial amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002892) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [masseteric nerve](http://purl.obolibrary.org/obo/UBERON_0011321) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) 
 
-- [medial amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002892) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### masseteric vein `http://purl.obolibrary.org/obo/UBERON_0001674`
+
+#### Added
+- [masseteric vein](http://purl.obolibrary.org/obo/UBERON_0001674) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### mature B cell `http://purl.obolibrary.org/obo/CL_0000785`
+
+#### Added
+- [mature B cell](http://purl.obolibrary.org/obo/CL_0000785) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### maxillary artery `http://purl.obolibrary.org/obo/UBERON_0001616`
+
+#### Added
+- [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+- [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118) 
+
+
+### maxillary nerve `http://purl.obolibrary.org/obo/UBERON_0000377`
+
+#### Added
+- [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0001645) 
+
+
+### maxillary vein `http://purl.obolibrary.org/obo/UBERON_0001660`
+
+#### Added
+- [maxillary vein](http://purl.obolibrary.org/obo/UBERON_0001660) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### maxillomandibular part of trigeminal ganglion complex `http://purl.obolibrary.org/obo/UBERON_0035601`
+
+#### Added
+- [maxillomandibular part of trigeminal ganglion complex](http://purl.obolibrary.org/obo/UBERON_0035601) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [maxillomandibular placode](http://purl.obolibrary.org/obo/UBERON_0035598) 
 
 
 ### medial circumflex femoral artery `http://purl.obolibrary.org/obo/UBERON_0001356`
-#### Removed
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) 
-
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [deep femoral artery](http://purl.obolibrary.org/obo/UBERON_0001355) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### medial condyle of quadrate `http://purl.obolibrary.org/obo/UBERON_0018337`
-#### Removed
-- [medial condyle of quadrate](http://purl.obolibrary.org/obo/UBERON_0018337) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0261cdfc-5e94-4560-8b5c-488f9f2194ca" 
-
-
-
-### medial cotyla `http://purl.obolibrary.org/obo/UBERON_0018338`
-#### Removed
-- [medial cotyla](http://purl.obolibrary.org/obo/UBERON_0018338) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2d15fa5d-566b-4428-83e4-753ae839a965" 
-
-
-
-### medial dorsal nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0002739`
+### medial circumflex femoral vein `http://purl.obolibrary.org/obo/UBERON_0035234`
 
 #### Added
-- [medial dorsal nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002739) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [medial dorsal nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002739) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [medial circumflex femoral vein](http://purl.obolibrary.org/obo/UBERON_0035234) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### medial geniculate body `http://purl.obolibrary.org/obo/UBERON_0001927`
-
-#### Added
-- [medial geniculate body](http://purl.obolibrary.org/obo/UBERON_0001927) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [medial geniculate body](http://purl.obolibrary.org/obo/UBERON_0001927) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### medial inferior prenasal cartilage `http://purl.obolibrary.org/obo/UBERON_3000290`
+### medial forebrain bundle telencephalon `http://purl.obolibrary.org/obo/UBERON_2000910`
 #### Removed
-- [medial inferior prenasal cartilage](http://purl.obolibrary.org/obo/UBERON_3000290) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### medial palpebral artery `http://purl.obolibrary.org/obo/UBERON_0014773`
-#### Removed
-- [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [medial forebrain bundle telencephalon](http://purl.obolibrary.org/obo/UBERON_2000910) SubClassOf [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) 
 
 #### Added
-- [medial palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014773) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [medial forebrain bundle telencephalon](http://purl.obolibrary.org/obo/UBERON_2000910) SubClassOf [white matter of telencephalon](http://purl.obolibrary.org/obo/UBERON_0011299) 
 
 
-### medial part of basal amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002889`
-
-#### Added
-- [medial part of basal amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002889) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [medial part of basal amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002889) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### medial plantar artery `http://purl.obolibrary.org/obo/UBERON_0001541`
-#### Removed
-- [medial plantar artery](http://purl.obolibrary.org/obo/UBERON_0001541) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### medial marginal vein `http://purl.obolibrary.org/obo/UBERON_0001550`
 
 #### Added
-- [medial plantar artery](http://purl.obolibrary.org/obo/UBERON_0001541) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [medial marginal vein](http://purl.obolibrary.org/obo/UBERON_0001550) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### median prenasal process `http://purl.obolibrary.org/obo/UBERON_3000294`
-#### Removed
-- [median prenasal process](http://purl.obolibrary.org/obo/UBERON_3000294) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### medial nasal prominence `http://purl.obolibrary.org/obo/UBERON_0004068`
 
 #### Added
-- [median prenasal process](http://purl.obolibrary.org/obo/UBERON_3000294) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [medial nasal prominence](http://purl.obolibrary.org/obo/UBERON_0004068) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [embryonic head](http://purl.obolibrary.org/obo/UBERON_0008816) 
+
+
+### median nerve `http://purl.obolibrary.org/obo/UBERON_0001148`
+
+#### Added
+- [median nerve](http://purl.obolibrary.org/obo/UBERON_0001148) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [brachial nerve plexus](http://purl.obolibrary.org/obo/UBERON_0001814) 
+
+
+### median sacral vein `http://purl.obolibrary.org/obo/UBERON_0006687`
+
+#### Added
+- [median sacral vein](http://purl.obolibrary.org/obo/UBERON_0006687) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### median vaginal canal `http://purl.obolibrary.org/obo/UBERON_0013524`
+
+#### Added
+- [median vaginal canal](http://purl.obolibrary.org/obo/UBERON_0013524) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### medulla of organ `http://purl.obolibrary.org/obo/UBERON_0000958`
+
+#### Added
+- [medulla of organ](http://purl.obolibrary.org/obo/UBERON_0000958) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### medullary arteriole of lymph node `http://purl.obolibrary.org/obo/UBERON_8410035`
-#### Removed
-- [medullary arteriole of lymph node](http://purl.obolibrary.org/obo/UBERON_8410035) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) 
-
-- [medullary arteriole of lymph node](http://purl.obolibrary.org/obo/UBERON_8410035) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) 
 
 #### Added
 - [medullary arteriole of lymph node](http://purl.obolibrary.org/obo/UBERON_8410035) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [medullary arteriole of lymph node](http://purl.obolibrary.org/obo/UBERON_8410035) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) 
+
+### medullary thymic epithelial cell `http://purl.obolibrary.org/obo/CL_0002365`
+
+#### Added
+- [medullary thymic epithelial cell](http://purl.obolibrary.org/obo/CL_0002365) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### meniscus `http://purl.obolibrary.org/obo/UBERON_0000387`
+### megakaryocyte `http://purl.obolibrary.org/obo/CL_0000556`
+
+#### Added
+- [megakaryocyte](http://purl.obolibrary.org/obo/CL_0000556) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### megakaryocyte progenitor cell `http://purl.obolibrary.org/obo/CL_0000553`
+
+#### Added
+- [megakaryocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000553) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### megakaryocyte-erythroid progenitor cell `http://purl.obolibrary.org/obo/CL_0000050`
+
+#### Added
+- [megakaryocyte-erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000050) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### melanocyte `http://purl.obolibrary.org/obo/CL_0000148`
+
+#### Added
+- [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### melanocyte of skin `http://purl.obolibrary.org/obo/CL_1000458`
+
+#### Added
+- [melanocyte of skin](http://purl.obolibrary.org/obo/CL_1000458) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### membrane organization `http://purl.obolibrary.org/obo/GO_0061024`
 #### Removed
-- [meniscus](http://purl.obolibrary.org/obo/UBERON_0000387) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [membrane organization](http://purl.obolibrary.org/obo/GO_0061024) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
-- [meniscus](http://purl.obolibrary.org/obo/UBERON_0000387) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+#### Added
+- [membrane organization](http://purl.obolibrary.org/obo/GO_0061024) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
+
+### memory B cell `http://purl.obolibrary.org/obo/CL_0000787`
+
+#### Added
+- [memory B cell](http://purl.obolibrary.org/obo/CL_0000787) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### meningeal artery `http://purl.obolibrary.org/obo/UBERON_0003474`
+
+#### Added
+- [meningeal artery](http://purl.obolibrary.org/obo/UBERON_0003474) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### meningeal branch of mandibular nerve `http://purl.obolibrary.org/obo/UBERON_0036143`
+
+#### Added
+- [meningeal branch of mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0036143) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandibular nerve](http://purl.obolibrary.org/obo/UBERON_0000375) 
+
+
+### meningeal branch of spinal nerve `http://purl.obolibrary.org/obo/UBERON_0017641`
+
+#### Added
+- [meningeal branch of spinal nerve](http://purl.obolibrary.org/obo/UBERON_0017641) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spinal nerve trunk](http://purl.obolibrary.org/obo/UBERON_0005476) 
+
+
+### meningeal vein `http://purl.obolibrary.org/obo/UBERON_0018251`
+
+#### Added
+- [meningeal vein](http://purl.obolibrary.org/obo/UBERON_0018251) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### meninx `http://purl.obolibrary.org/obo/UBERON_0002360`
+
+#### Added
+- [meninx](http://purl.obolibrary.org/obo/UBERON_0002360) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future meninx](http://purl.obolibrary.org/obo/UBERON_0007645) 
+
+
+### meninx of hindbrain `http://purl.obolibrary.org/obo/UBERON_0003291`
+
+#### Added
+- [meninx of hindbrain](http://purl.obolibrary.org/obo/UBERON_0003291) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future hindbrain meninx](http://purl.obolibrary.org/obo/UBERON_0010091) 
 
 
 ### mental artery `http://purl.obolibrary.org/obo/UBERON_0001617`
-#### Removed
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693)) 
-
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693) 
-
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693) 
 
 #### Added
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693)) 
-
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693) 
-
 - [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### mesenchyme of nasal septum `http://purl.obolibrary.org/obo/UBERON_0003415`
-#### Removed
-- [mesenchyme of nasal septum](http://purl.obolibrary.org/obo/UBERON_0003415) SubClassOf [mesenchyme derived from neural crest](http://purl.obolibrary.org/obo/UBERON_0014387) 
+### mental nerve `http://purl.obolibrary.org/obo/UBERON_0018406`
 
 #### Added
-- [mesenchyme of nasal septum](http://purl.obolibrary.org/obo/UBERON_0003415) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [mental nerve](http://purl.obolibrary.org/obo/UBERON_0018406) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior alveolar nerve](http://purl.obolibrary.org/obo/UBERON_0018405) 
 
 
-### mesenchyme of sublingual gland `http://purl.obolibrary.org/obo/UBERON_0003420`
-#### Removed
-- [mesenchyme of sublingual gland](http://purl.obolibrary.org/obo/UBERON_0003420) SubClassOf [head mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005253) 
+### mentalis muscle `http://purl.obolibrary.org/obo/UBERON_0008596`
 
 #### Added
-- [mesenchyme of sublingual gland](http://purl.obolibrary.org/obo/UBERON_0003420) SubClassOf [mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003104) 
+- [mentalis muscle](http://purl.obolibrary.org/obo/UBERON_0008596) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199) 
 
 
-### mesenchyme of submandibular gland primordium `http://purl.obolibrary.org/obo/UBERON_0009539`
-
-#### Added
-- [mesenchyme of submandibular gland primordium](http://purl.obolibrary.org/obo/UBERON_0009539) SubClassOf [embryonic tissue](http://purl.obolibrary.org/obo/UBERON_0005291) 
-
-
-### mesenchyme of tongue `http://purl.obolibrary.org/obo/UBERON_0003416`
-#### Removed
-- [mesenchyme of tongue](http://purl.obolibrary.org/obo/UBERON_0003416) SubClassOf [head mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005253) 
+### mesangial cell `http://purl.obolibrary.org/obo/CL_0000650`
 
 #### Added
-- [mesenchyme of tongue](http://purl.obolibrary.org/obo/UBERON_0003416) SubClassOf [mesenchyme](http://purl.obolibrary.org/obo/UBERON_0003104) 
+- [mesangial cell](http://purl.obolibrary.org/obo/CL_0000650) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### metotic fissure `http://purl.obolibrary.org/obo/UBERON_0018339`
-#### Removed
-- [metotic fissure](http://purl.obolibrary.org/obo/UBERON_0018339) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:41980771-8a82-40d2-877e-3156cc80857b" 
-
-
-
-### midbody melanophore spot `http://purl.obolibrary.org/obo/UBERON_0018340`
-#### Removed
-- [midbody melanophore spot](http://purl.obolibrary.org/obo/UBERON_0018340) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:49c8535b-5a5e-42ca-8c77-945b254605f5" 
-
-
-
-### midbrain dopaminergic neuron `http://purl.obolibrary.org/obo/CL_2000097`
-#### Removed
-- [midbrain dopaminergic neuron](http://purl.obolibrary.org/obo/CL_2000097) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### midbrain-derived inhibitory neuron `http://purl.obolibrary.org/obo/CL_4023079`
-#### Removed
-- [midbrain-derived inhibitory neuron](http://purl.obolibrary.org/obo/CL_4023079) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### middle cerebral artery `http://purl.obolibrary.org/obo/UBERON_0001627`
-#### Removed
-- [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
-
-- [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+### mesencephalic artery `http://purl.obolibrary.org/obo/UBERON_0001634`
 
 #### Added
-- [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "WP" 
+- [mesencephalic artery](http://purl.obolibrary.org/obo/UBERON_0001634) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### middle cervical ganglion `http://purl.obolibrary.org/obo/UBERON_0001990`
+### mesenchymal cell `http://purl.obolibrary.org/obo/CL_0008019`
 
 #### Added
-- [middle cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001990) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [mesenchymal cell](http://purl.obolibrary.org/obo/CL_0008019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [middle cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001990) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### mesenchymal stem cell `http://purl.obolibrary.org/obo/CL_0000134`
+
+#### Added
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesenchymal stem cell of adipose tissue `http://purl.obolibrary.org/obo/CL_0002570`
+
+#### Added
+- [mesenchymal stem cell of adipose tissue](http://purl.obolibrary.org/obo/CL_0002570) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesenteric vein `http://purl.obolibrary.org/obo/UBERON_0005617`
+
+#### Added
+- [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### mesoderm `http://purl.obolibrary.org/obo/UBERON_0000926`
+
+#### Added
+- [mesoderm](http://purl.obolibrary.org/obo/UBERON_0000926) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive mesoderm](http://purl.obolibrary.org/obo/UBERON_0006603) 
+
+
+### mesodermal cell `http://purl.obolibrary.org/obo/CL_0000222`
+
+#### Added
+- [mesodermal cell](http://purl.obolibrary.org/obo/CL_0000222) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesonephric duct lumen `http://purl.obolibrary.org/obo/UBERON_0011574`
+
+#### Added
+- [mesonephric duct lumen](http://purl.obolibrary.org/obo/UBERON_0011574) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mesonephric duct](http://purl.obolibrary.org/obo/UBERON_0003074) 
+
+
+### mesothelial cell `http://purl.obolibrary.org/obo/CL_0000077`
+
+#### Added
+- [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesothelial cell of epicardium `http://purl.obolibrary.org/obo/CL_0011019`
+
+#### Added
+- [mesothelial cell of epicardium](http://purl.obolibrary.org/obo/CL_0011019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesothelial cell of pleura `http://purl.obolibrary.org/obo/CL_1000491`
+
+#### Added
+- [mesothelial cell of pleura](http://purl.obolibrary.org/obo/CL_1000491) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mesothelial cell of visceral pleura `http://purl.obolibrary.org/obo/CL_1000493`
+
+#### Added
+- [mesothelial cell of visceral pleura](http://purl.obolibrary.org/obo/CL_1000493) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### metanephric nephron `http://purl.obolibrary.org/obo/UBERON_0005110`
+
+#### Added
+- [metanephric nephron](http://purl.obolibrary.org/obo/UBERON_0005110) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [primitive metanephric nephron](http://purl.obolibrary.org/obo/UBERON_0010535) 
+
+
+### metencephalon `http://purl.obolibrary.org/obo/UBERON_0001895`
+
+#### Added
+- [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future metencephalon](http://purl.obolibrary.org/obo/UBERON_0010092) 
+
+
+### midbrain `http://purl.obolibrary.org/obo/UBERON_0001891`
+
+#### Added
+- [midbrain](http://purl.obolibrary.org/obo/UBERON_0001891) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive midbrain](http://purl.obolibrary.org/obo/UBERON_0009616) 
+
+
+### midbrain hindbrain boundary neural plate `http://purl.obolibrary.org/obo/UBERON_0009615`
+
+#### Added
+- [midbrain hindbrain boundary neural plate](http://purl.obolibrary.org/obo/UBERON_0009615) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive midbrain hindbrain boundary](http://purl.obolibrary.org/obo/UBERON_0007281) 
+
+
+### midbrain-hindbrain boundary `http://purl.obolibrary.org/obo/UBERON_0003052`
+
+#### Added
+- [midbrain-hindbrain boundary](http://purl.obolibrary.org/obo/UBERON_0003052) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [midbrain hindbrain boundary neural plate](http://purl.obolibrary.org/obo/UBERON_0009615) 
 
 
 ### middle colic artery `http://purl.obolibrary.org/obo/UBERON_0001196`
-#### Removed
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
-
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
 
 #### Added
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
-
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) 
-
 - [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-
-### middle meningeal artery `http://purl.obolibrary.org/obo/UBERON_0010250`
-#### Removed
-- [middle meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010250) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [middle meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010250) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### middle colic vein `http://purl.obolibrary.org/obo/UBERON_0001218`
 
 #### Added
-- [middle meningeal artery](http://purl.obolibrary.org/obo/UBERON_0010250) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### middle pharyngeal constrictor `http://purl.obolibrary.org/obo/UBERON_0010749`
+
+#### Added
+- [middle pharyngeal constrictor](http://purl.obolibrary.org/obo/UBERON_0010749) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### middle temporal artery `http://purl.obolibrary.org/obo/UBERON_0035042`
-#### Removed
-- [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
 
 #### Added
 - [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [middle temporal artery](http://purl.obolibrary.org/obo/UBERON_0035042) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### middle thyroid artery `http://purl.obolibrary.org/obo/UBERON_0018250`
-#### Removed
-- [middle thyroid artery](http://purl.obolibrary.org/obo/UBERON_0018250) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMC1167197" 
+### midgut `http://purl.obolibrary.org/obo/UBERON_0001045`
 
 #### Added
-- [middle thyroid artery](http://purl.obolibrary.org/obo/UBERON_0018250) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMC1167197" 
+- [midgut](http://purl.obolibrary.org/obo/UBERON_0001045) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### midline nuclear group `http://purl.obolibrary.org/obo/UBERON_0002705`
-
-#### Added
-- [midline nuclear group](http://purl.obolibrary.org/obo/UBERON_0002705) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [midline nuclear group](http://purl.obolibrary.org/obo/UBERON_0002705) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### moderator band `http://purl.obolibrary.org/obo/UBERON_8470002`
-#### Removed
-- [moderator band](http://purl.obolibrary.org/obo/UBERON_8470002) [contributor](http://purl.org/dc/terms/contributor) [B Varner](https://orcid.org/0000-0002-1773-2692) 
-
-
-
-### molar 1 posteroloph `http://purl.obolibrary.org/obo/UBERON_0018286`
-#### Removed
-- [molar 1 posteroloph](http://purl.obolibrary.org/obo/UBERON_0018286) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:b63c2cf1-c60f-46f2-b4e4-64a17bf18b6d" 
-
-
-
-### mouth `http://purl.obolibrary.org/obo/UBERON_0000165`
-#### Removed
-- [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) 
-  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "exceptions in some taxa" 
-
-- [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
-
-
-
-### mucosa of nasal septum `http://purl.obolibrary.org/obo/UBERON_0005018`
-#### Removed
-- [mucosa of nasal septum](http://purl.obolibrary.org/obo/UBERON_0005018) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### midzonal region hepatocyte `http://purl.obolibrary.org/obo/CL_0019028`
 
 #### Added
-- [mucosa of nasal septum](http://purl.obolibrary.org/obo/UBERON_0005018) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [midzonal region hepatocyte](http://purl.obolibrary.org/obo/CL_0019028) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### musculo-phrenic artery `http://purl.obolibrary.org/obo/UBERON_0006632`
-#### Removed
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) 
-
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
+### migratory enteric neural crest cell `http://purl.obolibrary.org/obo/CL_0002607`
 
 #### Added
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) 
-
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
+- [migratory enteric neural crest cell](http://purl.obolibrary.org/obo/CL_0002607) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### myenteric nerve plexus of colon `http://purl.obolibrary.org/obo/UBERON_8410058`
+### molecular transducer activity `http://purl.obolibrary.org/obo/GO_0060089`
+#### Removed
+- [molecular transducer activity](http://purl.obolibrary.org/obo/GO_0060089) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [myenteric nerve plexus of colon](http://purl.obolibrary.org/obo/UBERON_8410058) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [myenteric nerve plexus of colon](http://purl.obolibrary.org/obo/UBERON_8410058) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [molecular transducer activity](http://purl.obolibrary.org/obo/GO_0060089) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### nasal process of premaxilla `http://purl.obolibrary.org/obo/UBERON_0018341`
-#### Removed
-- [nasal process of premaxilla](http://purl.obolibrary.org/obo/UBERON_0018341) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:18a5dd1b-1213-471f-9a0b-06190b1ecf2c" 
-
-
-
-### nasal septum `http://purl.obolibrary.org/obo/UBERON_0001706`
-#### Removed
-- [nasal septum](http://purl.obolibrary.org/obo/UBERON_0001706) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### monkey lips dorsal bursa complex `http://purl.obolibrary.org/obo/UBERON_0013188`
 
 #### Added
-- [nasal septum](http://purl.obolibrary.org/obo/UBERON_0001706) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [monkey lips dorsal bursa complex](http://purl.obolibrary.org/obo/UBERON_0013188) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+- [monkey lips dorsal bursa complex](http://purl.obolibrary.org/obo/UBERON_0013188) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
 
 
-### nasal skeleton `http://purl.obolibrary.org/obo/UBERON_0006813`
-#### Removed
-- [nasal skeleton](http://purl.obolibrary.org/obo/UBERON_0006813) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial skeleton](http://purl.obolibrary.org/obo/UBERON_0011156) 
-
-- [nasal skeleton](http://purl.obolibrary.org/obo/UBERON_0006813) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### monocyte `http://purl.obolibrary.org/obo/CL_0000576`
 
 #### Added
-- [nasal skeleton](http://purl.obolibrary.org/obo/UBERON_0006813) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [monocyte](http://purl.obolibrary.org/obo/CL_0000576) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### nasolacrimal duct `http://purl.obolibrary.org/obo/UBERON_0002392`
-
-#### Added
-- [nasolacrimal duct](http://purl.obolibrary.org/obo/UBERON_0002392) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lacrimal duct" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30285382" 
-
-
-### neocortex `http://purl.obolibrary.org/obo/UBERON_0001950`
-#### Removed
-- [neocortex](http://purl.obolibrary.org/obo/UBERON_0001950) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Mammalia](http://purl.obolibrary.org/obo/NCBITaxon_40674) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
+### mononuclear cell `http://purl.obolibrary.org/obo/CL_0000842`
 
 #### Added
-- [neocortex](http://purl.obolibrary.org/obo/UBERON_0001950) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Vertebrata <vertebrates>](http://purl.obolibrary.org/obo/NCBITaxon_7742) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia" 
+- [mononuclear cell](http://purl.obolibrary.org/obo/CL_0000842) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### nerve of clitoris `http://purl.obolibrary.org/obo/UBERON_0035650`
-
-#### Added
-- [nerve of clitoris](http://purl.obolibrary.org/obo/UBERON_0035650) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [nerve of clitoris](http://purl.obolibrary.org/obo/UBERON_0035650) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### neurocranium bone `http://purl.obolibrary.org/obo/UBERON_0011164`
+### mononuclear phagocyte `http://purl.obolibrary.org/obo/CL_0000113`
 
 #### Added
-- [neurocranium bone](http://purl.obolibrary.org/obo/UBERON_0011164) SubClassOf [head bone](http://purl.obolibrary.org/obo/UBERON_0003457) 
+- [mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_0000113) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### ninth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002852`
-
-#### Added
-- [ninth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002852) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [ninth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002852) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### nose `http://purl.obolibrary.org/obo/UBERON_0000004`
-#### Removed
-- [nose](http://purl.obolibrary.org/obo/UBERON_0000004) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
-
-
-
-### nuchal hump `http://purl.obolibrary.org/obo/UBERON_0018342`
-#### Removed
-- [nuchal hump](http://purl.obolibrary.org/obo/UBERON_0018342) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:042b87f9-5e1a-4070-9c56-1e79cd474cde" 
-
-
-
-### nucleus accumbens `http://purl.obolibrary.org/obo/UBERON_0001882`
+### motor neuron `http://purl.obolibrary.org/obo/CL_0000100`
 
 #### Added
-- [nucleus accumbens](http://purl.obolibrary.org/obo/UBERON_0001882) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [nucleus accumbens](http://purl.obolibrary.org/obo/UBERON_0001882) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [motor neuron](http://purl.obolibrary.org/obo/CL_0000100) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### oblique cartilage `http://purl.obolibrary.org/obo/UBERON_3000329`
+### mucus secreting cell `http://purl.obolibrary.org/obo/CL_0000319`
+
+#### Added
+- [mucus secreting cell](http://purl.obolibrary.org/obo/CL_0000319) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### multi-ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_0005012`
+
+#### Added
+- [multi-ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0005012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### mural cell `http://purl.obolibrary.org/obo/CL_0008034`
+
+#### Added
+- [mural cell](http://purl.obolibrary.org/obo/CL_0008034) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### muscle cell `http://purl.obolibrary.org/obo/CL_0000187`
+
+#### Added
+- [muscle cell](http://purl.obolibrary.org/obo/CL_0000187) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### muscle precursor cell `http://purl.obolibrary.org/obo/CL_0000680`
+
+#### Added
+- [muscle precursor cell](http://purl.obolibrary.org/obo/CL_0000680) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### musculature of hip `http://purl.obolibrary.org/obo/UBERON_0004475`
+
+#### Added
+- [musculature of hip](http://purl.obolibrary.org/obo/UBERON_0004475) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### musculature of shoulder `http://purl.obolibrary.org/obo/UBERON_0004476`
+
+#### Added
+- [musculature of shoulder](http://purl.obolibrary.org/obo/UBERON_0004476) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### musculocutaneous nerve `http://purl.obolibrary.org/obo/UBERON_0003724`
+
+#### Added
+- [musculocutaneous nerve](http://purl.obolibrary.org/obo/UBERON_0003724) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [brachial nerve plexus](http://purl.obolibrary.org/obo/UBERON_0001814) 
+
+
+### myelencephalon `http://purl.obolibrary.org/obo/UBERON_0005290`
+
+#### Added
+- [myelencephalon](http://purl.obolibrary.org/obo/UBERON_0005290) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future myelencephalon](http://purl.obolibrary.org/obo/UBERON_0010096) 
+
+
+### myeloblast `http://purl.obolibrary.org/obo/CL_0000835`
 #### Removed
-- [oblique cartilage](http://purl.obolibrary.org/obo/UBERON_3000329) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [myeloblast](http://purl.obolibrary.org/obo/CL_0000835) EquivalentTo [granulocytopoietic cell](http://purl.obolibrary.org/obo/CL_0002191) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [basophilic cytoplasm](http://purl.obolibrary.org/obo/CL_0017503)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [euchromatin](http://purl.obolibrary.org/obo/GO_0000791)) and ([lacks_part](http://purl.obolibrary.org/obo/CL_4030045) some [azurophil granule](http://purl.obolibrary.org/obo/GO_0042582)) 
+
+- [myeloblast](http://purl.obolibrary.org/obo/CL_0000835) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) 
+
+#### Added
+- [myeloblast](http://purl.obolibrary.org/obo/CL_0000835) EquivalentTo [granulocytopoietic cell](http://purl.obolibrary.org/obo/CL_0002191) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [basophilic cytoplasm](http://purl.obolibrary.org/obo/CL_0017503)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [euchromatin](http://purl.obolibrary.org/obo/GO_0000791)) and ([lacks_part](http://purl.obolibrary.org/obo/CL_4030045) some [azurophil granule](http://purl.obolibrary.org/obo/GO_0042582)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072)) 
+
+- [myeloblast](http://purl.obolibrary.org/obo/CL_0000835) SubClassOf [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) 
 
 
+### myeloid cell `http://purl.obolibrary.org/obo/CL_0000763`
 
-### obsolete bulge `http://purl.obolibrary.org/obo/UBERON_0018306`
+#### Added
+- [myeloid cell](http://purl.obolibrary.org/obo/CL_0000763) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myeloid dendritic cell `http://purl.obolibrary.org/obo/CL_0000782`
+
+#### Added
+- [myeloid dendritic cell](http://purl.obolibrary.org/obo/CL_0000782) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myeloid leukocyte `http://purl.obolibrary.org/obo/CL_0000766`
+
+#### Added
+- [myeloid leukocyte](http://purl.obolibrary.org/obo/CL_0000766) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myeloid lineage restricted progenitor cell `http://purl.obolibrary.org/obo/CL_0000839`
+
+#### Added
+- [myeloid lineage restricted progenitor cell](http://purl.obolibrary.org/obo/CL_0000839) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myocoele `http://purl.obolibrary.org/obo/UBERON_0012054`
+
+#### Added
+- [myocoele](http://purl.obolibrary.org/obo/UBERON_0012054) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [myotome](http://purl.obolibrary.org/obo/UBERON_0003082) 
+
+
+### myoepithelial cell `http://purl.obolibrary.org/obo/CL_0000185`
+
+#### Added
+- [myoepithelial cell](http://purl.obolibrary.org/obo/CL_0000185) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myoepithelial cell of mammary gland `http://purl.obolibrary.org/obo/CL_0002324`
+
+#### Added
+- [myoepithelial cell of mammary gland](http://purl.obolibrary.org/obo/CL_0002324) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### myometrial cell `http://purl.obolibrary.org/obo/CL_0002366`
+
+#### Added
+- [myometrial cell](http://purl.obolibrary.org/obo/CL_0002366) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### naive B cell `http://purl.obolibrary.org/obo/CL_0000788`
+
+#### Added
+- [naive B cell](http://purl.obolibrary.org/obo/CL_0000788) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### nasal mucosa goblet cell `http://purl.obolibrary.org/obo/CL_0002480`
+
+#### Added
+- [nasal mucosa goblet cell](http://purl.obolibrary.org/obo/CL_0002480) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### naso-frontal vein `http://purl.obolibrary.org/obo/UBERON_0004689`
+
+#### Added
+- [naso-frontal vein](http://purl.obolibrary.org/obo/UBERON_0004689) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nasociliary nerve `http://purl.obolibrary.org/obo/UBERON_0022300`
+
+#### Added
+- [nasociliary nerve](http://purl.obolibrary.org/obo/UBERON_0022300) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [frontal nerve (branch of ophthalmic)](http://purl.obolibrary.org/obo/UBERON_0000942) 
+
+
+### nasopalatine nerve `http://purl.obolibrary.org/obo/UBERON_0008810`
+
+#### Added
+- [nasopalatine nerve](http://purl.obolibrary.org/obo/UBERON_0008810) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) 
+
+
+### neck `http://purl.obolibrary.org/obo/UBERON_0000974`
+
+#### Added
+- [neck](http://purl.obolibrary.org/obo/UBERON_0000974) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### negative regulation of amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_2000283`
 #### Removed
-- [obsolete bulge](http://purl.obolibrary.org/obo/UBERON_0018306) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:dfedeba6-f608-4adc-9e69-b1169f6b0fb3" 
+- [negative regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000283) SubClassOf [negative regulation of cellular amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045763) 
+
+#### Added
+- [negative regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000283) SubClassOf [negative regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062014) 
+
+- [negative regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000283) SubClassOf [negative regulation of nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0051172) 
 
 
+### negative regulation of calcium ion import `http://purl.obolibrary.org/obo/GO_0090281`
 
-### obsolete insect anterior-posterior subdivision of organism `http://purl.obolibrary.org/obo/UBERON_6057001`
+#### Added
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "negative regulation of transmembrane calcium influx" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tb" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that decreases the rate, frequency, or extent of the directed movement of calcium ions into a cell or organelle." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:BHF" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0090281" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [label](http://www.w3.org/2000/01/rdf-schema#label) "negative regulation of calcium ion import" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2010-02-08T05:11:20Z" 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "tb" 
+
+- Class: [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509)) 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) SubClassOf [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) SubClassOf [negative regulation of calcium ion transport](http://purl.obolibrary.org/obo/GO_0051926) 
+
+- [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) SubClassOf [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) 
+
+
+### negative regulation of calcium ion import across plasma membrane `http://purl.obolibrary.org/obo/GO_1905949`
+
+#### Added
+- [negative regulation of calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_1905949) SubClassOf [negative regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090281) 
+
+
+### negative regulation of cellular amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0045763`
 #### Removed
-- [obsolete insect anterior-posterior subdivision of organism](http://purl.obolibrary.org/obo/UBERON_6057001) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00057001" 
+- [negative regulation of cellular amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045763) SubClassOf [negative regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062014) 
+
+- [negative regulation of cellular amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045763) SubClassOf [negative regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031324) 
 
 
 
-### obsolete supracoracoid nerve foramen `http://purl.obolibrary.org/obo/UBERON_0018363`
+### negative regulation of cytoplasmic transport `http://purl.obolibrary.org/obo/GO_1903650`
 #### Removed
-- [obsolete supracoracoid nerve foramen](http://purl.obolibrary.org/obo/UBERON_0018363) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:8bd39461-7e48-428f-8f19-fa2700bc3796" 
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "down-regulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that stops, prevents or reduces the frequency, rate or extent of cytoplasmic transport." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25049409" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000058" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "down regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "inhibition of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "down regulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "negative regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [label](http://www.w3.org/2000/01/rdf-schema#label) "negative regulation of cytoplasmic transport" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "down-regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "inhibition of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-11-24T13:38:26Z" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "jl" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "downregulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "downregulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1903650" 
+
+- Class: [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482)) 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) SubClassOf [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) SubClassOf [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482) 
+
+- [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) SubClassOf [negative regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032387) 
+
+
+
+### negative regulation of dense core granule transport `http://purl.obolibrary.org/obo/GO_1904810`
+#### Removed
+- [negative regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904810) SubClassOf [negative regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903650) 
+
+#### Added
+- [negative regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904810) SubClassOf [negative regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032387) 
+
+
+### negative regulation of gamma-aminobutyric acid catabolic process `http://purl.obolibrary.org/obo/GO_1901716`
+
+#### Added
+- [negative regulation of gamma-aminobutyric acid catabolic process](http://purl.obolibrary.org/obo/GO_1901716) SubClassOf [negative regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031324) 
+
+- [negative regulation of gamma-aminobutyric acid catabolic process](http://purl.obolibrary.org/obo/GO_1901716) SubClassOf [negative regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062014) 
+
+
+### negative regulation of glutamate metabolic process `http://purl.obolibrary.org/obo/GO_2000212`
+
+#### Added
+- [negative regulation of glutamate metabolic process](http://purl.obolibrary.org/obo/GO_2000212) SubClassOf [negative regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062014) 
+
+- [negative regulation of glutamate metabolic process](http://purl.obolibrary.org/obo/GO_2000212) SubClassOf [negative regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031324) 
+
+
+### nephron `http://purl.obolibrary.org/obo/UBERON_0001285`
+
+#### Added
+- [nephron](http://purl.obolibrary.org/obo/UBERON_0001285) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [primitive nephron](http://purl.obolibrary.org/obo/UBERON_0010532) 
+
+
+### nephron tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000494`
+
+#### Added
+- [nephron tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000494) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### nerve fiber `http://purl.obolibrary.org/obo/UBERON_0006134`
+
+#### Added
+- [nerve fiber](http://purl.obolibrary.org/obo/UBERON_0006134) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nerve innervating pinna `http://purl.obolibrary.org/obo/UBERON_0035648`
+
+#### Added
+- [nerve innervating pinna](http://purl.obolibrary.org/obo/UBERON_0035648) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial nerve](http://purl.obolibrary.org/obo/UBERON_0001647) 
+
+
+### nerve root `http://purl.obolibrary.org/obo/UBERON_0002211`
+
+#### Added
+- [nerve root](http://purl.obolibrary.org/obo/UBERON_0002211) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nerve to quadratus femoris `http://purl.obolibrary.org/obo/UBERON_0034984`
+
+#### Added
+- [nerve to quadratus femoris](http://purl.obolibrary.org/obo/UBERON_0034984) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sacral nerve plexus](http://purl.obolibrary.org/obo/UBERON_0034986) 
+
+
+### nerve to stylohyoid from facial nerve `http://purl.obolibrary.org/obo/UBERON_0011316`
+
+#### Added
+- [nerve to stylohyoid from facial nerve](http://purl.obolibrary.org/obo/UBERON_0011316) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial nerve](http://purl.obolibrary.org/obo/UBERON_0001647) 
+
+
+### nerve to stylopharyngeus from glossopharyngeal nerve `http://purl.obolibrary.org/obo/UBERON_0011317`
+
+#### Added
+- [nerve to stylopharyngeus from glossopharyngeal nerve](http://purl.obolibrary.org/obo/UBERON_0011317) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [glossopharyngeal nerve](http://purl.obolibrary.org/obo/UBERON_0001649) 
+
+
+### nervous system `http://purl.obolibrary.org/obo/UBERON_0001016`
+
+#### Added
+- [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future nervous system](http://purl.obolibrary.org/obo/UBERON_0016880) 
+
+
+### neural cell `http://purl.obolibrary.org/obo/CL_0002319`
+
+#### Added
+- [neural cell](http://purl.obolibrary.org/obo/CL_0002319) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neural crest cell `http://purl.obolibrary.org/obo/CL_0011012`
+
+#### Added
+- [neural crest cell](http://purl.obolibrary.org/obo/CL_0011012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neural plate `http://purl.obolibrary.org/obo/UBERON_0003075`
+
+#### Added
+- [neural plate](http://purl.obolibrary.org/obo/UBERON_0003075) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive neural plate](http://purl.obolibrary.org/obo/UBERON_0007284) 
+
+
+### neural tube ventricular layer `http://purl.obolibrary.org/obo/UBERON_0004060`
+
+#### Added
+- [neural tube ventricular layer](http://purl.obolibrary.org/obo/UBERON_0004060) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [germinal neuroepithelium](http://purl.obolibrary.org/obo/UBERON_0004022) 
+
+
+### neuroblast (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000031`
+
+#### Added
+- [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuroendocrine cell `http://purl.obolibrary.org/obo/CL_0000165`
+
+#### Added
+- [neuroendocrine cell](http://purl.obolibrary.org/obo/CL_0000165) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuroendocrine cell of epithelium of crypt of Lieberkuhn `http://purl.obolibrary.org/obo/CL_4033002`
+
+#### Added
+- [neuroendocrine cell of epithelium of crypt of Lieberkuhn](http://purl.obolibrary.org/obo/CL_4033002) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### neuromast `http://purl.obolibrary.org/obo/UBERON_0008904`
+
+#### Added
+- [neuromast](http://purl.obolibrary.org/obo/UBERON_0008904) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [protoneuromast](http://purl.obolibrary.org/obo/UBERON_2005227) 
+
+
+### neuromast hair cell `http://purl.obolibrary.org/obo/CL_0000856`
+
+#### Added
+- [neuromast hair cell](http://purl.obolibrary.org/obo/CL_0000856) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### neuron `http://purl.obolibrary.org/obo/CL_0000540`
+
+#### Added
+- [neuron](http://purl.obolibrary.org/obo/CL_0000540) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuron associated cell `http://purl.obolibrary.org/obo/CL_0000095`
+
+#### Added
+- [neuron associated cell](http://purl.obolibrary.org/obo/CL_0000095) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuron associated cell (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000123`
+
+#### Added
+- [neuron associated cell (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000123) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuron projection bundle connecting eye with brain `http://purl.obolibrary.org/obo/UBERON_0004904`
+
+#### Added
+- [neuron projection bundle connecting eye with brain](http://purl.obolibrary.org/obo/UBERON_0004904) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### neuronal brush cell `http://purl.obolibrary.org/obo/CL_0000555`
+
+#### Added
+- [neuronal brush cell](http://purl.obolibrary.org/obo/CL_0000555) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neuronal receptor cell `http://purl.obolibrary.org/obo/CL_0000006`
+
+#### Added
+- [neuronal receptor cell](http://purl.obolibrary.org/obo/CL_0000006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neutrophil `http://purl.obolibrary.org/obo/CL_0000775`
+
+#### Added
+- [neutrophil](http://purl.obolibrary.org/obo/CL_0000775) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### neutrophil progenitor cell `http://purl.obolibrary.org/obo/CL_0000834`
+
+#### Added
+- [neutrophil progenitor cell](http://purl.obolibrary.org/obo/CL_0000834) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### nitrogen compound metabolic process `http://purl.obolibrary.org/obo/GO_0006807`
+
+#### Added
+- [nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0006807) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0006807) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+
+### nociceptor nerve ending `http://purl.obolibrary.org/obo/UBERON_0035017`
+
+#### Added
+- [nociceptor nerve ending](http://purl.obolibrary.org/obo/UBERON_0035017) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### non-motile cilium membrane `http://purl.obolibrary.org/obo/GO_0098804`
+
+#### Added
+- [non-motile cilium membrane](http://purl.obolibrary.org/obo/GO_0098804) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [non-motile cilium](http://purl.obolibrary.org/obo/GO_0097730) 
+
+
+### non-proteinogenic amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0170043`
+
+#### Added
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid anabolism" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic biosynthesis" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T19:03:08Z" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170043" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid formation" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid synthesis" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [label](http://www.w3.org/2000/01/rdf-schema#label) "non-proteinogenic amino acid biosynthetic process" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of non-proteinogenic amino acids." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23269"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- Class: [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) EquivalentTo [biosynthetic process](http://purl.obolibrary.org/obo/GO_0009058) and ([has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820)) 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) SubClassOf [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) SubClassOf [has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820) 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) SubClassOf [organonitrogen compound biosynthetic process](http://purl.obolibrary.org/obo/GO_1901566) 
+
+- [non-proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170043) SubClassOf [organic acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0016053) 
+
+
+### non-proteinogenic amino acid catabolic process `http://purl.obolibrary.org/obo/GO_0170044`
+
+#### Added
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid degradation" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23269"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid breakdown" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T19:27:05Z" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [label](http://www.w3.org/2000/01/rdf-schema#label) "non-proteinogenic amino acid catabolic process" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid catabolism" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of non-proteinogenic amino acids." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170044" 
+
+- Class: [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) EquivalentTo [catabolic process](http://purl.obolibrary.org/obo/GO_0009056) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820)) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) SubClassOf [organic acid catabolic process](http://purl.obolibrary.org/obo/GO_0016054) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) SubClassOf [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) SubClassOf [has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820) 
+
+- [non-proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170044) SubClassOf [organonitrogen compound catabolic process](http://purl.obolibrary.org/obo/GO_1901565) 
+
+
+### non-proteinogenic amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0170041`
+
+#### Added
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving non-proteingenic amino acids." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23269"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170041" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "non-proteinogenic amino acid metabolism" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T17:57:55Z" 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) [label](http://www.w3.org/2000/01/rdf-schema#label) "non-proteinogenic amino acid metabolic process" 
+
+- Class: [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) EquivalentTo [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) and ([has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820)) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) SubClassOf [organic acid metabolic process](http://purl.obolibrary.org/obo/GO_0006082) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) SubClassOf [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) SubClassOf [has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [non-proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83820) 
+
+- [non-proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170041) SubClassOf [organonitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_1901564) 
+
+
+### non-terminally differentiated cell `http://purl.obolibrary.org/obo/CL_0000055`
+
+#### Added
+- [non-terminally differentiated cell](http://purl.obolibrary.org/obo/CL_0000055) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### normal `http://purl.obolibrary.org/obo/PATO_0000461`
+#### Removed
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [label](http://www.w3.org/2000/01/rdf-schema#label) "normal" 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [abnormal_slim](http://purl.obolibrary.org/obo/pato#abnormal_slim) 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000461" 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [mpath_slim](http://purl.obolibrary.org/obo/pato#mpath_slim) 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [PATO_0000460](http://purl.obolibrary.org/obo/PATO_0000460) 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "average" 
+
+- Class: [normal](http://purl.obolibrary.org/obo/PATO_0000461) 
+
+- [normal](http://purl.obolibrary.org/obo/PATO_0000461) SubClassOf [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) 
+
+
+
+### notochord `http://purl.obolibrary.org/obo/UBERON_0002328`
+
+#### Added
+- [notochord](http://purl.obolibrary.org/obo/UBERON_0002328) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### nucleobase-containing small molecule metabolic process `http://purl.obolibrary.org/obo/GO_0055086`
+#### Removed
+- [nucleobase-containing small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0055086) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [nucleobase-containing small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0055086) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### nucleus ambiguus `http://purl.obolibrary.org/obo/UBERON_0001719`
+
+#### Added
+- [nucleus ambiguus](http://purl.obolibrary.org/obo/UBERON_0001719) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future nucleus ambiguus](http://purl.obolibrary.org/obo/UBERON_0010126) 
+
+
+### nucleus of lateral olfactory tract `http://purl.obolibrary.org/obo/UBERON_0002893`
+
+#### Added
+- [nucleus of lateral olfactory tract](http://purl.obolibrary.org/obo/UBERON_0002893) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nucleus of pudendal nerve `http://purl.obolibrary.org/obo/UBERON_0022278`
+
+#### Added
+- [nucleus of pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0022278) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nutrient foramen artery `http://purl.obolibrary.org/obo/UBERON_0010176`
+
+#### Added
+- [nutrient foramen artery](http://purl.obolibrary.org/obo/UBERON_0010176) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nutrient foramen conduit `http://purl.obolibrary.org/obo/UBERON_0012116`
+
+#### Added
+- [nutrient foramen conduit](http://purl.obolibrary.org/obo/UBERON_0012116) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### nutrient foramen vein `http://purl.obolibrary.org/obo/UBERON_0010175`
+
+#### Added
+- [nutrient foramen vein](http://purl.obolibrary.org/obo/UBERON_0010175) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### obsolete decidual cell `http://purl.obolibrary.org/obo/UBERON_0000449`
+#### Removed
+- [obsolete decidual cell](http://purl.obolibrary.org/obo/UBERON_0000449) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Decidual_cells" 
+
+#### Added
+- [obsolete decidual cell](http://purl.obolibrary.org/obo/UBERON_0000449) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Decidual_cells" 
+
+
+### obsolete fascia dentata `http://purl.obolibrary.org/obo/UBERON_0035560`
+#### Removed
+- [obsolete fascia dentata](http://purl.obolibrary.org/obo/UBERON_0035560) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Fascia_dentata" 
+
+
+
+### obsolete intermediate filament `http://purl.obolibrary.org/obo/UBERON_0003000`
+#### Removed
+- [obsolete intermediate filament](http://purl.obolibrary.org/obo/UBERON_0003000) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Intermediate_filament" 
+
+#### Added
+- [obsolete intermediate filament](http://purl.obolibrary.org/obo/UBERON_0003000) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Intermediate_filament" 
+
+
+### obsolete jointed/prehensile appendage `http://purl.obolibrary.org/obo/UBERON_0005896`
+#### Removed
+- [obsolete jointed/prehensile appendage](http://purl.obolibrary.org/obo/UBERON_0005896) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Limb_(anatomy)" 
+
+
+
+### obsolete locomotive weight-bearing appendage `http://purl.obolibrary.org/obo/UBERON_0005894`
+#### Removed
+- [obsolete locomotive weight-bearing appendage](http://purl.obolibrary.org/obo/UBERON_0005894) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Leg" 
+
+
+
+### obsolete microfilament `http://purl.obolibrary.org/obo/UBERON_0003003`
+#### Removed
+- [obsolete microfilament](http://purl.obolibrary.org/obo/UBERON_0003003) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Microfilament" 
+
+#### Added
+- [obsolete microfilament](http://purl.obolibrary.org/obo/UBERON_0003003) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Microfilament" 
+
+
+### obsolete neocortical column `http://purl.obolibrary.org/obo/UBERON_0015118`
+#### Removed
+- [obsolete neocortical column](http://purl.obolibrary.org/obo/UBERON_0015118) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Cortical_column" 
+
+
+
+### obsolete neurofilament `http://purl.obolibrary.org/obo/UBERON_0002986`
+#### Removed
+- [obsolete neurofilament](http://purl.obolibrary.org/obo/UBERON_0002986) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Neurofilament" 
+
+#### Added
+- [obsolete neurofilament](http://purl.obolibrary.org/obo/UBERON_0002986) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Neurofilament" 
+
+
+### obsolete zygomasseteric system `http://purl.obolibrary.org/obo/UBERON_0013466`
+#### Removed
+- [obsolete zygomasseteric system](http://purl.obolibrary.org/obo/UBERON_0013466) [consider](http://www.geneontology.org/formats/oboInOwl#consider) "Wikipedia:Zygomasseteric_system" 
 
 
 
 ### obturator artery `http://purl.obolibrary.org/obo/UBERON_0001314`
-#### Removed
-- [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
 
 #### Added
-- [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [obturator artery](http://purl.obolibrary.org/obo/UBERON_0001314) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### occipital artery `http://purl.obolibrary.org/obo/UBERON_0001613`
-#### Removed
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
-
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
+### obturator vein `http://purl.obolibrary.org/obo/UBERON_0001321`
 
 #### Added
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
-
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
+- [obturator vein](http://purl.obolibrary.org/obo/UBERON_0001321) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### occurrent `http://purl.obolibrary.org/obo/BFO_0000003`
+### occipitofrontalis muscle `http://purl.obolibrary.org/obo/UBERON_0010946`
 
 #### Added
-- [occurrent](http://purl.obolibrary.org/obo/BFO_0000003) [IAO_0000589](http://purl.obolibrary.org/obo/IAO_0000589) "processual entity (BFO)" 
+- [occipitofrontalis muscle](http://purl.obolibrary.org/obo/UBERON_0010946) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### ocular angle artery `http://purl.obolibrary.org/obo/UBERON_0010408`
-#### Removed
-- [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-
-- [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
-
-- [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [ocular angle artery](http://purl.obolibrary.org/obo/UBERON_0010408) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) 
 
-
-### olivary pretectal nucleus `http://purl.obolibrary.org/obo/UBERON_0002565`
-#### Removed
-- [olivary pretectal nucleus](http://purl.obolibrary.org/obo/UBERON_0002565) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Amniota](http://purl.obolibrary.org/obo/NCBITaxon_32524) 
+### olfactory bulb interneuron `http://purl.obolibrary.org/obo/CL_1001434`
 
 #### Added
-- [olivary pretectal nucleus](http://purl.obolibrary.org/obo/UBERON_0002565) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Tetrapoda](http://purl.obolibrary.org/obo/NCBITaxon_32523) 
+- [olfactory bulb interneuron](http://purl.obolibrary.org/obo/CL_1001434) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### olfactory bulb tufted cell `http://purl.obolibrary.org/obo/CL_1001503`
+
+#### Added
+- [olfactory bulb tufted cell](http://purl.obolibrary.org/obo/CL_1001503) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### olfactory epithelium `http://purl.obolibrary.org/obo/UBERON_0001997`
+
+#### Added
+- [olfactory epithelium](http://purl.obolibrary.org/obo/UBERON_0001997) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [primitive olfactory epithelium](http://purl.obolibrary.org/obo/UBERON_2001431) 
+
+
+### olfactory granule cell `http://purl.obolibrary.org/obo/CL_0000626`
+
+#### Added
+- [olfactory granule cell](http://purl.obolibrary.org/obo/CL_0000626) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### oligodendrocyte `http://purl.obolibrary.org/obo/CL_0000128`
+
+#### Added
+- [oligodendrocyte](http://purl.obolibrary.org/obo/CL_0000128) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### oligodendrocyte precursor cell `http://purl.obolibrary.org/obo/CL_0002453`
+
+#### Added
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [central nervous system](http://purl.obolibrary.org/obo/UBERON_0001017) 
+
+
+### oocyte `http://purl.obolibrary.org/obo/CL_0000023`
+
+#### Added
+- [oocyte](http://purl.obolibrary.org/obo/CL_0000023) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### oogonial cell `http://purl.obolibrary.org/obo/CL_0000024`
+
+#### Added
+- [oogonial cell](http://purl.obolibrary.org/obo/CL_0000024) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### open anatomical space `http://purl.obolibrary.org/obo/UBERON_0010064`
+
+#### Added
+- [open anatomical space](http://purl.obolibrary.org/obo/UBERON_0010064) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0001619`
-#### Removed
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
 #### Added
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
 - [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### ophthalmotemporal branch of external ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0015158`
-#### Removed
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
+### ophthalmic nerve `http://purl.obolibrary.org/obo/UBERON_0000348`
 
 #### Added
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
+- [ophthalmic nerve](http://purl.obolibrary.org/obo/UBERON_0000348) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0001645) 
 
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
+### ophthalmotemporal branch of external ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0015158`
+
+#### Added
 - [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### orbitofrontal cortex `http://purl.obolibrary.org/obo/UBERON_0004167`
+### optic artery `http://purl.obolibrary.org/obo/UBERON_2005044`
 
 #### Added
-- [orbitofrontal cortex](http://purl.obolibrary.org/obo/UBERON_0004167) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [orbitofrontal cortex](http://purl.obolibrary.org/obo/UBERON_0004167) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [optic artery](http://purl.obolibrary.org/obo/UBERON_2005044) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### otic ganglion `http://purl.obolibrary.org/obo/UBERON_0003963`
+### optic chiasma `http://purl.obolibrary.org/obo/UBERON_0000959`
 
 #### Added
-- [otic ganglion](http://purl.obolibrary.org/obo/UBERON_0003963) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [otic ganglion](http://purl.obolibrary.org/obo/UBERON_0003963) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [optic chiasma](http://purl.obolibrary.org/obo/UBERON_0000959) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### oviduct mucosal fold `http://purl.obolibrary.org/obo/UBERON_0018343`
+### optic cup `http://purl.obolibrary.org/obo/UBERON_0003072`
+
+#### Added
+- [optic cup](http://purl.obolibrary.org/obo/UBERON_0003072) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### optic disc `http://purl.obolibrary.org/obo/UBERON_0001783`
+
+#### Added
+- [optic disc](http://purl.obolibrary.org/obo/UBERON_0001783) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### optic eminence surface ectoderm `http://purl.obolibrary.org/obo/UBERON_0005216`
 #### Removed
-- [oviduct mucosal fold](http://purl.obolibrary.org/obo/UBERON_0018343) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:7f3c6bb1-52c7-4392-8944-01182d25a351" 
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VHOG:0000520" 
 
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:16539" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RETIRED_EHDAA2:0001311" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An external ectoderm that is part of a optic eminence [Automatically generated definition]." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [label](http://www.w3.org/2000/01/rdf-schema#label) "optic eminence surface ectoderm" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) EquivalentTo [external ectoderm](http://purl.obolibrary.org/obo/UBERON_0000076) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [optic eminence](http://purl.obolibrary.org/obo/UBERON_0004348)) 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [optic eminence ectoderm](http://purl.obolibrary.org/obo/UBERON_0005234) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships" 
+
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [optic eminence](http://purl.obolibrary.org/obo/UBERON_0004348) 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) SubClassOf [external ectoderm](http://purl.obolibrary.org/obo/UBERON_0000076) 
+
+#### Added
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3156"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0005234" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete optic eminence surface ectoderm" 
+
+- [optic eminence surface ectoderm](http://purl.obolibrary.org/obo/UBERON_0005216) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted because it is redundant with 'optic eminence ectoderm'." 
+
+
+### optic tract `http://purl.obolibrary.org/obo/UBERON_0001908`
+
+#### Added
+- [optic tract](http://purl.obolibrary.org/obo/UBERON_0001908) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### orbital cavity `http://purl.obolibrary.org/obo/UBERON_0004867`
+
+#### Added
+- [orbital cavity](http://purl.obolibrary.org/obo/UBERON_0004867) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [orbit of skull](http://purl.obolibrary.org/obo/UBERON_0001697) 
+
+
+### orbital fat pad `http://purl.obolibrary.org/obo/UBERON_0006671`
+
+#### Added
+- [orbital fat pad](http://purl.obolibrary.org/obo/UBERON_0006671) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "adipose body of the orbit" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11948952" 
+
+- [orbital fat pad](http://purl.obolibrary.org/obo/UBERON_0006671) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "adipose tissue of ocular region" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29320711" 
+
+
+### organelle `http://purl.obolibrary.org/obo/GO_0043226`
+#### Removed
+- [organelle](http://purl.obolibrary.org/obo/GO_0043226) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [organelle](http://purl.obolibrary.org/obo/GO_0043226) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### organic substance metabolic process `http://purl.obolibrary.org/obo/GO_0071704`
+
+#### Added
+- [organic substance metabolic process](http://purl.obolibrary.org/obo/GO_0071704) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+- [organic substance metabolic process](http://purl.obolibrary.org/obo/GO_0071704) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### organonitrogen compound metabolic process `http://purl.obolibrary.org/obo/GO_1901564`
+
+#### Added
+- [organonitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_1901564) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [organonitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_1901564) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+
+### oronasal membrane `http://purl.obolibrary.org/obo/UBERON_0009672`
+
+#### Added
+- [oronasal membrane](http://purl.obolibrary.org/obo/UBERON_0009672) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### orovelar muscle `http://purl.obolibrary.org/obo/UBERON_0036148`
+
+#### Added
+- [orovelar muscle](http://purl.obolibrary.org/obo/UBERON_0036148) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### osteoblast `http://purl.obolibrary.org/obo/CL_0000062`
+
+#### Added
+- [osteoblast](http://purl.obolibrary.org/obo/CL_0000062) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### osteoclast `http://purl.obolibrary.org/obo/CL_0000092`
+
+#### Added
+- [osteoclast](http://purl.obolibrary.org/obo/CL_0000092) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ovarian artery `http://purl.obolibrary.org/obo/UBERON_0001190`
+
+#### Added
+- [ovarian artery](http://purl.obolibrary.org/obo/UBERON_0001190) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ovarian ligament `http://purl.obolibrary.org/obo/UBERON_0008847`
+
+#### Added
+- [ovarian ligament](http://purl.obolibrary.org/obo/UBERON_0008847) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ovarian surface epithelial cell `http://purl.obolibrary.org/obo/CL_2000064`
+
+#### Added
+- [ovarian surface epithelial cell](http://purl.obolibrary.org/obo/CL_2000064) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ovarian vein `http://purl.obolibrary.org/obo/UBERON_0001145`
+
+#### Added
+- [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pair of dorsal aortae `http://purl.obolibrary.org/obo/UBERON_0010190`
+
+#### Added
+- [pair of dorsal aortae](http://purl.obolibrary.org/obo/UBERON_0010190) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### paired limb/fin `http://purl.obolibrary.org/obo/UBERON_0004708`
+
+#### Added
+- [paired limb/fin](http://purl.obolibrary.org/obo/UBERON_0004708) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### palatine bone `http://purl.obolibrary.org/obo/UBERON_0001682`
+
+#### Added
+- [palatine bone](http://purl.obolibrary.org/obo/UBERON_0001682) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### palatopharyngeus muscle `http://purl.obolibrary.org/obo/UBERON_0010234`
+
+#### Added
+- [palatopharyngeus muscle](http://purl.obolibrary.org/obo/UBERON_0010234) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chordate pharynx](http://purl.obolibrary.org/obo/UBERON_0001042) 
+
+
+### palmar branch of median nerve `http://purl.obolibrary.org/obo/UBERON_0016430`
+
+#### Added
+- [palmar branch of median nerve](http://purl.obolibrary.org/obo/UBERON_0016430) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [median nerve](http://purl.obolibrary.org/obo/UBERON_0001148) 
+
+
+### palpebral artery `http://purl.obolibrary.org/obo/UBERON_0014770`
+
+#### Added
+- [palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014770) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### palpebral branch of infra-orbital nerve `http://purl.obolibrary.org/obo/UBERON_0022297`
+
+#### Added
+- [palpebral branch of infra-orbital nerve](http://purl.obolibrary.org/obo/UBERON_0022297) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [infra-orbital nerve](http://purl.obolibrary.org/obo/UBERON_0018408) 
+
+
+### palpebral vein `http://purl.obolibrary.org/obo/UBERON_0014769`
+
+#### Added
+- [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pampiniform plexus `http://purl.obolibrary.org/obo/UBERON_0001330`
+
+#### Added
+- [pampiniform plexus](http://purl.obolibrary.org/obo/UBERON_0001330) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pancreatic A cell `http://purl.obolibrary.org/obo/CL_0000171`
+
+#### Added
+- [pancreatic A cell](http://purl.obolibrary.org/obo/CL_0000171) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pancreatic D cell `http://purl.obolibrary.org/obo/CL_0000173`
+
+#### Added
+- [pancreatic D cell](http://purl.obolibrary.org/obo/CL_0000173) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pancreatic PP cell `http://purl.obolibrary.org/obo/CL_0002275`
+
+#### Added
+- [pancreatic PP cell](http://purl.obolibrary.org/obo/CL_0002275) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pancreatic acinar cell `http://purl.obolibrary.org/obo/CL_0002064`
+
+#### Added
+- [pancreatic acinar cell](http://purl.obolibrary.org/obo/CL_0002064) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### pancreatic artery `http://purl.obolibrary.org/obo/UBERON_0039261`
-#### Removed
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
 
 #### Added
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-
 - [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-
-### paracone `http://purl.obolibrary.org/obo/UBERON_0018288`
-#### Removed
-- [paracone](http://purl.obolibrary.org/obo/UBERON_0018288) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0805962a-bdbc-4314-8920-327e041a406b" 
-
-
-
-### paracristid `http://purl.obolibrary.org/obo/UBERON_0018289`
-#### Removed
-- [paracristid](http://purl.obolibrary.org/obo/UBERON_0018289) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2920b9ce-f709-4fe2-ad14-e6726227d3ae" 
-
-
-
-### parafascicular nucleus `http://purl.obolibrary.org/obo/UBERON_0001922`
+### pancreatic duct `http://purl.obolibrary.org/obo/UBERON_0007329`
 
 #### Added
-- [parafascicular nucleus](http://purl.obolibrary.org/obo/UBERON_0001922) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [parafascicular nucleus](http://purl.obolibrary.org/obo/UBERON_0001922) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [pancreatic duct](http://purl.obolibrary.org/obo/UBERON_0007329) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### paranasal commissure `http://purl.obolibrary.org/obo/UBERON_3000381`
-#### Removed
-- [paranasal commissure](http://purl.obolibrary.org/obo/UBERON_3000381) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### parastyle `http://purl.obolibrary.org/obo/UBERON_0018344`
-#### Removed
-- [parastyle](http://purl.obolibrary.org/obo/UBERON_0018344) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:3430efdb-ae20-4568-bce3-888d86cf75ab" 
-
-
-
-### parasympathetic ganglion `http://purl.obolibrary.org/obo/UBERON_0001808`
+### pancreatic ductal cell `http://purl.obolibrary.org/obo/CL_0002079`
 
 #### Added
-- [parasympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001808) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [parasympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001808) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pancreatic ductal cell](http://purl.obolibrary.org/obo/CL_0002079) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### paraventricular nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0001920`
+### pancreatic endocrine cell `http://purl.obolibrary.org/obo/CL_0008024`
 
 #### Added
-- [paraventricular nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0001920) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [paraventricular nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0001920) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [pancreatic endocrine cell](http://purl.obolibrary.org/obo/CL_0008024) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### paravermis lobule area `http://purl.obolibrary.org/obo/UBERON_0027285`
+### pancreatic tributary of splenic vein `http://purl.obolibrary.org/obo/UBERON_0001214`
 
 #### Added
-- [paravermis lobule area](http://purl.obolibrary.org/obo/UBERON_0027285) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [paravermis lobule area](http://purl.obolibrary.org/obo/UBERON_0027285) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pancreatic tributary of splenic vein](http://purl.obolibrary.org/obo/UBERON_0001214) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### paravertebral ganglion `http://purl.obolibrary.org/obo/UBERON_0001807`
+### papillary tips cell `http://purl.obolibrary.org/obo/CL_1000597`
 
 #### Added
-- [paravertebral ganglion](http://purl.obolibrary.org/obo/UBERON_0001807) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [paravertebral ganglion](http://purl.obolibrary.org/obo/UBERON_0001807) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [papillary tips cell](http://purl.obolibrary.org/obo/CL_1000597) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### paries nasi `http://purl.obolibrary.org/obo/UBERON_3000389`
-#### Removed
-- [paries nasi](http://purl.obolibrary.org/obo/UBERON_3000389) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### parasympathetic nerve `http://purl.obolibrary.org/obo/UBERON_0004293`
+
+#### Added
+- [parasympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0004293) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
+### paraumbilical vein `http://purl.obolibrary.org/obo/UBERON_0035655`
 
-### parietal notch `http://purl.obolibrary.org/obo/UBERON_0018346`
-#### Removed
-- [parietal notch](http://purl.obolibrary.org/obo/UBERON_0018346) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2937dfe8-d5be-48e6-a67e-2f1c11dbc7d5" 
-
-
-
-### pars canalicularis of petrosal `http://purl.obolibrary.org/obo/UBERON_0018347`
-#### Removed
-- [pars canalicularis of petrosal](http://purl.obolibrary.org/obo/UBERON_0018347) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:5b20659c-8d12-4809-9f5a-ad4bb047fc65" 
+#### Added
+- [paraumbilical vein](http://purl.obolibrary.org/obo/UBERON_0035655) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
+### paraxial mesoderm `http://purl.obolibrary.org/obo/UBERON_0003077`
 
-### parvocellular neurosecretory cell `http://purl.obolibrary.org/obo/CL_1001505`
-#### Removed
-- [parvocellular neurosecretory cell](http://purl.obolibrary.org/obo/CL_1001505) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+#### Added
+- [paraxial mesoderm](http://purl.obolibrary.org/obo/UBERON_0003077) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive paraxial mesoderm](http://purl.obolibrary.org/obo/UBERON_0007285) 
 
 
+### parietal cell `http://purl.obolibrary.org/obo/CL_0000162`
 
-### patellar ligament `http://purl.obolibrary.org/obo/UBERON_0003676`
-#### Removed
-- [patellar ligament](http://purl.obolibrary.org/obo/UBERON_0003676) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+#### Added
+- [parietal cell](http://purl.obolibrary.org/obo/CL_0000162) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [patellar ligament](http://purl.obolibrary.org/obo/UBERON_0003676) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
+### parietal epithelial cell `http://purl.obolibrary.org/obo/CL_1000452`
+
+#### Added
+- [parietal epithelial cell](http://purl.obolibrary.org/obo/CL_1000452) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### parietal peritoneum `http://purl.obolibrary.org/obo/UBERON_0001366`
+
+#### Added
+- [parietal peritoneum](http://purl.obolibrary.org/obo/UBERON_0001366) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### parotid gland `http://purl.obolibrary.org/obo/UBERON_0001831`
+
+#### Added
+- [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lower jaw region](http://purl.obolibrary.org/obo/UBERON_0001710) 
+
+
+### parotid vein `http://purl.obolibrary.org/obo/UBERON_0035662`
+
+#### Added
+- [parotid vein](http://purl.obolibrary.org/obo/UBERON_0035662) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pectoral fin fold `http://purl.obolibrary.org/obo/UBERON_2005317`
+
+#### Added
+- [pectoral fin fold](http://purl.obolibrary.org/obo/UBERON_2005317) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### pedal digit connective tissue `http://purl.obolibrary.org/obo/UBERON_0003578`
+
+#### Added
+- [pedal digit connective tissue](http://purl.obolibrary.org/obo/UBERON_0003578) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [pedal digit mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005255) 
+
+
+### pelvic cavity `http://purl.obolibrary.org/obo/UBERON_0008203`
+
+#### Added
+- [pelvic cavity](http://purl.obolibrary.org/obo/UBERON_0008203) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355) 
+
+
+### pelvic vein `http://purl.obolibrary.org/obo/UBERON_0036268`
+
+#### Added
+- [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### penicillar arteriole `http://purl.obolibrary.org/obo/UBERON_0013132`
-#### Removed
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) 
-
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) 
-
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
 
 #### Added
 - [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
-
-
-### penile bulb artery `http://purl.obolibrary.org/obo/UBERON_0008311`
-#### Removed
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
+### penile bulb vein `http://purl.obolibrary.org/obo/UBERON_0039376`
 
 #### Added
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [penile bulb vein](http://purl.obolibrary.org/obo/UBERON_0039376) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### pericardial cavity `http://purl.obolibrary.org/obo/UBERON_0001074`
+### penis blood vessel `http://purl.obolibrary.org/obo/UBERON_0036269`
+
+#### Added
+- [penis blood vessel](http://purl.obolibrary.org/obo/UBERON_0036269) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### peptic cell `http://purl.obolibrary.org/obo/CL_0000155`
+
+#### Added
+- [peptic cell](http://purl.obolibrary.org/obo/CL_0000155) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### perforant path `http://purl.obolibrary.org/obo/UBERON_0034931`
+
+#### Added
+- [perforant path](http://purl.obolibrary.org/obo/UBERON_0034931) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### periarterial lymphatic sheath `http://purl.obolibrary.org/obo/UBERON_0001960`
 #### Removed
-- [pericardial cavity](http://purl.obolibrary.org/obo/UBERON_0001074) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Ciona](http://purl.obolibrary.org/obo/NCBITaxon_7718) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:20959416" 
+- [periarterial lymphatic sheath](http://purl.obolibrary.org/obo/UBERON_0001960) SubClassOf [digestive system element](http://purl.obolibrary.org/obo/UBERON_0013765) 
 
+
+
+### pericardiacophrenic vein `http://purl.obolibrary.org/obo/UBERON_0001590`
+
+#### Added
+- [pericardiacophrenic vein](http://purl.obolibrary.org/obo/UBERON_0001590) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### pericardium `http://purl.obolibrary.org/obo/UBERON_0002407`
 
 #### Added
-- [pericardium](http://purl.obolibrary.org/obo/UBERON_0002407) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pericardium](http://purl.obolibrary.org/obo/UBERON_0002407) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
-- [pericardium](http://purl.obolibrary.org/obo/UBERON_0002407) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### perichondrium `http://purl.obolibrary.org/obo/UBERON_0002222`
+
+#### Added
+- [perichondrium](http://purl.obolibrary.org/obo/UBERON_0002222) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cartilage element](http://purl.obolibrary.org/obo/UBERON_0007844) 
+
+
+### perichordal tissue `http://purl.obolibrary.org/obo/UBERON_0007862`
+
+#### Added
+- [perichordal tissue](http://purl.obolibrary.org/obo/UBERON_0007862) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [notochord](http://purl.obolibrary.org/obo/UBERON_0002328) 
+
+
+### pericyte `http://purl.obolibrary.org/obo/CL_0000669`
+
+#### Added
+- [pericyte](http://purl.obolibrary.org/obo/CL_0000669) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### perineal artery `http://purl.obolibrary.org/obo/UBERON_0001358`
-#### Removed
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### peroneal artery `http://purl.obolibrary.org/obo/UBERON_0001540`
-#### Removed
-- [peroneal artery](http://purl.obolibrary.org/obo/UBERON_0001540) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538) 
+### perineal nerve `http://purl.obolibrary.org/obo/UBERON_0011391`
 
 #### Added
-- [peroneal artery](http://purl.obolibrary.org/obo/UBERON_0001540) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior tibial artery](http://purl.obolibrary.org/obo/UBERON_0001538) 
+- [perineal nerve](http://purl.obolibrary.org/obo/UBERON_0011391) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0011390) 
 
 
-### pharyngeal apophysis `http://purl.obolibrary.org/obo/UBERON_0018349`
-#### Removed
-- [pharyngeal apophysis](http://purl.obolibrary.org/obo/UBERON_0018349) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:131c5051-fb07-4138-9f06-eae8880a6338" 
-
-
-
-### philtrum `http://purl.obolibrary.org/obo/UBERON_0005402`
-#### Removed
-- [philtrum](http://purl.obolibrary.org/obo/UBERON_0005402) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [rhinarium](http://purl.obolibrary.org/obo/UBERON_0011256) 
-
-
-
-### piriform aperture `http://purl.obolibrary.org/obo/UBERON_0036254`
-#### Removed
-- [piriform aperture](http://purl.obolibrary.org/obo/UBERON_0036254) SubClassOf [orifice of skull](http://purl.obolibrary.org/obo/UBERON_0036253) 
-
-- [piriform aperture](http://purl.obolibrary.org/obo/UBERON_0036254) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### perineal vein `http://purl.obolibrary.org/obo/UBERON_0001362`
 
 #### Added
-- [piriform aperture](http://purl.obolibrary.org/obo/UBERON_0036254) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-- [piriform aperture](http://purl.obolibrary.org/obo/UBERON_0036254) SubClassOf [orifice](http://purl.obolibrary.org/obo/UBERON_0000161) 
+- [perineal vein](http://purl.obolibrary.org/obo/UBERON_0001362) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### placenta blood vessel `http://purl.obolibrary.org/obo/UBERON_0022358`
+### perineurium `http://purl.obolibrary.org/obo/UBERON_0000121`
 
 #### Added
-- [placenta blood vessel](http://purl.obolibrary.org/obo/UBERON_0022358) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [placenta blood vessel](http://purl.obolibrary.org/obo/UBERON_0022358) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [perineurium](http://purl.obolibrary.org/obo/UBERON_0000121) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nerve fasciculus](http://purl.obolibrary.org/obo/UBERON_0001019) 
 
 
-### placental basal plate `http://purl.obolibrary.org/obo/UBERON_8600019`
+### peripheral blood mononuclear cell `http://purl.obolibrary.org/obo/CL_2000001`
 
 #### Added
-- [placental basal plate](http://purl.obolibrary.org/obo/UBERON_8600019) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [placental basal plate](http://purl.obolibrary.org/obo/UBERON_8600019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [peripheral blood mononuclear cell](http://purl.obolibrary.org/obo/CL_2000001) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### placental blood `http://purl.obolibrary.org/obo/UBERON_8470000`
-#### Removed
-- [placental blood](http://purl.obolibrary.org/obo/UBERON_8470000) [contributor](http://purl.org/dc/terms/contributor) [B Varner](https://orcid.org/0000-0002-1773-2692) 
-
-
-
-### placental septum `http://purl.obolibrary.org/obo/UBERON_8600020`
+### peripheral nervous system neuron `http://purl.obolibrary.org/obo/CL_2000032`
 
 #### Added
-- [placental septum](http://purl.obolibrary.org/obo/UBERON_8600020) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [placental septum](http://purl.obolibrary.org/obo/UBERON_8600020) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [peripheral nervous system neuron](http://purl.obolibrary.org/obo/CL_2000032) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### plantar metatarsal artery `http://purl.obolibrary.org/obo/UBERON_0035195`
-#### Removed
-- [plantar metatarsal artery](http://purl.obolibrary.org/obo/UBERON_0035195) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### periportal region hepatocyte `http://purl.obolibrary.org/obo/CL_0019026`
 
 #### Added
-- [plantar metatarsal artery](http://purl.obolibrary.org/obo/UBERON_0035195) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [periportal region hepatocyte](http://purl.obolibrary.org/obo/CL_0019026) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### planum antorbitale `http://purl.obolibrary.org/obo/UBERON_3000434`
-#### Removed
-- [planum antorbitale](http://purl.obolibrary.org/obo/UBERON_3000434) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### planum conchale `http://purl.obolibrary.org/obo/UBERON_3000437`
-#### Removed
-- [planum conchale](http://purl.obolibrary.org/obo/UBERON_3000437) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### planum internasale `http://purl.obolibrary.org/obo/UBERON_3000438`
-#### Removed
-- [planum internasale](http://purl.obolibrary.org/obo/UBERON_3000438) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### planum terminale `http://purl.obolibrary.org/obo/UBERON_3000440`
-#### Removed
-- [planum terminale](http://purl.obolibrary.org/obo/UBERON_3000440) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### peritubular capillary `http://purl.obolibrary.org/obo/UBERON_0005272`
 
 #### Added
-- [planum terminale](http://purl.obolibrary.org/obo/UBERON_3000440) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [peritubular capillary](http://purl.obolibrary.org/obo/UBERON_0005272) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### planum triangulare `http://purl.obolibrary.org/obo/UBERON_3000441`
-#### Removed
-- [planum triangulare](http://purl.obolibrary.org/obo/UBERON_3000441) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### peritubular capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1001033`
 
 #### Added
-- [planum triangulare](http://purl.obolibrary.org/obo/UBERON_3000441) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pes anserinus of tibia `http://purl.obolibrary.org/obo/UBERON_0008977`
+
+#### Added
+- [pes anserinus of tibia](http://purl.obolibrary.org/obo/UBERON_0008977) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pes connective tissue `http://purl.obolibrary.org/obo/UBERON_0003595`
+
+#### Added
+- [pes connective tissue](http://purl.obolibrary.org/obo/UBERON_0003595) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of footplate](http://purl.obolibrary.org/obo/UBERON_0003328) 
+
+
+### phagocyte `http://purl.obolibrary.org/obo/CL_0000234`
+
+#### Added
+- [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pharyngeal arch `http://purl.obolibrary.org/obo/UBERON_0002539`
+
+#### Added
+- [pharyngeal arch](http://purl.obolibrary.org/obo/UBERON_0002539) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### pharyngeal branch of vagus nerve `http://purl.obolibrary.org/obo/UBERON_0000929`
+
+#### Added
+- [pharyngeal branch of vagus nerve](http://purl.obolibrary.org/obo/UBERON_0000929) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vagus nerve](http://purl.obolibrary.org/obo/UBERON_0001759) 
+
+
+### pharyngotympanic tube epithelium `http://purl.obolibrary.org/obo/UBERON_0010062`
+
+#### Added
+- [pharyngotympanic tube epithelium](http://purl.obolibrary.org/obo/UBERON_0010062) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [tubotympanic recess epithelium](http://purl.obolibrary.org/obo/UBERON_0010020) 
+
+
+### phosphate ion homeostasis `http://purl.obolibrary.org/obo/GO_0055062`
+
+#### Added
+- [phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0055062) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "phosphate homeostasis" 
+
+- [phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0055062) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26429"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [phosphate ion homeostasis](http://purl.obolibrary.org/obo/GO_0055062) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Pi homeostasis" 
+
+
+### photoreceptor cell `http://purl.obolibrary.org/obo/CL_0000210`
+
+#### Added
+- [photoreceptor cell](http://purl.obolibrary.org/obo/CL_0000210) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### phrenic artery `http://purl.obolibrary.org/obo/UBERON_0002057`
+
+#### Added
+- [phrenic artery](http://purl.obolibrary.org/obo/UBERON_0002057) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### phrenic nerve `http://purl.obolibrary.org/obo/UBERON_0001884`
+
+#### Added
+- [phrenic nerve](http://purl.obolibrary.org/obo/UBERON_0001884) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nerve of cervical vertebra](http://purl.obolibrary.org/obo/UBERON_0000962) 
+
+
+### phrenic vein `http://purl.obolibrary.org/obo/UBERON_0012193`
+
+#### Added
+- [phrenic vein](http://purl.obolibrary.org/obo/UBERON_0012193) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pigment granule membrane `http://purl.obolibrary.org/obo/GO_0090741`
+
+#### Added
+- [pigment granule membrane](http://purl.obolibrary.org/obo/GO_0090741) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pigment granule](http://purl.obolibrary.org/obo/GO_0048770) 
+
+
+### pigmented layer of retina `http://purl.obolibrary.org/obo/UBERON_0001782`
+
+#### Added
+- [pigmented layer of retina](http://purl.obolibrary.org/obo/UBERON_0001782) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive retinal pigmented epithelium](http://purl.obolibrary.org/obo/UBERON_0005424) 
+
+
+### pineal tract `http://purl.obolibrary.org/obo/UBERON_0034715`
+
+#### Added
+- [pineal tract](http://purl.obolibrary.org/obo/UBERON_0034715) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epiphyseal tract](http://purl.obolibrary.org/obo/UBERON_0034714) 
+
+
+### pituitary gland `http://purl.obolibrary.org/obo/UBERON_0000007`
+
+#### Added
+- [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future pituitary gland](http://purl.obolibrary.org/obo/UBERON_0034875) 
+
+
+### pituitary gland cell `http://purl.obolibrary.org/obo/CL_2000004`
+
+#### Added
+- [pituitary gland cell](http://purl.obolibrary.org/obo/CL_2000004) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### placental villous trophoblast `http://purl.obolibrary.org/obo/CL_2000060`
+
+#### Added
+- [placental villous trophoblast](http://purl.obolibrary.org/obo/CL_2000060) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### plantar nerve `http://purl.obolibrary.org/obo/UBERON_0035109`
+
+#### Added
+- [plantar nerve](http://purl.obolibrary.org/obo/UBERON_0035109) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tibial nerve](http://purl.obolibrary.org/obo/UBERON_0001323) 
+
+
+### plasma cell `http://purl.obolibrary.org/obo/CL_0000786`
+
+#### Added
+- [plasma cell](http://purl.obolibrary.org/obo/CL_0000786) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### plasma membrane `http://purl.obolibrary.org/obo/GO_0005886`
+#### Removed
+- [plasma membrane](http://purl.obolibrary.org/obo/GO_0005886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [plasma membrane](http://purl.obolibrary.org/obo/GO_0005886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### plasmablast `http://purl.obolibrary.org/obo/CL_0000980`
+
+#### Added
+- [plasmablast](http://purl.obolibrary.org/obo/CL_0000980) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### plastron-carapace bridge `http://purl.obolibrary.org/obo/UBERON_0011662`
+
+#### Added
+- [plastron-carapace bridge](http://purl.obolibrary.org/obo/UBERON_0011662) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### platelet `http://purl.obolibrary.org/obo/CL_0000233`
+
+#### Added
+- [platelet](http://purl.obolibrary.org/obo/CL_0000233) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pleural cavity `http://purl.obolibrary.org/obo/UBERON_0002402`
+
+#### Added
+- [pleural cavity](http://purl.obolibrary.org/obo/UBERON_0002402) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pleural sac](http://purl.obolibrary.org/obo/UBERON_0009778) 
+
+
+### pleuroperitoneal canal lumen `http://purl.obolibrary.org/obo/UBERON_0014704`
+
+#### Added
+- [pleuroperitoneal canal lumen](http://purl.obolibrary.org/obo/UBERON_0014704) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pleuroperitoneal canal](http://purl.obolibrary.org/obo/UBERON_0006279) 
+
+
+### pneumocyte `http://purl.obolibrary.org/obo/CL_0000322`
+
+#### Added
+- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### podocyte `http://purl.obolibrary.org/obo/CL_0000653`
+
+#### Added
+- [podocyte](http://purl.obolibrary.org/obo/CL_0000653) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### popliteal artery `http://purl.obolibrary.org/obo/UBERON_0002250`
-#### Removed
-- [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-
-- [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
 
 #### Added
 - [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
 
-- [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### post-axial region of pectoral appendage `http://purl.obolibrary.org/obo/UBERON_0018304`
-#### Removed
-- [post-axial region of pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0018304) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:498d2b0d-6e51-4d20-ba52-8d409676994e" 
-
-
-
-### postcingulum `http://purl.obolibrary.org/obo/UBERON_0018290`
-#### Removed
-- [postcingulum](http://purl.obolibrary.org/obo/UBERON_0018290) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:65b40ec3-fa39-4802-bfa8-fb6145400c29" 
-
-
-
-### postcingulum of deciduous premolar 5 `http://purl.obolibrary.org/obo/UBERON_0018274`
-#### Removed
-- [postcingulum of deciduous premolar 5](http://purl.obolibrary.org/obo/UBERON_0018274) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:122547c2-0bd1-434b-ba32-7c40cd49772d" 
-
-
-
-### posterior auricular artery `http://purl.obolibrary.org/obo/UBERON_0014694`
-#### Removed
-- [posterior auricular artery](http://purl.obolibrary.org/obo/UBERON_0014694) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### popliteal vein `http://purl.obolibrary.org/obo/UBERON_0001544`
 
 #### Added
-- [posterior auricular artery](http://purl.obolibrary.org/obo/UBERON_0014694) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [popliteal vein](http://purl.obolibrary.org/obo/UBERON_0001544) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### positive regulation of amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_2000284`
+#### Removed
+- [positive regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000284) SubClassOf [positive regulation of amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045764) 
+
+#### Added
+- [positive regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000284) SubClassOf [positive regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062013) 
+
+- [positive regulation of amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000284) SubClassOf [positive regulation of nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0051173) 
+
+
+### positive regulation of amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0045764`
+#### Removed
+- [positive regulation of amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045764) SubClassOf [positive regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031325) 
+
+- [positive regulation of amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0045764) SubClassOf [positive regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062013) 
+
+
+
+### positive regulation of calcium ion import `http://purl.obolibrary.org/obo/GO_0090280`
+
+#### Added
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that increases the rate, frequency, or extent of the directed movement of calcium ions into a cell or organelle." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:BHF" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0090280" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [label](http://www.w3.org/2000/01/rdf-schema#label) "positive regulation of calcium ion import" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2010-02-08T05:11:20Z" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "positive regulation of transmembrane calcium influx" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tb" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "tb" 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- Class: [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509)) 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) SubClassOf [positive regulation of calcium ion transport](http://purl.obolibrary.org/obo/GO_0051928) 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) SubClassOf [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) 
+
+- [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) SubClassOf [positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) 
+
+
+### positive regulation of calcium ion import across plasma membrane `http://purl.obolibrary.org/obo/GO_1905665`
+
+#### Added
+- [positive regulation of calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_1905665) SubClassOf [positive regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090280) 
+
+
+### positive regulation of cytoplasmic transport `http://purl.obolibrary.org/obo/GO_1903651`
+#### Removed
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "up regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "activation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that activates or increases the frequency, rate or extent of cytoplasmic transport." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25049409" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000058" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "up regulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "jl" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "activation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "up-regulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "upregulation of cytoplasmic transport" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-11-24T13:38:34Z" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1903651" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [label](http://www.w3.org/2000/01/rdf-schema#label) "positive regulation of cytoplasmic transport" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "upregulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "positive regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "up-regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- Class: [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482)) 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) SubClassOf [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) SubClassOf [positive regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032388) 
+
+- [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) SubClassOf [positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482) 
+
+
+
+### positive regulation of dense core granule transport `http://purl.obolibrary.org/obo/GO_1904811`
+#### Removed
+- [positive regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904811) SubClassOf [positive regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903651) 
+
+#### Added
+- [positive regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904811) SubClassOf [positive regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032388) 
+
+
+### positive regulation of gamma-aminobutyric acid catabolic process `http://purl.obolibrary.org/obo/GO_1901717`
+
+#### Added
+- [positive regulation of gamma-aminobutyric acid catabolic process](http://purl.obolibrary.org/obo/GO_1901717) SubClassOf [positive regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031325) 
+
+- [positive regulation of gamma-aminobutyric acid catabolic process](http://purl.obolibrary.org/obo/GO_1901717) SubClassOf [positive regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062013) 
+
+
+### positive regulation of glutamate metabolic process `http://purl.obolibrary.org/obo/GO_2000213`
+
+#### Added
+- [positive regulation of glutamate metabolic process](http://purl.obolibrary.org/obo/GO_2000213) SubClassOf [positive regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062013) 
+
+- [positive regulation of glutamate metabolic process](http://purl.obolibrary.org/obo/GO_2000213) SubClassOf [positive regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031325) 
+
+
+### post-anal tail `http://purl.obolibrary.org/obo/UBERON_0007812`
+
+#### Added
+- [post-anal tail](http://purl.obolibrary.org/obo/UBERON_0007812) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [embryonic post-anal tail](http://purl.obolibrary.org/obo/UBERON_0007144) 
+
+
+### posterior auricular nerve `http://purl.obolibrary.org/obo/UBERON_0035647`
+
+#### Added
+- [posterior auricular nerve](http://purl.obolibrary.org/obo/UBERON_0035647) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cervical nerve plexus](http://purl.obolibrary.org/obo/UBERON_0003725) 
 
 
 ### posterior cerebral artery `http://purl.obolibrary.org/obo/UBERON_0001636`
-#### Removed
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) EquivalentTo [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
 
 #### Added
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) EquivalentTo [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
 - [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
 
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
-
-
-### posterior choroidal artery `http://purl.obolibrary.org/obo/UBERON_0014697`
-#### Removed
-- [posterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014697) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### posterior chamber swim bladder `http://purl.obolibrary.org/obo/UBERON_2001278`
 
 #### Added
-- [posterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014697) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [posterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014697) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [posterior choroidal artery](http://purl.obolibrary.org/obo/UBERON_0014697) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
+- [posterior chamber swim bladder](http://purl.obolibrary.org/obo/UBERON_2001278) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### posterior communicating artery `http://purl.obolibrary.org/obo/UBERON_0001628`
-#### Removed
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) EquivalentTo [communicating artery](http://purl.obolibrary.org/obo/UBERON_0006347) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ZFA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
 
 #### Added
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) EquivalentTo [communicating artery](http://purl.obolibrary.org/obo/UBERON_0006347) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [circle of Willis](http://purl.obolibrary.org/obo/UBERON_0003709)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
-
-- [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ZFA" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [posterior communicating artery](http://purl.obolibrary.org/obo/UBERON_0001628) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### posterior cruciate ligament of knee joint `http://purl.obolibrary.org/obo/UBERON_0003680`
-#### Removed
-- [posterior cruciate ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0003680) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [posterior cruciate ligament of knee joint](http://purl.obolibrary.org/obo/UBERON_0003680) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### posterior inferior cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0009688`
-#### Removed
-- [posterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009688) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### posterior external jugular vein `http://purl.obolibrary.org/obo/UBERON_0035249`
 
 #### Added
-- [posterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009688) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [posterior external jugular vein](http://purl.obolibrary.org/obo/UBERON_0035249) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [posterior inferior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0009688) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+
+### posterior incudal ligament `http://purl.obolibrary.org/obo/UBERON_0018155`
+
+#### Added
+- [posterior incudal ligament](http://purl.obolibrary.org/obo/UBERON_0018155) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### posterior labial artery `http://purl.obolibrary.org/obo/UBERON_0039351`
-#### Removed
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) 
-
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
 
 #### Added
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [perineal artery](http://purl.obolibrary.org/obo/UBERON_0001358) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [posterior labial artery](http://purl.obolibrary.org/obo/UBERON_0039351) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### posterior lateral line `http://purl.obolibrary.org/obo/UBERON_0006334`
-#### Removed
-- [posterior lateral line](http://purl.obolibrary.org/obo/UBERON_0006334) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HBA:4413" 
-
-
-
-### posterior maxillary process `http://purl.obolibrary.org/obo/UBERON_3000448`
-#### Removed
-- [posterior maxillary process](http://purl.obolibrary.org/obo/UBERON_3000448) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### posterior subdivision of masseter `http://purl.obolibrary.org/obo/UBERON_0011313`
 
 #### Added
-- [posterior maxillary process](http://purl.obolibrary.org/obo/UBERON_3000448) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-
-### posterior maxillary process dorsal process `http://purl.obolibrary.org/obo/UBERON_3000449`
-#### Removed
-- [posterior maxillary process dorsal process](http://purl.obolibrary.org/obo/UBERON_3000449) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-#### Added
-- [posterior maxillary process dorsal process](http://purl.obolibrary.org/obo/UBERON_3000449) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-
-### posterior nasal aperture `http://purl.obolibrary.org/obo/UBERON_0004771`
-#### Removed
-- [posterior nasal aperture](http://purl.obolibrary.org/obo/UBERON_0004771) SubClassOf [orifice of skull](http://purl.obolibrary.org/obo/UBERON_0036253) 
-
-
-
-### posterior parietal artery `http://purl.obolibrary.org/obo/UBERON_0035222`
-#### Removed
-- [posterior parietal artery](http://purl.obolibrary.org/obo/UBERON_0035222) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [posterior parietal artery](http://purl.obolibrary.org/obo/UBERON_0035222) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### posterior segment of paracentral lobule `http://purl.obolibrary.org/obo/UBERON_0035934`
-
-#### Added
-- [posterior segment of paracentral lobule](http://purl.obolibrary.org/obo/UBERON_0035934) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [posterior segment of paracentral lobule](http://purl.obolibrary.org/obo/UBERON_0035934) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [posterior subdivision of masseter](http://purl.obolibrary.org/obo/UBERON_0011313) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
 
 
 ### posterior superior alveolar artery `http://purl.obolibrary.org/obo/UBERON_0018397`
-#### Removed
-- [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-
-- [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
 #### Added
 - [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [posterior superior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0018397) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### posterior temporal artery `http://purl.obolibrary.org/obo/UBERON_0035261`
-#### Removed
-- [posterior temporal artery](http://purl.obolibrary.org/obo/UBERON_0035261) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### posterior surface of kidney `http://purl.obolibrary.org/obo/UBERON_0035471`
 
 #### Added
-- [posterior temporal artery](http://purl.obolibrary.org/obo/UBERON_0035261) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [middle cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001627) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [posterior surface of kidney](http://purl.obolibrary.org/obo/UBERON_0035471) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
 
 
-### posterior transverse temporal gyrus `http://purl.obolibrary.org/obo/UBERON_0002774`
-
-#### Added
-- [posterior transverse temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002774) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [posterior transverse temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002774) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### posteroloph `http://purl.obolibrary.org/obo/UBERON_0018291`
-#### Removed
-- [posteroloph](http://purl.obolibrary.org/obo/UBERON_0018291) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:09a9f799-951b-46b4-8dc2-d4d486ff6542" 
-
-
-
-### posthypocrista `http://purl.obolibrary.org/obo/UBERON_0018292`
-#### Removed
-- [posthypocrista](http://purl.obolibrary.org/obo/UBERON_0018292) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:071e0de7-9e35-437a-b985-d9ec084e5a42" 
-
-
-
-### posthypocrista of deciduous premolar 5 `http://purl.obolibrary.org/obo/UBERON_0018275`
-#### Removed
-- [posthypocrista of deciduous premolar 5](http://purl.obolibrary.org/obo/UBERON_0018275) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:dcecd800-316d-4d72-93fa-0c66f7bb6982" 
-
-
-
-### postnasal wall `http://purl.obolibrary.org/obo/UBERON_3000454`
-#### Removed
-- [postnasal wall](http://purl.obolibrary.org/obo/UBERON_3000454) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### posterior vena cava `http://purl.obolibrary.org/obo/UBERON_0001072`
 
 #### Added
-- [postnasal wall](http://purl.obolibrary.org/obo/UBERON_3000454) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [posterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### precerebral fontanelle `http://purl.obolibrary.org/obo/UBERON_0018351`
-#### Removed
-- [precerebral fontanelle](http://purl.obolibrary.org/obo/UBERON_0018351) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:43fdac75-44ba-45b0-bc85-bbd53076852f" 
-
-
-
-### precingulum `http://purl.obolibrary.org/obo/UBERON_0018293`
-#### Removed
-- [precingulum](http://purl.obolibrary.org/obo/UBERON_0018293) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:4203b16d-bb40-4289-aaae-363363d7db6f" 
-
-
-
-### premolar 1 `http://purl.obolibrary.org/obo/UBERON_0018294`
-#### Removed
-- [premolar 1](http://purl.obolibrary.org/obo/UBERON_0018294) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:df0eb189-0c10-493d-b5ce-8fd091e09456" 
-
-
-
-### premolar 1 hypoconoid `http://purl.obolibrary.org/obo/UBERON_0018287`
-#### Removed
-- [premolar 1 hypoconoid](http://purl.obolibrary.org/obo/UBERON_0018287) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:518a52d0-1c9b-4d23-922c-d5045791bcf0" 
-
-
-
-### preprotocrista `http://purl.obolibrary.org/obo/UBERON_0018295`
-#### Removed
-- [preprotocrista](http://purl.obolibrary.org/obo/UBERON_0018295) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1483131a-b5c4-484a-8ffa-0dc5e0a5ef34" 
-
-
-
-### prevertebral ganglion `http://purl.obolibrary.org/obo/UBERON_0003964`
+### pre-B-I cell `http://purl.obolibrary.org/obo/CL_0000956`
 
 #### Added
-- [prevertebral ganglion](http://purl.obolibrary.org/obo/UBERON_0003964) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [prevertebral ganglion](http://purl.obolibrary.org/obo/UBERON_0003964) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pre-B-I cell](http://purl.obolibrary.org/obo/CL_0000956) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### primary lymphoid nodule of tonsil `http://purl.obolibrary.org/obo/UBERON_0010423`
+### prechordal plate `http://purl.obolibrary.org/obo/UBERON_0003063`
 
 #### Added
-- [primary lymphoid nodule of tonsil](http://purl.obolibrary.org/obo/UBERON_0010423) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [primary lymphoid nodule of tonsil](http://purl.obolibrary.org/obo/UBERON_0010423) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [prechordal plate](http://purl.obolibrary.org/obo/UBERON_0003063) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [prechordal mesoderm](http://purl.obolibrary.org/obo/UBERON_0034878) 
 
 
-### prismatic cartilage `http://purl.obolibrary.org/obo/UBERON_0018352`
+### precursor B cell `http://purl.obolibrary.org/obo/CL_0000817`
+
+#### Added
+- [precursor B cell](http://purl.obolibrary.org/obo/CL_0000817) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### precursor cell `http://purl.obolibrary.org/obo/CL_0011115`
+
+#### Added
+- [precursor cell](http://purl.obolibrary.org/obo/CL_0011115) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### premaxilla `http://purl.obolibrary.org/obo/UBERON_0002244`
+
+#### Added
+- [premaxilla](http://purl.obolibrary.org/obo/UBERON_0002244) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [early premaxilla](http://purl.obolibrary.org/obo/UBERON_0011628) 
+
+
+### preosteoblast `http://purl.obolibrary.org/obo/CL_0007010`
+
+#### Added
+- [preosteoblast](http://purl.obolibrary.org/obo/CL_0007010) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### prepuce `http://purl.obolibrary.org/obo/UBERON_0011374`
+
+#### Added
+- [prepuce](http://purl.obolibrary.org/obo/UBERON_0011374) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [preputial swelling](http://purl.obolibrary.org/obo/UBERON_0035004) 
+
+
+### prepuce of clitoris `http://purl.obolibrary.org/obo/UBERON_0005299`
+
+#### Added
+- [prepuce of clitoris](http://purl.obolibrary.org/obo/UBERON_0005299) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [preputial swelling of female](http://purl.obolibrary.org/obo/UBERON_0035006) 
+
+
+### prepuce of penis `http://purl.obolibrary.org/obo/UBERON_0001332`
+
+#### Added
+- [prepuce of penis](http://purl.obolibrary.org/obo/UBERON_0001332) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [preputial swelling of male](http://purl.obolibrary.org/obo/UBERON_0035005) 
+
+
+### prepupa `http://purl.obolibrary.org/obo/UBERON_0003142`
+
+#### Added
+- [prepupa](http://purl.obolibrary.org/obo/UBERON_0003142) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [larva](http://purl.obolibrary.org/obo/UBERON_0002548) 
+
+
+### presomitic mesoderm `http://purl.obolibrary.org/obo/UBERON_0003059`
+
+#### Added
+- [presomitic mesoderm](http://purl.obolibrary.org/obo/UBERON_0003059) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive segmental plate](http://purl.obolibrary.org/obo/UBERON_0007282) 
+
+
+### prickle cell `http://purl.obolibrary.org/obo/CL_0000649`
+
+#### Added
+- [prickle cell](http://purl.obolibrary.org/obo/CL_0000649) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### primary bronchiole `http://purl.obolibrary.org/obo/UBERON_0012067`
+
+#### Added
+- [primary bronchiole](http://purl.obolibrary.org/obo/UBERON_0012067) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### primary dorsal nerve cord `http://purl.obolibrary.org/obo/UBERON_0005054`
+
+#### Added
+- [primary dorsal nerve cord](http://purl.obolibrary.org/obo/UBERON_0005054) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsum](http://purl.obolibrary.org/obo/UBERON_0001137) 
+
+
+### primary metabolic process `http://purl.obolibrary.org/obo/GO_0044238`
+
+#### Added
+- [primary metabolic process](http://purl.obolibrary.org/obo/GO_0044238) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+- [primary metabolic process](http://purl.obolibrary.org/obo/GO_0044238) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26424"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### primary yolk sac cavity `http://purl.obolibrary.org/obo/UBERON_0035677`
+
+#### Added
+- [primary yolk sac cavity](http://purl.obolibrary.org/obo/UBERON_0035677) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [parietal yolk sac](http://purl.obolibrary.org/obo/UBERON_0008853) 
+
+
+### primitive heart tube `http://purl.obolibrary.org/obo/UBERON_0005498`
+
+#### Added
+- [primitive heart tube](http://purl.obolibrary.org/obo/UBERON_0005498) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### primitive knot `http://purl.obolibrary.org/obo/UBERON_0003062`
+
+#### Added
+- [primitive knot](http://purl.obolibrary.org/obo/UBERON_0003062) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive shield](http://purl.obolibrary.org/obo/UBERON_0007283) 
+
+
+### primordial germ cell `http://purl.obolibrary.org/obo/CL_0000670`
+
+#### Added
+- [primordial germ cell](http://purl.obolibrary.org/obo/CL_0000670) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pro-B cell `http://purl.obolibrary.org/obo/CL_0000826`
+
+#### Added
+- [pro-B cell](http://purl.obolibrary.org/obo/CL_0000826) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pro-T cell `http://purl.obolibrary.org/obo/CL_0000827`
+
+#### Added
+- [pro-T cell](http://purl.obolibrary.org/obo/CL_0000827) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### proerythroblast `http://purl.obolibrary.org/obo/CL_0000547`
 #### Removed
-- [prismatic cartilage](http://purl.obolibrary.org/obo/UBERON_0018352) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:10e29a7f-5845-4c48-9d85-1043712ad536" 
+- [proerythroblast](http://purl.obolibrary.org/obo/CL_0000547) EquivalentTo [erythroid lineage cell](http://purl.obolibrary.org/obo/CL_0000764) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [basophilic cytoplasm](http://purl.obolibrary.org/obo/CL_0017503)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [nucleolus](http://purl.obolibrary.org/obo/GO_0005730)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD19 molecule](http://purl.obolibrary.org/obo/PR_000001002)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD4 molecule](http://purl.obolibrary.org/obo/PR_000001004)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [integrin alpha-M](http://purl.obolibrary.org/obo/PR_000001012)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD3 epsilon](http://purl.obolibrary.org/obo/PR_000001020)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [neural cell adhesion molecule 1](http://purl.obolibrary.org/obo/PR_000001024)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD2 molecule](http://purl.obolibrary.org/obo/PR_000001083)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [T-cell surface glycoprotein CD8 alpha chain](http://purl.obolibrary.org/obo/PR_000001084)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [membrane-spanning 4-domains subfamily A member 1](http://purl.obolibrary.org/obo/PR_000001289)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [T-cell surface glycoprotein CD5](http://purl.obolibrary.org/obo/PR_000001839)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD14 molecule](http://purl.obolibrary.org/obo/PR_000001889)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [lymphocyte antigen 6G](http://purl.obolibrary.org/obo/PR_000002978)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [nucleated](http://purl.obolibrary.org/obo/PATO_0002505)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [transferrin receptor protein 1](http://purl.obolibrary.org/obo/PR_000001945)) 
 
-
-
-### processual entity `http://purl.obolibrary.org/obo/UBERON_0000000`
+- [proerythroblast](http://purl.obolibrary.org/obo/CL_0000547) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [increased nucleus size](http://purl.obolibrary.org/obo/CL_0017505) 
 
 #### Added
-- [processual entity](http://purl.obolibrary.org/obo/UBERON_0000000) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BFO:0000003" 
+- [proerythroblast](http://purl.obolibrary.org/obo/CL_0000547) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [proerythroblast](http://purl.obolibrary.org/obo/CL_0000547) EquivalentTo [erythroid lineage cell](http://purl.obolibrary.org/obo/CL_0000764) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [basophilic cytoplasm](http://purl.obolibrary.org/obo/CL_0017503)) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [nucleolus](http://purl.obolibrary.org/obo/GO_0005730)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD19 molecule](http://purl.obolibrary.org/obo/PR_000001002)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD4 molecule](http://purl.obolibrary.org/obo/PR_000001004)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [integrin alpha-M](http://purl.obolibrary.org/obo/PR_000001012)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD3 epsilon](http://purl.obolibrary.org/obo/PR_000001020)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [neural cell adhesion molecule 1](http://purl.obolibrary.org/obo/PR_000001024)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD2 molecule](http://purl.obolibrary.org/obo/PR_000001083)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [T-cell surface glycoprotein CD8 alpha chain](http://purl.obolibrary.org/obo/PR_000001084)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [membrane-spanning 4-domains subfamily A member 1](http://purl.obolibrary.org/obo/PR_000001289)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [T-cell surface glycoprotein CD5](http://purl.obolibrary.org/obo/PR_000001839)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [CD14 molecule](http://purl.obolibrary.org/obo/PR_000001889)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [lymphocyte antigen 6G](http://purl.obolibrary.org/obo/PR_000002978)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [nucleated](http://purl.obolibrary.org/obo/PATO_0002505)) and ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [transferrin receptor protein 1](http://purl.obolibrary.org/obo/PR_000001945)) 
+
+- [proerythroblast](http://purl.obolibrary.org/obo/CL_0000547) SubClassOf [has characteristic](http://purl.obolibrary.org/obo/RO_0000053) some [high nuclear/cytoplasmic ratio](http://purl.obolibrary.org/obo/PATO_0040072) 
 
 
-### processus lingularis of nasal skeleton `http://purl.obolibrary.org/obo/UBERON_3000644`
+### professional antigen presenting cell `http://purl.obolibrary.org/obo/CL_0000145`
+
+#### Added
+- [professional antigen presenting cell](http://purl.obolibrary.org/obo/CL_0000145) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### profundal part of trigeminal ganglion complex `http://purl.obolibrary.org/obo/UBERON_0035599`
+
+#### Added
+- [profundal part of trigeminal ganglion complex](http://purl.obolibrary.org/obo/UBERON_0035599) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [profundal placode](http://purl.obolibrary.org/obo/UBERON_0035597) 
+
+
+### progenitor cell `http://purl.obolibrary.org/obo/CL_0011026`
+
+#### Added
+- [progenitor cell](http://purl.obolibrary.org/obo/CL_0011026) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### progenitor cell of endocrine pancreas `http://purl.obolibrary.org/obo/CL_0002351`
+
+#### Added
+- [progenitor cell of endocrine pancreas](http://purl.obolibrary.org/obo/CL_0002351) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### progenitor cell of mammary luminal epithelium `http://purl.obolibrary.org/obo/CL_0009116`
+
+#### Added
+- [progenitor cell of mammary luminal epithelium](http://purl.obolibrary.org/obo/CL_0009116) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### programmed cell death `http://purl.obolibrary.org/obo/GO_0012501`
 #### Removed
-- [processus lingularis of nasal skeleton](http://purl.obolibrary.org/obo/UBERON_3000644) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [programmed cell death](http://purl.obolibrary.org/obo/GO_0012501) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [processus lingularis of nasal skeleton](http://purl.obolibrary.org/obo/UBERON_3000644) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [programmed cell death](http://purl.obolibrary.org/obo/GO_0012501) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### proper hepatic artery `http://purl.obolibrary.org/obo/UBERON_0015480`
+### prokaryote_subset `http://purl.obolibrary.org/obo/go#prokaryote_subset`
 #### Removed
-- [proper hepatic artery](http://purl.obolibrary.org/obo/UBERON_0015480) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
+- AnnotationProperty: [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
-- [proper hepatic artery](http://purl.obolibrary.org/obo/UBERON_0015480) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [proper hepatic artery](http://purl.obolibrary.org/obo/UBERON_0015480) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [proper hepatic artery](http://purl.obolibrary.org/obo/UBERON_0015480) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
 
 
-### prostate gland smooth muscle `http://purl.obolibrary.org/obo/UBERON_0004243`
+
+### promonocyte `http://purl.obolibrary.org/obo/CL_0000559`
 
 #### Added
-- [prostate gland smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004243) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [prostate gland smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004243) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [promonocyte](http://purl.obolibrary.org/obo/CL_0000559) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### prostate glandular acinus `http://purl.obolibrary.org/obo/UBERON_0004179`
+### pronephric mesoderm `http://purl.obolibrary.org/obo/UBERON_0005721`
 
 #### Added
-- [prostate glandular acinus](http://purl.obolibrary.org/obo/UBERON_0004179) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [prostate glandular acinus](http://purl.obolibrary.org/obo/UBERON_0004179) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [pronephric mesoderm](http://purl.obolibrary.org/obo/UBERON_0005721) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive pronephric mesoderm](http://purl.obolibrary.org/obo/UBERON_0007297) 
 
 
-### prostatic venous plexus `http://purl.obolibrary.org/obo/UBERON_0009042`
+### prostate gland microvascular endothelial cell `http://purl.obolibrary.org/obo/CL_2000059`
 
 #### Added
-- [prostatic venous plexus](http://purl.obolibrary.org/obo/UBERON_0009042) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [prostatic venous plexus](http://purl.obolibrary.org/obo/UBERON_0009042) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [prostate gland microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000059) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### proximal epiphysis of fibula `http://purl.obolibrary.org/obo/UBERON_0008775`
+### prostate neuroendocrine cell `http://purl.obolibrary.org/obo/CL_0017002`
+
+#### Added
+- [prostate neuroendocrine cell](http://purl.obolibrary.org/obo/CL_0017002) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### prostate stromal cell `http://purl.obolibrary.org/obo/CL_0002622`
+
+#### Added
+- [prostate stromal cell](http://purl.obolibrary.org/obo/CL_0002622) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### protein catabolic process `http://purl.obolibrary.org/obo/GO_0030163`
 #### Removed
-- [proximal epiphysis of fibula](http://purl.obolibrary.org/obo/UBERON_0008775) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [proximal epiphysis of fibula](http://purl.obolibrary.org/obo/UBERON_0008775) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### proximal epiphysis of tibia `http://purl.obolibrary.org/obo/UBERON_0008772`
-#### Removed
-- [proximal epiphysis of tibia](http://purl.obolibrary.org/obo/UBERON_0008772) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [proximal epiphysis of tibia](http://purl.obolibrary.org/obo/UBERON_0008772) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### pterygoid bone `http://purl.obolibrary.org/obo/UBERON_0010389`
-#### Removed
-- [pterygoid bone](http://purl.obolibrary.org/obo/UBERON_0010389) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [suspensorium](http://purl.obolibrary.org/obo/UBERON_0003108) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "AAO" 
-
-
-
-### pterygomandibular raphe `http://purl.obolibrary.org/obo/UBERON_0011349`
-#### Removed
-- [pterygomandibular raphe](http://purl.obolibrary.org/obo/UBERON_0011349) SubClassOf [head connective tissue](http://purl.obolibrary.org/obo/UBERON_0003566) 
+- [protein catabolic process](http://purl.obolibrary.org/obo/GO_0030163) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [pterygomandibular raphe](http://purl.obolibrary.org/obo/UBERON_0011349) SubClassOf [connective tissue](http://purl.obolibrary.org/obo/UBERON_0002384) 
+- [protein catabolic process](http://purl.obolibrary.org/obo/GO_0030163) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### protein localization to membrane `http://purl.obolibrary.org/obo/GO_0072657`
+#### Removed
+- [protein localization to membrane](http://purl.obolibrary.org/obo/GO_0072657) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [protein localization to membrane](http://purl.obolibrary.org/obo/GO_0072657) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### protein maturation `http://purl.obolibrary.org/obo/GO_0051604`
+#### Removed
+- [protein maturation](http://purl.obolibrary.org/obo/GO_0051604) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [protein maturation](http://purl.obolibrary.org/obo/GO_0051604) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### protein modification process `http://purl.obolibrary.org/obo/GO_0036211`
+#### Removed
+- [protein modification process](http://purl.obolibrary.org/obo/GO_0036211) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [protein modification process](http://purl.obolibrary.org/obo/GO_0036211) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### protein-containing complex assembly `http://purl.obolibrary.org/obo/GO_0065003`
+#### Removed
+- [protein-containing complex assembly](http://purl.obolibrary.org/obo/GO_0065003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [protein-containing complex assembly](http://purl.obolibrary.org/obo/GO_0065003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### proteinogenic amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0170038`
+
+#### Added
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid synthesis" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of any amino acid that is incorporated into protein naturally by ribosomal translation of mRNA, and that has a specific codon for translation from mRNA to protein." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T16:28:19Z" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid anabolism" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [label](http://www.w3.org/2000/01/rdf-schema#label) "proteinogenic amino acid biosynthetic process" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid formation" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid biosynthesis" 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170038" 
+
+- Class: [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) EquivalentTo [biosynthetic process](http://purl.obolibrary.org/obo/GO_0009058) and ([has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813)) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) SubClassOf [organonitrogen compound biosynthetic process](http://purl.obolibrary.org/obo/GO_1901566) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) SubClassOf [organic acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0016053) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) SubClassOf [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) 
+
+- [proteinogenic amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0170038) SubClassOf [has primary output](http://purl.obolibrary.org/obo/RO_0004008) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813) 
+
+
+### proteinogenic amino acid catabolic process `http://purl.obolibrary.org/obo/GO_0170040`
+
+#### Added
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid breakdown" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of any amino acid that is incorporated into protein naturally by ribosomal translation of mRNA, and that has a specific codon for translation from mRNA to protein." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [label](http://www.w3.org/2000/01/rdf-schema#label) "proteinogenic amino acid catabolic process" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170040" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid catabolism" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T17:41:14Z" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid degradation" 
+
+- Class: [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) EquivalentTo [catabolic process](http://purl.obolibrary.org/obo/GO_0009056) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813)) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) SubClassOf [organonitrogen compound catabolic process](http://purl.obolibrary.org/obo/GO_1901565) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) SubClassOf [has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) SubClassOf [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) 
+
+- [proteinogenic amino acid catabolic process](http://purl.obolibrary.org/obo/GO_0170040) SubClassOf [organic acid catabolic process](http://purl.obolibrary.org/obo/GO_0016054) 
+
+
+### proteinogenic amino acid metabolic process `http://purl.obolibrary.org/obo/GO_0170039`
+
+#### Added
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-12-18T17:31:08Z" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/23268"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [label](http://www.w3.org/2000/01/rdf-schema#label) "proteinogenic amino acid metabolic process" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0170039" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving any amino acid that is incorporated into protein naturally by ribosomal translation of mRNA, and that has a specific codon for translation from mRNA to protein." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ew" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proteinogenic amino acid metabolism" 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "ew" 
+
+- Class: [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) EquivalentTo [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) and ([has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813)) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) SubClassOf [has primary input or output](http://purl.obolibrary.org/obo/RO_0004007) some [proteinogenic amino acid](http://purl.obolibrary.org/obo/CHEBI_83813) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) SubClassOf [amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006520) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) SubClassOf [organic acid metabolic process](http://purl.obolibrary.org/obo/GO_0006082) 
+
+- [proteinogenic amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0170039) SubClassOf [organonitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_1901564) 
+
+
+### proximal segment of rib `http://purl.obolibrary.org/obo/UBERON_0010388`
+
+#### Added
+- [proximal segment of rib](http://purl.obolibrary.org/obo/UBERON_0010388) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### proximal superior pancreatic lymph node `http://purl.obolibrary.org/obo/UBERON_0038695`
+
+#### Added
+- [proximal superior pancreatic lymph node](http://purl.obolibrary.org/obo/UBERON_0038695) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### proximal-most point of greater trochanter of femur `http://purl.obolibrary.org/obo/UBERON_7500049`
+
+#### Added
+- [proximal-most point of greater trochanter of femur](http://purl.obolibrary.org/obo/UBERON_7500049) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [greater trochanter](http://purl.obolibrary.org/obo/UBERON_0002503) 
+
+
+### proximal-most point of head of femur `http://purl.obolibrary.org/obo/UBERON_7500046`
+
+#### Added
+- [proximal-most point of head of femur](http://purl.obolibrary.org/obo/UBERON_7500046) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [head of femur](http://purl.obolibrary.org/obo/UBERON_0006767) 
+
+
+### proximal-most point of head of humerus `http://purl.obolibrary.org/obo/UBERON_7500047`
+
+#### Added
+- [proximal-most point of head of humerus](http://purl.obolibrary.org/obo/UBERON_7500047) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [proximal head of humerus](http://purl.obolibrary.org/obo/UBERON_0006801) 
+
+
+### proximal-most point of ventral tubercle of humerus `http://purl.obolibrary.org/obo/UBERON_7500048`
+
+#### Added
+- [proximal-most point of ventral tubercle of humerus](http://purl.obolibrary.org/obo/UBERON_7500048) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ventral tubercle of humerus](http://purl.obolibrary.org/obo/UBERON_0011187) 
+
+
+### pterygoid plexus `http://purl.obolibrary.org/obo/UBERON_0014685`
+
+#### Added
+- [pterygoid plexus](http://purl.obolibrary.org/obo/UBERON_0014685) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### pterygopalatine ganglion `http://purl.obolibrary.org/obo/UBERON_0003962`
 
 #### Added
-- [pterygopalatine ganglion](http://purl.obolibrary.org/obo/UBERON_0003962) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [pterygopalatine ganglion](http://purl.obolibrary.org/obo/UBERON_0003962) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [pterygopalatine ganglion](http://purl.obolibrary.org/obo/UBERON_0003962) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future pterygopalatine ganglion](http://purl.obolibrary.org/obo/UBERON_0010128) 
 
 
-### pulmonary interlobular septum `http://purl.obolibrary.org/obo/UBERON_8600022`
-#### Removed
-- [pulmonary interlobular septum](http://purl.obolibrary.org/obo/UBERON_8600022) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A septum that surrounds and gives shape to the secondary pulmonary lobules, it is composed of connective tissue within which run the pulmonary venules and lymphatic vessels." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.53347/rID-8764" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:3259815" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22283705" 
+### pterygopalatine nerve `http://purl.obolibrary.org/obo/UBERON_0034725`
 
 #### Added
-- [pulmonary interlobular septum](http://purl.obolibrary.org/obo/UBERON_8600022) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A septum that surrounds and gives shape to the secondary pulmonary lobules, it is composed of connective tissue within which run the pulmonary veins and lymphatic vessels." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.53347/rID-8764" 
+- [pterygopalatine nerve](http://purl.obolibrary.org/obo/UBERON_0034725) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:3259815" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22283705" 
+### pubic vein `http://purl.obolibrary.org/obo/UBERON_0039256`
 
-- [pulmonary interlobular septum](http://purl.obolibrary.org/obo/UBERON_8600022) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) 
+#### Added
+- [pubic vein](http://purl.obolibrary.org/obo/UBERON_0039256) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pulmonary acinus `http://purl.obolibrary.org/obo/UBERON_0008874`
+
+#### Added
+- [pulmonary acinus](http://purl.obolibrary.org/obo/UBERON_0008874) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0002012`
+
+#### Added
+- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pulmonary artery endothelial cell `http://purl.obolibrary.org/obo/CL_1001568`
+
+#### Added
+- [pulmonary artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001568) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pulmonary interstitial fibroblast `http://purl.obolibrary.org/obo/CL_0002241`
+
+#### Added
+- [pulmonary interstitial fibroblast](http://purl.obolibrary.org/obo/CL_0002241) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pulmonary ionocyte `http://purl.obolibrary.org/obo/CL_0017000`
+
+#### Added
+- [pulmonary ionocyte](http://purl.obolibrary.org/obo/CL_0017000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### pulmonary nerve plexus `http://purl.obolibrary.org/obo/UBERON_0002009`
+
+#### Added
+- [pulmonary nerve plexus](http://purl.obolibrary.org/obo/UBERON_0002009) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vagus nerve](http://purl.obolibrary.org/obo/UBERON_0001759) 
+
+
+### pulmonary trunk `http://purl.obolibrary.org/obo/UBERON_0002333`
+
+#### Added
+- [pulmonary trunk](http://purl.obolibrary.org/obo/UBERON_0002333) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### pulmonary vein `http://purl.obolibrary.org/obo/UBERON_0002016`
+
+#### Added
+- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### pulmonary venule `http://purl.obolibrary.org/obo/UBERON_8600024`
 
 #### Added
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [date](http://purl.org/dc/terms/date) "2023-10-24T11:26:27Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary venule" 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A venule that is part of a lung and drains oxygenated blood from pulmonary capillaries. A pulmonary venule merges into a pulmonary vein branch that runs in the pulmonary interlobular septa." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30247823" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22283705" 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600024" 
-
-- Class: [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) EquivalentTo [venule](http://purl.obolibrary.org/obo/UBERON_0001979) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [thoracic vein](http://purl.obolibrary.org/obo/UBERON_0005194) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [drains](http://purl.obolibrary.org/obo/RO_0002179) some [pulmonary capillary](http://purl.obolibrary.org/obo/UBERON_0016405) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pulmonary venous system](http://purl.obolibrary.org/obo/UBERON_0013127) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [connected to](http://purl.obolibrary.org/obo/RO_0002170) some [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [lung blood vessel](http://purl.obolibrary.org/obo/UBERON_0003512) 
-
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [respiratory system venule](http://purl.obolibrary.org/obo/UBERON_0003494) 
-
 - [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### pulvinar nucleus `http://purl.obolibrary.org/obo/UBERON_0002981`
+### pyloric gastric gland goblet cell `http://purl.obolibrary.org/obo/CL_1000323`
 
 #### Added
-- [pulvinar nucleus](http://purl.obolibrary.org/obo/UBERON_0002981) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [pulvinar nucleus](http://purl.obolibrary.org/obo/UBERON_0002981) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pyloric gastric gland goblet cell](http://purl.obolibrary.org/obo/CL_1000323) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pyloric region epithelium](http://purl.obolibrary.org/obo/UBERON_0005637) 
 
 
-### quadrate condyle `http://purl.obolibrary.org/obo/UBERON_0018353`
+### pyramidal neuron `http://purl.obolibrary.org/obo/CL_0000598`
+
+#### Added
+- [pyramidal neuron](http://purl.obolibrary.org/obo/CL_0000598) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### qualitative `http://purl.obolibrary.org/obo/PATO_0000068`
 #### Removed
-- [quadrate condyle](http://purl.obolibrary.org/obo/UBERON_0018353) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:24ee2473-1c50-4d40-a2e9-5ddd3b2970ec" 
+- [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "TODO: define this or obsolete it and move children somewhere else." 
+
+- [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000068" 
+
+- [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) [label](http://www.w3.org/2000/01/rdf-schema#label) "qualitative" 
+
+- Class: [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) 
+
+- [qualitative](http://purl.obolibrary.org/obo/PATO_0000068) SubClassOf [quality](http://purl.obolibrary.org/obo/PATO_0000001) 
 
 
 
-### recessus vena jugularis `http://purl.obolibrary.org/obo/UBERON_0018354`
+### radial artery `http://purl.obolibrary.org/obo/UBERON_0001404`
+
+#### Added
+- [radial artery](http://purl.obolibrary.org/obo/UBERON_0001404) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### radial glial cell `http://purl.obolibrary.org/obo/CL_0000681`
+
+#### Added
+- [radial glial cell](http://purl.obolibrary.org/obo/CL_0000681) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### radial nerve `http://purl.obolibrary.org/obo/UBERON_0001492`
+
+#### Added
+- [radial nerve](http://purl.obolibrary.org/obo/UBERON_0001492) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [brachial nerve plexus](http://purl.obolibrary.org/obo/UBERON_0001814) 
+
+
+### raphe of perineum `http://purl.obolibrary.org/obo/UBERON_0035106`
+
+#### Added
+- [raphe of perineum](http://purl.obolibrary.org/obo/UBERON_0035106) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [perineum](http://purl.obolibrary.org/obo/UBERON_0002356) 
+
+
+### rectal artery `http://purl.obolibrary.org/obo/UBERON_0035039`
+
+#### Added
+- [rectal artery](http://purl.obolibrary.org/obo/UBERON_0035039) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### rectus thoracis muscle `http://purl.obolibrary.org/obo/UBERON_0011495`
+
+#### Added
+- [rectus thoracis muscle](http://purl.obolibrary.org/obo/UBERON_0011495) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### recurrent laryngeal nerve `http://purl.obolibrary.org/obo/UBERON_0003716`
+
+#### Added
+- [recurrent laryngeal nerve](http://purl.obolibrary.org/obo/UBERON_0003716) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vagus nerve](http://purl.obolibrary.org/obo/UBERON_0001759) 
+
+
+### regional part of nervous system `http://purl.obolibrary.org/obo/UBERON_0000073`
+
+#### Added
+- [regional part of nervous system](http://purl.obolibrary.org/obo/UBERON_0000073) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### regulation of calcium ion import `http://purl.obolibrary.org/obo/GO_0090279`
+
+#### Added
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [label](http://www.w3.org/2000/01/rdf-schema#label) "regulation of calcium ion import" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0090279" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2010-02-08T05:11:20Z" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that modulates the rate, frequency, or extent of the directed movement of calcium ions into a cell or organelle." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:BHF" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "regulation of transmembrane calcium influx" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tb" 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "tb" 
+
+- Class: [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([regulates](http://purl.obolibrary.org/obo/RO_0002211) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509)) 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) SubClassOf [regulation of calcium ion transport](http://purl.obolibrary.org/obo/GO_0051924) 
+
+- [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) SubClassOf [regulates](http://purl.obolibrary.org/obo/RO_0002211) some [calcium ion import](http://purl.obolibrary.org/obo/GO_0070509) 
+
+
+### regulation of calcium ion import across plasma membrane `http://purl.obolibrary.org/obo/GO_1905664`
+
+#### Added
+- [regulation of calcium ion import across plasma membrane](http://purl.obolibrary.org/obo/GO_1905664) SubClassOf [regulation of calcium ion import](http://purl.obolibrary.org/obo/GO_0090279) 
+
+
+### regulation of cellular amino acid biosynthetic process `http://purl.obolibrary.org/obo/GO_2000282`
 #### Removed
-- [recessus vena jugularis](http://purl.obolibrary.org/obo/UBERON_0018354) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:65e056b3-ec2f-4eba-a8e5-c12b137f1060" 
+- [regulation of cellular amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000282) SubClassOf [regulation of cellular amino acid metabolic process](http://purl.obolibrary.org/obo/GO_0006521) 
 
+#### Added
+- [regulation of cellular amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000282) SubClassOf [regulation of nitrogen compound metabolic process](http://purl.obolibrary.org/obo/GO_0051171) 
+
+- [regulation of cellular amino acid biosynthetic process](http://purl.obolibrary.org/obo/GO_2000282) SubClassOf [regulation of small molecule metabolic process](http://purl.obolibrary.org/obo/GO_0062012) 
+
+
+### regulation of cytoplasmic transport `http://purl.obolibrary.org/obo/GO_1903649`
+#### Removed
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [created by](http://www.geneontology.org/formats/oboInOwl#created_by) "jl" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [label](http://www.w3.org/2000/01/rdf-schema#label) "regulation of cytoplasmic transport" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that modulates the frequency, rate or extent of cytoplasmic transport." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25049409" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000058" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "regulation of cytoplasmic streaming" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1903649" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) [creation date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-11-24T13:38:17Z" 
+
+- Class: [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([regulates](http://purl.obolibrary.org/obo/RO_0002211) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482)) 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) SubClassOf [regulates](http://purl.obolibrary.org/obo/RO_0002211) some [cytosolic transport](http://purl.obolibrary.org/obo/GO_0016482) 
+
+- [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) SubClassOf [regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032386) 
+
+
+
+### regulation of dense core granule transport `http://purl.obolibrary.org/obo/GO_1904809`
+#### Removed
+- [regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904809) SubClassOf [regulation of cytoplasmic transport](http://purl.obolibrary.org/obo/GO_1903649) 
+
+#### Added
+- [regulation of dense core granule transport](http://purl.obolibrary.org/obo/GO_1904809) SubClassOf [regulation of intracellular transport](http://purl.obolibrary.org/obo/GO_0032386) 
+
+
+### remnant of cardiac valve `http://purl.obolibrary.org/obo/UBERON_0034764`
+
+#### Added
+- [remnant of cardiac valve](http://purl.obolibrary.org/obo/UBERON_0034764) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [cardiac valve](http://purl.obolibrary.org/obo/UBERON_0000946) 
+
+
+### remnant of urachus `http://purl.obolibrary.org/obo/UBERON_0006638`
+
+#### Added
+- [remnant of urachus](http://purl.obolibrary.org/obo/UBERON_0006638) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [urachus](http://purl.obolibrary.org/obo/UBERON_0002068) 
 
 
 ### renal afferent arteriole `http://purl.obolibrary.org/obo/UBERON_0004639`
-#### Removed
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [interlobular artery](http://purl.obolibrary.org/obo/UBERON_0004723) 
-
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [interlobular artery](http://purl.obolibrary.org/obo/UBERON_0004723) 
 
 #### Added
 - [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [interlobular artery](http://purl.obolibrary.org/obo/UBERON_0004723) 
 
-
-### renal system `http://purl.obolibrary.org/obo/UBERON_0001008`
+### renal cortex artery `http://purl.obolibrary.org/obo/UBERON_0005268`
 
 #### Added
-- [renal system](http://purl.obolibrary.org/obo/UBERON_0001008) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [renal system](http://purl.obolibrary.org/obo/UBERON_0001008) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [renal cortex artery](http://purl.obolibrary.org/obo/UBERON_0005268) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### replacement tooth `http://purl.obolibrary.org/obo/UBERON_0018296`
+### renal cortex vein `http://purl.obolibrary.org/obo/UBERON_0005269`
+
+#### Added
+- [renal cortex vein](http://purl.obolibrary.org/obo/UBERON_0005269) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### renal efferent arteriole `http://purl.obolibrary.org/obo/UBERON_0004640`
+
+#### Added
+- [renal efferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004640) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### renal interlobular vein `http://purl.obolibrary.org/obo/UBERON_0005168`
+
+#### Added
+- [renal interlobular vein](http://purl.obolibrary.org/obo/UBERON_0005168) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### renal interstitial pericyte `http://purl.obolibrary.org/obo/CL_1001318`
+
+#### Added
+- [renal interstitial pericyte](http://purl.obolibrary.org/obo/CL_1001318) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### renal principal cell `http://purl.obolibrary.org/obo/CL_0005009`
+
+#### Added
+- [renal principal cell](http://purl.obolibrary.org/obo/CL_0005009) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### renal vein `http://purl.obolibrary.org/obo/UBERON_0001140`
+
+#### Added
+- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### respiratory epithelial cell `http://purl.obolibrary.org/obo/CL_0002368`
+
+#### Added
+- [respiratory epithelial cell](http://purl.obolibrary.org/obo/CL_0002368) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### respiratory goblet cell `http://purl.obolibrary.org/obo/CL_0002370`
+
+#### Added
+- [respiratory goblet cell](http://purl.obolibrary.org/obo/CL_0002370) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### respiratory system venous blood vessel `http://purl.obolibrary.org/obo/UBERON_0003476`
+
+#### Added
+- [respiratory system venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003476) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### response to stimulus `http://purl.obolibrary.org/obo/GO_0050896`
 #### Removed
-- [replacement tooth](http://purl.obolibrary.org/obo/UBERON_0018296) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:dfc468f8-45f8-486f-b943-e4284d5055e8" 
+- [response to stimulus](http://purl.obolibrary.org/obo/GO_0050896) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [response to stimulus](http://purl.obolibrary.org/obo/GO_0050896) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### resorption pit `http://purl.obolibrary.org/obo/UBERON_0018297`
+### results in formation of `http://purl.obolibrary.org/obo/RO_0002297`
 #### Removed
-- [resorption pit](http://purl.obolibrary.org/obo/UBERON_0018297) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:4fffbeb1-0774-4eb2-860e-5b50dece221c" 
+- [results in formation of](http://purl.obolibrary.org/obo/RO_0002297) [label](http://www.w3.org/2000/01/rdf-schema#label) "results in formation of"@en 
 
-
-
-### reuniens nucleus `http://purl.obolibrary.org/obo/UBERON_0001921`
+- [results in formation of](http://purl.obolibrary.org/obo/RO_0002297) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "results_in_formation_of" 
 
 #### Added
-- [reuniens nucleus](http://purl.obolibrary.org/obo/UBERON_0001921) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [results in formation of](http://purl.obolibrary.org/obo/RO_0002297) [label](http://www.w3.org/2000/01/rdf-schema#label) "results in formation of anatomical entity"@en 
 
-- [reuniens nucleus](http://purl.obolibrary.org/obo/UBERON_0001921) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [results in formation of](http://purl.obolibrary.org/obo/RO_0002297) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "results_in_formation_of_anatomical_entity" 
 
 
-### rictal bristle `http://purl.obolibrary.org/obo/UBERON_0018355`
+### reticular cell `http://purl.obolibrary.org/obo/CL_0000432`
+
+#### Added
+- [reticular cell](http://purl.obolibrary.org/obo/CL_0000432) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### reticulocyte `http://purl.obolibrary.org/obo/CL_0000558`
+
+#### Added
+- [reticulocyte](http://purl.obolibrary.org/obo/CL_0000558) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### reticulospinal neuron `http://purl.obolibrary.org/obo/CL_4023107`
+
+#### Added
+- [reticulospinal neuron](http://purl.obolibrary.org/obo/CL_4023107) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### retina horizontal cell `http://purl.obolibrary.org/obo/CL_0000745`
+
+#### Added
+- [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### retinal bipolar neuron `http://purl.obolibrary.org/obo/CL_0000748`
+
+#### Added
+- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### retinal blood vessel endothelial cell `http://purl.obolibrary.org/obo/CL_0002585`
+
+#### Added
+- [retinal blood vessel endothelial cell](http://purl.obolibrary.org/obo/CL_0002585) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### retinal cone cell `http://purl.obolibrary.org/obo/CL_0000573`
+
+#### Added
+- [retinal cone cell](http://purl.obolibrary.org/obo/CL_0000573) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### retinal ganglion cell `http://purl.obolibrary.org/obo/CL_0000740`
+
+#### Added
+- [retinal ganglion cell](http://purl.obolibrary.org/obo/CL_0000740) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### retinal neural layer `http://purl.obolibrary.org/obo/UBERON_0003902`
+
+#### Added
+- [retinal neural layer](http://purl.obolibrary.org/obo/UBERON_0003902) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive neural retina](http://purl.obolibrary.org/obo/UBERON_0005425) 
+
+
+### retinal pigment epithelial cell `http://purl.obolibrary.org/obo/CL_0002586`
+
+#### Added
+- [retinal pigment epithelial cell](http://purl.obolibrary.org/obo/CL_0002586) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### retinal rod cell `http://purl.obolibrary.org/obo/CL_0000604`
+
+#### Added
+- [retinal rod cell](http://purl.obolibrary.org/obo/CL_0000604) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### retractor lateralis muscle `http://purl.obolibrary.org/obo/UBERON_0017196`
+
+#### Added
+- [retractor lateralis muscle](http://purl.obolibrary.org/obo/UBERON_0017196) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### retrotrapezoid nucleus neuron `http://purl.obolibrary.org/obo/CL_1000001`
+
+#### Added
+- [retrotrapezoid nucleus neuron](http://purl.obolibrary.org/obo/CL_1000001) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### ribosome `http://purl.obolibrary.org/obo/GO_0005840`
 #### Removed
-- [rictal bristle](http://purl.obolibrary.org/obo/UBERON_0018355) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:75dafdaf-a59c-42ab-94e6-4816a29edb2f" 
+- [ribosome](http://purl.obolibrary.org/obo/GO_0005840) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [ribosome](http://purl.obolibrary.org/obo/GO_0005840) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-
-### right gastroepiploic artery `http://purl.obolibrary.org/obo/UBERON_0035829`
+### ribosome biogenesis `http://purl.obolibrary.org/obo/GO_0042254`
 #### Removed
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) 
+- [ribosome biogenesis](http://purl.obolibrary.org/obo/GO_0042254) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [gastroduodenal artery](http://purl.obolibrary.org/obo/UBERON_0010132) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [ribosome biogenesis](http://purl.obolibrary.org/obo/GO_0042254) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### rostral entotympanic element `http://purl.obolibrary.org/obo/UBERON_0018356`
+### right bundle branch `http://purl.obolibrary.org/obo/UBERON_0005987`
+
+#### Added
+- [right bundle branch](http://purl.obolibrary.org/obo/UBERON_0005987) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bundle of His](http://purl.obolibrary.org/obo/UBERON_0002353) 
+
+
+### right cardiac atrium `http://purl.obolibrary.org/obo/UBERON_0002078`
+
+#### Added
+- [right cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002078) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### right colic artery `http://purl.obolibrary.org/obo/UBERON_8410023`
+
+#### Added
+- [right colic artery](http://purl.obolibrary.org/obo/UBERON_8410023) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### right colic vein `http://purl.obolibrary.org/obo/UBERON_8410018`
+
+#### Added
+- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### right horn of sinus venosus `http://purl.obolibrary.org/obo/UBERON_0005092`
+
+#### Added
+- [right horn of sinus venosus](http://purl.obolibrary.org/obo/UBERON_0005092) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sinus venosus](http://purl.obolibrary.org/obo/UBERON_0002063) 
+
+
+### right inguinal part of abdomen `http://purl.obolibrary.org/obo/UBERON_0035505`
+
+#### Added
+- [right inguinal part of abdomen](http://purl.obolibrary.org/obo/UBERON_0035505) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [abdomen](http://purl.obolibrary.org/obo/UBERON_0000916) 
+
+
+### right nipple `http://purl.obolibrary.org/obo/UBERON_0013773`
+
+#### Added
+- [right nipple](http://purl.obolibrary.org/obo/UBERON_0013773) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [body proper](http://purl.obolibrary.org/obo/UBERON_0013702) 
+
+
+### right pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001651`
+
+#### Added
+- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### right subcostal vein `http://purl.obolibrary.org/obo/UBERON_0035474`
+
+#### Added
+- [right subcostal vein](http://purl.obolibrary.org/obo/UBERON_0035474) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### roof of mouth `http://purl.obolibrary.org/obo/UBERON_0007375`
+
+#### Added
+- [roof of mouth](http://purl.obolibrary.org/obo/UBERON_0007375) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### rostral epiphyseal tract `http://purl.obolibrary.org/obo/UBERON_0034716`
+
+#### Added
+- [rostral epiphyseal tract](http://purl.obolibrary.org/obo/UBERON_0034716) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epiphyseal tract](http://purl.obolibrary.org/obo/UBERON_0034714) 
+
+
+### rotator muscle of the vertebral column `http://purl.obolibrary.org/obo/UBERON_0000951`
+
+#### Added
+- [rotator muscle of the vertebral column](http://purl.obolibrary.org/obo/UBERON_0000951) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### salpingopharyngeus muscle `http://purl.obolibrary.org/obo/UBERON_0010937`
+
+#### Added
+- [salpingopharyngeus muscle](http://purl.obolibrary.org/obo/UBERON_0010937) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chordate pharynx](http://purl.obolibrary.org/obo/UBERON_0001042) 
+
+- [salpingopharyngeus muscle](http://purl.obolibrary.org/obo/UBERON_0010937) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### saphenous nerve `http://purl.obolibrary.org/obo/UBERON_0002475`
+
+#### Added
+- [saphenous nerve](http://purl.obolibrary.org/obo/UBERON_0002475) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral nerve](http://purl.obolibrary.org/obo/UBERON_0001267) 
+
+
+### sartorius muscle `http://purl.obolibrary.org/obo/UBERON_0001373`
+
+#### Added
+- [sartorius muscle](http://purl.obolibrary.org/obo/UBERON_0001373) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### sebaceous gland cell `http://purl.obolibrary.org/obo/CL_2000021`
+
+#### Added
+- [sebaceous gland cell](http://purl.obolibrary.org/obo/CL_2000021) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### secondary metabolite biosynthetic process `http://purl.obolibrary.org/obo/GO_0044550`
 #### Removed
-- [rostral entotympanic element](http://purl.obolibrary.org/obo/UBERON_0018356) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:c5825cfa-edc2-4717-8625-90ac3f8b6dd3" 
-
-
-
-### sacral dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002837`
+- [secondary metabolite biosynthetic process](http://purl.obolibrary.org/obo/GO_0044550) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002837) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002837) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [secondary metabolite biosynthetic process](http://purl.obolibrary.org/obo/GO_0044550) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### sallet `http://purl.obolibrary.org/obo/UBERON_0018374`
-#### Removed
-- [sallet](http://purl.obolibrary.org/obo/UBERON_0018374) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:caa10252-5f7e-4a55-a72c-cf7986a89363" 
-
-
-
-### second cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002839`
+### secretory cell `http://purl.obolibrary.org/obo/CL_0000151`
 
 #### Added
-- [second cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002839) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [second cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002839) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### second lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002856`
+### segmental bronchus `http://purl.obolibrary.org/obo/UBERON_0002184`
 
 #### Added
-- [second lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002856) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [second lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002856) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [segmental bronchus](http://purl.obolibrary.org/obo/UBERON_0002184) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### second sacral dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002861`
+### seminal vesicle glandular cell `http://purl.obolibrary.org/obo/CL_1001597`
 
 #### Added
-- [second sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002861) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [second sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002861) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [seminal vesicle glandular cell](http://purl.obolibrary.org/obo/CL_1001597) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### second thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002846`
+### sensory canal `http://purl.obolibrary.org/obo/UBERON_2001612`
 
 #### Added
-- [second thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002846) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [second thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002846) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [sensory canal](http://purl.obolibrary.org/obo/UBERON_2001612) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
 
 ### sensory ganglion `http://purl.obolibrary.org/obo/UBERON_0001800`
 
 #### Added
-- [sensory ganglion](http://purl.obolibrary.org/obo/UBERON_0001800) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [sensory ganglion](http://purl.obolibrary.org/obo/UBERON_0001800) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [sensory ganglion](http://purl.obolibrary.org/obo/UBERON_0001800) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### sensory neuron of dorsal root ganglion `http://purl.obolibrary.org/obo/CL_1001451`
-#### Removed
-- [sensory neuron of dorsal root ganglion](http://purl.obolibrary.org/obo/CL_1001451) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### sensory neuron of spinal nerve `http://purl.obolibrary.org/obo/CL_0009000`
-#### Removed
-- [sensory neuron of spinal nerve](http://purl.obolibrary.org/obo/CL_0009000) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### sensory pore `http://purl.obolibrary.org/obo/UBERON_0018357`
-#### Removed
-- [sensory pore](http://purl.obolibrary.org/obo/UBERON_0018357) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:021ff296-2e02-4da5-af3b-b3e7220ac03b" 
-
-
-
-### septomaxilla bone `http://purl.obolibrary.org/obo/UBERON_0011167`
-#### Removed
-- [septomaxilla bone](http://purl.obolibrary.org/obo/UBERON_0011167) SubClassOf [facial bone](http://purl.obolibrary.org/obo/UBERON_0003462) 
+### serous cavity `http://purl.obolibrary.org/obo/UBERON_0035809`
 
 #### Added
-- [septomaxilla bone](http://purl.obolibrary.org/obo/UBERON_0011167) SubClassOf [head bone](http://purl.obolibrary.org/obo/UBERON_0003457) 
+- [serous cavity](http://purl.obolibrary.org/obo/UBERON_0035809) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [serous sac](http://purl.obolibrary.org/obo/UBERON_0005906) 
 
 
-### seventh cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002843`
-
-#### Added
-- [seventh cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002843) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [seventh cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002843) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### seventh thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002850`
+### serous cell of epithelium of bronchus `http://purl.obolibrary.org/obo/CL_1000331`
 
 #### Added
-- [seventh thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002850) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [seventh thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002850) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [serous cell of epithelium of bronchus](http://purl.obolibrary.org/obo/CL_1000331) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### seydels palatal process `http://purl.obolibrary.org/obo/UBERON_3000563`
+### serous cell of epithelium of trachea `http://purl.obolibrary.org/obo/CL_1000330`
+
+#### Added
+- [serous cell of epithelium of trachea](http://purl.obolibrary.org/obo/CL_1000330) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### serous membrane `http://purl.obolibrary.org/obo/UBERON_0000042`
+
+#### Added
+- [serous membrane](http://purl.obolibrary.org/obo/UBERON_0000042) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### serous pericardium `http://purl.obolibrary.org/obo/UBERON_0002357`
+
+#### Added
+- [serous pericardium](http://purl.obolibrary.org/obo/UBERON_0002357) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### serous secreting cell `http://purl.obolibrary.org/obo/CL_0000313`
+
+#### Added
+- [serous secreting cell](http://purl.obolibrary.org/obo/CL_0000313) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### set of muscles of vertebral column `http://purl.obolibrary.org/obo/UBERON_0004468`
+
+#### Added
+- [set of muscles of vertebral column](http://purl.obolibrary.org/obo/UBERON_0004468) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### short ciliary nerve `http://purl.obolibrary.org/obo/UBERON_0022302`
+
+#### Added
+- [short ciliary nerve](http://purl.obolibrary.org/obo/UBERON_0022302) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [main ciliary ganglion](http://purl.obolibrary.org/obo/UBERON_0002058) 
+
+
+### short-chain fatty acid biosynthetic process `http://purl.obolibrary.org/obo/GO_0051790`
 #### Removed
-- [seydels palatal process](http://purl.obolibrary.org/obo/UBERON_3000563) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+- [short-chain fatty acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0051790) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Fatty_acid_metabolism" 
 
 #### Added
-- [seydels palatal process](http://purl.obolibrary.org/obo/UBERON_3000563) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [short-chain fatty acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0051790) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+- [short-chain fatty acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0051790) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of a short-chain fatty acid. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Fatty_acid_metabolism" 
+
+- [short-chain fatty acid biosynthetic process](http://purl.obolibrary.org/obo/GO_0051790) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### short-chain fatty acid catabolic process `http://purl.obolibrary.org/obo/GO_0019626`
+#### Removed
+- [short-chain fatty acid catabolic process](http://purl.obolibrary.org/obo/GO_0019626) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198506732" 
+
+#### Added
+- [short-chain fatty acid catabolic process](http://purl.obolibrary.org/obo/GO_0019626) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of a short-chain fatty acid. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198506732" 
+
+- [short-chain fatty acid catabolic process](http://purl.obolibrary.org/obo/GO_0019626) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [short-chain fatty acid catabolic process](http://purl.obolibrary.org/obo/GO_0019626) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+
+### short-chain fatty acid metabolic process `http://purl.obolibrary.org/obo/GO_0046459`
+#### Removed
+- [short-chain fatty acid metabolic process](http://purl.obolibrary.org/obo/GO_0046459) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Fatty_acid_metabolism" 
+
+#### Added
+- [short-chain fatty acid metabolic process](http://purl.obolibrary.org/obo/GO_0046459) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving a short-chain fatty acid. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Fatty_acid_metabolism" 
+
+- [short-chain fatty acid metabolic process](http://purl.obolibrary.org/obo/GO_0046459) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [short-chain fatty acid metabolic process](http://purl.obolibrary.org/obo/GO_0046459) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+
+### short-chain fatty acid transmembrane transport `http://purl.obolibrary.org/obo/GO_0015913`
+#### Removed
+- [short-chain fatty acid transmembrane transport](http://purl.obolibrary.org/obo/GO_0015913) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of short-chain fatty acids into a cell or organelle. A short-chain fatty acid is a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ai" 
+
+#### Added
+- [short-chain fatty acid transmembrane transport](http://purl.obolibrary.org/obo/GO_0015913) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of short-chain fatty acids into a cell or organelle. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ai" 
+
+- [short-chain fatty acid transmembrane transport](http://purl.obolibrary.org/obo/GO_0015913) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [short-chain fatty acid transmembrane transport](http://purl.obolibrary.org/obo/GO_0015913) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+
+### short-chain fatty acid transmembrane transporter activity `http://purl.obolibrary.org/obo/GO_0015636`
+#### Removed
+- [short-chain fatty acid transmembrane transporter activity](http://purl.obolibrary.org/obo/GO_0015636) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Enables the transfer of short-chain fatty acids from one side of a membrane to the other. A short-chain fatty acid is a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mah" 
+
+#### Added
+- [short-chain fatty acid transmembrane transporter activity](http://purl.obolibrary.org/obo/GO_0015636) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [short-chain fatty acid transmembrane transporter activity](http://purl.obolibrary.org/obo/GO_0015636) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+- [short-chain fatty acid transmembrane transporter activity](http://purl.obolibrary.org/obo/GO_0015636) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Enables the transfer of short-chain fatty acids from one side of a membrane to the other. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mah" 
+
+
+### short-chain fatty acid transport `http://purl.obolibrary.org/obo/GO_0015912`
+#### Removed
+- [short-chain fatty acid transport](http://purl.obolibrary.org/obo/GO_0015912) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of short-chain fatty acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A short-chain fatty acid is a fatty acid with an aliphatic tail of less than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ai" 
+
+#### Added
+- [short-chain fatty acid transport](http://purl.obolibrary.org/obo/GO_0015912) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "While there is not universal consensus on the lengths of short-, medium-, long- and very-long-chain fatty acids, the GO uses the definitions in ChEBI (see CHEBI:26666, CHEBI:59554, CHEBI:15904 and CHEBI:27283)." 
+
+- [short-chain fatty acid transport](http://purl.obolibrary.org/obo/GO_0015912) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/26445"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [short-chain fatty acid transport](http://purl.obolibrary.org/obo/GO_0015912) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The directed movement of short-chain fatty acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A short-chain fatty acid has an aliphatic tail containing fewer than 6 carbons." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ai" 
+
+
+### shoulder connective tissue `http://purl.obolibrary.org/obo/UBERON_0003579`
+
+#### Added
+- [shoulder connective tissue](http://purl.obolibrary.org/obo/UBERON_0003579) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of shoulder](http://purl.obolibrary.org/obo/UBERON_0003322) 
 
 
 ### sigmoid artery `http://purl.obolibrary.org/obo/UBERON_0035180`
-#### Removed
-- [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
 
 #### Added
 - [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-- [sigmoid artery](http://purl.obolibrary.org/obo/UBERON_0035180) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-
-### sixth cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0007711`
+### sigmoid vein `http://purl.obolibrary.org/obo/UBERON_0039228`
 
 #### Added
-- [sixth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0007711) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [sixth cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0007711) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [sigmoid vein](http://purl.obolibrary.org/obo/UBERON_0039228) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### sixth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002849`
+### signaling `http://purl.obolibrary.org/obo/GO_0023052`
+#### Removed
+- [signaling](http://purl.obolibrary.org/obo/GO_0023052) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [sixth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002849) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [signaling](http://purl.obolibrary.org/obo/GO_0023052) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
-- [sixth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002849) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### sinus venosus `http://purl.obolibrary.org/obo/UBERON_0002063`
+
+#### Added
+- [sinus venosus](http://purl.obolibrary.org/obo/UBERON_0002063) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [presumptive sinus venosus](http://purl.obolibrary.org/obo/UBERON_0007278) 
+
+
+### size `http://purl.obolibrary.org/obo/PATO_0000117`
+#### Removed
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000117" 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [label](http://www.w3.org/2000/01/rdf-schema#label) "size" 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [attribute_slim](http://purl.obolibrary.org/obo/pato#attribute_slim) 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "WordNet:WordNet" 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [scalar_slim](http://purl.obolibrary.org/obo/pato#scalar_slim) 
+
+- Class: [size](http://purl.obolibrary.org/obo/PATO_0000117) 
+
+- [size](http://purl.obolibrary.org/obo/PATO_0000117) SubClassOf [morphology](http://purl.obolibrary.org/obo/PATO_0000051) 
+
+
+
+### skeletal muscle fiber `http://purl.obolibrary.org/obo/CL_0008002`
+
+#### Added
+- [skeletal muscle fiber](http://purl.obolibrary.org/obo/CL_0008002) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### skeletal muscle fibroblast `http://purl.obolibrary.org/obo/CL_0011027`
+
+#### Added
+- [skeletal muscle fibroblast](http://purl.obolibrary.org/obo/CL_0011027) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### skeletal muscle organ, vertebrate `http://purl.obolibrary.org/obo/UBERON_0014892`
-#### Removed
-- [skeletal muscle organ, vertebrate](http://purl.obolibrary.org/obo/UBERON_0014892) [label](http://www.w3.org/2000/01/rdf-schema#label) "skeletal muscle organ" 
 
 #### Added
-- [skeletal muscle organ, vertebrate](http://purl.obolibrary.org/obo/UBERON_0014892) [label](http://www.w3.org/2000/01/rdf-schema#label) "skeletal muscle organ, vertebrate" 
-
-- [skeletal muscle organ, vertebrate](http://purl.obolibrary.org/obo/UBERON_0014892) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Vertebrata <vertebrates>](http://purl.obolibrary.org/obo/NCBITaxon_7742) 
+- [skeletal muscle organ, vertebrate](http://purl.obolibrary.org/obo/UBERON_0014892) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### skeletal support for eminentia olfactoria `http://purl.obolibrary.org/obo/UBERON_3000565`
-#### Removed
-- [skeletal support for eminentia olfactoria](http://purl.obolibrary.org/obo/UBERON_3000565) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### skin fibroblast `http://purl.obolibrary.org/obo/CL_0002620`
 
 #### Added
-- [skeletal support for eminentia olfactoria](http://purl.obolibrary.org/obo/UBERON_3000565) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [skin fibroblast](http://purl.obolibrary.org/obo/CL_0002620) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### skin bony tubercle `http://purl.obolibrary.org/obo/UBERON_0017163`
-#### Removed
-- [skin bony tubercle](http://purl.obolibrary.org/obo/UBERON_0017163) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "bony tubercles" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:3b77fb04-1e62-43af-a84b-5d5eb7388525" 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+### slow muscle cell `http://purl.obolibrary.org/obo/CL_0000189`
 
 #### Added
-- [skin bony tubercle](http://purl.obolibrary.org/obo/UBERON_0017163) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "bony tubercles" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [slow muscle cell](http://purl.obolibrary.org/obo/CL_0000189) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### skin of lip `http://purl.obolibrary.org/obo/UBERON_0001458`
-#### Removed
-- [skin of lip](http://purl.obolibrary.org/obo/UBERON_0001458) SubClassOf [skin of head](http://purl.obolibrary.org/obo/UBERON_0001084) 
+### small intestine goblet cell `http://purl.obolibrary.org/obo/CL_1000495`
 
 #### Added
-- [skin of lip](http://purl.obolibrary.org/obo/UBERON_0001458) SubClassOf [zone of skin](http://purl.obolibrary.org/obo/UBERON_0000014) 
+- [small intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000495) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### skin of trunk `http://purl.obolibrary.org/obo/UBERON_0001085`
+### small molecule biosynthetic process `http://purl.obolibrary.org/obo/GO_0044283`
+#### Removed
+- [small molecule biosynthetic process](http://purl.obolibrary.org/obo/GO_0044283) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [skin of trunk](http://purl.obolibrary.org/obo/UBERON_0001085) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [skin of trunk](http://purl.obolibrary.org/obo/UBERON_0001085) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [small molecule biosynthetic process](http://purl.obolibrary.org/obo/GO_0044283) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### skull `http://purl.obolibrary.org/obo/UBERON_0003129`
-#### Removed
-- [skull](http://purl.obolibrary.org/obo/UBERON_0003129) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Myxinidae](http://purl.obolibrary.org/obo/NCBITaxon_7762) 
-
-
-
-### solum nasi `http://purl.obolibrary.org/obo/UBERON_3000569`
-#### Removed
-- [solum nasi](http://purl.obolibrary.org/obo/UBERON_3000569) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
+### small pre-B-II cell `http://purl.obolibrary.org/obo/CL_0000954`
 
 #### Added
-- [solum nasi](http://purl.obolibrary.org/obo/UBERON_3000569) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
+- [small pre-B-II cell](http://purl.obolibrary.org/obo/CL_0000954) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell `http://purl.obolibrary.org/obo/CL_0000192`
+
+#### Added
+- [smooth muscle cell](http://purl.obolibrary.org/obo/CL_0000192) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of large intestine `http://purl.obolibrary.org/obo/CL_1000279`
+
+#### Added
+- [smooth muscle cell of large intestine](http://purl.obolibrary.org/obo/CL_1000279) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of prostate `http://purl.obolibrary.org/obo/CL_1000487`
+
+#### Added
+- [smooth muscle cell of prostate](http://purl.obolibrary.org/obo/CL_1000487) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of small intestine `http://purl.obolibrary.org/obo/CL_1000275`
+
+#### Added
+- [smooth muscle cell of small intestine](http://purl.obolibrary.org/obo/CL_1000275) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of sphincter of pupil `http://purl.obolibrary.org/obo/CL_0002243`
+
+#### Added
+- [smooth muscle cell of sphincter of pupil](http://purl.obolibrary.org/obo/CL_0002243) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of the pulmonary artery `http://purl.obolibrary.org/obo/CL_0002591`
+
+#### Added
+- [smooth muscle cell of the pulmonary artery](http://purl.obolibrary.org/obo/CL_0002591) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle cell of trachea `http://purl.obolibrary.org/obo/CL_0002600`
+
+#### Added
+- [smooth muscle cell of trachea](http://purl.obolibrary.org/obo/CL_0002600) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle fiber of ileum `http://purl.obolibrary.org/obo/CL_1000278`
+
+#### Added
+- [smooth muscle fiber of ileum](http://purl.obolibrary.org/obo/CL_1000278) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### smooth muscle myoblast `http://purl.obolibrary.org/obo/CL_0000514`
+
+#### Added
+- [smooth muscle myoblast](http://purl.obolibrary.org/obo/CL_0000514) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### somatic muscle, invertebrate `http://purl.obolibrary.org/obo/UBERON_0014895`
-#### Removed
-- [somatic muscle, invertebrate](http://purl.obolibrary.org/obo/UBERON_0014895) [label](http://www.w3.org/2000/01/rdf-schema#label) "somatic muscle" 
 
 #### Added
-- [somatic muscle, invertebrate](http://purl.obolibrary.org/obo/UBERON_0014895) [label](http://www.w3.org/2000/01/rdf-schema#label) "somatic muscle, invertebrate" 
-
-- [somatic muscle, invertebrate](http://purl.obolibrary.org/obo/UBERON_0014895) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Insecta](http://purl.obolibrary.org/obo/NCBITaxon_50557) 
+- [somatic muscle, invertebrate](http://purl.obolibrary.org/obo/UBERON_0014895) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### somatomotor neuron `http://purl.obolibrary.org/obo/CL_0005024`
@@ -4249,1049 +9127,1634 @@
 #### Added
 - [somatomotor neuron](http://purl.obolibrary.org/obo/CL_0005024) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
 
-
-### spina externa `http://purl.obolibrary.org/obo/UBERON_0018358`
-#### Removed
-- [spina externa](http://purl.obolibrary.org/obo/UBERON_0018358) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0bc2755c-6069-42f5-a9f4-b00b7b3cc25a" 
+- [somatomotor neuron](http://purl.obolibrary.org/obo/CL_0005024) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
+### sperm `http://purl.obolibrary.org/obo/CL_0000019`
 
-### spinal cord interneuron `http://purl.obolibrary.org/obo/CL_0005000`
-#### Removed
-- [spinal cord interneuron](http://purl.obolibrary.org/obo/CL_0005000) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### spinal cord medial motor column neuron `http://purl.obolibrary.org/obo/CL_2000024`
-#### Removed
-- [spinal cord medial motor column neuron](http://purl.obolibrary.org/obo/CL_2000024) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+#### Added
+- [sperm](http://purl.obolibrary.org/obo/CL_0000019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
+### sphenoid bone pre-cartilage condensation `http://purl.obolibrary.org/obo/UBERON_0009191`
 
-### spinal cord motor neuron `http://purl.obolibrary.org/obo/CL_0011001`
-#### Removed
-- [spinal cord motor neuron](http://purl.obolibrary.org/obo/CL_0011001) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+#### Added
+- [sphenoid bone pre-cartilage condensation](http://purl.obolibrary.org/obo/UBERON_0009191) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
 
+
+### sphincter pupillae `http://purl.obolibrary.org/obo/UBERON_0001607`
+
+#### Added
+- [sphincter pupillae](http://purl.obolibrary.org/obo/UBERON_0001607) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### spinal artery `http://purl.obolibrary.org/obo/UBERON_0002458`
+
+#### Added
+- [spinal artery](http://purl.obolibrary.org/obo/UBERON_0002458) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### spinal cord `http://purl.obolibrary.org/obo/UBERON_0002240`
+
+#### Added
+- [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future spinal cord](http://purl.obolibrary.org/obo/UBERON_0006241) 
+
+
+### spinal nerve `http://purl.obolibrary.org/obo/UBERON_0001780`
+
+#### Added
+- [spinal nerve](http://purl.obolibrary.org/obo/UBERON_0001780) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### spinal nerve plexus `http://purl.obolibrary.org/obo/UBERON_0001813`
+
+#### Added
+- [spinal nerve plexus](http://purl.obolibrary.org/obo/UBERON_0001813) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### spinothalamic tract of medulla `http://purl.obolibrary.org/obo/UBERON_0002944`
+
+#### Added
+- [spinothalamic tract of medulla](http://purl.obolibrary.org/obo/UBERON_0002944) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### spiral ganglion neuron `http://purl.obolibrary.org/obo/CL_0011113`
+
+#### Added
+- [spiral ganglion neuron](http://purl.obolibrary.org/obo/CL_0011113) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### spiral ligament `http://purl.obolibrary.org/obo/UBERON_0006725`
+
+#### Added
+- [spiral ligament](http://purl.obolibrary.org/obo/UBERON_0006725) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### spiral modiolar artery `http://purl.obolibrary.org/obo/UBERON_0002505`
-#### Removed
-- [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) 
-
-- [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) 
 
 #### Added
 - [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [spiral modiolar artery](http://purl.obolibrary.org/obo/UBERON_0002505) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [labyrinthine artery](http://purl.obolibrary.org/obo/UBERON_0018231) 
+
+### spiral prominence of cochlear duct `http://purl.obolibrary.org/obo/UBERON_0028194`
+
+#### Added
+- [spiral prominence of cochlear duct](http://purl.obolibrary.org/obo/UBERON_0028194) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### spleen `http://purl.obolibrary.org/obo/UBERON_0002106`
+#### Removed
+- [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) SubClassOf [digestive system element](http://purl.obolibrary.org/obo/UBERON_0013765) 
+
+- [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [digestive system](http://purl.obolibrary.org/obo/UBERON_0001007) 
+
 
 
 ### spleen central arteriole `http://purl.obolibrary.org/obo/UBERON_0010401`
-#### Removed
-- [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
-
-- [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) 
 
 #### Added
 - [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [spleen central arteriole](http://purl.obolibrary.org/obo/UBERON_0010401) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
-
 
 ### spleen trabecular artery `http://purl.obolibrary.org/obo/UBERON_0010399`
-#### Removed
-- [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-
-- [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "MP" 
 
 #### Added
-- [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [spleen trabecular artery](http://purl.obolibrary.org/obo/UBERON_0010399) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "MP" 
+
+### spleen trabecular vein `http://purl.obolibrary.org/obo/UBERON_0010400`
+
+#### Added
+- [spleen trabecular vein](http://purl.obolibrary.org/obo/UBERON_0010400) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### splenic artery `http://purl.obolibrary.org/obo/UBERON_0001194`
-#### Removed
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
-
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
 
 #### Added
 - [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [celiac artery](http://purl.obolibrary.org/obo/UBERON_0001640) 
-
-
-### stomach `http://purl.obolibrary.org/obo/UBERON_0000945`
+### splenic sinusoid `http://purl.obolibrary.org/obo/UBERON_0003910`
 
 #### Added
-- [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [splenic sinusoid](http://purl.obolibrary.org/obo/UBERON_0003910) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### stylocone `http://purl.obolibrary.org/obo/UBERON_0018298`
-#### Removed
-- [stylocone](http://purl.obolibrary.org/obo/UBERON_0018298) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1e10c6fb-a36f-4151-957b-7a0aaf6816ba" 
-
-
-
-### subdivision of digestive tract `http://purl.obolibrary.org/obo/UBERON_0004921`
+### splenic vein `http://purl.obolibrary.org/obo/UBERON_0003713`
 
 #### Added
-- [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [subdivision of digestive tract](http://purl.obolibrary.org/obo/UBERON_0004921) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [splenic vein](http://purl.obolibrary.org/obo/UBERON_0003713) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### subicular complex `http://purl.obolibrary.org/obo/UBERON_0023787`
+### squamous epithelial cell `http://purl.obolibrary.org/obo/CL_0000076`
 
 #### Added
-- [subicular complex](http://purl.obolibrary.org/obo/UBERON_0023787) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [squamous epithelial cell](http://purl.obolibrary.org/obo/CL_0000076) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
-- [subicular complex](http://purl.obolibrary.org/obo/UBERON_0023787) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### stapedial artery `http://purl.obolibrary.org/obo/UBERON_0006345`
+
+#### Added
+- [stapedial artery](http://purl.obolibrary.org/obo/UBERON_0006345) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### start of life cycle `http://purl.obolibrary.org/obo/UBERON_0035945`
+
+#### Added
+- [start of life cycle](http://purl.obolibrary.org/obo/UBERON_0035945) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) 
+
+
+### start of neonate stage `http://purl.obolibrary.org/obo/UBERON_0035946`
+
+#### Added
+- [start of neonate stage](http://purl.obolibrary.org/obo/UBERON_0035946) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) 
+
+
+### statoconial membrane `http://purl.obolibrary.org/obo/UBERON_0016567`
+
+#### Added
+- [statoconial membrane](http://purl.obolibrary.org/obo/UBERON_0016567) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [otolith organ](http://purl.obolibrary.org/obo/UBERON_0002518) 
+
+
+### stellate neuron `http://purl.obolibrary.org/obo/CL_0000122`
+
+#### Added
+- [stellate neuron](http://purl.obolibrary.org/obo/CL_0000122) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stem cell `http://purl.obolibrary.org/obo/CL_0000034`
+
+#### Added
+- [stem cell](http://purl.obolibrary.org/obo/CL_0000034) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stem cell of epidermis `http://purl.obolibrary.org/obo/CL_1000428`
+
+#### Added
+- [stem cell of epidermis](http://purl.obolibrary.org/obo/CL_1000428) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### sternum `http://purl.obolibrary.org/obo/UBERON_0000975`
+
+#### Added
+- [sternum](http://purl.obolibrary.org/obo/UBERON_0000975) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### stomach fundus lumen `http://purl.obolibrary.org/obo/UBERON_0016502`
+
+#### Added
+- [stomach fundus lumen](http://purl.obolibrary.org/obo/UBERON_0016502) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [fundus of stomach](http://purl.obolibrary.org/obo/UBERON_0001160) 
+
+
+### stomach lumen `http://purl.obolibrary.org/obo/UBERON_0013525`
+
+#### Added
+- [stomach lumen](http://purl.obolibrary.org/obo/UBERON_0013525) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) 
+
+
+### stomach neuroendocrine cell `http://purl.obolibrary.org/obo/CL_1000222`
+
+#### Added
+- [stomach neuroendocrine cell](http://purl.obolibrary.org/obo/CL_1000222) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+
+### stomochord `http://purl.obolibrary.org/obo/UBERON_0011288`
+
+#### Added
+- [stomochord](http://purl.obolibrary.org/obo/UBERON_0011288) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### stomodeal lumen `http://purl.obolibrary.org/obo/UBERON_0009715`
+
+#### Added
+- [stomodeal lumen](http://purl.obolibrary.org/obo/UBERON_0009715) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [stomodeum](http://purl.obolibrary.org/obo/UBERON_0000930) 
+
+
+### straight venules of kidney `http://purl.obolibrary.org/obo/UBERON_0010181`
+
+#### Added
+- [straight venules of kidney](http://purl.obolibrary.org/obo/UBERON_0010181) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### strand of vibrissa hair `http://purl.obolibrary.org/obo/UBERON_0006378`
+
+#### Added
+- [strand of vibrissa hair](http://purl.obolibrary.org/obo/UBERON_0006378) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### stratified epithelial cell `http://purl.obolibrary.org/obo/CL_0000079`
+
+#### Added
+- [stratified epithelial cell](http://purl.obolibrary.org/obo/CL_0000079) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stromal cell `http://purl.obolibrary.org/obo/CL_0000499`
+
+#### Added
+- [stromal cell](http://purl.obolibrary.org/obo/CL_0000499) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stromal cell of lamina propria of small intestine `http://purl.obolibrary.org/obo/CL_0009022`
+
+#### Added
+- [stromal cell of lamina propria of small intestine](http://purl.obolibrary.org/obo/CL_0009022) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stromal cell of ovary `http://purl.obolibrary.org/obo/CL_0002132`
+
+#### Added
+- [stromal cell of ovary](http://purl.obolibrary.org/obo/CL_0002132) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### stylopharyngeus muscle `http://purl.obolibrary.org/obo/UBERON_0008804`
+
+#### Added
+- [stylopharyngeus muscle](http://purl.obolibrary.org/obo/UBERON_0008804) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+- [stylopharyngeus muscle](http://purl.obolibrary.org/obo/UBERON_0008804) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chordate pharynx](http://purl.obolibrary.org/obo/UBERON_0001042) 
+
+
+### subclavian artery `http://purl.obolibrary.org/obo/UBERON_0001533`
+
+#### Added
+- [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### subclavian vein `http://purl.obolibrary.org/obo/UBERON_0001587`
+
+#### Added
+- [subclavian vein](http://purl.obolibrary.org/obo/UBERON_0001587) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### subcostal artery `http://purl.obolibrary.org/obo/UBERON_0001561`
+
+#### Added
+- [subcostal artery](http://purl.obolibrary.org/obo/UBERON_0001561) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### subcutaneous adipocyte `http://purl.obolibrary.org/obo/CL_0002521`
+
+#### Added
+- [subcutaneous adipocyte](http://purl.obolibrary.org/obo/CL_0002521) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### sublingual artery `http://purl.obolibrary.org/obo/UBERON_0001611`
-#### Removed
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) 
 
 #### Added
 - [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### sublumbar lymph node `http://purl.obolibrary.org/obo/UBERON_8470001`
-#### Removed
-- [sublumbar lymph node](http://purl.obolibrary.org/obo/UBERON_8470001) [contributor](http://purl.org/dc/terms/contributor) [B Varner](https://orcid.org/0000-0002-1773-2692) 
-
-
-
-### submandibular ganglion `http://purl.obolibrary.org/obo/UBERON_0002059`
+### submandibular gland `http://purl.obolibrary.org/obo/UBERON_0001736`
 
 #### Added
-- [submandibular ganglion](http://purl.obolibrary.org/obo/UBERON_0002059) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [submandibular ganglion](http://purl.obolibrary.org/obo/UBERON_0002059) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [submandibular gland](http://purl.obolibrary.org/obo/UBERON_0001736) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lower jaw region](http://purl.obolibrary.org/obo/UBERON_0001710) 
 
 
-### subolfactory process `http://purl.obolibrary.org/obo/UBERON_0018359`
-#### Removed
-- [subolfactory process](http://purl.obolibrary.org/obo/UBERON_0018359) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:41e8ff4d-2e04-4d81-8db9-a8038e63f76b" 
-
-
-
-### suborbital foramen `http://purl.obolibrary.org/obo/UBERON_0018360`
-#### Removed
-- [suborbital foramen](http://purl.obolibrary.org/obo/UBERON_0018360) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:3e50fa07-b01a-491f-a67d-11f63e8cf0aa" 
-
-- [suborbital foramen](http://purl.obolibrary.org/obo/UBERON_0018360) SubClassOf [foramen of skull](http://purl.obolibrary.org/obo/UBERON_0013685) 
+### submental vein `http://purl.obolibrary.org/obo/UBERON_0001655`
 
 #### Added
-- [suborbital foramen](http://purl.obolibrary.org/obo/UBERON_0018360) SubClassOf [bone foramen](http://purl.obolibrary.org/obo/UBERON_0005744) 
+- [submental vein](http://purl.obolibrary.org/obo/UBERON_0001655) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### suborbital shelf `http://purl.obolibrary.org/obo/UBERON_0018361`
-#### Removed
-- [suborbital shelf](http://purl.obolibrary.org/obo/UBERON_0018361) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2b933bd2-0562-4624-8d49-ec5325a2da54" 
-
-
-
-### subthalamic nucleus `http://purl.obolibrary.org/obo/UBERON_0001906`
+### subscapular artery `http://purl.obolibrary.org/obo/UBERON_0001397`
 
 #### Added
-- [subthalamic nucleus](http://purl.obolibrary.org/obo/UBERON_0001906) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [subscapular artery](http://purl.obolibrary.org/obo/UBERON_0001397) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [subthalamic nucleus](http://purl.obolibrary.org/obo/UBERON_0001906) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+### subscapular vein `http://purl.obolibrary.org/obo/UBERON_0001420`
+
+#### Added
+- [subscapular vein](http://purl.obolibrary.org/obo/UBERON_0001420) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### subsegmental bronchus `http://purl.obolibrary.org/obo/UBERON_8600009`
+
+#### Added
+- [subsegmental bronchus](http://purl.obolibrary.org/obo/UBERON_8600009) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### sulfur compound metabolic process `http://purl.obolibrary.org/obo/GO_0006790`
+#### Removed
+- [sulfur compound metabolic process](http://purl.obolibrary.org/obo/GO_0006790) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [sulfur compound metabolic process](http://purl.obolibrary.org/obo/GO_0006790) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
 ### superficial circumflex iliac artery `http://purl.obolibrary.org/obo/UBERON_0009041`
-#### Removed
-- [superficial circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009041) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [superficial circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009041) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-
-- [superficial circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009041) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
 - [superficial circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009041) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [superficial circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009041) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### superficial epigastric artery `http://purl.obolibrary.org/obo/UBERON_0034964`
-#### Removed
-- [superficial epigastric artery](http://purl.obolibrary.org/obo/UBERON_0034964) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354)) 
-
-- [superficial epigastric artery](http://purl.obolibrary.org/obo/UBERON_0034964) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-
-- [superficial epigastric artery](http://purl.obolibrary.org/obo/UBERON_0034964) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
+### superficial dorsal vein of penis `http://purl.obolibrary.org/obo/UBERON_0039421`
 
 #### Added
-- [superficial epigastric artery](http://purl.obolibrary.org/obo/UBERON_0034964) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354)) 
-
-- [superficial epigastric artery](http://purl.obolibrary.org/obo/UBERON_0034964) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
+- [superficial dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0039421) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### superficial external pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007317`
-#### Removed
-- [superficial external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007317) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [superficial external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007317) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
+### superficial fibular nerve `http://purl.obolibrary.org/obo/UBERON_0035526`
 
 #### Added
-- [superficial external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007317) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [femoral artery](http://purl.obolibrary.org/obo/UBERON_0002060) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [superficial fibular nerve](http://purl.obolibrary.org/obo/UBERON_0035526) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [common fibular nerve](http://purl.obolibrary.org/obo/UBERON_0001324) 
 
 
-### superficial temporal artery `http://purl.obolibrary.org/obo/UBERON_0001614`
-#### Removed
-- [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### superficial part of masseter muscle `http://purl.obolibrary.org/obo/UBERON_0011140`
 
 #### Added
-- [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [superficial part of masseter muscle](http://purl.obolibrary.org/obo/UBERON_0011140) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
 
 
-### superior cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0001635`
-#### Removed
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) EquivalentTo [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
+### superficial part of temporalis `http://purl.obolibrary.org/obo/UBERON_0011305`
 
 #### Added
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) EquivalentTo [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
-
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) 
+- [superficial part of temporalis](http://purl.obolibrary.org/obo/UBERON_0011305) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [temporalis muscle](http://purl.obolibrary.org/obo/UBERON_0001598) 
 
 
-### superior cervical ganglion `http://purl.obolibrary.org/obo/UBERON_0001989`
+### superior alveolar nerve `http://purl.obolibrary.org/obo/UBERON_0018398`
 
 #### Added
-- [superior cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001989) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [superior cervical ganglion](http://purl.obolibrary.org/obo/UBERON_0001989) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [superior alveolar nerve](http://purl.obolibrary.org/obo/UBERON_0018398) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) 
 
 
-### superior epigastric artery `http://purl.obolibrary.org/obo/UBERON_0007153`
-#### Removed
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354)) 
-
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### superior branch of oculomotor nerve `http://purl.obolibrary.org/obo/UBERON_0015162`
 
 #### Added
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) EquivalentTo [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) and ([anastomoses with](http://purl.obolibrary.org/obo/uberon/core#anastomoses_with) some [inferior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0001354)) 
-
-- [superior epigastric artery](http://purl.obolibrary.org/obo/UBERON_0007153) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
+- [superior branch of oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0015162) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [oculomotor nerve](http://purl.obolibrary.org/obo/UBERON_0001643) 
 
 
 ### superior gluteal artery `http://purl.obolibrary.org/obo/UBERON_0001315`
-#### Removed
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
 
-
-### superior hypophysial artery `http://purl.obolibrary.org/obo/UBERON_0035404`
-#### Removed
-- [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
-
-- [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+### superior laryngeal nerve `http://purl.obolibrary.org/obo/UBERON_0011326`
 
 #### Added
-- [superior hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035404) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) 
+- [superior laryngeal nerve](http://purl.obolibrary.org/obo/UBERON_0011326) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vagus nerve](http://purl.obolibrary.org/obo/UBERON_0001759) 
 
 
-### superior mesenteric ganglion `http://purl.obolibrary.org/obo/UBERON_0005479`
-
-#### Added
-- [superior mesenteric ganglion](http://purl.obolibrary.org/obo/UBERON_0005479) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [superior mesenteric ganglion](http://purl.obolibrary.org/obo/UBERON_0005479) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### superior pancreaticoduodenal artery `http://purl.obolibrary.org/obo/UBERON_0002070`
-#### Removed
-- [superior pancreaticoduodenal artery](http://purl.obolibrary.org/obo/UBERON_0002070) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-
-
-### superior parietal cortex `http://purl.obolibrary.org/obo/UBERON_0006094`
+### superior laryngeal vein `http://purl.obolibrary.org/obo/UBERON_0039188`
 
 #### Added
-- [superior parietal cortex](http://purl.obolibrary.org/obo/UBERON_0006094) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [superior parietal cortex](http://purl.obolibrary.org/obo/UBERON_0006094) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [superior laryngeal vein](http://purl.obolibrary.org/obo/UBERON_0039188) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### superior prenasal cartilage `http://purl.obolibrary.org/obo/UBERON_3000586`
-#### Removed
-- [superior prenasal cartilage](http://purl.obolibrary.org/obo/UBERON_3000586) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-
-
-### superior rectal artery `http://purl.obolibrary.org/obo/UBERON_0035040`
-#### Removed
-- [superior rectal artery](http://purl.obolibrary.org/obo/UBERON_0035040) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+### superior mesenteric plexus `http://purl.obolibrary.org/obo/UBERON_0005488`
 
 #### Added
-- [superior rectal artery](http://purl.obolibrary.org/obo/UBERON_0035040) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [superior mesenteric plexus](http://purl.obolibrary.org/obo/UBERON_0005488) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### superior suprarenal artery `http://purl.obolibrary.org/obo/UBERON_0001198`
-#### Removed
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) EquivalentTo [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0012255)) 
-
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [inferior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0012255) 
-
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inferior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0012255) 
+### superior ophthalmic vein `http://purl.obolibrary.org/obo/UBERON_0011192`
 
 #### Added
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) EquivalentTo [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0012255)) 
+- [superior ophthalmic vein](http://purl.obolibrary.org/obo/UBERON_0011192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [superior suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0001198) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [inferior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0012255) 
+
+### superior pharyngeal constrictor `http://purl.obolibrary.org/obo/UBERON_0006329`
+
+#### Added
+- [superior pharyngeal constrictor](http://purl.obolibrary.org/obo/UBERON_0006329) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### superior phrenic artery `http://purl.obolibrary.org/obo/UBERON_0013133`
+
+#### Added
+- [superior phrenic artery](http://purl.obolibrary.org/obo/UBERON_0013133) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thoracic aorta](http://purl.obolibrary.org/obo/UBERON_0001515) 
+
+
+### superior salivatory nucleus `http://purl.obolibrary.org/obo/UBERON_0002149`
+
+#### Added
+- [superior salivatory nucleus](http://purl.obolibrary.org/obo/UBERON_0002149) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future superior salivatory nucleus](http://purl.obolibrary.org/obo/UBERON_0010125) 
+
+
+### superior tarsal muscle `http://purl.obolibrary.org/obo/UBERON_0010379`
+
+#### Added
+- [superior tarsal muscle](http://purl.obolibrary.org/obo/UBERON_0010379) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### superior thoracic artery `http://purl.obolibrary.org/obo/UBERON_0035273`
-#### Removed
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
-
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) 
 
 #### Added
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
 - [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [superior thoracic artery](http://purl.obolibrary.org/obo/UBERON_0035273) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-
-### superior thyroid artery `http://purl.obolibrary.org/obo/UBERON_0007150`
-#### Removed
-- [superior thyroid artery](http://purl.obolibrary.org/obo/UBERON_0007150) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "multiple" 
+### supporting cell `http://purl.obolibrary.org/obo/CL_0000630`
 
 #### Added
-- [superior thyroid artery](http://purl.obolibrary.org/obo/UBERON_0007150) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "multiple" 
-
-
-### superior vesical artery `http://purl.obolibrary.org/obo/UBERON_0001312`
-
-#### Added
-- [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [umbilical artery](http://purl.obolibrary.org/obo/UBERON_0001310) 
-
-
-### supracondylar tubercle `http://purl.obolibrary.org/obo/UBERON_0018362`
-#### Removed
-- [supracondylar tubercle](http://purl.obolibrary.org/obo/UBERON_0018362) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:f721b85c-54d3-4e89-a61e-bfddacf0fe93" 
-
-
-
-### supramarginal gyrus `http://purl.obolibrary.org/obo/UBERON_0002688`
-
-#### Added
-- [supramarginal gyrus](http://purl.obolibrary.org/obo/UBERON_0002688) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [supramarginal gyrus](http://purl.obolibrary.org/obo/UBERON_0002688) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### suprameatal foramen `http://purl.obolibrary.org/obo/UBERON_0018364`
-#### Removed
-- [suprameatal foramen](http://purl.obolibrary.org/obo/UBERON_0018364) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:8aa1a55e-924a-46a7-82af-9e8406a5149d" 
-
-
-
-### supraoptic nucleus `http://purl.obolibrary.org/obo/UBERON_0001929`
-
-#### Added
-- [supraoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0001929) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [supraoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0001929) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [supporting cell](http://purl.obolibrary.org/obo/CL_0000630) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### supraorbital artery `http://purl.obolibrary.org/obo/UBERON_0015160`
-#### Removed
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
 
 #### Added
 - [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
 
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+### suprarenal artery `http://purl.obolibrary.org/obo/UBERON_0005624`
 
-
-### supratemporal process `http://purl.obolibrary.org/obo/UBERON_0018365`
-#### Removed
-- [supratemporal process](http://purl.obolibrary.org/obo/UBERON_0018365) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:4d719e1e-df5d-4735-9490-45e6e22b549a" 
+#### Added
+- [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
+### suprarenal vein `http://purl.obolibrary.org/obo/UBERON_0001146`
 
-### supratendinal bridge `http://purl.obolibrary.org/obo/UBERON_0018366`
-#### Removed
-- [supratendinal bridge](http://purl.obolibrary.org/obo/UBERON_0018366) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:27dfdd96-d1ca-44b3-876b-390ed5d21c23" 
+#### Added
+- [suprarenal vein](http://purl.obolibrary.org/obo/UBERON_0001146) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
+### suprascapular vein `http://purl.obolibrary.org/obo/UBERON_0039187`
 
-### synovial bursa `http://purl.obolibrary.org/obo/UBERON_0003668`
-#### Removed
-- [synovial bursa](http://purl.obolibrary.org/obo/UBERON_0003668) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+#### Added
+- [suprascapular vein](http://purl.obolibrary.org/obo/UBERON_0039187) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [synovial bursa](http://purl.obolibrary.org/obo/UBERON_0003668) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
+### sural artery `http://purl.obolibrary.org/obo/UBERON_0001390`
+
+#### Added
+- [sural artery](http://purl.obolibrary.org/obo/UBERON_0001390) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### sural nerve `http://purl.obolibrary.org/obo/UBERON_0015488`
+
+#### Added
+- [sural nerve](http://purl.obolibrary.org/obo/UBERON_0015488) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tibial nerve](http://purl.obolibrary.org/obo/UBERON_0001323) 
+
+
+### surangular bone `http://purl.obolibrary.org/obo/UBERON_0011636`
+
+#### Added
+- [surangular bone](http://purl.obolibrary.org/obo/UBERON_0011636) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### surface ectodermal cell `http://purl.obolibrary.org/obo/CL_0000114`
+
+#### Added
+- [surface ectodermal cell](http://purl.obolibrary.org/obo/CL_0000114) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### surface of cartilage `http://purl.obolibrary.org/obo/UBERON_0008115`
+
+#### Added
+- [surface of cartilage](http://purl.obolibrary.org/obo/UBERON_0008115) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cartilage element](http://purl.obolibrary.org/obo/UBERON_0007844) 
+
+
+### surface of epithelium `http://purl.obolibrary.org/obo/UBERON_0006677`
+
+#### Added
+- [surface of epithelium](http://purl.obolibrary.org/obo/UBERON_0006677) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) 
+
+
+### surface of eyeball `http://purl.obolibrary.org/obo/UBERON_0022288`
+
+#### Added
+- [surface of eyeball](http://purl.obolibrary.org/obo/UBERON_0022288) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [eyeball of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0010230) 
+
+
+### surface of mandible `http://purl.obolibrary.org/obo/UBERON_0011342`
+
+#### Added
+- [surface of mandible](http://purl.obolibrary.org/obo/UBERON_0011342) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mandible](http://purl.obolibrary.org/obo/UBERON_0001684) 
+
+
+### surface of prostate `http://purl.obolibrary.org/obo/UBERON_0035480`
+
+#### Added
+- [surface of prostate](http://purl.obolibrary.org/obo/UBERON_0035480) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
+
+
+### surface of tongue `http://purl.obolibrary.org/obo/UBERON_0007367`
+
+#### Added
+- [surface of tongue](http://purl.obolibrary.org/obo/UBERON_0007367) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) 
+
+
+### suspensory ligament of duodenum `http://purl.obolibrary.org/obo/UBERON_0000642`
+
+#### Added
+- [suspensory ligament of duodenum](http://purl.obolibrary.org/obo/UBERON_0000642) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### suspensory ligament of ovary `http://purl.obolibrary.org/obo/UBERON_0006649`
+
+#### Added
+- [suspensory ligament of ovary](http://purl.obolibrary.org/obo/UBERON_0006649) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### suspensory ligament of testis `http://purl.obolibrary.org/obo/UBERON_0008842`
+
+#### Added
+- [suspensory ligament of testis](http://purl.obolibrary.org/obo/UBERON_0008842) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### sympathetic nerve `http://purl.obolibrary.org/obo/UBERON_0034729`
+
+#### Added
+- [sympathetic nerve](http://purl.obolibrary.org/obo/UBERON_0034729) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### sympathetic neuron `http://purl.obolibrary.org/obo/CL_0011103`
+
+#### Added
+- [sympathetic neuron](http://purl.obolibrary.org/obo/CL_0011103) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### syncytiotrophoblast cell `http://purl.obolibrary.org/obo/CL_0000525`
+
+#### Added
+- [syncytiotrophoblast cell](http://purl.obolibrary.org/obo/CL_0000525) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
 ### synovial cavity of joint `http://purl.obolibrary.org/obo/UBERON_0007617`
-#### Removed
-- [synovial cavity of joint](http://purl.obolibrary.org/obo/UBERON_0007617) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [synovial cavity of joint](http://purl.obolibrary.org/obo/UBERON_0007617) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
+#### Added
+- [synovial cavity of joint](http://purl.obolibrary.org/obo/UBERON_0007617) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [synovial joint](http://purl.obolibrary.org/obo/UBERON_0002217) 
 
 
 ### synovial membrane of synovial joint `http://purl.obolibrary.org/obo/UBERON_0002018`
+
+#### Added
+- [synovial membrane of synovial joint](http://purl.obolibrary.org/obo/UBERON_0002018) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### synovial membrane of synovial tendon sheath `http://purl.obolibrary.org/obo/UBERON_0011233`
+
+#### Added
+- [synovial membrane of synovial tendon sheath](http://purl.obolibrary.org/obo/UBERON_0011233) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tendon sheath](http://purl.obolibrary.org/obo/UBERON_0000304) 
+
+
+### tactile mechanoreceptor `http://purl.obolibrary.org/obo/UBERON_0035016`
+
+#### Added
+- [tactile mechanoreceptor](http://purl.obolibrary.org/obo/UBERON_0035016) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### taste receptor cell `http://purl.obolibrary.org/obo/CL_0000209`
+
+#### Added
+- [taste receptor cell](http://purl.obolibrary.org/obo/CL_0000209) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tectorial membrane of cochlea `http://purl.obolibrary.org/obo/UBERON_0002233`
+
+#### Added
+- [tectorial membrane of cochlea](http://purl.obolibrary.org/obo/UBERON_0002233) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### telencephalic tracts `http://purl.obolibrary.org/obo/UBERON_2000597`
 #### Removed
-- [synovial membrane of synovial joint](http://purl.obolibrary.org/obo/UBERON_0002018) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [label](http://www.w3.org/2000/01/rdf-schema#label) "telencephalic tracts" 
 
-- [synovial membrane of synovial joint](http://purl.obolibrary.org/obo/UBERON_0002018) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0000597" 
 
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [provenance_notes](http://purl.obolibrary.org/obo/UBPROP_0000004) "This class was sourced from an external ontology (teleost_anatomy). Its definitions, naming conventions and relationships may need to be checked for compatibility with uberon" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "http://purl.obolibrary.org/obo/tao.owl" 
 
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) 
 
-### tectum nasi `http://purl.obolibrary.org/obo/UBERON_3000601`
-#### Removed
-- [tectum nasi](http://purl.obolibrary.org/obo/UBERON_3000601) SubClassOf [neural crest-derived structure](http://purl.obolibrary.org/obo/UBERON_0010313) 
-
-#### Added
-- [tectum nasi](http://purl.obolibrary.org/obo/UBERON_3000601) SubClassOf [ectoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004121) 
-
-
-### temple `http://purl.obolibrary.org/obo/UBERON_8480027`
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) SubClassOf [white matter of telencephalon](http://purl.obolibrary.org/obo/UBERON_0011299) 
 
 #### Added
-- [temple](http://purl.obolibrary.org/obo/UBERON_8480027) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) 
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted as it is redundant with 'white matter of telencephalon'." 
+
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3160"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0011299" 
+
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete telencephalic tracts" 
+
+- [telencephalic tracts](http://purl.obolibrary.org/obo/UBERON_2000597) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
 
-### temporofacial region `http://purl.obolibrary.org/obo/UBERON_8480069`
-
-#### Added
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8480069" 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [contributor](http://purl.org/dc/terms/contributor) [Paula Duek Roggli](https://orcid.org/0000-0002-0819-0473) 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [date](http://purl.org/dc/terms/date) "2023-09-18T06:03:43Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "This term is used to map the tissue from which the Muraoka cell line (CVCL_E042) originates." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:1357816" 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The region at each side of the face comprising the temple and the cheek." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28448262" 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [label](http://www.w3.org/2000/01/rdf-schema#label) "temporofacial region" 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- Class: [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [face](http://purl.obolibrary.org/obo/UBERON_0001456) 
-
-- [temporofacial region](http://purl.obolibrary.org/obo/UBERON_8480069) SubClassOf [subdivision of head](http://purl.obolibrary.org/obo/UBERON_0001444) 
-
-
-### tendon of quadriceps femoris `http://purl.obolibrary.org/obo/UBERON_0014848`
-#### Removed
-- [tendon of quadriceps femoris](http://purl.obolibrary.org/obo/UBERON_0014848) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [tendon of quadriceps femoris](http://purl.obolibrary.org/obo/UBERON_0014848) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### tenth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002853`
+### telencephalic ventricle `http://purl.obolibrary.org/obo/UBERON_0002285`
 
 #### Added
-- [tenth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002853) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [telencephalic ventricle](http://purl.obolibrary.org/obo/UBERON_0002285) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [early telencephalic vesicle](http://purl.obolibrary.org/obo/UBERON_0009676) 
 
-- [tenth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002853) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### telencephalon `http://purl.obolibrary.org/obo/UBERON_0001893`
+
+#### Added
+- [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future telencephalon](http://purl.obolibrary.org/obo/UBERON_0014371) 
+
+
+### temporal branch of lateral pretrosal artery `http://purl.obolibrary.org/obo/UBERON_0035043`
+
+#### Added
+- [temporal branch of lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_0035043) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_3010494) 
+
+
+### temporal vein `http://purl.obolibrary.org/obo/UBERON_0001671`
+
+#### Added
+- [temporal vein](http://purl.obolibrary.org/obo/UBERON_0001671) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tendon cell `http://purl.obolibrary.org/obo/CL_0000388`
+
+#### Added
+- [tendon cell](http://purl.obolibrary.org/obo/CL_0000388) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tendon of biceps brachii `http://purl.obolibrary.org/obo/UBERON_0008188`
+
+#### Added
+- [tendon of biceps brachii](http://purl.obolibrary.org/obo/UBERON_0008188) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tendon of semitendinosus `http://purl.obolibrary.org/obo/UBERON_8480009`
+
+#### Added
+- [tendon of semitendinosus](http://purl.obolibrary.org/obo/UBERON_8480009) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tendon of triceps brachii `http://purl.obolibrary.org/obo/UBERON_0008192`
+
+#### Added
+- [tendon of triceps brachii](http://purl.obolibrary.org/obo/UBERON_0008192) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tendon sheath `http://purl.obolibrary.org/obo/UBERON_0000304`
+
+#### Added
+- [tendon sheath](http://purl.obolibrary.org/obo/UBERON_0000304) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tendon](http://purl.obolibrary.org/obo/UBERON_0000043) 
 
 
 ### terminal branch of ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0015156`
-#### Removed
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
-
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
 - [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) 
 
-- [terminal branch of ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015156) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+### terminal bronchiole `http://purl.obolibrary.org/obo/UBERON_0002187`
+
+#### Added
+- [terminal bronchiole](http://purl.obolibrary.org/obo/UBERON_0002187) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### thalamic excitatory neuron `http://purl.obolibrary.org/obo/CL_4023068`
+### testicular vein `http://purl.obolibrary.org/obo/UBERON_0001144`
+
+#### Added
+- [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### testis sex cord `http://purl.obolibrary.org/obo/UBERON_0005297`
+
+#### Added
+- [testis sex cord](http://purl.obolibrary.org/obo/UBERON_0005297) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [primitive sex cord of indifferent gonad](http://purl.obolibrary.org/obo/UBERON_0010141) 
+
+
+### tetrapyrrole metabolic process `http://purl.obolibrary.org/obo/GO_0033013`
 #### Removed
-- [thalamic excitatory neuron](http://purl.obolibrary.org/obo/CL_4023068) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
-
-
-
-### thalamic reticular nucleus `http://purl.obolibrary.org/obo/UBERON_0001903`
+- [tetrapyrrole metabolic process](http://purl.obolibrary.org/obo/GO_0033013) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [thalamic reticular nucleus](http://purl.obolibrary.org/obo/UBERON_0001903) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [thalamic reticular nucleus](http://purl.obolibrary.org/obo/UBERON_0001903) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [tetrapyrrole metabolic process](http://purl.obolibrary.org/obo/GO_0033013) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
 
 
-### third cervical dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002840`
+### theca cell `http://purl.obolibrary.org/obo/CL_0000503`
 
 #### Added
-- [third cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002840) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [third cervical dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002840) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [theca cell](http://purl.obolibrary.org/obo/CL_0000503) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### third lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002858`
+### theca externa `http://purl.obolibrary.org/obo/UBERON_0000156`
 
 #### Added
-- [third lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002858) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [third lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002858) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [theca externa](http://purl.obolibrary.org/obo/UBERON_0000156) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [theca cell layer](http://purl.obolibrary.org/obo/UBERON_0000155) 
 
 
-### third phalanx `http://purl.obolibrary.org/obo/UBERON_0018266`
-#### Removed
-- [third phalanx](http://purl.obolibrary.org/obo/UBERON_0018266) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:8f369965-6ce2-4362-8b36-c0e3c7aba9a9" 
-
-
-
-### third sacral dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002862`
+### thoracic cavity `http://purl.obolibrary.org/obo/UBERON_0002224`
 
 #### Added
-- [third sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002862) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [third sacral dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002862) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thoracic cavity](http://purl.obolibrary.org/obo/UBERON_0002224) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thoracic segment of trunk](http://purl.obolibrary.org/obo/UBERON_0000915) 
 
 
-### third thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002847`
+### thoracic splanchnic nerve `http://purl.obolibrary.org/obo/UBERON_0018679`
 
 #### Added
-- [third thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002847) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [third thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002847) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thoracic splanchnic nerve](http://purl.obolibrary.org/obo/UBERON_0018679) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thoracic sympathetic nerve trunk](http://purl.obolibrary.org/obo/UBERON_0004863) 
 
 
-### third ventricle `http://purl.obolibrary.org/obo/UBERON_0002286`
+### thoracic vertebra 10 `http://purl.obolibrary.org/obo/UBERON_0004634`
 
 #### Added
-- [third ventricle](http://purl.obolibrary.org/obo/UBERON_0002286) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [third ventricle](http://purl.obolibrary.org/obo/UBERON_0002286) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thoracic vertebra 10](http://purl.obolibrary.org/obo/UBERON_0004634) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002835`
+### thoracic vertebra 11 `http://purl.obolibrary.org/obo/UBERON_0004635`
 
 #### Added
-- [thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002835) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002835) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thoracic vertebra 11](http://purl.obolibrary.org/obo/UBERON_0004635) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### thoracic ganglion `http://purl.obolibrary.org/obo/UBERON_0000961`
+### thoracic vertebra 12 `http://purl.obolibrary.org/obo/UBERON_0004636`
 
 #### Added
-- [thoracic ganglion](http://purl.obolibrary.org/obo/UBERON_0000961) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thoracic vertebra 12](http://purl.obolibrary.org/obo/UBERON_0004636) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [thoracic ganglion](http://purl.obolibrary.org/obo/UBERON_0000961) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+### thoracic vertebra 2 `http://purl.obolibrary.org/obo/UBERON_0004627`
+
+#### Added
+- [thoracic vertebra 2](http://purl.obolibrary.org/obo/UBERON_0004627) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 3 `http://purl.obolibrary.org/obo/UBERON_0004628`
+
+#### Added
+- [thoracic vertebra 3](http://purl.obolibrary.org/obo/UBERON_0004628) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 4 `http://purl.obolibrary.org/obo/UBERON_0004629`
+
+#### Added
+- [thoracic vertebra 4](http://purl.obolibrary.org/obo/UBERON_0004629) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 5 `http://purl.obolibrary.org/obo/UBERON_0004630`
+
+#### Added
+- [thoracic vertebra 5](http://purl.obolibrary.org/obo/UBERON_0004630) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 6 `http://purl.obolibrary.org/obo/UBERON_0004631`
+
+#### Added
+- [thoracic vertebra 6](http://purl.obolibrary.org/obo/UBERON_0004631) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 7 `http://purl.obolibrary.org/obo/UBERON_0004632`
+
+#### Added
+- [thoracic vertebra 7](http://purl.obolibrary.org/obo/UBERON_0004632) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 8 `http://purl.obolibrary.org/obo/UBERON_0011050`
+
+#### Added
+- [thoracic vertebra 8](http://purl.obolibrary.org/obo/UBERON_0011050) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracic vertebra 9 `http://purl.obolibrary.org/obo/UBERON_0004633`
+
+#### Added
+- [thoracic vertebra 9](http://purl.obolibrary.org/obo/UBERON_0004633) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoraco-acromial artery `http://purl.obolibrary.org/obo/UBERON_0001395`
+
+#### Added
+- [thoraco-acromial artery](http://purl.obolibrary.org/obo/UBERON_0001395) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracodorsal artery `http://purl.obolibrary.org/obo/UBERON_0002011`
+
+#### Added
+- [thoracodorsal artery](http://purl.obolibrary.org/obo/UBERON_0002011) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### thoracodorsal vein `http://purl.obolibrary.org/obo/UBERON_0002089`
+
+#### Added
+- [thoracodorsal vein](http://purl.obolibrary.org/obo/UBERON_0002089) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### thymic artery `http://purl.obolibrary.org/obo/UBERON_0018243`
-#### Removed
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
 
 #### Added
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
 
-
-### tibial artery `http://purl.obolibrary.org/obo/UBERON_0007610`
-#### Removed
-- [tibial artery](http://purl.obolibrary.org/obo/UBERON_0007610) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [tibial artery](http://purl.obolibrary.org/obo/UBERON_0007610) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) 
-
-- [tibial artery](http://purl.obolibrary.org/obo/UBERON_0007610) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) 
+### thymic vein `http://purl.obolibrary.org/obo/UBERON_0001591`
 
 #### Added
-- [tibial artery](http://purl.obolibrary.org/obo/UBERON_0007610) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [popliteal artery](http://purl.obolibrary.org/obo/UBERON_0002250) 
+- [thymic vein](http://purl.obolibrary.org/obo/UBERON_0001591) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### tongue muscle `http://purl.obolibrary.org/obo/UBERON_0000378`
-#### Removed
-- [tongue muscle](http://purl.obolibrary.org/obo/UBERON_0000378) SubClassOf [craniocervical muscle](http://purl.obolibrary.org/obo/UBERON_0010959) 
-
-
-
-### tonsil `http://purl.obolibrary.org/obo/UBERON_0002372`
+### thymocyte `http://purl.obolibrary.org/obo/CL_0000893`
 
 #### Added
-- [tonsil](http://purl.obolibrary.org/obo/UBERON_0002372) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [tonsil](http://purl.obolibrary.org/obo/UBERON_0002372) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thymocyte](http://purl.obolibrary.org/obo/CL_0000893) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### tonsil capsule `http://purl.obolibrary.org/obo/UBERON_0005207`
+### thymus lobe `http://purl.obolibrary.org/obo/UBERON_0005483`
 
 #### Added
-- [tonsil capsule](http://purl.obolibrary.org/obo/UBERON_0005207) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [tonsil capsule](http://purl.obolibrary.org/obo/UBERON_0005207) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thymus lobe](http://purl.obolibrary.org/obo/UBERON_0005483) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "thymus subunit" 
 
 
-### tonsil crypt `http://purl.obolibrary.org/obo/UBERON_0012181`
+### thymus subunit `http://purl.obolibrary.org/obo/UBERON_0035075`
+#### Removed
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lobe or lobule of thymus" 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:71193" 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [label](http://www.w3.org/2000/01/rdf-schema#label) "thymus subunit" 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) EquivalentTo [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046)) 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) SubClassOf [endoderm-derived structure](http://purl.obolibrary.org/obo/UBERON_0004119) 
+
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) SubClassOf [organ subunit](http://purl.obolibrary.org/obo/UBERON_0000063) 
 
 #### Added
-- [tonsil crypt](http://purl.obolibrary.org/obo/UBERON_0012181) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted as it is redundant with 'thymus lobe'." 
 
-- [tonsil crypt](http://purl.obolibrary.org/obo/UBERON_0012181) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3158"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0005483" 
 
-### tonsil epithelium `http://purl.obolibrary.org/obo/UBERON_0013696`
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete thymus subunit" 
 
-#### Added
-- [tonsil epithelium](http://purl.obolibrary.org/obo/UBERON_0013696) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [tonsil epithelium](http://purl.obolibrary.org/obo/UBERON_0013696) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [thymus subunit](http://purl.obolibrary.org/obo/UBERON_0035075) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
 
-### tonsil germinal center `http://purl.obolibrary.org/obo/UBERON_0013688`
+### thyroid artery `http://purl.obolibrary.org/obo/UBERON_0003847`
 
 #### Added
-- [tonsil germinal center](http://purl.obolibrary.org/obo/UBERON_0013688) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [tonsil germinal center](http://purl.obolibrary.org/obo/UBERON_0013688) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [thyroid artery](http://purl.obolibrary.org/obo/UBERON_0003847) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### tooth root apical papilla `http://purl.obolibrary.org/obo/UBERON_8480031`
+### thyroid diverticulum `http://purl.obolibrary.org/obo/UBERON_0007689`
 
 #### Added
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "The surface layer is formed by a dense collagen matrix with perpendicular aligned collagen fibers. The inner layer consists of a loosely disorganized collagen matrix with a high concentration of mesenchymal stem cells. Fully mature roots lack apical papilla." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18498881" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34026757" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "apical papilla of immature permanent teeth" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30834270" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [contributor](http://purl.org/dc/terms/contributor) [Paula Duek Roggli](https://orcid.org/0000-0002-0819-0473) 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "apical papilla" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18215674" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The portion of the dental papilla located at the apex of the root of developing permanent tooth that is responsible for the progressive elongation and maturation of the root tooth." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18498881" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34026757" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [date](http://purl.org/dc/terms/date) "2023-11-02T07:48:12Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8480031" 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) [label](http://www.w3.org/2000/01/rdf-schema#label) "tooth root apical papilla" 
-
-- Class: [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) SubClassOf [tissue](http://purl.obolibrary.org/obo/UBERON_0000479) 
-
-- [tooth root apical papilla](http://purl.obolibrary.org/obo/UBERON_8480031) SubClassOf [adjacent to](http://purl.obolibrary.org/obo/RO_0002220) some [tooth root](http://purl.obolibrary.org/obo/UBERON_0003677) 
+- [thyroid diverticulum](http://purl.obolibrary.org/obo/UBERON_0007689) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [thyroid primordium](http://purl.obolibrary.org/obo/UBERON_0003091) 
 
 
-### transverse facial artery `http://purl.obolibrary.org/obo/UBERON_0001615`
-#### Removed
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) and ([branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614)) 
-
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
-
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
+### thyroid follicular cell `http://purl.obolibrary.org/obo/CL_0002258`
 
 #### Added
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) and ([supplies](http://purl.obolibrary.org/obo/RO_0002178) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) and ([connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614)) 
-
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
+- [thyroid follicular cell](http://purl.obolibrary.org/obo/CL_0002258) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### transverse gyrus of Heschl `http://purl.obolibrary.org/obo/UBERON_0003939`
+### thyroid gland `http://purl.obolibrary.org/obo/UBERON_0002046`
 
 #### Added
-- [transverse gyrus of Heschl](http://purl.obolibrary.org/obo/UBERON_0003939) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [transverse gyrus of Heschl](http://purl.obolibrary.org/obo/UBERON_0003939) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [thyroid diverticulum](http://purl.obolibrary.org/obo/UBERON_0007689) 
 
 
-### trophoblast `http://purl.obolibrary.org/obo/UBERON_0000088`
-#### Removed
-- [trophoblast](http://purl.obolibrary.org/obo/UBERON_0000088) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [trophoblast](http://purl.obolibrary.org/obo/UBERON_0000088) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### twelfth thoracic dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0002855`
+### thyroid vein `http://purl.obolibrary.org/obo/UBERON_0018246`
 
 #### Added
-- [twelfth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002855) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [twelfth thoracic dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002855) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [thyroid vein](http://purl.obolibrary.org/obo/UBERON_0018246) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### type 1 adrenal tissue `http://purl.obolibrary.org/obo/UBERON_0018268`
-#### Removed
-- [type 1 adrenal tissue](http://purl.obolibrary.org/obo/UBERON_0018268) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:6eccda87-a879-44fe-b2c6-ffab20dd60ee" 
-
-
-
-### type 2 adrenal tissue `http://purl.obolibrary.org/obo/UBERON_0018269`
-#### Removed
-- [type 2 adrenal tissue](http://purl.obolibrary.org/obo/UBERON_0018269) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:05a9169f-4c7d-4ff3-a786-48f9252ed6b9" 
-
-
-
-### type 3 adrenal tissue `http://purl.obolibrary.org/obo/UBERON_0018270`
-#### Removed
-- [type 3 adrenal tissue](http://purl.obolibrary.org/obo/UBERON_0018270) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:0022c3d9-8716-4da7-aed3-5ca1d6ad1f35" 
-
-
-
-### type 4 adrenal tissue `http://purl.obolibrary.org/obo/UBERON_0018271`
-#### Removed
-- [type 4 adrenal tissue](http://purl.obolibrary.org/obo/UBERON_0018271) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1ae042ee-fe94-41bb-ad04-3dbbf9de8622" 
-
-
-
-### uncus of parahippocampal gyrus `http://purl.obolibrary.org/obo/UBERON_0034773`
+### tibial nerve `http://purl.obolibrary.org/obo/UBERON_0001323`
 
 #### Added
-- [uncus of parahippocampal gyrus](http://purl.obolibrary.org/obo/UBERON_0034773) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [uncus of parahippocampal gyrus](http://purl.obolibrary.org/obo/UBERON_0034773) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [tibial nerve](http://purl.obolibrary.org/obo/UBERON_0001323) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sciatic nerve](http://purl.obolibrary.org/obo/UBERON_0001322) 
 
 
-### upper canine 1 `http://purl.obolibrary.org/obo/UBERON_0018300`
-#### Removed
-- [upper canine 1](http://purl.obolibrary.org/obo/UBERON_0018300) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:14c28c28-237e-435d-9883-8dff529e64cc" 
-
-
-
-### upper deciduous premolar 5 `http://purl.obolibrary.org/obo/UBERON_0018301`
-#### Removed
-- [upper deciduous premolar 5](http://purl.obolibrary.org/obo/UBERON_0018301) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:ae0e62b6-59ad-4c21-8e15-b67570c5137a" 
-
-
-
-### upper lateral line `http://purl.obolibrary.org/obo/UBERON_0018369`
-#### Removed
-- [upper lateral line](http://purl.obolibrary.org/obo/UBERON_0018369) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:2e283d18-0137-43ce-948f-1704f1d0a0a7" 
-
-
-
-### upper molar 1 `http://purl.obolibrary.org/obo/UBERON_0018302`
-#### Removed
-- [upper molar 1](http://purl.obolibrary.org/obo/UBERON_0018302) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:12acbe6c-9036-48e3-b1a0-1f2fdaa0241d" 
-
-
-
-### upper respiratory tract `http://purl.obolibrary.org/obo/UBERON_0001557`
-#### Removed
-- [upper respiratory tract](http://purl.obolibrary.org/obo/UBERON_0001557) SubClassOf [structure with developmental contribution from neural crest](http://purl.obolibrary.org/obo/UBERON_0010314) 
+### tissue-resident macrophage `http://purl.obolibrary.org/obo/CL_0000864`
 
 #### Added
-- [upper respiratory tract](http://purl.obolibrary.org/obo/UBERON_0001557) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [upper respiratory tract](http://purl.obolibrary.org/obo/UBERON_0001557) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### upper urinary tract `http://purl.obolibrary.org/obo/UBERON_0011143`
+### title `http://purl.org/dc/terms/title`
 
 #### Added
-- [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [upper urinary tract](http://purl.obolibrary.org/obo/UBERON_0011143) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- AnnotationProperty: [title](http://purl.org/dc/terms/title) 
 
 
-### ureteric segment of renal artery `http://purl.obolibrary.org/obo/UBERON_0003468`
+### tongue `http://purl.obolibrary.org/obo/UBERON_0001723`
+
+#### Added
+- [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future tongue](http://purl.obolibrary.org/obo/UBERON_0010056) 
+
+
+### tongue muscle cell `http://purl.obolibrary.org/obo/CL_0002673`
+
+#### Added
+- [tongue muscle cell](http://purl.obolibrary.org/obo/CL_0002673) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tonsil germinal center B cell `http://purl.obolibrary.org/obo/CL_2000006`
+
+#### Added
+- [tonsil germinal center B cell](http://purl.obolibrary.org/obo/CL_2000006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tooth of lower jaw `http://purl.obolibrary.org/obo/UBERON_0003268`
+
+#### Added
+- [tooth of lower jaw](http://purl.obolibrary.org/obo/UBERON_0003268) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tooth of upper jaw `http://purl.obolibrary.org/obo/UBERON_0003267`
+
+#### Added
+- [tooth of upper jaw](http://purl.obolibrary.org/obo/UBERON_0003267) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tooth root `http://purl.obolibrary.org/obo/UBERON_0003677`
+
+#### Added
+- [tooth root](http://purl.obolibrary.org/obo/UBERON_0003677) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### trachea connective tissue `http://purl.obolibrary.org/obo/UBERON_0003571`
+
+#### Added
+- [trachea connective tissue](http://purl.obolibrary.org/obo/UBERON_0003571) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of trachea](http://purl.obolibrary.org/obo/UBERON_0009505) 
+
+
+### tracheal goblet cell `http://purl.obolibrary.org/obo/CL_1000329`
+
+#### Added
+- [tracheal goblet cell](http://purl.obolibrary.org/obo/CL_1000329) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tracheobronchial goblet cell `http://purl.obolibrary.org/obo/CL_0019003`
+
+#### Added
+- [tracheobronchial goblet cell](http://purl.obolibrary.org/obo/CL_0019003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tracheobronchial serous cell `http://purl.obolibrary.org/obo/CL_0019001`
+
+#### Added
+- [tracheobronchial serous cell](http://purl.obolibrary.org/obo/CL_0019001) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tracheobronchial smooth muscle cell `http://purl.obolibrary.org/obo/CL_0019019`
+
+#### Added
+- [tracheobronchial smooth muscle cell](http://purl.obolibrary.org/obo/CL_0019019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### tracheoesophageal septum `http://purl.obolibrary.org/obo/UBERON_0036070`
+
+#### Added
+- [tracheoesophageal septum](http://purl.obolibrary.org/obo/UBERON_0036070) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [tracheoesophageal fold](http://purl.obolibrary.org/obo/UBERON_0036069) 
+
+
+### tractus sacci vasculosi `http://purl.obolibrary.org/obo/UBERON_0035146`
+
+#### Added
+- [tractus sacci vasculosi](http://purl.obolibrary.org/obo/UBERON_0035146) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### transferase activity `http://purl.obolibrary.org/obo/GO_0016740`
 #### Removed
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [transferase activity](http://purl.obolibrary.org/obo/GO_0016740) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
 
 #### Added
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [transferase activity](http://purl.obolibrary.org/obo/GO_0016740) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### transformed artery `http://purl.obolibrary.org/obo/UBERON_0006591`
+
+#### Added
+- [transformed artery](http://purl.obolibrary.org/obo/UBERON_0006591) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+
+
+### transformed vein `http://purl.obolibrary.org/obo/UBERON_0006592`
+
+#### Added
+- [transformed vein](http://purl.obolibrary.org/obo/UBERON_0006592) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [vein](http://purl.obolibrary.org/obo/UBERON_0001638) 
+
+
+### transitional stage B cell `http://purl.obolibrary.org/obo/CL_0000818`
+
+#### Added
+- [transitional stage B cell](http://purl.obolibrary.org/obo/CL_0000818) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### translation `http://purl.obolibrary.org/obo/GO_0006412`
+#### Removed
+- [translation](http://purl.obolibrary.org/obo/GO_0006412) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [translation](http://purl.obolibrary.org/obo/GO_0006412) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### transport `http://purl.obolibrary.org/obo/GO_0006810`
+#### Removed
+- [transport](http://purl.obolibrary.org/obo/GO_0006810) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [transport](http://purl.obolibrary.org/obo/GO_0006810) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### transporter activity `http://purl.obolibrary.org/obo/GO_0005215`
+#### Removed
+- [transporter activity](http://purl.obolibrary.org/obo/GO_0005215) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [prokaryote_subset](http://purl.obolibrary.org/obo/go#prokaryote_subset) 
+
+#### Added
+- [transporter activity](http://purl.obolibrary.org/obo/GO_0005215) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_prokaryote](http://purl.obolibrary.org/obo/go#goslim_prokaryote) 
+
+
+### transudate `http://purl.obolibrary.org/obo/UBERON_0007779`
+
+#### Added
+- [transudate](http://purl.obolibrary.org/obo/UBERON_0007779) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [blood plasma](http://purl.obolibrary.org/obo/UBERON_0001969) 
+
+
+### transverse facial vein `http://purl.obolibrary.org/obo/UBERON_0001659`
+
+#### Added
+- [transverse facial vein](http://purl.obolibrary.org/obo/UBERON_0001659) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### tributary of central retinal vein `http://purl.obolibrary.org/obo/UBERON_0036300`
+
+#### Added
+- [tributary of central retinal vein](http://purl.obolibrary.org/obo/UBERON_0036300) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### trigeminal ganglion `http://purl.obolibrary.org/obo/UBERON_0001675`
+
+#### Added
+- [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0006304) 
+
+
+### trigeminal nuclear complex `http://purl.obolibrary.org/obo/UBERON_0007641`
+
+#### Added
+- [trigeminal nuclear complex](http://purl.obolibrary.org/obo/UBERON_0007641) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### trigeminothalamic tract `http://purl.obolibrary.org/obo/UBERON_0004171`
+
+#### Added
+- [trigeminothalamic tract](http://purl.obolibrary.org/obo/UBERON_0004171) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [somatosensory system](http://purl.obolibrary.org/obo/UBERON_0003942) 
+
+
+### true rib `http://purl.obolibrary.org/obo/UBERON_0002237`
+
+#### Added
+- [true rib](http://purl.obolibrary.org/obo/UBERON_0002237) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### trunk maxillary-mandibularis `http://purl.obolibrary.org/obo/UBERON_3010669`
+
+#### Added
+- [trunk maxillary-mandibularis](http://purl.obolibrary.org/obo/UBERON_3010669) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0001645) 
+
+
+### tubotympanic recess lumen `http://purl.obolibrary.org/obo/UBERON_0005625`
+
+#### Added
+- [tubotympanic recess lumen](http://purl.obolibrary.org/obo/UBERON_0005625) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [tubotympanic recess epithelium](http://purl.obolibrary.org/obo/UBERON_0010020) 
+
+
+### tuft cell of colon `http://purl.obolibrary.org/obo/CL_0009041`
+
+#### Added
+- [tuft cell of colon](http://purl.obolibrary.org/obo/CL_0009041) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### turbinate bone `http://purl.obolibrary.org/obo/UBERON_0001762`
+
+#### Added
+- [turbinate bone](http://purl.obolibrary.org/obo/UBERON_0001762) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [nasal concha cartilage](http://purl.obolibrary.org/obo/UBERON_0035007) 
+
+
+### tympanic cavity epithelium `http://purl.obolibrary.org/obo/UBERON_0010063`
+
+#### Added
+- [tympanic cavity epithelium](http://purl.obolibrary.org/obo/UBERON_0010063) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [tubotympanic recess epithelium](http://purl.obolibrary.org/obo/UBERON_0010020) 
+
+
+### tympanic nerve `http://purl.obolibrary.org/obo/UBERON_0036216`
+
+#### Added
+- [tympanic nerve](http://purl.obolibrary.org/obo/UBERON_0036216) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [glossopharyngeal nerve](http://purl.obolibrary.org/obo/UBERON_0001649) 
+
+
+### type 1 odontode `http://purl.obolibrary.org/obo/UBERON_2001623`
+
+#### Added
+- [type 1 odontode](http://purl.obolibrary.org/obo/UBERON_2001623) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### type 2 odontode `http://purl.obolibrary.org/obo/UBERON_2001624`
+
+#### Added
+- [type 2 odontode](http://purl.obolibrary.org/obo/UBERON_2001624) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### type B pancreatic cell `http://purl.obolibrary.org/obo/CL_0000169`
+
+#### Added
+- [type B pancreatic cell](http://purl.obolibrary.org/obo/CL_0000169) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### type D enteroendocrine cell `http://purl.obolibrary.org/obo/CL_0000502`
+
+#### Added
+- [type D enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000502) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### type G enteroendocrine cell `http://purl.obolibrary.org/obo/CL_0000508`
+
+#### Added
+- [type G enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000508) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### type I pneumocyte `http://purl.obolibrary.org/obo/CL_0002062`
+
+#### Added
+- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### type II pneumocyte `http://purl.obolibrary.org/obo/CL_0002063`
+
+#### Added
+- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### udder `http://purl.obolibrary.org/obo/UBERON_0013216`
+
+#### Added
+- [udder](http://purl.obolibrary.org/obo/UBERON_0013216) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### ulnar artery `http://purl.obolibrary.org/obo/UBERON_0001406`
+
+#### Added
+- [ulnar artery](http://purl.obolibrary.org/obo/UBERON_0001406) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ulnar nerve `http://purl.obolibrary.org/obo/UBERON_0001494`
+
+#### Added
+- [ulnar nerve](http://purl.obolibrary.org/obo/UBERON_0001494) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [brachial nerve plexus](http://purl.obolibrary.org/obo/UBERON_0001814) 
+
+
+### unswitched memory B cell `http://purl.obolibrary.org/obo/CL_0000970`
+
+#### Added
+- [unswitched memory B cell](http://purl.obolibrary.org/obo/CL_0000970) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### upper arm connective tissue `http://purl.obolibrary.org/obo/UBERON_0004269`
+
+#### Added
+- [upper arm connective tissue](http://purl.obolibrary.org/obo/UBERON_0004269) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [upper arm mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005258) 
+
+
+### upper jaw symphyseal tooth `http://purl.obolibrary.org/obo/UBERON_4300135`
+
+#### Added
+- [upper jaw symphyseal tooth](http://purl.obolibrary.org/obo/UBERON_4300135) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### upper leg connective tissue `http://purl.obolibrary.org/obo/UBERON_0004266`
+
+#### Added
+- [upper leg connective tissue](http://purl.obolibrary.org/obo/UBERON_0004266) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [upper leg mesenchyme](http://purl.obolibrary.org/obo/UBERON_0005254) 
+
+
+### upper lip `http://purl.obolibrary.org/obo/UBERON_0001834`
+
+#### Added
+- [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [future upper lip](http://purl.obolibrary.org/obo/UBERON_0011592) 
+
+
+### urachus `http://purl.obolibrary.org/obo/UBERON_0002068`
+
+#### Added
+- [urachus](http://purl.obolibrary.org/obo/UBERON_0002068) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### urethra urothelial cell `http://purl.obolibrary.org/obo/CL_1001430`
+
+#### Added
+- [urethra urothelial cell](http://purl.obolibrary.org/obo/CL_1001430) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### urethral artery `http://purl.obolibrary.org/obo/UBERON_0039355`
+
+#### Added
+- [urethral artery](http://purl.obolibrary.org/obo/UBERON_0039355) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### urethral vein `http://purl.obolibrary.org/obo/UBERON_0039377`
+
+#### Added
+- [urethral vein](http://purl.obolibrary.org/obo/UBERON_0039377) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### urinary bladder detrusor smooth muscle `http://purl.obolibrary.org/obo/UBERON_0000381`
+
+#### Added
+- [urinary bladder detrusor smooth muscle](http://purl.obolibrary.org/obo/UBERON_0000381) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### uropropatagium `http://purl.obolibrary.org/obo/UBERON_0010868`
+
+#### Added
+- [uropropatagium](http://purl.obolibrary.org/obo/UBERON_0010868) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### urothelial cell `http://purl.obolibrary.org/obo/CL_0000731`
+
+#### Added
+- [urothelial cell](http://purl.obolibrary.org/obo/CL_0000731) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### urothelial cell of trigone of urinary bladder `http://purl.obolibrary.org/obo/CL_1000442`
+
+#### Added
+- [urothelial cell of trigone of urinary bladder](http://purl.obolibrary.org/obo/CL_1000442) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trigone of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001257) 
 
 
 ### uterine artery `http://purl.obolibrary.org/obo/UBERON_0002493`
-#### Removed
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [genital artery](http://purl.obolibrary.org/obo/UBERON_0010192) 
-
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
-
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
 
 #### Added
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal iliac artery](http://purl.obolibrary.org/obo/UBERON_0001309) 
+- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) 
 
 
-### vagus X ganglion `http://purl.obolibrary.org/obo/UBERON_0005362`
-
-#### Added
-- [vagus X ganglion](http://purl.obolibrary.org/obo/UBERON_0005362) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [vagus X ganglion](http://purl.obolibrary.org/obo/UBERON_0005362) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### vascular system `http://purl.obolibrary.org/obo/UBERON_0007798`
+### uterine horn `http://purl.obolibrary.org/obo/UBERON_0002247`
 
 #### Added
-- [vascular system](http://purl.obolibrary.org/obo/UBERON_0007798) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [vascular system](http://purl.obolibrary.org/obo/UBERON_0007798) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [uterine horn](http://purl.obolibrary.org/obo/UBERON_0002247) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### venous system `http://purl.obolibrary.org/obo/UBERON_0004582`
+### uterine resident macrophage `http://purl.obolibrary.org/obo/CL_4033064`
 
 #### Added
-- [venous system](http://purl.obolibrary.org/obo/UBERON_0004582) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Uterine macrophages are reported to be evenly distributed throughout the endometrial stroma but with aggregations observed close to the lumen of superficial secretory glands." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36113384" 
 
-- [venous system](http://purl.obolibrary.org/obo/UBERON_0004582) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "uterine macrophage" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36113384" 
 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A tissue-resident macrophage that is part of the uterus." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36113384" 
 
-### ventral anterior nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0002637`
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [label](http://www.w3.org/2000/01/rdf-schema#label) "uterine resident macrophage" 
 
-#### Added
-- [ventral anterior nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002637) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [date](http://purl.org/dc/terms/date) "2024-01-08T16:05:09Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [ventral anterior nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002637) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) [contributor](http://purl.org/dc/terms/contributor) [Aleix Puig-Barbé](https://orcid.org/0000-0001-6677-8489) 
 
+- Class: [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) 
 
-### ventral lateral line `http://purl.obolibrary.org/obo/UBERON_0018370`
-#### Removed
-- [ventral lateral line](http://purl.obolibrary.org/obo/UBERON_0018370) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:61c755ec-848e-4262-89e4-be2267041e64" 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) EquivalentTo [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995)) 
 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) 
 
-
-### ventral lateral nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0001925`
-
-#### Added
-- [ventral lateral nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0001925) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [ventral lateral nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0001925) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [uterine resident macrophage](http://purl.obolibrary.org/obo/CL_4033064) SubClassOf [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) 
 
 
-### ventral posterolateral nucleus `http://purl.obolibrary.org/obo/UBERON_0002942`
+### uterine smooth muscle cell `http://purl.obolibrary.org/obo/CL_0002601`
 
 #### Added
-- [ventral posterolateral nucleus](http://purl.obolibrary.org/obo/UBERON_0002942) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [ventral posterolateral nucleus](http://purl.obolibrary.org/obo/UBERON_0002942) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [uterine smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002601) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
 
 
-### ventral posteromedial nucleus of thalamus `http://purl.obolibrary.org/obo/UBERON_0002945`
+### uterine spiral artery `http://purl.obolibrary.org/obo/UBERON_0015171`
 
 #### Added
-- [ventral posteromedial nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002945) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [ventral posteromedial nucleus of thalamus](http://purl.obolibrary.org/obo/UBERON_0002945) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [uterine spiral artery](http://purl.obolibrary.org/obo/UBERON_0015171) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### ventral supracondylar tubercle `http://purl.obolibrary.org/obo/UBERON_0018371`
-#### Removed
-- [ventral supracondylar tubercle](http://purl.obolibrary.org/obo/UBERON_0018371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:227c8fa9-af2b-4301-9c95-641d39864df6" 
-
-
-
-### vermilion `http://purl.obolibrary.org/obo/UBERON_0016915`
-#### Removed
-- [vermilion](http://purl.obolibrary.org/obo/UBERON_0016915) SubClassOf [skin of head](http://purl.obolibrary.org/obo/UBERON_0001084) 
+### uterus `http://purl.obolibrary.org/obo/UBERON_0000995`
 
 #### Added
-- [vermilion](http://purl.obolibrary.org/obo/UBERON_0016915) SubClassOf [zone of skin](http://purl.obolibrary.org/obo/UBERON_0000014) 
+- [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [embryonic uterus](http://purl.obolibrary.org/obo/UBERON_0005795) 
 
 
-### vertebral artery `http://purl.obolibrary.org/obo/UBERON_0001535`
-#### Removed
-- [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
-
-- [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
+### uveal vein `http://purl.obolibrary.org/obo/UBERON_0035546`
 
 #### Added
-- [vertebral artery](http://purl.obolibrary.org/obo/UBERON_0001535) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) 
+- [uveal vein](http://purl.obolibrary.org/obo/UBERON_0035546) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### vertebral element `http://purl.obolibrary.org/obo/UBERON_0010913`
-#### Removed
-- [vertebral element](http://purl.obolibrary.org/obo/UBERON_0010913) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vertebral column](http://purl.obolibrary.org/obo/UBERON_0001130) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "VSAO" 
+### vaginal vein `http://purl.obolibrary.org/obo/UBERON_0001319`
 
+#### Added
+- [vaginal vein](http://purl.obolibrary.org/obo/UBERON_0001319) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vasa recta ascending limb cell `http://purl.obolibrary.org/obo/CL_1001131`
+
+#### Added
+- [vasa recta ascending limb cell](http://purl.obolibrary.org/obo/CL_1001131) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### vasa recta descending limb cell `http://purl.obolibrary.org/obo/CL_1001285`
+
+#### Added
+- [vasa recta descending limb cell](http://purl.obolibrary.org/obo/CL_1001285) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### vascular associated smooth muscle cell `http://purl.obolibrary.org/obo/CL_0000359`
+
+#### Added
+- [vascular associated smooth muscle cell](http://purl.obolibrary.org/obo/CL_0000359) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### vascular lymphangioblast `http://purl.obolibrary.org/obo/CL_0005022`
+
+#### Added
+- [vascular lymphangioblast](http://purl.obolibrary.org/obo/CL_0005022) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### vein endothelial cell `http://purl.obolibrary.org/obo/CL_0002543`
+
+#### Added
+- [vein endothelial cell](http://purl.obolibrary.org/obo/CL_0002543) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### vein of lip `http://purl.obolibrary.org/obo/UBERON_0013136`
+
+#### Added
+- [vein of lip](http://purl.obolibrary.org/obo/UBERON_0013136) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vein of vestibular aqueduct `http://purl.obolibrary.org/obo/UBERON_0036074`
+
+#### Added
+- [vein of vestibular aqueduct](http://purl.obolibrary.org/obo/UBERON_0036074) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### velar skeleton `http://purl.obolibrary.org/obo/UBERON_0013653`
+
+#### Added
+- [velar skeleton](http://purl.obolibrary.org/obo/UBERON_0013653) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory velum](http://purl.obolibrary.org/obo/UBERON_0012121) 
+
+
+### venous sinus cavity `http://purl.obolibrary.org/obo/UBERON_0034940`
+
+#### Added
+- [venous sinus cavity](http://purl.obolibrary.org/obo/UBERON_0034940) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [venous sinus](http://purl.obolibrary.org/obo/UBERON_0006615) 
+
+
+### venous vitelline plexus `http://purl.obolibrary.org/obo/UBERON_0006309`
+
+#### Added
+- [venous vitelline plexus](http://purl.obolibrary.org/obo/UBERON_0006309) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "vitelline venous plexus" 
+
+
+### ventral lateral sacrocaudal muscle `http://purl.obolibrary.org/obo/UBERON_0011472`
+
+#### Added
+- [ventral lateral sacrocaudal muscle](http://purl.obolibrary.org/obo/UBERON_0011472) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### ventral liver lobe `http://purl.obolibrary.org/obo/UBERON_2005174`
+
+#### Added
+- [ventral liver lobe](http://purl.obolibrary.org/obo/UBERON_2005174) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+### ventral nerve cord `http://purl.obolibrary.org/obo/UBERON_0000934`
+
+#### Added
+- [ventral nerve cord](http://purl.obolibrary.org/obo/UBERON_0000934) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ventrum](http://purl.obolibrary.org/obo/UBERON_0013235) 
+
+
+### ventral ramus of spinal nerve `http://purl.obolibrary.org/obo/UBERON_0006838`
+
+#### Added
+- [ventral ramus of spinal nerve](http://purl.obolibrary.org/obo/UBERON_0006838) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [spinal nerve trunk](http://purl.obolibrary.org/obo/UBERON_0005476) 
+
+
+### ventricular cardiac muscle cell `http://purl.obolibrary.org/obo/CL_2000046`
+
+#### Added
+- [ventricular cardiac muscle cell](http://purl.obolibrary.org/obo/CL_2000046) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cellxgene_subset](http://purl.obolibrary.org/obo/cl#cellxgene_subset) 
+
+
+### ventrobronchus `http://purl.obolibrary.org/obo/UBERON_0009072`
+
+#### Added
+- [ventrobronchus](http://purl.obolibrary.org/obo/UBERON_0009072) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vertebral bone 2 `http://purl.obolibrary.org/obo/UBERON_0001093`
+
+#### Added
+- [vertebral bone 2](http://purl.obolibrary.org/obo/UBERON_0001093) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vertebral vein `http://purl.obolibrary.org/obo/UBERON_0001588`
+
+#### Added
+- [vertebral vein](http://purl.obolibrary.org/obo/UBERON_0001588) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vesical artery `http://purl.obolibrary.org/obo/UBERON_0009027`
+
+#### Added
+- [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vesical vein `http://purl.obolibrary.org/obo/UBERON_0002460`
+
+#### Added
+- [vesical vein](http://purl.obolibrary.org/obo/UBERON_0002460) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vesical venous plexus `http://purl.obolibrary.org/obo/UBERON_0008888`
+
+#### Added
+- [vesical venous plexus](http://purl.obolibrary.org/obo/UBERON_0008888) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vessel drains blood from `http://purl.obolibrary.org/obo/RO_0020102`
+
+#### Added
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [date](http://purl.org/dc/terms/date) "2024-02-01T10:09:41Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "vessel_drains_blood_from" 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [example of usage](http://purl.obolibrary.org/obo/IAO_0000112) "cystic vein vessel drains blood from gallbladder" 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [label](http://www.w3.org/2000/01/rdf-schema#label) "vessel drains blood from" 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "x vessel drains blood from y if and only if x is a vessel that drains blood directly or indirectly from an anatomical structure y." 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0020102" 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) [contributor](http://purl.org/dc/terms/contributor) [Aleix Puig-Barbé](https://orcid.org/0000-0001-6677-8489) 
+
+- ObjectProperty: [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) Domain [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) Range [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
+
+- [vessel drains blood from](http://purl.obolibrary.org/obo/RO_0020102) SubPropertyOf: [drains](http://purl.obolibrary.org/obo/RO_0002179) 
+
+
+### vessel supplies blood to `http://purl.obolibrary.org/obo/RO_0020101`
+
+#### Added
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [date](http://purl.org/dc/terms/date) "2024-02-01T10:09:22Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0020101" 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "x vessel supplies blood to y if and only if x is a vessel that supplies blood directly or indirectly to an anatomical structure y." 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [contributor](http://purl.org/dc/terms/contributor) [Aleix Puig-Barbé](https://orcid.org/0000-0001-6677-8489) 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "vessel_supplies_blood_to" 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [label](http://www.w3.org/2000/01/rdf-schema#label) "vessel supplies blood to" 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) [example of usage](http://purl.obolibrary.org/obo/IAO_0000112) "brachial artery vessel supplies blood to brachialis muscle" 
+
+- ObjectProperty: [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) Domain [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) Range [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
+
+- [vessel supplies blood to](http://purl.obolibrary.org/obo/RO_0020101) SubPropertyOf: [supplies](http://purl.obolibrary.org/obo/RO_0002178) 
 
 
 ### vestibular bulb artery `http://purl.obolibrary.org/obo/UBERON_0034727`
-#### Removed
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [abdominal segment blood vessel](http://purl.obolibrary.org/obo/UBERON_0003835) 
-
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
 #### Added
 - [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
-### vestibular ganglion `http://purl.obolibrary.org/obo/UBERON_0002824`
+### vestibular bulb vein `http://purl.obolibrary.org/obo/UBERON_0039379`
 
 #### Added
-- [vestibular ganglion](http://purl.obolibrary.org/obo/UBERON_0002824) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [vestibular ganglion](http://purl.obolibrary.org/obo/UBERON_0002824) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [vestibular bulb vein](http://purl.obolibrary.org/obo/UBERON_0039379) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
-### vidian canal `http://purl.obolibrary.org/obo/UBERON_0018373`
-#### Removed
-- [vidian canal](http://purl.obolibrary.org/obo/UBERON_0018373) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERONTEMP:1ab99cc2-1435-4a9f-ade0-4e3b8efc8774" 
-
-
-
-### vitelline artery `http://purl.obolibrary.org/obo/UBERON_0006002`
-#### Removed
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
-
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [trunk blood vessel](http://purl.obolibrary.org/obo/UBERON_0003513) 
-
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
-  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "ventral branch" 
-
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
+### vestibular nerve `http://purl.obolibrary.org/obo/UBERON_0003723`
 
 #### Added
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [dorsal aorta](http://purl.obolibrary.org/obo/UBERON_0005805) 
-  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "ventral branch" 
-
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [vestibular nerve](http://purl.obolibrary.org/obo/UBERON_0003723) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vestibulocochlear nerve](http://purl.obolibrary.org/obo/UBERON_0001648) 
 
 
-### wing `http://purl.obolibrary.org/obo/UBERON_0000023`
+### vestibular nucleus `http://purl.obolibrary.org/obo/UBERON_0007228`
+
+#### Added
+- [vestibular nucleus](http://purl.obolibrary.org/obo/UBERON_0007228) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vidian nerve `http://purl.obolibrary.org/obo/UBERON_0018412`
+
+#### Added
+- [vidian nerve](http://purl.obolibrary.org/obo/UBERON_0018412) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [facial nerve](http://purl.obolibrary.org/obo/UBERON_0001647) 
+
+
+### visceral abdominal adipose tissue `http://purl.obolibrary.org/obo/UBERON_0014454`
+
+#### Added
+- [visceral abdominal adipose tissue](http://purl.obolibrary.org/obo/UBERON_0014454) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [viscus](http://purl.obolibrary.org/obo/UBERON_0002075) 
+
+
+### visceral pleura `http://purl.obolibrary.org/obo/UBERON_0002401`
+
+#### Added
+- [visceral pleura](http://purl.obolibrary.org/obo/UBERON_0002401) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vitelline membrane `http://purl.obolibrary.org/obo/UBERON_0003125`
+
+#### Added
+- [vitelline membrane](http://purl.obolibrary.org/obo/UBERON_0003125) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [egg cell](http://purl.obolibrary.org/obo/CL_0000025) 
+
+
+### vitelline vasculature `http://purl.obolibrary.org/obo/UBERON_0004374`
+
+#### Added
+- [vitelline vasculature](http://purl.obolibrary.org/obo/UBERON_0004374) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vitelline venous plexus `http://purl.obolibrary.org/obo/UBERON_0006310`
 #### Removed
-- [wing](http://purl.obolibrary.org/obo/UBERON_0000023) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [Sauropsida](http://purl.obolibrary.org/obo/NCBITaxon_8457) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "bgee" 
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA2:0002210" 
 
-- [wing](http://purl.obolibrary.org/obo/UBERON_0000023) DisjointWith [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Sauropsida](http://purl.obolibrary.org/obo/NCBITaxon_8457) 
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [emapa_ehdaa2](http://purl.obolibrary.org/obo/uberon/core#emapa_ehdaa2) 
 
-- [wing](http://purl.obolibrary.org/obo/UBERON_0000023) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some (not ([Sauropsida](http://purl.obolibrary.org/obo/NCBITaxon_8457))) 
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:17020" 
 
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [label](http://www.w3.org/2000/01/rdf-schema#label) "vitelline venous plexus" 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA:1945" 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [venous system](http://purl.obolibrary.org/obo/UBERON_0004582) 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) SubClassOf [embryonic structure](http://purl.obolibrary.org/obo/UBERON_0002050) 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [systemic venous system](http://purl.obolibrary.org/obo/UBERON_0004581) 
+
+#### Added
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) "UBERON:0006309" 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3157"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete vitelline venous plexus" 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [vitelline venous plexus](http://purl.obolibrary.org/obo/UBERON_0006310) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Obsoleted as it is redundant with 'venous vitelline plexus'." 
+
+
+### vomerine dentition `http://purl.obolibrary.org/obo/UBERON_0017615`
+
+#### Added
+- [vomerine dentition](http://purl.obolibrary.org/obo/UBERON_0017615) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### vulval vein `http://purl.obolibrary.org/obo/UBERON_0036267`
+
+#### Added
+- [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### wall of heart `http://purl.obolibrary.org/obo/UBERON_0037144`
+
+#### Added
+- [wall of heart](http://purl.obolibrary.org/obo/UBERON_0037144) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### wrist connective tissue `http://purl.obolibrary.org/obo/UBERON_0003575`
+
+#### Added
+- [wrist connective tissue](http://purl.obolibrary.org/obo/UBERON_0003575) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [mesenchyme of carpal region](http://purl.obolibrary.org/obo/UBERON_0003319) 
+
+
+### yolk sac cavity `http://purl.obolibrary.org/obo/UBERON_0005251`
+
+#### Added
+- [yolk sac cavity](http://purl.obolibrary.org/obo/UBERON_0005251) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
+
+
+### yolk sac endoderm `http://purl.obolibrary.org/obo/UBERON_0003257`
+
+#### Added
+- [yolk sac endoderm](http://purl.obolibrary.org/obo/UBERON_0003257) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
+
+
+### zona pellucida `http://purl.obolibrary.org/obo/UBERON_0000086`
+
+#### Added
+- [zona pellucida](http://purl.obolibrary.org/obo/UBERON_0000086) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [oocyte](http://purl.obolibrary.org/obo/CL_0000023) 
+
+
+### zygomatic process of frontal bone `http://purl.obolibrary.org/obo/UBERON_0012109`
+
+#### Added
+- [zygomatic process of frontal bone](http://purl.obolibrary.org/obo/UBERON_0012109) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
 
 
 ### zygomatico-orbital artery `http://purl.obolibrary.org/obo/UBERON_0015157`
-#### Removed
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [branching part of](http://purl.obolibrary.org/obo/RO_0002380) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [head blood vessel](http://purl.obolibrary.org/obo/UBERON_0003496) 
-
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) 
-
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
 
 #### Added
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-- [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [connecting branch of](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
 - [zygomatico-orbital artery](http://purl.obolibrary.org/obo/UBERON_0015157) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [system](http://purl.obolibrary.org/obo/RO_0002577) 
+
+
+### zygomaticotemporal nerve `http://purl.obolibrary.org/obo/UBERON_0036264`
+
+#### Added
+- [zygomaticotemporal nerve](http://purl.obolibrary.org/obo/UBERON_0036264) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [maxillary nerve](http://purl.obolibrary.org/obo/UBERON_0000377) 

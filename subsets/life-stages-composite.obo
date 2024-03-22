@@ -1,9 +1,8 @@
 format-version: 1.2
-data-version: uberon/releases/2023-12-08/subsets/life-stages-composite.owl
+data-version: uberon/releases/2024-02-20/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
-subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: added_for_HCA "Classes tagged with this subset property were added upon request from the Human Cell Atlas (HCA)."
 subsetdef: anatomical_site_slim ""
@@ -13,6 +12,7 @@ subsetdef: blood_and_immune_upper_slim ""
 subsetdef: BrainName ""
 subsetdef: cell_quality ""
 subsetdef: cell_slim ""
+subsetdef: cellxgene_subset ""
 subsetdef: common_anatomy "Terms applicable across life, not restricted to Metazoa"
 subsetdef: cumbo "CUMBO"
 subsetdef: cur ""
@@ -48,6 +48,7 @@ subsetdef: goslim_mouse ""
 subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
 subsetdef: goslim_pombe ""
+subsetdef: goslim_prokaryote ""
 subsetdef: goslim_synapse ""
 subsetdef: goslim_yeast ""
 subsetdef: granular_stage ""
@@ -73,7 +74,6 @@ subsetdef: olfactory_system_draft ""
 subsetdef: organ_slim "organs, excluding individual muscles and skeletal elements"
 subsetdef: pheno_slim "Phenotype slim"
 subsetdef: phenotype_rcn "A subset specifically created for the 2012 Phenotype RCN meeting. Includes some human-specific terms that may eventually be removed when they are adequately represented with part of relationships in FMA"
-subsetdef: prokaryote_subset ""
 subsetdef: RD ""
 subsetdef: relational_slim ""
 subsetdef: ro-eco ""
@@ -91,11 +91,9 @@ subsetdef: vertebrate_core "core classes typically found across vertebrates. one
 synonymtypedef: blast_name ""
 synonymtypedef: BRAIN_NAME_ABV "brain name abbreviations (drosophila)"
 synonymtypedef: BRAND_NAME ""
-synonymtypedef: common_name ""
 synonymtypedef: COMPARATIVE_PREFERRED "preferred term in the context of comparative anatomy"
 synonymtypedef: DEPRECATED "A historic synonym, no longer encouraged"
 synonymtypedef: DEVELOPMENTAL "developmental term"
-synonymtypedef: DUBIOUS "dubious or contested synonym"
 synonymtypedef: equivalent_name ""
 synonymtypedef: genbank_common_name ""
 synonymtypedef: Gene-based ""
@@ -105,12 +103,14 @@ synonymtypedef: in_part ""
 synonymtypedef: INCONSISTENT "indicates that a synonym is used in an inconsistent or confusing way, typically between species"
 synonymtypedef: INN ""
 synonymtypedef: IUPAC_NAME ""
-synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_AMNIOTE "synonym that is inappropriate for amniotes"
 synonymtypedef: NON_MAMMAL "synonym that is inappropriate for mammals"
 synonymtypedef: OMO:0003000 "abbreviation"
+synonymtypedef: OMO:0003002 "dubious synonym"
+synonymtypedef: OMO:0003003 ""
 synonymtypedef: OMO:0003004 "plural form"
+synonymtypedef: OMO:0003011 "latin term"
 synonymtypedef: PENDING_REVIEW "expert consultation and attribution required"
 synonymtypedef: PRO-short-label ""
 synonymtypedef: scientific_name ""
@@ -121,7 +121,7 @@ synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for desig
 synonymtypedef: systematic_synonym ""
 synonymtypedef: vertebrate ""
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2023-12-08" xsd:string
+property_value: owl:versionInfo "2024-02-20" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1238,6 +1238,12 @@ relationship: part_of BtauDv:0000075 ! 6-week-old stage (cow)
 property_value: end_dpb "43.0" xsd:float
 property_value: IAO:0000589 "42-day-old stage (cow)" xsd:string
 property_value: start_dpb "42.0" xsd:float
+
+[Term]
+id: CARO:0000000
+name: anatomical entity
+namespace: spatial
+def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [CARO:MAH]
 
 [Term]
 id: CEPH:0000006
@@ -3798,6 +3804,7 @@ id: CL:0000000
 name: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
+subset: cellxgene_subset
 subset: ubprop:upper_level
 xref: CALOHA:TS-2035
 xref: FBbt:00007002
@@ -3822,6 +3829,7 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
@@ -3848,6 +3856,7 @@ id: CL:0000055
 name: non-terminally differentiated cell
 def: "A precursor cell with a limited number of potential fates." [SANBI:mhl]
 comment: define using PATO mulit-potent or oligopotent?
+subset: cellxgene_subset
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
@@ -3868,6 +3877,7 @@ is_a: CL:0000680 ! muscle precursor cell
 id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:D004847]
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "epitheliocyte" EXACT []
@@ -3881,12 +3891,12 @@ is_a: CL:0000000 ! cell
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: depiction "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
-property_value: IAO:0000589 "epithelial cell (CARO)" xsd:string
 
 [Term]
 id: CL:0000068
 name: duct epithelial cell
 def: "An epithelial cell that is part of a duct." [https://orcid.org/0000-0001-5208-3432]
+subset: cellxgene_subset
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0000058 ! duct
@@ -3903,12 +3913,14 @@ is_a: CL:0000221 ! ectodermal cell
 id: CL:0000183
 name: contractile cell
 def: "A cell whose primary function is to shorten." [FB:ma]
+subset: cellxgene_subset
 is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000187
 name: muscle cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:D032342]
+subset: cellxgene_subset
 synonym: "muscle fiber" EXACT []
 synonym: "myocyte" EXACT []
 xref: BTO:0000888
@@ -3942,6 +3954,7 @@ relationship: part_of UBERON:0000924 ! ectoderm
 id: CL:0000222
 name: mesodermal cell
 def: "A cell of the middle germ layer of the embryo." [MESH:D008648]
+subset: cellxgene_subset
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
@@ -3960,6 +3973,7 @@ relationship: part_of UBERON:0000925 ! endoderm
 [Term]
 id: CL:0000255
 name: eukaryotic cell
+subset: cellxgene_subset
 xref: MESH:D005057
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
@@ -4004,6 +4018,7 @@ id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
@@ -4024,6 +4039,7 @@ property_value: depiction "https://www.swissbiopics.org/api/image/Neuron_cells.s
 id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
+subset: cellxgene_subset
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: CL:0011115 ! precursor cell
@@ -4036,7 +4052,6 @@ id: CL:0000723
 name: somatic stem cell
 def: "A stem cell that can give rise to cell types of the body other than those of the germ-line." [GO:0048103]
 xref: CALOHA:TS-2086
-xref: FMA:63368
 xref: MESH:D053687
 is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000034 ! stem cell
@@ -4060,6 +4075,7 @@ creation_date: 2010-06-29T03:38:22Z
 id: CL:0002319
 name: neural cell
 def: "A cell that is part of the nervous system." [GOC:tfm, ISBN:0618947256]
+subset: cellxgene_subset
 xref: CALOHA:TS-2040
 xref: FMA:70333
 is_a: CL:0000000 ! cell
@@ -4075,7 +4091,6 @@ name: embryonic cell (metazoa)
 def: "A cell of the embryo." [FMA:0618947256]
 xref: CALOHA:TS-0263
 xref: FMA:82840
-xref: FMA:82841
 xref: WBbt:0007028
 is_a: CL:0000000 ! cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -4094,6 +4109,7 @@ id: CL:0011115
 name: precursor cell
 def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
 comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell.
+subset: cellxgene_subset
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0030154 ! cell differentiation
@@ -5679,9 +5695,9 @@ namespace: biological_process
 def: "The formation of the ectoderm, mesoderm and endoderm during gastrulation." [GOC:go_curators]
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0000923 ! germ layer
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0000923 ! germ layer
 relationship: part_of GO:0007369 ! gastrulation
-relationship: results_in_formation_of UBERON:0000923 ! germ layer
+relationship: results_in_formation_of_anatomical_entity UBERON:0000923 ! germ layer
 
 [Term]
 id: GO:0001705
@@ -5690,9 +5706,9 @@ namespace: biological_process
 def: "The formation of ectoderm during gastrulation." [GOC:go_curators]
 is_a: GO:0001704 ! formation of primary germ layer
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0000924 ! ectoderm
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0000924 ! ectoderm
 relationship: part_of GO:0007398 ! ectoderm development
-relationship: results_in_formation_of UBERON:0000924 ! ectoderm
+relationship: results_in_formation_of_anatomical_entity UBERON:0000924 ! ectoderm
 
 [Term]
 id: GO:0001706
@@ -5702,9 +5718,9 @@ def: "The formation of the endoderm during gastrulation." [GOC:go_curators]
 synonym: "endoblast formation" NARROW [GOC:dph, GOC:sdb_2009, GOC:tb]
 is_a: GO:0001704 ! formation of primary germ layer
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0000925 ! endoderm
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0000925 ! endoderm
 relationship: part_of GO:0007492 ! endoderm development
-relationship: results_in_formation_of UBERON:0000925 ! endoderm
+relationship: results_in_formation_of_anatomical_entity UBERON:0000925 ! endoderm
 
 [Term]
 id: GO:0001707
@@ -5713,9 +5729,9 @@ namespace: biological_process
 def: "The process that gives rise to the mesoderm. This process pertains to the initial formation of the structure from unspecified parts." [GOC:go_curators]
 is_a: GO:0001704 ! formation of primary germ layer
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0000926 ! mesoderm
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0000926 ! mesoderm
 relationship: part_of GO:0048332 ! mesoderm morphogenesis
-relationship: results_in_formation_of UBERON:0000926 ! mesoderm
+relationship: results_in_formation_of_anatomical_entity UBERON:0000926 ! mesoderm
 
 [Term]
 id: GO:0001838
@@ -5736,9 +5752,9 @@ synonym: "neurulation" EXACT []
 xref: Wikipedia:Neurulation
 is_a: GO:0001838 ! embryonic epithelial tube formation
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0001049 ! neural tube
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0001049 ! neural tube
 relationship: part_of GO:0021915 ! neural tube development
-relationship: results_in_formation_of UBERON:0001049 ! neural tube
+relationship: results_in_formation_of_anatomical_entity UBERON:0001049 ! neural tube
 
 [Term]
 id: GO:0002009
@@ -5820,8 +5836,8 @@ id: GO:0005575
 name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
-def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
-comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." [GOC:pdt]
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -5833,6 +5849,7 @@ synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 xref: NIF_Subcellular:sao1337158144
 is_a: BFO:0000040 ! material entity
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17729" xsd:anyURI
 
 [Term]
 id: GO:0005581
@@ -5896,8 +5913,8 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 xref: Wikipedia:Cytoplasm
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: part_of GO:0005622 ! intracellular anatomical structure
@@ -5929,7 +5946,7 @@ subset: goslim_drosophila
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "protein anabolism" EXACT []
 synonym: "protein biosynthesis" EXACT []
 synonym: "protein biosynthetic process" EXACT []
@@ -6009,6 +6026,7 @@ id: GO:0006807
 name: nitrogen compound metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving organic or inorganic compounds that contain nitrogen." [GOC:jl, ISBN:0198506732]
+subset: gocheck_do_not_annotate
 subset: goslim_metagenomics
 subset: goslim_pir
 synonym: "nitrogen compound metabolism" EXACT []
@@ -6016,6 +6034,7 @@ is_a: GO:0008152 ! metabolic process
 intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output CHEBI:51143 ! nitrogen molecular entity
 relationship: has_primary_input_or_output CHEBI:51143 ! nitrogen molecular entity
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0006810
@@ -6032,7 +6051,7 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "single-organism transport" RELATED []
 is_a: GO:0051234 ! establishment of localization
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20292" xsd:anyURI
@@ -6205,7 +6224,7 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
-comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -6451,8 +6470,8 @@ def: "The self-renewing division of a stem cell. A stem cell is an undifferentia
 synonym: "stem cell renewal" EXACT []
 is_a: GO:0051301 ! cell division
 intersection_of: GO:0051301 ! cell division
-intersection_of: has_input CL:0000034 ! stem cell
-relationship: has_input CL:0000034 ! stem cell
+intersection_of: has_primary_input CL:0000034 ! stem cell
+relationship: has_primary_input CL:0000034 ! stem cell
 relationship: never_in_taxon NCBITaxon_Union:0000023
 
 [Term]
@@ -6603,8 +6622,8 @@ subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pombe
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "biological signaling" EXACT []
 synonym: "signaling process" EXACT []
 synonym: "signalling" EXACT []
@@ -6669,7 +6688,7 @@ subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_pir
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "matrisome" NARROW []
 synonym: "proteinaceous extracellular matrix" EXACT []
 xref: NIF_Subcellular:nlx_subcell_20090513
@@ -6771,10 +6790,12 @@ id: GO:0034641
 name: cellular nitrogen compound metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving various organic and inorganic nitrogenous compounds, as carried out by individual cells." [GOC:mah]
+subset: gocheck_do_not_annotate
 subset: goslim_chembl
 synonym: "cellular nitrogen compound metabolism" EXACT []
 is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0044237 ! cellular metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0035148
@@ -6785,9 +6806,9 @@ synonym: "lumen formation in an anatomical structure" RELATED [GOC:dph, GOC:mah]
 synonym: "tube lumen formation" EXACT [GOC:dph, GOC:mah]
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 intersection_of: GO:0048646 ! anatomical structure formation involved in morphogenesis
-intersection_of: results_in_formation_of UBERON:0000025 ! tube
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0000025 ! tube
 relationship: part_of GO:0035239 ! tube morphogenesis
-relationship: results_in_formation_of UBERON:0000025 ! tube
+relationship: results_in_formation_of_anatomical_entity UBERON:0000025 ! tube
 
 [Term]
 id: GO:0035209
@@ -6891,6 +6912,7 @@ alt_id: GO:0034960
 alt_id: GO:0043283
 alt_id: GO:0044259
 def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [GOC:mah]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "biopolymer metabolic process" EXACT [GOC:mtg_chebi_dec09]
 synonym: "macromolecule metabolism" EXACT []
@@ -6900,6 +6922,7 @@ is_a: GO:0071704 ! organic substance metabolic process
 intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output CHEBI:33694 ! biomacromolecule
 relationship: has_primary_input_or_output CHEBI:33694 ! biomacromolecule
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0043603
@@ -6989,9 +7012,11 @@ id: GO:0044238
 name: primary metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism." [GOC:go_curators, http://www.metacyc.org]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "primary metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0044249
@@ -7045,8 +7070,8 @@ def: "The self-renewing division of a somatic stem cell, a stem cell that can gi
 synonym: "somatic stem cell renewal" EXACT []
 is_a: GO:0017145 ! stem cell division
 intersection_of: GO:0051301 ! cell division
-intersection_of: has_input CL:0000723 ! somatic stem cell
-relationship: has_input CL:0000723 ! somatic stem cell
+intersection_of: has_primary_input CL:0000723 ! somatic stem cell
+relationship: has_primary_input CL:0000723 ! somatic stem cell
 
 [Term]
 id: GO:0048332
@@ -7119,6 +7144,7 @@ id: GO:0048856
 name: anatomical structure development
 namespace: biological_process
 def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021]
+subset: gocheck_do_not_annotate
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_plant
@@ -7127,6 +7153,7 @@ is_a: GO:0032502 ! developmental process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: results_in_development_of UBERON:0000061 ! anatomical structure
 relationship: results_in_development_of UBERON:0000061 ! anatomical structure
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0048869
@@ -7288,7 +7315,7 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_pombe
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "cellular macromolecule complex assembly" RELATED []
 synonym: "cellular protein complex assembly" EXACT []
 synonym: "cellular protein-containing complex assembly" RELATED []
@@ -7336,6 +7363,7 @@ id: GO:0071704
 name: organic substance metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [GOC:mah]
+subset: gocheck_do_not_annotate
 synonym: "organic molecular entity metabolic process" EXACT []
 synonym: "organic molecular entity metabolism" EXACT []
 synonym: "organic substance metabolism" EXACT []
@@ -7343,6 +7371,7 @@ is_a: GO:0008152 ! metabolic process
 intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output CHEBI:50860 ! organic molecular entity
 relationship: has_primary_input_or_output CHEBI:50860 ! organic molecular entity
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: mah
 creation_date: 2010-03-08T03:32:18Z
 
@@ -7382,7 +7411,7 @@ creation_date: 2010-09-10T01:39:16Z
 id: GO:0071944
 name: cell periphery
 namespace: cellular_component
-def: "The broad region around and including the plasma membrane of a cell,  encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." [GOC:pdt]
+def: "The broad region around and including the plasma membrane of a cell, encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." [GOC:pdt]
 subset: goslim_flybase_ribbon
 is_a: GO:0110165 ! cellular anatomical entity
 created_by: mah
@@ -7395,9 +7424,9 @@ namespace: biological_process
 def: "The developmental process pertaining to the initial formation of an epithelial tube." [GOC:mtg_kidney_jan10]
 is_a: GO:0035148 ! tube formation
 intersection_of: GO:0035148 ! tube formation
-intersection_of: results_in_formation_of UBERON:0003914 ! epithelial tube
+intersection_of: results_in_formation_of_anatomical_entity UBERON:0003914 ! epithelial tube
 relationship: part_of GO:0060562 ! epithelial tube morphogenesis
-relationship: results_in_formation_of UBERON:0003914 ! epithelial tube
+relationship: results_in_formation_of_anatomical_entity UBERON:0003914 ! epithelial tube
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22302" xsd:anyURI
 created_by: mah
 creation_date: 2010-02-26T02:15:40Z
@@ -7521,9 +7550,11 @@ namespace: cellular_component
 def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." [GOC:kmv]
 subset: gocheck_do_not_annotate
 subset: goslim_pir
+is_a: CARO:0000000 ! anatomical entity
 is_a: GO:0005575 ! cellular_component
 is_a: UBERON:0000061 ! anatomical structure
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24200" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: kmv
 creation_date: 2019-08-12T18:01:37Z
 
@@ -7532,12 +7563,14 @@ id: GO:1901564
 name: organonitrogen compound metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving organonitrogen compound." [GOC:pr, GOC:TermGenie]
+subset: gocheck_do_not_annotate
 synonym: "organonitrogen compound metabolism" EXACT [GOC:TermGenie]
 is_a: GO:0006807 ! nitrogen compound metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
 intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output CHEBI:35352 ! organonitrogen compound
 relationship: has_primary_input_or_output CHEBI:35352 ! organonitrogen compound
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: pr
 creation_date: 2012-11-04T15:17:52Z
 
@@ -16294,8 +16327,8 @@ property_value: has_rank NCBITaxon:family
 id: NCBITaxon:10088
 name: Mus <genus>
 namespace: ncbi_taxonomy
-synonym: "mice" EXACT common_name []
-synonym: "mouse" EXACT common_name []
+synonym: "mice" EXACT OMO:0003003 []
+synonym: "mouse" EXACT OMO:0003003 []
 synonym: "Mus" EXACT scientific_name []
 xref: GC_ID:1
 is_a: NCBITaxon:39107 ! Murinae
@@ -16307,7 +16340,7 @@ name: Mus musculus
 namespace: ncbi_taxonomy
 alt_id: NCBITaxon:85055
 synonym: "house mouse" EXACT genbank_common_name []
-synonym: "mouse" EXACT common_name []
+synonym: "mouse" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:862507 ! Mus <subgenus>
 property_value: has_rank NCBITaxon:species
@@ -16316,8 +16349,8 @@ property_value: has_rank NCBITaxon:species
 id: NCBITaxon:10114
 name: Rattus
 namespace: ncbi_taxonomy
-synonym: "rat" EXACT common_name []
-synonym: "rats" EXACT common_name []
+synonym: "rat" EXACT OMO:0003003 []
+synonym: "rats" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:39107 ! Murinae
 property_value: has_rank NCBITaxon:genus
@@ -16327,11 +16360,11 @@ id: NCBITaxon:10116
 name: Rattus norvegicus
 namespace: ncbi_taxonomy
 alt_id: NCBITaxon:36465
-synonym: "brown rat" EXACT common_name []
+synonym: "brown rat" EXACT OMO:0003003 []
 synonym: "Mus norvegicus" RELATED synonym []
 synonym: "Norway rat" EXACT genbank_common_name []
-synonym: "rat" EXACT common_name []
-synonym: "rats" EXACT common_name []
+synonym: "rat" EXACT OMO:0003003 []
+synonym: "rats" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:10114 ! Rattus
 property_value: has_rank NCBITaxon:species
@@ -16504,7 +16537,7 @@ property_value: has_rank NCBITaxon:clade
 id: NCBITaxon:197563
 name: Mandibulata
 namespace: ncbi_taxonomy
-synonym: "mandibulates" EXACT common_name []
+synonym: "mandibulates" EXACT OMO:0003003 []
 xref: GC_ID:1
 xref: PMID:11557979
 xref: PMID:9727836
@@ -16577,7 +16610,7 @@ synonym: "Eucaryotae" RELATED synonym []
 synonym: "eucaryotes" EXACT genbank_common_name []
 synonym: "Eukarya" RELATED synonym []
 synonym: "Eukaryotae" RELATED synonym []
-synonym: "eukaryotes" EXACT common_name []
+synonym: "eukaryotes" EXACT OMO:0003003 []
 synonym: "eukaryotes" RELATED blast_name []
 xref: GC_ID:1
 xref: PMID:23020233
@@ -16650,7 +16683,7 @@ property_value: has_rank NCBITaxon:infraorder
 id: NCBITaxon:314295
 name: Hominoidea
 namespace: ncbi_taxonomy
-synonym: "ape" EXACT common_name []
+synonym: "ape" EXACT OMO:0003003 []
 synonym: "apes" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:9526 ! Catarrhini
@@ -16751,7 +16784,7 @@ namespace: ncbi_taxonomy
 synonym: "Animalia" RELATED synonym []
 synonym: "animals" RELATED blast_name []
 synonym: "metazoans" EXACT genbank_common_name []
-synonym: "multicellular animals" EXACT common_name []
+synonym: "multicellular animals" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:33154 ! Opisthokonta
 property_value: has_rank NCBITaxon:kingdom
@@ -16793,7 +16826,7 @@ property_value: has_rank NCBITaxon:cohort
 id: NCBITaxon:33511
 name: Deuterostomia
 namespace: ncbi_taxonomy
-synonym: "deuterostomes" EXACT common_name []
+synonym: "deuterostomes" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:33213 ! Bilateria
 property_value: has_rank NCBITaxon:clade
@@ -16865,8 +16898,8 @@ property_value: has_rank NCBITaxon:superorder
 id: NCBITaxon:436486
 name: Dinosauria
 namespace: ncbi_taxonomy
-synonym: "dinosaur" EXACT common_name []
-synonym: "dinosaurs" EXACT common_name []
+synonym: "dinosaur" EXACT OMO:0003003 []
+synonym: "dinosaurs" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:8492 ! Archosauria
 property_value: has_rank NCBITaxon:clade
@@ -16997,7 +17030,7 @@ property_value: has_rank NCBITaxon:clade
 id: NCBITaxon:6157
 name: Platyhelminthes
 namespace: ncbi_taxonomy
-synonym: "flatworm" EXACT common_name []
+synonym: "flatworm" EXACT OMO:0003003 []
 synonym: "flatworms" EXACT genbank_common_name []
 synonym: "flatworms" RELATED blast_name []
 xref: GC_ID:1
@@ -17009,10 +17042,10 @@ id: NCBITaxon:6231
 name: Nematoda
 namespace: ncbi_taxonomy
 synonym: "Nemata" RELATED synonym []
-synonym: "nematode" EXACT common_name []
-synonym: "nematodes" EXACT common_name []
+synonym: "nematode" EXACT OMO:0003003 []
+synonym: "nematodes" EXACT OMO:0003003 []
 synonym: "nematodes" RELATED blast_name []
-synonym: "roundworm" EXACT common_name []
+synonym: "roundworm" EXACT OMO:0003003 []
 synonym: "roundworms" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:1206794 ! Ecdysozoa
@@ -17023,6 +17056,8 @@ id: NCBITaxon:6236
 name: Rhabditida
 namespace: ncbi_taxonomy
 alt_id: NCBITaxon:33251
+alt_id: NCBITaxon:6308
+synonym: "Strongylida" RELATED synonym []
 xref: GC_ID:1
 is_a: NCBITaxon:119089 ! Chromadorea
 property_value: has_rank NCBITaxon:order
@@ -17048,7 +17083,7 @@ property_value: has_rank NCBITaxon:family
 id: NCBITaxon:6447
 name: Mollusca
 namespace: ncbi_taxonomy
-synonym: "molluscs" EXACT common_name []
+synonym: "molluscs" EXACT OMO:0003003 []
 synonym: "molluscs" RELATED blast_name []
 synonym: "mollusks" EXACT genbank_common_name []
 xref: GC_ID:1
@@ -17102,7 +17137,7 @@ id: NCBITaxon:7088
 name: Lepidoptera
 namespace: ncbi_taxonomy
 synonym: "butterflies and moths" EXACT genbank_common_name []
-synonym: "moths" EXACT common_name []
+synonym: "moths" EXACT OMO:0003003 []
 synonym: "moths" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:85604 ! Amphiesmenoptera
@@ -17151,7 +17186,7 @@ namespace: ncbi_taxonomy
 alt_id: NCBITaxon:7326
 synonym: "Drosophila" EXACT scientific_name []
 synonym: "fruit flies" EXACT genbank_common_name []
-synonym: "fruit fly" EXACT common_name []
+synonym: "fruit fly" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:46877 ! Drosophilini
 property_value: has_rank NCBITaxon:genus
@@ -17224,8 +17259,8 @@ name: Actinopterygii
 namespace: ncbi_taxonomy
 synonym: "Actinopterygi" RELATED synonym []
 synonym: "bony fishes" RELATED blast_name []
-synonym: "fish" EXACT common_name []
-synonym: "fishes" EXACT common_name []
+synonym: "fish" EXACT OMO:0003003 []
+synonym: "fishes" EXACT OMO:0003003 []
 synonym: "Osteichthyes" RELATED in_part []
 synonym: "ray-finned fishes" EXACT genbank_common_name []
 xref: GC_ID:1
@@ -17275,8 +17310,8 @@ property_value: has_rank NCBITaxon:class
 id: NCBITaxon:8342
 name: Anura
 namespace: ncbi_taxonomy
-synonym: "anurans" EXACT common_name []
-synonym: "frogs" EXACT common_name []
+synonym: "anurans" EXACT OMO:0003003 []
+synonym: "frogs" EXACT OMO:0003003 []
 synonym: "frogs & toads" RELATED blast_name []
 synonym: "frogs and toads" EXACT genbank_common_name []
 synonym: "Salientia" RELATED synonym []
@@ -17288,7 +17323,7 @@ property_value: has_rank NCBITaxon:order
 id: NCBITaxon:8352
 name: Pipidae
 namespace: ncbi_taxonomy
-synonym: "pipid frogs" EXACT common_name []
+synonym: "pipid frogs" EXACT OMO:0003003 []
 synonym: "tongueless frogs" EXACT genbank_common_name []
 xref: GC_ID:1
 xref: PMID:2385174
@@ -17424,9 +17459,9 @@ property_value: has_rank NCBITaxon:genus
 id: NCBITaxon:9031
 name: Gallus gallus
 namespace: ncbi_taxonomy
-synonym: "bantam" EXACT common_name []
+synonym: "bantam" EXACT OMO:0003003 []
 synonym: "chicken" EXACT genbank_common_name []
-synonym: "chickens" EXACT common_name []
+synonym: "chickens" EXACT OMO:0003003 []
 synonym: "Gallus domesticus" EXACT equivalent_name []
 synonym: "Gallus gallus domesticus" RELATED synonym []
 synonym: "Phasianus gallus" RELATED synonym []
@@ -17457,8 +17492,8 @@ property_value: has_rank NCBITaxon:order
 id: NCBITaxon:9347
 name: Eutheria
 namespace: ncbi_taxonomy
-synonym: "eutherian mammals" EXACT common_name []
-synonym: "placental mammals" EXACT common_name []
+synonym: "eutherian mammals" EXACT OMO:0003003 []
+synonym: "placental mammals" EXACT OMO:0003003 []
 synonym: "Placentalia" RELATED synonym []
 synonym: "placentals" EXACT genbank_common_name []
 synonym: "placentals" RELATED blast_name []
@@ -17499,7 +17534,7 @@ property_value: has_rank NCBITaxon:family
 id: NCBITaxon:9605
 name: Homo
 namespace: ncbi_taxonomy
-synonym: "humans" EXACT common_name []
+synonym: "humans" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:207598 ! Homininae
 property_value: has_rank NCBITaxon:genus
@@ -17518,7 +17553,7 @@ id: NCBITaxon:9821
 name: Suidae
 namespace: ncbi_taxonomy
 alt_id: NCBITaxon:39423
-synonym: "boars" EXACT common_name []
+synonym: "boars" EXACT OMO:0003003 []
 synonym: "pigs" EXACT genbank_common_name []
 xref: GC_ID:1
 is_a: NCBITaxon:35497 ! Suina
@@ -17537,9 +17572,9 @@ id: NCBITaxon:9823
 name: Sus scrofa
 namespace: ncbi_taxonomy
 synonym: "pig" EXACT genbank_common_name []
-synonym: "pigs" EXACT common_name []
-synonym: "swine" EXACT common_name []
-synonym: "wild boar" EXACT common_name []
+synonym: "pigs" EXACT OMO:0003003 []
+synonym: "swine" EXACT OMO:0003003 []
+synonym: "wild boar" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:9822 ! Sus
 property_value: has_rank NCBITaxon:species
@@ -20829,28 +20864,6 @@ relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 
 [Term]
-id: UBERON:0000015
-name: non-material anatomical boundary
-namespace: http://www.xspan.org/obo.owl#
-namespace: uberon
-def: "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." [CARO:0000010]
-comment: Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection. For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension. Note that boundaries are 2D structures. They have no thickness - and so can not be sites of gene expression or gene product localisation. For this, use boundary region terms.
-subset: common_anatomy
-subset: upper_level
-synonym: "anatomical boundary" EXACT [CARO:0000010]
-synonym: "anatomical surface." RELATED []
-xref: AEO:0000192
-xref: CARO:0000010
-xref: FMA:50705
-is_a: UBERON:0000466 {source="CARO"} ! immaterial anatomical entity
-relationship: present_in_taxon NCBITaxon:33090
-relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
-relationship: present_in_taxon NCBITaxon:4751
-property_value: IAO:0000589 "non-material anatomical boundary (AEO)" xsd:string
-property_value: IAO:0000589 "non-material anatomical boundary (CARO)" xsd:string
-is_obsolete: true
-
-[Term]
 id: UBERON:0000025
 name: tube
 namespace: uberon
@@ -20877,7 +20890,7 @@ synonym: "ducts" RELATED OMO:0003004 [XAO:0004000]
 synonym: "exocrine duct" NARROW []
 synonym: "exocrine gland duct" NARROW []
 xref: AAO:0011123
-xref: FBbt:00100314
+xref: FBbt:00100314 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:30320
 xref: galen:Duct
 xref: NCIT:C12948
@@ -20928,7 +20941,7 @@ xref: BILA:0000003
 xref: CARO:0000003
 xref: EHDAA2:0003003
 xref: EMAPA:0
-xref: FBbt:00007001
+xref: FBbt:00007001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:305751
 xref: FMA:67135
 xref: GAID:781
@@ -20948,7 +20961,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "anatomical structure (AEO)" xsd:string
-property_value: IAO:0000589 "anatomical structure (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000062
@@ -20982,7 +20994,6 @@ relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: external_definition "Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." xsd:string {source="GO:0048513"}
 property_value: external_ontology_notes "CARO v1 does not include a generic 'organ' class, only simple and compound organ. CARO v2 may include organ, see https://github.com/obophenotype/caro/issues/4" xsd:string
-property_value: IAO:0000589 "organ (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000063
@@ -21282,13 +21293,13 @@ synonym: "fertilized egg stage" RELATED []
 synonym: "one cell stage" EXACT []
 synonym: "one-cell stage" RELATED [VHOG:0000745]
 synonym: "zygote" RELATED [VHOG:0000745]
-synonym: "zygotum" RELATED LATIN [Wikipedia:Zygote]
+synonym: "zygotum" RELATED OMO:0003011 [Wikipedia:Zygote]
 xref: BilaDO:0000005
 xref: BILS:0000106
 xref: EFO:0001322
 xref: EHDAA:27
 xref: FBdv:00005288
-xref: IDOMAL:0000302 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0000302 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C12601
 xref: PdumDv:0000100
 xref: VHOG:0000745
@@ -21481,13 +21492,13 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "adult mouth" NARROW []
-synonym: "cavital oralis" RELATED LATIN [Wikipedia:Mouth]
+synonym: "cavital oralis" RELATED OMO:0003011 [Wikipedia:Mouth]
 synonym: "cavitas oris" RELATED [BTO:0001090]
 synonym: "cavum oris" RELATED [BTO:0001090]
 synonym: "mouth cavity" RELATED [BTO:0001090]
 synonym: "oral region" RELATED [EHDAA2:0001326]
 synonym: "oral vestibule" RELATED [BTO:0001090]
-synonym: "regio oralis" EXACT LATIN [BTO:0004698, FMA:49184, FMA:TA]
+synonym: "regio oralis" EXACT OMO:0003011 [BTO:0004698, FMA:49184, FMA:TA]
 synonym: "rima oris" RELATED [BTO:0001090]
 synonym: "stoma" RELATED []
 synonym: "stomatodaeum" RELATED [VHOG:0000812]
@@ -21502,7 +21513,7 @@ xref: EFO:0000825
 xref: EHDAA2:0001326
 xref: EHDAA:542
 xref: EMAPA:16262
-xref: FBbt:00003126
+xref: FBbt:00003126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:49184
 xref: GAID:75
 xref: galen:Mouth
@@ -21620,7 +21631,7 @@ xref: CALOHA:TS-2101
 xref: CARO:0000004
 xref: EHDAA2:0003004
 xref: EMAPA:35178
-xref: FBbt:00007019
+xref: FBbt:00007019 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9669
 xref: galen:BodySubstance
 xref: HAO:0000004
@@ -21639,7 +21650,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "organism substance (AEO)" xsd:string
-property_value: IAO:0000589 "organism substance (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000464
@@ -21657,7 +21667,7 @@ xref: AEO:0000005
 xref: BILA:0000005
 xref: CARO:0000005
 xref: EHDAA2:0003005
-xref: FBbt:00007017
+xref: FBbt:00007017 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:5897
 xref: HAO:0000005
 xref: NCIT:C94478
@@ -21673,7 +21683,6 @@ relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 relationship: surrounded_by UBERON:0000061 ! anatomical structure
 property_value: IAO:0000589 "anatomical space (AEO)" xsd:string
-property_value: IAO:0000589 "anatomical space (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000465
@@ -21687,7 +21696,7 @@ xref: AEO:0000006
 xref: BILA:0000006
 xref: CARO:0000006
 xref: EHDAA2:0003006
-xref: FBbt:00007016
+xref: FBbt:00007016 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67165
 xref: HAO:0000006
 xref: TAO:0001836
@@ -21699,7 +21708,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "material anatomical entity (AEO)" xsd:string
-property_value: IAO:0000589 "material anatomical entity (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000466
@@ -21714,7 +21722,7 @@ xref: AEO:0000007
 xref: BILA:0000007
 xref: CARO:0000007
 xref: EHDAA2:0003007
-xref: FBbt:00007015
+xref: FBbt:00007015 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67112
 xref: HAO:0000007
 xref: TAO:0001835
@@ -21726,7 +21734,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "immaterial anatomical entity (AEO)" xsd:string
-property_value: IAO:0000589 "immaterial anatomical entity (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000467
@@ -21754,11 +21761,11 @@ xref: EHDAA2:0003011
 xref: EHDAA:392
 xref: EMAPA:16103
 xref: EV:0100000
-xref: FBbt:00004856
+xref: FBbt:00004856 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7149
 xref: galen:AnatomicalSystem
 xref: HAO:0000011
-xref: IDOMAL:0002460 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0002460 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MA:0000003
 xref: NCIT:C12919
 xref: SCTID:278195005
@@ -21780,7 +21787,6 @@ relationship: present_in_taxon NCBITaxon:4751
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 relationship: seeAlso EHDAA2:0001330
 property_value: IAO:0000589 "anatomical system (AEO)" xsd:string
-property_value: IAO:0000589 "anatomical system (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000468
@@ -21811,7 +21817,7 @@ xref: EHDAA2:0003191
 xref: EHDAA:1
 xref: EMAPA:25765
 xref: EV:0100016
-xref: FBbt:00000001
+xref: FBbt:00000001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:256135
 xref: galen:Organism
 xref: HAO:0000012
@@ -21833,7 +21839,6 @@ relationship: present_in_taxon NCBITaxon:4751
 property_value: editor_note "TODO - split body and mc organism? body continues after death stage" xsd:string
 property_value: has_relational_adjective "organismal" xsd:string
 property_value: IAO:0000589 "multicellular organism (AEO)" xsd:string
-property_value: IAO:0000589 "multicellular organism (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000476
@@ -21848,7 +21853,7 @@ xref: AEO:0000040
 xref: BILA:0000040
 xref: CARO:0000040
 xref: EHDAA2:0003040
-xref: FBbt:00007013
+xref: FBbt:00007013 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:63863
 xref: HAO:0000040
 xref: TAO:0000382
@@ -21860,7 +21865,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "acellular anatomical structure (AEO)" xsd:string
-property_value: IAO:0000589 "acellular anatomical structure (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000479
@@ -21882,7 +21886,7 @@ xref: CALOHA:TS-2090
 xref: CARO:0000043
 xref: EHDAA2:0003043
 xref: EMAPA:35868
-xref: FBbt:00007003
+xref: FBbt:00007003 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9637
 xref: galen:Tissue
 xref: HAO:0000043
@@ -21904,7 +21908,6 @@ relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: editor_note "changed label and definition to reflect CARO2" xsd:string
 property_value: IAO:0000589 "tissue (AEO)" xsd:string
-property_value: IAO:0000589 "tissue (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000481
@@ -21919,7 +21922,7 @@ xref: AEO:0000055
 xref: BILA:0000055
 xref: CARO:0000055
 xref: EHDAA2:0003055
-xref: FBbt:00007010
+xref: FBbt:00007010 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000055
 xref: TAO:0001488
 xref: TGMA:0001847
@@ -21932,7 +21935,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "multi-tissue structure (AEO)" xsd:string
-property_value: IAO:0000589 "multi-tissue structure (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000483
@@ -21954,7 +21956,7 @@ xref: CALOHA:TS-0288
 xref: CARO:0000066
 xref: EHDAA2:0003066
 xref: EMAPA:32738
-xref: FBbt:00007005
+xref: FBbt:00007005 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9639
 xref: GAID:402
 xref: HAO:0000066
@@ -21980,7 +21982,6 @@ property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/I
 property_value: has_relational_adjective "epithelial" xsd:string
 property_value: homology_notes "The two basic types of metazoan tissue are epithelial and connective. The simplest metazoans, and developmental stages of many primitive invertebrates, consist solely of these two layers. Thus, epithelial and connective tissues may be the primary (original) tissues of metazoans, and both are important in the functional organization of animals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000387", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.59", source="http://bgee.unil.ch/"}
 property_value: IAO:0000589 "epithelium (AEO)" xsd:string
-property_value: IAO:0000589 "epithelium (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000490
@@ -22008,7 +22009,6 @@ is_a: UBERON:0000483 ! epithelium
 property_value: editor_note "consider adding disjointness axiom between unilaminar and multilaminar - but note that this will render EHDAA2:0003244 (chorionic trophoblast) unsatisfiable" xsd:string
 property_value: external_definition "Epithelium that consists of a single layer of epithelial cells.[CARO]" xsd:string {date_retrieved="2012-06-20", external_class="CARO:0000073", ontology="CARO", source="FMA:45561", source="http://orcid.org/0000-0001-9114-8737"}
 property_value: IAO:0000589 "unilaminar epithelium (AEO)" xsd:string
-property_value: IAO:0000589 "unilaminar epithelium (CARO)" xsd:string
 
 [Term]
 id: UBERON:0000922
@@ -22036,11 +22036,11 @@ xref: EHDAA2:0000002
 xref: EHDAA2_RETIRED:0003236
 xref: EHDAA:38
 xref: EMAPA:16039
-xref: FBbt:00000052
+xref: FBbt:00000052 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69068
 xref: GAID:963
 xref: http://neurolex.org/wiki/Category\:Embryonic_organism
-xref: IDOMAL:0000646 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0000646 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MAT:0000226
 xref: MESH:D004622
 xref: MIAA:0000019
@@ -22082,7 +22082,7 @@ xref: AAO:0000480
 xref: BILA:0000035
 xref: BTO:0000556
 xref: EMAPA:36033
-xref: FBbt:00000110
+xref: FBbt:00000110 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69069
 xref: GAID:1303
 xref: MESH:D005855
@@ -22117,7 +22117,7 @@ xref: EFO:0000414
 xref: EHDAA2:0000428
 xref: EMAPA:16069
 xref: EV:0100003
-xref: FBbt:00000111
+xref: FBbt:00000111 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69070
 xref: GAID:1304
 xref: MAT:0000155
@@ -22159,7 +22159,7 @@ xref: EFO:0002545
 xref: EHDAA2:0000436
 xref: EMAPA:16062
 xref: EV:0100005
-xref: FBbt:00000125
+xref: FBbt:00000125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69071
 xref: GAID:1305
 xref: MAT:0000175
@@ -22206,7 +22206,7 @@ xref: EHDAA:160
 xref: EHDAA:183
 xref: EMAPA:16083
 xref: EV:0100006
-xref: FBbt:00000126
+xref: FBbt:00000126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69072
 xref: GAID:522
 xref: MAT:0000174
@@ -22251,7 +22251,7 @@ synonym: "stomodeal-hypophyseal primordium" BROAD [XAO:0000269]
 xref: BTO:0004224
 xref: EHDAA2:0001929
 xref: EMAPA:16263
-xref: FBbt:00000439
+xref: FBbt:00000439 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:295846
 xref: NCIT:C34306
 xref: TAO:0001290
@@ -22334,7 +22334,7 @@ xref: BTO:0000058
 xref: CALOHA:TS-1293
 xref: EFO:0000793
 xref: EV:0100056
-xref: FBbt:00005055
+xref: FBbt:00005055 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7152
 xref: GAID:278
 xref: galen:DigestiveSystem
@@ -22375,7 +22375,7 @@ synonym: "muscles" RELATED []
 synonym: "muscles set" EXACT []
 synonym: "musculature" EXACT []
 synonym: "musculature system" RELATED []
-synonym: "musculi" EXACT LATIN [FMA:32558, FMA:TA]
+synonym: "musculi" EXACT OMO:0003011 [FMA:32558, FMA:TA]
 synonym: "set of muscles" EXACT [FMA:32558]
 synonym: "set of skeletal muscles" EXACT [MA:0000165]
 xref: AAO:0011066
@@ -22406,12 +22406,13 @@ namespace: uberon
 def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [BIRNLEX:844, ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
 subset: cumbo
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "nerve net" NARROW [Wikipedia:Nerve_net]
 synonym: "neurological system" EXACT [GO:0050877]
-synonym: "systema nervosum" RELATED LATIN [Wikipedia:Nervous_system]
+synonym: "systema nervosum" RELATED OMO:0003011 [Wikipedia:Nervous_system]
 xref: AAO:0000324
 xref: BILA:0000079
 xref: BIRNLEX:844
@@ -22422,7 +22423,7 @@ xref: EHDAA2:0001246
 xref: EHDAA:826
 xref: EMAPA:16469
 xref: EV:0100162
-xref: FBbt:00005093
+xref: FBbt:00005093 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7157
 xref: GAID:466
 xref: MA:0000016
@@ -22448,6 +22449,7 @@ relationship: has_part CL:0000540 ! neuron
 relationship: immediate_transformation_of UBERON:0016880 {source="Bgee:AN"} ! future nervous system
 relationship: never_in_taxon NCBITaxon:6040
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg" xsd:anyURI
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png" xsd:anyURI
 property_value: external_definition "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
@@ -22463,13 +22465,14 @@ namespace: uberon
 def: "The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord." [GO:0021551, http://www.frontiersinzoology.com/content/7/1/29, https://sourceforge.net/p/geneontology/ontology-requests/11422/]
 subset: cumbo
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebrospinal axis" NARROW [FMA:55675]
 synonym: "CNS" EXACT OMO:0003000 []
 synonym: "neuraxis" RELATED [FMA:55675]
-synonym: "systema nervosum centrale" EXACT LATIN [FMA:55675, FMA:TA]
+synonym: "systema nervosum centrale" EXACT OMO:0003011 [FMA:55675, FMA:TA]
 xref: AAO:0000090
 xref: BAMS:CNS
 xref: BILA:0000080
@@ -22482,7 +22485,7 @@ xref: EHDAA:828
 xref: EMAPA:16470
 xref: EMAPA:16754
 xref: EV:0100163
-xref: FBbt:00005094
+xref: FBbt:00005094 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:55675
 xref: GAID:570
 xref: MA:0000167
@@ -22504,6 +22507,7 @@ relationship: immediate_transformation_of UBERON:0016879 {source="Bgee:AN"} ! fu
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: external_definition "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: external_definition "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
 property_value: external_definition "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="BIRNLEX:1099"}
@@ -22519,7 +22523,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "neural primordium" RELATED []
 synonym: "presumptive central nervous system" RELATED []
-synonym: "tubus neuralis" RELATED LATIN [Wikipedia:Neural_tube]
+synonym: "tubus neuralis" RELATED OMO:0003011 [Wikipedia:Neural_tube]
 xref: AAO:0010617
 xref: BTO:0001057
 xref: CALOHA:TS-2371
@@ -22531,7 +22535,7 @@ xref: EMAPA:16164
 xref: EMAPA:16757
 xref: FMA:293882
 xref: MAT:0000069
-xref: MESH:D054259
+xref: MESH:D054259 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MIAA:0000069
 xref: NCIT:C34226
 xref: neuronames:1365
@@ -22556,7 +22560,6 @@ property_value: homology_notes "(...) at some stage of its development, every ch
 [Term]
 id: UBERON:0001062
 name: anatomical entity
-namespace: spatial
 namespace: uberon
 def: "Biological entity that is either an individual member of a biological species or constitutes the structural organization of an individual member of a biological species." [FMA:62955, http://orcid.org/0000-0001-9114-8737]
 subset: common_anatomy
@@ -22568,7 +22571,7 @@ xref: BILA:0000000
 xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
-xref: FBbt:10000000
+xref: FBbt:10000000 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -22584,7 +22587,6 @@ relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
 property_value: IAO:0000589 "anatomical entity (AEO)" xsd:string
-property_value: IAO:0000589 "anatomical entity (CARO)" xsd:string
 
 [Term]
 id: UBERON:0001434
@@ -22652,10 +22654,11 @@ xref: BTO:0000545
 xref: EHDAA2:0000726
 xref: EHDAA:518
 xref: EMAPA:16247
-xref: FBbt:00003125
+xref: FBbt:00003125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
+xref: MESH:D041981 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C34082
 xref: TAO:0000112
 xref: TGMA:0001819
@@ -22729,7 +22732,7 @@ xref: BILA:0000034
 xref: BTO:0000174
 xref: CALOHA:TS-2110
 xref: EFO:0000461
-xref: FBbt:00004208
+xref: FBbt:00004208 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69067
 xref: GAID:407
 xref: MESH:D004628
@@ -22793,7 +22796,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "embryonic notocord" EXACT []
-synonym: "notochorda" RELATED LATIN [Wikipedia:Notochord]
+synonym: "notochorda" RELATED OMO:0003011 [Wikipedia:Notochord]
 synonym: "notocord" EXACT [ZFA:0000135]
 xref: AAO:0000327
 xref: BTO:0001768
@@ -22848,7 +22851,7 @@ namespace: uberon
 def: "Embryonic ectoderm that gives rise to nervous tissue." [Wikipedia:Neuroectoderm]
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "epithelium tubi neuralis; neuroectoderma" RELATED LATIN [Wikipedia:Neuroectoderm]
+synonym: "epithelium tubi neuralis; neuroectoderma" RELATED OMO:0003011 [Wikipedia:Neuroectoderm]
 synonym: "neuaral ectoderm" RELATED []
 synonym: "neural ectoderm" EXACT []
 synonym: "neuroectoderm" EXACT []
@@ -22862,7 +22865,7 @@ xref: EHDAA:1498
 xref: EHDAA:255
 xref: EMAPA:16073
 xref: EV:0100004
-xref: FBbt:00001057
+xref: FBbt:00001057 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:87657
 xref: MAT:0000176
 xref: MIAA:0000176
@@ -22928,7 +22931,7 @@ subset: vertebrate_core
 synonym: "blastocyst" RELATED []
 synonym: "ectoblast" RELATED [MP:0003886]
 synonym: "epiblast" EXACT [VHOG:0000243]
-synonym: "epiblastus" RELATED LATIN [Wikipedia:Epiblast]
+synonym: "epiblastus" RELATED OMO:0003011 [Wikipedia:Epiblast]
 synonym: "primitive ectoderm" RELATED [VHOG:0000243]
 xref: BTO:0004593
 xref: FMA:296704
@@ -22967,9 +22970,9 @@ synonym: "wriggler" NARROW [Wikipedia:Larva]
 synonym: "zoea" NARROW [Wikipedia:Larva]
 xref: AEO:0000126
 xref: BTO:0000707
-xref: FBbt:00001727
+xref: FBbt:00001727 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000459
-xref: MESH:D007814
+xref: MESH:D007814 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: TAO:0002048
 xref: Wikipedia:Larva
 is_a: UBERON:0000468 ! multicellular organism
@@ -23015,7 +23018,7 @@ xref: Wikipedia:Chordamesoderm
 xref: XAO:0000205
 xref: ZFA:0001204
 is_a: UBERON:0002050 ! embryonic structure
-is_a: UBERON:0004120 ! mesoderm-derived structure
+relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
 relationship: part_of UBERON:0000926 ! mesoderm
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
@@ -23029,7 +23032,7 @@ def: "A region of embryonic ectodermal cells that lie directly above the notocho
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "lamina neuralis" RELATED LATIN [Wikipedia:Neural_plate]
+synonym: "lamina neuralis" RELATED OMO:0003011 [Wikipedia:Neural_plate]
 synonym: "presumptive central nervous system" RELATED []
 xref: AAO:0011072
 xref: BTO:0001765
@@ -23039,7 +23042,7 @@ xref: EHDAA:346
 xref: EHDAA:902
 xref: EMAPA:35593
 xref: FMA:293879
-xref: MESH:D054258
+xref: MESH:D054258 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C34225
 xref: neuronames:1362
 xref: RETIRED_EHDAA2:0001252
@@ -23072,9 +23075,9 @@ synonym: "chrysalis" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
 synonym: "pupae" RELATED OMO:0003004 []
 xref: BTO:0001143
 xref: EFO:0002684
-xref: FBbt:00002953
+xref: FBbt:00002953 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000886
-xref: MESH:D011679
+xref: MESH:D011679 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: Wikipedia:Pupa
 is_a: UBERON:0000468 ! multicellular organism
 intersection_of: UBERON:0000468 ! multicellular organism
@@ -23098,7 +23101,7 @@ def: "Epithelial tubes transport gases, liquids and cells from one site to anoth
 synonym: "epithelial or endothelial tube" EXACT []
 xref: AEO:0000114
 xref: EHDAA2:0003114
-xref: FBbt:00007474
+xref: FBbt:00007474 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
@@ -23124,7 +23127,6 @@ xref: EHDAA2:0003080
 xref: FMA:242873
 xref: SCTID:346902003
 xref: Wikipedia:Foramen
-is_a: UBERON:0000015 ! non-material anatomical boundary
 is_a: UBERON:0010000 ! multicellular anatomical structure
 intersection_of: UBERON:0010000 ! multicellular anatomical structure
 intersection_of: conduit_for UBERON:0000061 ! anatomical structure
@@ -23191,7 +23193,6 @@ xref: SCTID:361378004
 xref: VSAO:0000026
 xref: Wikipedia:Skeleton
 xref: XAO:0004053
-is_a: UBERON:0000467 ! anatomical system
 is_a: UBERON:0034925 ! anatomical collection
 relationship: has_member UBERON:0004765 ! skeletal element
 relationship: mutually_spatially_disjoint_with UBERON:0000383 ! musculature of body
@@ -23237,8 +23238,10 @@ xref: EMAPA:36040
 xref: NCIT:C34131
 xref: UMLS:C1516779 {source="ncithesaurus:Conceptus"}
 xref: Wikipedia:Conceptus
-is_a: UBERON:0000922 ! embryo
+is_a: UBERON:0000061 ! anatomical structure
 relationship: develops_from CL:0000365 ! animal zygote
+relationship: existence_ends_with UBERON:0000068 ! embryo stage
+relationship: existence_starts_with UBERON:0000068 ! embryo stage
 relationship: has_part UBERON:0002050 ! embryonic structure
 relationship: has_part UBERON:0016887 ! entire extraembryonic component
 property_value: editor_note "EHDAA2 places this as a subtype of organism. This leads to the inference that a conceptus is an embryo (if an embryo is defined as an organism at embryo stage), which eliminates the embryonic + extra-embryonic = conceptus" xsd:string
@@ -23308,7 +23311,7 @@ synonym: "trilaminar disk" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "trilaminar germ" RELATED [https://orcid.org/0000-0002-6601-2165]
 xref: BILA:0000060
 xref: BTO:0001403
-xref: FBbt:00005317
+xref: FBbt:00005317 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:293108
 xref: GAID:1302
 xref: MESH:D005775
@@ -23395,7 +23398,7 @@ namespace: uberon
 def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "joint" NARROW []
-xref: FBbt:00005811
+xref: FBbt:00005811 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: part_of UBERON:0004770 ! articular system
 
@@ -23411,7 +23414,7 @@ synonym: "gut section" RELATED [FBbt:00100315]
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED [FMA:71131]
-xref: FBbt:00100315
+xref: FBbt:00100315 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:71131
 is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
@@ -23490,10 +23493,10 @@ synonym: "developmental tissue" RELATED [MIAA:0000019]
 xref: AEO:0000125
 xref: CALOHA:TS-2122
 xref: EHDAA2:0003125
-xref: FBbt:00007006
+xref: FBbt:00007006 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:292313
 xref: MIAA:0000019
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000465 ! material anatomical entity
 relationship: capable_of GO:0032502 ! developmental process
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
@@ -23523,7 +23526,7 @@ namespace: uberon
 def: "An acellular membrane that is part of the epithelium, lies adjacent to the epithelial cells, and is the fusion of the the basal lamina and the reticular lamina." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Basement_membrane]
 synonym: "basement membrane" RELATED [FMA:63872]
 synonym: "basement membrane of connective tissue" EXACT [FMA:63872]
-synonym: "membrana basalis" EXACT LATIN [Wikipedia:Basement_membrane]
+synonym: "membrana basalis" EXACT OMO:0003011 [Wikipedia:Basement_membrane]
 xref: AAO:0010596
 xref: FMA:63872
 xref: GAID:915
@@ -23577,8 +23580,8 @@ xref: FMA:293135
 xref: NCIT:C34232
 xref: UMLS:C1518430 {source="ncithesaurus:Notochordal_Process"}
 xref: VHOG:0001213
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0005423 ! developing anatomical structure
+relationship: develops_from UBERON:0000924 {source="EHDAA2"} ! ectoderm
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
 
 [Term]
@@ -23668,7 +23671,6 @@ xref: FMA:24137
 xref: NCIT:C34022
 xref: UMLS:C1515977 {source="ncithesaurus:Anatomic_Surface"}
 is_a: UBERON:0010199 {notes="via morphological boundary in CARO"} ! bona-fide anatomical boundary
-property_value: IAO:0000589 "anatomical surface (CARO)" xsd:string
 
 [Term]
 id: UBERON:0007010
@@ -23905,7 +23907,7 @@ subset: common_anatomy
 subset: upper_level
 synonym: "multicellular structure" EXACT [FBbt:00100313]
 xref: CARO:0010000
-xref: FBbt:00100313
+xref: FBbt:00100313 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
 intersection_of: has_quality PATO:0001993 ! multicellular
@@ -23914,7 +23916,6 @@ relationship: has_quality PATO:0001993 ! multicellular
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
-property_value: IAO:0000589 "multicellular anatomical structure (CARO)" xsd:string
 
 [Term]
 id: UBERON:0010199
@@ -23925,7 +23926,6 @@ comment: One might argue that all boundaries are actually fiat in the sense that
 subset: upper_level
 xref: CARO:0001004
 is_a: UBERON:0000466 {source="CARO"} ! immaterial anatomical entity
-property_value: IAO:0000589 "bona-fide anatomical boundary (CARO)" xsd:string
 
 [Term]
 id: UBERON:0010316
@@ -23964,8 +23964,9 @@ name: organ system subdivision
 namespace: uberon
 def: "A subdivision of an anatomical system." [http://orcid.org/0000-0002-6601-2165]
 subset: common_anatomy
+subset: human_reference_atlas
 subset: upper_level
-xref: FBbt:00007330
+xref: FBbt:00007330 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67509
 xref: SCTID:91690000
 is_a: UBERON:0010000 {source="FBbt"} ! multicellular anatomical structure
@@ -23973,6 +23974,7 @@ relationship: part_of UBERON:0000467 ! anatomical system
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 
 [Term]
 id: UBERON:0012101
@@ -24155,10 +24157,10 @@ alt_id: UBERON:3000469
 def: "Primordium that develops into the central nervous system." [http://orcid.org/0000-0002-6601-2165]
 synonym: "future CNS" EXACT []
 synonym: "presumptive central nervous system" EXACT []
-is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0006598 ! presumptive structure
 intersection_of: UBERON:0006598 ! presumptive structure
 intersection_of: has_potential_to_develop_into UBERON:0001017 ! central nervous system
+relationship: develops_from UBERON:0000924 ! ectoderm
 relationship: has_potential_to_develop_into UBERON:0001017 ! central nervous system
 relationship: part_of UBERON:0016880 ! future nervous system
 
@@ -24264,7 +24266,6 @@ relationship: composed_primarily_of UBERON:0000064 ! organ part
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
-property_value: IAO:0000589 "multi organ part structure (CARO)" xsd:string
 
 [Term]
 id: UBERON:0034925
@@ -27511,6 +27512,7 @@ is_a: developmentally_preceded_by ! developmentally preceded by
 [Typedef]
 id: develops_into
 name: develops into
+namespace: uberon
 def: "inverse of develops from" []
 subset: RO:0002259
 xref: RO:0002203
@@ -27536,14 +27538,6 @@ property_value: IAO:0000117 https://orcid.org/0000-0001-9625-1899
 property_value: IAO:0000117 https://orcid.org/0000-0003-2620-0345
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08T12:00:00Z
-
-[Typedef]
-id: different_in_magnitude_relative_to
-name: different in magnitude relative to
-def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [https://orcid.org/0000-0002-6601-2165]
-xref: RO:0015006
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
 
 [Typedef]
 id: directly_develops_from
@@ -27684,6 +27678,18 @@ domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
 is_a: molecularly_interacts_with ! molecularly interacts with
 is_a: regulates_activity_of ! regulates activity of
+
+[Typedef]
+id: directly_supplies_and_drains
+name: directly supplies and drains
+def: "x directly supplies and drains y if and only if x is a capillary, y is an anatomical entity, and x directly supplies and drains y." []
+xref: RO:0020103
+property_value: dc-contributor https://orcid.org/0000-0001-6677-8489
+property_value: dcterms-date "2024-02-01T10:09:59Z" xsd:dateTime
+property_value: example_of_usage "alveolar capillary directly supplies and drains some alveolus" xsd:string
+range: UBERON:0000061 ! anatomical structure
+is_a: drains ! drains
+is_a: supplies ! supplies
 
 [Typedef]
 id: disposition_of
@@ -29103,16 +29109,6 @@ xref: BSPO:0015102
 is_a: part_of ! part_of
 
 [Typedef]
-id: increased_in_magnitude_relative_to
-name: increased in magnitude relative to
-def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [https://orcid.org/0000-0002-6601-2165]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
-xref: RO:0015007
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
-is_a: different_in_magnitude_relative_to ! different in magnitude relative to
-
-[Typedef]
 id: indirectly_causally_upstream_of
 name: indirectly causally upstream of
 def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
@@ -30097,7 +30093,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002588
-is_a: results_in_formation_of ! results in formation of
+is_a: results_in_formation_of_anatomical_entity ! results in formation of anatomical entity
 is_a: results_in_organization_of ! results in organization of
 
 [Typedef]
@@ -30167,8 +30163,8 @@ xref: GOREL:0002004
 is_a: has_participant ! has participant
 
 [Typedef]
-id: results_in_formation_of
-name: results in formation of
+id: results_in_formation_of_anatomical_entity
+name: results in formation of anatomical entity
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -30623,7 +30619,7 @@ is_a: develops_from ! develops from
 id: transitively_anteriorly_connected_to
 name: transitively anteriorly connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
@@ -30636,14 +30632,14 @@ is_transitive: true
 id: transitively_distally_connected_to
 name: transitively distally connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
 id: transitively_proximally_connected_to
 name: transitively proximally connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
@@ -30694,4 +30690,26 @@ xref: UBPROP:0000107
 property_value: is_count_of UBERON:0002412
 property_value: preceding_element_is BSPO:0000096
 is_metadata_tag: true
+
+[Typedef]
+id: vessel_drains_blood_from
+name: vessel drains blood from
+def: "x vessel drains blood from y if and only if x is a vessel that drains blood directly or indirectly from an anatomical structure y." []
+xref: RO:0020102
+property_value: dc-contributor https://orcid.org/0000-0001-6677-8489
+property_value: dcterms-date "2024-02-01T10:09:41Z" xsd:dateTime
+property_value: example_of_usage "cystic vein vessel drains blood from gallbladder" xsd:string
+range: UBERON:0000061 ! anatomical structure
+is_a: drains ! drains
+
+[Typedef]
+id: vessel_supplies_blood_to
+name: vessel supplies blood to
+def: "x vessel supplies blood to y if and only if x is a vessel that supplies blood directly or indirectly to an anatomical structure y." []
+xref: RO:0020101
+property_value: dc-contributor https://orcid.org/0000-0001-6677-8489
+property_value: dcterms-date "2024-02-01T10:09:22Z" xsd:dateTime
+property_value: example_of_usage "brachial artery vessel supplies blood to brachialis muscle" xsd:string
+range: UBERON:0000061 ! anatomical structure
+is_a: supplies ! supplies
 
