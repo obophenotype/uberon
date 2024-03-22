@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2024-02-20/subsets/life-stages-composite.owl
+data-version: uberon/releases/2024-03-22/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -121,7 +121,7 @@ synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for desig
 synonymtypedef: systematic_synonym ""
 synonymtypedef: vertebrate ""
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2024-02-20" xsd:string
+property_value: owl:versionInfo "2024-03-22" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1635,8 +1635,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
@@ -4930,11 +4930,15 @@ def: "The stage of the Drosophila life-cycle from hatching to the beginning of p
 comment: Temporal ordering number - 400.
 subset: life_stage
 is_a: FBdv:00007012 ! life stage
+is_a: UBERON:0004730 ! instar larval stage
+intersection_of: UBERON:0004730 ! instar larval stage
+intersection_of: occurs_in NCBITaxon:7227 ! Drosophila melanogaster
 relationship: immediately_preceded_by FBdv:00005289 ! embryonic stage
 relationship: immediately_preceded_by FBdv:00005335 ! embryonic stage 17
 relationship: immediately_preceded_by FBdv:00007018 ! embryonic stage 17(iv)
 relationship: immediately_precedes FBdv:00005342 ! prepupal stage
 relationship: immediately_precedes FBdv:00007001 ! P-stage
+property_value: IAO:0000589 "instar larval stage (drosophila)" xsd:string
 
 [Term]
 id: FBdv:00005337
@@ -20918,7 +20922,6 @@ subset: upper_level
 synonym: "organ wall" RELATED [FMA:82482]
 synonym: "wall" BROAD []
 synonym: "wall of organ" EXACT [FMA:82482]
-xref: EMAPA:25036
 xref: FMA:82482
 xref: galen:Wall
 is_a: UBERON:0000064 ! organ part
@@ -21126,7 +21129,6 @@ synonym: "zoea stage" NARROW SENSU [Wikipedia:Larva]
 xref: BTO:0000915
 xref: BTO:0000954
 xref: EFO:0001303
-xref: FBdv:00005336
 xref: MIAA:0000400
 xref: OGES:000008
 xref: Wikipedia:Larva
@@ -21592,7 +21594,6 @@ xref: BILA:0000088
 xref: BTO:0001369
 xref: BTO:0001485
 xref: EFO:0000801
-xref: EMAPA:35578
 xref: FMA:72954
 xref: MA:0002888
 xref: MAT:0000025
@@ -22333,7 +22334,6 @@ xref: BILA:0000082
 xref: BTO:0000058
 xref: CALOHA:TS-1293
 xref: EFO:0000793
-xref: EV:0100056
 xref: FBbt:00005055 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7152
 xref: GAID:278
@@ -22378,10 +22378,8 @@ synonym: "musculature system" RELATED []
 synonym: "musculi" EXACT OMO:0003011 [FMA:32558, FMA:TA]
 synonym: "set of muscles" EXACT [FMA:32558]
 synonym: "set of skeletal muscles" EXACT [MA:0000165]
-xref: AAO:0011066
 xref: BTO:0000887
 xref: EFO:0001949
-xref: EMAPA:32715
 xref: EMAPA:35577
 xref: FMA:32558
 xref: MA:0000165
@@ -22691,8 +22689,6 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "muscle" BROAD [ZFA:0005145]
-xref: AAO:0011066
-xref: EMAPA:32715
 xref: EMAPA:37474 {source="MA:th"}
 xref: EV:0100146
 xref: FMA:5022
@@ -23259,7 +23255,6 @@ synonym: "polliwog" NARROW SENSU [Wikipedia:Larva]
 synonym: "polliwog stage" NARROW SENSU [Wikipedia:Larva]
 synonym: "tadpole" NARROW SENSU [Wikipedia:Larva]
 synonym: "tadpole stage" NARROW SENSU [Wikipedia:Larva]
-xref: XAO:1000008
 xref: XtroDO:0000056
 is_a: UBERON:0000069 ! larval stage
 relationship: only_in_taxon NCBITaxon:8292 ! Amphibia
@@ -23457,7 +23452,6 @@ def: "Muscle structures are contractile cells, tissues or organs that are found 
 synonym: "muscle" RELATED []
 synonym: "muscle element" RELATED []
 synonym: "musculus" EXACT [FMA:30316]
-xref: EMAPA:32715
 xref: FMA:30316
 is_a: UBERON:0000061 ! anatomical structure
 relationship: has_part CL:0000187 ! muscle cell
@@ -25036,8 +25030,12 @@ synonym: "larva" RELATED []
 synonym: "larval stage" RELATED []
 synonym: "tadpole" EXACT []
 xref: UBERON:0009849
+is_a: UBERON:0009849 ! tadpole stage
 is_a: XAO:1000095 ! post-embryonic stage
+intersection_of: UBERON:0009849 ! tadpole stage
+intersection_of: occurs_in NCBITaxon:8353 ! Xenopus <genus>
 relationship: immediately_preceded_by XAO:1000007 ! tailbud stage
+property_value: IAO:0000589 "tadpole stage (xenopus)" xsd:string
 
 [Term]
 id: XAO:1000010
