@@ -1413,7 +1413,8 @@ uberon:
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
+		     $(MAPPINGDIR)/uberon.sssom.tsv
 
 deploy_release:
 	@test $(GHVERSION)
