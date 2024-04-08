@@ -103,27 +103,6 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 
 
 # ----------------------------------------
-# ROBOT PLUGINS
-# ----------------------------------------
-
-# All ROBOT plugins should go into that directory. The variable is
-# exported into the environment so that plugins are available to
-# all calls to ROBOT.
-ROBOT_PLUGINS_DIRECTORY = $(TMPDIR)/plugins
-export ROBOT_PLUGINS_DIRECTORY
-
-# Make sure the SSSOM plugin for ROBOT is available.
-$(TMPDIR)/plugins/sssom.jar:
-	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.7.2/sssom-robot-plugin-0.7.2.jar
-
-# Ditto for the specific Uberon plugin
-$(TMPDIR)/plugins/uberon.jar:
-	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
-
-
-# ----------------------------------------
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
@@ -407,19 +386,19 @@ imports/local-ssso.owl: mirror/ssso.owl
 # external entities we also need to replace some old-style properties.
 # ----------------------------------------
 # EMAPA also needs translation between TS-style stages to MmusDv stages
-imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv | all_robot_plugins
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv | all_robot_plugins
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
+imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv | all_robot_plugins
 	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
 		        --preserve-structure false --trim false \
@@ -1150,7 +1129,7 @@ collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
 TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
 MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
-$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl | all_robot_plugins
 	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
 		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
@@ -1269,7 +1248,7 @@ $(TMPDIR)/biomappings.sssom.yml:
 # that, we need to first merge Uberon with CL, because the treat-xrefs-
 # annotations are only in Uberon; then we need to remove the Uberon
 # terms to avoid extracting the cross-references from them as well.
-mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugins/sssom.jar
+mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl --collapse-import-closure false \
 		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
@@ -1281,7 +1260,7 @@ mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugi
 
 # Likewise, the ZFA set (which is the source of truth for the CL-ZFA
 # mappings) is to be extracted from cross-references in ZFA.
-mappings/zfa-mappings.sssom.tsv: $(IMPORTDIR)/local-zfa.owl $(TMPDIR)/plugins/sssom.jar
+mappings/zfa-mappings.sssom.tsv: $(IMPORTDIR)/local-zfa.owl | all_robot_plugins
 	$(ROBOT) sssom:xref-extract -i $(IMPORTDIR)/local-zfa.owl --mapping-file $@ \
 		                    -v --drop-duplicates \
 		                    --set-id "$(ONTBASE)/mappings/zfa-mappings.sssom.tsv" \
@@ -1304,7 +1283,7 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 # Several cross-references are using OBO prefixes that are unknown to
 # ROBOT and not declared in Uberon/CL, so they need to be explicitly
 # declared here (otherwise xref-extract would ignore them).
-$(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
+$(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) | all_robot_plugins
 	$(ROBOT) merge -i $< --collapse-import-closure false \
 		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
 		                    --prefix 'DHBA:  https://purl.brain-bican.org/ontology/dhbao/DHBA_' \
@@ -1328,8 +1307,8 @@ $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
 $(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/uberon-mappings.sssom.tsv \
-		   $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules \
-		   $(BRIDGEDIR)/bridges.dispatch $(CUSTOM_BRIDGES)
+		   $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/bridges.rules \
+		   $(BRIDGEDIR)/bridges.dispatch $(CUSTOM_BRIDGES) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl \
 		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
@@ -1408,7 +1387,7 @@ $(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.
 # ontologies that provide their own mappings as a SSSOM set. This
 # component ensures those mappings are visible to Uberon editors and
 # users.
-$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) | all_robot_plugins
 	$(ROBOT) sssom:inject -i $< \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
