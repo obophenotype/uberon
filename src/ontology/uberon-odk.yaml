@@ -6,6 +6,7 @@ repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+use_mappings: True
 export_formats:
   - owl
   - obo
@@ -20,12 +21,12 @@ release_artefacts:
   - full
   - simple
   - basic
-  - custom-ext
-  - custom-basic
+  - custom-collected-metazoan
   - custom-composite-metazoan
   - custom-composite-metazoan-basic
   - custom-composite-vertebrate
   - custom-composite-vertebrate-basic
+  - custom-common-anatomy
 edit_format: obo
 import_group:
   use_base_merging: TRUE
@@ -44,7 +45,8 @@ import_group:
     - id: cl
       use_base: TRUE
     - id: go
-      use_base: TRUE
+      make_base: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/go/go-base.owl
       base_iris:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
@@ -63,8 +65,16 @@ import_group:
     - id: bfo
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: ncbitaxondisjoints
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
     - id: nbo
       use_base: TRUE
+    - id: orcidio
+      mirror_from: https://w3id.org/orcidio/orcidio.owl
+      base_iris:
+        - https://orcid.org/
+    - id: omo
+      module_type: mirror
 subset_group:
   products:
     - id: appendicular-minimal
@@ -79,7 +89,6 @@ subset_group:
     - id: life-stages-core
     - id: life-stages-minimal
     - id: merged-partonomy
-    - id: metazoan-view
     - id: mouse-view
     - id: musculoskeletal-minimal
     - id: nephron-minimal
@@ -91,7 +100,27 @@ subset_group:
     - id: xenopus-view
     - id: amniote-basic
     - id: euarchontoglires-basic
+sssom_mappingset_group:
+  products:
+    - id: fbbt
+      maintenance: manual
+    - id: cl
+      maintenance: manual
+    - id: zfa
+      maintenance: manual
+    - id: biomappings
+      maintenance: manual
+    - id: uberon-local
+      maintenance: manual
+    - id: uberon
+      maintenance: manual
+    - id: import-corrections
+      maintenance: manual
 robot_java_args: '-Xmx20G'
+robot_plugins:
+  plugins:
+    - name: uberon
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
@@ -108,6 +137,7 @@ robot_report:
     - obsolete-replaced_by
     - xrefs-mesh-pattern
     - label-synonym-polysemy
+    - id-format
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
@@ -116,7 +146,9 @@ documentation:
   documentation_system: mkdocs
 components:
   products:
+    - filename: disjoint_union_over.owl
     - filename: mappings.owl
     - filename: in-subset.owl
     - filename: hra_subset.owl
     - filename: vasculature_class.owl
+    - filename: hra_depiction_3d_images.owl
