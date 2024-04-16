@@ -25,6 +25,15 @@ Internally, Uberon itself is using those bridges to produce the
 [combined multispecies ontologies](combined_multispecies.md) such as
 `composite-metazoan`.
 
+In addition to the bridging axioms proper, the bridges also contain an
+additional annotation for each bridged term: a “OBO Foundry unique
+label” (`IAO:0000589`). That label is automatically derived from the
+standard `rdfs:label` of the term, to which a suffix indicating the
+taxon is appended (for example in the case of `ZFA:0001262`, the unique
+label is “gonad primordium (zebrafish)”). This ensure that, upon merging
+Uberon with taxon-specific ontologies, all the terms in the merged
+ontology will have a distinct label.
+
 Note that the bridges between the [Cell
 Ontology](https://obophenotype.github.io/cell-ontology/) (CL) and the
 species-specific anatomy ontologies are _also_ provided by Uberon, rather by CL
