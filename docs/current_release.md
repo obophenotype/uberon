@@ -1,4 +1,4 @@
-# Canonical release:
+# Canonical release
 
 The latest canonical release is always available at
 [http://purl.obolibrary.org/obo/uberon.owl](http://purl.obolibrary.org/obo/uberon.owl).
@@ -7,7 +7,7 @@ Versions in [OBO format](http://purl.obolibrary.org/obo/uberon.obo) and
 [OBOGraph JSON](http://purl.obolibrary.org/obo/uberon.json) are also
 available.
 
-# Variants:
+# Variants
 
 * `uberon-base`:   [OWL](http://purl.obolibrary.org/obo/uberon/uberon-base.owl),
                    [OBO](http://purl.obolibrary.org/obo/uberon/uberon-base.obo),
@@ -63,88 +63,88 @@ repository](https://github.com/obophenotype/uberon/tree/master/src/ontology/brid
 # Subsets
 
 * `common-anatomy`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/common-anatomy.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/common-anatomy.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/common-anatomy.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/common-anatomy.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/common-anatomy.json)
 * `cumbo`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/cumbo.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/cumbo.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/cumbo.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/cumbo.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/cumbo.json)
 
 ## Taxon-specific subsets
 
 * `amniote-basic`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/amniote-basic.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/amniote-basic.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/amniote-basic.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/amniote-basic.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/amniote-basic.json)
 * `euarchontoglires-basic`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/euarchontoglires-basic.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/euarchontoglires-basic.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/euarchontoglires-basic.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/euarchontoglires-basic.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/euarchontoglires-basic.json)
 * `human-view`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/human-view.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/human-view.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/human-view.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/human-view.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/human-view.json)
 * `mouse-view`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/mouse-view.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/mouse-view.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/mouse-view.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/mouse-view.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/mouse-view.json)
 * `xenopus-view`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/xenopus-view.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/xenopus-view.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/xenopus-view.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/xenopus-view.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/xenopus-view.json)
 
 ## Topic-specific subsets
 
 * `appendicular-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/appendicular-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/appendicular-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/appendicular-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/appendicular-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/appendicular-minimal.json)
 * `circulatory-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/circulatory-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/circulatory-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/circulatory-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/circulatory-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/circulatory-minimal.json)
 * `cranial-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/cranial-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/cranial-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/cranial-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/cranial-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/cranial-minimal.json)
 * `digestive-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/digestive-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/digestive-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/digestive-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/digestive-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/digestive-minimal.json)
 * `excretory-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/excretory-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/excretory-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/excretory-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/excretory-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/excretory-minimal.json)
 * `immune-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/immune-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/immune-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/immune-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/immune-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/immune-minimal.json)
 * `musculoskeletal-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/musculoskeletal-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/musculoskeletal-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/musculoskeletal-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/musculoskeletal-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/musculoskeletal-minimal.json)
 * `nephron-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/nephron-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/nephron-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/nephron-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/nephron-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/nephron-minimal.json)
 * `nervous-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/nervous-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/nervous-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/nervous-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/nervous-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/nervous-minimal.json)
 * `pulmonary-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/pulmonary-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/pulmonary-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/pulmonary-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/pulmonary-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/pulmonary-minimal.json)
 * `renal-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/renal-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/renal-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/renal-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/renal-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/renal-minimal.json)
 * `reproductive-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/reproductive-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/reproductive-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/reproductive-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/reproductive-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/reproductive-minimal.json)
 * `sensory-minimal`:
-  [OWL](http://purl.obolibrary.org/obo/uberon/sensory-minimal.owl)
-  [OBO](http://purl.obolibrary.org/obo/uberon/sensory-minimal.obo)
+  [OWL](http://purl.obolibrary.org/obo/uberon/sensory-minimal.owl),
+  [OBO](http://purl.obolibrary.org/obo/uberon/sensory-minimal.obo),
   [JSON](http://purl.obolibrary.org/obo/uberon/sensory-minimal.json)
