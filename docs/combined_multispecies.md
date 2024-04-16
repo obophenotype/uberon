@@ -26,7 +26,7 @@ merging:
 
 * Uberon,
 * CL,
-* the [Drosophila Anatomy Ontology](https://github.com/INCATools/ontology-development-kit) (FBbt),
+* the [Drosophila Anatomy Ontology](https://github.com/FlyBase/drosophila-anatomy-developmental-ontology) (FBbt),
 * the [bridge between Uberon and FBbt](https://github.com/obophenotype/uberon/blob/master/src/ontology/bridge/uberon-bridge-to-fbbt.owl),
 * the [bridge between CL and FBbt](https://github.com/obophenotype/uberon/blob/master/src/ontology/bridge/cl-bridge-to-fbbt.owl),
 * the [Drosophila Developmental Ontology](https://github.com/FlyBase/drosophila-anatomy-developmental-ontology) (FBdv),
@@ -144,7 +144,7 @@ are attached. On the right, the composite-drosophila no longer contains
 the redundant fly-specific “ovary”, and all the fly terms are directly
 rattached to the taxon-neutral “ovary”.
 
-![](images/collected-vs-composite.jpg)
+![Collected vs Composite Hierarchies](images/collected-vs-composite.jpg)
 
 #### Available composite ontologies
 

@@ -66,7 +66,7 @@ other, so that each step can be run independently.
 2. Mirroring the taxon-specific ontologies (`sh run.sh make MIR=true
    IMP=true all_local_imports`).
 3. Mirroring the externally provided mapping sets (`sh run.sh make
-   refresh-mapings`).
+   refresh-mappings`).
 4. Building the cross-species bridges (`sh run.sh make
    refresh-bridges`).
 5. Building the desired collected or composite ontology (e.g. `sh run.sh
