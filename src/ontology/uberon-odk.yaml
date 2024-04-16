@@ -6,6 +6,7 @@ repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+use_mappings: True
 export_formats:
   - owl
   - obo
@@ -99,7 +100,27 @@ subset_group:
     - id: xenopus-view
     - id: amniote-basic
     - id: euarchontoglires-basic
+sssom_mappingset_group:
+  products:
+    - id: fbbt
+      maintenance: manual
+    - id: cl
+      maintenance: manual
+    - id: zfa
+      maintenance: manual
+    - id: biomappings
+      maintenance: manual
+    - id: uberon-local
+      maintenance: manual
+    - id: uberon
+      maintenance: manual
+    - id: import-corrections
+      maintenance: manual
 robot_java_args: '-Xmx20G'
+robot_plugins:
+  plugins:
+    - name: uberon
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
