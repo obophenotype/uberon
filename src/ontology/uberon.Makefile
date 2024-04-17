@@ -437,6 +437,15 @@ all_local_imports:
 
 endif
 
+# ----------------------------------------
+# EXTRACT ORCIDs
+# ----------------------------------------
+
+# Extract ORCID from dcterms:contributor annotations
+$(IMPORTDIR)/orcidio_terms_combined.txt: $(SRCMERGED)
+	$(ROBOT) query -f csv -i $< --query ../sparql/orcids.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
+
 
 # ----------------------------------------
 # UNRELEASED PRODUCTS
