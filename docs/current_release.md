@@ -59,6 +59,8 @@ the taxon-specific ontologies, are treated as intermediate products and
 are _not_ available as **release artifacts**. Consequently, they must be
 obtained directly from the [GitHub
 repository](https://github.com/obophenotype/uberon/tree/master/src/ontology/bridge).
+The mappings from which the bridges are derived are available as a
+[SSSOM file](http://purl.obolibrary.org/obo/uberon/uberon.sssom.tsv).
 
 # Subsets
 
