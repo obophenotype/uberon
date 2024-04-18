@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                16a64e727250fbc31f79a269800d3885cc70b4db1e6b69119f66415f340619fa
+CONFIG_HASH=                d9dd1f14c02c9157faa08c0c33d811609f31616c2917255ed4dca5559cb438ec
 
 
 # ----------------------------------------
@@ -408,6 +408,10 @@ $(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/%_terms_combined
 
 .PRECIOUS: $(IMPORTDIR)/%_import.owl
 
+## Module for ontology: orcidio
+
+$(IMPORTDIR)/orcidio_import.owl: $(MIRRORDIR)/merged.owl
+	echo "ERROR: You have configured your default module type to be custom; this behavior needs to be overwritten in uberon.Makefile!" && false
 ## Module for ontology: omo
 
 $(IMPORTDIR)/omo_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/omo_terms_combined.txt
