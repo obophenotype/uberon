@@ -28,7 +28,7 @@ These are the current imports in UBERON
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 | ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | None |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
-| orcidio | https://w3id.org/orcidio/orcidio.owl | None |
+| orcidio | https://w3id.org/orcidio/orcidio.owl | custom |
 | omo | http://purl.obolibrary.org/obo/omo.owl | mirror |
 
 ## Components
