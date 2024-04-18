@@ -448,9 +448,7 @@ $(IMPORTDIR)/orcidio_terms_combined.txt: $(SRC)
 
 # Create orcidio_import.owl to extract individuals excluded in the merged_import.owl
 $(IMPORTDIR)/orcidio_import.owl: $(MIRRORDIR)/orcidio.owl $(IMPORTDIR)/orcidio_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-    extract -T $(IMPORTDIR)/orcidio_terms_combined.txt --copy-ontology-annotations true --force true --individuals include --method STAR \
-	query --update ../sparql/postprocess-module.ru \
+	if [ $(IMP) = true ]; then $(ROBOT) filter -i $< -T $(IMPORTDIR)/orcidio_terms_combined.txt --trim false \
 	$(ANNOTATE_CONVERT_FILE); fi
 
 
