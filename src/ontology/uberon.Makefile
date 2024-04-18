@@ -437,6 +437,20 @@ all_local_imports:
 
 endif
 
+# ----------------------------------------
+# EXTRACT ORCIDs INDIVIDUALS
+# ----------------------------------------
+
+# Extract ORCID from dcterms:contributor annotations
+$(IMPORTDIR)/orcidio_terms_combined.txt: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/orcids.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
+
+# Create orcidio_import.owl to extract individuals excluded in the merged_import.owl
+$(IMPORTDIR)/orcidio_import.owl: $(MIRRORDIR)/orcidio.owl $(IMPORTDIR)/orcidio_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) filter -i $< -T $(IMPORTDIR)/orcidio_terms_combined.txt --trim false \
+	$(ANNOTATE_CONVERT_FILE); fi
+
 
 # ----------------------------------------
 # UNRELEASED PRODUCTS
