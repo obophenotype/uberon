@@ -1259,8 +1259,7 @@ ifeq ($(strip $(IMP)),true)
 
 # FBbt mapping set. Nominally a simple mirror, but we need a custom rule
 # because the default, ODK-generated rule would ignore the MIR variable.
-.PHONY: fbbt-mappings
-$(MAPPINGDIR)/fbbt.sssom.tsv: fbbt-mappings
+$(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 	wget "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" -O $@
 
 # CL mapping set (extracted from CL cross-references). We need to first
