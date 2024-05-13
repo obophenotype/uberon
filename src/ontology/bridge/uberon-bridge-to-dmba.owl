@@ -99,6 +99,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000435 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000435"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0000908 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000908"/>
@@ -7756,6 +7762,37 @@
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="https://purl.brain-bican.org/ontology/dmbao/DMBA_16240"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#status"/>
+        <owl:annotatedTarget>Verified</owl:annotatedTarget>
+        <oboInOwl:source>https://ror.org/03cpe7c52</oboInOwl:source>
+    </owl:Axiom>
+    
+
+
+    <!-- https://purl.brain-bican.org/ontology/dmbao/DMBA_16271 -->
+
+    <owl:Class rdf:about="https://purl.brain-bican.org/ontology/dmbao/DMBA_16271">
+        <owl:equivalentClass rdf:nodeID="genid1129"/>
+        <obo:IAO_0000589>lateral tuberal nucleus</obo:IAO_0000589>
+        <oboInOwl:status>Verified</oboInOwl:status>
+    </owl:Class>
+    <owl:Class rdf:nodeID="genid1129">
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000435"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://purl.brain-bican.org/ontology/dmbao/DMBA_16271"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
+        <owl:annotatedTarget rdf:nodeID="genid1129"/>
+        <rdfs:label>lateral tuberal nucleus</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://purl.brain-bican.org/ontology/dmbao/DMBA_16271"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#status"/>
         <owl:annotatedTarget>Verified</owl:annotatedTarget>
         <oboInOwl:source>https://ror.org/03cpe7c52</oboInOwl:source>
