@@ -1233,23 +1233,22 @@ $(MAPPINGDIR)/uberon-local.sssom.tsv: $(SRC) | all_robot_plugins
 		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
 	> $(REPORTDIR)/uberon-xrefs-extraction.txt
 
-# Uberon's "meta" mapping set, made by compiling the "local" set above
-# with the sets obtained from FBbt, CL, and ZFA below.
+# Uberon's "meta" mapping set, containing all mappings between Uberon
+# and foreign ontologies, regardless of where they are maintained. Made
+# by compiling the "local" set above with the FBbt set obtained below.
 $(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
-				$(MAPPINGDIR)/fbbt.sssom.tsv \
-				$(MAPPINGDIR)/cl.sssom.tsv \
-				$(MAPPINGDIR)/zfa.sssom.tsv
+				$(MAPPINGDIR)/fbbt.sssom.tsv
 	sssom-cli $(foreach src, $^, -i $(src)) \
 		  --prefix-map-from-input \
-		  --rule '(object==UBERON:* || object==CL:*) -> invert()' \
-		  --rule '(subject==UBERON:* || subject==CL:*) -> include()' \
+		  --rule 'object==UBERON:* -> invert()' \
+		  --rule 'subject==UBERON:* -> include()' \
 		  --output $@
 
 # Remote mapping sets
 # -------------------
 
 # The following providers publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa biomappings
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl biomappings
 
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
@@ -1257,31 +1256,18 @@ EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPING
 # We only refresh external resources under IMP=true
 ifeq ($(strip $(IMP)),true)
 
-# FBbt mapping set. Nominally a simple mirror, but we need a custom rule
-# because the default, ODK-generated rule would ignore the MIR variable.
+# FBbt mapping set. We filter it to only keep UBERON-related mappings
+# (CL-related mappings are already bundled with the CL set).
 $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
-	wget "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" -O $@
+	wget "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" -O - | \
+		sssom-cli --prefix-map-from-input \
+		          --rule 'object==UBERON:* -> include()' \
+		          --output $@
 
-# CL mapping set (extracted from CL cross-references). We need to first
-# merge Uberon with CL, because the treat-xrefs-as-... annotations are
-# only in Uberon; then we need to remove the Uberon terms to avoid
-# extracting the cross-references from them as well.
-$(MAPPINGDIR)/cl.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl | all_robot_plugins
-	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl --collapse-import-closure false \
-		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
-		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
-		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
-		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
-		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
-		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
-	> $(REPORTDIR)/cl-xrefs-extraction.txt
-
-# ZFA mapping set (extracted from ZFA cross-references).
-$(MAPPINGDIR)/zfa.sssom.tsv: $(IMPORTDIR)/local-zfa.owl | all_robot_plugins
-	$(ROBOT) sssom:xref-extract -i $(IMPORTDIR)/local-zfa.owl --mapping-file $@ \
-		                    -v --drop-duplicates \
-		                    --set-id "$(ONTBASE)/mappings/zfa-mappings.sssom.tsv" \
-	> $(REPORTDIR)/zfa-xrefs-extraction.txt
+# CL mapping set. We simply fetch it as it is from CL. It already
+# contains all mappings related to CL (including the FBbt and ZFA ones).
+$(MAPPINGDIR)/cl.sssom.tsv: .FORCE
+	wget "http://purl.obolibrary.org/obo/cl/cl.sssom.tsv" -O $@
 
 # Biomappings mapping set. Nominally a simple mirror, but we need a
 # custom rule for two reasons:
@@ -1321,15 +1307,17 @@ CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
 	m4 $^ > $@
 
-# 2. Generate the bridges from the "meta" mapping set.
+# 2. Generate the bridges from the "meta" mapping set and the CL set.
 # Note that merging CL here is not strictly necessary, but doing so
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
-$(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(MAPPINGDIR)/uberon.sssom.tsv \
+$(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl \
+		   $(MAPPINGDIR)/uberon.sssom.tsv $(MAPPINGDIR)/cl.sssom.tsv \
 		   $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
 		   $(CUSTOM_BRIDGES) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl \
 		 sssom:inject --sssom $(MAPPINGDIR)/uberon.sssom.tsv \
+		              --sssom $(MAPPINGDIR)/cl.sssom.tsv \
 		              --ruleset $(TMPDIR)/bridges.rules \
 		              --exclude-rule xrefs \
 		              --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
