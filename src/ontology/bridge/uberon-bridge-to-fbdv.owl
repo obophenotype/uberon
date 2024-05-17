@@ -8,7 +8,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fbdv.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2024-02-20/bridge/uberon-bridge-to-fbdv.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2024-05-13/bridge/uberon-bridge-to-fbdv.owl"/>
     </owl:Ontology>
     
 
@@ -172,6 +172,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/FBdv_00005336 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBdv_00005336">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004730"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>instar larval stage (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/FBdv_00005349 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBdv_00005349">
@@ -280,6 +299,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0000109 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000109"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0004730 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004730"/>
     
 
 
