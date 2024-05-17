@@ -6,8 +6,8 @@ informations and the access that they need in order to start working
 with Uberon.
 
 1. Invite them to the [Anatomy and Cell
-   Ontologies](anatomy-and-cell-onto.slack.com) Slack workspace.
-2. Invite them to the [OBO Community](obo-communitygroup.slack.com)
+   Ontologies](https://anatomy-and-cell-onto.slack.com) Slack workspace.
+2. Invite them to the [OBO Community](https://obo-communitygroup.slack.com)
    Slack workspace and point them to the `#uberon` channel.
 3. Add them to the meeting invites on the Monarch Calendar (FIXME: How
    to do that? Who is the person to contact?)
