@@ -15,7 +15,7 @@ jobs:
   post_diff:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare release diff comment
         env:
             GITHUB_SHA: ${{ github.sha }}
@@ -23,7 +23,7 @@ jobs:
       - name: Post comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: NejcZdovc/comment-pr@v1.1.1
+        uses: NejcZdovc/comment-pr@v2
         with:
           github_token: ${{ env.GITHUB_TOKEN }}
           file: "../../comment.md"
