@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-xao.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2023-12-08/bridge/uberon-bridge-to-xao.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2024-05-13/bridge/uberon-bridge-to-xao.owl"/>
         <terms:contributor>Erik Segerdell</terms:contributor>
         <terms:contributor>VG Ponferrada</terms:contributor>
         <terms:creator>Uberon editors</terms:creator>
@@ -2440,6 +2440,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0003501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003501"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0003842 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003842"/>
@@ -3262,6 +3268,12 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0008891 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008891"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0008894 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0008894"/>
@@ -3343,6 +3355,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_0009848 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009848"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0009849 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009849"/>
     
 
 
@@ -5131,6 +5149,25 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589>lung (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_0000120 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0000120">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0008891"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>external gill (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -13742,6 +13779,25 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/XAO_0004153 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004153">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0003501"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>retina blood vessel (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/XAO_0004154 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_0004154">
@@ -14840,6 +14896,25 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589>neurula stage (xenopus)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/XAO_1000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/XAO_1000008">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0009849"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000066"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8353"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>tadpole stage (xenopus)</obo:IAO_0000589>
     </owl:Class>
     
 
