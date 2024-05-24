@@ -212,7 +212,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: edit-diff.md
-          path: edit-diff.md
       - name: Prepare edit file comment
         if: steps.check.outputs.triggered == 'true'
         run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
