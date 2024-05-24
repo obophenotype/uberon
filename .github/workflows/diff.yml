@@ -69,6 +69,13 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v2
+        id: comment-branch
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+          path: branch
       - uses: actions/checkout@v4
         if: steps.check.outputs.triggered == 'true'
         with:
