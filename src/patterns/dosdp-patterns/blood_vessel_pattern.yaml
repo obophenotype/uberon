@@ -1,0 +1,85 @@
+pattern_name: vessel
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/blood_vessel_pattern.yaml
+description: "This is a pattern for a blood vessel in the human body."
+
+
+  contributor: 
+    - https://orcid.org/0000-0001-6677-8489
+
+
+classes:
+  blood vessel: "UBERON:0001981"
+
+relations:
+  connecting branch of: "RO:0002252"
+  tributary of: "RO:0002376"
+  vessel supplies blood to: "RO:0020101"
+  vessel drains blood from: "RO:0020102"
+  part of: "RO:0000050"
+
+
+annotationProperties:
+  obo_foundry_uniquename: "http://purl.obolibrary.org/obo/IAO_0000589"
+  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  hasDbXref: "oboInOwl:hasDbXref"
+
+vars:
+  parent: ""
+  connecting_branch_of: ""
+  tributary_of: ""
+  vessel_supplies_blood_to: ""
+  vessel_drains_blood_from: ""
+
+
+data_list_vars:
+  synonym: ""
+  xrefs: ""
+  synonym_xrefs: ""
+
+data_vars:
+  label: ""
+  definition: ""
+
+name:
+  text: "%s"
+  vars:
+    - label
+
+def:
+  text: "%s"
+  vars:
+    - definition
+  xrefs: xrefs
+
+exact_synonym:
+  value: synonym
+  xrefs: synonym_xrefs
+  
+logical_axioms:
+  - axiom_type: subClassOf
+    text: "%s"
+    vars:
+      - parent
+  - axiom_type: 
+    text: "'part of' some %s"
+    vars:
+      - part_of
+  - axiom_type: 
+    text: "'connecting branch of' some %s"
+    vars:
+      - connecting_branch_of
+  - axiom_type: 
+    text: "'tributary of' some %s"
+    vars:
+      - tributary_of
+  - axiom_type: 
+    text: "'vessel supplies blood to' some %s"
+    vars:
+      - vessel_supplies_blood_to
+  - axiom_type: 
+    text: "'vessel drains blood from' some %s"
+    vars:
+      - vessel_drains_blood_from
+
+annotations:
+  - annotationProperty: contributor
