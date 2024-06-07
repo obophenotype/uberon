@@ -24,16 +24,17 @@ annotationProperties:
 vars:
   parent: "UBERON:0003509"
   connecting_branch_of: "'blood vessel'"
-  part_of: ""
+  location: "UBERON:0001062"
   creator: "'thing'"
 
 list_vars:
-  vessel_supplies_blood_to: "'thing'"
+  vessel_supplies_blood_to: "UBERON:0001062"
 
 data_list_vars:
   synonym: "xsd:string"
   xrefs: "xsd:string"
   synonym_xrefs: "xsd:string"
+  FMA_xref: "xsd:string"
 
 data_vars:
   label: ""
@@ -51,6 +52,9 @@ def:
     - definition
   xrefs: xrefs
 
+xref:
+  value: FMA_xref
+
 exact_synonym:
   value: synonym
   xrefs: synonym_xrefs
@@ -63,7 +67,7 @@ logical_axioms:
   - axiom_type: subClassOf
     text: "'part of' some %s"
     vars:
-      - part_of
+      - location
   - axiom_type: subClassOf
     text: "'connecting branch of' some %s"
     vars:
