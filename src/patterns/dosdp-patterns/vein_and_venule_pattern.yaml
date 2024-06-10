@@ -7,6 +7,8 @@ contributors:
 
 classes:
   blood vessel: "UBERON:0001981"
+  venous blood vessel: "UBERON:0003920"
+  anatomical entity: "UBERON:0001062"
   thing: "owl:Thing"  
 
 relations:
@@ -24,9 +26,9 @@ annotationProperties:
   date: "http://purl.org/dc/terms/date"
 
 vars:
-  parent: "UBERON:0003920"
+  parent: "'venous blood vessel'"
   connecting_branch_of: "'blood vessel'"
-  location: "UBERON:0001062"
+  location: "'anatomical entity'"
   creator: "'thing'"
 
 list_vars:
@@ -41,9 +43,9 @@ data_list_vars:
   FMA_xref: "xsd:string"
 
 data_vars:
-  label: ""
-  definition: ""
-  date_created: ""
+  label: "xsd:string"
+  definition: "xsd:string"
+  date_created: "xsd:string"
 
 name:
   text: "%s"
