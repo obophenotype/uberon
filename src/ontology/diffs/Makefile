@@ -1,9 +1,9 @@
 OBO=http://purl.obolibrary.org/obo
 ONT = uberon
-SRC = ../../../$(ONT).obo
-OWLSRC = ../../../$(ONT).owl
-LAST = $(OBO)/$(ONT).obo
-OWLLAST = $(OBO)/$(ONT).owl
+SRC = ../../../$(ONT)-base.obo
+OWLSRC = ../../../$(ONT)-base.owl
+LAST = $(OBO)/$(ONT)/$(ONT)-base.obo
+OWLLAST = $(OBO)/$(ONT)/$(ONT)-base.owl
 
 #all: $(ONT)-obo-diff.html $(ONT)-def-diff.html $(ONT)-lastbuild.obo $(ONT)-combined-diff.txt $(ONT)-diff.md
 all: $(ONT)-diff.md

@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                d9dd1f14c02c9157faa08c0c33d811609f31616c2917255ed4dca5559cb438ec
+CONFIG_HASH=                efb88af827f2af6cc513d695dc0dd59380e3e34c4ecf16d3648ebcfbba0aa64f
 
 
 # ----------------------------------------
@@ -65,7 +65,7 @@ PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.
 MAPPINGDIR=                 ../mappings
 MAPPING_TESTER=             sssom validate
 SSSOMPY=                    sssom
-MAPPINGS=                   fbbt cl zfa biomappings uberon-local uberon import-corrections 
+MAPPINGS=                   fbbt cl biomappings uberon-local uberon import-corrections 
 MAPPING_RELEASE_FILES=      $(foreach n,$(MAPPINGS), $(MAPPINGDIR)/$(n).sssom.tsv)
 
 
@@ -202,7 +202,7 @@ all_subsets: $(SUBSET_FILES)
 # ----------------------------------------
 
 
-MAPPINGS =  fbbt cl zfa biomappings uberon-local uberon import-corrections
+MAPPINGS =  fbbt cl biomappings uberon-local uberon import-corrections
 
 MAPPING_FILES = $(patsubst %, $(MAPPINGDIR)/%.sssom.tsv, $(MAPPINGS))
 
@@ -754,10 +754,6 @@ $(MAPPINGDIR)/fbbt.sssom.tsv:
 
 # This mappingset is manually curated, so we only check that the file actually exists.
 $(MAPPINGDIR)/cl.sssom.tsv:
-	test -f $@
-
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(MAPPINGDIR)/zfa.sssom.tsv:
 	test -f $@
 
 # This mappingset is manually curated, so we only check that the file actually exists.

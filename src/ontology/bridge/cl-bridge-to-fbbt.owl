@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-fbbt.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2024-03-22/bridge/cl-bridge-to-fbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2024-05-13/bridge/cl-bridge-to-fbbt.owl"/>
         <terms:contributor>David Osumi-Sutherland</terms:contributor>
         <terms:creator>CL editors</terms:creator>
         <terms:description>Taxonomic equivalence axioms between the Drosophila Anatomy Ontology and CL.</terms:description>
@@ -222,6 +222,12 @@
     <!-- http://purl.obolibrary.org/obo/CL_0000196 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000196"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000210 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000210"/>
     
 
 
@@ -441,9 +447,57 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CL_0000687 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000687"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000690 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000690"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000694 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000694"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000697 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000697"/>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CL_0000700 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000700"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000702 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000702"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000705 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000705"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000707 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000707"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000709 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000709"/>
     
 
 
@@ -778,7 +832,7 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_2000019"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000210"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
@@ -786,7 +840,159 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <obo:IAO_0000589>compound eye photoreceptor cell (drosophila)</obo:IAO_0000589>
+        <obo:IAO_0000589>photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004213 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004213">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000687"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R1 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004215 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004215">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000690"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R2 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004217 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004217">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000694"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R3 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004219 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004219">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000697"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R4 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004221 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004221">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000702"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R5 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004223 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004223">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000705"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R6 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004225 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004225">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000707"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R7 photoreceptor cell (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00004227 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00004227">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000709"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>R8 photoreceptor cell (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -1737,6 +1943,25 @@
             </owl:Class>
         </owl:equivalentClass>
         <obo:IAO_0000589>lymph gland hemocyte (drosophila)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FBbt_00006009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FBbt_00006009">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_2000019"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7227"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <obo:IAO_0000589>compound eye photoreceptor cell (drosophila)</obo:IAO_0000589>
     </owl:Class>
     
 

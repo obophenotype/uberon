@@ -14,7 +14,7 @@ Uberon is a cross-species ontology, and editors should be careful when adding ta
 
 ## Relations Guide
 
-The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but [here's the folder](../patterns/generated))
+The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but [here's the folder](https://github.com/obophenotype/uberon/tree/master/patterns/generated))
 
 #### overlaps
 
@@ -43,7 +43,7 @@ means that
 2. All parts of the brain endothelium are part of the brain (e.g. all cells that are part_of the brain endothelium are also cells that are part_of the brain) 
 3. Brain endothelium are part_of some brain at all times. (Makes more of a difference for cells being part of anatomical structure, e.g. a blood cell is not part_of the brain endothelium because it moves out of the brain endothelium.)
 
-Related Equivalence Pattern: [X_part_of_X](../patterns/generated/X_part_of_X.yaml)
+Related Equivalence Pattern: [X_part_of_X](https://github.com/obophenotype/uberon/blob/master/patterns/generated/X_part_of_X.yaml)
 
 #### has part
 
