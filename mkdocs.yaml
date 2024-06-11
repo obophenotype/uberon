@@ -1,5 +1,58 @@
-site_name: Uberon multi-species anatomy ontology
-theme: readthedocs
+site_name: Uberon Multi-species Anatomy Ontology
+theme:
+  name: material
+  icon:
+    edit: material/pencil 
+  features:
+    - content.action.edit
+    #- navigation.tabs
+    #- toc.integrate
+    #- navigation.sections
+    #- navigation.top
+    - search.suggest
+    - search.highlight
+    #- content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - content.code.select
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - attr_list
+  - md_in_html
+  - tables
+
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
+
+repo_url: https://github.com/obophenotype/uberon/
+site_url: https://obophenotype.github.io/uberon/
+edit_uri: edit/master/docs/
+
 nav:
   - Home: index.md
   - About:
@@ -8,6 +61,7 @@ nav:
       - Uberon on GitHub: https://github.com/obophenotype/uberon
       - Issue Tracker: https://github.com/obophenotype/uberon
       - Adopters: adopters.md
+      - History: history.md
       - Acknowledgements: acknowledgements.md
       - Cite: cite.md
   - Browse:
@@ -31,10 +85,13 @@ nav:
           - Imports management: odk-workflows/UpdateImports.md
           - Managing the documentation: odk-workflows/ManageDocumentation.md
           - Continuous Integration: odk-workflows/ContinuousIntegration.md
+          - Manage automated checks: odk-workflows/ManageAutomatedTest.md
+          - Manage components: odk-workflows/components.md
           - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md
   - Uberon Internal Docs: 
       - Uberon Release: uberon-release.md
       - Standard Operating Procedure for Uberon Curators: uberon-editor-sop.md
+      - Onboarding a new curator: onboarding.md
   - References:
       - Wiki: https://github.com/obophenotype/uberon/wiki
       - Uberon Manual: https://github.com/obophenotype/uberon/wiki/Manual

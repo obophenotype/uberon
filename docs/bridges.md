@@ -25,6 +25,15 @@ Internally, Uberon itself is using those bridges to produce the
 [combined multispecies ontologies](combined_multispecies.md) such as
 `composite-metazoan`.
 
+In addition to the bridging axioms proper, the bridges also contain an
+additional annotation for each bridged term: a “OBO Foundry unique
+label” (`IAO:0000589`). That label is automatically derived from the
+standard `rdfs:label` of the term, to which a suffix indicating the
+taxon is appended (for example in the case of `ZFA:0001262`, the unique
+label is “gonad primordium (zebrafish)”). This is to ensure that, upon
+merging Uberon with taxon-specific ontologies, all the terms in the
+merged ontology will have a distinct label.
+
 Note that the bridges between the [Cell
 Ontology](https://obophenotype.github.io/cell-ontology/) (CL) and the
 species-specific anatomy ontologies are _also_ provided by Uberon, rather by CL
@@ -194,23 +203,24 @@ The pipeline may be triggered by invoking the Make target
 `refresh-bridges` (whilst in the in `src/ontology` directory, where the
 Makefile is located). Here is what happens then:
 
-1. Production of a SSSOM mapping set from the Uberon and CL
-   cross-references. The Uberon `-edit` file is merged with the mirrored
-   copy of CL (which is downloaded if not already available) and
-   cross-references from both Uberon and CL are extracted and turned
-   into a SSSOM mapping set. This takes care of all the mappings with
-   the foreign ontologies for which Uberon and CL are the source of
-   truth.
+1. Production of a SSSOM mapping set from the Uberon cross-references.
+   Cross-references are extracted directly from the Uberon `-edit` file
+   and turned into a SSSOM mapping set. This takes care of all the
+   mappings with the foreign ontologies for which Uberon is the source
+   of truth.
 2. Production of a SSSOM mapping sets from ontologies that maintain
    their own mappings as cross-references. The foreign ontologies are
    downloaded and their cross-references are extracted in the same way
-   as the Uberon/CL cross-references are.
+   as the Uberon cross-references are. Note that currently there is no
+   such ontology.
 3. Fetching of externally maintained mapping sets. For ontologies that
    maintain their own mappings and provide a SSSOM mapping set directly,
-   we fetch the mapping set as it is.
+   we fetch the mapping set as it is. This currently concerns FBbt and
+   CL (the CL set brings with it the mappings between CL and all the
+   species-specific ontologies).
 4. Merging of all the mapping sets. We merge the SSSOM mapping set that
-   was derived from the Uberon/CL cross-references (step 1), the sets
-   that were derived from the cross-references of foreign ontologies
+   was derived from the Uberon cross-references (step 1), the sets that
+   were derived from the cross-references of foreign ontologies
    (step 2), and the sets that we obtained directly from foreign
    ontologies (step 3).
 5. Production of the bridges. We apply a large SSSOM/T-OWL ruleset (in

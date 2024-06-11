@@ -21,7 +21,7 @@ Uberon has been developed in conjunction with a number of other bio-ontologies, 
 - CL (Cell Type)
 
 #Technology
-Uberon shares a similar technology stack to many other bio-ontologies. Key contributors to this stack include Heiko Dietze, Seth Carbon, James Balhoff, Frederic Bastian, Alan Ruttenberg, David Osumi-Sutherland.
+Uberon shares a similar technology stack to many other bio-ontologies. Key contributors to this stack include Heiko Dietze, Seth Carbon, James Balhoff, Frederic Bastian, Alan Ruttenberg, David Osumi-Sutherland, James A. Overton.
 
 #The Elk Reasoner
 We use a variety of reasoners, but like most bio-ontologies, the game changer for us has been the fantastic [Elk reasoner](https://github.com/liveontologies/elk-reasoner).
@@ -33,7 +33,7 @@ We are also grateful to the developers of HermiT and FACT++, which are also used
 #OWL API
 The OWL API is a Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies. The current Uberon development and build infrastructure relies heavily on the OWLAPI. Many thanks to the OWLAPI developers, especially Ignazio Palmisano and Matt Horridge.
 
-In particular, we make use of an in-house library developed for the GO called [owltools](https://github.com/owlcollab/owltools).
+In particular, we make use of an in-house library developed for the GO called [owltools](https://github.com/owlcollab/owltools), and the [ROBOT](https://robot.obolibrary.org/) ontology manipulation tool developed for the OBO Foundry. Both are built on top of the OWL API.
 
 #SWI-Prolog
 Early versions of the ontology were created using a combination of text mining and rule-based reasoning approaches. This would not have been possible without [SWI-Prolog](https://www.swi-prolog.org/).
