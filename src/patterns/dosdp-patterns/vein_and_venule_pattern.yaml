@@ -45,7 +45,7 @@ data_list_vars:
 data_vars:
   label: "xsd:string"
   definition: "xsd:string"
-  date_created: "xsd:string"
+  date_created: "xsd:dateTime"
 
 name:
   text: "%s"
@@ -64,7 +64,7 @@ xref:
 exact_synonym:
   value: synonym
   xrefs: synonym_xrefs
-  
+
 logical_axioms:
   - axiom_type: subClassOf
     text: "%s"
@@ -100,7 +100,7 @@ logical_axioms:
           vars:
             - vessel_drains_blood_from
 
-annotations:  
+annotations:
   - annotationProperty: contributor
     var: creator
   - annotationProperty: date
