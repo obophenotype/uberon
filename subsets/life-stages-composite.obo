@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2024-05-13/subsets/life-stages-composite.owl
+data-version: uberon/releases/2024-06-14/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -122,8 +122,17 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC "a systematic synonym used as the base name for design patterns"
 synonymtypedef: systematic_synonym ""
 synonymtypedef: vertebrate ""
+idspace: dc http://purl.org/dc/elements/1.1/ 
+idspace: doap http://usefulinc.com/ns/doap# 
+idspace: foaf http://xmlns.com/foaf/0.1/ 
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: skos http://www.w3.org/2004/02/skos/core# 
+idspace: sssom https://w3id.org/sssom/ 
+idspace: swrl http://www.w3.org/2003/11/swrl# 
+idspace: swrlb http://www.w3.org/2003/11/swrlb# 
+idspace: terms http://purl.org/dc/terms/ 
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2024-05-13" xsd:string
+property_value: owl:versionInfo "2024-06-14" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1566,8 +1575,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 
 [Term]
@@ -3758,7 +3767,7 @@ comment: The definition of cell is intended to represent all cells, and thus a c
 subset: cellxgene_subset
 subset: ubprop:upper_level
 xref: CALOHA:TS-2035
-xref: FBbt:00007002
+xref: FBbt:00007002 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
@@ -3766,6 +3775,7 @@ xref: MESH:D002477
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
+xref: ZFA:0009000 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: UBERON:0000061 ! anatomical structure
 relationship: only_in_taxon NCBITaxon:131567 ! cellular organisms
 
@@ -3773,6 +3783,7 @@ relationship: only_in_taxon NCBITaxon:131567 ! cellular organisms
 id: CL:0000007
 name: early embryonic cell (metazoa)
 def: "A cell found in the embryo before the formation of all the gem layers is complete." [GOC:tfm]
+xref: ZFA:0009002 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 
 [Term]
@@ -3786,6 +3797,7 @@ subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
+xref: ZFA:0005957 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0017145 ! stem cell division
@@ -3800,6 +3812,7 @@ def: "A stem cell from which all cells of the body can form." [GOC:add, GOC:tfm]
 synonym: "totipotential stem cell" EXACT []
 xref: FMA:84790
 xref: MESH:D039901
+xref: ZFA:0009024 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000723 ! somatic stem cell
 
 [Term]
@@ -3819,9 +3832,10 @@ name: myoblast
 def: "A cell that is commited to differentiating into a muscle cell.  Embryonic myoblasts develop from the mesoderm. They undergo proliferation, migrate to their various sites, and then differentiate into the appropriate form of myocytes.  Myoblasts also occur as transient populations of cells in muscles undergoing repair." [GOC:tfm, MESH:D032446, PMID:21849021]
 xref: BTO:0000222
 xref: CALOHA:TS-0650
-xref: FBbt:00005083
+xref: FBbt:00005083 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:70335
 xref: VHOG:0001529
+xref: ZFA:0009025 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000680 ! muscle precursor cell
 
 [Term]
@@ -3835,9 +3849,10 @@ synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
 xref: CALOHA:TS-2026
 xref: CARO:0000077
-xref: FBbt:00000124
+xref: FBbt:00000124 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:66768
 xref: WBbt:0003672
+xref: ZFA:0009034 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
@@ -3848,6 +3863,7 @@ id: CL:0000068
 name: duct epithelial cell
 def: "An epithelial cell that is part of a duct." [https://orcid.org/0000-0001-5208-3432]
 subset: cellxgene_subset
+xref: ZFA:0009372 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0000058 ! duct
@@ -3858,6 +3874,7 @@ id: CL:0000133
 name: neurectodermal cell
 def: "Ectoderm destined to be nervous tissue." [GOC:tfm, ISBN:068340007X]
 synonym: "neurectoderm cell" EXACT []
+xref: ZFA:0009080 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000221 ! ectodermal cell
 
 [Term]
@@ -3877,9 +3894,10 @@ synonym: "myocyte" EXACT []
 xref: BTO:0000888
 xref: BTO:0000902
 xref: CALOHA:TS-2032
-xref: FBbt:00005074
+xref: FBbt:00005074 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67328
 xref: WBbt:0003675
+xref: ZFA:0009114 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
 is_a: UBERON:0004120 ! mesoderm-derived structure
@@ -3890,6 +3908,7 @@ property_value: depiction "https://www.swissbiopics.org/api/image/Muscle_cells.s
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
+xref: ZFA:0009128 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 
 [Term]
@@ -3898,6 +3917,7 @@ name: ectodermal cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:D004475]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
+xref: ZFA:0009137 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000924 ! ectoderm
 
@@ -3909,6 +3929,7 @@ subset: cellxgene_subset
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
+xref: ZFA:0009138 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000926 ! mesoderm
 
@@ -3918,12 +3939,14 @@ name: endodermal cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:D004707]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
+xref: ZFA:0009139 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000925 ! endoderm
 
 [Term]
 id: CL:0000255
 name: eukaryotic cell
+def: "Any cell that only exists in Eukaryota." [FBC:Autogenerated]
 subset: cellxgene_subset
 xref: MESH:D005057
 is_a: CL:0000000 ! cell
@@ -3956,12 +3979,14 @@ relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 id: CL:0000393
 name: electrically responsive cell
 def: "A cell whose function is determined by its response to an electric signal." [FB:ma]
+xref: ZFA:0009190 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000211 ! electrically active cell
 
 [Term]
 id: CL:0000404
 name: electrically signaling cell
 def: "A cell that initiates an electrical signal and passes that signal to another cell." [FB:ma]
+xref: ZFA:0009193 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000211 ! electrically active cell
 
 [Term]
@@ -3975,10 +4000,11 @@ subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
 xref: BTO:0000938
 xref: CALOHA:TS-0683
-xref: FBbt:00005106
+xref: FBbt:00005106 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:54527
 xref: VHOG:0001483
 xref: WBbt:0003679
+xref: ZFA:0009248 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
@@ -3991,6 +4017,7 @@ id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
 subset: cellxgene_subset
+xref: ZFA:0009291 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: CL:0011115 ! precursor cell
@@ -4004,6 +4031,7 @@ name: somatic stem cell
 def: "A stem cell that can give rise to cell types of the body other than those of the germ-line." [GO:0048103]
 xref: CALOHA:TS-2086
 xref: MESH:D053687
+xref: ZFA:0009307 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000034 ! stem cell
 intersection_of: capable_of GO:0048103 ! somatic stem cell division
@@ -4014,6 +4042,7 @@ id: CL:0002077
 name: ecto-epithelial cell
 def: "An epithelial cell derived from ectoderm." [FMA:69074, GOC:tfm]
 xref: FMA:69074
+xref: ZFA:0009385 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 is_a: UBERON:0004121 ! ectoderm-derived structure
 intersection_of: CL:0000066 ! epithelial cell
@@ -4043,6 +4072,7 @@ def: "A cell of the embryo." [FMA:0618947256]
 xref: CALOHA:TS-0263
 xref: FMA:82840
 xref: WBbt:0007028
+xref: ZFA:0007089 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-15T03:39:21Z
@@ -20647,7 +20677,7 @@ synonym: "ducts" RELATED OMO:0003004 [XAO:0004000]
 synonym: "exocrine duct" NARROW []
 synonym: "exocrine gland duct" NARROW []
 xref: AAO:0011123
-xref: FBbt:00100314 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00100314 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:30320
 xref: galen:Duct
 xref: NCIT:C12948
@@ -20696,7 +20726,7 @@ xref: BILA:0000003
 xref: CARO:0000003
 xref: EHDAA2:0003003
 xref: EMAPA:0
-xref: FBbt:00007001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007001 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:305751
 xref: FMA:67135
 xref: GAID:781
@@ -20910,11 +20940,11 @@ relationship: immediately_preceded_by UBERON:0000069 ! larval stage
 relationship: only_in_taxon NCBITaxon:33392 ! Endopterygota
 relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: simultaneous_with GO:0035209 {notes="may be better to model pupal development as including the pre-pupal stage"} ! pupal development
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/dosumis
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mmc46
+property_value: dc:contributor https://github.com/ANiknejad
+property_value: dc:contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/dosumis
+property_value: dc:contributor https://github.com/fbastian
+property_value: dc:contributor https://github.com/mmc46
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/562" xsd:anyURI
 property_value: taxon_notes "The pupal stage is found only in holometabolous insects, those that undergo a complete metamorphosis, going through four life stages; embryo, larva, pupa and imago" xsd:string
 
@@ -21053,7 +21083,7 @@ xref: BILS:0000106
 xref: EFO:0001322
 xref: EHDAA:27
 xref: FBdv:00005288
-xref: IDOMAL:0000302 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: IDOMAL:0000302 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0003-4423-4370", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C12601
 xref: PdumDv:0000100
 xref: VHOG:0000745
@@ -21267,7 +21297,7 @@ xref: EFO:0000825
 xref: EHDAA2:0001326
 xref: EHDAA:542
 xref: EMAPA:16262
-xref: FBbt:00003126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00003126 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:49184
 xref: GAID:75
 xref: galen:Mouth
@@ -21384,7 +21414,7 @@ xref: CALOHA:TS-2101
 xref: CARO:0000004
 xref: EHDAA2:0003004
 xref: EMAPA:35178
-xref: FBbt:00007019 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007019 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9669
 xref: galen:BodySubstance
 xref: HAO:0000004
@@ -21420,7 +21450,7 @@ xref: AEO:0000005
 xref: BILA:0000005
 xref: CARO:0000005
 xref: EHDAA2:0003005
-xref: FBbt:00007017 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007017 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:5897
 xref: HAO:0000005
 xref: NCIT:C94478
@@ -21449,7 +21479,7 @@ xref: AEO:0000006
 xref: BILA:0000006
 xref: CARO:0000006
 xref: EHDAA2:0003006
-xref: FBbt:00007016 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007016 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67165
 xref: HAO:0000006
 xref: TAO:0001836
@@ -21475,7 +21505,7 @@ xref: AEO:0000007
 xref: BILA:0000007
 xref: CARO:0000007
 xref: EHDAA2:0003007
-xref: FBbt:00007015 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007015 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67112
 xref: HAO:0000007
 xref: TAO:0001835
@@ -21514,11 +21544,11 @@ xref: EHDAA2:0003011
 xref: EHDAA:392
 xref: EMAPA:16103
 xref: EV:0100000
-xref: FBbt:00004856 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00004856 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7149
 xref: galen:AnatomicalSystem
 xref: HAO:0000011
-xref: IDOMAL:0002460 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: IDOMAL:0002460 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0003-4423-4370", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: MA:0000003
 xref: NCIT:C12919
 xref: SCTID:278195005
@@ -21570,7 +21600,7 @@ xref: EHDAA2:0003191
 xref: EHDAA:1
 xref: EMAPA:25765
 xref: EV:0100016
-xref: FBbt:00000001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000001 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:256135
 xref: galen:Organism
 xref: HAO:0000012
@@ -21606,7 +21636,7 @@ xref: AEO:0000040
 xref: BILA:0000040
 xref: CARO:0000040
 xref: EHDAA2:0003040
-xref: FBbt:00007013 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007013 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:63863
 xref: HAO:0000040
 xref: TAO:0000382
@@ -21639,7 +21669,7 @@ xref: CALOHA:TS-2090
 xref: CARO:0000043
 xref: EHDAA2:0003043
 xref: EMAPA:35868
-xref: FBbt:00007003 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007003 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9637
 xref: galen:Tissue
 xref: HAO:0000043
@@ -21675,7 +21705,7 @@ xref: AEO:0000055
 xref: BILA:0000055
 xref: CARO:0000055
 xref: EHDAA2:0003055
-xref: FBbt:00007010 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007010 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000055
 xref: TAO:0001488
 xref: TGMA:0001847
@@ -21709,7 +21739,7 @@ xref: CALOHA:TS-0288
 xref: CARO:0000066
 xref: EHDAA2:0003066
 xref: EMAPA:32738
-xref: FBbt:00007005 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007005 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9639
 xref: GAID:402
 xref: HAO:0000066
@@ -21788,11 +21818,11 @@ xref: EHDAA2:0000002
 xref: EHDAA2_RETIRED:0003236
 xref: EHDAA:38
 xref: EMAPA:16039
-xref: FBbt:00000052 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000052 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69068
 xref: GAID:963
 xref: http://neurolex.org/wiki/Category\:Embryonic_organism
-xref: IDOMAL:0000646 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: IDOMAL:0000646 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0003-4423-4370", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: MAT:0000226
 xref: MESH:D004622
 xref: MIAA:0000019
@@ -21834,7 +21864,7 @@ xref: AAO:0000480
 xref: BILA:0000035
 xref: BTO:0000556
 xref: EMAPA:36033
-xref: FBbt:00000110 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000110 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69069
 xref: GAID:1303
 xref: MESH:D005855
@@ -21869,7 +21899,7 @@ xref: EFO:0000414
 xref: EHDAA2:0000428
 xref: EMAPA:16069
 xref: EV:0100003
-xref: FBbt:00000111 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000111 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69070
 xref: GAID:1304
 xref: MAT:0000155
@@ -21911,7 +21941,7 @@ xref: EFO:0002545
 xref: EHDAA2:0000436
 xref: EMAPA:16062
 xref: EV:0100005
-xref: FBbt:00000125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000125 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69071
 xref: GAID:1305
 xref: MAT:0000175
@@ -21958,7 +21988,7 @@ xref: EHDAA:160
 xref: EHDAA:183
 xref: EMAPA:16083
 xref: EV:0100006
-xref: FBbt:00000126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000126 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69072
 xref: GAID:522
 xref: MAT:0000174
@@ -22003,7 +22033,7 @@ synonym: "stomodeal-hypophyseal primordium" BROAD [XAO:0000269]
 xref: BTO:0004224
 xref: EHDAA2:0001929
 xref: EMAPA:16263
-xref: FBbt:00000439 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00000439 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:295846
 xref: NCIT:C34306
 xref: TAO:0001290
@@ -22085,7 +22115,7 @@ xref: BILA:0000082
 xref: BTO:0000058
 xref: CALOHA:TS-1293
 xref: EFO:0000793
-xref: FBbt:00005055 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00005055 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7152
 xref: GAID:278
 xref: galen:DigestiveSystem
@@ -22172,7 +22202,7 @@ xref: EHDAA2:0001246
 xref: EHDAA:826
 xref: EMAPA:16469
 xref: EV:0100162
-xref: FBbt:00005093 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00005093 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7157
 xref: GAID:466
 xref: MA:0000016
@@ -22234,7 +22264,7 @@ xref: EHDAA:828
 xref: EMAPA:16470
 xref: EMAPA:16754
 xref: EV:0100163
-xref: FBbt:00005094 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00005094 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:55675
 xref: GAID:570
 xref: MA:0000167
@@ -22284,7 +22314,7 @@ xref: EMAPA:16164
 xref: EMAPA:16757
 xref: FMA:293882
 xref: MAT:0000069
-xref: MESH:D054259 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: MESH:D054259 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0001-9439-5346", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: MIAA:0000069
 xref: NCIT:C34226
 xref: neuronames:1365
@@ -22320,7 +22350,7 @@ xref: BILA:0000000
 xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
-xref: FBbt:10000000 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:10000000 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -22403,11 +22433,11 @@ xref: BTO:0000545
 xref: EHDAA2:0000726
 xref: EHDAA:518
 xref: EMAPA:16247
-xref: FBbt:00003125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00003125 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
-xref: MESH:D041981 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
+xref: MESH:D041981 {sssom:mapping_provider="https://github.com/biopragmatics/biomappings", sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C34082
 xref: TAO:0000112
 xref: TGMA:0001819
@@ -22479,7 +22509,7 @@ xref: BILA:0000034
 xref: BTO:0000174
 xref: CALOHA:TS-2110
 xref: EFO:0000461
-xref: FBbt:00004208 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00004208 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69067
 xref: GAID:407
 xref: MESH:D004628
@@ -22528,10 +22558,10 @@ relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: has_developmental_contribution_from UBERON:0000926 {notes="check ctenophore"} ! mesoderm
 relationship: has_part UBERON:0000383 ! musculature of body
 relationship: has_part UBERON:0001434 ! skeletal system
+property_value: dc:contributor https://github.com/cmungall
 property_value: external_definition "Anatomical system that provides locomotion and physical support to the organism.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010546", ontology="AAO", source="AAO:EJS"}
 property_value: has_relational_adjective "musculoskeletal" xsd:string
 property_value: homology_notes "There are more than 50,000 extant vertebrate species, representing over 500 million years of evolution. During that time, the vertebrate musculoskeletal systems have adapted to aquatic, terrestrial, fossorial, and arboreal lifestyles, while simultaneously retaining functionally integrated axial and appendicular skeletal systems.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001275", ontology="VHOG", source="DOI:10.1002/jez.b.21246 Shearman RM, Burke AC, The lateral somitic frontier in ontogeny and phylogeny. Journal of Experimental Zoology (2009)", source="http://bgee.unil.ch/"}
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
 
 [Term]
 id: UBERON:0002328
@@ -22581,6 +22611,8 @@ relationship: part_of UBERON:0011137 ! axial skeletal system
 relationship: produces PR:000014841 ! sonic hedgehog protein
 relationship: ventral_to UBERON:0001049 ! neural tube
 property_value: axiom_lost_from_external_ontology "relationship type change: differentiates_from mesoderm (AAO:0000304) CHANGED TO: develops_from mesoderm (UBERON:0000926)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000327", ontology="AAO"}
+property_value: dc:contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/wdahdul
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: development_notes "In between vertebra the notochord becomes the nucleus pulposus, under it degenerates, and at anterior end in some species its tissue merges with some of the cranial bones.. Some organisms retain a post-embryonic notochord." xsd:string
 property_value: external_definition "Avascular multi-tissue structure composed of large vacuolated epithelial cells (chordablasts) and perichordal fibrous tissue.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000032", ontology="VSAO", source="PSPUB:0000170"}
@@ -22588,8 +22620,6 @@ property_value: external_definition "Rod-like principal supportive element of th
 property_value: external_definition "Slender rod of fibrous connective tissue surrounding a core of fluid-filled cells of mesodermal origin; it lies above the gut and directly beneath the spinal cord. The notochord is present during early development and in a few cases it is retained through life; however, usually the notochord is replaced by the vertebral column.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000327", ontology="AAO", source="AAO:LAP"}
 property_value: has_relational_adjective "notochordal" xsd:string
 property_value: homology_notes "(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (3) a stiff, longitudinal rod of turgid cells along the dorsal part of the body that is called a notochord (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000199", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28", source="http://bgee.unil.ch/"}
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/wdahdul
 
 [Term]
 id: UBERON:0002346
@@ -22612,7 +22642,7 @@ xref: EHDAA:1498
 xref: EHDAA:255
 xref: EMAPA:16073
 xref: EV:0100004
-xref: FBbt:00001057 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00001057 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:87657
 xref: MAT:0000176
 xref: MIAA:0000176
@@ -22717,9 +22747,9 @@ synonym: "wriggler" NARROW [Wikipedia:Larva]
 synonym: "zoea" NARROW [Wikipedia:Larva]
 xref: AEO:0000126
 xref: BTO:0000707
-xref: FBbt:00001727 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00001727 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000459
-xref: MESH:D007814 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: MESH:D007814 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0001-9439-5346", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: TAO:0002048
 xref: Wikipedia:Larva
 is_a: UBERON:0000468 ! multicellular organism
@@ -22789,7 +22819,7 @@ xref: EHDAA:346
 xref: EHDAA:902
 xref: EMAPA:35593
 xref: FMA:293879
-xref: MESH:D054258 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: MESH:D054258 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0001-9439-5346", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C34225
 xref: neuronames:1362
 xref: RETIRED_EHDAA2:0001252
@@ -22822,9 +22852,9 @@ synonym: "chrysalis" NARROW [NCBITaxon:37572, Wikipedia:Pupa]
 synonym: "pupae" RELATED OMO:0003004 []
 xref: BTO:0001143
 xref: EFO:0002684
-xref: FBbt:00002953 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00002953 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000886
-xref: MESH:D011679 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
+xref: MESH:D011679 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", sssom:author_id="https://orcid.org/0000-0001-9439-5346", sssom:mapping_provider="https://github.com/biopragmatics/biomappings"}
 xref: Wikipedia:Pupa
 is_a: UBERON:0000468 ! multicellular organism
 intersection_of: UBERON:0000468 ! multicellular organism
@@ -22832,12 +22862,12 @@ intersection_of: existence_starts_and_ends_during UBERON:0000070 ! pupal stage
 relationship: existence_starts_and_ends_during UBERON:0000070 ! pupal stage
 relationship: has_quality PATO:0001187 ! pupal
 relationship: only_in_taxon NCBITaxon:33392 ! Endopterygota
+property_value: dc:contributor https://github.com/ANiknejad
+property_value: dc:contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/dosumis
+property_value: dc:contributor https://github.com/fbastian
+property_value: dc:contributor https://github.com/mmc46
 property_value: has_relational_adjective "pupal" xsd:string
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/dosumis
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/mmc46
 
 [Term]
 id: UBERON:0003914
@@ -22848,7 +22878,7 @@ def: "Epithelial tubes transport gases, liquids and cells from one site to anoth
 synonym: "epithelial or endothelial tube" EXACT []
 xref: AEO:0000114
 xref: EHDAA2:0003114
-xref: FBbt:00007474 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007474 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
@@ -23057,7 +23087,7 @@ synonym: "trilaminar disk" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "trilaminar germ" RELATED [https://orcid.org/0000-0002-6601-2165]
 xref: BILA:0000060
 xref: BTO:0001403
-xref: FBbt:00005317 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00005317 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:293108
 xref: GAID:1302
 xref: MESH:D005775
@@ -23144,7 +23174,7 @@ namespace: uberon
 def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "joint" NARROW []
-xref: FBbt:00005811 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00005811 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: part_of UBERON:0004770 ! articular system
 
@@ -23160,7 +23190,7 @@ synonym: "gut section" RELATED [FBbt:00100315]
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED [FMA:71131]
-xref: FBbt:00100315 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00100315 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:71131
 is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
@@ -23238,7 +23268,7 @@ synonym: "developmental tissue" RELATED [MIAA:0000019]
 xref: AEO:0000125
 xref: CALOHA:TS-2122
 xref: EHDAA2:0003125
-xref: FBbt:00007006 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007006 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
@@ -23651,7 +23681,7 @@ subset: common_anatomy
 subset: upper_level
 synonym: "multicellular structure" EXACT [FBbt:00100313]
 xref: CARO:0010000
-xref: FBbt:00100313 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00100313 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
 intersection_of: has_quality PATO:0001993 ! multicellular
@@ -23710,7 +23740,7 @@ def: "A subdivision of an anatomical system." [http://orcid.org/0000-0002-6601-2
 subset: common_anatomy
 subset: human_reference_atlas
 subset: upper_level
-xref: FBbt:00007330 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
+xref: FBbt:00007330 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67509
 xref: SCTID:91690000
 is_a: UBERON:0010000 {source="FBbt"} ! multicellular anatomical structure
@@ -23948,9 +23978,9 @@ subset: life_stage
 synonym: "adulthood stage" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000113 ! post-juvenile adult stage
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/fbastian
+property_value: dc:contributor https://github.com/ANiknejad
+property_value: dc:contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/fbastian
 
 [Term]
 id: UBERON:0018378
@@ -23981,8 +24011,8 @@ def: "The stage of being no more dependent of the nest and/or from caregivers fo
 subset: life_stage
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000112 ! sexually immature stage
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/ANiknejad
+property_value: dc:contributor https://github.com/cmungall
 
 [Term]
 id: UBERON:0034920
@@ -23994,8 +24024,8 @@ is_a: UBERON:0000105 ! life cycle stage
 relationship: immediately_preceded_by UBERON:0007221 ! neonate stage
 relationship: only_in_taxon NCBITaxon:40674 ! Mammalia
 relationship: part_of UBERON:0018685 ! nursing stage
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/ANiknejad
-property_value: http://purl.org/dc/elements/1.1/contributor https://github.com/cmungall
+property_value: dc:contributor https://github.com/ANiknejad
+property_value: dc:contributor https://github.com/cmungall
 
 [Term]
 id: UBERON:0034921
