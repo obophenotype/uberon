@@ -35,7 +35,7 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test > TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test | tee TESTLOG.log
 
       - name: Reason over taxon constraints
         id: explaintc
