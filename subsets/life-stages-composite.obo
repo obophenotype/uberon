@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: uberon/releases/2024-07-02/subsets/life-stages-composite.owl
+data-version: uberon/releases/2024-08-07/subsets/life-stages-composite.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -133,7 +133,7 @@ idspace: swrl http://www.w3.org/2003/11/swrl#
 idspace: swrlb http://www.w3.org/2003/11/swrlb# 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2024-07-02" xsd:string
+property_value: owl:versionInfo "2024-08-07" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1604,8 +1604,8 @@ namespace: chebi_ontology
 subset: 3_STAR
 synonym: ">C=O" RELATED [IUPAC]
 synonym: "carbonyl" EXACT IUPAC_NAME [IUPAC]
-synonym: "carbonyl group" EXACT [UniProt]
 synonym: "carbonyl group" EXACT [ChEBI]
+synonym: "carbonyl group" EXACT [UniProt]
 is_a: CHEBI:51422 ! organodiyl group
 
 [Term]
@@ -16833,8 +16833,9 @@ is_a: NCBITaxon:43733 ! Muscomorpha
 id: NCBITaxon:50557
 name: Insecta
 namespace: ncbi_taxonomy
+synonym: "insects" EXACT genbank_common_name []
 synonym: "insects" RELATED blast_name []
-synonym: "true insects" EXACT genbank_common_name []
+synonym: "true insects" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:6960 ! Hexapoda
 
@@ -16948,8 +16949,8 @@ id: NCBITaxon:6960
 name: Hexapoda
 namespace: ncbi_taxonomy
 synonym: "Atelocerata" RELATED in_part []
+synonym: "hexapods" EXACT genbank_common_name []
 synonym: "hexapods" RELATED blast_name []
-synonym: "insects" EXACT genbank_common_name []
 synonym: "Tracheata" RELATED in_part []
 synonym: "Uniramia" RELATED in_part []
 xref: GC_ID:1
