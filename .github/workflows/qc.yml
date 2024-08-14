@@ -37,16 +37,10 @@ jobs:
           ROBOT_JAVA_ARGS: -Xmx6G
         run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test | tee TESTLOG.log
 
-      - name: Upload intermediate artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: uberon-plus-tax-equivs
-          path: src/ontology/tmp/uberon-edit-plus-tax-equivs.owl
-
       - name: Reason over taxon constraints
         id: explaintc
         continue-on-error: true
-        if: steps.check.outcome == 'failure'
+        if: ${{ steps.check.outcome != 'success' }}
         run: |
           if [ -s src/ontology/reports/taxon-constraint-check.txt ]; then
             robot explain -i src/ontology/tmp/uberon-edit-plus-tax-equivs.owl -M unsatisfiability -u all -r ELK -e taxon-unsats.md
@@ -55,6 +49,7 @@ jobs:
             echo "</details>" >> comment.md
             exit 1
           fi
+
       - name: Post explanation for taxon constraint violations
         if: steps.explaintc.outcome == 'failure'
         uses: NejcZdovc/comment-pr@v2
@@ -62,7 +57,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           file: "../../comment.md"
           identifier: "TAXON_CONSTRAINTS_REASONING"
-  
+
       - name: Last rows of QC report
         if: steps.check.outcome == 'failure'
         run: |
