@@ -35,12 +35,12 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           ROBOT_JAVA_ARGS: -Xmx6G
-        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test | tee TESTLOG.log
+        run: cd src/ontology && mkdir -p tmp reports mirror && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' GH_ACTION=true BRI=true MIR=false IMP=false test > TESTLOG.log
 
       - name: Reason over taxon constraints
         id: explaintc
         continue-on-error: true
-        if: ${{ steps.check.outcome != 'success' }}
+        if: steps.check.outcome == 'failure'
         run: |
           if [ -s src/ontology/reports/taxon-constraint-check.txt ]; then
             robot explain -i src/ontology/tmp/uberon-edit-plus-tax-equivs.owl -M unsatisfiability -u all -r ELK -e taxon-unsats.md
