@@ -120,7 +120,7 @@ effect on the bridges.
 
 Some foreign ontologies maintain their own mappings with Uberon and/or
 CL, and provide the mappings in the form of a
-[SSSOM](https://mapping-commons.github.io/sssom/home/) mapping set. For
+[SSSOM](https://mapping-commons.github.io/sssom/) mapping set. For
 such ontologies, Uberon simply uses the mapping set as provided and
 derives the bridging axioms from it. In that case, Uberon or CL editors
 wishing to amend the mappings should contact the editors of the foreign
