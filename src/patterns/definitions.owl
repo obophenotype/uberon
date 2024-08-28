@@ -7,8 +7,8 @@ Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/uberon/patterns/definitions.owl>
-<http://purl.obolibrary.org/obo/uberon/releases/2024-08-21/patterns/definitions.owl>
-Annotation(owl:versionInfo "2024-08-21")
+<http://purl.obolibrary.org/obo/uberon/releases/2024-08-28/patterns/definitions.owl>
+Annotation(owl:versionInfo "2024-08-28")
 
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000004>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0000007>))
@@ -111,6 +111,8 @@ Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0009679>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010369>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010496>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010743>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0011192>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0011241>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0011640>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0012199>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0013137>))
@@ -145,6 +147,9 @@ Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0018598>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0018599>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0018600>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0039262>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8420001>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8420002>))
+Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8420003>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8490000>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8490001>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_8490002>))
@@ -289,6 +294,37 @@ SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0001394> ObjectSomeValuesFrom(
 # Class: <http://purl.obolibrary.org/obo/UBERON_0013137> (<http://purl.obolibrary.org/obo/UBERON_0013137>)
 
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_0013137> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002252> <http://purl.obolibrary.org/obo/UBERON_0002060>))
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_8420001> (ethmoidal vein)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://www.ncbi.nlm.nih.gov/books/NBK499826/") Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "wikipedia:Ethmoidal_veins") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/UBERON_8420001> "A vein that accompanies an ethmoidal artery and drains the ethmoidal cells. It is a tributary of the superior ophtalmica vein.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> <http://purl.obolibrary.org/obo/UBERON_8420001> <https://orcid.org/0000-0001-8314-2140>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/UBERON_8420001> "2024-08-28T09:55:00Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/UBERON_8420001> "FMA:51770")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_8420001> "ethmoidal vein")
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420001> <http://purl.obolibrary.org/obo/UBERON_0001638>)
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0011241>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002376> <http://purl.obolibrary.org/obo/UBERON_0011192>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0020101> <http://purl.obolibrary.org/obo/UBERON_0011192>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0020102> <http://purl.obolibrary.org/obo/UBERON_0011241>))
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_8420002> (anterior ethmoidal vein)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/UBERON_8420002> "An ethmoidal vein that accompanies an anterior ethmoidal artery.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> <http://purl.obolibrary.org/obo/UBERON_8420002> <https://orcid.org/0000-0001-8314-2140>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/UBERON_8420002> "2024-08-28T09:55:00Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/UBERON_8420002> "FMA:51771")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_8420002> "anterior ethmoidal vein")
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420002> <http://purl.obolibrary.org/obo/UBERON_8420001>)
+
+# Class: <http://purl.obolibrary.org/obo/UBERON_8420003> (posterior ethmoidal vein)
+
+AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/UBERON_8420003> "An ethmoidal vein that accompanies a posterior ethmoidal artery.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> <http://purl.obolibrary.org/obo/UBERON_8420003> <https://orcid.org/0000-0001-8314-2140>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/UBERON_8420003> "2024-08-28T09:55:00Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/UBERON_8420003> "FMA:51772")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_8420003> "posterior ethmoidal vein")
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_8420003> <http://purl.obolibrary.org/obo/UBERON_8420001>)
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_8490000> (right upper third secondary molar tooth)
 
