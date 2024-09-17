@@ -934,40 +934,59 @@ subsets/life-stages-core.owl: uberon.owl
 # Taxon subsets
 # ----------------------------------------
 
-all_taxmods: $(TAXMODSDIR)/uberon-taxmod-amniote.obo $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.obo
+TAXON_ID_human            = NCBITaxon:9606
+TAXON_ID_mouse            = NCBITaxon:10090
+TAXON_ID_xenopus          = NCBITaxon:8353
+TAXON_ID_drosophila       = NCBITaxon:7227
+TAXON_ID_gnathostome      = NCBITaxon:7776
+TAXON_ID_amniote          = NCBITaxon:32524
+TAXON_ID_euarchontoglires = NCBITaxon:314146
+TAXON_ID_nematode         = NCBITaxon:6237
+TAXON_ID_zebrafish        = NCBITaxon:7955
 
-$(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl: $(TMPDIR)/uberon-taxmod-314146.owl
-	cp $< $@
+# Strategy to use to create the taxon subsets:
+# - default: OWLTools' original strategy; given a root class R and a
+#            taxon T, assert 'R SubClassOf: in_taxon some T' and exclude
+#            all classes that are unsatisfiable because of that
+#            assertion.
+# - precise: alternative strategy; given a root class R and a taxon T,
+#            iterate through all subclasses C of R and include classes
+#            for which the expression 'C and in_taxon some T' is
+#            satisfiable; about 3-5 times slower than 'default'.
+TAXON_SUBSET_STRATEGY = default
 
-$(TAXMODSDIR)/uberon-taxmod-amniote.owl: $(TMPDIR)/uberon-taxmod-32524.owl
-	cp $< $@
+TAXON_SUBSET_ROOTS = UBERON:0001062 UBERON:0000000
 
-$(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
-	cp $< $@
-
-subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
-	$(ROBOT) reason --input $< \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+# Create a taxon-specific subset
+.PRECIOUS: subsets/%-view.owl
+subsets/%-view.owl: uberon.owl | all_robot_plugins
+	$(ROBOT) uberon:create-species-subset --input $< \
+		                              --taxon $(TAXON_ID_$*) \
+		                              --strategy $(TAXON_SUBSET_STRATEGY) \
+		                              --reasoner ELK \
+		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
+		 reason --reasoner ELK --equivalent-classes-allowed all \
+		        --exclude-tautologies structural \
 		 relax \
 		 remove --axioms equivalent \
 		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
+		 reduce --reasoner ELK \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-basic.owl
+		 convert --format ofn --output $@
 
-$(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
-	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
-
-# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
-$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$* \
-		    --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling \
-		    --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
-.PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
+# Create a component containing oboInOwl:inSubset annotations that mark
+# the classes that belong to a taxon-specific subset
+subsets/%-tags.ofn: uberon.owl | all_robot_plugins
+	$(ROBOT) uberon:create-species-subset --input $< \
+		                              --taxon $(TAXON_ID_$*) \
+		                              --strategy $(TAXON_SUBSET_STRATEGY) \
+		                              --reasoner ELK \
+		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
+		                              --no-remove \
+		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
+		                              --subset-name uberon:$*_subset \
+		                              --only-tag-in UBERON: --only-tag-in GO: \
+		                              --write-tags-to $@
 
 
 # Other subsets
@@ -989,26 +1008,6 @@ subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
 		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
 		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-# The first step is a simple "merge+reason", but it still requires
-# Owltools because ROBOT has no equivalent to the -x option to simply
-# ignore unsatisfiable classes without erroring out.
-subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
-	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure \
-		    $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl && \
-	$(ROBOT) reason --input $@.tmp.owl \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		 unmerge -i contexts/context-$*.owl \
-		 relax \
-		 remove --axioms equivalent \
-		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-view.owl
 
 %-partview.owl: %.owl
 	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level \
