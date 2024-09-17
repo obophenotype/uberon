@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                9531f9cc87d9bbbcf0d424b5845e95234e9cd34df6d28bdbb856a4ba7b5557ad
+CONFIG_HASH=                df7a0ce93b9cd6fe7e773a7a41a0b597562118f01ad45e6a2563fbedddaf9fe9
 
 
 # ----------------------------------------
@@ -154,7 +154,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
+	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.1/uberon.jar
 
 
 # ----------------------------------------
