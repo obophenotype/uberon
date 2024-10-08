@@ -144,10 +144,6 @@ POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
 uberon.owl: $(POSTPROCESS_SRC) $(POSTPROCESS_ADDITIONS)
 	$(ROBOT) merge $(foreach prereq,$^,-i $(prereq)) -o $@
 
-uberon.json.gz: uberon.json
-	gzip -c $< > $@.tmp && mv $@.tmp $@
-.PRECIOUS: uberon.json.gz
-
 
 # ----------------------------------------
 # MIRRORS
@@ -1513,6 +1509,10 @@ refresh-external-resources:
 # Everything that does not belong to any of the sections above.
 # May include both actually useful stuff and stuff that nobody
 # remembers why it was written in the first place.
+
+uberon.json.gz: uberon.json
+	gzip -c $< > $@.tmp && mv $@.tmp $@
+.PRECIOUS: uberon.json.gz
 
 TEMPLATESDIR=templates
 
