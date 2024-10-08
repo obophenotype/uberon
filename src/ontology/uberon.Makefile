@@ -149,11 +149,6 @@ uberon.owl: $(POSTPROCESS_SRC) $(POSTPROCESS_ADDITIONS)
 # MIRRORS
 # ----------------------------------------
 
-# We add OBO shorthands to the RO mirror before merging it with the other mirrors
-# FIXME: https://github.com/obophenotype/uberon/issues/3016
-mirror/ro.owl: mirror-ro | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS) $(TMPDIR)/mirror-ro.owl --add-obo-shorthand-to-properties -o $@ ; fi
-
 # All the following mirrors are needed, not for imports, but for
 # Uberon-specific pipelines (especially the composite-* stuff).
 # That's why they are not handled by the ODK-generated Makefile.
