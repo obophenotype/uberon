@@ -142,7 +142,7 @@ $(POSTPROCESS_SRC): $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_F
 POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
 			subsets/mouse-tags.ofn
 uberon.owl: $(POSTPROCESS_SRC) $(POSTPROCESS_ADDITIONS)
-	$(ROBOT) merge $(foreach prereq,$^,-i $(prereq)) -o $@
+	$(ROBOT) merge -i $< $(foreach add,$(POSTPROCESS_ADDITIONS),-i $(add)) -o $@
 
 
 # ----------------------------------------
