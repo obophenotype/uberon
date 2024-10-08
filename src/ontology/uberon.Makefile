@@ -1412,6 +1412,7 @@ DEPLOY_GH=true
 uberon:
 	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) release-diff
+	$(MAKE) release_diff_oak
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
@@ -1426,6 +1427,15 @@ deploy_release:
 .PHONY: release-diff
 release-diff:
 	cd diffs && make all
+
+CURRENT_BASE_RELEASE=$(ONTBASE)/uberon-base.obo
+
+.PHONY: $(TMPDIR)/current-base-release.obo
+$(TMPDIR)/current-base-release.obo:
+	wget $(CURRENT_BASE_RELEASE) -O $@
+
+release_diff_oak:
+	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/uberon-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 
 
 # ----------------------------------------
