@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                9531f9cc87d9bbbcf0d424b5845e95234e9cd34df6d28bdbb856a4ba7b5557ad
+CONFIG_HASH=                943829f9eb8e1b8d46bf5f3f878364bb18f10e0d9eee11d7c28bfb3dfba894c7
 
 
 # ----------------------------------------
@@ -154,7 +154,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
+	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.1/uberon.jar
 
 
 # ----------------------------------------
@@ -189,7 +189,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-composite life-stages-core life-stages-minimal merged-partonomy mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal renal-minimal reproductive-minimal sensory-minimal xenopus-view amniote-basic euarchontoglires-basic
+SUBSETS =  appendicular-minimal circulatory-minimal cranial-minimal cumbo digestive-minimal excretory-minimal human-view immune-minimal life-stages-composite life-stages-core life-stages-minimal merged-partonomy mouse-view musculoskeletal-minimal nephron-minimal nervous-minimal pulmonary-minimal renal-minimal reproductive-minimal sensory-minimal xenopus-view amniote-view euarchontoglires-view
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))

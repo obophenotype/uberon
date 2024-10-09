@@ -9,6 +9,7 @@ TAXMODSDIR =           taxmods
 BRI=                   true
 
 OWLSRC =               $(TMPDIR)/uberon-edit.owl
+POSTPROCESS_SRC =      $(TMPDIR)/uberon.owl
 CATALOG_DYNAMIC =      catalog-dynamic.xml
 OWLTOOLS_NO_CAT=       OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools
 OWLTOOLS_CAT_DYNAMIC=  OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --catalog-xml $(CATALOG_DYNAMIC)
@@ -127,18 +128,21 @@ MATERIALIZE=
 else
 MATERIALIZE = materialize -T $(CONFIGDIR)/basic_properties.txt -r elk
 endif
-uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
+$(POSTPROCESS_SRC): $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
 	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 	               -i $(DEVELOPS_FROM_CHAIN) \
 	         relax $(MATERIALIZE) \
 	         reason -r elk --exclude-duplicate-axioms true \
 	                       --equivalent-classes-allowed asserted-only \
 	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
-	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
+	         annotate -O $(URIBASE)/uberon.owl -V $(RELEASE)/uberon.owl -o $@
 
-uberon.json.gz: uberon.json
-	gzip -c $< > $@.tmp && mv $@.tmp $@
-.PRECIOUS: uberon.json.gz
+# Step 3: Postprocessing. We merge some files that are derived from the
+# previous step.
+POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
+			subsets/mouse-tags.ofn
+uberon.owl: $(POSTPROCESS_SRC) $(POSTPROCESS_ADDITIONS)
+	$(ROBOT) merge -i $< $(foreach add,$(POSTPROCESS_ADDITIONS),-i $(add)) -o $@
 
 
 # ----------------------------------------
@@ -723,7 +727,7 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
-$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
+$(REPORTDIR)/quick-bridge-check-%.txt: $(POSTPROCESS_SRC) \
 				       $(COMPONENTSDIR)/external-disjoints.obo \
 				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				       $(TMPDIR)/bridges
@@ -738,7 +742,7 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
 # For this check, we separate the production of the merged ontology
 # from the production of the report.
 # 1. The merge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl \
+$(REPORTDIR)/bridge-check-%.owl: $(POSTPROCESS_SRC) \
 				 $(COMPONENTSDIR)/external-disjoints.obo \
 				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				 $(TMPDIR)/bridges \
@@ -929,40 +933,57 @@ subsets/life-stages-core.owl: uberon.owl
 # Taxon subsets
 # ----------------------------------------
 
-all_taxmods: $(TAXMODSDIR)/uberon-taxmod-amniote.obo $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.obo
+TAXON_ID_human            = NCBITaxon:9606
+TAXON_ID_mouse            = NCBITaxon:10090
+TAXON_ID_xenopus          = NCBITaxon:8353
+TAXON_ID_drosophila       = NCBITaxon:7227
+TAXON_ID_gnathostome      = NCBITaxon:7776
+TAXON_ID_amniote          = NCBITaxon:32524
+TAXON_ID_euarchontoglires = NCBITaxon:314146
+TAXON_ID_nematode         = NCBITaxon:6237
+TAXON_ID_zebrafish        = NCBITaxon:7955
 
-$(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl: $(TMPDIR)/uberon-taxmod-314146.owl
-	cp $< $@
+# Strategy to use to create the taxon subsets:
+# - default: OWLTools' original strategy; given a root class R and a
+#            taxon T, assert 'R SubClassOf: in_taxon some T' and exclude
+#            all classes that are unsatisfiable because of that
+#            assertion.
+# - precise: alternative strategy; given a root class R and a taxon T,
+#            iterate through all subclasses C of R and include classes
+#            for which the expression 'C and in_taxon some T' is
+#            satisfiable; about 3-5 times slower than 'default'.
+TAXON_SUBSET_STRATEGY = default
 
-$(TAXMODSDIR)/uberon-taxmod-amniote.owl: $(TMPDIR)/uberon-taxmod-32524.owl
-	cp $< $@
+TAXON_SUBSET_ROOTS = UBERON:0001062 UBERON:0000000
 
-$(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
-	cp $< $@
-
-subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
-	$(ROBOT) reason --input $< \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+# Create a taxon-specific subset. This rule creates two distinct files:
+# (1) the subset proper (subsets/%-view.owl), which can be used on its
+#     own (and can be published as a release artifact if desired);
+# (2) a small file containing oboInOwl:inSubset annotations to "tag" all
+#     terms that belong to the subset (subsets/%-tags.ofn); that file
+#     can then be merged to the main release product (last step of the
+#     "BUILDING UBERON ITSELF" pipeline).
+.PRECIOUS: subsets/%-view.owl
+subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
+	$(ROBOT) uberon:create-species-subset --input $< \
+		                              --taxon $(TAXON_ID_$*) \
+		                              --strategy $(TAXON_SUBSET_STRATEGY) \
+		                              --reasoner ELK \
+		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
+		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
+		                              --subset-name uberon:$*_subset \
+		                              --only-tag-in UBERON: \
+		                              --write-tags-to subsets/$*-tags.ofn \
+		 reason --reasoner ELK --equivalent-classes-allowed all \
+		        --exclude-tautologies structural \
 		 relax \
 		 remove --axioms equivalent \
 		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-basic.owl
-
-$(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
-	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
-
-# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
-$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$* \
-		    --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling \
-		    --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
-.PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
+		 reduce --reasoner ELK \
+		 annotate --ontology-iri $(ONTBASE)/subsets/$*-view.owl \
+		          --version-iri $(ONTBASE)/releases/$(VERSION)/subsets/$*-view.owl \
+		          --annotation owl:versionInfo $(VERSION) \
+		 convert --format ofn --output subsets/$*-view.owl
 
 
 # Other subsets
@@ -984,26 +1005,6 @@ subsets/immaterial.obo: uberon.owl
 	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
 		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
 		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-# The first step is a simple "merge+reason", but it still requires
-# Owltools because ROBOT has no equivalent to the -x option to simply
-# ignore unsatisfiable classes without erroring out.
-subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
-	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure \
-		    $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl && \
-	$(ROBOT) reason --input $@.tmp.owl \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		 unmerge -i contexts/context-$*.owl \
-		 relax \
-		 remove --axioms equivalent \
-		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-view.owl
 
 %-partview.owl: %.owl
 	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level \
@@ -1121,7 +1122,7 @@ endif
 # Uberon, CL, and the components listed in the COLLECTED_*_SOURCES
 # variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
-$(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
+$(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl $(POSTPROCESS_SRC) $(IMPORTDIR)/local-cl.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
@@ -1503,6 +1504,10 @@ refresh-external-resources:
 # Everything that does not belong to any of the sections above.
 # May include both actually useful stuff and stuff that nobody
 # remembers why it was written in the first place.
+
+uberon.json.gz: uberon.json
+	gzip -c $< > $@.tmp && mv $@.tmp $@
+.PRECIOUS: uberon.json.gz
 
 TEMPLATESDIR=templates
 
