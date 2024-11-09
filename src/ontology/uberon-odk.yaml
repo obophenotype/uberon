@@ -42,6 +42,8 @@ import_group:
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
+    - <http://www.ncbi.nlm.nih.gov/gene/*>
+    - <http://birdgenenames.org/cgnc/GeneReport*>
   products:
     - id: pr
       make_base: TRUE
@@ -103,8 +105,8 @@ subset_group:
     - id: reproductive-minimal
     - id: sensory-minimal
     - id: xenopus-view
-    - id: amniote-basic
-    - id: euarchontoglires-basic
+    - id: amniote-view
+    - id: euarchontoglires-view
 sssom_mappingset_group:
   products:
     - id: fbbt
@@ -123,7 +125,7 @@ robot_java_args: '-Xmx20G'
 robot_plugins:
   plugins:
     - name: uberon
-      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.1/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
