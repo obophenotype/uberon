@@ -1257,7 +1257,8 @@ ifeq ($(strip $(IMP)),true)
 $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 	wget "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" -O - | \
 		sssom-cli --prefix-map-from-input \
-		          --rule 'object==UBERON:* -> include()' \
+		          --include 'object==UBERON:*' \
+		          --update-from-ontology=$(SRC):object,label,existence \
 		          --output $@
 
 # CL mapping set. We simply fetch it as it is from CL. It already
@@ -1276,7 +1277,8 @@ $(MAPPINGDIR)/biomappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
 	sssom-cli --input $< --prefix 'UBERON=http://purl.obolibrary.org/obo/UBERON_' \
 		  --rule '!(subject==UBERON:* || object==UBERON:*) -> stop()' \
 		  --rule 'object==UBERON:* -> invert()' \
-		  --include-all | \
+		  --include-all \
+		  --update-from-ontology=$(SRC):subject,label,existence | \
 	sssom-cli --mangle-iris obo --output $@
 
 $(TMPDIR)/biomappings.sssom.tsv:
