@@ -1249,8 +1249,8 @@ EXTERNAL_SSSOM_PROVIDERS = fbbt cl biomappings
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
 
-# We only refresh external resources under IMP=true
-ifeq ($(strip $(IMP)),true)
+# We only refresh external resources under MIR=true
+ifeq ($(strip $(MIR)),true)
 
 # FBbt mapping set. We filter it to only keep UBERON-related mappings
 # (CL-related mappings are already bundled with the CL set).
@@ -1296,7 +1296,7 @@ endif
 ifeq ($(BRI),true)
 
 # Those bridges are generated separately (see below).
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
+EXTERN_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 
 # 1. Prepare the ruleset file.
@@ -1312,7 +1312,7 @@ $(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
 $(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl \
 		   $(MAPPINGDIR)/uberon.sssom.tsv $(MAPPINGDIR)/cl.sssom.tsv \
 		   $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
-		   $(CUSTOM_BRIDGES) | all_robot_plugins
+		   $(EXTERN_BRIDGES) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl \
 		 sssom:inject --sssom $(MAPPINGDIR)/uberon.sssom.tsv \
 		              --sssom $(MAPPINGDIR)/cl.sssom.tsv \
@@ -1342,8 +1342,8 @@ UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/brain-bican/mouse_brain_a
 UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/brain-bican/developing_mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
 # Only refresh those bridges when we explicitly allow refreshing
-# external resources (IMP=true).
-ifeq ($(strip $(IMP)),true)
+# external resources (MIR=true).
+ifeq ($(strip $(MIR)),true)
 $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
 	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
@@ -1408,7 +1408,7 @@ DEPLOY_GH=true
 
 .PHONY: uberon
 uberon:
-	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
+	$(MAKE) prepare_release MIR=false IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) release-diff
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
@@ -1489,15 +1489,15 @@ clean: clean_uberon
 
 .PHONY: refresh-mappings
 refresh-mappings:
-	$(MAKE) MIR=true IMP=true $(EXTERNAL_SSSOM_SETS)
+	$(MAKE) MIR=true $(EXTERNAL_SSSOM_SETS)
 
 .PHONY: refresh-bridges
 refresh-bridges:
-	$(MAKE) MIR=true IMP=true BRI=true tmp/bridges
+	$(MAKE) MIR=true BRI=true tmp/bridges
 
 .PHONY: refresh-external-resources
 refresh-external-resources:
-	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports all_local_imports tmp/bridges
+	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports all_local_imports $(EXTERNAL_SSSOM_SETS) $(EXTERN_BRIDGES)
 
 
 # ----------------------------------------
