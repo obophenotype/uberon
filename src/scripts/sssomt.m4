@@ -9,7 +9,7 @@ ifelse($2, , `dnl
     predicate==skos:exactMatch               -> create_axiom("%subject_id EquivalentTo: %object_id");
     predicate==skos:broadMatch               -> create_axiom("%subject_id SubClassOf: %object_id");
     predicate==skos:narrowMatch              -> create_axiom("%object_id SubClassOf: %subject_id");',`dnl
-    predicate==semapv:crossSpeciesExactMatch -> create_axiom("%subject_id EquivalentTo: %object_id and (<%TAXREL> some $2)");')')
+    predicate==semapv:crossSpeciesExactMatch -> create_axiom("%subject_id EquivalentTo: %object_id and (%TAXREL some $2)");')')
 
 dnl Expand to instructions to create all possible bridging axioms
 dnl both for Uberon and for CL
