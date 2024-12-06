@@ -1098,6 +1098,7 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 				     $(COLLECTED_drosophila_SOURCES) \
 				     $(COLLECTED_worm_SOURCES) \
 				     $(IMPORTDIR)/local-sslso.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
 				     $(IMPORTDIR)/local-ceph.owl \
 				     $(IMPORTDIR)/local-cteno.owl \
 				     $(IMPORTDIR)/local-poro.owl
@@ -1227,9 +1228,10 @@ $(MAPPINGDIR)/uberon-local.sssom.tsv: $(SRC) | all_robot_plugins
 
 # Uberon's "meta" mapping set, containing all mappings between Uberon
 # and foreign ontologies, regardless of where they are maintained. Made
-# by compiling the "local" set above with the FBbt set obtained below.
+# by compiling the "local" set above with the remote sets obtained below.
 $(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
-				$(MAPPINGDIR)/fbbt.sssom.tsv
+				$(MAPPINGDIR)/fbbt.sssom.tsv \
+				$(MAPPINGDIR)/sslso.sssom.tsv
 	sssom-cli $(foreach src, $^, -i $(src)) \
 		  --prefix-map-from-input \
 		  --rule 'object==UBERON:* -> invert()' \
@@ -1240,7 +1242,7 @@ $(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
 # -------------------
 
 # The following providers publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt cl biomappings
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl sslso biomappings
 
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
@@ -1261,6 +1263,10 @@ $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 # contains all mappings related to CL (including the FBbt and ZFA ones).
 $(MAPPINGDIR)/cl.sssom.tsv: .FORCE
 	wget "http://purl.obolibrary.org/obo/cl/cl.sssom.tsv" -O $@
+
+# SSLSO (life stages) mapping set. We simply fetch it as it is.
+$(MAPPINGDIR)/sslso.sssom.tsv: .FORCE
+	wget "https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages.sssom.tsv" -O $@
 
 # Biomappings mapping set. Nominally a simple mirror, but we need a
 # custom rule for two reasons:
