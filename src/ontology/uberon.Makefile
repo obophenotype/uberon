@@ -291,12 +291,12 @@ mirror-caro: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/caro-download.owl -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
-## ONTOLOGY: ssso
-.PHONY: mirror-ssso
-.PRECIOUS: $(MIRRORDIR)/ssso.owl
+## ONTOLOGY: sslso
+.PHONY: mirror-sslso
+.PRECIOUS: $(MIRRORDIR)/life-sslso.owl
 mirror-ssso: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages-base.owl --create-dirs -o $(TMPDIR)/life-stages-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(TMPDIR)/life-stages-download.owl -o $(TMPDIR)/$@.owl; fi
 
 ## ONTOLOGY: mmusdv
 .PHONY: mirror-mmusdv
@@ -370,16 +370,12 @@ imports/local-allen-%.owl: mirror/allen-%.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-# For the life stages ontology, by construction it includes classes from
-# all over the place, and we need to preserve most of them. We do not
-# preserve the FBdv and WBls classes however, since they are provided
-# by local-fbdv and local-wbls respectively.
-SSSO_PREFIXES = BtauDv DpseDv DsimDv GgalDv GgorDv HsapDv MdomDv MmulDv MmusDv OariDv PpanDv PtroDv RnorDv SscrDv ZFS
-imports/local-ssso.owl: mirror/ssso.owl
-	$(ROBOT) remove -i $< \
-		        $(foreach pfx,$(SSSO_PREFIXES),--base-iri $(URIBASE)/$(pfx)) \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
+# For the life stages ontology, we already got a base from upstream, but
+# we can't use the generic rule above as the ontology contains (by
+# construction) classes from all over the place. So we just convert it
+# to OFN without removing anything.
+imports/local-sslso.owl: mirror/life-sslso.owl
+	$(ROBOT) convert -i $< -f ofn -o $@
 
 # For the following ontologies, in addition to removing axioms about
 # external entities we also need to replace some old-style properties.
@@ -1101,7 +1097,7 @@ COLLECTED_vertebrate_SOURCES =       $(COLLECTED_tetrapod_SOURCES) \
 COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 				     $(COLLECTED_drosophila_SOURCES) \
 				     $(COLLECTED_worm_SOURCES) \
-				     $(IMPORTDIR)/local-ssso.owl \
+				     $(IMPORTDIR)/local-sslso.owl \
 				     $(IMPORTDIR)/local-ceph.owl \
 				     $(IMPORTDIR)/local-cteno.owl \
 				     $(IMPORTDIR)/local-poro.owl
