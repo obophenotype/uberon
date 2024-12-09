@@ -1156,18 +1156,23 @@ collected-lifestages.owl: $(TMPDIR)/collected-lifestages.owl
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
 .PRECIOUS: $(TMPDIR)/composite-%.owl
-$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl config/tax-merges.tsv | all_robot_plugins
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/tax-merges.tsv | all_robot_plugins
 	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 uberon:merge-species --remove-declarations \
 		                      --extended-translation \
 		                      --translate-gcas \
-		                      --batch-file config/tax-merges.tsv \
+		                      --batch-file $(TMPDIR)/tax-merges.tsv \
 		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
 		                              -l UBERON=10 -l CL=9 \
 		                              -d UBERON=10 -d CL=9 \
 		 reason -r ELK --equivalent-classes-allowed all \
 		 relax \
 		 reduce -r ELK -o $@
+
+# Step 2a: The "tax-merges.tsv" file used in the rule above is automatically
+# derived from the list of species in config/taxa.yaml.
+$(TMPDIR)/tax-merges.tsv: $(SCRIPTSDIR)/taxa.py config/taxa.yaml
+	python3 $(SCRIPTSDIR)/taxa.py make-merge-table > $@
 
 # Step 3: Annotate the result of step 2. This is a separate step only so
 # that we can have explicit rules for composite-metazoan, -vertebrate,
@@ -1321,10 +1326,10 @@ EXTERN_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 
 # 1. Prepare the ruleset file.
-# The ruleset file is maintained with M4 macros to make it more easily
-# editable, so we need to expand the macros first.
-$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
-	m4 $^ > $@
+# The ruleset file is maintained with the help of the Python script
+# to automatically insert the taxon-specific rules.
+$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/taxa.py $(BRIDGEDIR)/bridges.rules
+	python3 $(SCRIPTSDIR)/taxa.py make-rules $(BRIDGEDIR)/bridges.rules > $@
 
 # 2. Generate the bridges from the "meta" mapping set and the CL set.
 # Note that merging CL here is not strictly necessary, but doing so
