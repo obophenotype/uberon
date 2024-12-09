@@ -1155,47 +1155,13 @@ collected-lifestages.owl: $(TMPDIR)/collected-lifestages.owl
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
-TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
-$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl | all_robot_plugins
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl config/tax-merges.tsv | all_robot_plugins
 	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'           -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'           -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'         -t NCBITaxon:9443 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Xenopus'         -t NCBITaxon:8353 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Danio'           -t NCBITaxon:7954 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D melanogaster'  -t NCBITaxon:7227 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'C elegans'       -t NCBITaxon:6237 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'anolis'          -t NCBITaxon:28377 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'cow'             -t NCBITaxon:9913 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'dog'             -t NCBITaxon:9615 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'cavy'            -t NCBITaxon:10141 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D ananassae'     -t NCBITaxon:7217 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D mojavensis'    -t NCBITaxon:7230 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D pseudobscura'  -t NCBITaxon:7237 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D simulans'      -t NCBITaxon:7240 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D virilis'       -t NCBITaxon:7244 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'D yakuba'        -t NCBITaxon:7245 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'horse'           -t NCBITaxon:9796 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'hedgehog'        -t NCBITaxon:9365 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'cat'             -t NCBITaxon:9685 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'chicken'         -t NCBITaxon:9031 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'gorilla'         -t NCBITaxon:9593 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'opossum'         -t NCBITaxon:13616 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'macaque'         -t NCBITaxon:9544 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'platypus'        -t NCBITaxon:9258 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'sheep'           -t NCBITaxon:9940 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'rabbit'          -t NCBITaxon:9986 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'medaka'          -t NCBITaxon:8090 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Platynereis'     -t NCBITaxon:6358 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'bonobo'          -t NCBITaxon:9597 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'orangutan'       -t NCBITaxon:9600 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'chimpanzee'      -t NCBITaxon:9598 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'rat'             -t NCBITaxon:10116 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'salmon'          -t NCBITaxon:8030 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'pig'             -t NCBITaxon:9823 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'tetraodon'       -t NCBITaxon:99883 \
+		 uberon:merge-species --remove-declarations \
+		                      --extended-translation \
+		                      --translate-gcas \
+		                      --batch-file config/tax-merges.tsv \
 		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
 		                              -l UBERON=10 -l CL=9 \
 		                              -d UBERON=10 -d CL=9 \
