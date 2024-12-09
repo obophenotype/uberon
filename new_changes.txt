@@ -1,19 +1,186 @@
 [Term]
 id: UBERON:8910000
 name: stomatogastric nervous system
-def: "The part of the nervous system that controls the stomach, such as in crabs, lobsters, and flies" [FlyBase:FBrf0089570, PMID:12966498, DOI:10.1016/B0-12-370878-8/00177-4]
+def: "The part of the nervous system that controls the stomach, such as in crabs, lobsters, and flies" [FlyBase:FBrf0089570, PMID:12966498, PMID: 27450880, DOI:10.1016/B0-12-370878-8/00177-4]
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: in_taxon NCBITaxon:6656 ! Arthropoda
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+
+[Term]
+id: UBERON:8910001
+name: stomatogastric ganglion
+def: "The stomatogastric ganglion (STG) consists of ∼30 neurons that form two central pattern generator circuits in crustaceans. STG neurons have large soma (~50-100 um) and have complex branches. The crustacean stomach is a complex mechanical structure that grinds and filters foods. The STG contains the motor neurons that innervate the striated muscles that move the gastric mill and pyloric regions of the stomach." [PMID: 17009928]
+synonym: "STG"
+is_a: UBERON:0011216 ! organ system subdivision
+relationship: part_of UBERON:8910000 ! stomatogastric nervous system
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
 
 [Term]
 id: UBERON:8910010
 name: stomatogastric nerve (sensu Cancer borealis)
 def: "The stomatogastric nerve (SGN) is made up of four separate nerves that emerge from the paired commissural ganglia, the superior and inferior esophageal nerves (SONs and IONs)." [DOI:10.1016/B0-12-370878-8/00177-4]
-synonym: "SON (sensu Cancer borealis)" EXACT [DOI:10.1016/B0-12-370878-8/00177-4]
+synonym: "SGN (sensu Cancer borealis)" EXACT [DOI:10.1016/B0-12-370878-8/00177-4]
 is_a: UBERON:0035014 ! functional part of brain
 relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
 relationship: in_taxon NCBITaxon:6712 ! Astacidea
 relationship: in_taxon NCBITaxon:6752 ! Brachyura
-relationship: part_of UBERON:8910000 ! stomatogastric ganglion
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910011
+name: dorsal gastric nerve (sensu Cancer borealis)
+def: "Nerve carrying dorsal gastric (DG) neurons which control the medial tooth movements in crustaceans." [PMID: 17009928]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910012
+name: gastropyloric nerve (sensu Cancer borealis)
+def: "Consists of gastropyloric receptor (GPR) neurons, which are stretch receptors that innervate stomach muscles in crustaceans." [PMID: 17009928, PMID: 26888106]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910013
+name: lateral gastric nerve (sensu Cancer borealis)
+def: "Consists of lateral gastric (LG) neurons. The alternation between the lateral gastric neurons/medial gastric neurons and the lateral posterior gastric neurons control the movements of the lateral teeth in crustaceans." [PMID: 17009928]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910013
+name: lateral ventricular nerve (sensu Cancer borealis)
+def: "The motor axons that project into the dorsal ventricular nerve bifurcate and then project into both lateral ventricular nerves." [PMID: 10561445]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910014
+name: pyloric nerve (sensu Cancer borealis)
+def: "Innervates pyloric region of the stomach." [PMID: 2876096]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+
+[Term]
+id: UBERON:8910015
+name: pyloric dilator nerve (sensu Cancer borealis)
+def: "Innervates muscles that dilate valves of the pylorus — motor neurons involved in filtering in crustaceans. Anterior burster neurons are intrinsic oscillators that are electrically coupled with pyloric dilator neurons, causing them to fire bursts of action potentials. Together these neurons inhibit lateral pyloric and pyloric neurons, forcing them to fire in alternation with the pyloric dilator neurons." [PMID: 2876096, PMID: 17009928]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910016
+name: inferior esophageal nerve (sensu Cancer borealis)
+synonym: "ION (sensu Cancer borealis)"
+def: "The inferior esophageal nerve (ION) is one of the four nerves that make up the stomatogastric nerve (SGN)." [DOI:10.1016/B0-12-370878-8/00177-4]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+relationship: part_of UBERON:8910010 ! stomatogastric nerve
+
+
+[Term]
+id: UBERON:8910017
+name: superior esophageal nerve (sensu Cancer borealis)
+synonym: "SON (sensu Cancer borealis)" EXACT [DOI:10.1016/B0-12-370878-8/00177-4]
+def: "The superior esophageal nerve (SON) is one of the four nerves that make up the stomatogastric nerve (SGN)." [DOI:10.1016/B0-12-370878-8/00177-4]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+relationship: part_of UBERON:8910010 ! stomatogastric nerve
+
+
+[Term]
+id: UBERON:8910018
+name: esophageal nerve (sensu Cancer borealis)
+def: "innervates the foregut and midgut" [DOI:10.1016/B0-12-370878-8/00177-4]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+relationship: part_of UBERON:8910010 ! stomatogastric nerve
+
+
+[Term]
+id: UBERON:8910019
+name: esophageal ganglion (sensu Cancer borealis)
+def: "Neurons with cell bodies in the esophageal ganglion turn on the gastric mill rhythm and strongly affects the pyloric rhythm." [DOI:10.1016/B0-12-370878-8/00177-4]
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910000 ! stomatogastric nervous system 
+
+
+[Term]
+id: UBERON:8910020
+name: commissural ganglion (sensu Cancer borealis)
+synonym: "CG (sensu Cancer borealis)"
+def: "Contains motor fibers that innervate the esophagus. Stimulating the pyloric suppressor neuron alters both pyloric and gastric rhythms but also elicits activity in a third oscillatory circuit located in the commissural ganglia called the esophageal rhythm." [DOI:10.1016/b978-0-12-809324-5.21166-8] 
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910000 ! stomatogastric nervous system 
+
+
+[Term]
+id: UBERON:8910021
+name: junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)
+def: "The junction between the stomatogastric nerve (STN) and the superior esophageal nerve (SON) shows synaptic structures. Octopamine may be released at this site by projection neurons – its application at this junction induces action potentials in the axons of the modulatory commissural neuron 5 (MCN5) that project from the commissural ganglia to the stomatogastric ganglion (STG)." [PMID: 15306640] 
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+[Term]
+id: UBERON:8910022
+name: median ventricular nerve (sensu Cancer borealis)
+synonym: "MVN (sensu Cancer borealis)"
+def: "Most of the efferent fibers leaving the stomatogastric ganglion and leading to the gastric mill or pyloric stomach muscles run posteriorly in the dorsal median ventricular nerve. This nerve branches bilaterally into the right and left lateral ventricular nerves (LVN) which go to their respective sides of the stomach." [DOI:10.1016/0010-406X(70)90044-7] 
+is_a: UBERON:0035014 ! functional part of brain
+relationship: dc-contributor https://orcid.org/0000-0002-1909-7004
+relationship: in_taxon NCBITaxon:6712 ! Astacidea
+relationship: in_taxon NCBITaxon:6752 ! Brachyura
+relationship: part_of UBERON:8910001 ! stomatogastric ganglion
+
+
+
+
 
 
