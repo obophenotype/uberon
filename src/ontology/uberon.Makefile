@@ -1170,14 +1170,16 @@ $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl config/tax-merges.tsv | all
 		 reduce -r ELK -o $@
 
 # Step 3: Annotate the result of step 2. This is a separate step only so
-# that we can have explicit rules for composite-metazoan and
-# composite-vertebrate, because the ODK-generated Makefile already
-# defines a non-implicit rules with those targets.
+# that we can have explicit rules for composite-metazoan, -vertebrate,
+# and -lifestages, because the ODK-generated Makefile already defines a
+# non-implicit rules with those targets.
 composite-%.owl: $(TMPDIR)/composite-%.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+composite-lifestages.owl: $(TMPDIR)/composite-lifestages.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 
