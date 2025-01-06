@@ -1,24 +1,26 @@
 #curie_map:
-#  BTO: http://purl.obolibrary.org/obo/BTO_
-#  IDOMAL: http://purl.obolibrary.org/obo/IDOMAL_
-#  UBERON: http://purl.obolibrary.org/obo/UBERON_
-#  VO: http://purl.obolibrary.org/obo/VO_
-#  mesh: http://id.nlm.nih.gov/mesh/
-#  orcid: https://orcid.org/
-#mapping_set_id: https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
-#mapping_set_version: 0.3.8.dev0
-#mapping_set_title: Biomappings
-#mapping_set_description: Biomappings is a repository of community curated and predicted equivalences and related mappings between named biological entities that are not available from primary sources. It's also a place where anyone can contribute curations of predicted mappings or their own novel mappings.
+#  BTO: "http://purl.obolibrary.org/obo/BTO_"
+#  IDOMAL: "http://purl.obolibrary.org/obo/IDOMAL_"
+#  UBERON: "http://purl.obolibrary.org/obo/UBERON_"
+#  VO: "http://purl.obolibrary.org/obo/VO_"
+#  mesh: "http://id.nlm.nih.gov/mesh/"
+#  obo: "http://purl.obolibrary.org/obo/"
+#  orcid: "https://orcid.org/"
+#mapping_set_id: "https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv"
+#mapping_set_version: "0.3.8.dev0"
+#mapping_set_title: "Biomappings"
+#mapping_set_description: "Biomappings is a repository of community curated and predicted equivalences and related mappings between named biological entities that are not available from primary sources. It's also a place where anyone can contribute curations of predicted mappings or their own novel mappings."
 #creator_id:
-#  - orcid:0000-0001-9439-5346
-#  - orcid:0000-0002-1216-4761
-#  - orcid:0000-0002-2046-6145
-#  - orcid:0000-0002-2627-0696
-#  - orcid:0000-0002-6601-2165
-#  - orcid:0000-0003-1307-2508
-#  - orcid:0000-0003-4423-4370
-#license: https://creativecommons.org/publicdomain/zero/1.0/
-#mapping_provider: https://github.com/biopragmatics/biomappings
+#  - "orcid:0000-0001-9439-5346"
+#  - "orcid:0000-0002-1216-4761"
+#  - "orcid:0000-0002-2046-6145"
+#  - "orcid:0000-0002-2627-0696"
+#  - "orcid:0000-0002-6601-2165"
+#  - "orcid:0000-0003-1307-2508"
+#  - "orcid:0000-0003-4423-4370"
+#license: "https://creativecommons.org/publicdomain/zero/1.0/"
+#subject_source: "obo:uberon/core.owl"
+#mapping_provider: "https://github.com/biopragmatics/biomappings"
 subject_id	subject_label	predicate_id	predicate_modifier	object_id	object_label	mapping_justification	author_id	mapping_tool	confidence
 UBERON:0000016	endocrine pancreas	skos:exactMatch		mesh:D007515	Islets of Langerhans	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
 UBERON:0000017	exocrine pancreas	skos:exactMatch		mesh:D046790	Pancreas, Exocrine	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
@@ -286,8 +288,6 @@ UBERON:2001553	manubrium	skos:exactMatch		mesh:D008371	Manubrium	semapv:ManualMa
 UBERON:2001977	pad	skos:exactMatch	Not	mesh:D058729	Peripheral Arterial Disease	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
 UBERON:3010463	animal cap	skos:exactMatch		BTO:0004724	animal cap	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
 UBERON:3010586	vasa efferentia	skos:exactMatch		BTO:0002254	vas efferens	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
-UBERON:3011045	gasserian ganglion	skos:exactMatch		mesh:D012668	Trigeminal Ganglion	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
-UBERON:3011048	genital system	skos:exactMatch		mesh:D005835	Genitalia	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
 UBERON:4000104	ganoine	skos:exactMatch		mesh:C067951	ganoine	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
 UBERON:4000163	anal fin	skos:exactMatch		BTO:0004652	anal fin	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
 UBERON:4000164	caudal fin	skos:exactMatch		BTO:0001827	tail fin	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
