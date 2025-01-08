@@ -294,7 +294,7 @@ mirror-caro: | $(TMPDIR)
 ## ONTOLOGY: sslso
 .PHONY: mirror-sslso
 .PRECIOUS: $(MIRRORDIR)/life-sslso.owl
-mirror-ssso: | $(TMPDIR)
+mirror-sslso: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages-base.owl --create-dirs -o $(TMPDIR)/life-stages-download.owl --retry 4 --max-time 200 && \
 		$(ROBOT) convert -i $(TMPDIR)/life-stages-download.owl -o $(TMPDIR)/$@.owl; fi
 
@@ -374,7 +374,7 @@ imports/local-allen-%.owl: mirror/allen-%.owl
 # we can't use the generic rule above as the ontology contains (by
 # construction) classes from all over the place. So we just convert it
 # to OFN without removing anything.
-imports/local-sslso.owl: mirror/life-sslso.owl
+imports/local-sslso.owl: mirror/sslso.owl
 	$(ROBOT) convert -i $< -f ofn -o $@
 
 # For the following ontologies, in addition to removing axioms about
@@ -423,7 +423,7 @@ imports/local-ceph.owl: mirror/ceph.owl
 
 
 # Allow quickly refreshing all "local" imports
-LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa \
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro sslso wbbt wbls xao zfa \
 		allen-hba allen-dhba allen-mba allen-dmba allen-pba
 all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl)
 
