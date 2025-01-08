@@ -1113,7 +1113,8 @@ COLLECTED_lifestages_SOURCES =       $(SUBSETDIR)/life-stages-minimal.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-wbls.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
-				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
+				     $(TMPDIR)/xao-ls-bridged.owl
 
 
 # Composite pipeline proper
@@ -1187,6 +1188,18 @@ composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-lifestages.owl: $(TMPDIR)/composite-lifestages.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
+# XAO contains both anatomical terms and life stage terms. To build
+# collected-lifestages (step 1c above), we need to extract the life stage
+# terms only (all descendants of XAO:1000000, "Xenopus developmental stage"),
+# and bridge them with corresponding Uberon terms.
+$(TMPDIR)/xao-ls-bridged.owl: $(IMPORTDIR)/local-xao.owl \
+				       $(MAPPINGDIR)/uberon-local.sssom.tsv \
+				       | all_robot_plugins
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term XAO:1000000 \
+		 sssom:inject --sssom $(MAPPINGDIR)/uberon-local.sssom.tsv \
+		              --ruleset $(BRIDGEDIR)/bridge-xao-ls.rules \
+		              -o $@
 
 
 # Some special products derived from the products generated above
