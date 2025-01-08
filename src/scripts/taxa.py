@@ -36,11 +36,7 @@
 import sys
 import yaml
 
-with open('config/taxa.yaml', 'r') as f:
-    taxa = yaml.load(f, yaml.CLoader)
-
-
-def generate_prefix_declarations(f):
+def generate_prefix_declarations(f, taxa):
     """Insert SSSOM/T-OWL prefix declarations for all species."""
     for taxon in taxa['species']:
         for bridge in taxon['bridging']:
@@ -50,13 +46,13 @@ def generate_prefix_declarations(f):
             f.write(f"prefix {prefix}: <{namespace}>\n")
 
 
-def generate_directives(f):
+def generate_directives(f, taxa):
     """Insert SSSOM/T-OWL taxon declarations for all species."""
     for taxon_id in [t['taxon_id'] for t in taxa['species']]:
         f.write(f"declare({taxon_id});\n")
 
 
-def generate_bridging_rules(f):
+def generate_bridging_rules(f, taxa):
     """Insert SSSOM/T-OWL bridging rules for all species."""
     for taxon in taxa['species']:
         taxon_id = taxon['taxon_id']
@@ -78,23 +74,23 @@ def generate_bridging_rules(f):
 """)
 
 
-def process_rule_file(filein, fileout):
+def process_rule_file(filein, fileout, taxa):
     """Insert all SSSOM/T-OWL instructions required to generate
         cross-species bridges.
     """
 
     for line in filein:
         if line.strip() == '%INSERT-TAX-SPECIFIC-PREFIXES':
-            generate_prefix_declarations(fileout)
+            generate_prefix_declarations(fileout, taxa)
         elif line.strip() == '%INSERT-TAX-SPECIFIC-DIRECTIVES':
-            generate_directives(fileout)
+            generate_directives(fileout, taxa)
         elif line.strip() == '%INSERT-TAX-SPECIFIC-BRIDGES':
-            generate_bridging_rules(fileout)
+            generate_bridging_rules(fileout, taxa)
         else:
             fileout.write(line)
 
 
-def generate_merge_table(fileout):
+def generate_merge_table(fileout, taxa):
     """Generates a batch-file for uberon:merge-species."""
     def_link_properties = taxa.get('defaults', {}).get('compositing', {}).get('unfold_over', ['BFO:0000050', 'BFO:0000066'])
     def_preserved_properties = taxa.get('defaults', {}).get('compositing', {}).get('preserve', [])
@@ -108,17 +104,26 @@ def generate_merge_table(fileout):
         fileout.write(f"{taxon_id}\t{label}\t{link_properties}\t{preserved_properties}\n")
 
 
-usage = f"Usage: {sys.argv[0]} <make-rules TEMPLATE> | <make-merge-table>"
+def read_taxa_file(file):
+    with open(file, 'r') as f:
+        return yaml.load(f, yaml.CLoader)
+
+
+usage = f"Usage: {sys.argv[0]} <make-rules TAXA TEMPLATE> | <make-merge-table TAXA>"
 if len(sys.argv) < 2:
     sys.exit(usage)
 
 cmd = sys.argv[1]
 if cmd == 'make-rules':
+    if len(sys.argv) != 4:
+        sys.exit(usage)
+    taxa = read_taxa_file(sys.argv[2])
+    with open(sys.argv[3], 'r') as fin:
+        process_rule_file(fin, sys.stdout, taxa)
+elif cmd == 'make-merge-table':
     if len(sys.argv) != 3:
         sys.exit(usage)
-    with open(sys.argv[2], 'r') as fin:
-        process_rule_file(fin, sys.stdout)
-elif cmd == 'make-merge-table':
-    generate_merge_table(sys.stdout)
+    taxa = read_taxa_file(sys.argv[2])
+    generate_merge_table(sys.stdout, taxa)
 else:
     sys.exit(usage)
