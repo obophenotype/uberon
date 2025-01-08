@@ -1143,7 +1143,8 @@ collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
 
 # Step 1c: collected-lifestages is special in that it should not
 # include Uberon and CL (only the life-stages-minimal subset).
-$(TMPDIR)/collected-lifestages.owl: $(COLLECTED_lifestages_SOURCES)
+$(TMPDIR)/collected-lifestages.owl: $(BRIDGEDIR)/collected-lifestages-hdr.owl \
+				    $(COLLECTED_lifestages_SOURCES)
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
 # Step 1d: And it is also a released artefact.
