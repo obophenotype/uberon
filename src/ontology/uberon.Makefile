@@ -298,20 +298,6 @@ mirror-sslso: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages-base.owl --create-dirs -o $(TMPDIR)/life-stages-download.owl --retry 4 --max-time 200 && \
 		$(ROBOT) convert -i $(TMPDIR)/life-stages-download.owl -o $(TMPDIR)/$@.owl; fi
 
-## ONTOLOGY: mmusdv
-.PHONY: mirror-mmusdv
-.PRECIOUS: $(MIRRORDIR)/mmusdv.owl
-mirror-mmusdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/mmusdv.owl --create-dirs -o $(MIRRORDIR)/mmusdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/mmusdv-download.owl -o $(TMPDIR)/$@.owl; fi
-
-## ONTOLOGY: hsapdv
-.PHONY: mirror-hsapdv
-.PRECIOUS: $(MIRRORDIR)/hsapdv.owl
-mirror-hsapdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/hsapdv.owl --create-dirs -o $(MIRRORDIR)/hsapdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/hsapdv-download.owl -o $(TMPDIR)/$@.owl; fi
-
 
 # ----------------------------------------
 # "LOCAL" IMPORTS
@@ -341,18 +327,6 @@ imports/local-fb%.owl: mirror/fb%.owl
 # Ditto for WBbt/ls
 imports/local-wb%.owl: mirror/wb%.owl
 	$(ROBOT) remove -i $< --base-iri $(URIBASE)/WB \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
-# Ditto for MmusDv
-imports/local-mmusdv.owl: mirror/mmusdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/MmusDv_ \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
-# Ditto for HsapDv
-imports/local-hsapdv.owl: mirror/hsapdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/HsapDv_ \
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
@@ -423,7 +397,7 @@ imports/local-ceph.owl: mirror/ceph.owl
 
 
 # Allow quickly refreshing all "local" imports
-LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro sslso wbbt wbls xao zfa \
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv ma poro sslso wbbt wbls xao zfa \
 		allen-hba allen-dhba allen-mba allen-dmba allen-pba
 all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl)
 
@@ -900,7 +874,7 @@ subsets/vertebrate-head.obo: composite-vertebrate.owl
 # ----------------------------------------
 
 # TODO - switch to purls for OWL once released
-subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(IMPORTDIR)/local-mmusdv.owl $(IMPORTDIR)/local-hsapdv.owl
+subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.owl $(TMPDIR)/hsapdv.owl
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl
@@ -1049,14 +1023,16 @@ COLLECTED_xenopus_SOURCES =          $(IMPORTDIR)/local-xao.owl \
 COLLECTED_human_SOURCES =            $(IMPORTDIR)/local-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-aeo.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
 				     $(BRIDGEDIR)/cl-bridge-to-ehdaa2.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl
+				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl \
+				     $(TMPDIR)/hsapdv.owl
 
 COLLECTED_mouse_SOURCES =            $(IMPORTDIR)/local-emapa.owl \
-				     $(IMPORTDIR)/local-mmusdv.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-emapa.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl
+				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl \
+				     $(TMPDIR)/mmusdv.owl \
 
 # In principle this should also include FMA and its bridges, but we have
 # been excluded those for a while
@@ -1106,8 +1082,6 @@ COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 COLLECTED_lifestages_SOURCES =       $(SUBSETDIR)/life-stages-minimal.owl \
 				     $(IMPORTDIR)/local-fbdv.owl \
 				     $(IMPORTDIR)/local-wbls.owl \
-				     $(IMPORTDIR)/local-mmusdv.owl \
-				     $(IMPORTDIR)/local-hsapdv.owl \
 				     $(IMPORTDIR)/local-sslso.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-fbdv.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-wbls.owl \
@@ -1200,6 +1174,16 @@ $(TMPDIR)/xao-ls-bridged.owl: $(IMPORTDIR)/local-xao.owl \
 		 sssom:inject --sssom $(MAPPINGDIR)/uberon-local.sssom.tsv \
 		              --ruleset $(BRIDGEDIR)/bridge-xao-ls.rules \
 		              -o $@
+
+# SSLSO contains the entirety of HsapDv, but to construct collected-human,
+# we specifically need the HsapDv terms only, so we extract them from SSLSO.
+# This is also needed to construct the life-stages-mammal subset.
+$(TMPDIR)/hsapdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term HsapDv:0000000 -o $@
+
+# Ditto for MmusDv.
+$(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term MmusDv:0000000 -o $@
 
 
 # Some special products derived from the products generated above
