@@ -157,16 +157,17 @@ current source of truth.
 | `uberon-bridge-to-go.owl` | [Gene ontology](http://obofoundry.org/ontology/go) (GO) | GO xrefs in Uberon |
 | `uberon-bridge-to-hao.owl` | [Hymenoptera anatomy ontology](http://obofoundry.org/ontology/hao) (HAO) | HAO xrefs in Uberon |
 | `uberon-bridge-to-hba.owl` | [Human brain atlas](https://human.brain-map.org/) (HBA) | HBA xrefs in Uberon |
-| `uberon-bridge-to-hsapdv.owl` | [Human developmental stages](http://obofoundry.org/ontology/hsapdv) (HsapDv) | HsapDv xrefs in Uberon |
+| `uberon-bridge-to-hsapdv.owl` | [Human developmental stages](http://obofoundry.org/ontology/hsapdv) (HsapDv) | [SSLSO-maintained](https://github.com/obophenotype/developmental-stage-ontologies) mapping set |
 | `uberon-bridge-to-kupo.owl` | [Kidney and urinary pathway ontology](https://jbiomedsem.biomedcentral.com/articles/10.1186/2041-1480-2-S2-S7) (KUPO) | KUPO xrefs in Uberon |
 | `uberon-bridge-to-ma.owl` | [Mouse adult gross anatomy](http://obofoundry.org/ontology/ma) (MA) | MA xrefs in Uberon |
 | `uberon-bridge-to-mba.owl` | [Mouse brain atlas](https://mouse.brain-map.org/) (MBA) | Externally provided custom bridge, maintained [here](https://github.com/brain-bican/mouse_brain_atlas_ontology) |
-| `uberon-bridge-to-mmusdv.owl` | [Mouse developmental stages](http://obofoundry.org/ontology/mmusdv) (MmusDv) | MmusDv xrefs in Uberon |
+| `uberon-bridge-to-mmusdv.owl` | [Mouse developmental stages](http://obofoundry.org/ontology/mmusdv) (MmusDv) | [SSLSO-maintained](https://github.com/obophenotype/developmental-stage-ontologies) mapping set |
 | `uberon-bridge-to-ncit.owl` | [NCI thesaurus OBO edition](http://obofoundry.org/ontology/ncit) (NCIT) | NCIT xrefs in Uberon |
 | `uberon-bridge-to-oges.owl` | ? | OGES xrefs in Uberon |
 | `uberon-bridge-to-pba.owl` | Primate brain atlas (PBA) | PBA xrefs in Uberon |
-i| `uberon-bridge-to-sctid.owl` | SNOMED CT (SCTID) | SCTID xrefs in Uberon |
+| `uberon-bridge-to-sctid.owl` | SNOMED CT (SCTID) | SCTID xrefs in Uberon |
 | `uberon-bridge-to-spd.owl` | [Spider ontology](http://obofoundry.org/ontology/spd) (SPD) | SPD xrefs in Uberon |
+| `uberon-bridge-to-sslso.owl` | [Species-specific life stages ontology](https://github.com/obophenotype/developmental-stage-ontologies) (SSLSO) | [SSLSO-maintained](https://github.com/obophenotype/developmental-stage-ontologies) mapping set |
 | `uberon-bridge-to-tads.owl` | [Tick anatomy ontology](http://obofoundry.org/ontology/tads) (TADS) | TADS xrefs in Uberon |
 | `uberon-bridge-to-tgma.owl` | [Mosquito gross anatomy ontology](http://obofoundry.org/ontology/tgma) (TGMA) | TGMA xrefs in Uberon |
 | `uberon-bridge-to-wbbt.owl` | [C. elegans gross anatomy ontology](http://obofoundry.org/ontology/wbbt) (WBbt) | WBbt xrefs in Uberon |
@@ -223,10 +224,10 @@ Makefile is located). Here is what happens then:
    were derived from the cross-references of foreign ontologies
    (step 2), and the sets that we obtained directly from foreign
    ontologies (step 3).
-5. Production of the bridges. We apply a large SSSOM/T-OWL ruleset (in
-   `tmp/bridges.rules`, derived from a M4 source in `bridges/rules.m4`)
-   to produce bridging axioms from the mappings in the combined mapping
-   set obtained at step 4.
+5. Production of the bridges. We apply a large SSSOM/T-OWL ruleset
+   (derived from `bridge/bridges.rules`, see below for more details about
+   that ruleset) to produce bridging axioms from the mappings in the
+   combined mapping set obtained at step 4.
 6. Dispatching into individual bridges. The axioms produced at step 5
    are written to different bridges depending on the ontologies they are
    bridging (e.g., an axiom that bridges a Uberon term and a ZFA term
@@ -243,3 +244,76 @@ previously committed to the repository.
 Uberon maintainers should run `make refresh-bridges` periodically to
 refresh external resources and commit refreshed versions to the
 repository, similarly to what is needed to refresh the imports.
+
+### The bridging SSSOM/T-OWL ruleset
+
+The SSSOM/T-OWL ruleset mentioned in step 5 above is where most of the
+logic for the production of bridge files is described. For a general
+overview of the SSSOM/T-OWL language, please refer to the corresponding
+[documentation](https://incenp.org/dvlpt/sssom-java/sssom-ext/sssomt-owl.html)
+in the SSSOM-Java project.
+
+Because the ruleset is highly repetitive, with many almost identical
+rules for every species we need to bridge to, it is partially
+automatically generated from a taxa list found in the `config/taxa.yaml`
+file.
+
+An entry in the taxa list should look like the following:
+
+```yaml
+taxon_id: NCBITaxon:7227
+label: D melanogaster
+bridging:
+  - prefix: FBbt
+    namespace: http://purl.obolibrary.org/obo/FBbt_
+    label: D melanogaster
+    name: fbbt
+  - prefix: FBdv
+    namespace: http://purl.obolibrary.org/obo/FBdv_
+    label: D melanogaster
+    name: fbdv
+```
+
+* `taxon_id` is the NCBI taxonomic identifier for the species we are
+  bridging to.
+* `label` is the human-readable name of the taxon.
+* `bridging` is the list of bridges (there may be more than one, as in
+  example above) for that taxon.
+
+Each bridge is in turn described by:
+
+* the `prefix` identifying the terms the bridge should include;
+* the corresponding `namespace` the prefix expands to;
+* the human-readable `label` of the taxon that should be appended to the
+  label of each bridged term to form the “OBO Foundry Unique Label”;
+* the `name` of the bridge, which will be used to form the name of the
+  bridge file (`uberon-bridge-to-NAME.owl`).
+
+So, the example above states that `FBbt:*` terms (terms in the
+`http://purl.obolibrary.org/obo/FBbt_` namespace) mapped to Uberon terms
+should yield bridging axioms in a `uberon-bridge-to-fbbt.owl` bridge
+file, while `FBdv:*` terms (in the
+`http://purl.obolibrary.org/obo/FBdv_` namespace) mapped to Uberon terms
+should yield bridging axioms in a `uberon-bridge-to-fbdv.owl` file. In
+all cases, the bridged terms should be annotated with a “OBO Foundry
+Unique Label” annotation of the form “Uberon label (D melanogaster)”.
+
+Note that:
+
+* If a bridge does not have an explicit `namespace`, a default namespace
+  of `http://purl.obolibrary.org/obo/PREFIX_` is used.
+* If a bridge does not have an explicit `label`, the top-level `label`
+  for the taxon is used.
+* If a bridge does not have an explicit `name`, the default name is the
+  lowercase version of the prefix.
+
+Those default rules mean that the example above can be written more
+simply as:
+
+```yaml
+taxon_id: NCBITaxon:7227
+label: D melanogaster
+bridging:
+  - prefix: FBbt
+  - prefix: FBdv
+```
