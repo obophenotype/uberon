@@ -65,11 +65,17 @@ def generate_bridging_rules(f, taxa):
             f.write(f"""
 [{name}-uberon] subject=={prefix}:* object==UBERON:* {{
     predicate==* -> annotate(%{{subject_id}}, IAO:0000589, "%{{object_label}} ({label})");
-    predicate==semapv:crossSpeciesExactMatch -> create_axiom("%subject_id EquivalentTo: %object_id and (%TAXREL some {taxon_id})");
+    predicate==semapv:crossSpeciesExactMatch -> {{
+        create_axiom("%subject_id EquivalentTo: %object_id and (RO:0002162 some {taxon_id})");
+        create_axiom("%subject_id SubClassOf: %TAXREL some {taxon_id}");
+    }}
 }}
 [{name}-cl] subject=={prefix}:* object==CL:* {{
     predicate==* -> annotate(%{{subject_id}}, IAO:0000589, "%{{object_label}} ({label})");
-    predicate==semapv:crossSpeciesExactMatch -> create_axiom("%subject_id EquivalentTo: %object_id and (%TAXREL some {taxon_id})");
+    predicate==semapv:crossSpeciesExactMatch -> {{
+        create_axiom("%subject_id EquivalentTo: %object_id and (RO:0002162 some {taxon_id})");
+        create_axiom("%subject_id SubClassOf: %TAXREL some {taxon_id}");
+    }}
 }}
 """)
 
