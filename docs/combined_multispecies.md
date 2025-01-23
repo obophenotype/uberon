@@ -113,7 +113,7 @@ that `collected-drosophila` contains the following axiom (provided by the
 bridge between Uberon and FBbt):
 
 ```
-FBbt:00004865 EquivalentTo: UBERON:0000992 and (part_of some NCBITaxon:7227)
+FBbt:00004865 EquivalentTo: UBERON:0000992 and (in_taxon some NCBITaxon:7227)
 ```
 
 (`NCBITaxon:7227` being the identifier for the _Drosophila melanogaster_
@@ -132,7 +132,7 @@ FBbt:00004911 SubClassOf: continuous_with some FBbt:00004865
 gets rewritten as
 
 ```
-FBbt:00004911 SubClassOf: continous_with some (UBERON:00009992 and (part_of some NCBITaxon:7227))
+FBbt:00004911 SubClassOf: continous_with some (UBERON:00009992 and (in_taxon some NCBITaxon:7227))
 ```
 
 The figure below illustrates the resulting differences between a
