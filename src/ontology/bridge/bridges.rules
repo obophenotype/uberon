@@ -1,0 +1,125 @@
+# SSSOM is OBO-agnostic and doesn't know about the implicit OBO prefix
+# rule (PFX -> http://purl.obolibrary.org/obo/PFX_); *all* prefixes must
+# be explicitly declared.
+prefix AEO:       <http://purl.obolibrary.org/obo/AEO_>
+prefix BFO:       <http://purl.obolibrary.org/obo/BFO_>
+prefix BSPO:      <http://purl.obolibrary.org/obo/BSPO_>
+prefix CARO:      <http://purl.obolibrary.org/obo/CARO_>
+prefix CL:        <http://purl.obolibrary.org/obo/CL_>
+prefix GO:        <http://purl.obolibrary.org/obo/GO_>
+prefix IAO:       <http://purl.obolibrary.org/obo/IAO_>
+prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_>
+prefix NCIT:      <http://purl.obolibrary.org/obo/NCIT_>
+prefix OG:        <http://purl.obolibrary.org/obo/OG_>
+prefix OGES:      <http://purl.obolibrary.org/obo/OGES_>
+prefix OIO:       <http://www.geneontology.org/formats/oboInOwl#>
+prefix RO:        <http://purl.obolibrary.org/obo/RO_>
+prefix SCTID:     <http://purl.obolibrary.org/obo/SCTID_>
+prefix UBERON:    <http://purl.obolibrary.org/obo/UBERON_>
+%INSERT-TAX-SPECIFIC-PREFIXES
+
+# Uberon may not contain declarations for all the taxa we bridge to, so
+# to be on the safe side we declare all of them preventively.
+%INSERT-TAX-SPECIFIC-DIRECTIVES
+
+# The relation to use in the existential restrictions between Uberon/CL
+# terms and their taxon-specific equivalents: part_of (BFO:0000050) for
+# most cases, except for life stage terms where we use occurs_in
+# (BFO:0000066) instead.
+set_var("TAXREL", BFO:0000050);
+is_a(%{object_id}, UBERON:0000104) -> set_var("TAXREL", BFO:0000066);
+is_a(%{object_id}, UBERON:0000105) -> set_var("TAXREL", BFO:0000066);
+
+# Make sure UBERON and CL classes are on the object side.
+subject==UBERON:* || subject==CL:* -> invert();
+
+# Ignore any mapping to something else than UBERON or CL.
+!(object==UBERON:* || object==CL:*) -> stop();
+
+# Ignore any mapping to an inexistent or obsolete UBERON/CL class.
+!exists(%{object_id}) -> stop();
+
+# Do not allow a same foreign term to be mapped with more than one UBERON/CL class.
+!cardinality==*:1 -> stop();
+
+# Ignore any mapping with a predicate other than those four.
+!(predicate==skos:exactMatch
+  || predicate==skos:narrowMatch
+  || predicate==skos:broadMatch
+  || predicate==semapv:crossSpeciesExactMatch) -> stop();
+
+# Generate cross-reference annotations (for backward compatibility).
+[xrefs] predicate==* -> annotate(%{object_id}, OIO:hasDbXref, "%{subject_id|short}");
+
+# Bridging axiom-generating rules.
+# The highly repetitive nature of those rules stems from the fact that
+# we need separate rules for each foreign ontology and for both Uberon
+# and CL, if we want to be able to send the corresponding axioms to
+# separate bridge files.
+
+# Taxon-neutral bridges.
+[aeo-uberon] subject==AEO:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (AEO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+[aeo-cl] subject==AEO:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (AEO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+
+[bfo-uberon] subject==BFO:* object==UBERON:* {
+    predicate==*                -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (BFO)");
+    predicate==skos:narrowMatch -> create_axiom("%object_id SubClassOf: %subject_id");
+}
+[bfo-cl] subject==BFO:* object==CL:* {
+    predicate==*                -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (BFO)");
+    predicate==skos:narrowMatch -> create_axiom("%object_id SubClassOf: %subject_id");
+}
+
+[caro-uberon] subject==CARO:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (CARO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+[caro-cl] subject==CARO:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (CARO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+
+[go-uberon] subject==GO:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (GO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+[go-cl] subject==GO:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (GO)");
+    predicate==skos:exactMatch -> create_axiom("%subject_id EquivalentTo: %object_id");
+}
+
+[ncit-uberon] subject==NCIT:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (NCIT)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+[ncit-cl] subject==NCIT:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (NCIT)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+
+[oges-uberon] subject==OGES:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (OGES)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+[ncit-cl] subject==OGES:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (OGES)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+
+[sctid-uberon] subject==SCTID:* object==UBERON:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (SCTID)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+[sctid-cl] subject==SCTID:* object==CL:* {
+    predicate==*               -> annotate(%{subject_id}, IAO:0000589, "%{object_label} (SCTID)");
+    predicate==skos:broadMatch -> create_axiom("%subject_id SubClassOf: %object_id");
+}
+
+# Taxon-specific bridges.
+%INSERT-TAX-SPECIFIC-BRIDGES
