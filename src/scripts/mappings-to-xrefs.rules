@@ -1,0 +1,43 @@
+prefix UBERON:    <http://purl.obolibrary.org/obo/UBERON_>
+prefix oboInOwl:  <http://www.geneontology.org/formats/oboInOwl#>
+prefix MESH:      <http://id.nlm.nih.gov/mesh/>
+prefix AcarDv:    <http://purl.obolibrary.org/obo/AcarDv_>
+prefix BtauDv:    <http://purl.obolibrary.org/obo/BtauDv_>
+prefix CfamDv:    <http://purl.obolibrary.org/obo/CfamDv_>
+prefix ChirDv:    <http://purl.obolibrary.org/obo/ChirDv_>
+prefix CporDv:    <http://purl.obolibrary.org/obo/CporDv_>
+prefix DpseDv:    <http://purl.obolibrary.org/obo/DpseDv_>
+prefix DsimDv:    <http://purl.obolibrary.org/obo/DsimDv_>
+prefix EcabDv:    <http://purl.obolibrary.org/obo/EcabDv_>
+prefix FcatDv:    <http://purl.obolibrary.org/obo/FcatDv_>
+prefix GgalDv:    <http://purl.obolibrary.org/obo/GgalDv_>
+prefix GgorDv:    <http://purl.obolibrary.org/obo/GgorDv_>
+prefix HsapDv:    <http://purl.obolibrary.org/obo/HsapDv_>
+prefix MdomDv:    <http://purl.obolibrary.org/obo/MdomDv_>
+prefix MmulDv:    <http://purl.obolibrary.org/obo/MmulDv_>
+prefix MmusDv:    <http://purl.obolibrary.org/obo/MmusDv_>
+prefix OanaDv:    <http://purl.obolibrary.org/obo/OanaDv_>
+prefix OariDv:    <http://purl.obolibrary.org/obo/OariDv_>
+prefix OcunDv:    <http://purl.obolibrary.org/obo/OcunDv_>
+prefix PpanDv:    <http://purl.obolibrary.org/obo/PpanDv_>
+prefix PtroDv:    <http://purl.obolibrary.org/obo/PtroDv_>
+prefix RnorDv:    <http://purl.obolibrary.org/obo/RnorDv_>
+prefix SsalDv:    <http://purl.obolibrary.org/obo/SsalDv_>
+prefix SscrDv:    <http://purl.obolibrary.org/obo/SscrDv_>
+
+# Make sure UBERON classes, and only UBERON classes, are on the object side
+subject==UBERON:* -> invert();
+!object==UBERON:* -> stop();
+
+# Ignore any mapping to an inexistent or obsolete UBERON class.
+predicate==* -> check_object_existence();
+
+# Ignore any mapping where the same foreign term is mapped to more than one UBERON class.
+!cardinality==*:1 -> stop();
+
+# Create the hasDbXref annotation and annotate it with a subset of the mapping metadata
+object==UBERON:* -> annotate_object(oboInOwl:hasDbXref, "%subject_curie",
+                                    "direct:mapping_justification,
+                                            author_id,
+                                            creator_id,
+                                            mapping_provider");
