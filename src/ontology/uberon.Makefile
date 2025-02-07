@@ -1179,25 +1179,38 @@ $(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
 
 # Some special products derived from the products generated above
 # ----------------------------------------
-BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 
-composite-metazoan-basic.owl: composite-metazoan.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+# That ROBOT pipeline *approximately* mimic the following OWLTools commands:
+#   --mingraph (remove all axioms except SubClassOf, EquivalentClasses, and
+#               annotation assertions);
+#   --remove-axiom-annotations (as it says on the can);
+#   --make-subset-by-properties (remove all object properties except those specified).
+# FIXME: get rid of dangling classes
+composite-metazoan-basic.owl: composite-metazoan.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
-composite-vertebrate-basic.owl: composite-vertebrate.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+composite-vertebrate-basic.owl: composite-vertebrate.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
 
 # Helper commands for composite-* stuff
