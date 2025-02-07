@@ -291,26 +291,12 @@ mirror-caro: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/caro-download.owl -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
-## ONTOLOGY: ssso
-.PHONY: mirror-ssso
-.PRECIOUS: $(MIRRORDIR)/ssso.owl
-mirror-ssso: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
-
-## ONTOLOGY: mmusdv
-.PHONY: mirror-mmusdv
-.PRECIOUS: $(MIRRORDIR)/mmusdv.owl
-mirror-mmusdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/mmusdv.owl --create-dirs -o $(MIRRORDIR)/mmusdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/mmusdv-download.owl -o $(TMPDIR)/$@.owl; fi
-
-## ONTOLOGY: hsapdv
-.PHONY: mirror-hsapdv
-.PRECIOUS: $(MIRRORDIR)/hsapdv.owl
-mirror-hsapdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/hsapdv.owl --create-dirs -o $(MIRRORDIR)/hsapdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/hsapdv-download.owl -o $(TMPDIR)/$@.owl; fi
+## ONTOLOGY: sslso
+.PHONY: mirror-sslso
+.PRECIOUS: $(MIRRORDIR)/life-sslso.owl
+mirror-sslso: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages-base.owl --create-dirs -o $(TMPDIR)/life-stages-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(TMPDIR)/life-stages-download.owl -o $(TMPDIR)/$@.owl; fi
 
 
 # ----------------------------------------
@@ -344,18 +330,6 @@ imports/local-wb%.owl: mirror/wb%.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-# Ditto for MmusDv
-imports/local-mmusdv.owl: mirror/mmusdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/MmusDv_ \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
-# Ditto for HsapDv
-imports/local-hsapdv.owl: mirror/hsapdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/HsapDv_ \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
 # For EHDAA2, we need to preserve the AEO classes as well
 imports/local-ehdaa2.owl: mirror/ehdaa2.owl
 	$(ROBOT) remove -i $< \
@@ -370,16 +344,12 @@ imports/local-allen-%.owl: mirror/allen-%.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-# For the life stages ontology, by construction it includes classes from
-# all over the place, and we need to preserve most of them. We do not
-# preserve the FBdv and WBls classes however, since they are provided
-# by local-fbdv and local-wbls respectively.
-SSSO_PREFIXES = BtauDv DpseDv DsimDv GgalDv GgorDv HsapDv MdomDv MmulDv MmusDv OariDv PpanDv PtroDv RnorDv SscrDv ZFS
-imports/local-ssso.owl: mirror/ssso.owl
-	$(ROBOT) remove -i $< \
-		        $(foreach pfx,$(SSSO_PREFIXES),--base-iri $(URIBASE)/$(pfx)) \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
+# For the life stages ontology, we already got a base from upstream, but
+# we can't use the generic rule above as the ontology contains (by
+# construction) classes from all over the place. So we just convert it
+# to OFN without removing anything.
+imports/local-sslso.owl: mirror/sslso.owl
+	$(ROBOT) convert -i $< -f ofn -o $@
 
 # For the following ontologies, in addition to removing axioms about
 # external entities we also need to replace some old-style properties.
@@ -427,7 +397,7 @@ imports/local-ceph.owl: mirror/ceph.owl
 
 
 # Allow quickly refreshing all "local" imports
-LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa \
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv ma poro sslso wbbt wbls xao zfa \
 		allen-hba allen-dhba allen-mba allen-dmba allen-pba
 all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl)
 
@@ -904,7 +874,7 @@ subsets/vertebrate-head.obo: composite-vertebrate.owl
 # ----------------------------------------
 
 # TODO - switch to purls for OWL once released
-subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(IMPORTDIR)/local-mmusdv.owl $(IMPORTDIR)/local-hsapdv.owl
+subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.owl $(TMPDIR)/hsapdv.owl
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl
@@ -1053,14 +1023,16 @@ COLLECTED_xenopus_SOURCES =          $(IMPORTDIR)/local-xao.owl \
 COLLECTED_human_SOURCES =            $(IMPORTDIR)/local-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-aeo.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
 				     $(BRIDGEDIR)/cl-bridge-to-ehdaa2.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl
+				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl \
+				     $(TMPDIR)/hsapdv.owl
 
 COLLECTED_mouse_SOURCES =            $(IMPORTDIR)/local-emapa.owl \
-				     $(IMPORTDIR)/local-mmusdv.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-emapa.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl
+				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl \
+				     $(TMPDIR)/mmusdv.owl \
 
 # In principle this should also include FMA and its bridges, but we have
 # been excluded those for a while
@@ -1101,10 +1073,22 @@ COLLECTED_vertebrate_SOURCES =       $(COLLECTED_tetrapod_SOURCES) \
 COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 				     $(COLLECTED_drosophila_SOURCES) \
 				     $(COLLECTED_worm_SOURCES) \
-				     $(IMPORTDIR)/local-ssso.owl \
+				     $(IMPORTDIR)/local-sslso.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
 				     $(IMPORTDIR)/local-ceph.owl \
 				     $(IMPORTDIR)/local-cteno.owl \
 				     $(IMPORTDIR)/local-poro.owl
+
+COLLECTED_lifestages_SOURCES =       $(SUBSETDIR)/life-stages-minimal.owl \
+				     $(IMPORTDIR)/local-fbdv.owl \
+				     $(IMPORTDIR)/local-wbls.owl \
+				     $(IMPORTDIR)/local-sslso.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-fbdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-wbls.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
+				     $(TMPDIR)/xao-ls-bridged.owl
 
 
 # Composite pipeline proper
@@ -1132,22 +1116,28 @@ collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
 	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
+# Step 1c: collected-lifestages is special in that it should not
+# include Uberon and CL (only the life-stages-minimal subset).
+$(TMPDIR)/collected-lifestages.owl: $(BRIDGEDIR)/collected-lifestages-hdr.owl \
+				    $(COLLECTED_lifestages_SOURCES)
+	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
+
+# Step 1d: And it is also a released artefact.
+collected-lifestages.owl: $(TMPDIR)/collected-lifestages.owl
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
 # Step 2: Create a "composite" ontology. This is the core of the
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
-TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
-$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl | all_robot_plugins
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/tax-merges.tsv | all_robot_plugins
 	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'    -t NCBITaxon:9443 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Xenopus'    -t NCBITaxon:8353 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Danio'      -t NCBITaxon:7954 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Drosophila' -t NCBITaxon:7227 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'C elegans'  -t NCBITaxon:6237 \
+		 uberon:merge-species --remove-declarations \
+		                      --extended-translation \
+		                      --translate-gcas \
+		                      --batch-file $(TMPDIR)/tax-merges.tsv \
 		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
 		                              -l UBERON=10 -l CL=9 \
 		                              -d UBERON=10 -d CL=9 \
@@ -1155,16 +1145,45 @@ $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl | all_robot_plugins
 		 relax \
 		 reduce -r ELK -o $@
 
+# Step 2a: The "tax-merges.tsv" file used in the rule above is automatically
+# derived from the list of species in config/taxa.yaml.
+$(TMPDIR)/tax-merges.tsv: $(SCRIPTSDIR)/taxa.py config/taxa.yaml
+	python3 $(SCRIPTSDIR)/taxa.py make-merge-table config/taxa.yaml > $@
+
 # Step 3: Annotate the result of step 2. This is a separate step only so
-# that we can have explicit rules for composite-metazoan and
-# composite-vertebrate, because the ODK-generated Makefile already
-# defines a non-implicit rules with those targets.
+# that we can have explicit rules for composite-metazoan, -vertebrate,
+# and -lifestages, because the ODK-generated Makefile already defines a
+# non-implicit rules with those targets.
 composite-%.owl: $(TMPDIR)/composite-%.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+composite-lifestages.owl: $(TMPDIR)/composite-lifestages.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
+# XAO contains both anatomical terms and life stage terms. To build
+# collected-lifestages (step 1c above), we need to extract the life stage
+# terms only (all descendants of XAO:1000000, "Xenopus developmental stage"),
+# and bridge them with corresponding Uberon terms.
+$(TMPDIR)/xao-ls-bridged.owl: $(IMPORTDIR)/local-xao.owl \
+				       $(MAPPINGDIR)/uberon-local.sssom.tsv \
+				       | all_robot_plugins
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term XAO:1000000 \
+		 sssom:inject --sssom $(MAPPINGDIR)/uberon-local.sssom.tsv \
+		              --ruleset $(BRIDGEDIR)/bridge-xao-ls.rules \
+		              -o $@
+
+# SSLSO contains the entirety of HsapDv, but to construct collected-human,
+# we specifically need the HsapDv terms only, so we extract them from SSLSO.
+# This is also needed to construct the life-stages-mammal subset.
+$(TMPDIR)/hsapdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term HsapDv:0000000 -o $@
+
+# Ditto for MmusDv.
+$(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term MmusDv:0000000 -o $@
 
 
 # Some special products derived from the products generated above
@@ -1231,9 +1250,10 @@ $(MAPPINGDIR)/uberon-local.sssom.tsv: $(SRC) | all_robot_plugins
 
 # Uberon's "meta" mapping set, containing all mappings between Uberon
 # and foreign ontologies, regardless of where they are maintained. Made
-# by compiling the "local" set above with the FBbt set obtained below.
+# by compiling the "local" set above with the remote sets obtained below.
 $(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
-				$(MAPPINGDIR)/fbbt.sssom.tsv
+				$(MAPPINGDIR)/fbbt.sssom.tsv \
+				$(MAPPINGDIR)/sslso.sssom.tsv
 	sssom-cli $(foreach src, $^, -i $(src)) \
 		  --prefix-map-from-input \
 		  --rule 'object==UBERON:* -> invert()' \
@@ -1244,7 +1264,7 @@ $(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
 # -------------------
 
 # The following providers publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt cl biomappings
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl sslso biomappings
 
 # All the sets coming from the above ontologies.
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
@@ -1265,6 +1285,10 @@ $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 # contains all mappings related to CL (including the FBbt and ZFA ones).
 $(MAPPINGDIR)/cl.sssom.tsv: .FORCE
 	wget "http://purl.obolibrary.org/obo/cl/cl.sssom.tsv" -O $@
+
+# SSLSO (life stages) mapping set. We simply fetch it as it is.
+$(MAPPINGDIR)/sslso.sssom.tsv: .FORCE
+	wget "https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages.sssom.tsv" -O $@
 
 # Biomappings mapping set. Nominally a simple mirror, but we need a
 # custom rule for two reasons:
@@ -1300,10 +1324,10 @@ EXTERN_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 
 # 1. Prepare the ruleset file.
-# The ruleset file is maintained with M4 macros to make it more easily
-# editable, so we need to expand the macros first.
-$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
-	m4 $^ > $@
+# The ruleset file is maintained with the help of the Python script
+# to automatically insert the taxon-specific rules.
+$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/taxa.py config/taxa.yaml $(BRIDGEDIR)/bridges.rules
+	python3 $(SCRIPTSDIR)/taxa.py make-rules config/taxa.yaml $(BRIDGEDIR)/bridges.rules > $@
 
 # 2. Generate the bridges from the "meta" mapping set and the CL set.
 # Note that merging CL here is not strictly necessary, but doing so

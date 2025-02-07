@@ -119,7 +119,7 @@ Guidelines on the type of synonyms:
 
 Example: the terms “aorta wall”, “aortic wall” and “wall of aorta” all refer to the exact same concept and would be considered exact synonyms. Terms that may refer to other concepts, especially within the biomedical domain, should not be annotated as exact synonyms, including abbreviations. 
 
-2. A synonym that is an abbreviation should be annotated as a _related_ synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION`). 
+2. A synonym that is an abbreviation should be annotated as a _related_ synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/OMO_0003000`). 
 
 Example: “BA” is a related synonym for both 'basilar artery' and 'bed nucleus of the accessory olfactory tract' at the time of this writing. Additionally, within the biomedical domain, it can also represent 'brachial artery' or 'Bone Age', two other distinct concepts with separate OBO ontology terms.
 
