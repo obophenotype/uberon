@@ -738,13 +738,6 @@ $(REPORTDIR)/bfo-basic-check.txt: uberon-basic.owl $(BRIDGEDIR)/uberon-bridge-to
 # SUBSETS & VIEWS
 # ----------------------------------------
 
-# Create a seed from the standard (ODK-generated) Uberon seed to which
-# we add CL terms. This seed is used by several subsets below.
-tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
-	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp && \
-	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
-
-
 # System-specific subsets
 # ----------------------------------------
 
