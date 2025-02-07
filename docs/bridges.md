@@ -8,14 +8,14 @@ Uberon term and a term from the foreign ontology.
 For example, the `uberon-bridge-to-zfa` bridge contains axioms such as
 this one:
 
-> ZFA:0001262 EquivalentTo: UBERON:0005564 and (BFO:0000050 some NCBITaxon:7954)
+> ZFA:0001262 EquivalentTo: UBERON:0005564 and (RO:0002162 some NCBITaxon:7954)
 
 which states that ZFA’s [gonad
 primordium](http://purl.obolibrary.org/obo/ZFA_0001262) (ZFA:0001262) is
 equivalent to a Uberon’s [gonad
 primordium](http://purl.obolibrary.org/obo/UBERON_0005564)
-(UBERON:0005564) that is [part
-of](http://purl.obolibrary.org/obo/BFO_0000050) a
+(UBERON:0005564) that is [in
+taxon](http://purl.obolibrary.org/obo/RO_0002162) some
 [Danio](http://purl.obolibrary.org/obo/NCBITaxon_7954) (NCBITaxon:7954).
 
 Such a bridge may be used by anyone who wants to merge Uberon and ZFA to
