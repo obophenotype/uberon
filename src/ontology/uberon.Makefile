@@ -950,7 +950,7 @@ $(TMPDIR)/cumbo_subset_terms.txt: uberon-basic.owl
 		 export --header ID --export $@
 
 # 2. Then extract the subset itself
-subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.tx$(KEEPRELATIONS))
+subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELATIONS))
 	$(ROBOT) extract -i $< --method subset \
 		         --term-file $(TMPDIR)/cumbo_subset_terms.txt \
 		         --term-file $(KEEPRELATIONS) \
@@ -1180,7 +1180,7 @@ $(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
 # Some special products derived from the products generated above
 # ----------------------------------------
 
-# That ROBOT pipeline *approximately* mimic the following OWLTools commands:
+# That ROBOT pipeline *approximately* mimics the following OWLTools commands:
 #   --mingraph (remove all axioms except SubClassOf, EquivalentClasses, and
 #               annotation assertions);
 #   --remove-axiom-annotations (as it says on the can);
