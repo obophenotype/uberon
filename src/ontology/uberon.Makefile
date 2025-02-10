@@ -781,7 +781,7 @@ TERM_appendicular := UBERON:0002091
 TERM_life_cycle_stage := UBERON:0000105
 
 # Subset generation command
-SUBSETCMD=$(ROBOT) odk:subset -i $< -r whelk -a true --query "$(PART_OF) some $(TERM_ID)" --query $(TERM_ID) --replace true -o $@
+SUBSETCMD=$(ROBOT) odk:subset -i $< -r whelk -a true --query "$(PART_OF) some $(TERM_ID)" --query $(TERM_ID) -o $@
 
 # Source file for all the subsets generated below
 subsets/merged-partonomy.owl: uberon.owl
@@ -849,13 +849,11 @@ subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugin
 # TODO: need to add subclass axioms for all intersections
 subsets/musculoskeletal-full.obo: uberon.owl | all_robot_plugins
 	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0002204" \
-		            --replace true \
 		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
 		          --output $@
 
 subsets/vertebrate-head.obo: composite-vertebrate.owl | all_robot_plugins
 	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0000033" \
-		            --replace true \
 		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
 		          --output $@
 
@@ -868,16 +866,13 @@ subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.ow
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl | all_robot_plugins
-	$(ROBOT) odk:normalize -i $< \
-		               --inject-subset-declarations true \
-		               --inject-synonym-declarations true \
-		 odk:subset --subset life_stage --fill-gaps true --replace true \
+	$(ROBOT) odk:normalize -i $< --subset-decls true --synonym-decls true \
+		 odk:subset --subset life_stage --fill-gaps true \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		          --output $@
 
 subsets/life-stages-core.owl: uberon.owl | all_robot_plugins
-	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" \
-		            --include-ancestors true --replace true \
+	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" -a true \
 		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
 		          --annotation dc:description "Life cycle stage subset of uberon core (generic stages only)" \
 		          --output $@
@@ -950,7 +945,7 @@ $(TMPDIR)/cumbo_subset_terms.txt: uberon-basic.owl
 		 export --header ID --export $@
 
 # 2. Then extract the subset itself
-subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELATIONS))
+subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELATIONS)
 	$(ROBOT) extract -i $< --method subset \
 		         --term-file $(TMPDIR)/cumbo_subset_terms.txt \
 		         --term-file $(KEEPRELATIONS) \
@@ -958,13 +953,13 @@ subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELAT
 
 # Common anatony subset
 common-anatomy.owl: $(ONT).owl | all_robot_plugins
-	$(ROBOT) odk:subset -i $< --subset common_anatomy --fill-gaps true --replace true \
+	$(ROBOT) odk:subset -i $< --subset common_anatomy --fill-gaps true \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		          --output $@
 .PRECIOUS: common-anatomy.owl
 
 subsets/immaterial.obo: uberon.owl | all_robot_plugins
-	$(ROBOT) odk:subset -i $< --query UBERON:0000466 --replace true \
+	$(ROBOT) odk:subset -i $< --query UBERON:0000466 \
 		 annotate --ontology-iri $(URIBASE)/uberon/$@ --output $@
 
 %-partview.owl: %.owl
