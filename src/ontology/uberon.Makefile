@@ -18,7 +18,7 @@ OWLTOOLS_CAT_DYNAMIC=  OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --catalog-xml
 DC =                   http://purl.org/dc/elements/1.1
 RELEASE =              $(URIBASE)/uberon/releases/$(TODAY)
 QELK =                 --silence-elk
-PART_OF =              BFO_0000050
+PART_OF =              BFO:0000050
 
 
 all: uberon-qc
@@ -762,13 +762,6 @@ $(REPORTDIR)/bfo-basic-check.txt: uberon-basic.owl $(BRIDGEDIR)/uberon-bridge-to
 # SUBSETS & VIEWS
 # ----------------------------------------
 
-# Create a seed from the standard (ODK-generated) Uberon seed to which
-# we add CL terms. This seed is used by several subsets below.
-tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
-	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp && \
-	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
-
-
 # System-specific subsets
 # ----------------------------------------
 
@@ -788,7 +781,7 @@ TERM_appendicular := UBERON:0002091
 TERM_life_cycle_stage := UBERON:0000105
 
 # Subset generation command
-SUBSETCMD=$(OWLTOOLS) $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
+SUBSETCMD=$(ROBOT) odk:subset -i $< -r whelk -a true --query "$(PART_OF) some $(TERM_ID)" --query $(TERM_ID) -o $@
 
 # Source file for all the subsets generated below
 subsets/merged-partonomy.owl: uberon.owl
@@ -797,72 +790,72 @@ subsets/merged-partonomy.owl: uberon.owl
 		        -o $@
 .PRECIOUS: subsets/merged-partonomy.owl
 
-subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl
+subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_appendicular))
 	$(SUBSETCMD)
 
-subsets/circulatory-minimal.owl: subsets/merged-partonomy.owl
+subsets/circulatory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_circulatory))
 	$(SUBSETCMD)
 
-subsets/cranial-minimal.owl: subsets/merged-partonomy.owl
+subsets/cranial-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_cranial))
 	$(SUBSETCMD)
 
-subsets/digestive-minimal.owl: subsets/merged-partonomy.owl
+subsets/digestive-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_digestive))
 	$(SUBSETCMD)
 
-subsets/excretory-minimal.owl: subsets/merged-partonomy.owl
+subsets/excretory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_excretory))
 	$(SUBSETCMD)
 
-subsets/immune-minimal.owl: subsets/merged-partonomy.owl
+subsets/immune-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_immune))
 	$(SUBSETCMD)
 
-subsets/musculoskeletal-minimal.owl: subsets/merged-partonomy.owl
+subsets/musculoskeletal-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_musculoskeletal))
 	$(SUBSETCMD)
 
-subsets/nephron-minimal.owl: subsets/merged-partonomy.owl
+subsets/nephron-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_nephron))
 	$(SUBSETCMD)
 
-subsets/nervous-minimal.owl: subsets/merged-partonomy.owl
+subsets/nervous-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_nervous))
 	$(SUBSETCMD)
 
-subsets/pulmonary-minimal.owl: subsets/merged-partonomy.owl
+subsets/pulmonary-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_pulmonary))
 	$(SUBSETCMD)
 
-subsets/renal-minimal.owl: subsets/merged-partonomy.owl
+subsets/renal-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_renal))
 	$(SUBSETCMD)
 
-subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl
+subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_reproductive))
 	$(SUBSETCMD)
 
-subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
+subsets/sensory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_sensory))
 	$(SUBSETCMD)
 
-subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl
+subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_life_cycle_stage))
 	$(SUBSETCMD)
 
 # TODO: need to add subclass axioms for all intersections
-subsets/musculoskeletal-full.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ \
-		    "$(PART_OF) some UBERON_0002204" \
-		    -o -f obo file://`pwd`/$@  --reasoner-dispose
+subsets/musculoskeletal-full.obo: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0002204" \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --output $@
 
-subsets/vertebrate-head.obo: composite-vertebrate.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d "$(PART_OF) some UBERON_0000033" \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    -o -f obo --no-check $@ --reasoner-dispose 2>&1 > $@.LOG
+subsets/vertebrate-head.obo: composite-vertebrate.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0000033" \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --output $@
 
 
 # Life stages subsets
@@ -872,27 +865,17 @@ subsets/vertebrate-head.obo: composite-vertebrate.owl
 subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.owl $(TMPDIR)/hsapdv.owl
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
-subsets/life-stages-composite.owl: composite-metazoan.owl
-	$(ROBOT) query --input $< \
-		       --update $(SPARQLDIR)/inject-life-stages-subset.ru \
-		       --update $(SPARQLDIR)/inject-subset-declaration.ru \
-		       --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
-	$(OWLTOOLS) $@ --extract-ontology-subset --fill-gaps --subset life_stage \
-		       -o $@.tmp.owl && mv $@.tmp.owl $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
+subsets/life-stages-composite.owl: composite-metazoan.owl | all_robot_plugins
+	$(ROBOT) odk:normalize -i $< --subset-decls true --synonym-decls true \
+		 odk:subset --subset life_stage --fill-gaps true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
-subsets/life-stages-core.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
-		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-subsets/life-stages-core.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
-		    -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
+subsets/life-stages-core.owl: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" -a true \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --annotation dc:description "Life cycle stage subset of uberon core (generic stages only)" \
+		          --output $@
 
 
 # Taxon subsets
@@ -955,21 +938,29 @@ subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
 # ----------------------------------------
 
 # Cumbo subset
-subsets/cumbo.owl: uberon-basic.owl
-	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
+# 1. Extract the list of terms for the subset
+$(TMPDIR)/cumbo_subset_terms.txt: uberon-basic.owl
+	$(ROBOT) filter -i $< --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
+		        --select 'oboInOwl:inSubset=uberon:cumbo' \
+		 export --header ID --export $@
+
+# 2. Then extract the subset itself
+subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELATIONS)
+	$(ROBOT) extract -i $< --method subset \
+		         --term-file $(TMPDIR)/cumbo_subset_terms.txt \
+		         --term-file $(KEEPRELATIONS) \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ --output $@
 
 # Common anatony subset
-common-anatomy.owl: $(ONT).owl
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy \
-		    -o $@.tmp.owl && mv $@.tmp.owl $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
+common-anatomy.owl: $(ONT).owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< --subset common_anatomy --fill-gaps true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 .PRECIOUS: common-anatomy.owl
 
-subsets/immaterial.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
+subsets/immaterial.obo: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< --query UBERON:0000466 \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ --output $@
 
 %-partview.owl: %.owl
 	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level \
@@ -1183,25 +1174,38 @@ $(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
 
 # Some special products derived from the products generated above
 # ----------------------------------------
-BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 
-composite-metazoan-basic.owl: composite-metazoan.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+# That ROBOT pipeline *approximately* mimics the following OWLTools commands:
+#   --mingraph (remove all axioms except SubClassOf, EquivalentClasses, and
+#               annotation assertions);
+#   --remove-axiom-annotations (as it says on the can);
+#   --make-subset-by-properties (remove all object properties except those specified).
+# FIXME: get rid of dangling classes
+composite-metazoan-basic.owl: composite-metazoan.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
-composite-vertebrate-basic.owl: composite-vertebrate.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+composite-vertebrate-basic.owl: composite-vertebrate.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
 
 # Helper commands for composite-* stuff
