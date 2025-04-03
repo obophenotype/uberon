@@ -36,8 +36,6 @@ predicate==* -> check_object_existence();
 !cardinality==*:1 -> stop();
 
 # Create the hasDbXref annotation and annotate it with a subset of the mapping metadata
-object==UBERON:* -> annotate_object(oboInOwl:hasDbXref, "%subject_curie",
-                                    "direct:mapping_justification,
-                                            author_id,
-                                            creator_id,
-                                            mapping_provider");
+object==UBERON:* -> annotate(%{object_id}, oboInOwl:hasDbXref, "%subject_curie",
+                            /annots="mapping_justification,author_id,creator_id,mapping_provider,see_also",
+                            /annots_uris="standard_map");
