@@ -6,6 +6,7 @@ repo: uberon
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+use_mappings: True
 export_formats:
   - owl
   - obo
@@ -20,15 +21,20 @@ release_artefacts:
   - full
   - simple
   - basic
-  - custom-ext
-  - custom-basic
+  - custom-collected-metazoan
   - custom-composite-metazoan
   - custom-composite-metazoan-basic
   - custom-composite-vertebrate
   - custom-composite-vertebrate-basic
+  - custom-collected-lifestages
+  - custom-composite-lifestages
   - custom-common-anatomy
 edit_format: obo
 import_group:
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - OMO:0002000
   use_base_merging: TRUE
   slme_individuals: exclude
   exclude_iri_patterns:
@@ -38,6 +44,8 @@ import_group:
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
+    - <http://www.ncbi.nlm.nih.gov/gene/*>
+    - <http://birdgenenames.org/cgnc/GeneReport*>
   products:
     - id: pr
       make_base: TRUE
@@ -45,7 +53,8 @@ import_group:
     - id: cl
       use_base: TRUE
     - id: go
-      use_base: TRUE
+      make_base: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/go/go-base.owl
       base_iris:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
@@ -64,8 +73,17 @@ import_group:
     - id: bfo
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: ncbitaxondisjoints
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
     - id: nbo
       use_base: TRUE
+    - id: orcidio
+      mirror_from: https://w3id.org/orcidio/orcidio.owl
+      base_iris:
+        - https://orcid.org/
+      module_type: custom
+    - id: omo
+      module_type: mirror
 subset_group:
   products:
     - id: appendicular-minimal
@@ -80,7 +98,6 @@ subset_group:
     - id: life-stages-core
     - id: life-stages-minimal
     - id: merged-partonomy
-    - id: metazoan-view
     - id: mouse-view
     - id: musculoskeletal-minimal
     - id: nephron-minimal
@@ -90,9 +107,29 @@ subset_group:
     - id: reproductive-minimal
     - id: sensory-minimal
     - id: xenopus-view
-    - id: amniote-basic
-    - id: euarchontoglires-basic
+    - id: amniote-view
+    - id: euarchontoglires-view
+sssom_mappingset_group:
+  products:
+    - id: fbbt
+      maintenance: manual
+    - id: cl
+      maintenance: manual
+    - id: sslso
+      maintenance: manual
+    - id: biomappings
+      maintenance: manual
+    - id: uberon-local
+      maintenance: manual
+    - id: uberon
+      maintenance: manual
+    - id: import-corrections
+      maintenance: manual
 robot_java_args: '-Xmx20G'
+robot_plugins:
+  plugins:
+    - name: uberon
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.2/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
@@ -109,6 +146,7 @@ robot_report:
     - obsolete-replaced_by
     - xrefs-mesh-pattern
     - label-synonym-polysemy
+    - id-format
   custom_sparql_exports:
     - basic-report
 owltools_memory: '20G'
@@ -117,6 +155,7 @@ documentation:
   documentation_system: mkdocs
 components:
   products:
+    - filename: disjoint_union_over.owl
     - filename: mappings.owl
     - filename: in-subset.owl
     - filename: hra_subset.owl
