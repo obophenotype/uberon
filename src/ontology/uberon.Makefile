@@ -10,10 +10,6 @@ BRI=                   true
 
 OWLSRC =               $(TMPDIR)/uberon-edit.owl
 POSTPROCESS_SRC =      $(TMPDIR)/uberon.owl
-CATALOG_DYNAMIC =      catalog-dynamic.xml
-OWLTOOLS_NO_CAT=       OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools
-OWLTOOLS_CAT_DYNAMIC=  OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --catalog-xml $(CATALOG_DYNAMIC)
-
 
 DC =                   http://purl.org/dc/elements/1.1
 RELEASE =              $(URIBASE)/uberon/releases/$(TODAY)
@@ -29,26 +25,6 @@ all: uberon-qc
 # We need this to expand the COLLECTED_*_SOURCES variables in the
 # composite pipeline.
 .SECONDEXPANSION:
-
-
-# ----------------------------------------
-# XML CATALOG
-# ----------------------------------------
-
-$(CATALOG_DYNAMIC):
-	@echo "From this day (12 March 2021) forward, $(CATALOG_DYNAMIC) is maintained"
-	@echo "manually. If you must update it, run 'make update_dynamic_catalog'."
-	@echo "Please review the diff carefully as some entries may be omitted."
-
-.PHONY: update_dynamic_catalog
-update_dynamic_catalog:
-	@echo "WARNING: You are updating the dynamic catalog. Note that this is done on"
-	@echo "WARNING: the basis of a previous run of WARNING: the pipeline, so all"
-	@echo "WARNING: files are expected to be available. Do not do this if you dont"
-	@echo "WARNING: know what you are doing."
-	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl \
-		mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl > $@.tmp && \
-		mv $@.tmp $@
 
 
 # ----------------------------------------
