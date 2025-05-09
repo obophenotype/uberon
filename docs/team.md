@@ -10,12 +10,16 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | ---- | ---- | ---- | ---- | ---- | ---- |
 | David Osumi-Sutherland (@dosumis) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch), [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | some | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy |
 | Chris Mungall (@cmungall) | [Phenomics First](https://grantome.com/grant/NIH/RM1-HG010860-01) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Lead | Coordination, Strategy, TCs/Orphan taxa/evolutionary variability |
+| Aleix Puig | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch)|0| [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Editing for HuBMAP and as issues require |
 | Alex Diehl | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Immune cells |
+| Alida Avola (@AvolaAmg) | BICAN/HMBA | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Brain/nervous system, new term requests for BICAN |
 | Anita Caron (@anitacaron)| | 0.2 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Bulk Edits, Quality Control, Pipeline. |
+| Caroline Eastwood (@Caroline-99) | CZI | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New term requests for CELLxGENE |
 | Ceri Van Slyke (@cerivs) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
 | Chuan Xu || 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
-| Damien Goutte-Gattat | [FlyBase](https://flybase.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | Contributing to FBbt-Uberon mappings. |
+| Damien Goutte-Gattat (@gouttegd) | [FlyBase](https://flybase.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | FBbt-Uberon mappings, legacy pipelines extermination |
 | Ellen M Quardokus (@emquardokus) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch)|0| [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Human Biomolecular Atlas Program (HuBMAP) new term requests.|
+| Jasmine Belfiore (@JABelfiore) | CAP | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New term requests for CAP/HCA/HDCA |
 | Jim Balhoff (@balhoff) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
 | Joshua Fortriede | |0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
 | Meghan Balk (@megbalk)|  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
@@ -29,7 +33,6 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | Tiago Lubiana Alves (@lubianat) |  | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New Term Requests. |
 | Wasila Dahdul (@wdahdul) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
 | Yvonne Bradford (@ybradford) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
-| Bradley Varner (@bvarner-ebi) | [Cell Annotation Platform]() | 1 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New cell types & edits for CAP |
 
 
 ## Past team members and major contributors

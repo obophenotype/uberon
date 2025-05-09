@@ -14,7 +14,7 @@ Uberon is a cross-species ontology, and editors should be careful when adding ta
 
 ## Relations Guide
 
-The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but [here's the folder](../patterns/generated))
+The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but [here's the folder](https://github.com/obophenotype/uberon/tree/master/patterns/generated))
 
 #### overlaps
 
@@ -43,7 +43,7 @@ means that
 2. All parts of the brain endothelium are part of the brain (e.g. all cells that are part_of the brain endothelium are also cells that are part_of the brain) 
 3. Brain endothelium are part_of some brain at all times. (Makes more of a difference for cells being part of anatomical structure, e.g. a blood cell is not part_of the brain endothelium because it moves out of the brain endothelium.)
 
-Related Equivalence Pattern: [X_part_of_X](../patterns/generated/X_part_of_X.yaml)
+Related Equivalence Pattern: [X_part_of_X](https://github.com/obophenotype/uberon/blob/master/patterns/generated/X_part_of_X.yaml)
 
 #### has part
 
@@ -73,6 +73,98 @@ Note: `develops from` does not necessarily the subject directly develops from th
 ## Defined Classes
 
 Sometimes it is useful to define a grouping classes that automatically classify other terms, for example the term "small intestine Peyer's patch" has a logical definition that can be used to automatically classify terms for Peyer's patch in various parts of the small intestine (duodenum, ilium etc). In these case, it is important to use an established pattern (or to extend the established patterns if this is needed).  Established patterns are documented in DOSDP templates  - see: < add link to templates or to MD doc generated from them>
+
+## Cross-references to the literature
+Assertions in textual definitions, evidence provided in comments, and synonyms should be backed up by citing the appropriate literature.
+
+Citations are made by cross-references, that is by adding `http://www.geneontology.org/formats/oboInOwl#hasDbXref` annotations to the definition, comment, and synonym annotations. Add one such annotation per reference, using the CURIE syntax with well-known prefixes:
+
+* `PMID:1234567` for a PubMed identifier;
+* `doi:xx.yyyy/...` for a DOI;
+* `ISBN:...` for a ISBN.
+
+If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
+
+If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D054326, NOT MESH:A07.015.908.194.500.
+
+ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.
+
+**Technical details of adding a cross-reference using Protégé**:
+
+For CURIEs, ORCIDs: In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+For adding URLs to text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+For adding URLs to axioms that are NOT text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**source**](http://www.geneontology.org/formats/oboInOwl#source).
+
+
+For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
+
+In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
+
+For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
+
+For URLs: Enter the URL as a literal string. Note: In OWL-based files (like cl-edit.owl), Datatype `xsd:anyURI` is also selected; however, in OBO-based files (like uberon-edit.obo) these always become strings, so no selection needs to be made for Datatype in Uberon. Datatype selection is planned to be implemented in a future OBO revision, and updates can be checked at https://github.com/owlcollab/oboformat/issues/128.
+NOTE: URLs should be avoided when a cross-reference with a CURIE is otherwise available.
+
+
+
+To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
+
+## Synonyms
+
+Extensive addition of synonyms helps “findability” of terms when searching. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+
+Guidelines on the type of synonyms:
+
+1. Use an _exact_ synonym only when the label and the synonym can be used interchangeably without dispute and refer to the same concept. 
+
+Example: the terms “aorta wall”, “aortic wall” and “wall of aorta” all refer to the exact same concept and would be considered exact synonyms. Terms that may refer to other concepts, especially within the biomedical domain, should not be annotated as exact synonyms, including abbreviations. 
+
+2. A synonym that is an abbreviation should be annotated as a _related_ synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/OMO_0003000`). 
+
+Example: “BA” is a related synonym for both 'basilar artery' and 'bed nucleus of the accessory olfactory tract' at the time of this writing. Additionally, within the biomedical domain, it can also represent 'brachial artery' or 'Bone Age', two other distinct concepts with separate OBO ontology terms.
+
+3. Exact synonyms should be unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should not be an exact synonym for any other Uberon term.
+
+4. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. 
+
+Example: stating that “trunk wall” is a narrow synonym of 'body wall' means that “trunk wall“ refers to a narrower (i.e., more specific) concept than 'body wall', not the other way around.
+
+5. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be unclear, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
+
+6. If a synonym includes a mix of abbreviations and words, the annotation property 'has related synonym' with has_synonym_type "abbreviation" should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
+
+Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, among many things, the CHEBI term "DG" (7-deazaguanine).
+
+Compare the previous example to “EC layer 1”, which should be a _related_ synonym (with synonym type "abbreviation") of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.
+
+## Design Pattern Usage with DOSDP
+
+
+The Uberon ontology is composed of a large number of terms, classifications and relationships, which continue to increase. As maintaining manually all these classifications and relationships would be an arduous task, a substantial portion of the maintenance is automated. This automation depends, to a significant extent, on the systematic application of design patterns.
+
+Uberon uses **Dead simple OWL design patterns** (DOSDP, [Osumi-Sutherland *et al.*, 2017](https://doi.org/10.1186/s13326-017-0126-0)) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.
+
+All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obophenotype/uberon/tree/master/src/patterns/dosdp-patterns), while the editable tables are located in [/src/patterns/data/default](https://github.com/obophenotype/uberon/tree/master/src/patterns/data/default).
+
+### Connecting vessels
+ Pattern name: vessel_connecting_branch_of_vessel_pattern.yaml
+
+Blood and lymphatic vessels are tubes that convey body fluids through the tissues and organs, forming branching or networked structures. The relation between a vessel and its branches can be recorded in several ways:
+
+- [RO:0002375](http://purl.obolibrary.org/obo/RO_0002375) in branching relationship with
+    - [RO:0002252](http://purl.obolibrary.org/obo/RO_0002252) connecting branch of
+    - [RO:0002253](http://purl.obolibrary.org/obo/RO_0002253) has connecting branch
+    - [RO:0002377](http://purl.obolibrary.org/obo/RO_0002377) distributary of
+        - [RO:0002378](http://purl.obolibrary.org/obo/RO_0002378) anabranch of
+    - [RO:0002380](http://purl.obolibrary.org/obo/RO_0002380) branching part of
+    - [RO:0002381](http://purl.obolibrary.org/obo/RO_0002381) main stem of
+    - [RO:0002569](http://purl.obolibrary.org/obo/RO_0002569) has branching part
+
+However, while it is useful to have this wide range of object properties to record relations between branches, it can also lead to selecting a property that does not accurately reflect the relationship between subject and object. An example of this is the misuse of '[branching part of](http://purl.obolibrary.org/obo/RO_0002380)', which is a subclass of 'part of', but it has been used extensively for branches that are no longer part of the stem.
+
+Therefore, we need standarization for how branching relationships should be recorded in Uberon. The object property 'connecting branch of' is a subproperty of 'connected to' and should be used to describe the relation between a branching vessel and the stem vessel. Ex:
+
+['axillary artery'](http://purl.obolibrary.org/obo/UBERON_0001394) *SubClassOf* ['connected to'](http://purl.obolibrary.org/obo/RO_0002252) some ['subclavian aretery'](http://purl.obolibrary.org/obo/UBERON_0001533)
 
 ## General Tips
 

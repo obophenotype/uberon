@@ -1,0 +1,296 @@
+#curie_map:
+#  BTO: http://purl.obolibrary.org/obo/BTO_
+#  IDOMAL: http://purl.obolibrary.org/obo/IDOMAL_
+#  UBERON: http://purl.obolibrary.org/obo/UBERON_
+#  VO: http://purl.obolibrary.org/obo/VO_
+#  mesh: http://id.nlm.nih.gov/mesh/
+#  orcid: https://orcid.org/
+#mapping_set_id: https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
+#mapping_set_version: 0.3.8.dev0
+#mapping_set_title: Biomappings
+#mapping_set_description: Biomappings is a repository of community curated and predicted equivalences and related mappings between named biological entities that are not available from primary sources. It's also a place where anyone can contribute curations of predicted mappings or their own novel mappings.
+#creator_id:
+#  - orcid:0000-0001-9439-5346
+#  - orcid:0000-0002-1216-4761
+#  - orcid:0000-0002-2046-6145
+#  - orcid:0000-0002-2627-0696
+#  - orcid:0000-0002-6601-2165
+#  - orcid:0000-0003-1307-2508
+#  - orcid:0000-0003-4423-4370
+#license: https://creativecommons.org/publicdomain/zero/1.0/
+#mapping_provider: https://github.com/biopragmatics/biomappings
+subject_id	subject_label	predicate_id	predicate_modifier	object_id	object_label	mapping_justification	author_id	mapping_tool	confidence
+UBERON:0000016	endocrine pancreas	skos:exactMatch		mesh:D007515	Islets of Langerhans	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0000017	exocrine pancreas	skos:exactMatch		mesh:D046790	Pancreas, Exocrine	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000018	compound eye	skos:exactMatch		IDOMAL:0002421	compound eye	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.778
+UBERON:0000044	dorsal root ganglion	skos:exactMatch		mesh:D005727	Ganglia, Spinal	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0000066	fully formed stage	skos:exactMatch		IDOMAL:0001253	adult stage	semapv:LexicalMatching		mira	0.556
+UBERON:0000076	external ectoderm	skos:exactMatch		BTO:0006242	external ectoderm	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0000104	life cycle	skos:exactMatch	Not	mesh:D008018	Life Cycle Stages	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000105	life cycle stage	skos:exactMatch		mesh:D008018	Life Cycle Stages	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000106	zygote stage	skos:exactMatch		IDOMAL:0000302	zygote stage	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370		
+UBERON:0000113	post-juvenile adult stage	skos:exactMatch		IDOMAL:0001253	adult stage	semapv:LexicalMatching		mira	0.556
+UBERON:0000120	blood brain barrier	skos:exactMatch		mesh:D001812	Blood-Brain Barrier	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000127	facial nucleus	skos:exactMatch		mesh:D065828	Facial Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000159	anal canal	skos:exactMatch		mesh:D001003	Anal Canal	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000167	oral cavity	skos:exactMatch		mesh:D009055	Mouth	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0000175	pleural effusion	skos:exactMatch		mesh:D010996	Pleural Effusion	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000220	atlanto-occipital joint	skos:exactMatch		mesh:D001269	Atlanto-Occipital Joint	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000341	throat	skos:exactMatch		mesh:D010614	Pharynx	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0000353	parenchyma	skos:exactMatch		BTO:0001539	parenchyma	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0000353	parenchyma	skos:exactMatch	Not	BTO:0000999	plant parenchyma	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0000387	meniscus	skos:exactMatch		mesh:D000072600	Meniscus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000467	anatomical system	skos:exactMatch		IDOMAL:0002460	anatomical system	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.778
+UBERON:0000477	anatomical cluster	skos:exactMatch		IDOMAL:0002461	anatomical cluster	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.778
+UBERON:0000480	anatomical group	skos:exactMatch		IDOMAL:0002459	anatomical group	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.778
+UBERON:0000569	ileocecal valve	skos:exactMatch		mesh:D007080	Ileocecal Valve	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000922	embryo	skos:exactMatch		IDOMAL:0000646	embryo	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.778
+UBERON:0000939	imaginal disc	skos:exactMatch		mesh:D060227	Imaginal Discs	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0000990	reproductive system	skos:exactMatch		mesh:D005835	Genitalia	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001009	circulatory system	skos:exactMatch		mesh:D002319	Cardiovascular System	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001049	neural tube	skos:exactMatch		mesh:D054259	Neural Tube	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001156	ascending colon	skos:exactMatch		mesh:D044682	Colon, Ascending	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001157	transverse colon	skos:exactMatch		mesh:D044684	Colon, Transverse	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001158	descending colon	skos:exactMatch		mesh:D044683	Colon, Descending	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001173	biliary tree	skos:exactMatch		mesh:D001659	Biliary Tract	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001263	pancreatic acinus	skos:exactMatch	Not	BTO:0000028	pancreatic acinar cell	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0001268	peritoneal fluid	skos:exactMatch		mesh:D001202	Ascitic Fluid	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001347	white adipose tissue	skos:exactMatch		mesh:D052436	Adipose Tissue, White	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001377	quadriceps femoris	skos:exactMatch		mesh:D052097	Quadriceps Muscle	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001439	compact bone tissue	skos:exactMatch		mesh:D000071538	Cortical Bone	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001473	lymphatic vessel	skos:exactMatch		mesh:D042601	Lymphatic Vessels	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001555	digestive tract	skos:exactMatch		mesh:D041981	Gastrointestinal Tract	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001601	extra-ocular muscle	skos:exactMatch		mesh:D009801	Oculomotor Muscles	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001642	superior sagittal sinus	skos:exactMatch		mesh:D054063	Superior Sagittal Sinus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001683	jugal bone	skos:exactMatch		mesh:D015050	Zygoma	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001715	oculomotor nuclear complex	skos:exactMatch		mesh:D065838	Oculomotor Nuclear Complex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001742	epiglottic cartilage	skos:exactMatch		mesh:D004825	Epiglottis	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001797	vitreous humor	skos:exactMatch		mesh:D014822	Vitreous Body	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001806	sympathetic ganglion	skos:exactMatch		mesh:D005728	Ganglia, Sympathetic	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001808	parasympathetic ganglion	skos:exactMatch		mesh:D005726	Ganglia, Parasympathetic	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001823	nasal cartilage	skos:exactMatch		mesh:D055171	Nasal Cartilages	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001856	semicircular duct	skos:exactMatch		mesh:D054776	Semicircular Ducts	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001862	vestibular labyrinth	skos:exactMatch		mesh:D014722	Vestibule, Labyrinth	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001863	scala vestibuli	skos:exactMatch		mesh:D054738	Scala Vestibuli	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001870	frontal cortex	skos:exactMatch		mesh:D005625	Frontal Lobe	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001883	olfactory tubercle	skos:exactMatch		mesh:D066208	Olfactory Tubercle	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001886	choroid plexus	skos:exactMatch	Not	VO:0011021	CP	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.556
+UBERON:0001907	zona incerta	skos:exactMatch		mesh:D065820	Zona Incerta	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001931	lateral preoptic nucleus	skos:exactMatch		BTO:0006166	nucleus preopticus lateralis	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0001943	midbrain tegmentum	skos:exactMatch		mesh:D013681	Tegmentum Mesencephali	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001944	pretectal region	skos:exactMatch		mesh:D066250	Pretectal Region	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001947	red nucleus	skos:exactMatch		BTO:0006329	red nucleus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0001965	substantia nigra pars compacta	skos:exactMatch		mesh:D065842	Pars Compacta	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001966	substantia nigra pars reticulata	skos:exactMatch		mesh:D065841	Pars Reticulata	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0001977	blood serum	skos:exactMatch		mesh:D044967	Serum	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0001995	fibrocartilage	skos:exactMatch		mesh:D051445	Fibrocartilage	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002020	gray matter	skos:exactMatch		mesh:D066128	Gray Matter	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002035	medial preoptic nucleus	skos:exactMatch		BTO:0006167	nucleus preopticus medialis	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0002043	dorsal raphe nucleus	skos:exactMatch		mesh:D065847	Dorsal Raphe Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002062	endocardial cushion	skos:exactMatch		mesh:D054089	Endocardial Cushions	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002072	hypodermis	skos:exactMatch		mesh:D040521	Subcutaneous Tissue	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002090	postcranial axial skeleton	skos:exactMatch		mesh:D013131	Spine	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002101	limb	skos:exactMatch		mesh:D005121	Extremities	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002120	pronephros	skos:exactMatch		mesh:D060910	Pronephros	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002128	superior olivary complex	skos:exactMatch		mesh:D065832	Superior Olivary Complex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002141	parvocellular oculomotor nucleus	skos:exactMatch		mesh:D065839	Edinger-Westphal Nucleus	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002142	pedunculopontine tegmental nucleus	skos:exactMatch		mesh:D045042	Pedunculopontine Tegmental Nucleus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370		
+UBERON:0002145	interpeduncular nucleus	skos:exactMatch		mesh:D066268	Interpeduncular Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002152	middle cerebellar peduncle	skos:exactMatch		mesh:D065837	Middle Cerebellar Peduncle	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002156	nucleus raphe magnus	skos:exactMatch		mesh:D065846	Nucleus Raphe Magnus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002157	nucleus raphe pallidus	skos:exactMatch		mesh:D065848	Nucleus Raphe Pallidus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002186	bronchiole	skos:exactMatch		mesh:D055745	Bronchioles	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002190	subcutaneous adipose tissue	skos:exactMatch		mesh:D015434	Panniculitis	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002207	xiphoid process	skos:exactMatch		mesh:D014989	Xiphoid Bone	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002219	subfornical organ	skos:exactMatch		BTO:0006266	subfornical organ	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002228	rib	skos:exactMatch	Not	VO:0012403	Rib	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370		
+UBERON:0002236	costal cartilage	skos:exactMatch		mesh:D066186	Costal Cartilage	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002242	nucleus pulposus	skos:exactMatch		mesh:D000070614	Nucleus Pulposus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002262	celiac ganglion	skos:exactMatch		BTO:0006296	celiac ganglion	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002295	scala media	skos:exactMatch		mesh:D003053	Cochlear Duct	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002316	white matter	skos:exactMatch		mesh:D066127	White Matter	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002373	palatine tonsil	skos:exactMatch		mesh:D014066	Palatine Tonsil	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002393	pharyngotympanic tube	skos:exactMatch		mesh:D005064	Eustachian Tube	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002396	vomer	skos:exactMatch		mesh:D055172	Vomer	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002409	pericardial fluid	skos:exactMatch		mesh:D000069236	Pericardial Fluid	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002410	autonomic nervous system	skos:exactMatch		IDOMAL:0002126	visceral nervous system	semapv:LexicalMatching		mira	0.556
+UBERON:0002412	vertebra	skos:exactMatch		BTO:0006196	vertebra	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002430	lateral hypothalamic area	skos:exactMatch		BTO:0006481	lateral hypothalamus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0002469	esophagus mucosa	skos:exactMatch		mesh:D000071041	Esophageal Mucosa	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002493	uterine artery	skos:exactMatch		mesh:D055988	Uterine Artery	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002540	lateral line system	skos:exactMatch		mesh:D053403	Lateral Line System	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002548	larva	skos:exactMatch		mesh:D007814	Larva	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002590	prepyriform area	skos:exactMatch		mesh:D066195	Piriform Cortex	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002600	limbic lobe	skos:exactMatch		mesh:D065726	Limbic Lobe	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002623	cerebral peduncle	skos:exactMatch		mesh:D065850	Cerebral Peduncle	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002625	median preoptic nucleus	skos:exactMatch		BTO:0006168	nucleus preopticus medianus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0002631	cerebral crus	skos:exactMatch		mesh:D065843	Cerebral Crus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002633	motor nucleus of trigeminal nerve	skos:exactMatch		mesh:D066266	Trigeminal Motor Nucleus	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002639	midbrain reticular formation	skos:exactMatch		mesh:D066265	Midbrain Reticular Formation	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002656	periamygdaloid area	skos:exactMatch		mesh:D066277	Periamygdaloid Cortex	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002682	abducens nucleus	skos:exactMatch		mesh:D065827	Abducens Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002684	nucleus raphe obscurus	skos:exactMatch		mesh:D065849	Nucleus Raphe Obscurus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002689	supraoptic crest	skos:exactMatch		mesh:D066278	Organum Vasculosum	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002689	supraoptic crest	skos:exactMatch		BTO:0006268	organum vasculosum laminae terminalis	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0002704	metathalamus	skos:exactMatch		mesh:D005829	Geniculate Bodies	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002705	midline nuclear group	skos:exactMatch		mesh:D020644	Midline Thalamic Nuclei	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002707	corticospinal tract	skos:exactMatch		BTO:0006132	corticospinal tract	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002714	rubrospinal tract	skos:exactMatch		BTO:0006159	rubrospinal tract	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002726	cervical spinal cord	skos:exactMatch		mesh:D066193	Cervical Cord	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002743	basal forebrain	skos:exactMatch		mesh:D066187	Basal Forebrain	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002751	inferior temporal gyrus	skos:exactMatch		BTO:0006175	inferior temporal gyrus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002752	olivocerebellar tract	skos:exactMatch		BTO:0006157	olivocerebellar fiber system	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0002754	predorsal bundle	skos:exactMatch		mesh:D065844	Tectospinal Fibers	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002769	superior temporal gyrus	skos:exactMatch		BTO:0006177	superior temporal gyrus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002771	middle temporal gyrus	skos:exactMatch		BTO:0006176	middle temporal gyrus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0002776	ventral nuclear group	skos:exactMatch		mesh:D020651	Ventral Thalamic Nuclei	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002883	central amygdaloid nucleus	skos:exactMatch		mesh:D066274	Central Amygdaloid Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002894	olfactory cortex	skos:exactMatch		mesh:D066194	Olfactory Cortex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002895	secondary olfactory cortex	skos:exactMatch		mesh:D018728	Entorhinal Cortex	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0002932	trapezoid body	skos:exactMatch		mesh:D065833	Trapezoid Body	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0002967	cingulate gyrus	skos:exactMatch		mesh:D006179	Gyrus Cinguli	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0003011	facial motor nucleus	skos:exactMatch		mesh:D065828	Facial Nucleus	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0003023	pontine tegmentum	skos:exactMatch		mesh:D065821	Pontine Tegmentum	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003044	uncinate fasciculus	skos:exactMatch		mesh:D000083382	Uncinate Fasciculus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003050	olfactory placode	skos:exactMatch		BTO:0006222	olfactory placode	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003055	periderm	skos:exactMatch		BTO:0003377	periderm	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003060	pronephric duct	skos:exactMatch		BTO:0005991	pronephric duct	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003074	mesonephric duct	skos:exactMatch		BTO:0005990	mesonephric duct	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003075	neural plate	skos:exactMatch		mesh:D054258	Neural Plate	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003089	sclerotome	skos:exactMatch		BTO:0006255	sclerotome	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003128	cranium	skos:exactMatch		mesh:D012886	Skull	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0003143	pupa	skos:exactMatch		mesh:D011679	Pupa	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003209	blood nerve barrier	skos:exactMatch		mesh:D049428	Blood-Nerve Barrier	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003460	arm bone	skos:exactMatch		mesh:D050280	Arm Bones	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003462	facial bone	skos:exactMatch		mesh:D005147	Facial Bones	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003679	mouth floor	skos:exactMatch		BTO:0006184	mouth floor	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003687	foramen magnum	skos:exactMatch		BTO:0006035	foramen magnum	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003823	hindlimb zeugopod	skos:exactMatch	Not	VO:0010971	SurA	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.521
+UBERON:0003881	CA1 field of hippocampus	skos:exactMatch		mesh:D056547	CA1 Region, Hippocampal	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003882	CA2 field of hippocampus	skos:exactMatch		mesh:D056651	CA2 Region, Hippocampal	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003883	CA3 field of hippocampus	skos:exactMatch		mesh:D056654	CA3 Region, Hippocampal	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0003911	choroid plexus epithelium	skos:exactMatch		BTO:0006008	choroid plexus epithelium	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0003937	reproductive gland	skos:exactMatch		BTO:0006162	reproductive gland	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0004016	dermatome	skos:exactMatch		BTO:0006248	dermatome	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0004035	cortical subplate	skos:exactMatch	Not	VO:0011276	SP	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370		
+UBERON:0004199	S-shaped body	skos:exactMatch	Not	VO:0010896	Ssb	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370		
+UBERON:0004341	primitive streak	skos:exactMatch		mesh:D054240	Primitive Streak	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0004550	gastroesophageal sphincter	skos:exactMatch		mesh:D049630	Esophageal Sphincter, Lower	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0004637	otic capsule	skos:exactMatch		BTO:0005981	auditory capsule	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0004676	spinal cord lateral horn	skos:exactMatch		mesh:D066152	Spinal Cord Lateral Horn	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0004720	cerebellar vermis	skos:exactMatch		mesh:D065814	Cerebellar Vermis	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0004725	piriform cortex	skos:exactMatch		mesh:D066195	Piriform Cortex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0004749	blastodisc	skos:exactMatch		mesh:D054239	Blastodisc	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005290	myelencephalon	skos:exactMatch		mesh:D054024	Myelencephalon	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005335	chorioallantoic membrane	skos:exactMatch		mesh:D049033	Chorioallantoic Membrane	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005343	cortical plate	skos:exactMatch		mesh:D002540	Cerebral Cortex	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0005343	cortical plate	skos:exactMatch	Not	VO:0011021	CP	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	mira	0.556
+UBERON:0005366	olfactory lobe	skos:exactMatch		mesh:D066194	Olfactory Cortex	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0005403	ventral striatum	skos:exactMatch		mesh:D066328	Ventral Striatum	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005408	circumventricular organ	skos:exactMatch		mesh:D066280	Circumventricular Organs	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005408	circumventricular organ	skos:exactMatch		BTO:0006267	circumventricular organ	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0005438	coronary sinus	skos:exactMatch		mesh:D054326	Coronary Sinus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005456	jugular foramen	skos:exactMatch		mesh:D000080869	Jugular Foramina	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005498	primitive heart tube	skos:exactMatch		BTO:0006179	cardiac tube	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0005631	extraembryonic membrane	skos:exactMatch		mesh:D005321	Extraembryonic Membranes	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005742	adventitia	skos:exactMatch		mesh:D063194	Adventitia	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005777	glomerular basement membrane	skos:exactMatch		mesh:D050533	Glomerular Basement Membrane	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0005902	occipital region	skos:exactMatch		mesh:D009778	Occipital Lobe	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006083	perirhinal cortex	skos:exactMatch		mesh:D000071039	Perirhinal Cortex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006098	basal nuclear complex	skos:exactMatch		mesh:D001479	Basal Ganglia	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006108	corticomedial nuclear complex	skos:exactMatch		mesh:D066276	Corticomedial Nuclear Complex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006444	annulus fibrosus	skos:exactMatch		mesh:D000070616	Annulus Fibrosus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006514	pallidum	skos:exactMatch		mesh:D005917	Globus Pallidus	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006562	pharynx	skos:exactMatch		mesh:D010614	Pharynx	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006588	round ligament of liver	skos:exactMatch		mesh:D000069592	Round Ligament of Liver	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006589	round ligament of uterus	skos:exactMatch		mesh:D012404	Round Ligament of Uterus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006614	aponeurosis	skos:exactMatch		mesh:D000070606	Aponeurosis	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006657	glenoid fossa	skos:exactMatch		mesh:D061165	Glenoid Cavity	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006675	venous valve	skos:exactMatch		mesh:D055422	Venous Valves	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0006692	vertebral canal	skos:exactMatch		mesh:D013115	Spinal Canal	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006810	olecranon	skos:exactMatch		mesh:D056740	Olecranon Process	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0006812	mental foramen	skos:exactMatch		mesh:D000080383	Mental Foramen	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007109	meconium	skos:exactMatch		mesh:D008470	Meconium	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007132	head kidney	skos:exactMatch		mesh:D060226	Head Kidney	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007251	preoptic nucleus	skos:exactMatch		mesh:D011301	Preoptic Area	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0007268	upper esophageal sphincter	skos:exactMatch		mesh:D049631	Esophageal Sphincter, Upper	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007329	pancreatic duct	skos:exactMatch		mesh:D010183	Pancreatic Ducts	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007380	dermal scale	skos:exactMatch		mesh:D000075342	Animal Scales	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0007381	epidermal scale	skos:exactMatch		mesh:D000075342	Animal Scales	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0007412	midbrain raphe nuclei	skos:exactMatch		mesh:D066267	Midbrain Raphe Nuclei	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007632	Barrington's nucleus	skos:exactMatch		mesh:D065835	Barrington's Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007634	parabrachial nucleus	skos:exactMatch		mesh:D065823	Parabrachial Nucleus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007641	trigeminal nuclear complex	skos:exactMatch		mesh:D014278	Trigeminal Nuclei	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0007703	spinothalamic tract	skos:exactMatch		mesh:D013133	Spinothalamic Tracts	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0007703	spinothalamic tract	skos:exactMatch		BTO:0006128	spinothalamic tract	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0008266	periodontal ligament	skos:exactMatch		mesh:D010513	Periodontal Ligament	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0008269	nacre	skos:exactMatch		mesh:D060734	Nacre	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0008275	carapace	skos:exactMatch		mesh:D060105	Animal Shells	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0008826	pulmonary surfactant	skos:exactMatch		mesh:D011663	Pulmonary Surfactants	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0008904	neuromast	skos:exactMatch		BTO:0006219	neuromast	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0008969	dental follicle	skos:exactMatch		mesh:D003795	Dental Sac	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0008974	apocrine gland	skos:exactMatch		mesh:D001050	Apocrine Glands	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0009040	deep circumflex iliac artery	skos:exactMatch		mesh:D007083	Iliac Artery	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0009097	gravid organism	skos:exactMatch		IDOMAL:0000443	gravid	semapv:LexicalMatching		mira	0.556
+UBERON:0009127	epibranchial ganglion	skos:exactMatch		BTO:0006250	epibranchial ganglion	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0009755	spermaceti	skos:exactMatch		mesh:C009301	spermaceti	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0009757	ambergris	skos:exactMatch		mesh:D018648	Ambergris	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0009951	main olfactory bulb	skos:exactMatch		mesh:D009830	Olfactory Bulb	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0010264	hepatopancreas	skos:exactMatch		mesh:D043143	Hepatopancreas	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0010361	synostosis	skos:exactMatch		mesh:D013580	Synostosis	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0010725	accessory navicular bone	skos:exactMatch		mesh:C536002	Accessory navicular bone	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0011004	pharyngeal arch cartilage	skos:exactMatch		BTO:0006051	pharyngeal arch cartilage	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0011117	superior tibiofibular joint	skos:exactMatch		mesh:D007719	Knee Joint	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0011119	carpometacarpal joint	skos:exactMatch		mesh:D052737	Carpometacarpal Joints	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0011132	intercarpal joint	skos:exactMatch		mesh:D050824	Carpal Joints	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0011166	patellofemoral joint	skos:exactMatch		mesh:D057071	Patellofemoral Joint	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0011390	pudendal nerve	skos:exactMatch		mesh:D060525	Pudendal Nerve	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0011895	endomysium	skos:exactMatch		BTO:0006241	endomysium	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0011905	plantaris	skos:exactMatch		BTO:0006312	plantaris muscle	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0012245	silk	skos:exactMatch		mesh:D047011	Silk	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0012245	silk	skos:exactMatch	Not	BTO:0002854	corn silk	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:0013218	rete mirabile	skos:exactMatch		BTO:0006363	rete mirabile	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0013422	infratemporal fossa	skos:exactMatch		mesh:D000080884	Infratemporal Fossa	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0013755	arterial blood	skos:exactMatch		BTO:0006188	arterial blood	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0013756	venous blood	skos:exactMatch		BTO:0006187	venous blood	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0014374	embryoid body	skos:exactMatch		mesh:D058732	Embryoid Bodies	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0014398	respiratory muscle	skos:exactMatch		mesh:D012132	Respiratory Muscles	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0014537	periamygdaloid cortex	skos:exactMatch		mesh:D066277	Periamygdaloid Cortex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0014621	cervical spinal cord ventral horn	skos:exactMatch		mesh:D066151	Spinal Cord Ventral Horn	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0015169	tapetum	skos:exactMatch		BTO:0001350	tapetum	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0015488	sural nerve	skos:exactMatch		mesh:D013497	Sural Nerve	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0016435	chest wall	skos:exactMatch		mesh:D035441	Thoracic Wall	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0016530	parietal cortex	skos:exactMatch		mesh:D010296	Parietal Lobe	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0016538	temporal cortex	skos:exactMatch		mesh:D013702	Temporal Lobe	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0016884	shoulder joint	skos:exactMatch		mesh:D012785	Shoulder Joint	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0018141	anterior perforated substance	skos:exactMatch		mesh:D066208	Olfactory Tubercle	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:0018144	cervical rib	skos:exactMatch		mesh:D057070	Cervical Rib	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0018388	cercaria	skos:exactMatch		mesh:D058487	Cercaria	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0022469	primary olfactory cortex	skos:exactMatch	Not	mesh:D066194	Olfactory Cortex	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0034921	multi organ part structure	skos:exactMatch		IDOMAL:0002461	anatomical cluster	semapv:LexicalMatching		mira	0.556
+UBERON:0034971	aortic body	skos:exactMatch		mesh:D001016	Aortic Bodies	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0034971	aortic body	skos:exactMatch		BTO:0006193	aortic body	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0035032	abdominal oblique muscle	skos:exactMatch		mesh:D000071596	Abdominal Oblique Muscles	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0035050	excretory duct	skos:exactMatch		BTO:0006341	excretory duct	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:0035618	parapharyngeal space	skos:exactMatch		mesh:D000080886	Parapharyngeal Space	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0036016	honey	skos:exactMatch		mesh:D006722	Honey	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0036145	glymphatic system	skos:exactMatch		mesh:D000077502	Glymphatic System	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:0036243	vaginal fluid	skos:exactMatch		BTO:0003084	vaginal fluid	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:1000010	mole	skos:exactMatch		mesh:D009506	Nevus	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:2000006	ball	skos:exactMatch		mesh:D015452	Precursor B-Cell Lymphoblastic Leukemia-Lymphoma	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:2000188	corpus cerebelli	skos:exactMatch		mesh:D002531	Cerebellum	semapv:LexicalMatching		generate_uberon_mesh_mappings.py	0.9
+UBERON:2000293	synencephalon	skos:exactMatch		BTO:0006476	synencephalon	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:2000297	vagal lobe	skos:exactMatch		BTO:0006431	vagal lobe	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:2000356	gill raker	skos:exactMatch		BTO:0002149	gill raker	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:2001553	manubrium	skos:exactMatch		mesh:D008371	Manubrium	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:2001977	pad	skos:exactMatch	Not	mesh:D058729	Peripheral Arterial Disease	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:3010463	animal cap	skos:exactMatch		BTO:0004724	animal cap	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:3010586	vasa efferentia	skos:exactMatch		BTO:0002254	vas efferens	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:4000104	ganoine	skos:exactMatch		mesh:C067951	ganoine	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:4000163	anal fin	skos:exactMatch		BTO:0004652	anal fin	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:4000164	caudal fin	skos:exactMatch		BTO:0001827	tail fin	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:4200215	suture	skos:exactMatch		mesh:D013537	Sutures	semapv:ManualMappingCuration	orcid:0000-0001-9439-5346		
+UBERON:4300194	photophore	skos:exactMatch		BTO:0001477	photophore	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:8440012	cerebral nuclei	skos:exactMatch		BTO:0006534	cerebral nucleus	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	https://github.com/biomappings/biomappings/blob/530a1b/scripts/generate_uberon_bto_mappings.py	0.556
+UBERON:8450002	excretory system	skos:exactMatch		BTO:0006338	excretory system	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
+UBERON:8480040	ovarian fluid	skos:exactMatch		BTO:0004569	ovarian fluid	semapv:ManualMappingCuration	orcid:0000-0003-4423-4370	generate_uberon_bto_mappings.py	0.9
