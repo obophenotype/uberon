@@ -1,6 +1,6 @@
 # UBERON Ontology Project Guide
 
-This includes instructions for editing the npso ontology. 
+This includes instructions for editing the uberon ontology. 
 
 ## Project Layout
 - Main development file is `src/ontology/uberon-edit.obo`
@@ -32,7 +32,7 @@ This includes instructions for editing the npso ontology.
 - IMPORTANT: Do not edit the edit file directly, it's large
 - Add edits should be made in the `terms/` folder
 - check out a term into `terms/`: `obo-checkout.pl src/ontology/uberon-edit.obo UBERON:1234567 [OTHER IDS]`
-- This will create a single stanza obo files `terms/npso_1234567.obo` which you can easily edit
+- This will create a single stanza obo files `terms/UBERON_1234567.obo` which you can easily edit
      - (note the colon is replaced with an underscore)
 - You can go ahead and edit the smallers files in the `terms/` folder
 - After edits, check back in: `obo-checkin.pl src/ontology/uberon-edit.obo UBERON:1234567 [OTHER IDS]`
@@ -67,6 +67,7 @@ This includes instructions for editing the npso ontology.
 - Include PMIDs for all assertions
 - Follow naming conventions from parent terms
 - always commit in a branch, e.g. issue-NNN
+- if there is an existing PR which you started then checkout that branch and continue, rather than starting a new PR (unless you explicitly want to abandon the original PR, e.g. it was on completely the wrong tracks)
 - always make clear detailed commit messages, saying what you did and why
 - always sign your commits `@dragon-ai-agent`
 - create PRs using `gh pr create ...`
