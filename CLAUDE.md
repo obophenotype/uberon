@@ -39,6 +39,7 @@ This includes instructions for editing the uberon ontology.
 - if you like you can edit multiple terms in one batch, e.g. `terms/my_batch.obo`
      - `obo-checkout.pl src/ontology/uberon-edit.obo terms/my_batch.obo`
 - checking in will update the edit file and remove the file from `terms/`
+- before committing, src/ontology/uberon-edit.obo should be reserialised via `robot convert -i  src/ontology/uberon-edit.obo -f obo -o src/ontology/uberon-edit.obo`
 - Commits are then made on src/ontology/uberon-edit.obo as appropriate
 - Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
 
