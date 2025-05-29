@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                6aea60042d9473ba3bbb6b4809391bcdba20de22661cb52de0923810ef63b2f4
+CONFIG_HASH=                1ccbfde45887094272fef19dee1800f556f82eb747dfdcb128f92fb2fa916976
 
 
 # ----------------------------------------
@@ -233,6 +233,7 @@ all_subsets: $(SUBSET_FILES)
 
 MAPPINGS =  fbbt cl sslso biomappings uberon-local uberon import-corrections
 
+RELEASED_MAPPINGS =  uberon
 
 MAPPING_FILES = $(foreach p, $(MAPPINGS), $(MAPPINGDIR)/$(p).sssom.tsv)
 RELEASED_MAPPING_FILES = $(foreach p, $(RELEASED_MAPPINGS), $(MAPPINGDIR)/$(p).sssom.tsv)
@@ -358,9 +359,12 @@ prepare_release_fast:
 .PHONY: copy_release_files
 copy_release_files:
 	rsync -R $(RELEASE_ASSETS) $(RELEASEDIR)
+	mkdir -p $(RELEASEDIR)/mappings
+	cp -rf $(RELEASED_MAPPING_FILES) $(RELEASEDIR)/mappings
 
 # All released assets, in their final location within the release
-RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), $(RELEASEDIR)/$(n))
+RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), $(RELEASEDIR)/$(n)) \
+			     $(foreach n,$(RELEASED_MAPPINGS), $(RELEASEDIR)/mappings/$(n).sssom.tsv)
 
 .PHONY: show_release_assets
 show_release_assets:
@@ -831,9 +835,8 @@ $(MAPPINGDIR)/biomappings.sssom.tsv:
 $(MAPPINGDIR)/uberon-local.sssom.tsv:
 	test -f $@
 
-# This mappingset is manually curated, so we only check that the file actually exists.
-$(MAPPINGDIR)/uberon.sssom.tsv:
-	test -f $@
+$(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/fbbt.sssom.tsv $(MAPPINGDIR)/cl.sssom.tsv $(MAPPINGDIR)/sslso.sssom.tsv
+	sssom-cli --output $@ $^
 
 # This mappingset is manually curated, so we only check that the file actually exists.
 $(MAPPINGDIR)/import-corrections.sssom.tsv:
