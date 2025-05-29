@@ -16,21 +16,20 @@ These are the current imports in UBERON
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
-| cl | http://purl.obolibrary.org/obo/cl.owl | None |
-| go | http://purl.obolibrary.org/obo/go/go-base.owl | None |
-| envo | http://purl.obolibrary.org/obo/envo.owl | None |
-| ro | http://purl.obolibrary.org/obo/ro.owl | None |
-| bspo | http://purl.obolibrary.org/obo/bspo.owl | None |
-| chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | None |
-| pato | http://purl.obolibrary.org/obo/pato.owl | None |
-| bfo | http://purl.obolibrary.org/obo/bfo.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
-| ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | None |
-| nbo | http://purl.obolibrary.org/obo/nbo.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | slme |
+| cl | http://purl.obolibrary.org/obo/cl.owl | slme |
+| go | http://purl.obolibrary.org/obo/go/go-base.owl | slme |
+| envo | http://purl.obolibrary.org/obo/envo.owl | slme |
+| ro | http://purl.obolibrary.org/obo/ro.owl | slme |
+| bspo | http://purl.obolibrary.org/obo/bspo.owl | slme |
+| chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | slme |
+| pato | http://purl.obolibrary.org/obo/pato.owl | slme |
+| bfo | http://purl.obolibrary.org/obo/bfo.owl | slme |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | slme |
+| ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | slme |
+| nbo | http://purl.obolibrary.org/obo/nbo.owl | slme |
 | orcidio | https://w3id.org/orcidio/orcidio.owl | custom |
 | omo | http://purl.obolibrary.org/obo/omo.owl | mirror |
-
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
 
@@ -45,6 +44,6 @@ These are the components in UBERON
 | disjoint_union_over.owl | None |
 | mappings.owl | None |
 | in-subset.owl | None |
-| hra_subset.owl | None |
+| hra_subset.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl |
 | vasculature_class.owl | None |
-| hra_depiction_3d_images.owl | None |
+| hra_depiction_3d_images.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl |

@@ -7,6 +7,7 @@ repo: uberon
 report_fail_on: None
 use_dosdps: TRUE
 use_mappings: True
+manage_import_declarations: false
 export_formats:
   - owl
   - obo
@@ -122,7 +123,12 @@ sssom_mappingset_group:
     - id: uberon-local
       maintenance: manual
     - id: uberon
-      maintenance: manual
+      maintenance: merged
+      source_mappings:
+        - fbbt
+        - cl
+        - sslso
+      release_mappings: true
     - id: import-corrections
       maintenance: manual
 robot_java_args: '-Xmx20G'
@@ -158,6 +164,11 @@ components:
     - filename: disjoint_union_over.owl
     - filename: mappings.owl
     - filename: in-subset.owl
+      use_template: true
+      templates:
+        - in-subset.template.tsv
     - filename: hra_subset.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl
     - filename: vasculature_class.owl
     - filename: hra_depiction_3d_images.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl

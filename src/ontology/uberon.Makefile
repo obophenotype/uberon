@@ -1357,30 +1357,8 @@ endif
 # COMPONENTS
 # ----------------------------------------
 
-$(COMPONENTSDIR)/in-subset.owl: $(SRC) $(TEMPLATEDIR)/in-subset.template.tsv
-	$(ROBOT) template --template $(TEMPLATEDIR)/in-subset.template.tsv \
-		 annotate --ontology-iri $(ONTBASE)/$@ \
-		          --output $(COMPONENTSDIR)/in-subset.owl
-
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-ifeq ($(strip $(MIR)),true)
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-endif
-
-3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
-$(TMPDIR)/hra_depiction_3d_images.owl:
-	wget $(3D_IMAGES_COMP_URL) -O $@
-
-$(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 
 # The mappings.owl component contains cross-references to foreign
 # ontologies that provide their own mappings as a SSSOM set. This
@@ -1405,16 +1383,7 @@ DEPLOY_GH=true
 uberon:
 	$(MAKE) prepare_release MIR=false IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) release-diff
-	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
-		     $(MAPPINGDIR)/uberon.sssom.tsv
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 .PHONY: release-diff
 release-diff:
