@@ -842,8 +842,7 @@ subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.ow
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
 subsets/life-stages-composite.owl: composite-metazoan.owl | all_robot_plugins
-	$(ROBOT) odk:normalize -i $< --subset-decls true --synonym-decls true \
-		 odk:subset --subset life_stage --fill-gaps true \
+	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" -a true \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		          --output $@
 
