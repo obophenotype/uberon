@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-emapa.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2025-01-15/bridge/cl-bridge-to-emapa.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2025-05-28/bridge/cl-bridge-to-emapa.owl"/>
         <terms:creator>Anne Niknejad</terms:creator>
         <terms:creator>Aurelie Comte</terms:creator>
         <terms:creator>CL editors</terms:creator>
@@ -69,6 +69,12 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
     
 
 
@@ -151,12 +157,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002091"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>primary polar body (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -170,12 +182,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002093"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>secondary polar body (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -189,12 +207,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002093"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>secondary polar body (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -208,12 +232,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002497"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>primary trophoblast giant cell (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -227,12 +257,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002239"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>ooblast (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -246,12 +282,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002238"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>male gonocyte (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -265,12 +307,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000178"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>Leydig cell (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -284,12 +332,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002174"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>follicular cell of ovary (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -303,12 +357,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000020"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>spermatogonium (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -322,12 +382,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000017"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>spermatocyte (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     
@@ -341,12 +407,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000018"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>spermatid (embryonic mouse)</obo:IAO_0000589>
     </owl:Class>
     

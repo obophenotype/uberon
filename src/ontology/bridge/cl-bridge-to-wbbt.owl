@@ -8,7 +8,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/cl-bridge-to-wbbt.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2025-01-15/bridge/cl-bridge-to-wbbt.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2025-05-28/bridge/cl-bridge-to-wbbt.owl"/>
     </owl:Ontology>
     
 
@@ -44,6 +44,12 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002162 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002162"/>
     
 
 
@@ -210,12 +216,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000066"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>epithelial cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -229,12 +241,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000187"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>muscle cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -248,12 +266,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000540"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -267,12 +291,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000000"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -286,12 +316,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000099"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>interneuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -305,12 +341,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000617"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>GABAergic neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -324,12 +366,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000100"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>motor neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -343,12 +391,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000421"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>coelomocyte (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -362,12 +416,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000101"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>sensory neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -381,12 +441,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000418"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>arcade cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -400,12 +466,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000424"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>excretory cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -419,12 +491,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000700"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>dopaminergic neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -438,12 +516,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000586"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>germ cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -457,12 +541,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000023"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>oocyte (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -476,12 +566,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000019"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>sperm (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -495,12 +591,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000017"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>spermatocyte (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -514,12 +616,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000018"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>spermatid (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -533,12 +641,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000679"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>glutamatergic neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -552,12 +666,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000850"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>serotonergic neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -571,12 +691,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000108"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>cholinergic neuron (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -590,12 +716,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002321"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>embryonic cell (metazoa) (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -609,12 +741,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000411"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>Caenorhabditis hypodermal cell (worm)</obo:IAO_0000589>
     </owl:Class>
     
@@ -628,12 +766,18 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0002090"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6237"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000589>polar body (worm)</obo:IAO_0000589>
     </owl:Class>
 </rdf:RDF>
