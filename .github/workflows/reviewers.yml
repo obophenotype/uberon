@@ -10,7 +10,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     outputs:
-      intersection_of_found: ${{ steps.check_intersection_of.outputs.result }}
+      intersection_of_found: ${{ steps.check_intersection_of.outputs.intersection_of_found }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
