@@ -7,40 +7,53 @@ on:
       - src/ontology/uberon-edit.obo
 
 jobs:
-  assign-reviewer:
+  check:
     runs-on: ubuntu-latest
-
+    outputs:
+      intersection_of_found: ${{ steps.check_intersection_of.outputs.result }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch the entire history for all branches
-      
+          fetch-depth: 0
+
       - name: Fetch base branch
         run: |
-          git fetch origin ${{ github.base_ref }}  # Fetch base branch explicitly
-      
+          git fetch origin ${{ github.base_ref }}
+
       - name: Check if equivalent class axiom was edited
         id: check_intersection_of
         run: |
           git diff origin/${{ github.base_ref }}...HEAD -- src/ontology/uberon-edit.obo > diff.txt
           if grep -E '^(-|\+)intersection_of:' diff.txt; then
-            echo "intersection_of_found=true" >> $GITHUB_ENV
+            echo "intersection_of_found=true" >> $GITHUB_OUTPUT
           else
-            echo "intersection_of_found=false" >> $GITHUB_ENV
+            echo "intersection_of_found=false" >> $GITHUB_OUTPUT
           fi
 
+  assign-reviewer:
+    needs: check
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        reviewer: [ "cmungall", "dosumis", "aleixpuigb", "Caroline-99" ]
+    steps:
       - name: Assign reviewer
-        if: env.intersection_of_found == 'true'
+        continue-on-error: true
+        if: needs.check.outputs.intersection_of_found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
             --method POST \
-            --field reviewers[]=cmungall
+            --field reviewers[]=${{ matrix.reviewer }}
 
+  request-change:
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
       - name: Block PR by requesting changes
-        if: env.intersection_of_found == 'true'
+        if: needs.check.outputs.intersection_of_found == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
