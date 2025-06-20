@@ -1397,6 +1397,16 @@ release-diff:
 # UTILITY COMMANDS
 # ----------------------------------------
 
+# Allocating definitive IDs
+# ----------------------------------------#
+.PHONY: allocate-definitive-ids
+allocate-definitive-ids: | all_robot_plugins
+	$(ROBOT) kgcl:mint -i $(SRC) \
+		           --temp-id-prefix http://purl.obolibrary.org/obo/UBERON_99 \
+		           --id-range-name Automation \
+		 convert -f obo --check false -o $(SRC)
+
+
 # Spellchecking
 # ----------------------------------------
 
