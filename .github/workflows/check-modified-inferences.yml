@@ -42,6 +42,8 @@ jobs:
           echo "ROBOT_PLUGINS_DIRECTORY=base/src/ontology/tmp/plugins/" >> "$GITHUB_ENV"
 
       - name: Run the inference diff report
+        # See <https://obophenotype.github.io/uberon-robot-plugin/inference-diff.html>
+        # for details on how the inference-diff command works and the reports that it generates.
         run: |
           robot uberon:inference-diff --input head/src/ontology/uberon-edit.obo \
                                       --catalog head/src/ontology/catalog-v001.xml \
