@@ -1,0 +1,34 @@
+name: Allocate definitive IDs
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'src/ontology/uberon-edit.obo'
+  workflow_dispatch:
+
+jobs:
+  assign_ids:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Reallocate all temporary IDs as definitive IDs and rewrite
+      # axioms accordingly; this will in effect be a no-op if there is
+      # in fact no temporary IDs to reallocate.
+      - name: Allocate definitive IDs
+        run: |
+          cd src/ontology
+          make allocate-definitive-ids
+
+      # Commit the changes; the 'push' action takes care of checking
+      # whether there are changes to commit at all, so if no IDs were
+      # reallocated, nothing will happen here.
+      - name: Commit and push changes
+        uses: actions-js/push@v1.5
+        with:
+          github_token: ${{ secrets.ID_ALLOCATION_TOKEN }}
+          message: "Replace temporary IDs by definitive IDs."
+          branch: ${{ github.ref }}
