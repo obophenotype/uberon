@@ -40,7 +40,11 @@ This includes instructions for editing the uberon ontology.
      - `obo-checkout.pl src/ontology/uberon-edit.obo terms/my_batch.obo`
 - checking in will update the edit file and remove the file from `terms/`
 - Commits are then made on src/ontology/uberon-edit.obo as appropriate
-- Note that `obo-checkin.pl` and `obo-checkin.pl` are in your PATH, no need to search for it    
+- Note that `obo-checkin.pl` and `obo-checkout.pl` are in your PATH, no need to search for it
+- New terms must have:
+   - `relationship: dc-contributor https://orcid.org/<ORCID> ! <NAME>`, where this is the person(s) in the issue
+   - `property_value: dcterms-date "<ISO-TIMESTAMP>" xsd:dateTime`
+
 
 
 ## OBO Format Guidelines
