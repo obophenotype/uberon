@@ -51,7 +51,7 @@ To actually run the release, you:
 1. Review the release as per the `review release` section in [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md)
 1. Create a pull request and get a second set of eyes to review it. As Uberon uses a custom release pipeline, we ask that you get at least one core developer to review it too.
 1. Merge to main branch once reviewed and CI checks have passed
-1. Deploy release on GitHub by running `make deploy_release GHVERSION="v2022-06-20"` on the release branch (DO NOTE CHANGE TO MAIN BRANCH!), replacing the date with the date of release (NOTE: no `sh run.sh`)
+1. Deploy release on GitHub by running `make public_release GHVERSION="v2025-08-15"` on the release branch (DO NOTE CHANGE TO MAIN BRANCH!), replacing the date with the date of release (NOTE: no `sh run.sh`)
 Editors note: ODK 1.3.2 will have a feature to run the release from inside the docker container. For now deploy_release has to be run outside.
 1. This should end with a GitHub release link that looks something like:
 ```

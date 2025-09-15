@@ -50,8 +50,7 @@ This includes instructions for editing the uberon ontology.
 ## OBO Format Guidelines
 - Term ID format: UBERON:NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
-  - New terms start  UBERON:777xxxx
-  - Do `grep id: UBERON:777 src/ontology/uberon-edit.obo` to check for clashes
+  - New terms start  UBERON:99xxxxx
 - Each term requires: id, name, definition with references
 - Never guess UBERON IDs, or ontology term IDs, use search tools above to determine actual term
 - Never guess PMIDs for references, do a web search if needed
