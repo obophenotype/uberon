@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                a2700dfeec6436cfc17130e0219357fcc00ab308cfb3acfdbc9656b5056c34b8
+CONFIG_HASH=                383b91c9df3bcde2541ad5496c74fe23e446918472f0e19f70ea709ba5a9720e
 
 
 # ----------------------------------------
@@ -647,8 +647,7 @@ mirror-bfo: | $(TMPDIR)
 .PHONY: mirror-cob
 .PRECIOUS: $(MIRRORDIR)/cob.owl
 mirror-cob: | $(TMPDIR)
-	curl -L $(OBOBASE)/cob/cob-base.owl --create-dirs -o $(TMPDIR)/cob-download.owl --retry 4 --max-time 200 && \
-	$(ROBOT) convert -i $(TMPDIR)/cob-download.owl -o $(TMPDIR)/$@.owl
+	$(ROBOT) convert -I http://purl.obolibrary.org/obo/cob/cob-root.owl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: ncbitaxon
