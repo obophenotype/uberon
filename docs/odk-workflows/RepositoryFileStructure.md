@@ -25,6 +25,7 @@ These are the current imports in UBERON
 | chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | slme |
 | pato | http://purl.obolibrary.org/obo/pato.owl | slme |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | slme |
+| cob | http://purl.obolibrary.org/obo/cob.owl | slme |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | slme |
 | ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | slme |
 | nbo | http://purl.obolibrary.org/obo/nbo.owl | slme |
