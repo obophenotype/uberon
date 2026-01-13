@@ -9,15 +9,12 @@ TAXMODSDIR =           taxmods
 BRI=                   true
 
 OWLSRC =               $(TMPDIR)/uberon-edit.owl
-CATALOG_DYNAMIC =      catalog-dynamic.xml
-OWLTOOLS_NO_CAT=       OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools
-OWLTOOLS_CAT_DYNAMIC=  OWLTOOLS_MEMORY=$(OWLTOOLS_MEMORY) owltools --catalog-xml $(CATALOG_DYNAMIC)
-
+POSTPROCESS_SRC =      $(TMPDIR)/uberon.owl
 
 DC =                   http://purl.org/dc/elements/1.1
 RELEASE =              $(URIBASE)/uberon/releases/$(TODAY)
 QELK =                 --silence-elk
-PART_OF =              BFO_0000050
+PART_OF =              BFO:0000050
 
 
 all: uberon-qc
@@ -31,35 +28,6 @@ all: uberon-qc
 
 
 # ----------------------------------------
-# COMMANDS
-# ----------------------------------------
-
-# FIXME: Is a custom OBO generation rule needed?
-# https://github.com/obophenotype/uberon/issues/3014
-MAKEOBO=  $(OWLTOOLS) $< --add-obo-shorthand-to-properties  -o -f obo --no-check $@.tmp1 && grep -v ^property_value: $@.tmp1 | perl -npe 's@relationship: dc-@property_value: dc-@' | grep -v ^owl-axioms: > $@.tmp && mv $@.tmp  $@
-
-
-# ----------------------------------------
-# XML CATALOG
-# ----------------------------------------
-
-$(CATALOG_DYNAMIC):
-	@echo "From this day (12 March 2021) forward, $(CATALOG_DYNAMIC) is maintained"
-	@echo "manually. If you must update it, run 'make update_dynamic_catalog'."
-	@echo "Please review the diff carefully as some entries may be omitted."
-
-.PHONY: update_dynamic_catalog
-update_dynamic_catalog:
-	@echo "WARNING: You are updating the dynamic catalog. Note that this is done on"
-	@echo "WARNING: the basis of a previous run of WARNING: the pipeline, so all"
-	@echo "WARNING: files are expected to be available. Do not do this if you dont"
-	@echo "WARNING: know what you are doing."
-	$(SCRIPTSDIR)/make-catalog.pl uberon.owl mirror/ncbitaxon.owl imports/*_import.owl \
-		mirror/ro.owl imports/local-*owl $(BRIDGEDIR)/*owl > $@.tmp && \
-		mv $@.tmp $@
-
-
-# ----------------------------------------
 # TESTS/QC
 # ----------------------------------------
 # This section defines the composition of the test suites (i.e., which
@@ -69,7 +37,7 @@ update_dynamic_catalog:
 # This target is invoked as part of the automated CI workflow.
 # To include a specific check/report in the CI workflow, add it
 # to the pre-requisites here.
-test: $(REPORTDIR)/basic-allcycles \
+test: $(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/bfo-check.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
 	$(REPORTDIR)/uberon-edit-xp-check \
@@ -91,7 +59,7 @@ uberon-qc: checks \
 	quick-bridge-checks \
 	bridge-checks \
 	extra-full-bridge-checks \
-	$(REPORTDIR)/basic-allcycles \
+	$(REPORTDIR)/uberon-basic-allcycles \
 	$(REPORTDIR)/basic-orphans \
 	$(REPORTDIR)/composite-metazoan-dv.txt \
 	$(REPORTDIR)/taxon-constraint-check.txt \
@@ -112,45 +80,18 @@ quick-qc: $(REPORTDIR)/uberon-edit-obscheck.txt
 
 
 # ----------------------------------------
-# ROBOT PLUGINS
-# ----------------------------------------
-
-# All ROBOT plugins should go into that directory. The variable is
-# exported into the environment so that plugins are available to
-# all calls to ROBOT.
-ROBOT_PLUGINS_DIRECTORY = $(TMPDIR)/plugins
-export ROBOT_PLUGINS_DIRECTORY
-
-# Make sure the SSSOM plugin for ROBOT is available.
-$(TMPDIR)/plugins/sssom.jar:
-	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/sssom-java/releases/download/sssom-java-0.7.2/sssom-robot-plugin-0.7.2.jar
-
-# Ditto for the specific Uberon plugin
-$(TMPDIR)/plugins/uberon.jar:
-	mkdir -p $(TMPDIR)/plugins
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
-
-
-# ----------------------------------------
 # BUILDING UBERON ITSELF
 # ----------------------------------------
 
-# Step 1: Preprocessing. We Merge the edit file file with imports,
-# disjointness axioms, and list of contributors, then expand macros
-# (except RO:0002175, which only needs to be expanded for QC purposes).
-$(OWLSRC): $(SRC) $(COMPONENTSDIR)/disjoint_union_over.ofn $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
-	@echo "STRONG WARNING: issues/contributor.owl needs to be manually updated."
+# Step 1: Preprocessing. We Merge the edit file file with imports, then
+# expand macros (except RO:0002175, which only needs to be expanded for
+# QC purposes).
+$(OWLSRC): $(SRC) $(REPORTDIR)/$(SRC)-gocheck $(REPORTDIR)/$(SRC)-iconv
 	$(ROBOT) merge -i $< \
-			-i $(COMPONENTSDIR)/disjoint_union_over.ofn \
-			-i issues/contributor.owl \
-		expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
+		 expand --no-expand-term http://purl.obolibrary.org/obo/RO_0002175 \
 			-o $@
 
 # Step 2: Reasoning.
-# For the temporary injection of property chains, see
-# <https://github.com/obophenotype/uberon/issues/2381>
-DEVELOPS_FROM_CHAIN=$(COMPONENTSDIR)/develops-from-chains.owl
 # The 'materialize' step is too resource-intensive for the GitHub
 # Action runners, so we leave it out when running online QC checks, see
 # <https://github.com/obophenotype/uberon/pull/3087#issuecomment-1755553647>
@@ -159,34 +100,24 @@ MATERIALIZE=
 else
 MATERIALIZE = materialize -T $(CONFIGDIR)/basic_properties.txt -r elk
 endif
-uberon.owl: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl $(DEVELOPS_FROM_CHAIN)
+$(POSTPROCESS_SRC): $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 	$(ROBOT) merge -i $(OWLSRC) -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
-	               -i $(DEVELOPS_FROM_CHAIN) \
 	         relax $(MATERIALIZE) \
 	         reason -r elk --exclude-duplicate-axioms true \
 	                       --equivalent-classes-allowed asserted-only \
-	         unmerge -i $(DEVELOPS_FROM_CHAIN) \
-	         annotate -O $(URIBASE)/$@ -V $(RELEASE)/$@ -o $@
+	         annotate -O $(URIBASE)/uberon.owl -V $(RELEASE)/uberon.owl -o $@
 
-# Step 2.1: Generating other formats.
-# also do OE check here
-uberon.obo: uberon.owl
-	$(MAKEOBO)
-.PRECIOUS: uberon.obo
-
-uberon.json.gz: uberon.json
-	gzip -c $< > $@.tmp && mv $@.tmp $@
-.PRECIOUS: uberon.json.gz
+# Step 3: Postprocessing. We merge some files that are derived from the
+# previous step.
+POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
+			subsets/mouse-tags.ofn
+uberon.owl: $(POSTPROCESS_SRC) $(POSTPROCESS_ADDITIONS)
+	$(ROBOT) merge -i $< $(foreach add,$(POSTPROCESS_ADDITIONS),-i $(add)) -o $@
 
 
 # ----------------------------------------
 # MIRRORS
 # ----------------------------------------
-
-# We add OBO shorthands to the RO mirror before merging it with the other mirrors
-# FIXME: https://github.com/obophenotype/uberon/issues/3016
-mirror/ro.owl: mirror-ro | $(MIRRORDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(OWLTOOLS) $(TMPDIR)/mirror-ro.owl --add-obo-shorthand-to-properties -o $@ ; fi
 
 # All the following mirrors are needed, not for imports, but for
 # Uberon-specific pipelines (especially the composite-* stuff).
@@ -330,26 +261,12 @@ mirror-caro: | $(TMPDIR)
 		$(ROBOT) convert -i $(MIRRORDIR)/caro-download.owl -o $@.tmp.owl &&\
 		mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
-## ONTOLOGY: ssso
-.PHONY: mirror-ssso
-.PRECIOUS: $(MIRRORDIR)/ssso.owl
-mirror-ssso: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/ssso-merged-uberon.obo --create-dirs -o $(TMPDIR)/mirror-ssso.obo --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(TMPDIR)/mirror-ssso.obo -o $(TMPDIR)/$@.owl; fi
-
-## ONTOLOGY: mmusdv
-.PHONY: mirror-mmusdv
-.PRECIOUS: $(MIRRORDIR)/mmusdv.owl
-mirror-mmusdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/mmusdv.owl --create-dirs -o $(MIRRORDIR)/mmusdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/mmusdv-download.owl -o $(TMPDIR)/$@.owl; fi
-
-## ONTOLOGY: hsapdv
-.PHONY: mirror-hsapdv
-.PRECIOUS: $(MIRRORDIR)/hsapdv.owl
-mirror-hsapdv: | $(TMPDIR)
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/hsapdv.owl --create-dirs -o $(MIRRORDIR)/hsapdv-download.owl --retry 4 --max-time 200 && \
-		$(ROBOT) convert -i $(MIRRORDIR)/hsapdv-download.owl -o $(TMPDIR)/$@.owl; fi
+## ONTOLOGY: sslso
+.PHONY: mirror-sslso
+.PRECIOUS: $(MIRRORDIR)/life-sslso.owl
+mirror-sslso: | $(TMPDIR)
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages-base.owl --create-dirs -o $(TMPDIR)/life-stages-download.owl --retry 4 --max-time 200 && \
+		$(ROBOT) convert -i $(TMPDIR)/life-stages-download.owl -o $(TMPDIR)/$@.owl; fi
 
 
 # ----------------------------------------
@@ -383,18 +300,6 @@ imports/local-wb%.owl: mirror/wb%.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-# Ditto for MmusDv
-imports/local-mmusdv.owl: mirror/mmusdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/MmusDv_ \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
-# Ditto for HsapDv
-imports/local-hsapdv.owl: mirror/hsapdv.owl
-	$(ROBOT) remove -i $< --base-iri $(URIBASE)/HsapDv_ \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
-
 # For EHDAA2, we need to preserve the AEO classes as well
 imports/local-ehdaa2.owl: mirror/ehdaa2.owl
 	$(ROBOT) remove -i $< \
@@ -409,35 +314,31 @@ imports/local-allen-%.owl: mirror/allen-%.owl
 		        --axioms external --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-# For the life stages ontology, by construction it includes classes from
-# all over the place, and we need to preserve most of them. We do not
-# preserve the FBdv and WBls classes however, since they are provided
-# by local-fbdv and local-wbls respectively.
-SSSO_PREFIXES = BtauDv DpseDv DsimDv GgalDv GgorDv HsapDv MdomDv MmulDv MmusDv OariDv PpanDv PtroDv RnorDv SscrDv ZFS
-imports/local-ssso.owl: mirror/ssso.owl
-	$(ROBOT) remove -i $< \
-		        $(foreach pfx,$(SSSO_PREFIXES),--base-iri $(URIBASE)/$(pfx)) \
-		        --axioms external --preserve-structure false --trim false \
-		 convert -f ofn -o $@
+# For the life stages ontology, we already got a base from upstream, but
+# we can't use the generic rule above as the ontology contains (by
+# construction) classes from all over the place. So we just convert it
+# to OFN without removing anything.
+imports/local-sslso.owl: mirror/sslso.owl
+	$(ROBOT) convert -i $< -f ofn -o $@
 
 # For the following ontologies, in addition to removing axioms about
 # external entities we also need to replace some old-style properties.
 # ----------------------------------------
 # EMAPA also needs translation between TS-style stages to MmusDv stages
-imports/local-emapa.owl: mirror/emapa.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
+imports/local-emapa.owl: mirror/emapa.owl $(MAPPINGDIR)/import-corrections.sssom.tsv | all_robot_plugins
+	$(ROBOT) sssom:rename -i $< --sssom $(MAPPINGDIR)/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/EMAPA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-ma.owl: mirror/ma.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
+imports/local-ma.owl: mirror/ma.owl $(MAPPINGDIR)/import-corrections.sssom.tsv | all_robot_plugins
+	$(ROBOT) sssom:rename -i $< --sssom $(MAPPINGDIR)/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/MA_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
 
-imports/local-xao.owl: mirror/xao.owl mappings/import-corrections.sssom.tsv $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:rename -i $< --sssom mappings/import-corrections.sssom.tsv \
+imports/local-xao.owl: mirror/xao.owl $(MAPPINGDIR)/import-corrections.sssom.tsv | all_robot_plugins
+	$(ROBOT) sssom:rename -i $< --sssom $(MAPPINGDIR)/import-corrections.sssom.tsv \
 		 remove --base-iri $(URIBASE)/XAO_ --axioms external \
 		        --preserve-structure false --trim false \
 		 convert -f ofn -o $@
@@ -466,7 +367,7 @@ imports/local-ceph.owl: mirror/ceph.owl
 
 
 # Allow quickly refreshing all "local" imports
-LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv hsapdv ma mmusdv poro ssso wbbt wbls xao zfa \
+LOCAL_IMPORTS = ceph cl cteno ehdaa2 emapa fbbt fbdv ma poro sslso wbbt wbls xao zfa \
 		allen-hba allen-dhba allen-mba allen-dmba allen-pba
 all_local_imports: $(foreach imp,$(LOCAL_IMPORTS),$(IMPORTDIR)/local-$(imp).owl)
 
@@ -474,6 +375,20 @@ else # IMP=false
 all_local_imports:
 
 endif
+
+# ----------------------------------------
+# EXTRACT ORCIDs INDIVIDUALS
+# ----------------------------------------
+
+# Extract ORCID from dcterms:contributor annotations
+$(IMPORTDIR)/orcidio_terms_combined.txt: $(SRC)
+	$(ROBOT) query -f csv -i $< --query ../sparql/orcids.sparql $@.tmp &&\
+	cat $@.tmp | sort | uniq >  $@
+
+# Create orcidio_import.owl to extract individuals excluded in the merged_import.owl
+$(IMPORTDIR)/orcidio_import.owl: $(MIRRORDIR)/orcidio.owl $(IMPORTDIR)/orcidio_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) filter -i $< -T $(IMPORTDIR)/orcidio_terms_combined.txt --trim false \
+	$(ANNOTATE_CONVERT_FILE); fi
 
 
 # ----------------------------------------
@@ -672,9 +587,6 @@ src-cycles:
 $(REPORTDIR)/%-allcycles: %.owl
 	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
 
-$(REPORTDIR)/basic-allcycles: basic.owl
-	$(OWLTOOLS) --no-debug $< --list-cycles -f > $@
-
 
 # Other checks
 # ----------------------------------------
@@ -695,12 +607,6 @@ $(REPORTDIR)/%-dv.txt: %.owl
 
 # Overall "all-bridge" check
 # ----------------------------------------
-
-# The disjointness axioms are maintained in a OBO file, but the checks
-# below use an OWL version.
-$(TMPDIR)/external-disjoints.owl: components/external-disjoints.obo
-	$(ROBOT) convert -i $< -f owl -o $@
-.PRECIOUS: $(TMPDIR)/external-disjoints.owl
 
 # All the checks below need the taxslim-disjoint-over-in-taxon.owl,
 # which should have been downloaded into mirror/ncbitaxondisjoints.owl
@@ -730,10 +636,11 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 # Uberon, and the improper linking of a species AO class to an Uberon
 # class with a taxon constraints.
 ALL_UBERON_BRIDGES=$(shell ls $(BRIDGEDIR)/uberon-bridge-to-*.owl | grep -v emap.owl)
-$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) $(TMPDIR)/external-disjoints.owl \
+$(TMPDIR)/uberon-edit-plus-tax-equivs.owl: $(OWLSRC) \
+					   $(COMPONENTSDIR)/external-disjoints.obo \
 					   $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 					   $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       $(foreach bridge, $(ALL_UBERON_BRIDGES), -i $(bridge)) \
 		 expand \
@@ -760,11 +667,11 @@ extra-full-bridge-checks: $(foreach ao, $(EXTRA_FULL_CHECK_AO_LIST), $(REPORTDIR
 
 # A quick bridge check uses only uberon plus taxon constraints plus
 # bridging axioms, *not* the axioms in the source ontology itself.
-$(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
-				       $(TMPDIR)/external-disjoints.owl \
+$(REPORTDIR)/quick-bridge-check-%.txt: $(POSTPROCESS_SRC) \
+				       $(COMPONENTSDIR)/external-disjoints.obo \
 				       $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				       $(TMPDIR)/bridges
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		 reason -r ELK > $@
@@ -775,12 +682,12 @@ $(REPORTDIR)/quick-bridge-check-%.txt: uberon.owl \
 # For this check, we separate the production of the merged ontology
 # from the production of the report.
 # 1. The merge
-$(REPORTDIR)/bridge-check-%.owl: uberon.owl \
-				 $(TMPDIR)/external-disjoints.owl \
+$(REPORTDIR)/bridge-check-%.owl: $(POSTPROCESS_SRC) \
+				 $(COMPONENTSDIR)/external-disjoints.obo \
 				 $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 				 $(TMPDIR)/bridges \
 				 $(IMPORTDIR)/local-%.owl
-	$(ROBOT) merge -i $< -i $(TMPDIR)/external-disjoints.owl \
+	$(ROBOT) merge -i $< -i $(COMPONENTSDIR)/external-disjoints.obo \
 		       -i $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl \
 		       -i $(BRIDGEDIR)/uberon-bridge-to-$*.owl \
 		       -i $(IMPORTDIR)/local-$*.owl \
@@ -820,7 +727,7 @@ $(REPORTDIR)/bfo-check.txt: $(OWLSRC) $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 		 reason -r ELK --equivalent-classes-allowed asserted-only > $@
 
 # Similar to above, but with the basic product and without RO
-$(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
+$(REPORTDIR)/bfo-basic-check.txt: uberon-basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.owl
 	$(ROBOT) merge -i $< -i $(BRIDGEDIR)/uberon-bridge-to-bfo.owl \
 		       -I $(URIBASE)/bfo.owl \
 		 reason -r ELK > $@
@@ -829,13 +736,6 @@ $(REPORTDIR)/bfo-basic-check.txt: basic.owl $(BRIDGEDIR)/uberon-bridge-to-bfo.ow
 # ----------------------------------------
 # SUBSETS & VIEWS
 # ----------------------------------------
-
-# Create a seed from the standard (ODK-generated) Uberon seed to which
-# we add CL terms. This seed is used by several subsets below.
-tmp/simple-slim-seed.txt: $(SRCMERGED) $(SIMPLESEED)
-	$(ROBOT) query -f csv -i $< --query ../sparql/cl_terms.sparql $@.tmp && \
-	cat $@.tmp $(SIMPLESEED) | sort | uniq >  $@
-
 
 # System-specific subsets
 # ----------------------------------------
@@ -856,7 +756,7 @@ TERM_appendicular := UBERON:0002091
 TERM_life_cycle_stage := UBERON:0000105
 
 # Subset generation command
-SUBSETCMD=$(OWLTOOLS) $< --reasoner-query -r elk -d  "$(PART_OF) some $(TERM_ID)" --reasoner-query $(TERM_ID) --make-ontology-from-results $(URIBASE)/uberon/$@ -o $@  2>&1 > $@.LOG
+SUBSETCMD=$(ROBOT) odk:subset -i $< -r whelk -a true --query "$(PART_OF) some $(TERM_ID)" --query $(TERM_ID) -o $@
 
 # Source file for all the subsets generated below
 subsets/merged-partonomy.owl: uberon.owl
@@ -865,196 +765,176 @@ subsets/merged-partonomy.owl: uberon.owl
 		        -o $@
 .PRECIOUS: subsets/merged-partonomy.owl
 
-subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl
+subsets/appendicular-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_appendicular))
 	$(SUBSETCMD)
 
-subsets/circulatory-minimal.owl: subsets/merged-partonomy.owl
+subsets/circulatory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_circulatory))
 	$(SUBSETCMD)
 
-subsets/cranial-minimal.owl: subsets/merged-partonomy.owl
+subsets/cranial-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_cranial))
 	$(SUBSETCMD)
 
-subsets/digestive-minimal.owl: subsets/merged-partonomy.owl
+subsets/digestive-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_digestive))
 	$(SUBSETCMD)
 
-subsets/excretory-minimal.owl: subsets/merged-partonomy.owl
+subsets/excretory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_excretory))
 	$(SUBSETCMD)
 
-subsets/immune-minimal.owl: subsets/merged-partonomy.owl
+subsets/immune-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_immune))
 	$(SUBSETCMD)
 
-subsets/musculoskeletal-minimal.owl: subsets/merged-partonomy.owl
+subsets/musculoskeletal-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_musculoskeletal))
 	$(SUBSETCMD)
 
-subsets/nephron-minimal.owl: subsets/merged-partonomy.owl
+subsets/nephron-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_nephron))
 	$(SUBSETCMD)
 
-subsets/nervous-minimal.owl: subsets/merged-partonomy.owl
+subsets/nervous-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_nervous))
 	$(SUBSETCMD)
 
-subsets/pulmonary-minimal.owl: subsets/merged-partonomy.owl
+subsets/pulmonary-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_pulmonary))
 	$(SUBSETCMD)
 
-subsets/renal-minimal.owl: subsets/merged-partonomy.owl
+subsets/renal-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_renal))
 	$(SUBSETCMD)
 
-subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl
+subsets/reproductive-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_reproductive))
 	$(SUBSETCMD)
 
-subsets/sensory-minimal.owl: subsets/merged-partonomy.owl
+subsets/sensory-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_sensory))
 	$(SUBSETCMD)
 
-subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl
+subsets/life-stages-minimal.owl: subsets/merged-partonomy.owl | all_robot_plugins
 	$(eval TERM_ID := $(TERM_life_cycle_stage))
 	$(SUBSETCMD)
 
 # TODO: need to add subclass axioms for all intersections
-subsets/musculoskeletal-full.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d -c $(URIBASE)/uberon/$@ \
-		    "$(PART_OF) some UBERON_0002204" \
-		    -o -f obo file://`pwd`/$@  --reasoner-dispose
+subsets/musculoskeletal-full.obo: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0002204" \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --output $@
 
-subsets/vertebrate-head.obo: composite-vertebrate.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d "$(PART_OF) some UBERON_0000033" \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    -o -f obo --no-check $@ --reasoner-dispose 2>&1 > $@.LOG
+subsets/vertebrate-head.obo: composite-vertebrate.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "$(PART_OF) some UBERON:0000033" \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --output $@
 
 
 # Life stages subsets
 # ----------------------------------------
 
 # TODO - switch to purls for OWL once released
-subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(IMPORTDIR)/local-mmusdv.owl $(IMPORTDIR)/local-hsapdv.owl
+subsets/life-stages-mammal.owl: subsets/life-stages-core.owl $(TMPDIR)/mmusdv.owl $(TMPDIR)/hsapdv.owl
 	$(ROBOT) merge $(foreach input, $^, -i $(input)) -o $@
 
-subsets/life-stages-composite.owl: composite-metazoan.owl
-	$(ROBOT) query --input $< \
-		       --update $(SPARQLDIR)/inject-life-stages-subset.ru \
-		       --update $(SPARQLDIR)/inject-subset-declaration.ru \
-		       --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
-	$(OWLTOOLS) $@ --extract-ontology-subset --fill-gaps --subset life_stage \
-		       -o $@.tmp.owl && mv $@.tmp.owl $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
+subsets/life-stages-composite.owl: composite-metazoan.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" -a true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
-subsets/life-stages-core.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
-		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-subsets/life-stages-core.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -l 'life cycle stage' \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    --add-ontology-annotation $(DC)/description "Life cycle stage subset of uberon core (generic stages only)" \
-		    -o file://`pwd`/$@ --reasoner-dispose 2>&1 > $@.LOG
+subsets/life-stages-core.owl: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< -r whelk --query "'life cycle stage'" -a true \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ \
+		          --annotation dc:description "Life cycle stage subset of uberon core (generic stages only)" \
+		          --output $@
 
 
 # Taxon subsets
 # ----------------------------------------
 
-all_taxmods: $(TAXMODSDIR)/uberon-taxmod-amniote.obo $(TAXMODSDIR)/uberon-taxmod-euarchontoglires.obo
+TAXON_ID_human            = NCBITaxon:9606
+TAXON_ID_mouse            = NCBITaxon:10090
+TAXON_ID_xenopus          = NCBITaxon:8353
+TAXON_ID_drosophila       = NCBITaxon:7227
+TAXON_ID_gnathostome      = NCBITaxon:7776
+TAXON_ID_amniote          = NCBITaxon:32524
+TAXON_ID_euarchontoglires = NCBITaxon:314146
+TAXON_ID_nematode         = NCBITaxon:6237
+TAXON_ID_zebrafish        = NCBITaxon:7955
 
-$(TAXMODSDIR)/uberon-taxmod-euarchontoglires.owl: $(TMPDIR)/uberon-taxmod-314146.owl
-	cp $< $@
+# Strategy to use to create the taxon subsets:
+# - default: OWLTools' original strategy; given a root class R and a
+#            taxon T, assert 'R SubClassOf: in_taxon some T' and exclude
+#            all classes that are unsatisfiable because of that
+#            assertion.
+# - precise: alternative strategy; given a root class R and a taxon T,
+#            iterate through all subclasses C of R and include classes
+#            for which the expression 'C and in_taxon some T' is
+#            satisfiable; about 3-5 times slower than 'default'.
+TAXON_SUBSET_STRATEGY = default
 
-$(TAXMODSDIR)/uberon-taxmod-amniote.owl: $(TMPDIR)/uberon-taxmod-32524.owl
-	cp $< $@
+TAXON_SUBSET_ROOTS = UBERON:0001062 UBERON:0000000
 
-$(TAXMODSDIR)/uberon-taxmod-human.owl: $(TMPDIR)/uberon-taxmod-9606.owl
-	cp $< $@
-
-subsets/%-basic.owl: $(TAXMODSDIR)/uberon-taxmod-%.owl tmp/simple-slim-seed.txt
-	$(ROBOT) reason --input $< \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
+# Create a taxon-specific subset. This rule creates two distinct files:
+# (1) the subset proper (subsets/%-view.owl), which can be used on its
+#     own (and can be published as a release artifact if desired);
+# (2) a small file containing oboInOwl:inSubset annotations to "tag" all
+#     terms that belong to the subset (subsets/%-tags.ofn); that file
+#     can then be merged to the main release product (last step of the
+#     "BUILDING UBERON ITSELF" pipeline).
+.PRECIOUS: subsets/%-view.owl
+subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
+	$(ROBOT) uberon:create-species-subset --input $< \
+		                              --taxon $(TAXON_ID_$*) \
+		                              --strategy $(TAXON_SUBSET_STRATEGY) \
+		                              --reasoner ELK \
+		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
+		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
+		                              --subset-name uberon:$*_subset \
+		                              --only-tag-in UBERON: \
+		                              --write-tags-to subsets/$*-tags.ofn \
+		 reason --reasoner ELK --equivalent-classes-allowed all \
+		        --exclude-tautologies structural \
 		 relax \
 		 remove --axioms equivalent \
 		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-basic.owl
-
-$(TAXMODSDIR)/uberon-taxmod-%.obo: $(TAXMODSDIR)/uberon-taxmod-%.owl
-	$(OWLTOOLS) $< --remove-imports-declarations -o -f obo --no-check $@.tmp && grep -v ^owl $@.tmp > $@
-
-# added --allowEquivalencies, see https://github.com/geneontology/go-ontology/issues/12926
-$(TMPDIR)/uberon-taxmod-%.owl: uberon.owl
-	$(OWLTOOLS) $< --reasoner elk --make-species-subset --perform-macro-expansion false -t NCBITaxon:$* \
-		    --assert-inferred-subclass-axioms --allowEquivalencies --useIsInferred --remove-dangling \
-		    --set-ontology-id $(URIBASE)/uberon/subsets/$@ -o $@ 2>&1 > $@.log
-.PRECIOUS: $(TMPDIR)/uberon-taxmod-%.owl
+		 reduce --reasoner ELK \
+		 annotate --ontology-iri $(ONTBASE)/subsets/$*-view.owl \
+		          --version-iri $(ONTBASE)/releases/$(VERSION)/subsets/$*-view.owl \
+		          --annotation owl:versionInfo $(VERSION) \
+		 convert --format ofn --output subsets/$*-view.owl
 
 
 # Other subsets
 # ----------------------------------------
 
-# Basic subset
-# FIXME: https://github.com/obophenotype/uberon/issues/3013
-basic.owl:  uberon-basic.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
-
-basic.obo: basic.owl
-	$(MAKEOBO)
-
 # Cumbo subset
-subsets/cumbo.owl: basic.owl
-	$(OWLTOOLS) $< --extract-ontology-subset --subset cumbo --iri $(URIBASE)/uberon/$@ -o $@
+# 1. Extract the list of terms for the subset
+$(TMPDIR)/cumbo_subset_terms.txt: uberon-basic.owl
+	$(ROBOT) filter -i $< --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
+		        --select 'oboInOwl:inSubset=uberon:cumbo' \
+		 export --header ID --export $@
 
-subsets/cumbo.obo: subsets/cumbo.owl
-	$(MAKEOBO)
+# 2. Then extract the subset itself
+subsets/cumbo.owl: uberon-basic.owl $(TMPDIR)/cumbo_subset_terms.txt $(KEEPRELATIONS)
+	$(ROBOT) extract -i $< --method subset \
+		         --term-file $(TMPDIR)/cumbo_subset_terms.txt \
+		         --term-file $(KEEPRELATIONS) \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ --output $@
 
 # Common anatony subset
-common-anatomy.owl: $(ONT).owl
-	$(OWLTOOLS) $< --extract-ontology-subset --fill-gaps --subset common_anatomy \
-		    -o $@.tmp.owl && mv $@.tmp.owl $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		          -o $@.tmp.owl && mv $@.tmp.owl $@
+common-anatomy.owl: $(ONT).owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< --subset common_anatomy --fill-gaps true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 .PRECIOUS: common-anatomy.owl
 
-subsets/immaterial.obo: uberon.owl
-	$(OWLTOOLS) $< --reasoner-query -r elk -d  UBERON_0000466 \
-		    --make-ontology-from-results $(URIBASE)/uberon/$@ \
-		    -o -f obo $@ --reasoner-dispose 2>&1 > $@.LOG
-
-subsets/metazoan-view.owl: basic.owl
-	cp $< $@
-
-# The first step is a simple "merge+reason", but it still requires
-# Owltools because ROBOT has no equivalent to the -x option to simply
-# ignore unsatisfiable classes without erroring out.
-subsets/%-view.owl: uberon.owl contexts/context-%.owl tmp/simple-slim-seed.txt
-	$(OWLTOOLS) uberon.owl contexts/context-$*.owl --merge-support-ontologies --merge-imports-closure \
-		    $(QELK) --run-reasoner -r elk -x -o -f ofn $@.tmp.owl && \
-	$(ROBOT) reason --input $@.tmp.owl \
-		        --reasoner ELK --equivalent-classes-allowed all --exclude-tautologies structural \
-		 unmerge -i contexts/context-$*.owl \
-		 relax \
-		 remove --axioms equivalent \
-		 relax \
-		 filter --term-file tmp/simple-slim-seed.txt \
-		        --select "annotations ontology anonymous self" --trim true --signature true \
-		 reduce -r ELK \
-		 query --update ../sparql/inject-subset-declaration.ru \
-		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert -f ofn -o $@.tmp.owl && mv $@.tmp.owl $@
-.PRECIOUS: subsets/%-view.owl
+subsets/immaterial.obo: uberon.owl | all_robot_plugins
+	$(ROBOT) odk:subset -i $< --query UBERON:0000466 \
+		 annotate --ontology-iri $(URIBASE)/uberon/$@ --output $@
 
 %-partview.owl: %.owl
 	$(OWLTOOLS) $< --remove-subset grouping_class --remove-subset upper_level \
@@ -1103,14 +983,16 @@ COLLECTED_xenopus_SOURCES =          $(IMPORTDIR)/local-xao.owl \
 COLLECTED_human_SOURCES =            $(IMPORTDIR)/local-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-ehdaa2.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-aeo.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
 				     $(BRIDGEDIR)/cl-bridge-to-ehdaa2.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl
+				     $(BRIDGEDIR)/cl-bridge-to-aeo.owl \
+				     $(TMPDIR)/hsapdv.owl
 
 COLLECTED_mouse_SOURCES =            $(IMPORTDIR)/local-emapa.owl \
-				     $(IMPORTDIR)/local-mmusdv.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-emapa.owl \
 				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
-				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl
+				     $(BRIDGEDIR)/cl-bridge-to-emapa.owl \
+				     $(TMPDIR)/mmusdv.owl \
 
 # In principle this should also include FMA and its bridges, but we have
 # been excluded those for a while
@@ -1151,47 +1033,71 @@ COLLECTED_vertebrate_SOURCES =       $(COLLECTED_tetrapod_SOURCES) \
 COLLECTED_metazoan_SOURCES =         $(COLLECTED_vertebrate_SOURCES) \
 				     $(COLLECTED_drosophila_SOURCES) \
 				     $(COLLECTED_worm_SOURCES) \
-				     $(IMPORTDIR)/local-ssso.owl \
+				     $(IMPORTDIR)/local-sslso.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
 				     $(IMPORTDIR)/local-ceph.owl \
 				     $(IMPORTDIR)/local-cteno.owl \
 				     $(IMPORTDIR)/local-poro.owl
+
+COLLECTED_lifestages_SOURCES =       $(SUBSETDIR)/life-stages-minimal.owl \
+				     $(IMPORTDIR)/local-fbdv.owl \
+				     $(IMPORTDIR)/local-wbls.owl \
+				     $(IMPORTDIR)/local-sslso.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-fbdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-wbls.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-mmusdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-hsapdv.owl \
+				     $(BRIDGEDIR)/uberon-bridge-to-sslso.owl \
+				     $(TMPDIR)/xao-ls-bridged.owl
 
 
 # Composite pipeline proper
 # ----------------------------------------
 
+# Set to false to keep disjointness axioms in collected/composite
+# products. Such axioms are stripped by default because too many
+# taxon-specific ontologies are inconsistent with Uberon.
+COMPOSITE_STRIP_DISJOINTS=true
+ifeq ($(COMPOSITE_STRIP_DISJOINTS),true)
+COMPOSITE_STRIPPING_COMMAND = remove --axioms "DisjointClasses DisjointUnion"
+endif
+
 # Step 1: Create a "collected" ontology, which is simply a merge of
 # Uberon, CL, and the components listed in the COLLECTED_*_SOURCES
 # variables above.
 .PRECIOUS: $(TMPDIR)/collected-%.owl
-$(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl uberon.owl $(IMPORTDIR)/local-cl.owl \
+$(TMPDIR)/collected-%.owl: $(BRIDGEDIR)/collected-%-hdr.owl $(POSTPROCESS_SRC) $(IMPORTDIR)/local-cl.owl \
 		 $$(COLLECTED_$$*_SOURCES) $(TMPDIR)/bridges
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
 
 # Step 1b: collected-metazoan is not merely an intermediate towards
 # composite-metazoan, it is also a released artefact.
 collected-metazoan.owl: $(TMPDIR)/collected-metazoan.owl
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+
+# Step 1c: collected-lifestages is special in that it should not
+# include Uberon and CL (only the life-stages-minimal subset).
+$(TMPDIR)/collected-lifestages.owl: $(BRIDGEDIR)/collected-lifestages-hdr.owl \
+				    $(COLLECTED_lifestages_SOURCES)
+	$(ROBOT) merge $(foreach src,$^,-i $(src)) -o $@
+
+# Step 1d: And it is also a released artefact.
+collected-lifestages.owl: $(TMPDIR)/collected-lifestages.owl
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
 		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
 # Step 2: Create a "composite" ontology. This is the core of the
 # composite pipeline. It heavily relies on the Uberon plugin for ROBOT,
 # which provides the 'merge-species' and 'merge-equivalent-sets'
 # commands.
-# The pipeline starts by removing all the disjointness axioms, because
-# many external ontologies do not adhere to all Uberon constraints.
-TAXON_GCI_RELS = RO:0002202 RO:0002496 RO:0002497 BFO:0000051
-MERGESPECIES_OPTS = --remove-declarations --extended-translation --translate-gcas
 .PRECIOUS: $(TMPDIR)/composite-%.owl
-$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.jar
-	$(ROBOT) remove -i $< --axioms "DisjointClasses DisjointUnion" \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'mouse'      -t NCBITaxon:10090 $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'human'      -t NCBITaxon:9606  $(foreach rel,$(TAXON_GCI_RELS),-q $(rel)) \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'primate'    -t NCBITaxon:9443 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Xenopus'    -t NCBITaxon:8353 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Danio'      -t NCBITaxon:7954 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'Drosophila' -t NCBITaxon:7227 \
-		 uberon:merge-species $(MERGESPECIES_OPTS) -s 'C elegans'  -t NCBITaxon:6237 \
+$(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/tax-merges.tsv | all_robot_plugins
+	$(ROBOT) merge -i $< $(COMPOSITE_STRIPPING_COMMAND) \
+		 uberon:merge-species --remove-declarations \
+		                      --extended-translation \
+		                      --translate-gcas \
+		                      --batch-file $(TMPDIR)/tax-merges.tsv \
 		 uberon:merge-equivalent-sets -s UBERON=10 -s CL=9 -s CARO=5 \
 		                              -l UBERON=10 -l CL=9 \
 		                              -d UBERON=10 -d CL=9 \
@@ -1199,48 +1105,81 @@ $(TMPDIR)/composite-%.owl: $(TMPDIR)/collected-%.owl $(TMPDIR)/plugins/uberon.ja
 		 relax \
 		 reduce -r ELK -o $@
 
+# Step 2a: The "tax-merges.tsv" file used in the rule above is automatically
+# derived from the list of species in config/taxa.yaml.
+$(TMPDIR)/tax-merges.tsv: $(SCRIPTSDIR)/taxa.py config/taxa.yaml
+	python3 $(SCRIPTSDIR)/taxa.py make-merge-table config/taxa.yaml > $@
+
 # Step 3: Annotate the result of step 2. This is a separate step only so
-# that we can have explicit rules for composite-metazoan and
-# composite-vertebrate, because the ODK-generated Makefile already
-# defines a non-implicit rules with those targets.
+# that we can have explicit rules for composite-metazoan, -vertebrate,
+# and -lifestages, because the ODK-generated Makefile already defines a
+# non-implicit rules with those targets.
 composite-%.owl: $(TMPDIR)/composite-%.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-metazoan.owl: $(TMPDIR)/composite-metazoan.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 composite-vertebrate.owl: $(TMPDIR)/composite-vertebrate.owl
 	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
+composite-lifestages.owl: $(TMPDIR)/composite-lifestages.owl
+	$(ROBOT) annotate -i $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) -o $@
 
-# Step 4: OBO version
-# Here again we are overriding the standard OWL-to-OBO rules set forth
-# by the ODK (https://github.com/obophenotype/uberon/issues/3014)
-composite-%.obo: composite-%.owl
-	$(OWLTOOLS) $< --add-obo-shorthand-to-properties \
-		    --set-ontology-id -v $(RELEASE)/$@ $(ONTBASE)/$@ \
-		    -o -f obo --no-check $@.tmp && \
-		grep -v ^owl-axioms: $@.tmp > $@
+# XAO contains both anatomical terms and life stage terms. To build
+# collected-lifestages (step 1c above), we need to extract the life stage
+# terms only (all descendants of XAO:1000000, "Xenopus developmental stage"),
+# and bridge them with corresponding Uberon terms.
+$(TMPDIR)/xao-ls-bridged.owl: $(IMPORTDIR)/local-xao.owl \
+				       $(MAPPINGDIR)/uberon-local.sssom.tsv \
+				       | all_robot_plugins
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term XAO:1000000 \
+		 sssom:inject --sssom $(MAPPINGDIR)/uberon-local.sssom.tsv \
+		              --ruleset $(BRIDGEDIR)/bridge-xao-ls.rules \
+		              -o $@
+
+# SSLSO contains the entirety of HsapDv, but to construct collected-human,
+# we specifically need the HsapDv terms only, so we extract them from SSLSO.
+# This is also needed to construct the life-stages-mammal subset.
+$(TMPDIR)/hsapdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term HsapDv:0000000 -o $@
+
+# Ditto for MmusDv.
+$(TMPDIR)/mmusdv.owl: $(IMPORTDIR)/local-sslso.owl
+	$(ROBOT) extract -i $< --method MIREOT --branch-from-term MmusDv:0000000 -o $@
 
 
 # Some special products derived from the products generated above
 # ----------------------------------------
-BASICRELS = BFO:0000050 RO:0002202 immediate_transformation_of transformation_of
 
-composite-metazoan-basic.owl: composite-metazoan.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+# That ROBOT pipeline *approximately* mimics the following OWLTools commands:
+#   --mingraph (remove all axioms except SubClassOf, EquivalentClasses, and
+#               annotation assertions);
+#   --remove-axiom-annotations (as it says on the can);
+#   --make-subset-by-properties (remove all object properties except those specified).
+# FIXME: get rid of dangling classes
+composite-metazoan-basic.owl: composite-metazoan.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
-composite-vertebrate-basic.owl: composite-vertebrate.owl
-	$(OWLTOOLS) $< --extract-mingraph --remove-axiom-annotations \
-		    --make-subset-by-properties -f $(BASICRELS) \
-		    -o -f obo --no-check $@.tmp && \
-	grep -v '^owl-axioms:' $@.tmp > $@ && \
-	$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
-		 convert --check false -f owl -o $@.tmp && \
-	mv $@.tmp $@
+composite-vertebrate-basic.owl: composite-vertebrate.owl $(KEEPRELATIONS)
+	$(ROBOT) remove -i $< --select complement --drop-axiom-annotations all \
+		 filter --axioms "subclass equivalent annotation" \
+		 remove --term-file $(KEEPRELATIONS) \
+		        --select complement --select object-properties \
+		 remove --axioms structural-tautologies \
+		 remove --select individuals \
+		 remove --select "owl:deprecated='true'^^xsd:boolean" \
+		 remove --term rdfs:label --select complement --axioms annotation \
+		        --trim false --signature true \
+		 annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		          --output $@
 
 
 # Helper commands for composite-* stuff
@@ -1264,68 +1203,86 @@ composites: composite-metazoan.obo composite-vertebrate.obo
 # ----------------------------------------
 # SSSOM MAPPINGS
 # ----------------------------------------
-# Some foreign ontologies are providing their own mapping sets. We fetch
-# them and store them into mappings/ONT-mappings.ssom.tsv.
 
-# The following ontologies publish their own mapping sets.
-EXTERNAL_SSSOM_PROVIDERS = fbbt cl zfa biomappings
+# Uberon's "local" mapping set (extracted from cross-references).
+# Several cross-references are using OBO prefixes that are unknown to
+# ROBOT and not declared in Uberon/CL, so they need to be explicitly
+# declared here (otherwise xref-extract would ignore them).
+$(MAPPINGDIR)/uberon-local.sssom.tsv: $(SRC) | all_robot_plugins
+	$(ROBOT) merge -i $< --collapse-import-closure false \
+		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
+		                    --prefix 'DHBA:  https://purl.brain-bican.org/ontology/dhbao/DHBA_' \
+		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
+		                    --prefix 'HBA:   https://purl.brain-bican.org/ontology/hbao/HBA_' \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
+		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
+	> $(REPORTDIR)/uberon-xrefs-extraction.txt
+
+# Uberon's "meta" mapping set, containing all mappings between Uberon
+# and foreign ontologies, regardless of where they are maintained. Made
+# by compiling the "local" set above with the remote sets obtained below.
+$(MAPPINGDIR)/uberon.sssom.tsv: $(MAPPINGDIR)/uberon-local.sssom.tsv \
+				$(MAPPINGDIR)/fbbt.sssom.tsv \
+				$(MAPPINGDIR)/sslso.sssom.tsv
+	sssom-cli $(foreach src, $^, -i $(src)) \
+		  --prefix-map-from-input \
+		  --rule 'object==UBERON:* -> invert()' \
+		  --rule 'subject==UBERON:* -> include()' \
+		  --output $@
+
+# Remote mapping sets
+# -------------------
+
+# The following providers publish their own mapping sets.
+EXTERNAL_SSSOM_PROVIDERS = fbbt cl sslso biomappings
 
 # All the sets coming from the above ontologies.
-EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), mappings/$(provider)-mappings.sssom.tsv)
+EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
 
-# We only refresh external resources under IMP=true
-ifeq ($(strip $(IMP)),true)
+# We only refresh external resources under MIR=true
+ifeq ($(strip $(MIR)),true)
 
-# Fetch a fresh version of a foreign mapping set. This generic rule
-# assumes the foreign ontology is publishing its set at a predictable
-# location. Override this rule if a given ontology publishes its set at
-# a different location.
-.PHONY: $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(provider)-mappings)
-mappings/%-mappings.sssom.tsv: %-mappings
-	wget -O $@ http://purl.obolibrary.org/obo/$*/$*-mappings.sssom.tsv
+# FBbt mapping set. We filter it to only keep UBERON-related mappings
+# (CL-related mappings are already bundled with the CL set).
+$(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
+	wget "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" -O - | \
+		sssom-cli --prefix-map-from-input \
+		          --include 'object==UBERON:*' \
+		          --update-from-ontology=$(SRC):object,label,existence \
+		          --output $@
 
-# Special case for the Biomappings set which is provided with the
-# metadata in a separate file. We assemble a single YAML+TSV file and
-# we also filter out anything that has nothing to do with Uberon: the
-# set is quite large and we commit it to the repository, so we want to
-# keep it to the minimum stuff we actually need.
-# (We do the filtering with sed because "sssom dosql" is WAY too slow
-# for what it does.)
-mappings/biomappings-mappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
-					 $(TMPDIR)/biomappings.sssom.yml
-	sed 's/^/#/' $(TMPDIR)/biomappings.sssom.yml > $@
-	sed -n '1p; /UBERON:/p' $(TMPDIR)/biomappings.sssom.tsv >> $@
+# CL mapping set. We simply fetch it as it is from CL. It already
+# contains all mappings related to CL (including the FBbt and ZFA ones).
+$(MAPPINGDIR)/cl.sssom.tsv: .FORCE
+	wget "http://purl.obolibrary.org/obo/cl/cl.sssom.tsv" -O $@
+
+# SSLSO (life stages) mapping set. We simply fetch it as it is.
+$(MAPPINGDIR)/sslso.sssom.tsv: .FORCE
+	wget "https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages.sssom.tsv" -O $@
+
+# Biomappings mapping set. Nominally a simple mirror, but we need a
+# custom rule for two reasons:
+# - the set is provided with the metadata in a separate file, which the
+#   ODK mirroring code does not support;
+# - we want to filter out anything anything that has nothing to do with
+#   Uberon to keep the file to a reasonable size.
+$(MAPPINGDIR)/biomappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
+				     $(TMPDIR)/biomappings.sssom.yml
+	sssom-cli --input $< --prefix 'UBERON=http://purl.obolibrary.org/obo/UBERON_' \
+		  --rule '!(subject==UBERON:* || object==UBERON:*) -> stop()' \
+		  --rule 'object==UBERON:* -> invert()' \
+		  --include-all \
+		  --update-from-ontology=$(SRC):subject,label,existence | \
+	sssom-cli --mangle-iris obo --output $@
 
 $(TMPDIR)/biomappings.sssom.tsv:
 	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
 
 $(TMPDIR)/biomappings.sssom.yml:
 	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.yml
-
-
-# Special cases for ontologies that do no provide a ready-to-use set
-# ------------------------------------------------------------------
-
-# The CL set is to be extracted from cross-references. In order to do
-# that, we need to first merge Uberon with CL, because the treat-xrefs-
-# annotations are only in Uberon; then we need to remove the Uberon
-# terms to avoid extracting the cross-references from them as well.
-mappings/cl-mappings.sssom.tsv: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl --collapse-import-closure false \
-		 remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external \
-		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
-		                    --set-id "$(ONTBASE)/mappings/cl-mappings.sssom.tsv" \
-		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
-		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
-	> $(REPORTDIR)/cl-xrefs-extraction.txt
-
-# Likewise, the ZFA set (which is the source of truth for the CL-ZFA
-# mappings) is to be extracted from cross-references in ZFA.
-mappings/zfa-mappings.sssom.tsv: $(IMPORTDIR)/local-zfa.owl $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) sssom:xref-extract -i $(IMPORTDIR)/local-zfa.owl --mapping-file $@ \
-		                    -v --drop-duplicates \
-		                    --set-id "$(ONTBASE)/mappings/zfa-mappings.sssom.tsv" \
-	> $(REPORTDIR)/zfa-xrefs-extraction.txt
 
 endif
 
@@ -1336,42 +1293,26 @@ endif
 ifeq ($(BRI),true)
 
 # Those bridges are generated separately (see below).
-CUSTOM_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
+EXTERN_BRIDGES = $(BRIDGEDIR)/uberon-bridge-to-mba.owl \
 		 $(BRIDGEDIR)/uberon-bridge-to-dmba.owl
 
-# 1. Extract cross-references from Uberon and turn them to a SSSOM
-# mapping set.
-# Several cross-references are using OBO prefixes that are unknown to
-# ROBOT and not declared in Uberon/CL, so they need to be explicitly
-# declared here (otherwise xref-extract would ignore them).
-$(TMPDIR)/uberon-mappings.sssom.tsv: $(SRC) $(TMPDIR)/plugins/sssom.jar
-	$(ROBOT) merge -i $< --collapse-import-closure false \
-		 sssom:xref-extract --mapping-file $@ -v --drop-duplicates \
-		                    --prefix 'DHBA:  https://purl.brain-bican.org/ontology/dhbao/DHBA_' \
-		                    --prefix 'EFO:   http://purl.obolibrary.org/obo/EFO_'   \
-		                    --prefix 'HBA:   https://purl.brain-bican.org/ontology/hbao/HBA_' \
-		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
-		                    --prefix 'OGES:  http://purl.obolibrary.org/obo/OGES_'  \
-		                    --prefix 'PBA:   https://purl.brain-bican.org/ontology/pbao/PBA_'   \
-		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
-	> $(REPORTDIR)/uberon-xrefs-extraction.txt
+# 1. Prepare the ruleset file.
+# The ruleset file is maintained with the help of the Python script
+# to automatically insert the taxon-specific rules.
+$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/taxa.py config/taxa.yaml $(BRIDGEDIR)/bridges.rules
+	python3 $(SCRIPTSDIR)/taxa.py make-rules config/taxa.yaml $(BRIDGEDIR)/bridges.rules > $@
 
-# 2. Prepare the ruleset file.
-# The ruleset file is maintained with M4 macros to make it more easily
-# editable, so we need to expand the macros first.
-$(TMPDIR)/bridges.rules: $(SCRIPTSDIR)/sssomt.m4 $(BRIDGEDIR)/bridges.rules.m4
-	m4 $^ > $@
-
-# 3. Compile all mapping sets and generate the bridges.
+# 2. Generate the bridges from the "meta" mapping set and the CL set.
 # Note that merging CL here is not strictly necessary, but doing so
 # allows sssom-inject to filter out any mapping with an inexistent or
 # obsolete Uberon/CL class.
-$(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl $(TMPDIR)/uberon-mappings.sssom.tsv \
-		   $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar $(TMPDIR)/bridges.rules \
-		   $(BRIDGEDIR)/bridges.dispatch $(CUSTOM_BRIDGES)
+$(TMPDIR)/bridges: $(SRC) $(IMPORTDIR)/local-cl.owl \
+		   $(MAPPINGDIR)/uberon.sssom.tsv $(MAPPINGDIR)/cl.sssom.tsv \
+		   $(TMPDIR)/bridges.rules $(BRIDGEDIR)/bridges.dispatch \
+		   $(EXTERN_BRIDGES) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) -i $(IMPORTDIR)/local-cl.owl \
-		 sssom:inject --sssom $(TMPDIR)/uberon-mappings.sssom.tsv \
-		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+		 sssom:inject --sssom $(MAPPINGDIR)/uberon.sssom.tsv \
+		              --sssom $(MAPPINGDIR)/cl.sssom.tsv \
 		              --ruleset $(TMPDIR)/bridges.rules \
 		              --exclude-rule xrefs \
 		              --dispatch-table $(BRIDGEDIR)/bridges.dispatch && \
@@ -1398,8 +1339,8 @@ UBERON_BRIDGE_MBA = "https://raw.githubusercontent.com/brain-bican/mouse_brain_a
 UBERON_BRIDGE_DMBA = "https://raw.githubusercontent.com/brain-bican/developing_mouse_brain_atlas_ontology/main/src/ontology/new-bridges/new-uberon-bridge-to-dmba.owl"
 
 # Only refresh those bridges when we explicitly allow refreshing
-# external resources (IMP=true).
-ifeq ($(strip $(IMP)),true)
+# external resources (MIR=true).
+ifeq ($(strip $(MIR)),true)
 $(BRIDGEDIR)/uberon-bridge-to-mba.owl: $(SRC)
 	$(ROBOT) annotate -I $(UBERON_BRIDGE_MBA) --ontology-iri $(ONTBASE)/$@ -o $@
 
@@ -1418,36 +1359,14 @@ endif
 # COMPONENTS
 # ----------------------------------------
 
-$(COMPONENTSDIR)/in-subset.owl: $(SRC) $(TEMPLATEDIR)/in-subset.template.tsv
-	$(ROBOT) template --template $(TEMPLATEDIR)/in-subset.template.tsv \
-		 annotate --ontology-iri $(ONTBASE)/$@ \
-		          --output $(COMPONENTSDIR)/in-subset.owl
-
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-ifeq ($(strip $(MIR)),true)
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-endif
-
-3D_IMAGES_COMP_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl"
-$(TMPDIR)/hra_depiction_3d_images.owl:
-	wget $(3D_IMAGES_COMP_URL) -O $@
-
-$(COMPONENTSDIR)/hra_depiction_3d_images.owl: $(TMPDIR)/hra_depiction_3d_images.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 
 # The mappings.owl component contains cross-references to foreign
 # ontologies that provide their own mappings as a SSSOM set. This
 # component ensures those mappings are visible to Uberon editors and
 # users.
-$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) $(TMPDIR)/plugins/sssom.jar
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) | all_robot_plugins
 	$(ROBOT) sssom:inject -i $< \
 		              $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
 		              --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
@@ -1464,25 +1383,9 @@ DEPLOY_GH=true
 
 .PHONY: uberon
 uberon:
-	$(MAKE) prepare_release IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
-	$(MAKE) copy_additional_files # Probably not needed anymore now that we put everything on GitHub
+	$(MAKE) prepare_release MIR=false IMP=false PAT=false BRI=true CLEANFILES=tmp/merged-uberon-edit.obo
 	$(MAKE) release-diff
-	if [ $(DEPLOY_GH) = true ]; then $(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
-
-.PHONY: copy_additional_files
-copy_additional_files:
-	rm -rf ../../bridge
-	mkdir -p ../../bridge
-	cp $(TMPDIR)/external-disjoints.owl ../../bridge/ ;\
-	cp $(COMPONENTSDIR)/external-disjoints.obo ../../bridge/
-
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/uberon-edit.obo-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 .PHONY: release-diff
 release-diff:
@@ -1492,6 +1395,16 @@ release-diff:
 # ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
+
+# Allocating definitive IDs
+# ----------------------------------------#
+.PHONY: allocate-definitive-ids
+allocate-definitive-ids: | all_robot_plugins
+	$(ROBOT) kgcl:mint -i $(SRC) \
+		           --temp-id-prefix http://purl.obolibrary.org/obo/UBERON_99 \
+		           --id-range-name Automation \
+		 convert -f obo --check false -o $(SRC)
+
 
 # Spellchecking
 # ----------------------------------------
@@ -1552,15 +1465,15 @@ clean: clean_uberon
 
 .PHONY: refresh-mappings
 refresh-mappings:
-	$(MAKE) MIR=true IMP=true $(EXTERNAL_SSSOM_SETS)
+	$(MAKE) MIR=true $(EXTERNAL_SSSOM_SETS)
 
 .PHONY: refresh-bridges
 refresh-bridges:
-	$(MAKE) MIR=true IMP=true BRI=true tmp/bridges
+	$(MAKE) MIR=true BRI=true tmp/bridges
 
 .PHONY: refresh-external-resources
 refresh-external-resources:
-	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports all_local_imports tmp/bridges
+	$(MAKE) MIR=true IMP=true BRI=true PAT=false IMP_LARGE=true all_imports all_local_imports $(EXTERNAL_SSSOM_SETS) $(EXTERN_BRIDGES)
 
 
 # ----------------------------------------
@@ -1569,6 +1482,10 @@ refresh-external-resources:
 # Everything that does not belong to any of the sections above.
 # May include both actually useful stuff and stuff that nobody
 # remembers why it was written in the first place.
+
+uberon.json.gz: uberon.json
+	gzip -c $< > $@.tmp && mv $@.tmp $@
+.PRECIOUS: uberon.json.gz
 
 TEMPLATESDIR=templates
 
@@ -1645,7 +1562,7 @@ normalise_release_serialisation_ofn:
 	sh ../scripts/normalisation/norm_ofn.sh ../../src/ontology/subsets/xenopus-view.owl
 
 normalise_release_serialisation_rdfmxml:
-	sh ../scripts/normalisation/norm_rdfxml.sh ../../basic.owl
+	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-basic.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../uberon-base.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/imports/caro_import.owl src/ontology/imports/fbbt_import.owl
 	sh ../scripts/normalisation/norm_rdfxml.sh ../../src/ontology/subsets/amniote-basic.owl
