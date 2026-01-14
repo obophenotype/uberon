@@ -22,7 +22,7 @@ These are the current imports in UBERON
 | envo | http://purl.obolibrary.org/obo/envo.owl | slme |
 | ro | http://purl.obolibrary.org/obo/ro.owl | slme |
 | bspo | http://purl.obolibrary.org/obo/bspo.owl | slme |
-| chebi | https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl | slme |
+| chebi | http://purl.obolibrary.org/obo/upheno/chebi_slim.owl | slme |
 | pato | http://purl.obolibrary.org/obo/pato.owl | slme |
 | bfo | http://purl.obolibrary.org/obo/bfo.owl | slme |
 | cob | http://purl.obolibrary.org/obo/cob/cob-root.owl | slme |
