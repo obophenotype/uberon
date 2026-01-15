@@ -2,12 +2,12 @@
 
 ## Left
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon/uberon-base.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2024-11-25/uberon-base.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2025-08-15/uberon-base.owl`
 - Loaded from: `file:/nfs/production/parkinso/spot/ontology-releases/uberon/src/ontology/diffs/uberon-lastbuild.owl`
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/uberon/uberon-base.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2025-01-15/uberon-base.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/uberon/releases/2025-12-04/uberon-base.owl`
 - Loaded from: `file:/nfs/production/parkinso/spot/ontology-releases/uberon/src/ontology/diffs/../../../uberon-base.owl`
 
 ### Ontology imports 
@@ -16,4155 +16,4188 @@
 
 ### Ontology annotations 
 #### Removed
-- [treat-xrefs-as-reverse-genus-differentia](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-reverse-genus-differentia) "HsapDv part_of NCBITaxon:9606" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2025-08-15" 
 
-- [treat-xrefs-as-reverse-genus-differentia](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-reverse-genus-differentia) "MmusDv part_of NCBITaxon:10090" 
-
-- [treat-xrefs-as-reverse-genus-differentia](http://www.geneontology.org/formats/oboInOwl#treat-xrefs-as-reverse-genus-differentia) "OlatDv part_of NCBITaxon:8089" 
-
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2024-11-25" 
-
 #### Added
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2025-01-15" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2025-12-04" 
 
 
-### 2 cell stage `http://purl.obolibrary.org/obo/UBERON_0007232`
-
-#### Added
-- [2 cell stage](http://purl.obolibrary.org/obo/UBERON_0007232) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### Barrington's nucleus `http://purl.obolibrary.org/obo/UBERON_0007632`
+#### Removed
+- [Barrington's nucleus](http://purl.obolibrary.org/obo/UBERON_0007632) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065835" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### 4 cell stage `http://purl.obolibrary.org/obo/UBERON_0007233`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [4 cell stage](http://purl.obolibrary.org/obo/UBERON_0007233) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-
-### 8 cell stage `http://purl.obolibrary.org/obo/UBERON_0007236`
+- [Barrington's nucleus](http://purl.obolibrary.org/obo/UBERON_0007632) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065835" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [8 cell stage](http://purl.obolibrary.org/obo/UBERON_0007236) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### CL_0000555 `http://purl.obolibrary.org/obo/CL_0000555`
+### CA1 field of hippocampus `http://purl.obolibrary.org/obo/UBERON_0003881`
 #### Removed
-- Class: [CL_0000555](http://purl.obolibrary.org/obo/CL_0000555) 
+- [CA1 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003881) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056547" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### CL_4023161 `http://purl.obolibrary.org/obo/CL_4023161`
-
 #### Added
-- Class: [CL_4023161](http://purl.obolibrary.org/obo/CL_4023161) 
-
+- [CA1 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003881) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056547" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-### GCIs 
-#### Removed
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
-
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0000998) 
-
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-#### Added
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) 
 
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000) 
-
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [male organism](http://purl.obolibrary.org/obo/UBERON_0003101)) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0000998) 
+### CA2 field of hippocampus `http://purl.obolibrary.org/obo/UBERON_0003882`
+#### Removed
+- [CA2 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003882) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056651" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### NCBITaxon_6692 `http://purl.obolibrary.org/obo/NCBITaxon_6692`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- Class: [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+- [CA2 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003882) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056651" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### RO_0002178 `http://purl.obolibrary.org/obo/RO_0002178`
-#### Removed
-- ObjectProperty: [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) 
-
-
 
-### RO_0002179 `http://purl.obolibrary.org/obo/RO_0002179`
+### CA3 field of hippocampus `http://purl.obolibrary.org/obo/UBERON_0003883`
 #### Removed
-- ObjectProperty: [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) 
+- [CA3 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003883) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056654" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-
-
-### afferent lymphatic vessel `http://purl.obolibrary.org/obo/UBERON_0010396`
-#### Removed
-- [afferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010396) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [afferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010396) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [afferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010396) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [CA3 field of hippocampus](http://purl.obolibrary.org/obo/UBERON_0003883) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056654" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [afferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010396) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### afferent portion of pharyngeal arch artery `http://purl.obolibrary.org/obo/UBERON_2000716`
+### S-shaped body `http://purl.obolibrary.org/obo/UBERON_0004199`
 #### Removed
-- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150)) and ([RO_0002380](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363)) 
+- [S-shaped body](http://purl.obolibrary.org/obo/UBERON_0004199) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0010896" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002380](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150)) 
+- [S-shaped body](http://purl.obolibrary.org/obo/UBERON_0004199) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0010896" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [afferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000716) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### afferent spiracular artery `http://purl.obolibrary.org/obo/UBERON_0017616`
+### abdominal oblique muscle `http://purl.obolibrary.org/obo/UBERON_0035032`
 #### Removed
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
+- [abdominal oblique muscle](http://purl.obolibrary.org/obo/UBERON_0035032) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071596" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) 
+- [abdominal oblique muscle](http://purl.obolibrary.org/obo/UBERON_0035032) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071596" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [afferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017616) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### anterior vena cava `http://purl.obolibrary.org/obo/UBERON_0001585`
+### abducens nucleus `http://purl.obolibrary.org/obo/UBERON_0002682`
 #### Removed
-- [anterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001585) EquivalentTo [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [anterior region of body](http://purl.obolibrary.org/obo/UBERON_0000153)) 
+- [abducens nucleus](http://purl.obolibrary.org/obo/UBERON_0002682) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065827" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [anterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001585) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [anterior region of body](http://purl.obolibrary.org/obo/UBERON_0000153) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [anterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001585) EquivalentTo [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [anterior region of body](http://purl.obolibrary.org/obo/UBERON_0000153)) 
+- [abducens nucleus](http://purl.obolibrary.org/obo/UBERON_0002682) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065827" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [anterior vena cava](http://purl.obolibrary.org/obo/UBERON_0001585) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [anterior region of body](http://purl.obolibrary.org/obo/UBERON_0000153) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### appendicular artery `http://purl.obolibrary.org/obo/UBERON_0039215`
+### accessory navicular bone `http://purl.obolibrary.org/obo/UBERON_0010725`
 #### Removed
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [appendicular artery](http://purl.obolibrary.org/obo/UBERON_0039215) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [accessory navicular bone](http://purl.obolibrary.org/obo/UBERON_0010725) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C536002" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### arrector muscle of hair `http://purl.obolibrary.org/obo/UBERON_0002033`
-#### Removed
-- [arrector muscle of hair](http://purl.obolibrary.org/obo/UBERON_0002033) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [arrector muscle of hair](http://purl.obolibrary.org/obo/UBERON_0002033) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+#### Added
+- [accessory navicular bone](http://purl.obolibrary.org/obo/UBERON_0010725) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C536002" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### artery of lip `http://purl.obolibrary.org/obo/UBERON_0009657`
+### adventitia `http://purl.obolibrary.org/obo/UBERON_0005742`
 #### Removed
-- [artery of lip](http://purl.obolibrary.org/obo/UBERON_0009657) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833)) 
+- [adventitia](http://purl.obolibrary.org/obo/UBERON_0005742) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D063194" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [artery of lip](http://purl.obolibrary.org/obo/UBERON_0009657) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [artery of lip](http://purl.obolibrary.org/obo/UBERON_0009657) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833)) 
+- [adventitia](http://purl.obolibrary.org/obo/UBERON_0005742) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D063194" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [artery of lip](http://purl.obolibrary.org/obo/UBERON_0009657) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### artery of lower lip `http://purl.obolibrary.org/obo/UBERON_0003471`
+### ambergris `http://purl.obolibrary.org/obo/UBERON_0009757`
 #### Removed
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835)) 
+- [ambergris](http://purl.obolibrary.org/obo/UBERON_0009757) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D018648" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835)) 
+- [ambergris](http://purl.obolibrary.org/obo/UBERON_0009757) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D018648" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [artery of lower lip](http://purl.obolibrary.org/obo/UBERON_0003471) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### artery of upper lip `http://purl.obolibrary.org/obo/UBERON_0003470`
+### anal canal `http://purl.obolibrary.org/obo/UBERON_0000159`
 #### Removed
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834)) 
+- [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001003" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834)) 
+- [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001003" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [artery of upper lip](http://purl.obolibrary.org/obo/UBERON_0003470) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### auricular artery `http://purl.obolibrary.org/obo/UBERON_0009655`
+### anal fin `http://purl.obolibrary.org/obo/UBERON_4000163`
 #### Removed
-- [auricular artery](http://purl.obolibrary.org/obo/UBERON_0009655) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691)) 
+- [anal fin](http://purl.obolibrary.org/obo/UBERON_4000163) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004652" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [auricular artery](http://purl.obolibrary.org/obo/UBERON_0009655) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [auricular artery](http://purl.obolibrary.org/obo/UBERON_0009655) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691)) 
+- [anal fin](http://purl.obolibrary.org/obo/UBERON_4000163) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004652" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [auricular artery](http://purl.obolibrary.org/obo/UBERON_0009655) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### auricular vein `http://purl.obolibrary.org/obo/UBERON_0006197`
+### anatomical group `http://purl.obolibrary.org/obo/UBERON_0000480`
 #### Removed
-- [auricular vein](http://purl.obolibrary.org/obo/UBERON_0006197) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691) 
+- [anatomical group](http://purl.obolibrary.org/obo/UBERON_0000480) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002459" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [auricular vein](http://purl.obolibrary.org/obo/UBERON_0006197) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [external ear](http://purl.obolibrary.org/obo/UBERON_0001691) 
-
-
-### axillary artery `http://purl.obolibrary.org/obo/UBERON_0001394`
-#### Removed
-- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472)) 
+- [anatomical group](http://purl.obolibrary.org/obo/UBERON_0000480) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002459" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [axillary artery](http://purl.obolibrary.org/obo/UBERON_0001394) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### axillary vein `http://purl.obolibrary.org/obo/UBERON_0000985`
+### anatomical system `http://purl.obolibrary.org/obo/UBERON_0000467`
 #### Removed
-- [axillary vein](http://purl.obolibrary.org/obo/UBERON_0000985) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472)) 
+- [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002460" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [axillary vein](http://purl.obolibrary.org/obo/UBERON_0000985) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [axillary vein](http://purl.obolibrary.org/obo/UBERON_0000985) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472)) 
+- [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002460" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [axillary vein](http://purl.obolibrary.org/obo/UBERON_0000985) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [axilla](http://purl.obolibrary.org/obo/UBERON_0009472) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### basilar artery `http://purl.obolibrary.org/obo/UBERON_0001633`
+### animal cap `http://purl.obolibrary.org/obo/UBERON_3010463`
 #### Removed
-- [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [hindbrain](http://purl.obolibrary.org/obo/UBERON_0002028) 
-
-#### Added
-- [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [hindbrain](http://purl.obolibrary.org/obo/UBERON_0002028) 
+- [animal cap](http://purl.obolibrary.org/obo/UBERON_3010463) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004724" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### basilic vein `http://purl.obolibrary.org/obo/UBERON_0001411`
-#### Removed
-- [basilic vein](http://purl.obolibrary.org/obo/UBERON_0001411) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [forelimb](http://purl.obolibrary.org/obo/UBERON_0002102) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [basilic vein](http://purl.obolibrary.org/obo/UBERON_0001411) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [forelimb](http://purl.obolibrary.org/obo/UBERON_0002102) 
-
-
-### blastula stage `http://purl.obolibrary.org/obo/UBERON_0000108`
-#### Removed
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000006" 
-
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000007" 
+- [animal cap](http://purl.obolibrary.org/obo/UBERON_3010463) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004724" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-#### Added
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000091" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000054" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000012" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### annulus fibrosus `http://purl.obolibrary.org/obo/UBERON_0006444`
+#### Removed
+- [annulus fibrosus](http://purl.obolibrary.org/obo/UBERON_0006444) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070616" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000089" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000025" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [annulus fibrosus](http://purl.obolibrary.org/obo/UBERON_0006444) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070616" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [blastula stage](http://purl.obolibrary.org/obo/UBERON_0000108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### bronchial artery `http://purl.obolibrary.org/obo/UBERON_0002040`
+### aortic body `http://purl.obolibrary.org/obo/UBERON_0034971`
 #### Removed
-- [bronchial artery](http://purl.obolibrary.org/obo/UBERON_0002040) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [systemic arterial system](http://purl.obolibrary.org/obo/UBERON_0004571)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+- [aortic body](http://purl.obolibrary.org/obo/UBERON_0034971) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001016" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [bronchial artery](http://purl.obolibrary.org/obo/UBERON_0002040) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
-
-#### Added
-- [bronchial artery](http://purl.obolibrary.org/obo/UBERON_0002040) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [systemic arterial system](http://purl.obolibrary.org/obo/UBERON_0004571)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [bronchial artery](http://purl.obolibrary.org/obo/UBERON_0002040) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+- [aortic body](http://purl.obolibrary.org/obo/UBERON_0034971) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006193" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### bronchial vein `http://purl.obolibrary.org/obo/UBERON_0001592`
-#### Removed
-- [bronchial vein](http://purl.obolibrary.org/obo/UBERON_0001592) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [bronchial vein](http://purl.obolibrary.org/obo/UBERON_0001592) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [bronchial vein](http://purl.obolibrary.org/obo/UBERON_0001592) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185)) 
-
-- [bronchial vein](http://purl.obolibrary.org/obo/UBERON_0001592) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) 
-
+- [aortic body](http://purl.obolibrary.org/obo/UBERON_0034971) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001016" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-### buccal artery `http://purl.obolibrary.org/obo/UBERON_0001618`
-#### Removed
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567) 
+- [aortic body](http://purl.obolibrary.org/obo/UBERON_0034971) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006193" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582) 
-
-#### Added
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [maxillary artery](http://purl.obolibrary.org/obo/UBERON_0001616)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582)) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cheek](http://purl.obolibrary.org/obo/UBERON_0001567) 
 
-- [buccal artery](http://purl.obolibrary.org/obo/UBERON_0001618) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [buccinator muscle](http://purl.obolibrary.org/obo/UBERON_0001582) 
+### apocrine gland `http://purl.obolibrary.org/obo/UBERON_0008974`
+#### Removed
+- [apocrine gland](http://purl.obolibrary.org/obo/UBERON_0008974) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001050" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### buccal mucosa `http://purl.obolibrary.org/obo/UBERON_0006956`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [buccal mucosa](http://purl.obolibrary.org/obo/UBERON_0006956) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [apocrine gland](http://purl.obolibrary.org/obo/UBERON_0008974) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001050" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [buccal mucosa](http://purl.obolibrary.org/obo/UBERON_0006956) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### capsule of lymph node `http://purl.obolibrary.org/obo/UBERON_0002194`
+### aponeurosis `http://purl.obolibrary.org/obo/UBERON_0006614`
 #### Removed
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
-
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
-
-#### Added
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [aponeurosis](http://purl.obolibrary.org/obo/UBERON_0006614) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070606" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### cardiac muscle of left atrium `http://purl.obolibrary.org/obo/UBERON_0003380`
-
 #### Added
-- [cardiac muscle of left atrium](http://purl.obolibrary.org/obo/UBERON_0003380) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [aponeurosis](http://purl.obolibrary.org/obo/UBERON_0006614) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070606" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [cardiac muscle of left atrium](http://purl.obolibrary.org/obo/UBERON_0003380) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### cardiac vein `http://purl.obolibrary.org/obo/UBERON_0004148`
+### arm bone `http://purl.obolibrary.org/obo/UBERON_0003460`
 #### Removed
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948)) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349)) 
+- [arm bone](http://purl.obolibrary.org/obo/UBERON_0003460) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050280" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349)) 
+- [arm bone](http://purl.obolibrary.org/obo/UBERON_0003460) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050280" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### cavernous artery `http://purl.obolibrary.org/obo/UBERON_0000457`
+### arterial blood `http://purl.obolibrary.org/obo/UBERON_0013755`
 #### Removed
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) 
+- [arterial blood](http://purl.obolibrary.org/obo/UBERON_0013755) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006188" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675)) 
+- [arterial blood](http://purl.obolibrary.org/obo/UBERON_0013755) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006188" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [cavernous artery](http://purl.obolibrary.org/obo/UBERON_0000457) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [trigeminal ganglion](http://purl.obolibrary.org/obo/UBERON_0001675) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### central retinal artery `http://purl.obolibrary.org/obo/UBERON_0001620`
+### ascending colon `http://purl.obolibrary.org/obo/UBERON_0001156`
 #### Removed
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [retina](http://purl.obolibrary.org/obo/UBERON_0000966) 
-
-#### Added
-- [central retinal artery](http://purl.obolibrary.org/obo/UBERON_0001620) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [retina](http://purl.obolibrary.org/obo/UBERON_0000966) 
+- [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044682" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### central retinal vein `http://purl.obolibrary.org/obo/UBERON_0001673`
-#### Removed
-- [central retinal vein](http://purl.obolibrary.org/obo/UBERON_0001673) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [retina](http://purl.obolibrary.org/obo/UBERON_0000966) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [central retinal vein](http://purl.obolibrary.org/obo/UBERON_0001673) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [retina](http://purl.obolibrary.org/obo/UBERON_0000966) 
+- [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044682" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0003472`
+
+### atlanto-occipital joint `http://purl.obolibrary.org/obo/UBERON_0000220`
 #### Removed
-- [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) 
+- [atlanto-occipital joint](http://purl.obolibrary.org/obo/UBERON_0000220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001269" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) 
+- [atlanto-occipital joint](http://purl.obolibrary.org/obo/UBERON_0000220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001269" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### cerebellar vein `http://purl.obolibrary.org/obo/UBERON_0001668`
+### autonomic nervous system `http://purl.obolibrary.org/obo/UBERON_0002410`
 #### Removed
-- [cerebellar vein](http://purl.obolibrary.org/obo/UBERON_0001668) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) 
+- [autonomic nervous system](http://purl.obolibrary.org/obo/UBERON_0002410) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002126" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cerebellar vein](http://purl.obolibrary.org/obo/UBERON_0001668) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [cerebellar vein](http://purl.obolibrary.org/obo/UBERON_0001668) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) 
+- [autonomic nervous system](http://purl.obolibrary.org/obo/UBERON_0002410) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002126" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [cerebellar vein](http://purl.obolibrary.org/obo/UBERON_0001668) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037) 
 
-
-### cerebral artery `http://purl.obolibrary.org/obo/UBERON_0004449`
+### ball `http://purl.obolibrary.org/obo/UBERON_2000006`
 #### Removed
-- [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893)) 
+- [ball](http://purl.obolibrary.org/obo/UBERON_2000006) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015452" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893)) 
+- [ball](http://purl.obolibrary.org/obo/UBERON_2000006) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015452" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) 
 
-
-### cerebral vein `http://purl.obolibrary.org/obo/UBERON_0001663`
+### basal forebrain `http://purl.obolibrary.org/obo/UBERON_0002743`
 #### Removed
-- [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893)) 
+- [basal forebrain](http://purl.obolibrary.org/obo/UBERON_0002743) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066187" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [cerebral vein](http://purl.obolibrary.org/obo/UBERON_0001663) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [telencephalon](http://purl.obolibrary.org/obo/UBERON_0001893) 
+#### Added
+- [basal forebrain](http://purl.obolibrary.org/obo/UBERON_0002743) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066187" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### cervical thymic artery `http://purl.obolibrary.org/obo/UBERON_0018247`
-#### Removed
-- [cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018247) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cervical thymus](http://purl.obolibrary.org/obo/UBERON_0009114)) 
 
-- [cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018247) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cervical thymus](http://purl.obolibrary.org/obo/UBERON_0009114) 
+### basal ganglion `http://purl.obolibrary.org/obo/UBERON_0002420`
 
 #### Added
-- [cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018247) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cervical thymus](http://purl.obolibrary.org/obo/UBERON_0009114)) 
+- [basal ganglion](http://purl.obolibrary.org/obo/UBERON_0002420) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018247) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cervical thymus](http://purl.obolibrary.org/obo/UBERON_0009114) 
+- [basal ganglion](http://purl.obolibrary.org/obo/UBERON_0002420) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### choroidal artery `http://purl.obolibrary.org/obo/UBERON_0013151`
+### basal nuclear complex `http://purl.obolibrary.org/obo/UBERON_0006098`
 #### Removed
-- [choroidal artery](http://purl.obolibrary.org/obo/UBERON_0013151) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [choroid plexus](http://purl.obolibrary.org/obo/UBERON_0001886)) 
+- [basal nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006098) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001479" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [choroidal artery](http://purl.obolibrary.org/obo/UBERON_0013151) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [choroid plexus](http://purl.obolibrary.org/obo/UBERON_0001886) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [choroidal artery](http://purl.obolibrary.org/obo/UBERON_0013151) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [choroid plexus](http://purl.obolibrary.org/obo/UBERON_0001886)) 
-
-- [choroidal artery](http://purl.obolibrary.org/obo/UBERON_0013151) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [choroid plexus](http://purl.obolibrary.org/obo/UBERON_0001886) 
+- [basal nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006098) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001479" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### cleavage stage `http://purl.obolibrary.org/obo/UBERON_0000107`
+### biliary tree `http://purl.obolibrary.org/obo/UBERON_0001173`
 #### Removed
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000004" 
-
-#### Added
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000064" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000088" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [biliary tree](http://purl.obolibrary.org/obo/UBERON_0001173) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001659" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000010" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [cleavage stage](http://purl.obolibrary.org/obo/UBERON_0000107) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000049" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
+#### Added
+- [biliary tree](http://purl.obolibrary.org/obo/UBERON_0001173) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001659" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### colic artery `http://purl.obolibrary.org/obo/UBERON_0035548`
-#### Removed
-- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155)) 
 
-- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155) 
+### bivalve adductor muscle `http://purl.obolibrary.org/obo/UBERON_7770010`
 
 #### Added
-- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155)) 
+- Class: [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) 
 
-- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155) 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3605"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-
-### commissural ganglion (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910021`
-
-#### Added
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [label](http://www.w3.org/2000/01/rdf-schema#label) "commissural ganglion (sensu Cancer borealis)" 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-3308-6245](https://orcid.org/0000-0003-3308-6245) 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [date](http://purl.org/dc/terms/date) "2025-09-11T12:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Contains motor fibers that innervate the esophagus. Stimulating the pyloric suppressor neuron alters both pyloric and gastric rhythms but also elicits activity in a third oscillatory circuit located in the commissural ganglia called the esophageal rhythm." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/b978-0-12-809324-5.21166-8" 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [hasRelatedSynonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "catch muscle" 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "CG (sensu Cancer borealis)" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/b978-0-12-809324-5.21166-8" 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:7770010" 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910021" 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The main muscular system in bivalve mollusks, responsible for closing the valves of the shell when contracting; bivalve mollusks generally have either one or two adductor muscles." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://en.wikipedia.org/wiki/Adductor_muscles_(bivalve)" 
 
-- Class: [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34425225" 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) [label](http://www.w3.org/2000/01/rdf-schema#label) "bivalve adductor muscle" 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) SubClassOf [somatic muscle, invertebrate](http://purl.obolibrary.org/obo/UBERON_0014895) 
 
-- [commissural ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910021) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+- [bivalve adductor muscle](http://purl.obolibrary.org/obo/UBERON_7770010) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6544](http://purl.obolibrary.org/obo/NCBITaxon_6544) 
 
 
-### common penile artery `http://purl.obolibrary.org/obo/UBERON_0008320`
+### blastodisc `http://purl.obolibrary.org/obo/UBERON_0004749`
 #### Removed
-- [common penile artery](http://purl.obolibrary.org/obo/UBERON_0008320) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [penis](http://purl.obolibrary.org/obo/UBERON_0000989) 
+- [blastodisc](http://purl.obolibrary.org/obo/UBERON_0004749) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054239" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [common penile artery](http://purl.obolibrary.org/obo/UBERON_0008320) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [penis](http://purl.obolibrary.org/obo/UBERON_0000989) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### conus artery `http://purl.obolibrary.org/obo/UBERON_0039232`
-
 #### Added
-- [conus artery](http://purl.obolibrary.org/obo/UBERON_0039232) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [blastodisc](http://purl.obolibrary.org/obo/UBERON_0004749) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054239" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [conus artery](http://purl.obolibrary.org/obo/UBERON_0039232) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### coronary artery `http://purl.obolibrary.org/obo/UBERON_0001621`
+### blood brain barrier `http://purl.obolibrary.org/obo/UBERON_0000120`
 #### Removed
-- [coronary artery](http://purl.obolibrary.org/obo/UBERON_0001621) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349) 
-
-#### Added
-- [coronary artery](http://purl.obolibrary.org/obo/UBERON_0001621) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [myocardium](http://purl.obolibrary.org/obo/UBERON_0002349) 
+- [blood brain barrier](http://purl.obolibrary.org/obo/UBERON_0000120) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001812" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### cranial nerve II `http://purl.obolibrary.org/obo/UBERON_0000941`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [cranial nerve II](http://purl.obolibrary.org/obo/UBERON_0000941) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [blood brain barrier](http://purl.obolibrary.org/obo/UBERON_0000120) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001812" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [cranial nerve II](http://purl.obolibrary.org/obo/UBERON_0000941) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### cystic artery `http://purl.obolibrary.org/obo/UBERON_0039222`
+### blood nerve barrier `http://purl.obolibrary.org/obo/UBERON_0003209`
 #### Removed
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cystic duct](http://purl.obolibrary.org/obo/UBERON_0001152)) 
-
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cystic duct](http://purl.obolibrary.org/obo/UBERON_0001152) 
-
-#### Added
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cystic duct](http://purl.obolibrary.org/obo/UBERON_0001152)) 
-
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cystic duct](http://purl.obolibrary.org/obo/UBERON_0001152) 
+- [blood nerve barrier](http://purl.obolibrary.org/obo/UBERON_0003209) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049428" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### deep artery of clitoris `http://purl.obolibrary.org/obo/UBERON_0008322`
-#### Removed
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [corpus cavernosum clitoridis](http://purl.obolibrary.org/obo/UBERON_0006608)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [corpus cavernosum clitoridis](http://purl.obolibrary.org/obo/UBERON_0006608) 
-
 #### Added
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [corpus cavernosum clitoridis](http://purl.obolibrary.org/obo/UBERON_0006608)) 
+- [blood nerve barrier](http://purl.obolibrary.org/obo/UBERON_0003209) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049428" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [deep artery of clitoris](http://purl.obolibrary.org/obo/UBERON_0008322) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [corpus cavernosum clitoridis](http://purl.obolibrary.org/obo/UBERON_0006608) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### deep artery of penis `http://purl.obolibrary.org/obo/UBERON_0008321`
+### blood serum `http://purl.obolibrary.org/obo/UBERON_0001977`
 #### Removed
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713)) 
+- [blood serum](http://purl.obolibrary.org/obo/UBERON_0001977) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044967" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [deep vasculature](http://purl.obolibrary.org/obo/UBERON_0035551)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713)) 
+- [blood serum](http://purl.obolibrary.org/obo/UBERON_0001977) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044967" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [deep artery of penis](http://purl.obolibrary.org/obo/UBERON_0008321) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### deep auricular artery `http://purl.obolibrary.org/obo/UBERON_0014695`
+### bronchial mucosa `http://purl.obolibrary.org/obo/UBERON_0000410`
 #### Removed
-- [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [outer epithelial layer of tympanic membrane](http://purl.obolibrary.org/obo/UBERON_0010069) 
+- [bronchial mucosa](http://purl.obolibrary.org/obo/UBERON_0000410) SubClassOf [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) 
 
 #### Added
-- [deep auricular artery](http://purl.obolibrary.org/obo/UBERON_0014695) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [outer epithelial layer of tympanic membrane](http://purl.obolibrary.org/obo/UBERON_0010069) 
+- [bronchial mucosa](http://purl.obolibrary.org/obo/UBERON_0000410) SubClassOf [respiratory system mucosa](http://purl.obolibrary.org/obo/UBERON_0004785) 
 
 
-### deep dorsal vein of penis `http://purl.obolibrary.org/obo/UBERON_0006656`
+### bronchiole `http://purl.obolibrary.org/obo/UBERON_0002186`
 #### Removed
-- [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299) 
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055745" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299) 
-
-- [deep dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0006656) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [corpus cavernosum penis](http://purl.obolibrary.org/obo/UBERON_0004713) 
-
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### deep external pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007316`
-#### Removed
-- [deep external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007316) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
-
 #### Added
-- [deep external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007316) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
+- [bronchiole](http://purl.obolibrary.org/obo/UBERON_0002186) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055745" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### deep lingual artery `http://purl.obolibrary.org/obo/UBERON_8600097`
+### carapace `http://purl.obolibrary.org/obo/UBERON_0008275`
 #### Removed
-- [deep lingual artery](http://purl.obolibrary.org/obo/UBERON_8600097) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) 
+- [carapace](http://purl.obolibrary.org/obo/UBERON_0008275) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060105" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
+#### Added
+- [carapace](http://purl.obolibrary.org/obo/UBERON_0008275) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060105" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### deferent duct artery `http://purl.obolibrary.org/obo/UBERON_0005192`
-#### Removed
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000)) 
 
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000) 
+### cardiac muscle tissue of interatrial septum `http://purl.obolibrary.org/obo/UBERON_0004491`
 
 #### Added
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000)) 
+- [cardiac muscle tissue of interatrial septum](http://purl.obolibrary.org/obo/UBERON_0004491) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [deferent duct artery](http://purl.obolibrary.org/obo/UBERON_0005192) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vas deferens](http://purl.obolibrary.org/obo/UBERON_0001000) 
+- [cardiac muscle tissue of interatrial septum](http://purl.obolibrary.org/obo/UBERON_0004491) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### dorsal artery of penis `http://purl.obolibrary.org/obo/UBERON_0001340`
-#### Removed
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299) 
+### carotid artery intima-media region `http://purl.obolibrary.org/obo/UBERON_1200002`
 
 #### Added
-- [dorsal artery of penis](http://purl.obolibrary.org/obo/UBERON_0001340) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [glans penis](http://purl.obolibrary.org/obo/UBERON_0001299) 
+- Class: [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) 
 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3629"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### dorsal gastric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910011`
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
 
-#### Added
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910011" 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [date](http://purl.org/dc/terms/date) "2025-11-14T00:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal gastric nerve (sensu Cancer borealis)" 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:1200002" 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Nerve carrying dorsal gastric (DG) neurons which control the medial tooth movements in crustaceans." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A region of the carotid artery wall composed of the tunica intima and tunica media." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:39416432" 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "carotid intima-media" 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:39416432" 
 
-- Class: [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) [label](http://www.w3.org/2000/01/rdf-schema#label) "carotid artery intima-media region" 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) SubClassOf [multi-tissue structure](http://purl.obolibrary.org/obo/UBERON_0000481) 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) SubClassOf [RO_0002131](http://purl.obolibrary.org/obo/RO_0002131) some [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [carotid artery segment](http://purl.obolibrary.org/obo/UBERON_0005396) 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [tunica media](http://purl.obolibrary.org/obo/UBERON_0002522) 
 
-- [dorsal gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910011) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+- [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [tunica intima](http://purl.obolibrary.org/obo/UBERON_0002523) 
 
 
-### dorsal metatarsal vein `http://purl.obolibrary.org/obo/UBERON_0001549`
+### carotid body `http://purl.obolibrary.org/obo/UBERON_0001629`
 #### Removed
-- [dorsal metatarsal vein](http://purl.obolibrary.org/obo/UBERON_0001549) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [metatarsus region](http://purl.obolibrary.org/obo/UBERON_0000983)) 
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A small epithelioid structure consisting of a small cluster of chemoreceptive and supporting cells located near the bifurcation of the common carotid artery that serves as a chemoreceptive organ that senses the pH, carbon dioxide, and oxygen concentrations in the blood and plays a crucial role in their homeostatic control." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0003438" 
 
-- [dorsal metatarsal vein](http://purl.obolibrary.org/obo/UBERON_0001549) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [metatarsus region](http://purl.obolibrary.org/obo/UBERON_0000983) 
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001530) 
 
 #### Added
-- [dorsal metatarsal vein](http://purl.obolibrary.org/obo/UBERON_0001549) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [metatarsus region](http://purl.obolibrary.org/obo/UBERON_0000983)) 
-
-- [dorsal metatarsal vein](http://purl.obolibrary.org/obo/UBERON_0001549) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [metatarsus region](http://purl.obolibrary.org/obo/UBERON_0000983) 
-
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3591"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### dorsalis pedis artery `http://purl.obolibrary.org/obo/UBERON_0001539`
-#### Removed
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pes](http://purl.obolibrary.org/obo/UBERON_0002387) 
-
-#### Added
-- [dorsalis pedis artery](http://purl.obolibrary.org/obo/UBERON_0001539) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pes](http://purl.obolibrary.org/obo/UBERON_0002387) 
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) [date](http://purl.org/dc/terms/date) "2025-08-13T15:52:18Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A bilateral sensory organ in the peripheral nervous system located in the adventitia of the bifurcation of the common carotid artery. The carotid body is a chemoreceptive organ that senses the pH, carbon dioxide, and oxygen concentrations in the blood and plays a crucial role in their homeostatic control." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MP:0003438" 
 
-### efferent filamental artery `http://purl.obolibrary.org/obo/UBERON_2005018`
-#### Removed
-- [efferent filamental artery](http://purl.obolibrary.org/obo/UBERON_2005018) SubClassOf [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32965908" 
 
+- [carotid body](http://purl.obolibrary.org/obo/UBERON_0001629) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [peripheral nervous system](http://purl.obolibrary.org/obo/UBERON_0000010) 
 
 
-### efferent lamellar arteriole `http://purl.obolibrary.org/obo/UBERON_2005019`
+### carpometacarpal joint `http://purl.obolibrary.org/obo/UBERON_0011119`
 #### Removed
-- [efferent lamellar arteriole](http://purl.obolibrary.org/obo/UBERON_2005019) SubClassOf [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) 
-
-
+- [carpometacarpal joint](http://purl.obolibrary.org/obo/UBERON_0011119) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052737" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-### efferent lymphatic vessel `http://purl.obolibrary.org/obo/UBERON_0010397`
-#### Removed
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [carpometacarpal joint](http://purl.obolibrary.org/obo/UBERON_0011119) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052737" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### efferent portion of pharyngeal arch artery `http://purl.obolibrary.org/obo/UBERON_2000202`
+### caudal fin `http://purl.obolibrary.org/obo/UBERON_4000164`
 #### Removed
-- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150)) and ([RO_0002380](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363)) 
+- [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001827" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [craniocervical region vein](http://purl.obolibrary.org/obo/UBERON_0009141) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002380](http://purl.obolibrary.org/obo/RO_0002380) some [pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_0004363)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150)) 
+- [caudal fin](http://purl.obolibrary.org/obo/UBERON_4000164) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001827" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [efferent portion of pharyngeal arch artery](http://purl.obolibrary.org/obo/UBERON_2000202) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pharyngeal arch derived gill](http://purl.obolibrary.org/obo/UBERON_0011150) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### efferent spiracular artery `http://purl.obolibrary.org/obo/UBERON_0017617`
+### celiac ganglion `http://purl.obolibrary.org/obo/UBERON_0002262`
 #### Removed
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) 
+- [celiac ganglion](http://purl.obolibrary.org/obo/UBERON_0002262) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006296" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [vein](http://purl.obolibrary.org/obo/UBERON_0001638) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [pharyngeal arch artery 1](http://purl.obolibrary.org/obo/UBERON_0003118)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019)) 
+- [celiac ganglion](http://purl.obolibrary.org/obo/UBERON_0002262) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006296" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [efferent spiracular artery](http://purl.obolibrary.org/obo/UBERON_0017617) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [spiracle (sensu Vertebrata)](http://purl.obolibrary.org/obo/UBERON_0010019) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### embryo stage `http://purl.obolibrary.org/obo/UBERON_0000068`
+### central amygdaloid nucleus `http://purl.obolibrary.org/obo/UBERON_0002883`
 #### Removed
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000002" 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000002" 
-
-#### Added
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [central amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002883) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066274" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000045" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [central amygdaloid nucleus](http://purl.obolibrary.org/obo/UBERON_0002883) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066274" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000002" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [embryo stage](http://purl.obolibrary.org/obo/UBERON_0000068) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000042" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### cercaria `http://purl.obolibrary.org/obo/UBERON_0018388`
+#### Removed
+- [cercaria](http://purl.obolibrary.org/obo/UBERON_0018388) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058487" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### entire sense organ system `http://purl.obolibrary.org/obo/UBERON_0004456`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [entire sense organ system](http://purl.obolibrary.org/obo/UBERON_0004456) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [cercaria](http://purl.obolibrary.org/obo/UBERON_0018388) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058487" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [entire sense organ system](http://purl.obolibrary.org/obo/UBERON_0004456) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### epigastric artery `http://purl.obolibrary.org/obo/UBERON_0006349`
+### cerebellar vermis `http://purl.obolibrary.org/obo/UBERON_0004720`
 #### Removed
-- [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635)) 
+- [cerebellar vermis](http://purl.obolibrary.org/obo/UBERON_0004720) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065814" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635)) 
+- [cerebellar vermis](http://purl.obolibrary.org/obo/UBERON_0004720) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065814" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [epigastric artery](http://purl.obolibrary.org/obo/UBERON_0006349) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### epigastric vein `http://purl.obolibrary.org/obo/UBERON_0006356`
+### cerebellum interpositus nucleus `http://purl.obolibrary.org/obo/UBERON_0004073`
 #### Removed
-- [epigastric vein](http://purl.obolibrary.org/obo/UBERON_0006356) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635)) 
+- [cerebellum interpositus nucleus](http://purl.obolibrary.org/obo/UBERON_0004073) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:12399" 
 
-- [epigastric vein](http://purl.obolibrary.org/obo/UBERON_0006356) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635) 
 
-#### Added
-- [epigastric vein](http://purl.obolibrary.org/obo/UBERON_0006356) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635)) 
 
-- [epigastric vein](http://purl.obolibrary.org/obo/UBERON_0006356) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [anterior abdominal wall](http://purl.obolibrary.org/obo/UBERON_0006635) 
+### cerebral crus `http://purl.obolibrary.org/obo/UBERON_0002631`
+#### Removed
+- [cerebral crus](http://purl.obolibrary.org/obo/UBERON_0002631) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065843" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### epithelium of conjunctiva `http://purl.obolibrary.org/obo/UBERON_0006763`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [epithelium of conjunctiva](http://purl.obolibrary.org/obo/UBERON_0006763) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [cerebral crus](http://purl.obolibrary.org/obo/UBERON_0002631) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065843" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [epithelium of conjunctiva](http://purl.obolibrary.org/obo/UBERON_0006763) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### esophageal artery `http://purl.obolibrary.org/obo/UBERON_0035539`
+### cerebral nuclei `http://purl.obolibrary.org/obo/UBERON_8440012`
 #### Removed
-- [esophageal artery](http://purl.obolibrary.org/obo/UBERON_0035539) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043)) 
+- [cerebral nuclei](http://purl.obolibrary.org/obo/UBERON_8440012) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006534" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [esophageal artery](http://purl.obolibrary.org/obo/UBERON_0035539) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-#### Added
-- [esophageal artery](http://purl.obolibrary.org/obo/UBERON_0035539) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043)) 
-
-- [esophageal artery](http://purl.obolibrary.org/obo/UBERON_0035539) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [esophagus](http://purl.obolibrary.org/obo/UBERON_0001043) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-
-### esophageal ganglion (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910020`
-
 #### Added
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) [label](http://www.w3.org/2000/01/rdf-schema#label) "esophageal ganglion (sensu Cancer borealis)" 
-
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Neurons with cell bodies in the esophageal ganglion turn on the gastric mill rhythm and strongly affects the pyloric rhythm." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
+- [cerebral nuclei](http://purl.obolibrary.org/obo/UBERON_8440012) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006534" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910020" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
 
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- Class: [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) 
-
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
-
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [esophageal ganglion (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910020) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+### cerebral peduncle `http://purl.obolibrary.org/obo/UBERON_0002623`
+#### Removed
+- [cerebral peduncle](http://purl.obolibrary.org/obo/UBERON_0002623) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065850" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### esophageal nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910019`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "innervates the foregut and midgut" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
-
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [cerebral peduncle](http://purl.obolibrary.org/obo/UBERON_0002623) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065850" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910019" 
 
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) [label](http://www.w3.org/2000/01/rdf-schema#label) "esophageal nerve (sensu Cancer borealis)" 
-
-- Class: [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) 
-
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
-
-- [esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910019) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) 
+### cervical rib `http://purl.obolibrary.org/obo/UBERON_0018144`
+#### Removed
+- [cervical rib](http://purl.obolibrary.org/obo/UBERON_0018144) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D057070" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### exocrine system `http://purl.obolibrary.org/obo/UBERON_0002330`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [exocrine system](http://purl.obolibrary.org/obo/UBERON_0002330) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [cervical rib](http://purl.obolibrary.org/obo/UBERON_0018144) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D057070" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [exocrine system](http://purl.obolibrary.org/obo/UBERON_0002330) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### external iliac vein `http://purl.obolibrary.org/obo/UBERON_0001316`
+### cervical spinal cord `http://purl.obolibrary.org/obo/UBERON_0002726`
 #### Removed
-- [external iliac vein](http://purl.obolibrary.org/obo/UBERON_0001316) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [hindlimb](http://purl.obolibrary.org/obo/UBERON_0002103) 
+- [cervical spinal cord](http://purl.obolibrary.org/obo/UBERON_0002726) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066193" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [external iliac vein](http://purl.obolibrary.org/obo/UBERON_0001316) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [hindlimb](http://purl.obolibrary.org/obo/UBERON_0002103) 
+- [cervical spinal cord](http://purl.obolibrary.org/obo/UBERON_0002726) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066193" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### facial artery `http://purl.obolibrary.org/obo/UBERON_0001612`
+### cervical spinal cord ventral horn `http://purl.obolibrary.org/obo/UBERON_0014621`
 #### Removed
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [face](http://purl.obolibrary.org/obo/UBERON_0001456)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
+- [cervical spinal cord ventral horn](http://purl.obolibrary.org/obo/UBERON_0014621) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066151" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [face](http://purl.obolibrary.org/obo/UBERON_0001456) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [face](http://purl.obolibrary.org/obo/UBERON_0001456)) 
+- [cervical spinal cord ventral horn](http://purl.obolibrary.org/obo/UBERON_0014621) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066151" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [facial artery](http://purl.obolibrary.org/obo/UBERON_0001612) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [face](http://purl.obolibrary.org/obo/UBERON_0001456) 
 
+### chest wall `http://purl.obolibrary.org/obo/UBERON_0016435`
+#### Removed
+- [chest wall](http://purl.obolibrary.org/obo/UBERON_0016435) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D035441" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### fully formed stage `http://purl.obolibrary.org/obo/UBERON_0000066`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000076" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000084" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000040" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000061" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [chest wall](http://purl.obolibrary.org/obo/UBERON_0016435) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D035441" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000078" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### chorioallantoic membrane `http://purl.obolibrary.org/obo/UBERON_0005335`
+#### Removed
+- [chorioallantoic membrane](http://purl.obolibrary.org/obo/UBERON_0005335) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049033" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000052" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000052" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [chorioallantoic membrane](http://purl.obolibrary.org/obo/UBERON_0005335) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049033" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000024" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000032" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0010000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### choroid plexus epithelium `http://purl.obolibrary.org/obo/UBERON_0003911`
+#### Removed
+- [choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0003911) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006008" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000092" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000041" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [choroid plexus epithelium](http://purl.obolibrary.org/obo/UBERON_0003911) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006008" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [fully formed stage](http://purl.obolibrary.org/obo/UBERON_0000066) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### gastric vein `http://purl.obolibrary.org/obo/UBERON_0004450`
+### cingulate gyrus `http://purl.obolibrary.org/obo/UBERON_0002967`
 #### Removed
-- [gastric vein](http://purl.obolibrary.org/obo/UBERON_0004450) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lesser curvature of stomach](http://purl.obolibrary.org/obo/UBERON_0001163)) 
+- [cingulate gyrus](http://purl.obolibrary.org/obo/UBERON_0002967) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D006179" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [gastric vein](http://purl.obolibrary.org/obo/UBERON_0004450) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lesser curvature of stomach](http://purl.obolibrary.org/obo/UBERON_0001163) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [gastric vein](http://purl.obolibrary.org/obo/UBERON_0004450) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lesser curvature of stomach](http://purl.obolibrary.org/obo/UBERON_0001163)) 
+- [cingulate gyrus](http://purl.obolibrary.org/obo/UBERON_0002967) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D006179" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [gastric vein](http://purl.obolibrary.org/obo/UBERON_0004450) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lesser curvature of stomach](http://purl.obolibrary.org/obo/UBERON_0001163) 
 
-
-### gastrocnemius vein `http://purl.obolibrary.org/obo/UBERON_0013143`
+### circulatory system `http://purl.obolibrary.org/obo/UBERON_0001009`
 #### Removed
-- [gastrocnemius vein](http://purl.obolibrary.org/obo/UBERON_0013143) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [gastrocnemius](http://purl.obolibrary.org/obo/UBERON_0001388)) 
+- [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002319" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [gastrocnemius vein](http://purl.obolibrary.org/obo/UBERON_0013143) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [gastrocnemius](http://purl.obolibrary.org/obo/UBERON_0001388) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [gastrocnemius vein](http://purl.obolibrary.org/obo/UBERON_0013143) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [gastrocnemius](http://purl.obolibrary.org/obo/UBERON_0001388)) 
-
-- [gastrocnemius vein](http://purl.obolibrary.org/obo/UBERON_0013143) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [gastrocnemius](http://purl.obolibrary.org/obo/UBERON_0001388) 
+- [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002319" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### gastroepiploic artery `http://purl.obolibrary.org/obo/UBERON_0009025`
+### circumventricular organ `http://purl.obolibrary.org/obo/UBERON_0005408`
 #### Removed
-- [gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0009025) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [greater omentum](http://purl.obolibrary.org/obo/UBERON_0005448) 
+- [circumventricular organ](http://purl.obolibrary.org/obo/UBERON_0005408) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066280" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0009025) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0009025) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0009025) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [greater omentum](http://purl.obolibrary.org/obo/UBERON_0005448) 
+- [circumventricular organ](http://purl.obolibrary.org/obo/UBERON_0005408) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006267" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### gastropyloric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910012`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910012" 
-
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Consists of gastropyloric receptor (GPR) neurons, which are stretch receptors that innervate stomach muscles in crustaceans." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26888106" 
-
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
-
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
-
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) [label](http://www.w3.org/2000/01/rdf-schema#label) "gastropyloric nerve (sensu Cancer borealis)" 
+- [circumventricular organ](http://purl.obolibrary.org/obo/UBERON_0005408) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066280" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- Class: [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+- [circumventricular organ](http://purl.obolibrary.org/obo/UBERON_0005408) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006267" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
 
-- [gastropyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910012) SubClassOf [RO_0002131](http://purl.obolibrary.org/obo/RO_0002131) some [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) 
-
-
-### gastrula stage `http://purl.obolibrary.org/obo/UBERON_0000109`
+### compact bone tissue `http://purl.obolibrary.org/obo/UBERON_0001439`
 #### Removed
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000010" 
+- [compact bone tissue](http://purl.obolibrary.org/obo/UBERON_0001439) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071538" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000013" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000026" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000013" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000090" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000016" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000092" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [compact bone tissue](http://purl.obolibrary.org/obo/UBERON_0001439) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071538" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000010" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [gastrula stage](http://purl.obolibrary.org/obo/UBERON_0000109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-
-### genital artery `http://purl.obolibrary.org/obo/UBERON_0010192`
+### compound eye `http://purl.obolibrary.org/obo/UBERON_0000018`
 #### Removed
-- [genital artery](http://purl.obolibrary.org/obo/UBERON_0010192) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991)) 
-
-- [genital artery](http://purl.obolibrary.org/obo/UBERON_0010192) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991) 
-
-#### Added
-- [genital artery](http://purl.obolibrary.org/obo/UBERON_0010192) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991)) 
-
-- [genital artery](http://purl.obolibrary.org/obo/UBERON_0010192) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991) 
+- [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002421" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### gingiva `http://purl.obolibrary.org/obo/UBERON_0001828`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [gingiva](http://purl.obolibrary.org/obo/UBERON_0001828) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [compound eye](http://purl.obolibrary.org/obo/UBERON_0000018) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0002421" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [gingiva](http://purl.obolibrary.org/obo/UBERON_0001828) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### gland of digestive tract `http://purl.obolibrary.org/obo/UBERON_0003408`
-
-#### Added
-- [gland of digestive tract](http://purl.obolibrary.org/obo/UBERON_0003408) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [gland of digestive tract](http://purl.obolibrary.org/obo/UBERON_0003408) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### granular layer of cerebellar cortex `http://purl.obolibrary.org/obo/UBERON_0002956`
+### coronary sinus `http://purl.obolibrary.org/obo/UBERON_0005438`
 #### Removed
-- [granular layer of cerebellar cortex](http://purl.obolibrary.org/obo/UBERON_0002956) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [CL_0000555](http://purl.obolibrary.org/obo/CL_0000555) 
+- [coronary sinus](http://purl.obolibrary.org/obo/UBERON_0005438) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054326" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [granular layer of cerebellar cortex](http://purl.obolibrary.org/obo/UBERON_0002956) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [CL_4023161](http://purl.obolibrary.org/obo/CL_4023161) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### gustatory system `http://purl.obolibrary.org/obo/UBERON_0001033`
-
 #### Added
-- [gustatory system](http://purl.obolibrary.org/obo/UBERON_0001033) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [coronary sinus](http://purl.obolibrary.org/obo/UBERON_0005438) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054326" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [gustatory system](http://purl.obolibrary.org/obo/UBERON_0001033) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### hair follicle bulge `http://purl.obolibrary.org/obo/UBERON_0005975`
+### coronary sinus valve `http://purl.obolibrary.org/obo/UBERON_0004150`
 
 #### Added
-- [hair follicle bulge](http://purl.obolibrary.org/obo/UBERON_0005975) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [coronary sinus valve](http://purl.obolibrary.org/obo/UBERON_0004150) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [hair follicle bulge](http://purl.obolibrary.org/obo/UBERON_0005975) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [coronary sinus valve](http://purl.obolibrary.org/obo/UBERON_0004150) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### helicine artery of penis `http://purl.obolibrary.org/obo/UBERON_0015174`
+### corpus cerebelli `http://purl.obolibrary.org/obo/UBERON_2000188`
 #### Removed
-- [helicine artery of penis](http://purl.obolibrary.org/obo/UBERON_0015174) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [penis](http://purl.obolibrary.org/obo/UBERON_0000989) 
+- [corpus cerebelli](http://purl.obolibrary.org/obo/UBERON_2000188) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002531" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [helicine artery of penis](http://purl.obolibrary.org/obo/UBERON_0015174) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [penis](http://purl.obolibrary.org/obo/UBERON_0000989) 
+- [corpus cerebelli](http://purl.obolibrary.org/obo/UBERON_2000188) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002531" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### hepatic artery `http://purl.obolibrary.org/obo/UBERON_0001193`
+### cortical plate `http://purl.obolibrary.org/obo/UBERON_0005343`
 #### Removed
-- [hepatic artery](http://purl.obolibrary.org/obo/UBERON_0001193) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+- [cortical plate](http://purl.obolibrary.org/obo/UBERON_0005343) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002540" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [hepatic artery](http://purl.obolibrary.org/obo/UBERON_0001193) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [hepatic artery](http://purl.obolibrary.org/obo/UBERON_0001193) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+- [cortical plate](http://purl.obolibrary.org/obo/UBERON_0005343) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D002540" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [hepatic artery](http://purl.obolibrary.org/obo/UBERON_0001193) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
 
-
-### hepatic portal venule `http://purl.obolibrary.org/obo/UBERON_8600085`
+### cortical subplate `http://purl.obolibrary.org/obo/UBERON_0004035`
 #### Removed
-- [hepatic portal venule](http://purl.obolibrary.org/obo/UBERON_8600085) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
-
-
+- [cortical subplate](http://purl.obolibrary.org/obo/UBERON_0004035) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0011276" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### hepatic vein `http://purl.obolibrary.org/obo/UBERON_0001143`
-#### Removed
-- [hepatic vein](http://purl.obolibrary.org/obo/UBERON_0001143) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [hepatic vein](http://purl.obolibrary.org/obo/UBERON_0001143) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [hepatic vein](http://purl.obolibrary.org/obo/UBERON_0001143) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107)) 
+- [cortical subplate](http://purl.obolibrary.org/obo/UBERON_0004035) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0011276" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [hepatic vein](http://purl.obolibrary.org/obo/UBERON_0001143) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [liver](http://purl.obolibrary.org/obo/UBERON_0002107) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### hyaloid artery `http://purl.obolibrary.org/obo/UBERON_0002270`
+### corticomedial nuclear complex `http://purl.obolibrary.org/obo/UBERON_0006108`
 #### Removed
-- [hyaloid artery](http://purl.obolibrary.org/obo/UBERON_0002270) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lens of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0000965) 
-
-#### Added
-- [hyaloid artery](http://purl.obolibrary.org/obo/UBERON_0002270) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lens of camera-type eye](http://purl.obolibrary.org/obo/UBERON_0000965) 
+- [corticomedial nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066276" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### hypophysial artery `http://purl.obolibrary.org/obo/UBERON_0035403`
-#### Removed
-- [hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035403) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035403) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) 
-
 #### Added
-- [hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035403) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007)) 
+- [corticomedial nuclear complex](http://purl.obolibrary.org/obo/UBERON_0006108) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066276" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [hypophysial artery](http://purl.obolibrary.org/obo/UBERON_0035403) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ileal vein `http://purl.obolibrary.org/obo/UBERON_0001217`
+### corticospinal tract `http://purl.obolibrary.org/obo/UBERON_0002707`
 #### Removed
-- [ileal vein](http://purl.obolibrary.org/obo/UBERON_0001217) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
+- [corticospinal tract](http://purl.obolibrary.org/obo/UBERON_0002707) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006132" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [ileal vein](http://purl.obolibrary.org/obo/UBERON_0001217) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [ileal vein](http://purl.obolibrary.org/obo/UBERON_0001217) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
+- [corticospinal tract](http://purl.obolibrary.org/obo/UBERON_0002707) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006132" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [ileal vein](http://purl.obolibrary.org/obo/UBERON_0001217) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### ileocolic artery `http://purl.obolibrary.org/obo/UBERON_0001197`
+### costal cartilage `http://purl.obolibrary.org/obo/UBERON_0002236`
 #### Removed
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
+- [costal cartilage](http://purl.obolibrary.org/obo/UBERON_0002236) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066186" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
-
 #### Added
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
+- [costal cartilage](http://purl.obolibrary.org/obo/UBERON_0002236) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066186" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ileocolic vein `http://purl.obolibrary.org/obo/UBERON_0001219`
+### cranium `http://purl.obolibrary.org/obo/UBERON_0003128`
 #### Removed
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155)) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) 
+- [cranium](http://purl.obolibrary.org/obo/UBERON_0003128) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012886" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155) 
-
 #### Added
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
-
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) 
-
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [colon](http://purl.obolibrary.org/obo/UBERON_0001155) 
+- [cranium](http://purl.obolibrary.org/obo/UBERON_0003128) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012886" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### iliac artery `http://purl.obolibrary.org/obo/UBERON_0005609`
+### deep circumflex iliac artery `http://purl.obolibrary.org/obo/UBERON_0009040`
 #### Removed
-- [iliac artery](http://purl.obolibrary.org/obo/UBERON_0005609) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355) 
+- [deep circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009040) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007083" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [iliac artery](http://purl.obolibrary.org/obo/UBERON_0005609) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355) 
-
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### iliac vein `http://purl.obolibrary.org/obo/UBERON_0005610`
-#### Removed
-- [iliac vein](http://purl.obolibrary.org/obo/UBERON_0005610) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pectoral complex](http://purl.obolibrary.org/obo/UBERON_0010708) 
-
 #### Added
-- [iliac vein](http://purl.obolibrary.org/obo/UBERON_0005610) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pectoral complex](http://purl.obolibrary.org/obo/UBERON_0010708) 
+- [deep circumflex iliac artery](http://purl.obolibrary.org/obo/UBERON_0009040) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007083" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### iliolumbar vein `http://purl.obolibrary.org/obo/UBERON_0001320`
+### dental follicle `http://purl.obolibrary.org/obo/UBERON_0008969`
 #### Removed
-- [iliolumbar vein](http://purl.obolibrary.org/obo/UBERON_0001320) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [vertebra](http://purl.obolibrary.org/obo/UBERON_0002412) 
-
-#### Added
-- [iliolumbar vein](http://purl.obolibrary.org/obo/UBERON_0001320) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [vertebra](http://purl.obolibrary.org/obo/UBERON_0002412) 
+- [dental follicle](http://purl.obolibrary.org/obo/UBERON_0008969) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D003795" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### infant stage `http://purl.obolibrary.org/obo/UBERON_0034920`
-
 #### Added
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000177" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000033" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [dental follicle](http://purl.obolibrary.org/obo/UBERON_0008969) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D003795" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000053" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000085" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000261" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [infant stage](http://purl.obolibrary.org/obo/UBERON_0034920) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000057" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### dermatome `http://purl.obolibrary.org/obo/UBERON_0004016`
+#### Removed
+- [dermatome](http://purl.obolibrary.org/obo/UBERON_0004016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006248" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### inferior esophageal nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910017`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+- [dermatome](http://purl.obolibrary.org/obo/UBERON_0004016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006248" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [label](http://www.w3.org/2000/01/rdf-schema#label) "inferior esophageal nerve (sensu Cancer borealis)" 
 
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The inferior esophageal nerve (ION) is one of the four nerves that make up the stomatogastric nerve (SGN)." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
-
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ION (sensu Cancer borealis)" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
-
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910017" 
-
-- Class: [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) 
-
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) 
-
-- [inferior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910017) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
-
-
-### inferior mesenteric artery `http://purl.obolibrary.org/obo/UBERON_0001183`
+### descending colon `http://purl.obolibrary.org/obo/UBERON_0001158`
 #### Removed
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) EquivalentTo [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159)) 
+- [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044683" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) EquivalentTo [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159)) 
-
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) 
+- [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044683" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### inferior mesenteric vein `http://purl.obolibrary.org/obo/UBERON_0001215`
-#### Removed
-- [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215) EquivalentTo [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059)) 
+### diencephalon `http://purl.obolibrary.org/obo/UBERON_0001894`
 
-- [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) 
-
 #### Added
-- [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215) EquivalentTo [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059)) 
+- [diencephalon](http://purl.obolibrary.org/obo/UBERON_0001894) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) 
+- [diencephalon](http://purl.obolibrary.org/obo/UBERON_0001894) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### inferior palpebral vein `http://purl.obolibrary.org/obo/UBERON_0002459`
+### digestive tract `http://purl.obolibrary.org/obo/UBERON_0001555`
 #### Removed
-- [inferior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0002459) EquivalentTo [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lower eyelid](http://purl.obolibrary.org/obo/UBERON_0001713)) 
-
-- [inferior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0002459) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lower eyelid](http://purl.obolibrary.org/obo/UBERON_0001713) 
+- [digestive tract](http://purl.obolibrary.org/obo/UBERON_0001555) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D041981" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [inferior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0002459) EquivalentTo [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lower eyelid](http://purl.obolibrary.org/obo/UBERON_0001713)) 
-
-- [inferior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0002459) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lower eyelid](http://purl.obolibrary.org/obo/UBERON_0001713) 
-
-
-### inferior rectal artery `http://purl.obolibrary.org/obo/UBERON_0001357`
-#### Removed
-- [inferior rectal artery](http://purl.obolibrary.org/obo/UBERON_0001357) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [inferior rectal artery](http://purl.obolibrary.org/obo/UBERON_0001357) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) 
+- [digestive tract](http://purl.obolibrary.org/obo/UBERON_0001555) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D041981" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### inferior superficial cervical thymic artery `http://purl.obolibrary.org/obo/UBERON_0018248`
+### dorsal raphe nucleus `http://purl.obolibrary.org/obo/UBERON_0002043`
 #### Removed
-- [inferior superficial cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018248) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [superficial cervical thymus](http://purl.obolibrary.org/obo/UBERON_0018244) 
+- [dorsal raphe nucleus](http://purl.obolibrary.org/obo/UBERON_0002043) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065847" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [inferior superficial cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018248) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [superficial cervical thymus](http://purl.obolibrary.org/obo/UBERON_0018244) 
-
-
-### inferior vena cava `http://purl.obolibrary.org/obo/UBERON_0001072`
-#### Removed
-- [inferior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) EquivalentTo [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [posterior region of body](http://purl.obolibrary.org/obo/UBERON_0000154)) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [inferior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [posterior region of body](http://purl.obolibrary.org/obo/UBERON_0000154) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [inferior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) EquivalentTo [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [posterior region of body](http://purl.obolibrary.org/obo/UBERON_0000154)) 
+- [dorsal raphe nucleus](http://purl.obolibrary.org/obo/UBERON_0002043) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065847" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [inferior vena cava](http://purl.obolibrary.org/obo/UBERON_0001072) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [posterior region of body](http://purl.obolibrary.org/obo/UBERON_0000154) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### inferior vesical artery `http://purl.obolibrary.org/obo/UBERON_0001311`
+### dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_0000044`
 #### Removed
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) EquivalentTo [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082)) 
+- [dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0000044) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005727" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) EquivalentTo [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082)) 
-
-- [inferior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001311) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) 
-
+- [dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0000044) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005727" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### inferior vesical vein `http://purl.obolibrary.org/obo/UBERON_0001318`
-#### Removed
-- [inferior vesical vein](http://purl.obolibrary.org/obo/UBERON_0001318) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082)) 
 
-- [inferior vesical vein](http://purl.obolibrary.org/obo/UBERON_0001318) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) 
+### dorsal striatum `http://purl.obolibrary.org/obo/UBERON_0005382`
 
 #### Added
-- [inferior vesical vein](http://purl.obolibrary.org/obo/UBERON_0001318) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082)) 
-
-- [inferior vesical vein](http://purl.obolibrary.org/obo/UBERON_0001318) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) 
-
-
-### insect stomatogastric nervous system `http://purl.obolibrary.org/obo/UBERON_6005096`
-#### Removed
-- [insect stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_6005096) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6656](http://purl.obolibrary.org/obo/NCBITaxon_6656) 
-
-- [insect stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_6005096) SubClassOf [organ system subdivision](http://purl.obolibrary.org/obo/UBERON_0011216) 
+- [dorsal striatum](http://purl.obolibrary.org/obo/UBERON_0005382) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-#### Added
-- [insect stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_6005096) SubClassOf [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+- [dorsal striatum](http://purl.obolibrary.org/obo/UBERON_0005382) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### intercostal artery `http://purl.obolibrary.org/obo/UBERON_0005612`
+### embryo `http://purl.obolibrary.org/obo/UBERON_0000922`
 #### Removed
-- [intercostal artery](http://purl.obolibrary.org/obo/UBERON_0005612) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
-
-#### Added
-- [intercostal artery](http://purl.obolibrary.org/obo/UBERON_0005612) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
+- [embryo](http://purl.obolibrary.org/obo/UBERON_0000922) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000646" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### intercostal element `http://purl.obolibrary.org/obo/UBERON_8450004`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-6095-8718](https://orcid.org/0000-0002-6095-8718) 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [label](http://www.w3.org/2000/01/rdf-schema#label) "intercostal element" 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8450004" 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [date](http://purl.org/dc/terms/date) "2024-11-11T17:58:05Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+- [embryo](http://purl.obolibrary.org/obo/UBERON_0000922) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000646" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical structure located within an intercostal space." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-6095-8718" 
 
-- Class: [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) EquivalentTo [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) and ([RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198)) 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
-
-- [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) SubClassOf [anatomical structure](http://purl.obolibrary.org/obo/UBERON_0000061) 
-
-
-### intercostal lymph node `http://purl.obolibrary.org/obo/UBERON_0012236`
+### embryoid body `http://purl.obolibrary.org/obo/UBERON_0014374`
 #### Removed
-- [intercostal lymph node](http://purl.obolibrary.org/obo/UBERON_0012236) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
-
-#### Added
-- [intercostal lymph node](http://purl.obolibrary.org/obo/UBERON_0012236) SubClassOf [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
+- [embryoid body](http://purl.obolibrary.org/obo/UBERON_0014374) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058732" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### intercostal muscle `http://purl.obolibrary.org/obo/UBERON_0001111`
-#### Removed
-- [intercostal muscle](http://purl.obolibrary.org/obo/UBERON_0001111) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [intercostal muscle](http://purl.obolibrary.org/obo/UBERON_0001111) SubClassOf [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
-
+- [embryoid body](http://purl.obolibrary.org/obo/UBERON_0014374) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058732" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-### intercostal pre-muscle mass `http://purl.obolibrary.org/obo/UBERON_0010970`
-#### Removed
-- [intercostal pre-muscle mass](http://purl.obolibrary.org/obo/UBERON_0010970) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "cjm" 
-
-#### Added
-- [intercostal pre-muscle mass](http://purl.obolibrary.org/obo/UBERON_0010970) SubClassOf [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### intercostal vein `http://purl.obolibrary.org/obo/UBERON_0012197`
+### endocardial cushion `http://purl.obolibrary.org/obo/UBERON_0002062`
 #### Removed
-- [intercostal vein](http://purl.obolibrary.org/obo/UBERON_0012197) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198)) 
+- [endocardial cushion](http://purl.obolibrary.org/obo/UBERON_0002062) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054089" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [intercostal vein](http://purl.obolibrary.org/obo/UBERON_0012197) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [intercostal space](http://purl.obolibrary.org/obo/UBERON_0012198) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [intercostal vein](http://purl.obolibrary.org/obo/UBERON_0012197) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004)) 
-
-- [intercostal vein](http://purl.obolibrary.org/obo/UBERON_0012197) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [intercostal element](http://purl.obolibrary.org/obo/UBERON_8450004) 
-
-
-### interlobar artery `http://purl.obolibrary.org/obo/UBERON_0009885`
-#### Removed
-- [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913)) 
-
-- [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913)) 
+- [endocardial cushion](http://purl.obolibrary.org/obo/UBERON_0002062) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054089" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [interlobar artery](http://purl.obolibrary.org/obo/UBERON_0009885) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### interlobar vein `http://purl.obolibrary.org/obo/UBERON_0009887`
+### endocrine pancreas `http://purl.obolibrary.org/obo/UBERON_0000016`
 #### Removed
-- [interlobar vein](http://purl.obolibrary.org/obo/UBERON_0009887) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913)) 
+- [endocrine pancreas](http://purl.obolibrary.org/obo/UBERON_0000016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007515" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [interlobar vein](http://purl.obolibrary.org/obo/UBERON_0009887) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [interlobar vein](http://purl.obolibrary.org/obo/UBERON_0009887) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913)) 
+- [endocrine pancreas](http://purl.obolibrary.org/obo/UBERON_0000016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007515" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [interlobar vein](http://purl.obolibrary.org/obo/UBERON_0009887) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [renal lobe](http://purl.obolibrary.org/obo/UBERON_0009913) 
 
-
-### internal carotid artery `http://purl.obolibrary.org/obo/UBERON_0001532`
+### endomysium `http://purl.obolibrary.org/obo/UBERON_0011895`
 #### Removed
-- [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [eye](http://purl.obolibrary.org/obo/UBERON_0000970) 
+- [endomysium](http://purl.obolibrary.org/obo/UBERON_0011895) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006241" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [brain](http://purl.obolibrary.org/obo/UBERON_0000955) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [eye](http://purl.obolibrary.org/obo/UBERON_0000970) 
+- [endomysium](http://purl.obolibrary.org/obo/UBERON_0011895) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006241" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [internal carotid artery](http://purl.obolibrary.org/obo/UBERON_0001532) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [brain](http://purl.obolibrary.org/obo/UBERON_0000955) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### internal iliac vein `http://purl.obolibrary.org/obo/UBERON_0001317`
+### epibranchial ganglion `http://purl.obolibrary.org/obo/UBERON_0009127`
 #### Removed
-- [internal iliac vein](http://purl.obolibrary.org/obo/UBERON_0001317) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pelvic region element](http://purl.obolibrary.org/obo/UBERON_0005179) 
-
-#### Added
-- [internal iliac vein](http://purl.obolibrary.org/obo/UBERON_0001317) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pelvic region element](http://purl.obolibrary.org/obo/UBERON_0005179) 
+- [epibranchial ganglion](http://purl.obolibrary.org/obo/UBERON_0009127) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006250" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-
-### internal jugular vein `http://purl.obolibrary.org/obo/UBERON_0001586`
-#### Removed
-- [internal jugular vein](http://purl.obolibrary.org/obo/UBERON_0001586) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [face](http://purl.obolibrary.org/obo/UBERON_0001456) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [internal jugular vein](http://purl.obolibrary.org/obo/UBERON_0001586) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [brain](http://purl.obolibrary.org/obo/UBERON_0000955) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [internal jugular vein](http://purl.obolibrary.org/obo/UBERON_0001586) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [face](http://purl.obolibrary.org/obo/UBERON_0001456) 
+- [epibranchial ganglion](http://purl.obolibrary.org/obo/UBERON_0009127) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006250" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [internal jugular vein](http://purl.obolibrary.org/obo/UBERON_0001586) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [brain](http://purl.obolibrary.org/obo/UBERON_0000955) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### internal pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007315`
+### epiglottic cartilage `http://purl.obolibrary.org/obo/UBERON_0001742`
 #### Removed
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
+- [epiglottic cartilage](http://purl.obolibrary.org/obo/UBERON_0001742) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D004825" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [internal pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007315) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
-
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### internal thoracic artery `http://purl.obolibrary.org/obo/UBERON_0002456`
-#### Removed
-- [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [breast](http://purl.obolibrary.org/obo/UBERON_0000310) 
-
 #### Added
-- [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [breast](http://purl.obolibrary.org/obo/UBERON_0000310) 
+- [epiglottic cartilage](http://purl.obolibrary.org/obo/UBERON_0001742) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D004825" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### intra-acinar arteriole `http://purl.obolibrary.org/obo/UBERON_8600094`
+### esophagus mucosa `http://purl.obolibrary.org/obo/UBERON_0002469`
 #### Removed
-- [intra-acinar arteriole](http://purl.obolibrary.org/obo/UBERON_8600094) SubClassOf [respiratory system artery](http://purl.obolibrary.org/obo/UBERON_0003469) 
-
+- [esophagus mucosa](http://purl.obolibrary.org/obo/UBERON_0002469) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071041" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### jejunal artery `http://purl.obolibrary.org/obo/UBERON_0018255`
-#### Removed
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
-
 #### Added
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) 
+- [esophagus mucosa](http://purl.obolibrary.org/obo/UBERON_0002469) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071041" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [jejunal artery](http://purl.obolibrary.org/obo/UBERON_0018255) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### jejunal vein `http://purl.obolibrary.org/obo/UBERON_0001216`
+### excretory duct `http://purl.obolibrary.org/obo/UBERON_0035050`
 #### Removed
-- [jejunal vein](http://purl.obolibrary.org/obo/UBERON_0001216) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) 
+- [excretory duct](http://purl.obolibrary.org/obo/UBERON_0035050) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006341" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [jejunal vein](http://purl.obolibrary.org/obo/UBERON_0001216) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [jejunal vein](http://purl.obolibrary.org/obo/UBERON_0001216) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) 
+- [excretory duct](http://purl.obolibrary.org/obo/UBERON_0035050) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006341" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [jejunal vein](http://purl.obolibrary.org/obo/UBERON_0001216) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### jugular vein `http://purl.obolibrary.org/obo/UBERON_0004711`
+### excretory system `http://purl.obolibrary.org/obo/UBERON_8450002`
 #### Removed
-- [jugular vein](http://purl.obolibrary.org/obo/UBERON_0004711) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
+- [excretory system](http://purl.obolibrary.org/obo/UBERON_8450002) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006338" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [jugular vein](http://purl.obolibrary.org/obo/UBERON_0004711) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [head](http://purl.obolibrary.org/obo/UBERON_0000033) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910022`
-
 #### Added
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
-
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910022" 
+- [excretory system](http://purl.obolibrary.org/obo/UBERON_8450002) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006338" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The junction between the stomatogastric nerve (STN) and the superior esophageal nerve (SON) shows synaptic structures. Octopamine may be released at this site by projection neurons; its application at this junction induces action potentials in the axons of the modulatory commissural neuron 5 (MCN5) that project from the commissural ganglia to the stomatogastric ganglion (STG)." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15306640" 
 
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) [label](http://www.w3.org/2000/01/rdf-schema#label) "junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)" 
-
-- Class: [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) 
-
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
-
-- [junction of superior esophageal nerve and stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910022) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+### exocrine pancreas `http://purl.obolibrary.org/obo/UBERON_0000017`
+#### Removed
+- [exocrine pancreas](http://purl.obolibrary.org/obo/UBERON_0000017) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D046790" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### juvenile stage `http://purl.obolibrary.org/obo/UBERON_0034919`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000178" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [exocrine pancreas](http://purl.obolibrary.org/obo/UBERON_0000017) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D046790" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000058" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### external ectoderm `http://purl.obolibrary.org/obo/UBERON_0000076`
+#### Removed
+- [external ectoderm](http://purl.obolibrary.org/obo/UBERON_0000076) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006242" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000014" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [external ectoderm](http://purl.obolibrary.org/obo/UBERON_0000076) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006242" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [juvenile stage](http://purl.obolibrary.org/obo/UBERON_0034919) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000271" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### lacrimal artery `http://purl.obolibrary.org/obo/UBERON_0001622`
+### extra-ocular muscle `http://purl.obolibrary.org/obo/UBERON_0001601`
 #### Removed
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817)) 
+- [extra-ocular muscle](http://purl.obolibrary.org/obo/UBERON_0001601) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009801" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817)) 
+- [extra-ocular muscle](http://purl.obolibrary.org/obo/UBERON_0001601) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009801" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [lacrimal artery](http://purl.obolibrary.org/obo/UBERON_0001622) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817) 
 
-
-### lacrimal vein `http://purl.obolibrary.org/obo/UBERON_0018256`
+### extraembryonic membrane `http://purl.obolibrary.org/obo/UBERON_0005631`
 #### Removed
-- [lacrimal vein](http://purl.obolibrary.org/obo/UBERON_0018256) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817)) 
-
-- [lacrimal vein](http://purl.obolibrary.org/obo/UBERON_0018256) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817) 
+- [extraembryonic membrane](http://purl.obolibrary.org/obo/UBERON_0005631) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005321" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [lacrimal vein](http://purl.obolibrary.org/obo/UBERON_0018256) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817)) 
-
-- [lacrimal vein](http://purl.obolibrary.org/obo/UBERON_0018256) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lacrimal gland](http://purl.obolibrary.org/obo/UBERON_0001817) 
-
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### larval stage `http://purl.obolibrary.org/obo/UBERON_0000069`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [larval stage](http://purl.obolibrary.org/obo/UBERON_0000069) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000039" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [extraembryonic membrane](http://purl.obolibrary.org/obo/UBERON_0005631) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005321" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [larval stage](http://purl.obolibrary.org/obo/UBERON_0000069) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [larval stage](http://purl.obolibrary.org/obo/UBERON_0000069) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-
-### late adult stage `http://purl.obolibrary.org/obo/UBERON_0007222`
+### facial bone `http://purl.obolibrary.org/obo/UBERON_0003462`
 #### Removed
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000093" 
-
-#### Added
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000040" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000134" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000045" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000227" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000025" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000008" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000039" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000008" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000080" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000008" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000060" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [late adult stage](http://purl.obolibrary.org/obo/UBERON_0007222) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [facial bone](http://purl.obolibrary.org/obo/UBERON_0003462) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005147" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### late embryonic stage `http://purl.obolibrary.org/obo/UBERON_0007220`
-#### Removed
-- [late embryonic stage](http://purl.obolibrary.org/obo/UBERON_0007220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000031" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [late embryonic stage](http://purl.obolibrary.org/obo/UBERON_0007220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000011" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [facial bone](http://purl.obolibrary.org/obo/UBERON_0003462) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005147" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [late embryonic stage](http://purl.obolibrary.org/obo/UBERON_0007220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000037" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [late embryonic stage](http://purl.obolibrary.org/obo/UBERON_0007220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000031" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [late embryonic stage](http://purl.obolibrary.org/obo/UBERON_0007220) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000080" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### fibrocartilage `http://purl.obolibrary.org/obo/UBERON_0001995`
+#### Removed
+- [fibrocartilage](http://purl.obolibrary.org/obo/UBERON_0001995) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D051445" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### lateral gastric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910013`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) [label](http://www.w3.org/2000/01/rdf-schema#label) "lateral gastric nerve (sensu Cancer borealis)" 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Consists of lateral gastric (LG) neurons. The alternation between the lateral gastric neurons/medial gastric neurons and the lateral posterior gastric neurons control the movements of the lateral teeth in crustaceans." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
+- [fibrocartilage](http://purl.obolibrary.org/obo/UBERON_0001995) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D051445" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910013" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- Class: [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) 
 
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) SubClassOf [RO_0002131](http://purl.obolibrary.org/obo/RO_0002131) some [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
-
-- [lateral gastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910013) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
-
-
-### lateral pretrosal artery `http://purl.obolibrary.org/obo/UBERON_3010494`
+### foramen magnum `http://purl.obolibrary.org/obo/UBERON_0003687`
 #### Removed
-- [lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_3010494) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ear](http://purl.obolibrary.org/obo/UBERON_0001690) 
-
-#### Added
-- [lateral pretrosal artery](http://purl.obolibrary.org/obo/UBERON_3010494) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ear](http://purl.obolibrary.org/obo/UBERON_0001690) 
+- [foramen magnum](http://purl.obolibrary.org/obo/UBERON_0003687) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006035" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### lateral ventricular nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910014`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
-
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) [label](http://www.w3.org/2000/01/rdf-schema#label) "lateral ventricular nerve (sensu Cancer borealis)" 
-
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The motor axons that project into the dorsal ventricular nerve bifurcate and then project into both lateral ventricular nerves." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:10561445" 
+- [foramen magnum](http://purl.obolibrary.org/obo/UBERON_0003687) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006035" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910014" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
 
-- Class: [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) 
-
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
-
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+### fourth ventricle `http://purl.obolibrary.org/obo/UBERON_0002422`
+#### Removed
+- [fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0002422) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:10669" 
 
-- [lateral ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910014) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
 
 
-### left colic artery `http://purl.obolibrary.org/obo/UBERON_8410022`
+### frontal cortex `http://purl.obolibrary.org/obo/UBERON_0001870`
 #### Removed
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
+- [frontal cortex](http://purl.obolibrary.org/obo/UBERON_0001870) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005625" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
+- [frontal cortex](http://purl.obolibrary.org/obo/UBERON_0001870) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005625" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [left colic artery](http://purl.obolibrary.org/obo/UBERON_8410022) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
 
-
-### left colic vein `http://purl.obolibrary.org/obo/UBERON_8410017`
+### ganoine `http://purl.obolibrary.org/obo/UBERON_4000104`
 #### Removed
-- [left colic vein](http://purl.obolibrary.org/obo/UBERON_8410017) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158)) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215)) 
+- [ganoine](http://purl.obolibrary.org/obo/UBERON_4000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C067951" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left colic vein](http://purl.obolibrary.org/obo/UBERON_8410017) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [left colic vein](http://purl.obolibrary.org/obo/UBERON_8410017) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158)) 
+- [ganoine](http://purl.obolibrary.org/obo/UBERON_4000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C067951" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left colic vein](http://purl.obolibrary.org/obo/UBERON_8410017) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### left coronary artery `http://purl.obolibrary.org/obo/UBERON_0001626`
+### gastroesophageal sphincter `http://purl.obolibrary.org/obo/UBERON_0004550`
 #### Removed
-- [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948) 
-
-#### Added
-- [left coronary artery](http://purl.obolibrary.org/obo/UBERON_0001626) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948) 
+- [gastroesophageal sphincter](http://purl.obolibrary.org/obo/UBERON_0004550) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049630" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-
-### left gastric artery `http://purl.obolibrary.org/obo/UBERON_0001192`
-#### Removed
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [left gastric artery](http://purl.obolibrary.org/obo/UBERON_0001192) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [stomach](http://purl.obolibrary.org/obo/UBERON_0000945) 
+- [gastroesophageal sphincter](http://purl.obolibrary.org/obo/UBERON_0004550) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049630" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### left ovarian vein `http://purl.obolibrary.org/obo/UBERON_0039857`
+### gill raker `http://purl.obolibrary.org/obo/UBERON_2000356`
 #### Removed
-- [left ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039857) EquivalentTo [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left ovary](http://purl.obolibrary.org/obo/UBERON_0002119)) 
+- [gill raker](http://purl.obolibrary.org/obo/UBERON_2000356) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002149" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [left ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039857) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left ovary](http://purl.obolibrary.org/obo/UBERON_0002119) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-#### Added
-- [left ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039857) EquivalentTo [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left ovary](http://purl.obolibrary.org/obo/UBERON_0002119)) 
-
-- [left ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039857) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left ovary](http://purl.obolibrary.org/obo/UBERON_0002119) 
-
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### left ovary `http://purl.obolibrary.org/obo/UBERON_0002119`
-
 #### Added
-- [left ovary](http://purl.obolibrary.org/obo/UBERON_0002119) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-left/v1.3/assets/3d-vh-f-ovary-l.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [gill raker](http://purl.obolibrary.org/obo/UBERON_2000356) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002149" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### left pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001652`
+
+### glenoid fossa `http://purl.obolibrary.org/obo/UBERON_0006657`
 #### Removed
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168)) 
+- [glenoid fossa](http://purl.obolibrary.org/obo/UBERON_0006657) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D061165" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168)) 
-
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) 
+- [glenoid fossa](http://purl.obolibrary.org/obo/UBERON_0006657) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D061165" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### left pulmonary vein `http://purl.obolibrary.org/obo/UBERON_0009030`
+### glomerular basement membrane `http://purl.obolibrary.org/obo/UBERON_0005777`
 #### Removed
-- [left pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009030) EquivalentTo [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168)) 
+- [glomerular basement membrane](http://purl.obolibrary.org/obo/UBERON_0005777) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050533" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009030) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [left pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009030) EquivalentTo [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168)) 
+- [glomerular basement membrane](http://purl.obolibrary.org/obo/UBERON_0005777) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050533" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009030) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### left renal artery `http://purl.obolibrary.org/obo/UBERON_0001186`
+### glymphatic system `http://purl.obolibrary.org/obo/UBERON_0036145`
 #### Removed
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) EquivalentTo [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538)) 
+- [glymphatic system](http://purl.obolibrary.org/obo/UBERON_0036145) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000077502" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) EquivalentTo [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538)) 
+- [glymphatic system](http://purl.obolibrary.org/obo/UBERON_0036145) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000077502" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### left renal vein `http://purl.obolibrary.org/obo/UBERON_0001142`
+### gravid organism `http://purl.obolibrary.org/obo/UBERON_0009097`
 #### Removed
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) EquivalentTo [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538)) 
+- [gravid organism](http://purl.obolibrary.org/obo/UBERON_0009097) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000443" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) EquivalentTo [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538)) 
-
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) 
+- [gravid organism](http://purl.obolibrary.org/obo/UBERON_0009097) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000443" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### left testicular artery `http://purl.obolibrary.org/obo/UBERON_0001189`
+### gray matter `http://purl.obolibrary.org/obo/UBERON_0002020`
 #### Removed
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) EquivalentTo [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533)) 
+- [gray matter](http://purl.obolibrary.org/obo/UBERON_0002020) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066128" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left ureter](http://purl.obolibrary.org/obo/UBERON_0001223) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) EquivalentTo [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533)) 
+- [gray matter](http://purl.obolibrary.org/obo/UBERON_0002020) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066128" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left ureter](http://purl.obolibrary.org/obo/UBERON_0001223) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [left testicular artery](http://purl.obolibrary.org/obo/UBERON_0001189) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533) 
 
-
-### left testicular vein `http://purl.obolibrary.org/obo/UBERON_0000443`
+### head kidney `http://purl.obolibrary.org/obo/UBERON_0007132`
 #### Removed
-- [left testicular vein](http://purl.obolibrary.org/obo/UBERON_0000443) EquivalentTo [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533)) 
+- [head kidney](http://purl.obolibrary.org/obo/UBERON_0007132) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060226" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left testicular vein](http://purl.obolibrary.org/obo/UBERON_0000443) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [left testicular vein](http://purl.obolibrary.org/obo/UBERON_0000443) EquivalentTo [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533)) 
+- [head kidney](http://purl.obolibrary.org/obo/UBERON_0007132) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060226" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [left testicular vein](http://purl.obolibrary.org/obo/UBERON_0000443) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [left testis](http://purl.obolibrary.org/obo/UBERON_0004533) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### life cycle `http://purl.obolibrary.org/obo/UBERON_0000104`
+### hepatic sinusoid of left lobe of liver `http://purl.obolibrary.org/obo/UBERON_0009548`
 #### Removed
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000001" 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000001" 
+- [hepatic sinusoid of left lobe of liver](http://purl.obolibrary.org/obo/UBERON_0009548) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic sinusoid of left of lobe of liver" 
 
 #### Added
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [hepatic sinusoid of left lobe of liver](http://purl.obolibrary.org/obo/UBERON_0009548) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic sinusoid of left lobe of liver" 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### hepatic sinusoid of right lobe of liver `http://purl.obolibrary.org/obo/UBERON_0009549`
+#### Removed
+- [hepatic sinusoid of right lobe of liver](http://purl.obolibrary.org/obo/UBERON_0009549) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic sinusoid of right of lobe of liver" 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [hepatic sinusoid of right lobe of liver](http://purl.obolibrary.org/obo/UBERON_0009549) [label](http://www.w3.org/2000/01/rdf-schema#label) "hepatic sinusoid of right lobe of liver" 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### hepatopancreas `http://purl.obolibrary.org/obo/UBERON_0010264`
+#### Removed
+- [hepatopancreas](http://purl.obolibrary.org/obo/UBERON_0010264) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D043143" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [hepatopancreas](http://purl.obolibrary.org/obo/UBERON_0010264) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D043143" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [life cycle](http://purl.obolibrary.org/obo/UBERON_0000104) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000001" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### life cycle stage `http://purl.obolibrary.org/obo/UBERON_0000105`
+### hindlimb zeugopod `http://purl.obolibrary.org/obo/UBERON_0003823`
 #### Removed
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OlatDv:0000010" 
+- [hindlimb zeugopod](http://purl.obolibrary.org/obo/UBERON_0003823) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0010971" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000000" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000000" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [hindlimb zeugopod](http://purl.obolibrary.org/obo/UBERON_0003823) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0010971" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### honey `http://purl.obolibrary.org/obo/UBERON_0036016`
+#### Removed
+- [honey](http://purl.obolibrary.org/obo/UBERON_0036016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D006722" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [honey](http://purl.obolibrary.org/obo/UBERON_0036016) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D006722" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### hypodermis `http://purl.obolibrary.org/obo/UBERON_0002072`
+#### Removed
+- [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D040521" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [hypodermis](http://purl.obolibrary.org/obo/UBERON_0002072) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D040521" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### ileocecal fold `http://purl.obolibrary.org/obo/UBERON_1200000`
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- Class: [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3326"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-6601-2165](https://orcid.org/0000-0002-6601-2165) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [date](http://purl.org/dc/terms/date) "2025-01-15T10:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
 
-- [life cycle stage](http://purl.obolibrary.org/obo/UBERON_0000105) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000000" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:16532" 
 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ileocaecal fold" 
 
-### lingual artery `http://purl.obolibrary.org/obo/UBERON_0001610`
-#### Removed
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723)) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:1200000" 
 
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A fold of peritoneum between the ileum and cecum. The upper border of the ileocecal fold is fixed to the ileum opposite its mesenteric attachment, and the lower border passes over the ileocecal junction to join the mesentery of the appendix (and sometimes the appendix itself as well). Behind the ileocecal fold is the inferior ileocecal fossa." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://en.wikipedia.org/wiki/Ileocecal_fold" 
 
-#### Added
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723)) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) [label](http://www.w3.org/2000/01/rdf-schema#label) "ileocecal fold" 
 
-- [lingual artery](http://purl.obolibrary.org/obo/UBERON_0001610) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) 
+- [ileocecal fold](http://purl.obolibrary.org/obo/UBERON_1200000) SubClassOf [fold of peritoneum](http://purl.obolibrary.org/obo/UBERON_0034696) 
 
 
-### lymph node T cell domain `http://purl.obolibrary.org/obo/UBERON_0010417`
+### ileocecal valve `http://purl.obolibrary.org/obo/UBERON_0000569`
 #### Removed
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [ileocecal valve](http://purl.obolibrary.org/obo/UBERON_0000569) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007080" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [ileocecal valve](http://purl.obolibrary.org/obo/UBERON_0000569) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007080" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### lymph node artery `http://purl.obolibrary.org/obo/UBERON_8410034`
+### imaginal disc `http://purl.obolibrary.org/obo/UBERON_0000939`
 #### Removed
-- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029)) 
+- [imaginal disc](http://purl.obolibrary.org/obo/UBERON_0000939) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060227" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029)) 
+- [imaginal disc](http://purl.obolibrary.org/obo/UBERON_0000939) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060227" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lymph node artery](http://purl.obolibrary.org/obo/UBERON_8410034) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### lymph node follicle `http://purl.obolibrary.org/obo/UBERON_0010748`
+### inferior temporal gyrus `http://purl.obolibrary.org/obo/UBERON_0002751`
 #### Removed
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [inferior temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002751) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006175" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [inferior temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002751) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006175" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### lymph node vein `http://purl.obolibrary.org/obo/UBERON_8410033`
+### infratemporal fossa `http://purl.obolibrary.org/obo/UBERON_0013422`
 #### Removed
-- [lymph node vein](http://purl.obolibrary.org/obo/UBERON_8410033) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029)) 
+- [infratemporal fossa](http://purl.obolibrary.org/obo/UBERON_0013422) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080884" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lymph node vein](http://purl.obolibrary.org/obo/UBERON_8410033) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [lymph node vein](http://purl.obolibrary.org/obo/UBERON_8410033) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029)) 
+- [infratemporal fossa](http://purl.obolibrary.org/obo/UBERON_0013422) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080884" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [lymph node vein](http://purl.obolibrary.org/obo/UBERON_8410033) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lymph node](http://purl.obolibrary.org/obo/UBERON_0000029) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### lymph vasculature `http://purl.obolibrary.org/obo/UBERON_0004536`
+### intercarpal joint `http://purl.obolibrary.org/obo/UBERON_0011132`
 #### Removed
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [intercarpal joint](http://purl.obolibrary.org/obo/UBERON_0011132) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050824" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
-
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [intercarpal joint](http://purl.obolibrary.org/obo/UBERON_0011132) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D050824" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### major salivary gland `http://purl.obolibrary.org/obo/UBERON_0001829`
+### internodal tract `http://purl.obolibrary.org/obo/UBERON_0009966`
 
 #### Added
-- [major salivary gland](http://purl.obolibrary.org/obo/UBERON_0001829) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [internodal tract](http://purl.obolibrary.org/obo/UBERON_0009966) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [major salivary gland](http://purl.obolibrary.org/obo/UBERON_0001829) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [internodal tract](http://purl.obolibrary.org/obo/UBERON_0009966) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### mandibular artery `http://purl.obolibrary.org/obo/UBERON_3010496`
+### interpeduncular nucleus `http://purl.obolibrary.org/obo/UBERON_0002145`
 #### Removed
-- [mandibular artery](http://purl.obolibrary.org/obo/UBERON_3010496) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [roof of mouth](http://purl.obolibrary.org/obo/UBERON_0007375) 
-
-#### Added
-- [mandibular artery](http://purl.obolibrary.org/obo/UBERON_3010496) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [roof of mouth](http://purl.obolibrary.org/obo/UBERON_0007375) 
+- [interpeduncular nucleus](http://purl.obolibrary.org/obo/UBERON_0002145) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066268" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### masseteric artery `http://purl.obolibrary.org/obo/UBERON_0013648`
-#### Removed
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) 
-
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) 
+- [interpeduncular nucleus](http://purl.obolibrary.org/obo/UBERON_0002145) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066268" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [masseteric artery](http://purl.obolibrary.org/obo/UBERON_0013648) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### masseteric vein `http://purl.obolibrary.org/obo/UBERON_0001674`
+### jugal bone `http://purl.obolibrary.org/obo/UBERON_0001683`
 #### Removed
-- [masseteric vein](http://purl.obolibrary.org/obo/UBERON_0001674) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) 
+- [jugal bone](http://purl.obolibrary.org/obo/UBERON_0001683) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015050" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [masseteric vein](http://purl.obolibrary.org/obo/UBERON_0001674) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [masseteric vein](http://purl.obolibrary.org/obo/UBERON_0001674) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) 
+- [jugal bone](http://purl.obolibrary.org/obo/UBERON_0001683) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015050" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [masseteric vein](http://purl.obolibrary.org/obo/UBERON_0001674) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597) 
 
-
-### medial circumflex femoral artery `http://purl.obolibrary.org/obo/UBERON_0001356`
+### jugular foramen `http://purl.obolibrary.org/obo/UBERON_0005456`
 #### Removed
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [neck of femur](http://purl.obolibrary.org/obo/UBERON_0007119)) 
+- [jugular foramen](http://purl.obolibrary.org/obo/UBERON_0005456) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080869" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [neck of femur](http://purl.obolibrary.org/obo/UBERON_0007119) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [neck of femur](http://purl.obolibrary.org/obo/UBERON_0007119)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [medial circumflex femoral artery](http://purl.obolibrary.org/obo/UBERON_0001356) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [neck of femur](http://purl.obolibrary.org/obo/UBERON_0007119) 
+#### Added
+- [jugular foramen](http://purl.obolibrary.org/obo/UBERON_0005456) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080869" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### median sacral artery `http://purl.obolibrary.org/obo/UBERON_0005464`
-#### Removed
-- [median sacral artery](http://purl.obolibrary.org/obo/UBERON_0005464) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) 
 
-- [median sacral artery](http://purl.obolibrary.org/obo/UBERON_0005464) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) 
+### kidney interpolar region `http://purl.obolibrary.org/obo/UBERON_7770009`
 
 #### Added
-- [median sacral artery](http://purl.obolibrary.org/obo/UBERON_0005464) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) 
-
-- [median sacral artery](http://purl.obolibrary.org/obo/UBERON_0005464) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [anal canal](http://purl.obolibrary.org/obo/UBERON_0000159) 
-
+- Class: [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) 
 
-### median ventricular nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910023`
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3604"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [label](http://www.w3.org/2000/01/rdf-schema#label) "median ventricular nerve (sensu Cancer borealis)" 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-3302-4610](https://orcid.org/0000-0002-3302-4610) 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "MVN (sensu Cancer borealis)" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/0010-406X(70)90044-7" 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [date](http://purl.org/dc/terms/date) "2025-09-11T12:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Most of the efferent fibers leaving the stomatogastric ganglion and leading to the gastric mill or pyloric stomach muscles run posteriorly in the dorsal median ventricular nerve. This nerve branches bilaterally into the right and left lateral ventricular nerves (LVN) which go to their respective sides of the stomach." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/0010-406X(70)90044-7" 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910023" 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "central pole of kidney" 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "interpolar region of kidney" 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:7770009" 
 
-- Class: [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The middle portion of the kidney situated between the upper pole and the lower pole, representing approximately the middle third of the kidney along its longitudinal axis." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Kidney" 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) [label](http://www.w3.org/2000/01/rdf-schema#label) "kidney interpolar region" 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) SubClassOf [organ part](http://purl.obolibrary.org/obo/UBERON_0000064) 
 
-- [median ventricular nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910023) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+- [kidney interpolar region](http://purl.obolibrary.org/obo/UBERON_7770009) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
 
 
-### medulla of lymph node `http://purl.obolibrary.org/obo/UBERON_0002007`
+### larva `http://purl.obolibrary.org/obo/UBERON_0002548`
 #### Removed
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [larva](http://purl.obolibrary.org/obo/UBERON_0002548) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007814" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [larva](http://purl.obolibrary.org/obo/UBERON_0002548) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007814" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### meningeal artery `http://purl.obolibrary.org/obo/UBERON_0003474`
+### lateral hypothalamic area `http://purl.obolibrary.org/obo/UBERON_0002430`
 #### Removed
-- [meningeal artery](http://purl.obolibrary.org/obo/UBERON_0003474) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360)) 
+- [lateral hypothalamic area](http://purl.obolibrary.org/obo/UBERON_0002430) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006481" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [meningeal artery](http://purl.obolibrary.org/obo/UBERON_0003474) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [meningeal artery](http://purl.obolibrary.org/obo/UBERON_0003474) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360)) 
+- [lateral hypothalamic area](http://purl.obolibrary.org/obo/UBERON_0002430) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006481" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [meningeal artery](http://purl.obolibrary.org/obo/UBERON_0003474) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### meningeal vein `http://purl.obolibrary.org/obo/UBERON_0018251`
+### lateral line system `http://purl.obolibrary.org/obo/UBERON_0002540`
 #### Removed
-- [meningeal vein](http://purl.obolibrary.org/obo/UBERON_0018251) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360)) 
+- [lateral line system](http://purl.obolibrary.org/obo/UBERON_0002540) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D053403" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [meningeal vein](http://purl.obolibrary.org/obo/UBERON_0018251) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [meningeal vein](http://purl.obolibrary.org/obo/UBERON_0018251) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360)) 
+- [lateral line system](http://purl.obolibrary.org/obo/UBERON_0002540) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D053403" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [meningeal vein](http://purl.obolibrary.org/obo/UBERON_0018251) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [meninx](http://purl.obolibrary.org/obo/UBERON_0002360) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### mental artery `http://purl.obolibrary.org/obo/UBERON_0001617`
+### lateral preoptic nucleus `http://purl.obolibrary.org/obo/UBERON_0001931`
 #### Removed
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693)) 
+- [lateral preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0001931) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006166" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [inferior alveolar artery](http://purl.obolibrary.org/obo/UBERON_0014693)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199)) 
+- [lateral preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0001931) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006166" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [mental artery](http://purl.obolibrary.org/obo/UBERON_0001617) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [chin](http://purl.obolibrary.org/obo/UBERON_0008199) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### mesencephalic artery `http://purl.obolibrary.org/obo/UBERON_0001634`
+### limb `http://purl.obolibrary.org/obo/UBERON_0002101`
 #### Removed
-- [mesencephalic artery](http://purl.obolibrary.org/obo/UBERON_0001634) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [midbrain](http://purl.obolibrary.org/obo/UBERON_0001891) 
+- [limb](http://purl.obolibrary.org/obo/UBERON_0002101) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005121" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [mesencephalic artery](http://purl.obolibrary.org/obo/UBERON_0001634) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [midbrain](http://purl.obolibrary.org/obo/UBERON_0001891) 
+- [limb](http://purl.obolibrary.org/obo/UBERON_0002101) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005121" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### mesenteric artery `http://purl.obolibrary.org/obo/UBERON_0005616`
+### limbic lobe `http://purl.obolibrary.org/obo/UBERON_0002600`
 #### Removed
-- [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160)) 
+- [limbic lobe](http://purl.obolibrary.org/obo/UBERON_0002600) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065726" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160)) 
+- [limbic lobe](http://purl.obolibrary.org/obo/UBERON_0002600) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065726" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### mesenteric lymph node `http://purl.obolibrary.org/obo/UBERON_0002509`
+### lymphatic vessel `http://purl.obolibrary.org/obo/UBERON_0001473`
 #### Removed
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.3/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0001473) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D042601" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.3/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-female/v1.4/assets/3d-nih-f-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0001473) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D042601" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/lymph-node-male/v1.4/assets/3d-nih-m-lymph-node.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### mesenteric vein `http://purl.obolibrary.org/obo/UBERON_0005617`
+### main olfactory bulb `http://purl.obolibrary.org/obo/UBERON_0009951`
 #### Removed
-- [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160)) 
+- [main olfactory bulb](http://purl.obolibrary.org/obo/UBERON_0009951) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009830" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160)) 
+- [main olfactory bulb](http://purl.obolibrary.org/obo/UBERON_0009951) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009830" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [intestine](http://purl.obolibrary.org/obo/UBERON_0000160) 
 
-
-### middle colic artery `http://purl.obolibrary.org/obo/UBERON_0001196`
+### manubrium `http://purl.obolibrary.org/obo/UBERON_2001553`
 #### Removed
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) 
+- [manubrium](http://purl.obolibrary.org/obo/UBERON_2001553) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D008371" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) 
+- [manubrium](http://purl.obolibrary.org/obo/UBERON_2001553) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D008371" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### middle colic vein `http://purl.obolibrary.org/obo/UBERON_0001218`
+### mapping_provider `https://w3id.org/sssom/mapping_provider`
 #### Removed
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) 
+- AnnotationProperty: [mapping_provider](https://w3id.org/sssom/mapping_provider) 
 
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
 
-#### Added
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157)) 
 
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) 
+### meconium `http://purl.obolibrary.org/obo/UBERON_0007109`
+#### Removed
+- [meconium](http://purl.obolibrary.org/obo/UBERON_0007109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D008470" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### middle temporal vein `http://purl.obolibrary.org/obo/UBERON_0001658`
-#### Removed
-- [middle temporal vein](http://purl.obolibrary.org/obo/UBERON_0001658) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [orbital region](http://purl.obolibrary.org/obo/UBERON_0004088) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [middle temporal vein](http://purl.obolibrary.org/obo/UBERON_0001658) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [orbital region](http://purl.obolibrary.org/obo/UBERON_0004088) 
+- [meconium](http://purl.obolibrary.org/obo/UBERON_0007109) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D008470" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### middle vesical artery `http://purl.obolibrary.org/obo/UBERON_0035640`
-#### Removed
-- [middle vesical artery](http://purl.obolibrary.org/obo/UBERON_0035640) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0000998) 
 
-#### Added
-- [middle vesical artery](http://purl.obolibrary.org/obo/UBERON_0035640) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0000998) 
+### medial preoptic nucleus `http://purl.obolibrary.org/obo/UBERON_0002035`
+#### Removed
+- [medial preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0002035) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006167" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### minor salivary gland `http://purl.obolibrary.org/obo/UBERON_0001830`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [minor salivary gland](http://purl.obolibrary.org/obo/UBERON_0001830) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [medial preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0002035) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006167" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [minor salivary gland](http://purl.obolibrary.org/obo/UBERON_0001830) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### moderator band `http://purl.obolibrary.org/obo/UBERON_8470002`
+### median preoptic nucleus `http://purl.obolibrary.org/obo/UBERON_0002625`
+#### Removed
+- [median preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0002625) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006168" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [moderator band](http://purl.obolibrary.org/obo/UBERON_8470002) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [moderator band](http://purl.obolibrary.org/obo/UBERON_8470002) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
+#### Added
+- [median preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0002625) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006168" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### mouth `http://purl.obolibrary.org/obo/UBERON_0000165`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-#### Added
-- [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [mouth](http://purl.obolibrary.org/obo/UBERON_0000165) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+### meniscus `http://purl.obolibrary.org/obo/UBERON_0000387`
+#### Removed
+- [meniscus](http://purl.obolibrary.org/obo/UBERON_0000387) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000072600" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### mouth mucosa `http://purl.obolibrary.org/obo/UBERON_0003729`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [meniscus](http://purl.obolibrary.org/obo/UBERON_0000387) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000072600" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [mouth mucosa](http://purl.obolibrary.org/obo/UBERON_0003729) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### muscular artery `http://purl.obolibrary.org/obo/UBERON_3010489`
+### mental foramen `http://purl.obolibrary.org/obo/UBERON_0006812`
 #### Removed
-- [muscular artery](http://purl.obolibrary.org/obo/UBERON_3010489) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [rectus cervicis](http://purl.obolibrary.org/obo/UBERON_3010654) 
-
-#### Added
-- [muscular artery](http://purl.obolibrary.org/obo/UBERON_3010489) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [rectus cervicis](http://purl.obolibrary.org/obo/UBERON_3010654) 
+- [mental foramen](http://purl.obolibrary.org/obo/UBERON_0006812) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080383" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### musculo-phrenic artery `http://purl.obolibrary.org/obo/UBERON_0006632`
-#### Removed
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [musculo-phrenic artery](http://purl.obolibrary.org/obo/UBERON_0006632) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [internal thoracic artery](http://purl.obolibrary.org/obo/UBERON_0002456)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+- [mental foramen](http://purl.obolibrary.org/obo/UBERON_0006812) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080383" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### musculo-phrenic vein `http://purl.obolibrary.org/obo/UBERON_0006662`
-#### Removed
-- [musculo-phrenic vein](http://purl.obolibrary.org/obo/UBERON_0006662) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [internal thoracic vein](http://purl.obolibrary.org/obo/UBERON_0001589)) 
 
-#### Added
-- [musculo-phrenic vein](http://purl.obolibrary.org/obo/UBERON_0006662) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [internal thoracic vein](http://purl.obolibrary.org/obo/UBERON_0001589)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+### mesonephric duct `http://purl.obolibrary.org/obo/UBERON_0003074`
+#### Removed
+- [mesonephric duct](http://purl.obolibrary.org/obo/UBERON_0003074) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005990" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### nasopharynx `http://purl.obolibrary.org/obo/UBERON_0001728`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [nasopharynx](http://purl.obolibrary.org/obo/UBERON_0001728) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [mesonephric duct](http://purl.obolibrary.org/obo/UBERON_0003074) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005990" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [nasopharynx](http://purl.obolibrary.org/obo/UBERON_0001728) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### neonate stage `http://purl.obolibrary.org/obo/UBERON_0007221`
+### metathalamus `http://purl.obolibrary.org/obo/UBERON_0002704`
 #### Removed
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000082" 
+- [metathalamus](http://purl.obolibrary.org/obo/UBERON_0002704) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005829" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000096" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [metathalamus](http://purl.obolibrary.org/obo/UBERON_0002704) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005829" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000036" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### midbrain raphe nuclei `http://purl.obolibrary.org/obo/UBERON_0007412`
+#### Removed
+- [midbrain raphe nuclei](http://purl.obolibrary.org/obo/UBERON_0007412) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066267" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000046" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+#### Added
+- [midbrain raphe nuclei](http://purl.obolibrary.org/obo/UBERON_0007412) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066267" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000013" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000009" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [neonate stage](http://purl.obolibrary.org/obo/UBERON_0007221) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000262" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### midbrain reticular formation `http://purl.obolibrary.org/obo/UBERON_0002639`
+#### Removed
+- [midbrain reticular formation](http://purl.obolibrary.org/obo/UBERON_0002639) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066265" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### nervous system `http://purl.obolibrary.org/obo/UBERON_0001016`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [midbrain reticular formation](http://purl.obolibrary.org/obo/UBERON_0002639) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066265" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### neuron projection bundle connecting eye with brain `http://purl.obolibrary.org/obo/UBERON_0004904`
+### midbrain tegmentum `http://purl.obolibrary.org/obo/UBERON_0001943`
 #### Removed
-- [neuron projection bundle connecting eye with brain](http://purl.obolibrary.org/obo/UBERON_0004904) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [midbrain tegmentum](http://purl.obolibrary.org/obo/UBERON_0001943) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013681" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [neuron projection bundle connecting eye with brain](http://purl.obolibrary.org/obo/UBERON_0004904) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
+#### Added
+- [midbrain tegmentum](http://purl.obolibrary.org/obo/UBERON_0001943) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013681" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### neurula stage `http://purl.obolibrary.org/obo/UBERON_0000110`
+### middle cerebellar peduncle `http://purl.obolibrary.org/obo/UBERON_0002152`
 #### Removed
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000012" 
+- [middle cerebellar peduncle](http://purl.obolibrary.org/obo/UBERON_0002152) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065837" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000017" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000027" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [middle cerebellar peduncle](http://purl.obolibrary.org/obo/UBERON_0002152) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065837" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000091" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000093" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### middle temporal gyrus `http://purl.obolibrary.org/obo/UBERON_0002771`
+#### Removed
+- [middle temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002771) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006176" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000017" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [neurula stage](http://purl.obolibrary.org/obo/UBERON_0000110) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000012" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
+#### Added
+- [middle temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002771) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006176" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### nursing stage `http://purl.obolibrary.org/obo/UBERON_0018685`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-#### Added
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000056" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000032" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### midline nuclear group `http://purl.obolibrary.org/obo/UBERON_0002705`
+#### Removed
+- [midline nuclear group](http://purl.obolibrary.org/obo/UBERON_0002705) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020644" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [midline nuclear group](http://purl.obolibrary.org/obo/UBERON_0002705) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020644" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000138" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### mole `http://purl.obolibrary.org/obo/UBERON_1000010`
+#### Removed
+- [mole](http://purl.obolibrary.org/obo/UBERON_1000010) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009506" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000260" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [mole](http://purl.obolibrary.org/obo/UBERON_1000010) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009506" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [nursing stage](http://purl.obolibrary.org/obo/UBERON_0018685) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### nutrient foramen artery `http://purl.obolibrary.org/obo/UBERON_0010176`
+### motor nucleus of trigeminal nerve `http://purl.obolibrary.org/obo/UBERON_0002633`
 #### Removed
-- [nutrient foramen artery](http://purl.obolibrary.org/obo/UBERON_0010176) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) 
+- [motor nucleus of trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0002633) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066266" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
 #### Added
-- [nutrient foramen artery](http://purl.obolibrary.org/obo/UBERON_0010176) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) 
+- [motor nucleus of trigeminal nerve](http://purl.obolibrary.org/obo/UBERON_0002633) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066266" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### nutrient foramen vein `http://purl.obolibrary.org/obo/UBERON_0010175`
+### mouth floor `http://purl.obolibrary.org/obo/UBERON_0003679`
 #### Removed
-- [nutrient foramen vein](http://purl.obolibrary.org/obo/UBERON_0010175) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) 
+- [mouth floor](http://purl.obolibrary.org/obo/UBERON_0003679) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006184" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [nutrient foramen vein](http://purl.obolibrary.org/obo/UBERON_0010175) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474) 
+- [mouth floor](http://purl.obolibrary.org/obo/UBERON_0003679) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006184" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### obsolete median fin skeleton `http://purl.obolibrary.org/obo/UBERON_0002543`
+### mucosa of bronchiole `http://purl.obolibrary.org/obo/UBERON_0005039`
 #### Removed
-- [obsolete median fin skeleton](http://purl.obolibrary.org/obo/UBERON_0002543) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [EFO_0000950](http://www.ebi.ac.uk/efo/EFO_0000950) 
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) SubClassOf [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) 
 
 #### Added
-- [obsolete median fin skeleton](http://purl.obolibrary.org/obo/UBERON_0002543) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [EFO_0000950](http://purl.obolibrary.org/obo/EFO_0000950) 
+- [mucosa of bronchiole](http://purl.obolibrary.org/obo/UBERON_0005039) SubClassOf [respiratory system mucosa](http://purl.obolibrary.org/obo/UBERON_0004785) 
 
 
-### obsolete regional part of gustatory epithelium `http://purl.obolibrary.org/obo/UBERON_0025182`
+### mucosa of larynx `http://purl.obolibrary.org/obo/UBERON_0001824`
 #### Removed
-- [obsolete regional part of gustatory epithelium](http://purl.obolibrary.org/obo/UBERON_0025182) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [nifext_13](http://uri.neuinfo.org/nif/nifstd/nifext_13) 
+- [mucosa of larynx](http://purl.obolibrary.org/obo/UBERON_0001824) SubClassOf [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) 
 
 #### Added
-- [obsolete regional part of gustatory epithelium](http://purl.obolibrary.org/obo/UBERON_0025182) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [NIFEXT_13](http://purl.obolibrary.org/obo/NIFEXT_13) 
+- [mucosa of larynx](http://purl.obolibrary.org/obo/UBERON_0001824) SubClassOf [respiratory system mucosa](http://purl.obolibrary.org/obo/UBERON_0004785) 
 
 
-### obsolete tuber `http://purl.obolibrary.org/obo/UBERON_0000380`
+### mucosa of nasopharynx `http://purl.obolibrary.org/obo/UBERON_0005022`
 #### Removed
-- [obsolete tuber](http://purl.obolibrary.org/obo/UBERON_0000380) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [EFO_0001015](http://www.ebi.ac.uk/efo/EFO_0001015) 
+- [mucosa of nasopharynx](http://purl.obolibrary.org/obo/UBERON_0005022) SubClassOf [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) 
 
-#### Added
-- [obsolete tuber](http://purl.obolibrary.org/obo/UBERON_0000380) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [EFO_0001015](http://purl.obolibrary.org/obo/EFO_0001015) 
 
 
-### occipital artery `http://purl.obolibrary.org/obo/UBERON_0001613`
+### myelencephalon `http://purl.obolibrary.org/obo/UBERON_0005290`
 #### Removed
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) 
+- [myelencephalon](http://purl.obolibrary.org/obo/UBERON_0005290) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054024" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [external carotid artery](http://purl.obolibrary.org/obo/UBERON_0001070)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377)) 
-
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [scalp](http://purl.obolibrary.org/obo/UBERON_0000403) 
+- [myelencephalon](http://purl.obolibrary.org/obo/UBERON_0005290) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054024" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [occipital artery](http://purl.obolibrary.org/obo/UBERON_0001613) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [muscle of neck](http://purl.obolibrary.org/obo/UBERON_0002377) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ophthalmotemporal branch of external ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0015158`
+### nacre `http://purl.obolibrary.org/obo/UBERON_0008269`
 #### Removed
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:7559104" 
+- [nacre](http://purl.obolibrary.org/obo/UBERON_0008269) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060734" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [ophthalmotemporal branch of external ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0015158) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [Harderian gland](http://purl.obolibrary.org/obo/UBERON_0004187) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "PMID:7559104" 
+- [nacre](http://purl.obolibrary.org/obo/UBERON_0008269) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060734" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### optic artery `http://purl.obolibrary.org/obo/UBERON_2005044`
-#### Removed
-- [optic artery](http://purl.obolibrary.org/obo/UBERON_2005044) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [camera-type eye](http://purl.obolibrary.org/obo/UBERON_0000019) 
 
-#### Added
-- [optic artery](http://purl.obolibrary.org/obo/UBERON_2005044) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [camera-type eye](http://purl.obolibrary.org/obo/UBERON_0000019) 
+### nasal cartilage `http://purl.obolibrary.org/obo/UBERON_0001823`
+#### Removed
+- [nasal cartilage](http://purl.obolibrary.org/obo/UBERON_0001823) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055171" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### oral gland `http://purl.obolibrary.org/obo/UBERON_0010047`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [oral gland](http://purl.obolibrary.org/obo/UBERON_0010047) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [nasal cartilage](http://purl.obolibrary.org/obo/UBERON_0001823) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055171" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [oral gland](http://purl.obolibrary.org/obo/UBERON_0010047) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### organogenesis stage `http://purl.obolibrary.org/obo/UBERON_0000111`
+### nasal cavity mucosa `http://purl.obolibrary.org/obo/UBERON_0001826`
 #### Removed
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000018" 
-
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000015" 
+- [nasal cavity mucosa](http://purl.obolibrary.org/obo/UBERON_0001826) SubClassOf [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) 
 
 #### Added
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000094" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [nasal cavity mucosa](http://purl.obolibrary.org/obo/UBERON_0001826) SubClassOf [respiratory system mucosa](http://purl.obolibrary.org/obo/UBERON_0004785) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000086" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000018" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### neural plate `http://purl.obolibrary.org/obo/UBERON_0003075`
+#### Removed
+- [neural plate](http://purl.obolibrary.org/obo/UBERON_0003075) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054258" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000028" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000015" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000055" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [neural plate](http://purl.obolibrary.org/obo/UBERON_0003075) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054258" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [organogenesis stage](http://purl.obolibrary.org/obo/UBERON_0000111) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000022" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ovarian artery `http://purl.obolibrary.org/obo/UBERON_0001190`
+### neural tube `http://purl.obolibrary.org/obo/UBERON_0001049`
 #### Removed
-- [ovarian artery](http://purl.obolibrary.org/obo/UBERON_0001190) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) 
+- [neural tube](http://purl.obolibrary.org/obo/UBERON_0001049) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054259" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [ovarian artery](http://purl.obolibrary.org/obo/UBERON_0001190) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [ovarian artery](http://purl.obolibrary.org/obo/UBERON_0001190) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) 
+- [neural tube](http://purl.obolibrary.org/obo/UBERON_0001049) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054259" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [ovarian artery](http://purl.obolibrary.org/obo/UBERON_0001190) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ovarian vein `http://purl.obolibrary.org/obo/UBERON_0001145`
+### neuromast `http://purl.obolibrary.org/obo/UBERON_0008904`
 #### Removed
-- [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) 
+- [neuromast](http://purl.obolibrary.org/obo/UBERON_0008904) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006219" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) 
+- [neuromast](http://purl.obolibrary.org/obo/UBERON_0008904) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006219" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### oviduct artery `http://purl.obolibrary.org/obo/UBERON_3010503`
+### nucleus pulposus `http://purl.obolibrary.org/obo/UBERON_0002242`
 #### Removed
-- [oviduct artery](http://purl.obolibrary.org/obo/UBERON_3010503) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [oviduct](http://purl.obolibrary.org/obo/UBERON_0000993) 
+- [nucleus pulposus](http://purl.obolibrary.org/obo/UBERON_0002242) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070614" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [oviduct artery](http://purl.obolibrary.org/obo/UBERON_3010503) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [oviduct](http://purl.obolibrary.org/obo/UBERON_0000993) 
+- [nucleus pulposus](http://purl.obolibrary.org/obo/UBERON_0002242) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000070614" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### palpebral artery `http://purl.obolibrary.org/obo/UBERON_0014770`
+
+### nucleus raphe magnus `http://purl.obolibrary.org/obo/UBERON_0002156`
 #### Removed
-- [palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014770) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711)) 
+- [nucleus raphe magnus](http://purl.obolibrary.org/obo/UBERON_0002156) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065846" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014770) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014770) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711)) 
+- [nucleus raphe magnus](http://purl.obolibrary.org/obo/UBERON_0002156) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065846" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [palpebral artery](http://purl.obolibrary.org/obo/UBERON_0014770) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### palpebral vein `http://purl.obolibrary.org/obo/UBERON_0014769`
+### nucleus raphe obscurus `http://purl.obolibrary.org/obo/UBERON_0002684`
 #### Removed
-- [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711)) 
+- [nucleus raphe obscurus](http://purl.obolibrary.org/obo/UBERON_0002684) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065849" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711)) 
+- [nucleus raphe obscurus](http://purl.obolibrary.org/obo/UBERON_0002684) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065849" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [eyelid](http://purl.obolibrary.org/obo/UBERON_0001711) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### pancreatic artery `http://purl.obolibrary.org/obo/UBERON_0039261`
+### nucleus raphe pallidus `http://purl.obolibrary.org/obo/UBERON_0002157`
 #### Removed
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264)) 
+- [nucleus raphe pallidus](http://purl.obolibrary.org/obo/UBERON_0002157) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065848" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264)) 
+- [nucleus raphe pallidus](http://purl.obolibrary.org/obo/UBERON_0002157) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065848" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [pancreatic artery](http://purl.obolibrary.org/obo/UBERON_0039261) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### parathyroid epithelium `http://purl.obolibrary.org/obo/UBERON_0011197`
+### occipital region `http://purl.obolibrary.org/obo/UBERON_0005902`
 #### Removed
-- [parathyroid epithelium](http://purl.obolibrary.org/obo/UBERON_0011197) SubClassOf [glandular epithelium](http://purl.obolibrary.org/obo/UBERON_0006799) 
+- [occipital region](http://purl.obolibrary.org/obo/UBERON_0005902) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009778" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
+#### Added
+- [occipital region](http://purl.obolibrary.org/obo/UBERON_0005902) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009778" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### parotid vein `http://purl.obolibrary.org/obo/UBERON_0035662`
-#### Removed
-- [parotid vein](http://purl.obolibrary.org/obo/UBERON_0035662) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) 
 
-- [parotid vein](http://purl.obolibrary.org/obo/UBERON_0035662) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) 
+### occlusal surface of tooth `http://purl.obolibrary.org/obo/UBERON_8600149`
 
 #### Added
-- [parotid vein](http://purl.obolibrary.org/obo/UBERON_0035662) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) 
+- Class: [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) 
 
-- [parotid vein](http://purl.obolibrary.org/obo/UBERON_0035662) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-9625-1899](https://orcid.org/0000-0001-9625-1899) 
 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [contributor](http://purl.org/dc/terms/contributor) [0009-0002-7282-0836](https://orcid.org/0009-0002-7282-0836) 
 
-### pelvic vein `http://purl.obolibrary.org/obo/UBERON_0036268`
-#### Removed
-- [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355)) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [date](http://purl.org/dc/terms/date) "2025-08-29T11:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [hasRelatedSynonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "chewing surface" 
 
-#### Added
-- [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355)) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [hasRelatedSynonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "masticatory surface" 
 
-- [pelvic vein](http://purl.obolibrary.org/obo/UBERON_0036268) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pelvic region of trunk](http://purl.obolibrary.org/obo/UBERON_0002355) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600149" 
 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "occlusal surface" 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://dentaleducationhub.com/surfaces-of-the-teeth/" 
 
-### penicillar arteriole `http://purl.obolibrary.org/obo/UBERON_0013132`
-#### Removed
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A tooth surface structure that forms the chewing edge of premolar or molar tooth. It functions to chew or grind food during biting." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://dentaleducationhub.com/surfaces-of-the-teeth/" 
 
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [red pulp of spleen](http://purl.obolibrary.org/obo/UBERON_0001250) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://terminology.hl7.org/CodeSystem-FDI-surface.html" 
 
-#### Added
-- [penicillar arteriole](http://purl.obolibrary.org/obo/UBERON_0013132) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [red pulp of spleen](http://purl.obolibrary.org/obo/UBERON_0001250) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipedia:Trabecular_arteries" 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) [label](http://www.w3.org/2000/01/rdf-schema#label) "occlusal surface of tooth" 
 
+- [occlusal surface of tooth](http://purl.obolibrary.org/obo/UBERON_8600149) SubClassOf [tooth surface structure](http://purl.obolibrary.org/obo/UBERON_8600148) 
 
-### penile bulb artery `http://purl.obolibrary.org/obo/UBERON_0008311`
+
+### oculomotor nuclear complex `http://purl.obolibrary.org/obo/UBERON_0001715`
 #### Removed
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128)) 
+- [oculomotor nuclear complex](http://purl.obolibrary.org/obo/UBERON_0001715) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065838" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128)) 
+- [oculomotor nuclear complex](http://purl.obolibrary.org/obo/UBERON_0001715) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065838" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [penile bulb artery](http://purl.obolibrary.org/obo/UBERON_0008311) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### penile bulb vein `http://purl.obolibrary.org/obo/UBERON_0039376`
+### olecranon `http://purl.obolibrary.org/obo/UBERON_0006810`
 #### Removed
-- [penile bulb vein](http://purl.obolibrary.org/obo/UBERON_0039376) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128)) 
+- [olecranon](http://purl.obolibrary.org/obo/UBERON_0006810) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056740" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [penile bulb vein](http://purl.obolibrary.org/obo/UBERON_0039376) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [penile bulb vein](http://purl.obolibrary.org/obo/UBERON_0039376) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128)) 
+- [olecranon](http://purl.obolibrary.org/obo/UBERON_0006810) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D056740" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [penile bulb vein](http://purl.obolibrary.org/obo/UBERON_0039376) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bulb of penis](http://purl.obolibrary.org/obo/UBERON_0013128) 
 
+### olfactory cortex `http://purl.obolibrary.org/obo/UBERON_0002894`
 
-### peroneal artery `http://purl.obolibrary.org/obo/UBERON_0001540`
-#### Removed
-- [peroneal artery](http://purl.obolibrary.org/obo/UBERON_0001540) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [hindlimb](http://purl.obolibrary.org/obo/UBERON_0002103) 
-
 #### Added
-- [peroneal artery](http://purl.obolibrary.org/obo/UBERON_0001540) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [hindlimb](http://purl.obolibrary.org/obo/UBERON_0002103) 
+- [olfactory cortex](http://purl.obolibrary.org/obo/UBERON_0002894) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
+- [olfactory cortex](http://purl.obolibrary.org/obo/UBERON_0002894) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-### phrenic artery `http://purl.obolibrary.org/obo/UBERON_0002057`
+
+### olfactory placode `http://purl.obolibrary.org/obo/UBERON_0003050`
 #### Removed
-- [phrenic artery](http://purl.obolibrary.org/obo/UBERON_0002057) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+- [olfactory placode](http://purl.obolibrary.org/obo/UBERON_0003050) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006222" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [phrenic artery](http://purl.obolibrary.org/obo/UBERON_0002057) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [phrenic artery](http://purl.obolibrary.org/obo/UBERON_0002057) EquivalentTo [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+- [olfactory placode](http://purl.obolibrary.org/obo/UBERON_0003050) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006222" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [phrenic artery](http://purl.obolibrary.org/obo/UBERON_0002057) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### phrenic vein `http://purl.obolibrary.org/obo/UBERON_0012193`
+### olfactory tract `http://purl.obolibrary.org/obo/UBERON_0002265`
 #### Removed
-- [phrenic vein](http://purl.obolibrary.org/obo/UBERON_0012193) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+- [olfactory tract](http://purl.obolibrary.org/obo/UBERON_0002265) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:12074" 
 
-- [phrenic vein](http://purl.obolibrary.org/obo/UBERON_0012193) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) 
 
+
+### olfactory tubercle `http://purl.obolibrary.org/obo/UBERON_0001883`
+
 #### Added
-- [phrenic vein](http://purl.obolibrary.org/obo/UBERON_0012193) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103)) 
+- [olfactory tubercle](http://purl.obolibrary.org/obo/UBERON_0001883) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [olfactory tubercle](http://purl.obolibrary.org/obo/UBERON_0001883) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
 
-- [phrenic vein](http://purl.obolibrary.org/obo/UBERON_0012193) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [diaphragm](http://purl.obolibrary.org/obo/UBERON_0001103) 
+### olivocerebellar tract `http://purl.obolibrary.org/obo/UBERON_0002752`
+#### Removed
+- [olivocerebellar tract](http://purl.obolibrary.org/obo/UBERON_0002752) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006157" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### post-embryonic stage `http://purl.obolibrary.org/obo/UBERON_0000092`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [post-embryonic stage](http://purl.obolibrary.org/obo/UBERON_0000092) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000038" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [olivocerebellar tract](http://purl.obolibrary.org/obo/UBERON_0002752) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006157" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### post-juvenile adult stage `http://purl.obolibrary.org/obo/UBERON_0000113`
+### oral cavity `http://purl.obolibrary.org/obo/UBERON_0000167`
 #### Removed
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000110" 
+- [oral cavity](http://purl.obolibrary.org/obo/UBERON_0000167) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009055" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000042" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [oral cavity](http://purl.obolibrary.org/obo/UBERON_0000167) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009055" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### otic capsule `http://purl.obolibrary.org/obo/UBERON_0004637`
+#### Removed
+- [otic capsule](http://purl.obolibrary.org/obo/UBERON_0004637) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005981" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000011" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000016" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [otic capsule](http://purl.obolibrary.org/obo/UBERON_0004637) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005981" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000021" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### ovarian fluid `http://purl.obolibrary.org/obo/UBERON_8480040`
+#### Removed
+- [ovarian fluid](http://purl.obolibrary.org/obo/UBERON_8480040) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004569" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000110" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000015" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000258" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [ovarian fluid](http://purl.obolibrary.org/obo/UBERON_8480040) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0004569" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### pad `http://purl.obolibrary.org/obo/UBERON_2001977`
+#### Removed
+- [pad](http://purl.obolibrary.org/obo/UBERON_2001977) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058729" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000006" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [pad](http://purl.obolibrary.org/obo/UBERON_2001977) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D058729" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [post-juvenile adult stage](http://purl.obolibrary.org/obo/UBERON_0000113) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### posterior auricular artery `http://purl.obolibrary.org/obo/UBERON_0014694`
+### palatine tonsil `http://purl.obolibrary.org/obo/UBERON_0002373`
 #### Removed
-- [posterior auricular artery](http://purl.obolibrary.org/obo/UBERON_0014694) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pinna](http://purl.obolibrary.org/obo/UBERON_0001757) 
+- [palatine tonsil](http://purl.obolibrary.org/obo/UBERON_0002373) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014066" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [posterior auricular artery](http://purl.obolibrary.org/obo/UBERON_0014694) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pinna](http://purl.obolibrary.org/obo/UBERON_0001757) 
+- [palatine tonsil](http://purl.obolibrary.org/obo/UBERON_0002373) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014066" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### posterior cerebral artery `http://purl.obolibrary.org/obo/UBERON_0001636`
+
+### pallidum `http://purl.obolibrary.org/obo/UBERON_0006514`
 #### Removed
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) EquivalentTo [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
+- [pallidum](http://purl.obolibrary.org/obo/UBERON_0006514) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005917" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) EquivalentTo [cerebral artery](http://purl.obolibrary.org/obo/UBERON_0004449) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021)) 
+- [pallidum](http://purl.obolibrary.org/obo/UBERON_0006514) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005917" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
 
-- [posterior cerebral artery](http://purl.obolibrary.org/obo/UBERON_0001636) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [occipital lobe](http://purl.obolibrary.org/obo/UBERON_0002021) 
+### pancreatic acinus `http://purl.obolibrary.org/obo/UBERON_0001263`
+#### Removed
+- [pancreatic acinus](http://purl.obolibrary.org/obo/UBERON_0001263) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000028" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### prime adult stage `http://purl.obolibrary.org/obo/UBERON_0018241`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000017" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [pancreatic acinus](http://purl.obolibrary.org/obo/UBERON_0001263) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000028" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000059" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### pancreatic duct `http://purl.obolibrary.org/obo/UBERON_0007329`
+#### Removed
+- [pancreatic duct](http://purl.obolibrary.org/obo/UBERON_0007329) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010183" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000022" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [pancreatic duct](http://purl.obolibrary.org/obo/UBERON_0007329) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010183" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000077" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### parabrachial nucleus `http://purl.obolibrary.org/obo/UBERON_0007634`
+#### Removed
+- [parabrachial nucleus](http://purl.obolibrary.org/obo/UBERON_0007634) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065823" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000226" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000136" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [parabrachial nucleus](http://purl.obolibrary.org/obo/UBERON_0007634) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065823" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### parapharyngeal space `http://purl.obolibrary.org/obo/UBERON_0035618`
+#### Removed
+- [parapharyngeal space](http://purl.obolibrary.org/obo/UBERON_0035618) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080886" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000005" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000007" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [parapharyngeal space](http://purl.obolibrary.org/obo/UBERON_0035618) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000080886" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [prime adult stage](http://purl.obolibrary.org/obo/UBERON_0018241) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000012" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### prostatic venule `http://purl.obolibrary.org/obo/UBERON_8600084`
+### parasympathetic ganglion `http://purl.obolibrary.org/obo/UBERON_0001808`
 #### Removed
-- [prostatic venule](http://purl.obolibrary.org/obo/UBERON_8600084) SubClassOf [vein](http://purl.obolibrary.org/obo/UBERON_0001638) 
+- [parasympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001808) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005726" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### proximo-distal subdivision of respiratory tract `http://purl.obolibrary.org/obo/UBERON_0000072`
-
 #### Added
-- [proximo-distal subdivision of respiratory tract](http://purl.obolibrary.org/obo/UBERON_0000072) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [parasympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001808) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005726" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [proximo-distal subdivision of respiratory tract](http://purl.obolibrary.org/obo/UBERON_0000072) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### pulmonary arteriole `http://purl.obolibrary.org/obo/UBERON_8600077`
+### parenchyma `http://purl.obolibrary.org/obo/UBERON_0000353`
 #### Removed
-- [pulmonary arteriole](http://purl.obolibrary.org/obo/UBERON_8600077) SubClassOf [respiratory system artery](http://purl.obolibrary.org/obo/UBERON_0003469) 
+- [parenchyma](http://purl.obolibrary.org/obo/UBERON_0000353) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000999" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0002012`
-#### Removed
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+- [parenchyma](http://purl.obolibrary.org/obo/UBERON_0000353) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001539" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+- [parenchyma](http://purl.obolibrary.org/obo/UBERON_0000353) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0000999" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
+- [parenchyma](http://purl.obolibrary.org/obo/UBERON_0000353) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001539" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### pulmonary vein `http://purl.obolibrary.org/obo/UBERON_0002016`
+
+### parietal cortex `http://purl.obolibrary.org/obo/UBERON_0016530`
 #### Removed
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+- [parietal cortex](http://purl.obolibrary.org/obo/UBERON_0016530) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010296" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048)) 
-
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lung](http://purl.obolibrary.org/obo/UBERON_0002048) 
+- [parietal cortex](http://purl.obolibrary.org/obo/UBERON_0016530) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010296" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### pulmonary venule `http://purl.obolibrary.org/obo/UBERON_8600024`
+### parvocellular oculomotor nucleus `http://purl.obolibrary.org/obo/UBERON_0002141`
 #### Removed
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [thoracic vein](http://purl.obolibrary.org/obo/UBERON_0005194) 
+- [parvocellular oculomotor nucleus](http://purl.obolibrary.org/obo/UBERON_0002141) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065839" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pulmonary capillary](http://purl.obolibrary.org/obo/UBERON_0016405) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [pulmonary venule](http://purl.obolibrary.org/obo/UBERON_8600024) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pulmonary capillary](http://purl.obolibrary.org/obo/UBERON_0016405) 
+- [parvocellular oculomotor nucleus](http://purl.obolibrary.org/obo/UBERON_0002141) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065839" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### pupal stage `http://purl.obolibrary.org/obo/UBERON_0000070`
+### patellofemoral joint `http://purl.obolibrary.org/obo/UBERON_0011166`
+#### Removed
+- [patellofemoral joint](http://purl.obolibrary.org/obo/UBERON_0011166) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D057071" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [pupal stage](http://purl.obolibrary.org/obo/UBERON_0000070) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DpseDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [patellofemoral joint](http://purl.obolibrary.org/obo/UBERON_0011166) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D057071" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [pupal stage](http://purl.obolibrary.org/obo/UBERON_0000070) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:DsimDv_0000004" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
+### pedunculopontine tegmental nucleus `http://purl.obolibrary.org/obo/UBERON_0002142`
+#### Removed
+- [pedunculopontine tegmental nucleus](http://purl.obolibrary.org/obo/UBERON_0002142) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D045042" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### pyloric dilator nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910016`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- [pedunculopontine tegmental nucleus](http://purl.obolibrary.org/obo/UBERON_0002142) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D045042" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) [label](http://www.w3.org/2000/01/rdf-schema#label) "pyloric dilator nerve (sensu Cancer borealis)" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910016" 
+### pericardial fluid `http://purl.obolibrary.org/obo/UBERON_0002409`
+#### Removed
+- [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000069236" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Innervates muscles that dilate valves of the pylorus motor neurons involved in filtering in crustaceans. Anterior burster neurons are intrinsic oscillators that are electrically coupled with pyloric dilator neurons, causing them to fire bursts of action potentials. Together these neurons inhibit lateral pyloric and pyloric neurons, forcing them to fire in alternation with the pyloric dilator neurons." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:2876096" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- Class: [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) 
+#### Added
+- [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000069236" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
 
-- [pyloric dilator nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910016) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+### periderm `http://purl.obolibrary.org/obo/UBERON_0003055`
+#### Removed
+- [periderm](http://purl.obolibrary.org/obo/UBERON_0003055) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0003377" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### pyloric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910015`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) [label](http://www.w3.org/2000/01/rdf-schema#label) "pyloric nerve (sensu Cancer borealis)" 
-
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Innervates pyloric region of the stomach." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:2876096" 
+- [periderm](http://purl.obolibrary.org/obo/UBERON_0003055) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0003377" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910015" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+### periodontal ligament `http://purl.obolibrary.org/obo/UBERON_0008266`
+#### Removed
+- [periodontal ligament](http://purl.obolibrary.org/obo/UBERON_0008266) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010513" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- Class: [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+#### Added
+- [periodontal ligament](http://purl.obolibrary.org/obo/UBERON_0008266) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010513" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [pyloric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910015) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### rectal artery `http://purl.obolibrary.org/obo/UBERON_0035039`
+### perirhinal cortex `http://purl.obolibrary.org/obo/UBERON_0006083`
 #### Removed
-- [rectal artery](http://purl.obolibrary.org/obo/UBERON_0035039) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052)) 
+- [perirhinal cortex](http://purl.obolibrary.org/obo/UBERON_0006083) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071039" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [rectal artery](http://purl.obolibrary.org/obo/UBERON_0035039) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [rectal artery](http://purl.obolibrary.org/obo/UBERON_0035039) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052)) 
+- [perirhinal cortex](http://purl.obolibrary.org/obo/UBERON_0006083) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000071039" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [rectal artery](http://purl.obolibrary.org/obo/UBERON_0035039) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [rectum](http://purl.obolibrary.org/obo/UBERON_0001052) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### renal afferent arteriole `http://purl.obolibrary.org/obo/UBERON_0004639`
+### peritoneal fluid `http://purl.obolibrary.org/obo/UBERON_0001268`
 #### Removed
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [artery](http://purl.obolibrary.org/obo/UBERON_0001637) 
+- [peritoneal fluid](http://purl.obolibrary.org/obo/UBERON_0001268) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001202" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [nephron](http://purl.obolibrary.org/obo/UBERON_0001285) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [renal afferent arteriole](http://purl.obolibrary.org/obo/UBERON_0004639) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [nephron](http://purl.obolibrary.org/obo/UBERON_0001285) 
+- [peritoneal fluid](http://purl.obolibrary.org/obo/UBERON_0001268) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D001202" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### renal artery `http://purl.obolibrary.org/obo/UBERON_0001184`
+### pharyngeal arch cartilage `http://purl.obolibrary.org/obo/UBERON_0011004`
 #### Removed
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
+- [pharyngeal arch cartilage](http://purl.obolibrary.org/obo/UBERON_0011004) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006051" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
+- [pharyngeal arch cartilage](http://purl.obolibrary.org/obo/UBERON_0011004) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006051" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### renal cortex artery `http://purl.obolibrary.org/obo/UBERON_0005268`
+### pharyngotympanic tube `http://purl.obolibrary.org/obo/UBERON_0002393`
 #### Removed
-- [renal cortex artery](http://purl.obolibrary.org/obo/UBERON_0005268) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225)) 
+- [pharyngotympanic tube](http://purl.obolibrary.org/obo/UBERON_0002393) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005064" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [renal cortex artery](http://purl.obolibrary.org/obo/UBERON_0005268) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [renal cortex artery](http://purl.obolibrary.org/obo/UBERON_0005268) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225)) 
+- [pharyngotympanic tube](http://purl.obolibrary.org/obo/UBERON_0002393) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005064" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [renal cortex artery](http://purl.obolibrary.org/obo/UBERON_0005268) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) 
 
-
-### renal cortex vein `http://purl.obolibrary.org/obo/UBERON_0005269`
+### photophore `http://purl.obolibrary.org/obo/UBERON_4300194`
 #### Removed
-- [renal cortex vein](http://purl.obolibrary.org/obo/UBERON_0005269) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225)) 
+- [photophore](http://purl.obolibrary.org/obo/UBERON_4300194) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001477" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [renal cortex vein](http://purl.obolibrary.org/obo/UBERON_0005269) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [renal cortex vein](http://purl.obolibrary.org/obo/UBERON_0005269) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225)) 
+- [photophore](http://purl.obolibrary.org/obo/UBERON_4300194) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001477" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [renal cortex vein](http://purl.obolibrary.org/obo/UBERON_0005269) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### renal vein `http://purl.obolibrary.org/obo/UBERON_0001140`
+### plantaris `http://purl.obolibrary.org/obo/UBERON_0011905`
 #### Removed
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
+- [plantaris](http://purl.obolibrary.org/obo/UBERON_0011905) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006312" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
+- [plantaris](http://purl.obolibrary.org/obo/UBERON_0011905) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006312" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### respiratory system venous blood vessel `http://purl.obolibrary.org/obo/UBERON_0003476`
+### pleural effusion `http://purl.obolibrary.org/obo/UBERON_0000175`
 #### Removed
-- [respiratory system venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003476) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004)) 
+- [pleural effusion](http://purl.obolibrary.org/obo/UBERON_0000175) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010996" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [respiratory system venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003476) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [respiratory system venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003476) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004)) 
+- [pleural effusion](http://purl.obolibrary.org/obo/UBERON_0000175) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D010996" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [respiratory system venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003476) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### right colic artery `http://purl.obolibrary.org/obo/UBERON_8410023`
+### pontine raphe nucleus `http://purl.obolibrary.org/obo/UBERON_0002047`
 #### Removed
-- [right colic artery](http://purl.obolibrary.org/obo/UBERON_8410023) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) 
+- [pontine raphe nucleus](http://purl.obolibrary.org/obo/UBERON_0002047) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:12471" 
 
-#### Added
-- [right colic artery](http://purl.obolibrary.org/obo/UBERON_8410023) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) 
 
 
-### right colic vein `http://purl.obolibrary.org/obo/UBERON_8410018`
+### pontine tegmentum `http://purl.obolibrary.org/obo/UBERON_0003023`
 #### Removed
-- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156)) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) 
+- [pontine tegmentum](http://purl.obolibrary.org/obo/UBERON_0003023) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065821" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) EquivalentTo [portal vein](http://purl.obolibrary.org/obo/UBERON_0002017) and ([RO_0002376](http://purl.obolibrary.org/obo/RO_0002376) some [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138)) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156)) 
+- [pontine tegmentum](http://purl.obolibrary.org/obo/UBERON_0003023) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065821" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right colic vein](http://purl.obolibrary.org/obo/UBERON_8410018) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### right coronary artery `http://purl.obolibrary.org/obo/UBERON_0001625`
+### postcranial axial skeleton `http://purl.obolibrary.org/obo/UBERON_0002090`
 #### Removed
-- [right coronary artery](http://purl.obolibrary.org/obo/UBERON_0001625) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948) 
+- [postcranial axial skeleton](http://purl.obolibrary.org/obo/UBERON_0002090) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013131" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-#### Added
-- [right coronary artery](http://purl.obolibrary.org/obo/UBERON_0001625) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [heart](http://purl.obolibrary.org/obo/UBERON_0000948) 
-
-
-### right gastroepiploic artery `http://purl.obolibrary.org/obo/UBERON_0035829`
-#### Removed
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [right gastroepiploic artery](http://purl.obolibrary.org/obo/UBERON_0035829) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+- [postcranial axial skeleton](http://purl.obolibrary.org/obo/UBERON_0002090) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013131" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### right ovarian vein `http://purl.obolibrary.org/obo/UBERON_0039856`
+### predorsal bundle `http://purl.obolibrary.org/obo/UBERON_0002754`
 #### Removed
-- [right ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039856) EquivalentTo [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right ovary](http://purl.obolibrary.org/obo/UBERON_0002118)) 
+- [predorsal bundle](http://purl.obolibrary.org/obo/UBERON_0002754) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065844" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039856) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right ovary](http://purl.obolibrary.org/obo/UBERON_0002118) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [right ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039856) EquivalentTo [ovarian vein](http://purl.obolibrary.org/obo/UBERON_0001145) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right ovary](http://purl.obolibrary.org/obo/UBERON_0002118)) 
+- [predorsal bundle](http://purl.obolibrary.org/obo/UBERON_0002754) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065844" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [right ovarian vein](http://purl.obolibrary.org/obo/UBERON_0039856) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right ovary](http://purl.obolibrary.org/obo/UBERON_0002118) 
 
+### preoptic nucleus `http://purl.obolibrary.org/obo/UBERON_0007251`
+#### Removed
+- [preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0007251) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011301" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### right ovary `http://purl.obolibrary.org/obo/UBERON_0002118`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [right ovary](http://purl.obolibrary.org/obo/UBERON_0002118) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-right/v1.3/assets/3d-vh-f-ovary-r.glb"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [preoptic nucleus](http://purl.obolibrary.org/obo/UBERON_0007251) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011301" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### right pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001651`
+### pretectal region `http://purl.obolibrary.org/obo/UBERON_0001944`
 #### Removed
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167)) 
+- [pretectal region](http://purl.obolibrary.org/obo/UBERON_0001944) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066250" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167)) 
+- [pretectal region](http://purl.obolibrary.org/obo/UBERON_0001944) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066250" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### right pulmonary vein `http://purl.obolibrary.org/obo/UBERON_0009032`
+### primitive heart tube `http://purl.obolibrary.org/obo/UBERON_0005498`
 #### Removed
-- [right pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009032) EquivalentTo [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167)) 
+- [primitive heart tube](http://purl.obolibrary.org/obo/UBERON_0005498) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006179" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009032) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [right pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009032) EquivalentTo [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167)) 
+- [primitive heart tube](http://purl.obolibrary.org/obo/UBERON_0005498) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006179" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [right pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0009032) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### right renal artery `http://purl.obolibrary.org/obo/UBERON_0001185`
+### primitive streak `http://purl.obolibrary.org/obo/UBERON_0004341`
 #### Removed
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) EquivalentTo [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539)) 
+- [primitive streak](http://purl.obolibrary.org/obo/UBERON_0004341) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054240" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) EquivalentTo [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539)) 
+- [primitive streak](http://purl.obolibrary.org/obo/UBERON_0004341) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054240" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### right renal vein `http://purl.obolibrary.org/obo/UBERON_0001141`
+### pronephric duct `http://purl.obolibrary.org/obo/UBERON_0003060`
 #### Removed
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) EquivalentTo [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539)) 
+- [pronephric duct](http://purl.obolibrary.org/obo/UBERON_0003060) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005991" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) EquivalentTo [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539)) 
+- [pronephric duct](http://purl.obolibrary.org/obo/UBERON_0003060) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0005991" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### right testicular artery `http://purl.obolibrary.org/obo/UBERON_0001188`
+### pronephros `http://purl.obolibrary.org/obo/UBERON_0002120`
 #### Removed
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) EquivalentTo [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534)) 
+- [pronephros](http://purl.obolibrary.org/obo/UBERON_0002120) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060910" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right ureter](http://purl.obolibrary.org/obo/UBERON_0001222) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) EquivalentTo [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534)) 
-
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534) 
+- [pronephros](http://purl.obolibrary.org/obo/UBERON_0002120) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060910" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right testicular artery](http://purl.obolibrary.org/obo/UBERON_0001188) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [right ureter](http://purl.obolibrary.org/obo/UBERON_0001222) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### right testicular vein `http://purl.obolibrary.org/obo/UBERON_0000442`
+### pudendal nerve `http://purl.obolibrary.org/obo/UBERON_0011390`
 #### Removed
-- [right testicular vein](http://purl.obolibrary.org/obo/UBERON_0000442) EquivalentTo [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534)) 
+- [pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0011390) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060525" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [right testicular vein](http://purl.obolibrary.org/obo/UBERON_0000442) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534) 
-
-#### Added
-- [right testicular vein](http://purl.obolibrary.org/obo/UBERON_0000442) EquivalentTo [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534)) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [right testicular vein](http://purl.obolibrary.org/obo/UBERON_0000442) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [right testis](http://purl.obolibrary.org/obo/UBERON_0004534) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+#### Added
+- [pudendal nerve](http://purl.obolibrary.org/obo/UBERON_0011390) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D060525" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-### saliva-secreting gland `http://purl.obolibrary.org/obo/UBERON_0001044`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-#### Added
-- [saliva-secreting gland](http://purl.obolibrary.org/obo/UBERON_0001044) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [saliva-secreting gland](http://purl.obolibrary.org/obo/UBERON_0001044) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+### pulmonary surfactant `http://purl.obolibrary.org/obo/UBERON_0008826`
+#### Removed
+- [pulmonary surfactant](http://purl.obolibrary.org/obo/UBERON_0008826) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011663" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### sensory system `http://purl.obolibrary.org/obo/UBERON_0001032`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [sensory system](http://purl.obolibrary.org/obo/UBERON_0001032) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pulmonary surfactant](http://purl.obolibrary.org/obo/UBERON_0008826) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011663" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [sensory system](http://purl.obolibrary.org/obo/UBERON_0001032) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### sexually immature stage `http://purl.obolibrary.org/obo/UBERON_0000112`
+### pupa `http://purl.obolibrary.org/obo/UBERON_0003143`
 #### Removed
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000043" 
+- [pupa](http://purl.obolibrary.org/obo/UBERON_0003143) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011679" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:BtauDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000041" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [pupa](http://purl.obolibrary.org/obo/UBERON_0003143) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011679" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgorDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OanaDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OcunDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### quadriceps femoris `http://purl.obolibrary.org/obo/UBERON_0001377`
+#### Removed
+- [quadriceps femoris](http://purl.obolibrary.org/obo/UBERON_0001377) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052097" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000043" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [quadriceps femoris](http://purl.obolibrary.org/obo/UBERON_0001377) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052097" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:AcarDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MmulDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### red nucleus `http://purl.obolibrary.org/obo/UBERON_0001947`
+#### Removed
+- [red nucleus](http://purl.obolibrary.org/obo/UBERON_0001947) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006329" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000264" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000012" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CfamDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [red nucleus](http://purl.obolibrary.org/obo/UBERON_0001947) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006329" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:CporDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PpanDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:PtroDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+### reproductive gland `http://purl.obolibrary.org/obo/UBERON_0003937`
+#### Removed
+- [reproductive gland](http://purl.obolibrary.org/obo/UBERON_0003937) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006162" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:EcabDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:MdomDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:GgalDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+#### Added
+- [reproductive gland](http://purl.obolibrary.org/obo/UBERON_0003937) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006162" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [sexually immature stage](http://purl.obolibrary.org/obo/UBERON_0000112) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:FcatDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### sigmoid vein `http://purl.obolibrary.org/obo/UBERON_0039228`
+### reproductive system `http://purl.obolibrary.org/obo/UBERON_0000990`
 #### Removed
-- [sigmoid vein](http://purl.obolibrary.org/obo/UBERON_0039228) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159)) 
+- [reproductive system](http://purl.obolibrary.org/obo/UBERON_0000990) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005835" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sigmoid vein](http://purl.obolibrary.org/obo/UBERON_0039228) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [sigmoid vein](http://purl.obolibrary.org/obo/UBERON_0039228) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159)) 
+- [reproductive system](http://purl.obolibrary.org/obo/UBERON_0000990) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005835" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
 
-- [sigmoid vein](http://purl.obolibrary.org/obo/UBERON_0039228) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) 
+### respiratory muscle `http://purl.obolibrary.org/obo/UBERON_0014398`
+#### Removed
+- [respiratory muscle](http://purl.obolibrary.org/obo/UBERON_0014398) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012132" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### skeletal system `http://purl.obolibrary.org/obo/UBERON_0001434`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [skeletal system](http://purl.obolibrary.org/obo/UBERON_0001434) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [respiratory muscle](http://purl.obolibrary.org/obo/UBERON_0014398) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012132" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [skeletal system](http://purl.obolibrary.org/obo/UBERON_0001434) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### soleal vein `http://purl.obolibrary.org/obo/UBERON_0013142`
+### rete mirabile `http://purl.obolibrary.org/obo/UBERON_0013218`
 #### Removed
-- [soleal vein](http://purl.obolibrary.org/obo/UBERON_0013142) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389)) 
+- [rete mirabile](http://purl.obolibrary.org/obo/UBERON_0013218) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006363" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [soleal vein](http://purl.obolibrary.org/obo/UBERON_0013142) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [soleal vein](http://purl.obolibrary.org/obo/UBERON_0013142) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389)) 
+- [rete mirabile](http://purl.obolibrary.org/obo/UBERON_0013218) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006363" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [soleal vein](http://purl.obolibrary.org/obo/UBERON_0013142) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [soleus muscle](http://purl.obolibrary.org/obo/UBERON_0001389) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### spinal artery `http://purl.obolibrary.org/obo/UBERON_0002458`
+### rib `http://purl.obolibrary.org/obo/UBERON_0002228`
 #### Removed
-- [spinal artery](http://purl.obolibrary.org/obo/UBERON_0002458) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240)) 
+- [rib](http://purl.obolibrary.org/obo/UBERON_0002228) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0012403" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [spinal artery](http://purl.obolibrary.org/obo/UBERON_0002458) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [spinal artery](http://purl.obolibrary.org/obo/UBERON_0002458) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240)) 
+- [rib](http://purl.obolibrary.org/obo/UBERON_0002228) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VO:0012403" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [spinal artery](http://purl.obolibrary.org/obo/UBERON_0002458) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### spleen venous sinus `http://purl.obolibrary.org/obo/UBERON_0009967`
+### round ligament of liver `http://purl.obolibrary.org/obo/UBERON_0006588`
 #### Removed
-- [spleen venous sinus](http://purl.obolibrary.org/obo/UBERON_0009967) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [spleen venous sinus](http://purl.obolibrary.org/obo/UBERON_0009967) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [round ligament of liver](http://purl.obolibrary.org/obo/UBERON_0006588) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000069592" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### splenic artery `http://purl.obolibrary.org/obo/UBERON_0001194`
-#### Removed
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spleen](http://purl.obolibrary.org/obo/UBERON_0002106)) 
-
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) 
-
 #### Added
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spleen](http://purl.obolibrary.org/obo/UBERON_0002106)) 
+- [round ligament of liver](http://purl.obolibrary.org/obo/UBERON_0006588) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000069592" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### stomatogastric ganglion `http://purl.obolibrary.org/obo/UBERON_8910001`
+### round ligament of uterus `http://purl.obolibrary.org/obo/UBERON_0006589`
+#### Removed
+- [round ligament of uterus](http://purl.obolibrary.org/obo/UBERON_0006589) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012404" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [label](http://www.w3.org/2000/01/rdf-schema#label) "stomatogastric ganglion" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [hasRelatedSynonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "STG" 
-  - [hasSynonymType](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+#### Added
+- [round ligament of uterus](http://purl.obolibrary.org/obo/UBERON_0006589) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012404" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910001" 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The stomatogastric ganglion (STG) consists of about 30 neurons that form two central pattern generator circuits in crustaceans. STG neurons have large soma (~50-100 um) and have complex branches. The STG contains the motor neurons that innervate the striated muscles that move the gastric mill and pyloric regions of the stomach." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17009928" 
+### rubrospinal tract `http://purl.obolibrary.org/obo/UBERON_0002714`
+#### Removed
+- [rubrospinal tract](http://purl.obolibrary.org/obo/UBERON_0002714) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006159" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- Class: [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) SubClassOf [organ system subdivision](http://purl.obolibrary.org/obo/UBERON_0011216) 
+#### Added
+- [rubrospinal tract](http://purl.obolibrary.org/obo/UBERON_0002714) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006159" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [stomatogastric ganglion](http://purl.obolibrary.org/obo/UBERON_8910001) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
 
+### scala media `http://purl.obolibrary.org/obo/UBERON_0002295`
+#### Removed
+- [scala media](http://purl.obolibrary.org/obo/UBERON_0002295) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D003053" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### stomatogastric nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910010`
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [label](http://www.w3.org/2000/01/rdf-schema#label) "stomatogastric nerve (sensu Cancer borealis)" 
-
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910010" 
+- [scala media](http://purl.obolibrary.org/obo/UBERON_0002295) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D003053" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "SGN (sensu Cancer borealis)" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
+### scala vestibuli `http://purl.obolibrary.org/obo/UBERON_0001863`
+#### Removed
+- [scala vestibuli](http://purl.obolibrary.org/obo/UBERON_0001863) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054738" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The stomatogastric nerve (SGN) is made up of four separate nerves that emerge from the paired commissural ganglia, the superior and inferior esophageal nerves (SONs and IONs)." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- Class: [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) 
+#### Added
+- [scala vestibuli](http://purl.obolibrary.org/obo/UBERON_0001863) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054738" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
 
-- [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+### sclerotome `http://purl.obolibrary.org/obo/UBERON_0003089`
+#### Removed
+- [sclerotome](http://purl.obolibrary.org/obo/UBERON_0003089) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006255" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### stomatogastric nervous system `http://purl.obolibrary.org/obo/UBERON_8910000`
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+- [sclerotome](http://purl.obolibrary.org/obo/UBERON_0003089) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006255" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The part of the nervous system that controls the stomach, such as in crabs, lobsters, and flies" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:12966498" 
+### secondary olfactory cortex `http://purl.obolibrary.org/obo/UBERON_0002895`
+#### Removed
+- [secondary olfactory cortex](http://purl.obolibrary.org/obo/UBERON_0002895) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D018728" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FlyBase:FBrf0089570" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:27450880" 
+#### Added
+- [secondary olfactory cortex](http://purl.obolibrary.org/obo/UBERON_0002895) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D018728" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910000" 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+### semicircular duct `http://purl.obolibrary.org/obo/UBERON_0001856`
+#### Removed
+- [semicircular duct](http://purl.obolibrary.org/obo/UBERON_0001856) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054776" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) [label](http://www.w3.org/2000/01/rdf-schema#label) "stomatogastric nervous system" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- Class: [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6656](http://purl.obolibrary.org/obo/NCBITaxon_6656) 
+#### Added
+- [semicircular duct](http://purl.obolibrary.org/obo/UBERON_0001856) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054776" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [stomatogastric nervous system](http://purl.obolibrary.org/obo/UBERON_8910000) SubClassOf [organ system subdivision](http://purl.obolibrary.org/obo/UBERON_0011216) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### subclavian artery `http://purl.obolibrary.org/obo/UBERON_0001533`
+### shoulder joint `http://purl.obolibrary.org/obo/UBERON_0016884`
 #### Removed
-- [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0004710) 
-
-#### Added
-- [subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001533) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0004710) 
+- [shoulder joint](http://purl.obolibrary.org/obo/UBERON_0016884) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012785" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### subclavian vein `http://purl.obolibrary.org/obo/UBERON_0001587`
-#### Removed
-- [subclavian vein](http://purl.obolibrary.org/obo/UBERON_0001587) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0004710) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [subclavian vein](http://purl.obolibrary.org/obo/UBERON_0001587) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [pectoral appendage](http://purl.obolibrary.org/obo/UBERON_0004710) 
+- [shoulder joint](http://purl.obolibrary.org/obo/UBERON_0016884) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D012785" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### sublingual artery `http://purl.obolibrary.org/obo/UBERON_0001611`
-#### Removed
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [sublingual gland](http://purl.obolibrary.org/obo/UBERON_0001832)) 
 
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [sublingual gland](http://purl.obolibrary.org/obo/UBERON_0001832) 
+### silk `http://purl.obolibrary.org/obo/UBERON_0012245`
+#### Removed
+- [silk](http://purl.obolibrary.org/obo/UBERON_0012245) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D047011" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-#### Added
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [sublingual gland](http://purl.obolibrary.org/obo/UBERON_0001832)) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [sublingual artery](http://purl.obolibrary.org/obo/UBERON_0001611) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [sublingual gland](http://purl.obolibrary.org/obo/UBERON_0001832) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+- [silk](http://purl.obolibrary.org/obo/UBERON_0012245) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002854" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### superficial dorsal vein of penis `http://purl.obolibrary.org/obo/UBERON_0039421`
-#### Removed
-- [superficial dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0039421) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [prepuce of penis](http://purl.obolibrary.org/obo/UBERON_0001332) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [superficial dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0039421) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [skin of penis](http://purl.obolibrary.org/obo/UBERON_0001331) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [superficial dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0039421) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [skin of penis](http://purl.obolibrary.org/obo/UBERON_0001331) 
+- [silk](http://purl.obolibrary.org/obo/UBERON_0012245) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D047011" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [superficial dorsal vein of penis](http://purl.obolibrary.org/obo/UBERON_0039421) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [prepuce of penis](http://purl.obolibrary.org/obo/UBERON_0001332) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+- [silk](http://purl.obolibrary.org/obo/UBERON_0012245) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002854" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### superficial external pudendal artery `http://purl.obolibrary.org/obo/UBERON_0007317`
-#### Removed
-- [superficial external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007317) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-#### Added
-- [superficial external pudendal artery](http://purl.obolibrary.org/obo/UBERON_0007317) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [external genitalia](http://purl.obolibrary.org/obo/UBERON_0004176) 
 
+### sixth lumbar dorsal root ganglion `http://purl.obolibrary.org/obo/UBERON_1200001`
 
-### superior cerebellar artery `http://purl.obolibrary.org/obo/UBERON_0001635`
-#### Removed
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) EquivalentTo [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) 
+#### Added
+- Class: [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) 
 
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895) 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3618"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905) 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-0289-8988](https://orcid.org/0000-0003-0289-8988) 
 
-#### Added
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) EquivalentTo [cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0003472) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [basilar artery](http://purl.obolibrary.org/obo/UBERON_0001633)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [cerebellum](http://purl.obolibrary.org/obo/UBERON_0002037)) 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [date](http://purl.org/dc/terms/date) "2025-11-03T00:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905) 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
 
-- [superior cerebellar artery](http://purl.obolibrary.org/obo/UBERON_0001635) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [metencephalon](http://purl.obolibrary.org/obo/UBERON_0001895) 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L6 dorsal root ganglion" 
 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "sixth lumbar spinal ganglion" 
 
-### superior esophageal nerve (sensu Cancer borealis) `http://purl.obolibrary.org/obo/UBERON_8910018`
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:1200001" 
 
-#### Added
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "SON (sensu Cancer borealis)" 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [defined_by_ordinal_series](http://purl.obolibrary.org/obo/uberon/core#defined_by_ordinal_series) 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [label](http://www.w3.org/2000/01/rdf-schema#label) "superior esophageal nerve (sensu Cancer borealis)" 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The group of nerve cell bodies located on the dorsal spinal roots within the vertebral column at the level of the sixth lumbar vertebra." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18316160" 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The superior esophageal nerve (SON) is one of the four nerves that make up the stomatogastric nerve (SGN)." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/B0-12-370878-8/00177-4" 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) [label](http://www.w3.org/2000/01/rdf-schema#label) "sixth lumbar dorsal root ganglion" 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8910018" 
+- [sixth lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_1200001) SubClassOf [lumbar dorsal root ganglion](http://purl.obolibrary.org/obo/UBERON_0002836) 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1909-7004](https://orcid.org/0000-0002-1909-7004) 
+### spermaceti `http://purl.obolibrary.org/obo/UBERON_0009755`
+#### Removed
+- [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C009301" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- Class: [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) SubClassOf [RO_0002162](http://purl.obolibrary.org/obo/RO_0002162) some [NCBITaxon_6692](http://purl.obolibrary.org/obo/NCBITaxon_6692) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) SubClassOf [functional part of brain](http://purl.obolibrary.org/obo/UBERON_0035014) 
+#### Added
+- [spermaceti](http://purl.obolibrary.org/obo/UBERON_0009755) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:C009301" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [superior esophageal nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910018) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [stomatogastric nerve (sensu Cancer borealis)](http://purl.obolibrary.org/obo/UBERON_8910010) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### superior gluteal artery `http://purl.obolibrary.org/obo/UBERON_0001315`
+### spinal cord lateral horn `http://purl.obolibrary.org/obo/UBERON_0004676`
 #### Removed
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [obturator internus](http://purl.obolibrary.org/obo/UBERON_0011048) 
-
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [iliacus muscle](http://purl.obolibrary.org/obo/UBERON_0001369) 
+- [spinal cord lateral horn](http://purl.obolibrary.org/obo/UBERON_0004676) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066152" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [piriformis muscle](http://purl.obolibrary.org/obo/UBERON_0008529) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ilium](http://purl.obolibrary.org/obo/UBERON_0001273) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [iliacus muscle](http://purl.obolibrary.org/obo/UBERON_0001369) 
+- [spinal cord lateral horn](http://purl.obolibrary.org/obo/UBERON_0004676) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066152" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [obturator internus](http://purl.obolibrary.org/obo/UBERON_0011048) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ilium](http://purl.obolibrary.org/obo/UBERON_0001273) 
 
-- [superior gluteal artery](http://purl.obolibrary.org/obo/UBERON_0001315) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [piriformis muscle](http://purl.obolibrary.org/obo/UBERON_0008529) 
+### spinothalamic tract `http://purl.obolibrary.org/obo/UBERON_0007703`
+#### Removed
+- [spinothalamic tract](http://purl.obolibrary.org/obo/UBERON_0007703) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013133" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-### superior mesenteric artery `http://purl.obolibrary.org/obo/UBERON_0001182`
-#### Removed
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) EquivalentTo [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
+- [spinothalamic tract](http://purl.obolibrary.org/obo/UBERON_0007703) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006128" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) EquivalentTo [mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0005616) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116)) 
+- [spinothalamic tract](http://purl.obolibrary.org/obo/UBERON_0007703) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013133" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) 
+- [spinothalamic tract](http://purl.obolibrary.org/obo/UBERON_0007703) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006128" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-### superior mesenteric vein `http://purl.obolibrary.org/obo/UBERON_0001138`
-#### Removed
-- [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138) EquivalentTo [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108)) 
 
-- [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
+### striatum `http://purl.obolibrary.org/obo/UBERON_0002435`
 
 #### Added
-- [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138) EquivalentTo [mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0005617) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108)) 
+- [striatum](http://purl.obolibrary.org/obo/UBERON_0002435) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [superior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001138) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
+- [striatum](http://purl.obolibrary.org/obo/UBERON_0002435) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### superior palpebral vein `http://purl.obolibrary.org/obo/UBERON_0014768`
+### subcutaneous adipose tissue `http://purl.obolibrary.org/obo/UBERON_0002190`
 #### Removed
-- [superior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014768) EquivalentTo [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [upper eyelid](http://purl.obolibrary.org/obo/UBERON_0001712)) 
+- [subcutaneous adipose tissue](http://purl.obolibrary.org/obo/UBERON_0002190) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015434" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014768) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [upper eyelid](http://purl.obolibrary.org/obo/UBERON_0001712) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [superior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014768) EquivalentTo [palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014769) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [upper eyelid](http://purl.obolibrary.org/obo/UBERON_0001712)) 
+- [subcutaneous adipose tissue](http://purl.obolibrary.org/obo/UBERON_0002190) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D015434" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [superior palpebral vein](http://purl.obolibrary.org/obo/UBERON_0014768) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [upper eyelid](http://purl.obolibrary.org/obo/UBERON_0001712) 
 
-
-### superior pancreaticoduodenal artery `http://purl.obolibrary.org/obo/UBERON_0002070`
+### subfornical organ `http://purl.obolibrary.org/obo/UBERON_0002219`
 #### Removed
-- [superior pancreaticoduodenal artery](http://purl.obolibrary.org/obo/UBERON_0002070) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
+- [subfornical organ](http://purl.obolibrary.org/obo/UBERON_0002219) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006266" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [superior pancreaticoduodenal artery](http://purl.obolibrary.org/obo/UBERON_0002070) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) 
+- [subfornical organ](http://purl.obolibrary.org/obo/UBERON_0002219) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006266" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### superior superficial cervical thymic artery `http://purl.obolibrary.org/obo/UBERON_0018249`
+### subiculum `http://purl.obolibrary.org/obo/UBERON_0002191`
 #### Removed
-- [superior superficial cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018249) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [superficial cervical thymus](http://purl.obolibrary.org/obo/UBERON_0018244) 
+- [subiculum](http://purl.obolibrary.org/obo/UBERON_0002191) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:10301" 
 
-#### Added
-- [superior superficial cervical thymic artery](http://purl.obolibrary.org/obo/UBERON_0018249) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [superficial cervical thymus](http://purl.obolibrary.org/obo/UBERON_0018244) 
 
 
-### superior vesical artery `http://purl.obolibrary.org/obo/UBERON_0001312`
+### substantia nigra pars compacta `http://purl.obolibrary.org/obo/UBERON_0001965`
 #### Removed
-- [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) EquivalentTo [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [substantia nigra pars compacta](http://purl.obolibrary.org/obo/UBERON_0001965) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065842" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [superior vesical artery](http://purl.obolibrary.org/obo/UBERON_0001312) EquivalentTo [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [substantia nigra pars compacta](http://purl.obolibrary.org/obo/UBERON_0001965) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065842" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### superior vesical vein `http://purl.obolibrary.org/obo/UBERON_0006355`
+### substantia nigra pars reticulata `http://purl.obolibrary.org/obo/UBERON_0001966`
 #### Removed
-- [superior vesical vein](http://purl.obolibrary.org/obo/UBERON_0006355) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [substantia nigra pars reticulata](http://purl.obolibrary.org/obo/UBERON_0001966) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065841" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [superior vesical vein](http://purl.obolibrary.org/obo/UBERON_0006355) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [superior vesical vein](http://purl.obolibrary.org/obo/UBERON_0006355) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [substantia nigra pars reticulata](http://purl.obolibrary.org/obo/UBERON_0001966) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065841" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [superior vesical vein](http://purl.obolibrary.org/obo/UBERON_0006355) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) 
 
-
-### supraorbital artery `http://purl.obolibrary.org/obo/UBERON_0015160`
+### superior olivary complex `http://purl.obolibrary.org/obo/UBERON_0002128`
 #### Removed
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [frontal sinus](http://purl.obolibrary.org/obo/UBERON_0001760) 
+- [superior olivary complex](http://purl.obolibrary.org/obo/UBERON_0002128) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065832" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604) 
+- [superior olivary complex](http://purl.obolibrary.org/obo/UBERON_0002128) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065832" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [supraorbital artery](http://purl.obolibrary.org/obo/UBERON_0015160) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [mucosa of frontal sinus](http://purl.obolibrary.org/obo/UBERON_0005027) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### supraorbital vein `http://purl.obolibrary.org/obo/UBERON_0001654`
+### superior sagittal sinus `http://purl.obolibrary.org/obo/UBERON_0001642`
 #### Removed
-- [supraorbital vein](http://purl.obolibrary.org/obo/UBERON_0001654) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604) 
+- [superior sagittal sinus](http://purl.obolibrary.org/obo/UBERON_0001642) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054063" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [supraorbital vein](http://purl.obolibrary.org/obo/UBERON_0001654) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [levator palpebrae superioris](http://purl.obolibrary.org/obo/UBERON_0001604) 
+- [superior sagittal sinus](http://purl.obolibrary.org/obo/UBERON_0001642) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D054063" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-### suprarenal artery `http://purl.obolibrary.org/obo/UBERON_0005624`
+
+### superior temporal gyrus `http://purl.obolibrary.org/obo/UBERON_0002769`
 #### Removed
-- [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369)) 
+- [superior temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002769) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006177" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369)) 
+- [superior temporal gyrus](http://purl.obolibrary.org/obo/UBERON_0002769) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006177" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [suprarenal artery](http://purl.obolibrary.org/obo/UBERON_0005624) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### suprarenal vein `http://purl.obolibrary.org/obo/UBERON_0001146`
+### superior tibiofibular joint `http://purl.obolibrary.org/obo/UBERON_0011117`
 #### Removed
-- [suprarenal vein](http://purl.obolibrary.org/obo/UBERON_0001146) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369)) 
+- [superior tibiofibular joint](http://purl.obolibrary.org/obo/UBERON_0011117) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007719" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [suprarenal vein](http://purl.obolibrary.org/obo/UBERON_0001146) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [suprarenal vein](http://purl.obolibrary.org/obo/UBERON_0001146) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369)) 
+- [superior tibiofibular joint](http://purl.obolibrary.org/obo/UBERON_0011117) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D007719" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [suprarenal vein](http://purl.obolibrary.org/obo/UBERON_0001146) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [adrenal gland](http://purl.obolibrary.org/obo/UBERON_0002369) 
 
-
-### temporal vein `http://purl.obolibrary.org/obo/UBERON_0001671`
+### supraoptic crest `http://purl.obolibrary.org/obo/UBERON_0002689`
 #### Removed
-- [temporal vein](http://purl.obolibrary.org/obo/UBERON_0001671) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [temporal part of head](http://purl.obolibrary.org/obo/UBERON_0003251)) 
+- [supraoptic crest](http://purl.obolibrary.org/obo/UBERON_0002689) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006268" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [temporal vein](http://purl.obolibrary.org/obo/UBERON_0001671) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [temporal part of head](http://purl.obolibrary.org/obo/UBERON_0003251) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
+- [supraoptic crest](http://purl.obolibrary.org/obo/UBERON_0002689) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066278" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
 #### Added
-- [temporal vein](http://purl.obolibrary.org/obo/UBERON_0001671) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [temporal part of head](http://purl.obolibrary.org/obo/UBERON_0003251)) 
+- [supraoptic crest](http://purl.obolibrary.org/obo/UBERON_0002689) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006268" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [temporal vein](http://purl.obolibrary.org/obo/UBERON_0001671) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [temporal part of head](http://purl.obolibrary.org/obo/UBERON_0003251) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
+- [supraoptic crest](http://purl.obolibrary.org/obo/UBERON_0002689) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066278" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-### testicular artery `http://purl.obolibrary.org/obo/UBERON_0001187`
+
+### sural nerve `http://purl.obolibrary.org/obo/UBERON_0015488`
 #### Removed
-- [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473)) 
+- [sural nerve](http://purl.obolibrary.org/obo/UBERON_0015488) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013497" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473)) 
+- [sural nerve](http://purl.obolibrary.org/obo/UBERON_0015488) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013497" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [testicular artery](http://purl.obolibrary.org/obo/UBERON_0001187) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### testicular vein `http://purl.obolibrary.org/obo/UBERON_0001144`
+### suture `http://purl.obolibrary.org/obo/UBERON_4200215`
 #### Removed
-- [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473)) 
+- [suture](http://purl.obolibrary.org/obo/UBERON_4200215) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013537" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473)) 
+- [suture](http://purl.obolibrary.org/obo/UBERON_4200215) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013537" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [testicular vein](http://purl.obolibrary.org/obo/UBERON_0001144) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [testis](http://purl.obolibrary.org/obo/UBERON_0000473) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### thoracodorsal artery `http://purl.obolibrary.org/obo/UBERON_0002011`
+### sympathetic ganglion `http://purl.obolibrary.org/obo/UBERON_0001806`
 #### Removed
-- [thoracodorsal artery](http://purl.obolibrary.org/obo/UBERON_0002011) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112)) 
+- [sympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001806) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005728" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [thoracodorsal artery](http://purl.obolibrary.org/obo/UBERON_0002011) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [thoracodorsal artery](http://purl.obolibrary.org/obo/UBERON_0002011) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112)) 
+- [sympathetic ganglion](http://purl.obolibrary.org/obo/UBERON_0001806) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D005728" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [thoracodorsal artery](http://purl.obolibrary.org/obo/UBERON_0002011) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### thoracodorsal vein `http://purl.obolibrary.org/obo/UBERON_0002089`
+### synencephalon `http://purl.obolibrary.org/obo/UBERON_2000293`
 #### Removed
-- [thoracodorsal vein](http://purl.obolibrary.org/obo/UBERON_0002089) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112)) 
+- [synencephalon](http://purl.obolibrary.org/obo/UBERON_2000293) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006476" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [thoracodorsal vein](http://purl.obolibrary.org/obo/UBERON_0002089) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [thoracodorsal vein](http://purl.obolibrary.org/obo/UBERON_0002089) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112)) 
+- [synencephalon](http://purl.obolibrary.org/obo/UBERON_2000293) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006476" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [thoracodorsal vein](http://purl.obolibrary.org/obo/UBERON_0002089) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [latissimus dorsi muscle](http://purl.obolibrary.org/obo/UBERON_0001112) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### thymic artery `http://purl.obolibrary.org/obo/UBERON_0018243`
+### synostosis `http://purl.obolibrary.org/obo/UBERON_0010361`
 #### Removed
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370)) 
+- [synostosis](http://purl.obolibrary.org/obo/UBERON_0010361) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013580" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370)) 
+- [synostosis](http://purl.obolibrary.org/obo/UBERON_0010361) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013580" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [thymic artery](http://purl.obolibrary.org/obo/UBERON_0018243) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### thymic vein `http://purl.obolibrary.org/obo/UBERON_0001591`
+### tapetum `http://purl.obolibrary.org/obo/UBERON_0015169`
 #### Removed
-- [thymic vein](http://purl.obolibrary.org/obo/UBERON_0001591) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370)) 
+- [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001350" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [thymic vein](http://purl.obolibrary.org/obo/UBERON_0001591) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
 #### Added
-- [thymic vein](http://purl.obolibrary.org/obo/UBERON_0001591) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370)) 
+- [tapetum](http://purl.obolibrary.org/obo/UBERON_0015169) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001350" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [thymic vein](http://purl.obolibrary.org/obo/UBERON_0001591) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### thyroid artery `http://purl.obolibrary.org/obo/UBERON_0003847`
+### temporal cortex `http://purl.obolibrary.org/obo/UBERON_0016538`
 #### Removed
-- [thyroid artery](http://purl.obolibrary.org/obo/UBERON_0003847) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046)) 
+- [temporal cortex](http://purl.obolibrary.org/obo/UBERON_0016538) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013702" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [thyroid artery](http://purl.obolibrary.org/obo/UBERON_0003847) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [thyroid artery](http://purl.obolibrary.org/obo/UBERON_0003847) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046)) 
-
-- [thyroid artery](http://purl.obolibrary.org/obo/UBERON_0003847) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) 
+- [temporal cortex](http://purl.obolibrary.org/obo/UBERON_0016538) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013702" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 
-### thyroid vein `http://purl.obolibrary.org/obo/UBERON_0018246`
+### tracheal mucosa `http://purl.obolibrary.org/obo/UBERON_0000379`
 #### Removed
-- [thyroid vein](http://purl.obolibrary.org/obo/UBERON_0018246) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046)) 
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A mucosa that is part of a respiratory airway." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
 
-- [thyroid vein](http://purl.obolibrary.org/obo/UBERON_0018246) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) 
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) EquivalentTo [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory airway](http://purl.obolibrary.org/obo/UBERON_0001005)) 
 
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [respiratory airway](http://purl.obolibrary.org/obo/UBERON_0001005) 
+
 #### Added
-- [thyroid vein](http://purl.obolibrary.org/obo/UBERON_0018246) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046)) 
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A mucosa that is part of a trachea." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) EquivalentTo [mucosa](http://purl.obolibrary.org/obo/UBERON_0000344) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [trachea](http://purl.obolibrary.org/obo/UBERON_0003126)) 
 
-- [thyroid vein](http://purl.obolibrary.org/obo/UBERON_0018246) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [thyroid gland](http://purl.obolibrary.org/obo/UBERON_0002046) 
+- [tracheal mucosa](http://purl.obolibrary.org/obo/UBERON_0000379) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [trachea](http://purl.obolibrary.org/obo/UBERON_0003126) 
 
 
-### tongue `http://purl.obolibrary.org/obo/UBERON_0001723`
+### transverse colon `http://purl.obolibrary.org/obo/UBERON_0001157`
+#### Removed
+- [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044684" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044684" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [tongue](http://purl.obolibrary.org/obo/UBERON_0001723) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### transverse facial artery `http://purl.obolibrary.org/obo/UBERON_0001615`
+### trapezoid body `http://purl.obolibrary.org/obo/UBERON_0002932`
 #### Removed
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614)) 
+- [trapezoid body](http://purl.obolibrary.org/obo/UBERON_0002932) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065833" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002252](http://purl.obolibrary.org/obo/RO_0002252) some [superficial temporal artery](http://purl.obolibrary.org/obo/UBERON_0001614)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [masseter muscle](http://purl.obolibrary.org/obo/UBERON_0001597)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831)) 
+- [trapezoid body](http://purl.obolibrary.org/obo/UBERON_0002932) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065833" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [transverse facial artery](http://purl.obolibrary.org/obo/UBERON_0001615) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [parotid gland](http://purl.obolibrary.org/obo/UBERON_0001831) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### ureteric segment of renal artery `http://purl.obolibrary.org/obo/UBERON_0003468`
+### trigeminal nuclear complex `http://purl.obolibrary.org/obo/UBERON_0007641`
 #### Removed
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [trigeminal nuclear complex](http://purl.obolibrary.org/obo/UBERON_0007641) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014278" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
+- [trigeminal nuclear complex](http://purl.obolibrary.org/obo/UBERON_0007641) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014278" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [ureteric segment of renal artery](http://purl.obolibrary.org/obo/UBERON_0003468) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056) 
 
+### tunica adventitia of blood vessel `http://purl.obolibrary.org/obo/UBERON_0005734`
 
-### urethral artery `http://purl.obolibrary.org/obo/UBERON_0039355`
+#### Added
+- [tunica adventitia of blood vessel](http://purl.obolibrary.org/obo/UBERON_0005734) DisjointWith [carotid artery intima-media region](http://purl.obolibrary.org/obo/UBERON_1200002) 
+
+
+### uncinate fasciculus `http://purl.obolibrary.org/obo/UBERON_0003044`
 #### Removed
-- [urethral artery](http://purl.obolibrary.org/obo/UBERON_0039355) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
+- [uncinate fasciculus](http://purl.obolibrary.org/obo/UBERON_0003044) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000083382" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [urethral artery](http://purl.obolibrary.org/obo/UBERON_0039355) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
 #### Added
-- [urethral artery](http://purl.obolibrary.org/obo/UBERON_0039355) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
+- [uncinate fasciculus](http://purl.obolibrary.org/obo/UBERON_0003044) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D000083382" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [urethral artery](http://purl.obolibrary.org/obo/UBERON_0039355) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### urethral vein `http://purl.obolibrary.org/obo/UBERON_0039377`
+### upper esophageal sphincter `http://purl.obolibrary.org/obo/UBERON_0007268`
 #### Removed
-- [urethral vein](http://purl.obolibrary.org/obo/UBERON_0039377) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
+- [upper esophageal sphincter](http://purl.obolibrary.org/obo/UBERON_0007268) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049631" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [urethral vein](http://purl.obolibrary.org/obo/UBERON_0039377) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [urethral vein](http://purl.obolibrary.org/obo/UBERON_0039377) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
+- [upper esophageal sphincter](http://purl.obolibrary.org/obo/UBERON_0007268) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D049631" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [urethral vein](http://purl.obolibrary.org/obo/UBERON_0039377) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
 ### uterine artery `http://purl.obolibrary.org/obo/UBERON_0002493`
 #### Removed
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995)) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [upper part of vagina](http://purl.obolibrary.org/obo/UBERON_0003974)) 
+- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055988" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [upper part of vagina](http://purl.obolibrary.org/obo/UBERON_0003974) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [ovary](http://purl.obolibrary.org/obo/UBERON_0000992)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995)) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [upper part of vagina](http://purl.obolibrary.org/obo/UBERON_0003974)) 
+- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055988" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [upper part of vagina](http://purl.obolibrary.org/obo/UBERON_0003974) 
-
-- [uterine artery](http://purl.obolibrary.org/obo/UBERON_0002493) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### uterine spiral artery `http://purl.obolibrary.org/obo/UBERON_0015171`
+### uterine fundus `http://purl.obolibrary.org/obo/UBERON_1200003`
+
+#### Added
+- Class: [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/obophenotype/uberon/issues/3637"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [date](http://purl.org/dc/terms/date) "2025-12-03T00:00:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "dragon-ai-agent" 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "fundus of uterus" 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:1200003" 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [hasExactSynonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "fundus uteri" 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:39112955" 
+
+  - [hasSynonymType](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003011](http://purl.obolibrary.org/obo/OMO_0003011) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The superior, dome-shaped portion of the uterus." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:41204538" 
+
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:40653088" 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) [label](http://www.w3.org/2000/01/rdf-schema#label) "uterine fundus" 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) SubClassOf [organ part](http://purl.obolibrary.org/obo/UBERON_0000064) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) SubClassOf [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156) 
+
+- [uterine fundus](http://purl.obolibrary.org/obo/UBERON_1200003) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) 
+
+
+### vagal lobe `http://purl.obolibrary.org/obo/UBERON_2000297`
 #### Removed
-- [uterine spiral artery](http://purl.obolibrary.org/obo/UBERON_0015171) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [endometrium](http://purl.obolibrary.org/obo/UBERON_0001295) 
+- [vagal lobe](http://purl.obolibrary.org/obo/UBERON_2000297) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006431" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [uterine spiral artery](http://purl.obolibrary.org/obo/UBERON_0015171) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [endometrium](http://purl.obolibrary.org/obo/UBERON_0001295) 
+- [vagal lobe](http://purl.obolibrary.org/obo/UBERON_2000297) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006431" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### uveal vein `http://purl.obolibrary.org/obo/UBERON_0035546`
+### vaginal fluid `http://purl.obolibrary.org/obo/UBERON_0036243`
 #### Removed
-- [uveal vein](http://purl.obolibrary.org/obo/UBERON_0035546) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [uvea](http://purl.obolibrary.org/obo/UBERON_0001768)) 
+- [vaginal fluid](http://purl.obolibrary.org/obo/UBERON_0036243) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0003084" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [uveal vein](http://purl.obolibrary.org/obo/UBERON_0035546) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [uvea](http://purl.obolibrary.org/obo/UBERON_0001768) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [uveal vein](http://purl.obolibrary.org/obo/UBERON_0035546) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [uvea](http://purl.obolibrary.org/obo/UBERON_0001768)) 
+- [vaginal fluid](http://purl.obolibrary.org/obo/UBERON_0036243) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0003084" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [uveal vein](http://purl.obolibrary.org/obo/UBERON_0035546) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [uvea](http://purl.obolibrary.org/obo/UBERON_0001768) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### vein of hindlimb zeugopod `http://purl.obolibrary.org/obo/UBERON_0001551`
+### vasa efferentia `http://purl.obolibrary.org/obo/UBERON_3010586`
 #### Removed
-- [vein of hindlimb zeugopod](http://purl.obolibrary.org/obo/UBERON_0001551) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [triceps surae](http://purl.obolibrary.org/obo/UBERON_0001665) 
+- [vasa efferentia](http://purl.obolibrary.org/obo/UBERON_3010586) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002254" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [vein of hindlimb zeugopod](http://purl.obolibrary.org/obo/UBERON_0001551) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [triceps surae](http://purl.obolibrary.org/obo/UBERON_0001665) 
+- [vasa efferentia](http://purl.obolibrary.org/obo/UBERON_3010586) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0002254" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### vein of lip `http://purl.obolibrary.org/obo/UBERON_0013136`
+### venous blood `http://purl.obolibrary.org/obo/UBERON_0013756`
 #### Removed
-- [vein of lip](http://purl.obolibrary.org/obo/UBERON_0013136) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833)) 
+- [venous blood](http://purl.obolibrary.org/obo/UBERON_0013756) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006187" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [vein of lip](http://purl.obolibrary.org/obo/UBERON_0013136) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [vein of lip](http://purl.obolibrary.org/obo/UBERON_0013136) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833)) 
+- [venous blood](http://purl.obolibrary.org/obo/UBERON_0013756) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006187" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [vein of lip](http://purl.obolibrary.org/obo/UBERON_0013136) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lip](http://purl.obolibrary.org/obo/UBERON_0001833) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### vein of lower lip `http://purl.obolibrary.org/obo/UBERON_0003478`
+### venous valve `http://purl.obolibrary.org/obo/UBERON_0006675`
 #### Removed
-- [vein of lower lip](http://purl.obolibrary.org/obo/UBERON_0003478) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835)) 
+- [venous valve](http://purl.obolibrary.org/obo/UBERON_0006675) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055422" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vein of lower lip](http://purl.obolibrary.org/obo/UBERON_0003478) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [vein of lower lip](http://purl.obolibrary.org/obo/UBERON_0003478) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835)) 
+- [venous valve](http://purl.obolibrary.org/obo/UBERON_0006675) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055422" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vein of lower lip](http://purl.obolibrary.org/obo/UBERON_0003478) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [lower lip](http://purl.obolibrary.org/obo/UBERON_0001835) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### vein of upper lip `http://purl.obolibrary.org/obo/UBERON_0003477`
+### ventral nuclear group `http://purl.obolibrary.org/obo/UBERON_0002776`
 #### Removed
-- [vein of upper lip](http://purl.obolibrary.org/obo/UBERON_0003477) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834)) 
+- [ventral nuclear group](http://purl.obolibrary.org/obo/UBERON_0002776) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020651" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [vein of upper lip](http://purl.obolibrary.org/obo/UBERON_0003477) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [vein of upper lip](http://purl.obolibrary.org/obo/UBERON_0003477) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834)) 
+- [ventral nuclear group](http://purl.obolibrary.org/obo/UBERON_0002776) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020651" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [vein of upper lip](http://purl.obolibrary.org/obo/UBERON_0003477) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [upper lip](http://purl.obolibrary.org/obo/UBERON_0001834) 
 
-
-### vertebral vein `http://purl.obolibrary.org/obo/UBERON_0001588`
+### ventral striatum `http://purl.obolibrary.org/obo/UBERON_0005403`
 #### Removed
-- [vertebral vein](http://purl.obolibrary.org/obo/UBERON_0001588) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) 
+- [ventral striatum](http://purl.obolibrary.org/obo/UBERON_0005403) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066328" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [vertebral vein](http://purl.obolibrary.org/obo/UBERON_0001588) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) 
+- [ventral striatum](http://purl.obolibrary.org/obo/UBERON_0005403) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [ventral striatum](http://purl.obolibrary.org/obo/UBERON_0005403) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [ventral striatum](http://purl.obolibrary.org/obo/UBERON_0005403) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066328" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### vesical artery `http://purl.obolibrary.org/obo/UBERON_0009027`
+### vertebra `http://purl.obolibrary.org/obo/UBERON_0002412`
 #### Removed
-- [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
+- [vertebra](http://purl.obolibrary.org/obo/UBERON_0002412) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006196" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
+- [vertebra](http://purl.obolibrary.org/obo/UBERON_0002412) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0006196" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [vesical artery](http://purl.obolibrary.org/obo/UBERON_0009027) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 
-### vesical vein `http://purl.obolibrary.org/obo/UBERON_0002460`
+### vertebral canal `http://purl.obolibrary.org/obo/UBERON_0006692`
 #### Removed
-- [vesical vein](http://purl.obolibrary.org/obo/UBERON_0002460) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
+- [vertebral canal](http://purl.obolibrary.org/obo/UBERON_0006692) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013115" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [vesical vein](http://purl.obolibrary.org/obo/UBERON_0002460) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [vesical vein](http://purl.obolibrary.org/obo/UBERON_0002460) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
+- [vertebral canal](http://purl.obolibrary.org/obo/UBERON_0006692) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D013115" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [vesical vein](http://purl.obolibrary.org/obo/UBERON_0002460) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) 
 
-
-### vestibular bulb artery `http://purl.obolibrary.org/obo/UBERON_0034727`
+### vestibular labyrinth `http://purl.obolibrary.org/obo/UBERON_0001862`
 #### Removed
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129)) 
+- [vestibular labyrinth](http://purl.obolibrary.org/obo/UBERON_0001862) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014722" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129)) 
+- [vestibular labyrinth](http://purl.obolibrary.org/obo/UBERON_0001862) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014722" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vestibular bulb artery](http://purl.obolibrary.org/obo/UBERON_0034727) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### vestibular bulb vein `http://purl.obolibrary.org/obo/UBERON_0039379`
+### vestibular nerve `http://purl.obolibrary.org/obo/UBERON_0003723`
 #### Removed
-- [vestibular bulb vein](http://purl.obolibrary.org/obo/UBERON_0039379) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129)) 
-
-- [vestibular bulb vein](http://purl.obolibrary.org/obo/UBERON_0039379) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129) 
-
-#### Added
-- [vestibular bulb vein](http://purl.obolibrary.org/obo/UBERON_0039379) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129)) 
-
-- [vestibular bulb vein](http://purl.obolibrary.org/obo/UBERON_0039379) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [bulb of vestibule](http://purl.obolibrary.org/obo/UBERON_0013129) 
+- [vestibular nerve](http://purl.obolibrary.org/obo/UBERON_0003723) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DHBA:12869" 
 
 
-### visual system `http://purl.obolibrary.org/obo/UBERON_0002104`
 
-#### Added
-- [visual system](http://purl.obolibrary.org/obo/UBERON_0002104) [inSubset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [visual system](http://purl.obolibrary.org/obo/UBERON_0002104) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### vitelline artery `http://purl.obolibrary.org/obo/UBERON_0006002`
+### vitreous humor `http://purl.obolibrary.org/obo/UBERON_0001797`
 #### Removed
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040)) 
+- [vitreous humor](http://purl.obolibrary.org/obo/UBERON_0001797) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014822" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [RO_0002178](http://purl.obolibrary.org/obo/RO_0002178) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
 #### Added
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) EquivalentTo [artery](http://purl.obolibrary.org/obo/UBERON_0001637) and ([RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040)) 
+- [vitreous humor](http://purl.obolibrary.org/obo/UBERON_0001797) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014822" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
 
-- [vitelline artery](http://purl.obolibrary.org/obo/UBERON_0006002) SubClassOf [RO_0020101](http://purl.obolibrary.org/obo/RO_0020101) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
 
-
-### vitelline vein `http://purl.obolibrary.org/obo/UBERON_0005487`
+### vomer `http://purl.obolibrary.org/obo/UBERON_0002396`
 #### Removed
-- [vitelline vein](http://purl.obolibrary.org/obo/UBERON_0005487) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040)) 
+- [vomer](http://purl.obolibrary.org/obo/UBERON_0002396) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055172" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vitelline vein](http://purl.obolibrary.org/obo/UBERON_0005487) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [vitelline vein](http://purl.obolibrary.org/obo/UBERON_0005487) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040)) 
+- [vomer](http://purl.obolibrary.org/obo/UBERON_0002396) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D055172" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vitelline vein](http://purl.obolibrary.org/obo/UBERON_0005487) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [yolk sac](http://purl.obolibrary.org/obo/UBERON_0001040) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
-### vulval vein `http://purl.obolibrary.org/obo/UBERON_0036267`
+### white adipose tissue `http://purl.obolibrary.org/obo/UBERON_0001347`
 #### Removed
-- [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997)) 
+- [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052436" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) SubClassOf [RO_0002179](http://purl.obolibrary.org/obo/RO_0002179) some [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997) 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 #### Added
-- [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) EquivalentTo [vein](http://purl.obolibrary.org/obo/UBERON_0001638) and ([RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997)) 
+- [white adipose tissue](http://purl.obolibrary.org/obo/UBERON_0001347) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D052436" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
 
-- [vulval vein](http://purl.obolibrary.org/obo/UBERON_0036267) SubClassOf [RO_0020102](http://purl.obolibrary.org/obo/RO_0020102) some [mammalian vulva](http://purl.obolibrary.org/obo/UBERON_0000997) 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+
+### white matter `http://purl.obolibrary.org/obo/UBERON_0002316`
+#### Removed
+- [white matter](http://purl.obolibrary.org/obo/UBERON_0002316) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066127" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+#### Added
+- [white matter](http://purl.obolibrary.org/obo/UBERON_0002316) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D066127" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+
+### xiphoid process `http://purl.obolibrary.org/obo/UBERON_0002207`
+#### Removed
+- [xiphoid process](http://purl.obolibrary.org/obo/UBERON_0002207) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014989" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
+#### Added
+- [xiphoid process](http://purl.obolibrary.org/obo/UBERON_0002207) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014989" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [LexicalMatching](https://w3id.org/semapv/vocab/LexicalMatching) 
+
+
+### zona incerta `http://purl.obolibrary.org/obo/UBERON_0001907`
+#### Removed
+- [zona incerta](http://purl.obolibrary.org/obo/UBERON_0001907) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065820" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+#### Added
+- [zona incerta](http://purl.obolibrary.org/obo/UBERON_0001907) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D065820" 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0001-9439-5346](https://orcid.org/0000-0001-9439-5346) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
 
 ### zygote stage `http://purl.obolibrary.org/obo/UBERON_0000106`
+#### Removed
+- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000302" 
+  - [mapping_provider](https://w3id.org/sssom/mapping_provider) "https://github.com/biopragmatics/biomappings"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
+
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
 #### Added
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SscrDv_0000087" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IDOMAL:0000302" 
+  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [ManualMappingCuration](https://w3id.org/semapv/vocab/ManualMappingCuration) 
 
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:SsalDv_0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
+  - [authoredBy](http://purl.org/pav/authoredBy) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
 
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:OariDv_0000009" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MmusDv:0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "HsapDv:0000003" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
-
-- [zygote stage](http://purl.obolibrary.org/obo/UBERON_0000106) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "obo:RnorDv_0000048" 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) [UnspecifiedMatching](https://w3id.org/semapv/vocab/UnspecifiedMatching) 
