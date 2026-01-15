@@ -45,8 +45,8 @@ Uberon defines several collected ontologies for different taxonomic
 levels. The custom [Uberon
 Makefile](https://github.com/obophenotype/uberon/blob/master/src/ontology/uberon.Makefile),
 in its “Composite pipeline” section, is the definitive source of truth
-for the various collected ontologies that are available, but as of April
-2024 the list is as follows (for simplicity, bridge files are not
+for the various collected ontologies that are available, but as of
+January 2025 the list is as follows (for simplicity, bridge files are not
 mentioned):
 
 | Product | Components |
@@ -65,13 +65,13 @@ mentioned):
 | collected-tetrapod | collected-amniote + collected-xenopus |
 | collected-vertebrate | collected-tetrapod + collected-zebrafish |
 | collected-metazoan | collected-vertebrate + collected-drosophila + collected-worm + CEPH + CTENO + PORO |
+| collected-lifestages | Uberon’s life-stages subset + all available species-specific life stages ontologies |
 
-Note that only `collected-metazoan` is regularly built and provided as a
-release artifact, available through a permanent URL in both
-[OBO](http://purl.obolibrary.org/obo/uberon/collected-metazoan.obo) and
-[OWL](http://purl.obolibrary.org/obo/uberon/collected-metazoan.owl)
-formats. Other products, if they are needed, must be built on demand
-(see further below for instructions on how to do that).
+Note that only `collected-metazoan`, `collected-vertebrate`, and
+`collected-lifestages` are regularly built and provided as release
+artifacts, available through permanent URLs in OBO, OWL, and
+Obograph-JSON formats. Other products, if they are needed, must be built
+on demand (see further below for instructions on how to do that).
 
 #### Advantages
 
@@ -113,7 +113,7 @@ that `collected-drosophila` contains the following axiom (provided by the
 bridge between Uberon and FBbt):
 
 ```
-FBbt:00004865 EquivalentTo: UBERON:0000992 and (part_of some NCBITaxon:7227)
+FBbt:00004865 EquivalentTo: UBERON:0000992 and (in_taxon some NCBITaxon:7227)
 ```
 
 (`NCBITaxon:7227` being the identifier for the _Drosophila melanogaster_
@@ -132,7 +132,7 @@ FBbt:00004911 SubClassOf: continuous_with some FBbt:00004865
 gets rewritten as
 
 ```
-FBbt:00004911 SubClassOf: continous_with some (UBERON:00009992 and (part_of some NCBITaxon:7227))
+FBbt:00004911 SubClassOf: continous_with some (UBERON:00009992 and (in_taxon some NCBITaxon:7227))
 ```
 
 The figure below illustrates the resulting differences between a
@@ -152,12 +152,10 @@ Because composite ontologies are derived from the collected ontologies,
 each collected ontology has a corresponding composite ontology.
 Therefore, you may refer to the list of collected ontologies above.
 
-As for the collected ontologies, only `composite-metazoan` is built
-regularly and provided as a pre-built artifact, available through a
-permanent URL in both
-[OBO](http://purl.obolibrary.org/obo/uberon/composite-metazoan.obo) and
-[OWL](http://purl.obolibrary.org/obo/uberon/composite-metazoan.owl)
-formats. Other products, if they are needed, must be built on demand.
+As for the collected ontologies, only `composite-metazoan`,
+`composite-vertebrate`, and `composite-lifestages` are built regularly
+and provided as pre-built artifacts. Other products, if they are needed,
+must be built on demand.
 
 #### Advantages and disadvantages
 
@@ -212,3 +210,20 @@ To build a given composite ontology, simply run:
 ```sh
 sh run.sh make composite-<name>.owl
 ```
+
+## Adding a species to a collected/composite ontology
+
+(This is _not_ an exhaustive documentation, but intended as a rough
+guide for future reference.)
+
+1. Add a “local mirror” for the species-specific ontology to be
+   included. Follow the examples of the Makefile rules for the existing
+   local mirrors.
+2. Ensure that mappings between Uberon/CL terms and the species-specific
+   terms are available -- either maintained in Uberon directly, or
+   fetched from a remote source (likely the species-specific ontology).
+3. Add a [bridge file](bridges.md) (or _several bridges_, if needed) for
+   the species-specific ontology.
+4. Add the local mirror and any corresponding bridge file to the list of
+   source files in the `COLLECTED_xxx_SOURCES` variable (where `xxx` is
+   the name of the collected/composite ontology, e.g. `metazoan`).

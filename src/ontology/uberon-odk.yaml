@@ -7,6 +7,7 @@ repo: uberon
 report_fail_on: None
 use_dosdps: TRUE
 use_mappings: True
+manage_import_declarations: false
 export_formats:
   - owl
   - obo
@@ -26,9 +27,15 @@ release_artefacts:
   - custom-composite-metazoan-basic
   - custom-composite-vertebrate
   - custom-composite-vertebrate-basic
+  - custom-collected-lifestages
+  - custom-composite-lifestages
   - custom-common-anatomy
 edit_format: obo
 import_group:
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - OMO:0002000
   use_base_merging: TRUE
   slme_individuals: exclude
   exclude_iri_patterns:
@@ -38,6 +45,8 @@ import_group:
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
+    - <http://www.ncbi.nlm.nih.gov/gene/*>
+    - <http://birdgenenames.org/cgnc/GeneReport*>
   products:
     - id: pr
       make_base: TRUE
@@ -59,10 +68,12 @@ import_group:
       use_base: TRUE
     - id: chebi
       make_base: TRUE
-      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+      mirror_from: http://purl.obolibrary.org/obo/upheno/chebi_slim.owl
     - id: pato
       use_base: TRUE
     - id: bfo
+    - id: cob
+      mirror_from: http://purl.obolibrary.org/obo/cob/cob-root.owl
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: ncbitaxondisjoints
@@ -99,27 +110,34 @@ subset_group:
     - id: reproductive-minimal
     - id: sensory-minimal
     - id: xenopus-view
-    - id: amniote-basic
-    - id: euarchontoglires-basic
+    - id: amniote-view
+    - id: euarchontoglires-view
 sssom_mappingset_group:
   products:
     - id: fbbt
       maintenance: manual
     - id: cl
       maintenance: manual
+    - id: sslso
+      maintenance: manual
     - id: biomappings
       maintenance: manual
     - id: uberon-local
       maintenance: manual
     - id: uberon
-      maintenance: manual
+      maintenance: merged
+      source_mappings:
+        - fbbt
+        - cl
+        - sslso
+      release_mappings: true
     - id: import-corrections
       maintenance: manual
 robot_java_args: '-Xmx20G'
 robot_plugins:
   plugins:
     - name: uberon
-      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.2.0/uberon.jar
+      mirror_from: https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.0/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
@@ -148,6 +166,13 @@ components:
     - filename: disjoint_union_over.owl
     - filename: mappings.owl
     - filename: in-subset.owl
+      use_template: true
+      templates:
+        - in-subset.template.tsv
     - filename: hra_subset.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl
     - filename: vasculature_class.owl
     - filename: hra_depiction_3d_images.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl
+workflows:
+ - docs
