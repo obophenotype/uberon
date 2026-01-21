@@ -39,6 +39,7 @@ This includes instructions for editing the uberon ontology.
 - if you like you can edit multiple terms in one batch, e.g. `terms/my_batch.obo`
      - `obo-checkout.pl src/ontology/uberon-edit.obo terms/my_batch.obo`
 - checking in will update the edit file and remove the file from `terms/`
+- before committing, src/ontology/uberon-edit.obo should be reserialised via `robot convert -i  src/ontology/uberon-edit.obo -f obo -o src/ontology/uberon-edit.obo`
 - Commits are then made on src/ontology/uberon-edit.obo as appropriate
 - Note that `obo-checkin.pl` and `obo-checkout.pl` are in your PATH, no need to search for it
 - New terms must have:
@@ -50,8 +51,7 @@ This includes instructions for editing the uberon ontology.
 ## OBO Format Guidelines
 - Term ID format: UBERON:NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
-  - New terms start  UBERON:777xxxx
-  - Do `grep id: UBERON:777 src/ontology/uberon-edit.obo` to check for clashes
+  - New terms start  UBERON:99xxxxx
 - Each term requires: id, name, definition with references
 - Never guess UBERON IDs, or ontology term IDs, use search tools above to determine actual term
 - Never guess PMIDs for references, do a web search if needed
