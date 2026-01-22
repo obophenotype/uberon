@@ -44,6 +44,7 @@ test: $(REPORTDIR)/uberon-basic-allcycles \
 	obocheck \
 	test_obo_serialisation \
 	test_obsolete \
+	roundtrip_obo \
 	test_owlaxioms
 
 # The other targets are manually triggered.
@@ -1431,10 +1432,9 @@ aspell:
 # OBO format tricks
 # ----------------------------------------
 .PHONY: roundtrip_obo
-roundtrip_obo: $(SRC)
-	$(ROBOT) convert -i $< -o $(TMPDIR)/roundtrip.obo.tmp.obo && \
-	mv $(TMPDIR)/roundtrip.obo.tmp.obo $(TMPDIR)/roundtrip.obo && \
-	diff -i $< $(TMPDIR)/roundtrip.obo
+roundtrip_obo: $(SRC) $(TMPDIR)/NORMALIZE.obo
+	@diff -i $^ || \
+		{ echo "ERROR: Normalization would add changes — please normalise (sh run.sh make normalize)." >&2; exit 1; }
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
