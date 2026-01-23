@@ -1,0 +1,1900 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://obophenotype.github.io/uberon/uberon-editor-sop/">
+      
+      
+        <link rel="prev" href="../uberon-release/">
+      
+      
+        <link rel="next" href="../onboarding/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Standard Operating Procedure for Uberon Curators - Uberon Multi-species Anatomy Ontology</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#standard-operating-procedure-for-uberon-curators" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Uberon Multi-species Anatomy Ontology" class="md-header__button md-logo" aria-label="Uberon Multi-species Anatomy Ontology" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Uberon Multi-species Anatomy Ontology
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Standard Operating Procedure for Uberon Curators
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/obophenotype/uberon/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Uberon Multi-species Anatomy Ontology" class="md-nav__button md-logo" aria-label="Uberon Multi-species Anatomy Ontology" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Uberon Multi-species Anatomy Ontology
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/obophenotype/uberon/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Uberon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../team/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Uberon team
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uberon on GitHub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issue Tracker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adopters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Adopters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    History
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledgements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Browse
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Browse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.ebi.ac.uk/ols4/ontologies/uberon" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OLS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="http://www.ontobee.org/ontology/UBERON" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ontobee
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bioportal.bioontology.org/ontologies/UBERON" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BioPortal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bgee.org/?page=anat_similarities" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bgee Anatomical Homology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Download
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Download
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../current_release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Current release
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bridges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cross-species bridge files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combined_multispecies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Combined Multispecies Ontologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../old_releases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Releases before 2020
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How-to guides
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            How-to guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to contribute to Uberon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Standard ODK workflows
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Standard ODK workflows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/EditorsWorkflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editors Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/ReleaseWorkflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Release Workflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/RepoManagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage your ODK Repository
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/SettingUpDockerForODK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setting up Docker for ODK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/UpdateImports/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Imports management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/ManageDocumentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing the documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/ContinuousIntegration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Continuous Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/ManageAutomatedTest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage automated checks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/components/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage components
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../odk-workflows/RepositoryFileStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your ODK Repository Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Uberon Internal Docs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Uberon Internal Docs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uberon-release/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uberon Release
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Standard Operating Procedure for Uberon Curators
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Standard Operating Procedure for Uberon Curators
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxon-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxon Restrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overlaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      overlaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      part of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      has part
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributes-to-morphology-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      contributes to morphology of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#develops-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      develops from
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-references-to-the-literature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-references to the literature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synonyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synonyms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-pattern-usage-with-dosdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Pattern Usage with DOSDP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Pattern Usage with DOSDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-vessels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting vessels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Onboarding a new curator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../id-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managing term IDs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            References
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wiki
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki/Manual" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uberon Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki/Manual#user-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki/Manual#editor-docs" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Editors Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki/Manual#design-patterns" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Patterns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/obophenotype/uberon/wiki/Manual#anatomical-structures" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Anatomical Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uberon_build_pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uberon Build Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taxon-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taxon Restrictions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations Guide
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overlaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      overlaps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      part of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      has part
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contributes-to-morphology-of" class="md-nav__link">
+    <span class="md-ellipsis">
+      contributes to morphology of
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#develops-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      develops from
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defined Classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-references-to-the-literature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cross-references to the literature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synonyms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Synonyms
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-pattern-usage-with-dosdp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Pattern Usage with DOSDP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design Pattern Usage with DOSDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-vessels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connecting vessels
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Tips
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/obophenotype/uberon/edit/master/docs/uberon-editor-sop.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="standard-operating-procedure-for-uberon-curators">Standard Operating Procedure for Uberon Curators<a class="headerlink" href="#standard-operating-procedure-for-uberon-curators" title="Permanent link">&para;</a></h1>
+<p>Note: This document is meant to only contain Uberon specific SOPs, for general ontology editing SOPs, please refer to the <a href="https://oboacademy.github.io/obook/">obook</a></p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>For context on why we have these SOPs, it is useful to have a basic understanding of the history and scope of Uberon. Uberon was seeded via a merge of many major anatomy ontologies, covering many different species, followed by a mix of programmatic approaches and curation to produce a consensus representation.  As a result, most terms have many xrefs to source anatomy ontologies and many retain the original definitions in these source ontologies as 'external definition'.  This can be useful in understanding cross-species use.  Many terms also have homology notes which can be useful for this.  </p>
+<p>The broad cross-species nature of Uberon means that care needs to be taken to avoid adding  axioms that apply to a limited number of species to taxonomically broad terms with assertions. If the term is a high level classification in Uberon, the results of getting this wrong can be significant.  For example, given a knowledge of vertebrate neural development, you might be tempted to add a develops_from between brain and neural tube. Adding this would result in changed entailments for 1000s of terms across multiple ontologies - all neurons in CL, many developmental terms in GO.  But this would be wrong, as the term brain applies to invertebrates as well as vertebrates, and invertebrates do not have a neural tube.</p>
+<h2 id="taxon-restrictions">Taxon Restrictions<a class="headerlink" href="#taxon-restrictions" title="Permanent link">&para;</a></h2>
+<p>Uberon is a cross-species ontology, and editors should be careful when adding taxon restrictions. Terms added to Uberon should be as taxonomically broad as possible, and taxon restrictions should be used carefully. Before adding any taxon restrictions, make sure go through <a href="https://oboacademy.github.io/obook/explanation/taxon-constraints-explainer/">this guide</a> and understand the implications of the taxon restriction and how to properly add them.</p>
+<h2 id="relations-guide">Relations Guide<a class="headerlink" href="#relations-guide" title="Permanent link">&para;</a></h2>
+<p>The following is a guide for relations to use with some notes and examples. This is not a comprehensive list and will be continually worked on, however, it contains some of the more common relations used in Uberon. Do familiarise yourself with them and use this section as a reference when you are adding relations. (Should we add something here to direct to DOSDP patterns that Chris generated with the patterniser? It is a bit more complicated to explain that but <a href="https://github.com/obophenotype/uberon/tree/master/patterns/generated">here's the folder</a>)</p>
+<h4 id="overlaps">overlaps<a class="headerlink" href="#overlaps" title="Permanent link">&para;</a></h4>
+<p>If an anatomical structure have some part in common, but not fully part_of, another structure, we use <code>overlaps</code>.</p>
+<p>Example:
+<a href="http://purl.obolibrary.org/obo/UBERON_0005725">olfactory system</a> subclassOf 'overlaps' some 'nervous system'.</p>
+<p>means that</p>
+<ol>
+<li>Part of the olfactory system is part of the nervous system. We wouldn't say 'olfactory system part_of some nervous system' as there are parts of the olfactory system that would not be considered the nervous system.</li>
+<li>Not all parts of the olfactory system is part of the nervous system. We wouldn't say 'olfactory gland overlaps some olfactory system' as all of the olfactory gland is considered as part of the olfactory system. (note: this is not wrong logically, but a more precise <a href="#part_of">part_of</a> should be used instead)</li>
+<li>Part of olfactory system are part of the nervous system at all times. If something, for example, develops and migrates out of the structure, we do not use overlaps. (see <a href="#develops_from">develops_from</a> instead). </li>
+</ol>
+<h4 id="part-of">part of<a class="headerlink" href="#part-of" title="Permanent link">&para;</a></h4>
+<p>We record anatomical location using <code>part of</code>. This means that subject is fully part_of the object. 
+This relation is a subclassOf <a href="#overlaps">overlaps</a>, but is used in cases where the subject is fully part_of the object.</p>
+<p>Example: 
+<a href="http://purl.obolibrary.org/obo/UBERON_0013694">brain endothelium</a> subclassOf 'part of' some 'brain'.</p>
+<p>means that </p>
+<ol>
+<li>All of the brain endothelium is part of the brain. We wouldn't say 'endothelium part_of some brain' as not all endothelium are part of the brain. </li>
+<li>All parts of the brain endothelium are part of the brain (e.g. all cells that are part_of the brain endothelium are also cells that are part_of the brain) </li>
+<li>Brain endothelium are part_of some brain at all times. (Makes more of a difference for cells being part of anatomical structure, e.g. a blood cell is not part_of the brain endothelium because it moves out of the brain endothelium.)</li>
+</ol>
+<p>Related Equivalence Pattern: <a href="https://github.com/obophenotype/uberon/blob/master/patterns/generated/X_part_of_X.yaml">X_part_of_X</a></p>
+<h4 id="has-part">has part<a class="headerlink" href="#has-part" title="Permanent link">&para;</a></h4>
+<p>The inverse of <a href="#part_of">part of</a>. 
+In Uberon, preference should be given to using part_of rather that has_part.</p>
+<h4 id="contributes-to-morphology-of">contributes to morphology of<a class="headerlink" href="#contributes-to-morphology-of" title="Permanent link">&para;</a></h4>
+<p>If two entities <a href="#overlaps">overlap</a> in a way that a change in morphology in the subject would entail a change of morphology in the object. </p>
+<p>Examples: every skull contributes to morphology of the head which it is a part of. 
+Counter-example: nuclei do not generally contribute to the morphology of the cell they are part of, as they are buffered by cytoplasm.</p>
+<h4 id="develops-from">develops from<a class="headerlink" href="#develops-from" title="Permanent link">&para;</a></h4>
+<p>We record development using the relation <code>develops from</code>. </p>
+<p>Example: <a href="http://purl.obolibrary.org/obo/UBERON_0002240">spinal cord</a> subclassOf 'develops from' some 'prosterior neural tube'</p>
+<p>means that</p>
+<ol>
+<li>The spinal cord directly develops from the prosterior neural tube</li>
+<li>Given that <code>develops from</code> is transitive, and that the prosterior neural tube develops from some the chordal neural plate, the spinal cord is implied to develop from the chordal neural plate. </li>
+</ol>
+<p>Note: <code>develops from</code> does not necessarily the subject directly develops from the object, for example, having <code>'spinal cord' subclassOf 'develops from' some 'chordal neural plate'</code> is not wrong. You should however strive to get the most direct object and let the inference do the work in linking it to earlier developmental stages. </p>
+<h2 id="defined-classes">Defined Classes<a class="headerlink" href="#defined-classes" title="Permanent link">&para;</a></h2>
+<p>Sometimes it is useful to define a grouping classes that automatically classify other terms, for example the term "small intestine Peyer's patch" has a logical definition that can be used to automatically classify terms for Peyer's patch in various parts of the small intestine (duodenum, ilium etc). In these case, it is important to use an established pattern (or to extend the established patterns if this is needed).  Established patterns are documented in DOSDP templates  - see: &lt; add link to templates or to MD doc generated from them&gt;</p>
+<h2 id="cross-references-to-the-literature">Cross-references to the literature<a class="headerlink" href="#cross-references-to-the-literature" title="Permanent link">&para;</a></h2>
+<p>Assertions in textual definitions, evidence provided in comments, and synonyms should be backed up by citing the appropriate literature.</p>
+<p>Citations are made by cross-references, that is by adding <code>http://www.geneontology.org/formats/oboInOwl#hasDbXref</code> annotations to the definition, comment, and synonym annotations. Add one such annotation per reference, using the CURIE syntax with well-known prefixes:</p>
+<ul>
+<li><code>PMID:1234567</code> for a PubMed identifier;</li>
+<li><code>doi:xx.yyyy/...</code> for a DOI;</li>
+<li><code>ISBN:...</code> for a ISBN.</li>
+</ul>
+<p>If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, <code>WBbt:0006799</code> to cross-reference a term in the <em>C. elegans</em> Gross Anatomy Ontology.</p>
+<p>If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D054326, NOT MESH:A07.015.908.194.500.</p>
+<p>ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.</p>
+<p><strong>Technical details of adding a cross-reference using Protégé</strong>:</p>
+<p>For CURIEs, ORCIDs: In the "Create Annotation" window, select the annotation property <a href="http://www.geneontology.org/formats/oboInOwl#hasDbXref"><strong>database_cross_reference</strong></a>.
+For adding URLs to text definitions or synonyms:  In the "Create Annotation" window, select the annotation property <a href="http://www.geneontology.org/formats/oboInOwl#hasDbXref"><strong>database_cross_reference</strong></a>.
+For adding URLs to axioms that are NOT text definitions or synonyms:  In the "Create Annotation" window, select the annotation property <a href="http://www.geneontology.org/formats/oboInOwl#source"><strong>source</strong></a>.</p>
+<p>For CURIEs: Enter the CURIE, using the <a href="https://bioregistry.io/context/obo">bioregistry OBO context</a> prefix (<a href="https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld">link to prefixmap</a>), as a Value on the "Literal" tab. Leave Datatype empty.</p>
+<p>In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.</p>
+<p>For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example <code>https://orcid.org/0000-0002-7356-1779</code>.</p>
+<p>For URLs: Enter the URL as a literal string. Note: In OWL-based files (like cl-edit.owl), Datatype <code>xsd:anyURI</code> is also selected; however, in OBO-based files (like uberon-edit.obo) these always become strings, so no selection needs to be made for Datatype in Uberon. Datatype selection is planned to be implemented in a future OBO revision, and updates can be checked at https://github.com/owlcollab/oboformat/issues/128.
+NOTE: URLs should be avoided when a cross-reference with a CURIE is otherwise available.</p>
+<p>To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.</p>
+<h2 id="synonyms">Synonyms<a class="headerlink" href="#synonyms" title="Permanent link">&para;</a></h2>
+<p>Extensive addition of synonyms helps “findability” of terms when searching. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.</p>
+<p>Guidelines on the type of synonyms:</p>
+<ol>
+<li>Use an <em>exact</em> synonym only when the label and the synonym can be used interchangeably without dispute and refer to the same concept. </li>
+</ol>
+<p>Example: the terms “aorta wall”, “aortic wall” and “wall of aorta” all refer to the exact same concept and would be considered exact synonyms. Terms that may refer to other concepts, especially within the biomedical domain, should not be annotated as exact synonyms, including abbreviations. </p>
+<ol>
+<li>A synonym that is an abbreviation should be annotated as a <em>related</em> synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a <code>http://www.geneontology.org/formats/oboInOwl#hasSynonymType</code> property with value <code>http://purl.obolibrary.org/obo/OMO_0003000</code>). </li>
+</ol>
+<p>Example: “BA” is a related synonym for both 'basilar artery' and 'bed nucleus of the accessory olfactory tract' at the time of this writing. Additionally, within the biomedical domain, it can also represent 'brachial artery' or 'Bone Age', two other distinct concepts with separate OBO ontology terms.</p>
+<ol>
+<li>
+<p>Exact synonyms should be unique across the ontology. In other words, if class <em>A</em> has synonym “X”, “X” should not be an exact synonym for any other Uberon term.</p>
+</li>
+<li>
+<p>Be mindful of the “directionality” of the <em>narrow</em> and <em>broad</em> types of synonyms. They qualify the <em>synonym</em>, not the original term. </p>
+</li>
+</ol>
+<p>Example: stating that “trunk wall” is a narrow synonym of 'body wall' means that “trunk wall“ refers to a narrower (i.e., more specific) concept than 'body wall', not the other way around.</p>
+<ol>
+<li>
+<p>The <em>related</em> synonym type should be used for cases where the overlap between the synonym and the term label may be unclear, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as <em>related</em> synonyms with synonym type “abbreviation” (see point 1 above).</p>
+</li>
+<li>
+<p>If a synonym includes a mix of abbreviations and words, the annotation property 'has related synonym' with has_synonym_type "abbreviation" should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.</p>
+</li>
+</ol>
+<p>Example: “DG granule cell layer” would be an exact synonym of 'dentate gyrus granule cell layer', even though “DG” (in this case) is an abbreviation for “dentate gyrus”. Note that without this context “DG” should not be considered an exact synonym for "dentate gyrus" as “DG” could also mean, among many things, the CHEBI term "DG" (7-deazaguanine).</p>
+<p>Compare the previous example to “EC layer 1”, which should be a <em>related</em> synonym (with synonym type "abbreviation") of 'entorhinal cortex layer 1', where there is not enough context to confidently determine what "EC" stands for.</p>
+<h2 id="design-pattern-usage-with-dosdp">Design Pattern Usage with DOSDP<a class="headerlink" href="#design-pattern-usage-with-dosdp" title="Permanent link">&para;</a></h2>
+<p>The Uberon ontology is composed of a large number of terms, classifications and relationships, which continue to increase. As maintaining manually all these classifications and relationships would be an arduous task, a substantial portion of the maintenance is automated. This automation depends, to a significant extent, on the systematic application of design patterns.</p>
+<p>Uberon uses <strong>Dead simple OWL design patterns</strong> (DOSDP, <a href="https://doi.org/10.1186/s13326-017-0126-0">Osumi-Sutherland <em>et al.</em>, 2017</a>) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.</p>
+<p>All patterns are stored in <a href="https://github.com/obophenotype/uberon/tree/master/src/patterns/dosdp-patterns">/src/patterns/dosdp-patterns</a>, while the editable tables are located in <a href="https://github.com/obophenotype/uberon/tree/master/src/patterns/data/default">/src/patterns/data/default</a>.</p>
+<h3 id="connecting-vessels">Connecting vessels<a class="headerlink" href="#connecting-vessels" title="Permanent link">&para;</a></h3>
+<p>Pattern name: vessel_connecting_branch_of_vessel_pattern.yaml</p>
+<p>Blood and lymphatic vessels are tubes that convey body fluids through the tissues and organs, forming branching or networked structures. The relation between a vessel and its branches can be recorded in several ways:</p>
+<ul>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002375">RO:0002375</a> in branching relationship with<ul>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002252">RO:0002252</a> connecting branch of</li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002253">RO:0002253</a> has connecting branch</li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002377">RO:0002377</a> distributary of<ul>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002378">RO:0002378</a> anabranch of</li>
+</ul>
+</li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002380">RO:0002380</a> branching part of</li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002381">RO:0002381</a> main stem of</li>
+<li><a href="http://purl.obolibrary.org/obo/RO_0002569">RO:0002569</a> has branching part</li>
+</ul>
+</li>
+</ul>
+<p>However, while it is useful to have this wide range of object properties to record relations between branches, it can also lead to selecting a property that does not accurately reflect the relationship between subject and object. An example of this is the misuse of '<a href="http://purl.obolibrary.org/obo/RO_0002380">branching part of</a>', which is a subclass of 'part of', but it has been used extensively for branches that are no longer part of the stem.</p>
+<p>Therefore, we need standarization for how branching relationships should be recorded in Uberon. The object property 'connecting branch of' is a subproperty of 'connected to' and should be used to describe the relation between a branching vessel and the stem vessel. Ex:</p>
+<p><a href="http://purl.obolibrary.org/obo/UBERON_0001394">'axillary artery'</a> <em>SubClassOf</em> <a href="http://purl.obolibrary.org/obo/RO_0002252">'connected to'</a> some <a href="http://purl.obolibrary.org/obo/UBERON_0001533">'subclavian aretery'</a></p>
+<h2 id="general-tips">General Tips<a class="headerlink" href="#general-tips" title="Permanent link">&para;</a></h2>
+<p>Changes to classifications of terms from the 2x, 3x and 4x range, or anything higher up in the hierarchy (e.g. 2 levels above leaf nodes) can create unintended consequences to the ontology (e.g. due to , and it’s best to get a senior ontologist to review (e.g. @cmungall)</p>
+<p>Don’t trust a term to mean what you expect by the label alone. Make sure you look at the textual and logical definition of terms instead of taking the label at face value. </p>
+<p>Look at the reasoned diff (This is automatically generated in a GitHub actions when you create a PR)- huge changes in reasoned diff should be looked through carefully to ensure the changes are all intended.</p>
+<p>Keep in mind that uberon is taxonomically very broad and so it is important to make sure you don’t add axioms that apply to a limited number of species to taxonomically broad terms. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "search.suggest", "search.highlight", "content.code.annotation", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
