@@ -1,0 +1,109 @@
+pattern_name: vein_and_venule_pattern
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/vein_and_venule_pattern.yaml
+description: "This pattern is for venous blood vessels that drain blood to a tissue and are tributary of other venous blood vessels."
+
+contributors:
+  - https://orcid.org/0000-0001-6677-8489
+
+classes:
+  blood vessel: "UBERON:0001981"
+  venous blood vessel: "UBERON:0003920"
+  anatomical entity: "UBERON:0001062"
+  thing: "owl:Thing"  
+
+relations:
+  connecting branch of: "RO:0002252"
+  vessel supplies blood to: "RO:0020101"
+  vessel drains blood from: "RO:0020102"
+  part of: "BFO:0000050"
+  tributary of: "RO:0002376"
+
+annotationProperties:
+  obo_foundry_uniquename: "http://purl.obolibrary.org/obo/IAO_0000589"
+  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  hasDbXref: "oboInOwl:hasDbXref"
+  contributor: "http://purl.org/dc/terms/contributor"
+  date: "http://purl.org/dc/terms/date"
+
+vars:
+  parent: "'venous blood vessel'"
+  connecting_branch_of: "'blood vessel'"
+  location: "'anatomical entity'"
+  creator: "'thing'"
+
+list_vars:
+  vessel_supplies_blood_to: "'anatomical entity'"
+  vessel_drains_blood_from: "'anatomical entity'"
+  tributary_of: "'blood vessel'"
+
+data_list_vars:
+  synonym: "xsd:string"
+  xrefs: "xsd:string"
+  synonym_xrefs: "xsd:string"
+  FMA_xref: "xsd:string"
+
+data_vars:
+  label: "xsd:string"
+  definition: "xsd:string"
+  date_created: "xsd:string"
+
+name:
+  text: "%s"
+  vars:
+    - label
+
+def:
+  text: "%s"
+  vars:
+    - definition
+  xrefs: xrefs
+
+xref:
+  value: FMA_xref
+
+exact_synonym:
+  value: synonym
+  xrefs: synonym_xrefs
+
+logical_axioms:
+  - axiom_type: subClassOf
+    text: "%s"
+    vars:
+      - parent
+  - axiom_type: subClassOf
+    text: "'part of' some %s"
+    vars:
+      - location
+  - axiom_type: subClassOf
+    text: "'connecting branch of' some %s"
+    vars:
+      - connecting_branch_of
+  - axiom_type: subClassOf
+    multi_clause:
+      sep: " and "
+      clauses:
+        - text: "'tributary of' some %s"
+          vars:
+            - tributary_of
+  - axiom_type: subClassOf
+    multi_clause:
+      sep: " and "
+      clauses:
+        - text: "'vessel supplies blood to' some %s"
+          vars:
+            - vessel_supplies_blood_to
+  - axiom_type: subClassOf
+    multi_clause:
+      sep: " and "
+      clauses:
+        - text: "'vessel drains blood from' some %s"
+          vars:
+            - vessel_drains_blood_from
+
+annotations:
+  - annotationProperty: contributor
+    var: creator
+  - annotationProperty: date
+    text: "%s"
+    vars: 
+      - date_created

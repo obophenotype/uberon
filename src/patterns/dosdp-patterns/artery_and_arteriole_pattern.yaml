@@ -1,0 +1,91 @@
+pattern_name: artery_and_arteriole_pattern
+pattern_iri: http://purl.obolibrary.org/obo/uberon/patterns/artery_and_arteriole_pattern.yaml
+description: "This pattern is for arterial blood vessels that supply blood to a tissue and are branching from other arterial blood vessels."
+
+contributors:
+  - https://orcid.org/0000-0001-6677-8489
+
+classes:
+  blood vessel: "UBERON:0001981"
+  arterial blood vessel: "UBERON:0003509"
+  anatomical entity: "UBERON:0001062"
+  thing: "owl:Thing"
+
+relations:
+  connecting branch of: "RO:0002252"
+  vessel supplies blood to: "RO:0020101"
+  part of: "BFO:0000050"
+
+annotationProperties:
+  obo_foundry_uniquename: "http://purl.obolibrary.org/obo/IAO_0000589"
+  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  hasDbXref: "oboInOwl:hasDbXref"
+  contributor: "http://purl.org/dc/terms/contributor"
+  date: "http://purl.org/dc/terms/date"
+
+vars:
+  parent: "'arterial blood vessel'"
+  connecting_branch_of: "'blood vessel'"
+  location: "'anatomical entity'"
+  creator: "'thing'"
+
+list_vars:
+  vessel_supplies_blood_to: "'anatomical entity'"
+
+data_list_vars:
+  synonym: "xsd:string"
+  xrefs: "xsd:string"
+  synonym_xrefs: "xsd:string"
+  FMA_xref: "xsd:string"
+
+data_vars:
+  label: "xsd:string"
+  definition: "xsd:string"
+  date_created: "xsd:string"
+
+name:
+  text: "%s"
+  vars:
+    - label
+
+def:
+  text: "%s"
+  vars:
+    - definition
+  xrefs: xrefs
+
+xref:
+  value: FMA_xref
+
+exact_synonym:
+  value: synonym
+  xrefs: synonym_xrefs
+ 
+logical_axioms:
+  - axiom_type: subClassOf
+    text: "%s"
+    vars:
+      - parent
+  - axiom_type: subClassOf
+    text: "'part of' some %s"
+    vars:
+      - location
+  - axiom_type: subClassOf
+    text: "'connecting branch of' some %s"
+    vars:
+      - connecting_branch_of
+  - axiom_type: subClassOf
+    multi_clause:
+      sep: " and "
+      clauses:
+        - text: "'vessel supplies blood to' some %s"
+          vars:
+            - vessel_supplies_blood_to
+
+annotations:
+  - annotationProperty: contributor
+    var: creator
+  - annotationProperty: date
+    text: "%s"
+    vars:
+      - date_created

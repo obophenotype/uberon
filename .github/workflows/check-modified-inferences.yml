@@ -1,0 +1,125 @@
+name: Check for modified inferences
+# This action:
+# (1) checks if a PR is adding/removing/changing any logical definition;
+# (2) if so, posts a comment highlighting the consequences of those
+#     changes;
+# (3) blocks the PR from being merged and assigns senior editors to
+#     review it if the logical changes are deemed too large.
+
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+    paths:
+      - 'src/**'
+
+jobs:
+
+  check_inferences:
+    name: Check if the PR is modifying logical definitions
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+    outputs:
+      # If true, the PR is considered to make large enough logical
+      # changes to warrant a review by senior editors.
+      is_large_scale: ${{ steps.analysis.outputs.is_large_scale }}
+    steps:
+      - name: Checkout the head of the PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          path: head
+
+      - name: Checkout the base of the PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          path: base
+
+      - name: Enable ROBOT Uberon plugin
+        working-directory: base/src/ontology
+        run: |
+          make all_robot_plugins
+          echo "ROBOT_PLUGINS_DIRECTORY=base/src/ontology/tmp/plugins/" >> "$GITHUB_ENV"
+
+      - name: Run the inference diff report
+        # See <https://obophenotype.github.io/uberon-robot-plugin/inference-diff.html>
+        # for details on how the inference-diff command works and the reports that it generates.
+        run: |
+          robot uberon:inference-diff --input head/src/ontology/uberon-edit.obo \
+                                      --catalog head/src/ontology/catalog-v001.xml \
+                                      --base-file base/src/ontology/uberon-edit.obo \
+                                      --base-catalog base/src/ontology/catalog-v001.xml \
+                                      --base-iri http://purl.obolibrary.org/obo/UBERON_
+
+      - name: Analyse the report and determine the results
+        # Outputs:
+        # - has_logical_changes=<true|false>
+        #   'true' if the PR is modifying any logical definition.
+        # - is_large_scale=<true|false>
+        #   'true' if: (1) the PR is modifying more than 10 logical definitions, or
+        #              (2) one logically defined class is losing more than 10 subclasses, or
+        #              (3) one logically defined class is gaining more than 10 subclasses.
+        id: analysis
+        run: |
+          MODIFIED_LOGICAL_DEFS=$(sed -nre 's/^Number of classes with modified logical definitions: //p' inference-diff.md)
+          MAX_REMOVED_SUBCLASSES=$(sed -nre 's/^Removed subclasses: //p' inference-diff.md | sort -n -r | head -n 1)
+          MAX_ADDED_SUBCLASSES=$(sed -nre 's/^Added subclasses: //p' inference-diff.md | sort -n -r | head -n 1)
+          if [ "$MODIFIED_LOGICAL_DEFS" -eq 0 ]; then
+            echo "has_logical_changes=false" >> $GITHUB_OUTPUT
+            echo "is_large_scale=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_logical_changes=true" >> $GITHUB_OUTPUT
+            if [ "$MODIFIED_LOGICAL_DEFS" -gt 10 ]; then
+              echo "is_large_scale=true" >> $GITHUB_OUTPUT
+            elif [ -n "$MAX_REMOVED_SUBCLASSES" ] && [ "$MAX_REMOVED_SUBCLASSES" -gt 10 ]; then
+              echo "is_large_scale=true" >> $GITHUB_OUTPUT
+            elif [ -n "$MAX_ADDED_SUBCLASSES" ] && [ "$MAX_ADDED_SUBCLASSES" -gt 10 ]; then
+              echo "is_large_scale=true" >> $GITHUB_OUTPUT
+            else
+              echo "is_large_scale=false" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Prepare the comment highlighting the changes
+        if: steps.analysis.outputs.has_logical_changes == 'true'
+        run: |
+          echo "<details>\n<summary>This PR modifies some logical definitions. See details below:</summary>\n" > comment.md
+          cat inference-diff.md >> comment.md
+          echo "</details>" >> comment.md
+
+      - name: Post the comment highlighting the changes
+        if: steps.analysis.outputs.has_logical_changes == 'true'
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          file: "../../comment.md"
+          identifier: "INFERENCE_DIFF"
+
+      - name: Block the PR if changes are too large
+        if: steps.analysis.outputs.is_large_scale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: head
+        run: |
+          gh pr review ${{ github.event.pull_request.number }} --request-changes --body "Large scale logical changes detected. Review by specific Uberon Core Team members is required."
+
+  assign_reviewers:
+    # This job is kept separate from the main job so that we can use a
+    # matrix strategy to run the command below as many times as there
+    # are reviewers to assign.
+    name: Assign reviewers
+    needs: check_inferences
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        reviewer: [ "cmungall", "dosumis" ]
+    steps:
+      - name: Assign reviewer
+        continue-on-error: true
+        if: needs.check_inferences.outputs.is_large_scale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers \
+            --method POST \
+            --field reviewers[]=${{ matrix.reviewer }}

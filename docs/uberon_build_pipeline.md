@@ -1,83 +1,77 @@
 # The Uberon Build System
 
-## Overview of Migration to ODK (Q2 2021)
+## Overview
 
-*Problem*: The Uberon pipeline is the single most complex overall pipeline for any ontology. It has grown so complex over the years that only one person could run it, let alone understand it: Chris. 
+Uberon used to have a completely custom, ad-hoc build pipeline that only
+Chris Mungall knew how to run. Since 2021, the pipeline was migrated to
+a more standard ODK-based setup, with all the Uberon-specific bits
+handled by the custom `src/ontology/uberon.Makefile`.
 
-*Goal*: The goal is to migrate the Uberon pipeline to a more standard ODK-like setup. A lot of what is happening in the pipeline is out of scope for ODK (taxon constraints, cross-species bridges), but other things can be standardised (ROBOT report, DOSDP pattern workflows, imports). Ultimately, we want four people at least to be able to run releases, to reduce the ["Bus factor"](https://en.wikipedia.org/wiki/Bus_factor) of the project. We also want to generally share our understanding of the pipeline and document it better.
+The repository now uses the typical ODK layout, and the following
+aspects of the pipeline are managed by the ODK in a standard way:
 
-To achieve this, the following rough steps are performed.
-1. An  ODK config (`src/ontology/uberon-odk.yaml`) file is created that defines all the relevant release artefacts for Uberon
-1. The repository structure is moved to the typical ODK layout, which means 
-   - the edit file is now in `src/ontology/uberon-edit.obo`
-   - the custom Make pipeline now moved to `src/ontology/uberon.Makefile` - this is where the magic happens.
-1. The pipeline is run with `sh run.sh make all -B`
-1. We are reviewing the a number of key release artefacts and try to get them to an OK state. 
+* the imports;
+* the production of the “variants” of the main release artifacts
+  (`-base`, `-full`, `-simple`, etc.);
+* most of the reports and QC checks.
 
+The non-standard parts of the pipeline concerns mainly:
 
-## Build recipe of key goals
+* the production of the main `uberon.owl` product;
+* the production of ontology subsets;
+* the production of the cross-species [bridge files](bridges.md) and
+  [collected/composite ontologies](combined_multispecies.md);
+* the production of extra QC checks and reports (notably the checks for
+  violations of taxon constraints and all the checks involving the
+  bridge files).
 
-1. Intermediate artefacts (other than imports and mirrors):
-   - composite-metazoan.owl (super weird: odk version has imports while last release version does not)
-     - tmp/unreasoned-composite-metazoan.owl
-       - _ext-weak.owl_ (ext without disjoint classes)
-         - ext.owl (does not trigger imports along the way!)
-           - tmp/materialized.owl
-             - tmp/unreasoned.owl
-               - tmp/uberon-edit.owl
-                 - uberon-edit.obo
-                 - components/disjoint_union_over.ofn
-               - components/phenoscape-ext.owl
-               - bridge/uberon-bridge-to-bfo.owl
-           - components/reflexivity_axioms.owl
-     - Many allen-% and local-% imports
-     - For some reason the bridges are also in the dependencies (seems FMA bridge is needed)
-   - uberon.owl
-     - ext.owl
-       - tmp/materialized.owl
-         - tmp/unreasoned.owl
-           - tmp/uberon-edit.owl
-             - uberon-edit.obo
-             - components/disjoint_union_over.ofn
-           - components/phenoscape-ext.owl
-           - bridge/uberon-bridge-to-bfo.owl
-       - components/reflexivity_axioms.owl
-   - subsets/human-view.owl:
-     - ext.owl (...)
-     - contexts/context-human.owl
-   - subsets/euarchontoglires-basic.owl
-     - taxmods/uberon-taxmod-euarchontoglires.owl
-       - tmp/uberon-taxmod-314146.owl
-         - ext.owl (...)
-   - core.owl (does not seem to be a real dependency)
-     - tmp/uberon-edit.owl
-       - uberon-edit.obo
-       - components/disjoint_union_over.ofn
-1. Other dependecies:
-   - prepare_patterns, update_patterns, pattern_schema_checks
-   - ../patterns/definitions.owl
-1. QC checks:
-   - reports/uberon-edit.obo-gocheck (tmp/GO.xrf_abbs)
-   - reports/uberon-edit.obo-iconv
-   - ....
+## Notes about the custom pipelines
+
+This section is _not_ intended to provide a complete explanation of how
+the custom pipeline works. Not that such an explanation would not be
+useful, but it would be likely to become quickly out-of-sync with the
+actual pipeline code. Ultimately, the reference for how those pipelines
+work is the `uberon.Makefile` file. Consider this section merely as a
+guide to orient yourself within that Makefile.
+
+Unless otherwise noted:
+
+* all filenames are relative to the `src/ontology` directory;
+* all steps are performed with ROBOT.
+
+### Building the main `uberon.owl` product
+
+Two-steps process:
+
+* `tmp/uberon-edit.owl`: made by merging the main source file
+  (`uberon-edit.obo`) along with the ODK import module and all the
+  various components; OWL macros are expanded in that step;
+* `uberon.owl`: reasoning step.
+
+The second step notably includes a materialisation phase that is
+particularly memory intensive and that must therefore be excluded when
+running the pipeline on memory-constrained machines (any machine with
+less than 32 GB of RAM is considered to be memory-constrained when
+Uberon is concerned). Run the pipeline with `GH_ACTION=true` to exclude
+that materialisation step (do _not_ do that when trying to produce an
+official release!).
 
 
-## Recurring stuff: (ignore this)
+### Building the multi-species ontologies
 
-1. Download mirrors (some preprocessing involved)
-   - Examples: 
-     - tmp/fixed-emapa.obo
-       - tmp/mirror-emapa.obo
-     - tmp/mirror-zfa.obo
-       - tmp/fixed-zfa.obo
-     - imports/ncbitaxon_import.owl
-       - tmp/composite-stages.obo
-         - tmp/merged-stages-xrefs.obo
-           - tmp/update-stages
-             - tmp/developmental-stage-ontologies/src/ssso-merged.obo
-             - tmp/developmental-stage-ontologies/src/mmusdv/mmusdv.obo
-1. Imports
-  - tmp/seed.owl
-    - tmp/cl-core.obo
+This is decomposed in several steps that are mostly isolated from each
+other, so that each step can be run independently.
 
+1. Building Uberon itself (`sh run.sh make uberon.owl`).
+2. Mirroring the taxon-specific ontologies (`sh run.sh make MIR=true
+   IMP=true all_local_imports`).
+3. Mirroring the externally provided mapping sets (`sh run.sh make
+   refresh-mappings`).
+4. Building the cross-species bridges (`sh run.sh make
+   refresh-bridges`).
+5. Building the desired collected or composite ontology (e.g. `sh run.sh
+   make composite-metazoan.owl`).
 
+Steps 2–4 can also be run in a single command with `sh run.sh make
+refresh-external-resources` (this will also refresh the standard ODK
+import module).
