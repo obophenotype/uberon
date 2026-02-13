@@ -17,7 +17,6 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 | Caroline Eastwood (@Caroline-99) | CZI | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New term requests for CELLxGENE |
 | Ceri Van Slyke (@cerivs) | [ZFIN](https://zfin.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | ZFA-Uberon mappings. |
 | Chuan Xu || 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | |
-| Damien Goutte-Gattat (@gouttegd) | [FlyBase](https://flybase.org/) | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Pipeline Developer | FBbt-Uberon mappings, legacy pipelines extermination |
 | Ellen M Quardokus (@emquardokus) | [HuBMAP](https://commonfund.nih.gov/hubmap/fundedresearch)|0| [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | Human Biomolecular Atlas Program (HuBMAP) new term requests.|
 | Jasmine Belfiore (@JABelfiore) | CAP | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | New term requests for CAP/HCA/HDCA |
 | Jim Balhoff (@balhoff) | | 0 | [Editors](https://github.com/orgs/obophenotype/teams/uberon-cl-curators) | Ontology Editor | External advisor. |
@@ -40,4 +39,6 @@ The Uberon team is responsible for managing the Uberon project. It usually compr
 - Melissa Haendel (@mellybelly)
 - Maria Keays (@mkeays)
 - Tom Gillespie (@tgbugs)
+- Damien Goutte-Gattat (@gouttegd)
+
  

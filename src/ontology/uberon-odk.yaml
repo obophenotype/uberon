@@ -68,10 +68,12 @@ import_group:
       use_base: TRUE
     - id: chebi
       make_base: TRUE
-      mirror_from: https://raw.githubusercontent.com/obophenotype/chebi_obo_slim/main/chebi_slim.owl
+      mirror_from: http://purl.obolibrary.org/obo/upheno/chebi_slim.owl
     - id: pato
       use_base: TRUE
     - id: bfo
+    - id: cob
+      mirror_from: http://purl.obolibrary.org/obo/cob/cob-root.owl
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
     - id: ncbitaxondisjoints
@@ -172,3 +174,5 @@ components:
     - filename: vasculature_class.owl
     - filename: hra_depiction_3d_images.owl
       source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl
+workflows:
+ - docs
