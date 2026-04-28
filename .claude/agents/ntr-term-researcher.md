@@ -183,40 +183,81 @@ For each term without a confirmed existing UBERON match:
 - Where members are known and bounded, enumerate: "...comprising the X, Y, and Z."
 - Length still 20–60 words.
 
-## Step 7: Resolve Relationship Types (LEAF terms only)
+## Step 7: Resolve genus AND part_of for LEAF terms
 
-For each `term_type: "leaf"` term, determine whether it should be `is_a` or `part_of` the
-resolved parent:
+For each `term_type: "leaf"` term, look up how UBERON defines similar specific structures
+to determine BOTH a genus (`is_a`) class AND a `part_of` containing structure. UBERON
+convention typically populates both for specific named anatomical entities — e.g.
+`vastus lateralis` has `is_a: UBERON:0001630 ! muscle organ` AND
+`relationship: part_of UBERON:0001377 ! quadriceps femoris`.
 
-**Use `part_of` when the term is a physical subdivision of the parent:**
-- Named **layer**, zone, region, wall, surface, border, lumen, stroma, cortex, medulla
-- Named **head**, belly, compartment, lobe, segment, fascicle of a specific named structure
-- Any term where the phrase "is **contained within**", "is **a subdivision of**", or
-  "is **a layer of**" the parent is correct
-- Examples: `corpus luteum granulosa lutein layer` **part_of** corpus luteum;
-  `clavicular head of pectoralis major` **part_of** pectoralis major;
-  `costal part of diaphragm` **part_of** diaphragm;
-  `cumulus oophorus oocyte complex` **part_of** antral follicle
+**Procedure:**
 
-**Use `is_a` when the term is a classification type within the parent category:**
-- The parent is a **grouping class** (e.g. "muscle of neck", "ovarian follicle stage",
-  "cranial muscle") and the term is a **member of that category**
-- The term can be truly described as "IS A [parent]" — i.e. it has all properties of the
-  parent and adds further specificity
-- Examples: `anterior vertebral muscle` **is_a** muscle of neck;
-  `primary ovarian follicle` **is_a** ovarian follicle;
-  `dominant antral follicle` **is_a** antral follicle
+1. Use awk over `src/ontology/uberon-edit.obo` to find similar specific UBERON terms.
+   Examples for muscle subdivisions:
+   ```bash
+   awk 'BEGIN{RS=""} /\nname: .*head of .*muscle/' src/ontology/uberon-edit.obo
+   awk 'BEGIN{RS=""} /\nname: .*part of .*muscle/' src/ontology/uberon-edit.obo
+   awk 'BEGIN{RS=""} /\nname: .*belly of/' src/ontology/uberon-edit.obo
+   awk 'BEGIN{RS=""} /\nid: UBERON:0001379\n/' src/ontology/uberon-edit.obo  # vastus lateralis
+   ```
 
-**Quick test**: ask "Is a [term] a kind of [parent]?" (→ `is_a`) vs "Is a [term] inside/part
-of a [parent]?" (→ `part_of`). When in doubt, prefer `part_of` for physically bounded
-sub-structures and `is_a` for stages or functional subtypes.
+2. From similar terms, extract the genus pattern. Common UBERON genus classes for
+   muscle leaf terms:
+   - `UBERON:0001630` muscle organ — for whole named individual muscles (e.g. articularis
+     genu, longus capitis, vastus lateralis)
+   - `UBERON:0011906` muscle head — for named heads of muscles (clavicular head, long
+     head, short head)
+   - `UBERON:0014892` skeletal muscle organ, vertebrate — for skeletal muscles when a
+     more specific class is unavailable
+   - `UBERON:0014892` or domain-specific (e.g. `UBERON:0001135` smooth muscle organ)
+     for non-skeletal cases
 
-If unclear after applying these rules: search `ols4` for existing children of the same parent
-and check the relationship type they use; apply the same pattern.
+3. From similar terms, extract the part_of pattern. Common targets:
+   - For "X head/belly/part of Y muscle" → part_of the named parent muscle Y
+   - For named muscles in a region → part_of the region (e.g. neck, thigh,
+     anterior compartment)
+   - For named segmental muscles → part_of the relevant region (cervical vertebral
+     column, lumbar region, etc.)
 
-Record each decision in `resolved_relationships`. (Skip for `term_type: "group"` —
-relationships for those are encoded as `genus + part_of some Y` equivalent classes;
-see Step 8.)
+4. Emit a `leaf_template_rows[label]` entry with `{"is_a": "UBERON:...", "part_of":
+   "UBERON:..."}`. **Both columns should be populated when applicable.**
+   - Set `is_a` only (omit `part_of`) for classification subtypes that don't have a
+     containing structure (e.g. `dominant antral follicle is_a antral follicle` — no
+     additional part_of needed beyond what the genus class implies).
+   - Set `part_of` only (omit `is_a` or use a very generic genus) when the term is
+     purely a subdivision and no specific genus class is available.
+
+5. The legacy `resolved_relationships` + `resolved_parents` keys are still accepted as
+   a fallback but `leaf_template_rows` is preferred — it expresses both axes
+   simultaneously.
+
+**Worked examples:**
+
+- `clavicular head of pectoralis major muscle`:
+  - Look up similar: UBERON:0007168 (long head of biceps brachii), UBERON:0007169 (short
+    head of biceps brachii) → both use `is_a: UBERON:0011906 ! muscle head` and
+    `relationship: part_of <named muscle>`.
+  - Emit: `{"is_a": "UBERON:0011906", "part_of": "UBERON:0002381"}`
+
+- `articularis genu muscle`:
+  - Look up similar: vastus lateralis (UBERON:0001379) uses
+    `is_a: UBERON:0001630 ! muscle organ` + `part_of UBERON:0001377 ! quadriceps femoris`.
+  - For articularis genu, the analogous part_of would be the thigh region (or anterior
+    compartment of thigh if a UBERON term exists for it). Emit:
+    `{"is_a": "UBERON:0001630", "part_of": "UBERON:0004252"}` (or more specific).
+
+- `costal part of respiratory diaphragm muscle`: similar UBERON pattern is to use a
+  domain part as `part_of` plus a generic genus. Already a confirmed match in this
+  case (UBERON:0035831), so this term is excluded from the leaf template.
+
+- `dominant antral follicle` (a stage/subtype, no spatial part_of beyond the parent):
+  emit `{"is_a": "UBERON:0000035"}` only — omit `part_of`.
+
+**Important — DO NOT just take the supplied source parent and assign it to one column.**
+Look at similar UBERON terms first; the source parent is often too broad (a grouping class)
+to serve as the genus, and a more specific genus may be obvious (muscle head, muscle
+organ, etc.).
 
 ## Step 8: Group term equivalent class — genus + part_of some Y (GROUP terms only)
 
@@ -287,6 +328,12 @@ Save to: `bulk_ntr_workflow/outputs/definitions/{group_name}.json`
   },
   "def_xrefs_to_add": {
     "term label": "PMID:12345678|PMID:87654321"
+  },
+  "leaf_template_rows": {
+    "leaf term label": {
+      "is_a":    "UBERON:0011906",
+      "part_of": "UBERON:0002381"
+    }
   },
   "resolved_relationships": {
     "leaf term label": "is_a | part_of"
@@ -361,17 +408,28 @@ Omit empty lists/dicts. Do NOT include a `fma_resolutions` key — use `resolved
 - Every confirmed match must have both a UBERON definition and Wikipedia/literature evidence.
 - Every new term must have at least one real PMID/DOI in `def_xrefs_to_add` or in the existing
   `def_xref` input field (ASCTB-TEMP placeholders do not count as real references).
-- `resolved_relationships` values must be `"is_a"` or `"part_of"` only.
-- `resolved_parents` values must be real UBERON IDs retrieved from OLS4 — never guessed.
-- Layers, zones, heads, bellies, parts of named structures → must be `part_of`, never `is_a`.
+- For LEAF terms: prefer emitting `leaf_template_rows[label]` with both `is_a` and
+  `part_of` populated. Look up similar UBERON terms via awk over uberon-edit.obo to
+  find the right genus class — do NOT just assign the source parent to one column.
+- `leaf_template_rows[label].is_a` should be a genus class (e.g. UBERON:0001630 muscle
+  organ, UBERON:0011906 muscle head), not a regional grouping class.
+- `leaf_template_rows[label].part_of` should be the containing structure (parent muscle,
+  body region, compartment).
+- For backward compatibility, `resolved_relationships` (values `"is_a"` or `"part_of"`)
+  + `resolved_parents` may still be used; merge will fall back to these if
+  `leaf_template_rows` is absent.
+- All UBERON ID values must be real UBERON IDs retrieved from OLS4 or uberon-edit.obo —
+  never guessed.
+- Layers, zones, heads, bellies, parts of named structures → MUST have `part_of`
+  populated to the named parent structure.
 - Pathological/dysfunctional terms → must appear in `out_of_scope`.
 - Non-standard names → must appear in `name_corrections`.
 - **For `term_type: "group"` terms**: every term must end up in EITHER
   `group_template_rows` (with both `genus` and `location` populated as real UBERON IDs)
   OR `manual_curation` (with proposed definition + similar UBERON terms). No group term
   should be silently absent from both.
-- `resolved_relationships` and `resolved_parents` apply to LEAF terms only — do not emit
-  these keys for group terms.
+- `leaf_template_rows`, `resolved_relationships`, `resolved_parents` apply to LEAF terms
+  only — do not emit these keys for group terms.
 - Do NOT invent UBERON IDs.
 
 ## Tools Available

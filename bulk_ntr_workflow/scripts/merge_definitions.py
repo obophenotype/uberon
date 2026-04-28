@@ -87,8 +87,9 @@ def load_subagent_outputs() -> dict:
     out = {
         "definitions":         {},
         "images":              {},
-        "relationships":       {},
-        "resolved_parents":    {},
+        "relationships":       {},   # legacy fallback: label → "is_a" | "part_of"
+        "resolved_parents":    {},   # legacy fallback: label → "UBERON:xxxxxxx"
+        "leaf_template_rows":  {},   # label → {"is_a": "UBERON:...", "part_of": "UBERON:..."}
         "xrefs":               {},   # label → pipe-sep xref (Wikipedia URL + FMA ID)
         "def_xrefs_extra":     {},   # label → PMIDs/DOIs to append to def_xref column
         "group_template_rows": {},   # label → {"genus": "...", "location": "..."}
@@ -110,6 +111,7 @@ def load_subagent_outputs() -> dict:
         out["images"].update(data.get("wikipedia_images", {}))
         out["relationships"].update(data.get("resolved_relationships", {}))
         out["resolved_parents"].update(data.get("resolved_parents", {}))
+        out["leaf_template_rows"].update(data.get("leaf_template_rows", {}))
         out["xrefs"].update(data.get("xrefs", {}))
         out["def_xrefs_extra"].update(data.get("def_xrefs_to_add", {}))
         out["group_template_rows"].update(data.get("group_template_rows", {}))
@@ -192,10 +194,16 @@ def _apply_common_fields(row: list[str], label: str, lookup_label: str,
 def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
                         excluded_labels: set, out_of_scope_labels: set,
                         name_correction_map: dict, manual_curation_labels: set) -> dict:
-    """Merge subagent outputs into the leaf template. Returns a counters dict."""
+    """Merge subagent outputs into the leaf template. Returns a counters dict.
+
+    Resolution priority for is_a / part_of columns:
+      1. leaf_template_rows[label] = {is_a, part_of}  — preferred (both axes)
+      2. resolved_relationships + resolved_parents  — legacy single-column form
+      3. INFER:/UNRESOLVABLE:/NEEDS_MAPPING: — fall back to blank + curator review
+    """
     counters = {"defs": 0, "images": 0, "xrefs": 0, "def_xrefs": 0,
-                "rels": 0, "relabelled": 0, "pending": 0, "infer": 0,
-                "unknown_rel": []}
+                "rels": 0, "leaf_rows_used": 0, "relabelled": 0,
+                "pending": 0, "infer": 0, "unknown_rel": []}
     rows = []
     with open(input_tsv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
@@ -212,8 +220,6 @@ def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
             if label in excluded_labels or label in out_of_scope_labels:
                 continue
             if label in manual_curation_labels:
-                # Should not happen for leaf (manual_curation only applies to group),
-                # but guard defensively.
                 continue
 
             if label in name_correction_map:
@@ -225,27 +231,36 @@ def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
 
             is_a_val    = row[COL_IS_A].strip()
             part_of_val = row[COL_PART_OF].strip()
-            parent_id = (sub["resolved_parents"].get(lookup_label)
-                         or sub["resolved_parents"].get(label)
-                         or extract_parent_id(is_a_val)
-                         or extract_parent_id(part_of_val))
 
-            rel = (sub["relationships"].get(lookup_label)
-                   or sub["relationships"].get(label))
-            if rel and parent_id:
-                if rel == "is_a":
-                    row[COL_IS_A]    = parent_id
-                    row[COL_PART_OF] = ""
-                elif rel == "part_of":
+            # Priority 1: leaf_template_rows — preferred, populates both columns
+            ltr = (sub["leaf_template_rows"].get(lookup_label)
+                   or sub["leaf_template_rows"].get(label))
+            if ltr:
+                row[COL_IS_A]    = (ltr.get("is_a") or "").strip()
+                row[COL_PART_OF] = (ltr.get("part_of") or "").strip()
+                counters["leaf_rows_used"] += 1
+            else:
+                # Priority 2: legacy resolved_relationships + resolved_parents
+                parent_id = (sub["resolved_parents"].get(lookup_label)
+                             or sub["resolved_parents"].get(label)
+                             or extract_parent_id(is_a_val)
+                             or extract_parent_id(part_of_val))
+                rel = (sub["relationships"].get(lookup_label)
+                       or sub["relationships"].get(label))
+                if rel and parent_id:
+                    if rel == "is_a":
+                        row[COL_IS_A]    = parent_id
+                        row[COL_PART_OF] = ""
+                    elif rel == "part_of":
+                        row[COL_IS_A]    = ""
+                        row[COL_PART_OF] = parent_id
+                    counters["rels"] += 1
+                elif parent_id and (is_a_val.startswith("INFER:") or
+                                    is_a_val.startswith("UNRESOLVABLE:") or
+                                    is_a_val.startswith("NEEDS_MAPPING:")):
                     row[COL_IS_A]    = ""
-                    row[COL_PART_OF] = parent_id
-                counters["rels"] += 1
-            elif parent_id and (is_a_val.startswith("INFER:") or
-                                is_a_val.startswith("UNRESOLVABLE:") or
-                                is_a_val.startswith("NEEDS_MAPPING:")):
-                row[COL_IS_A]    = ""
-                row[COL_PART_OF] = ""
-                counters["unknown_rel"].append(row[COL_LABEL].strip())
+                    row[COL_PART_OF] = ""
+                    counters["unknown_rel"].append(row[COL_LABEL].strip())
 
             if PENDING_PATTERN.match(row[COL_DEF].strip()):
                 counters["pending"] += 1
@@ -371,7 +386,8 @@ def process(name: str) -> None:
     print(f"  Xrefs added:            {leaf_counters['xrefs']}")
     print(f"  def_xref refs appended: {leaf_counters['def_xrefs']}")
     print(f"  Labels corrected:       {leaf_counters['relabelled']}")
-    print(f"  Relationships resolved: {leaf_counters['rels']}")
+    print(f"  leaf_template_rows used:{leaf_counters['leaf_rows_used']}")
+    print(f"  Relationships resolved (legacy): {leaf_counters['rels']}")
     print(f"  Still [PENDING] defs:   {leaf_counters['pending']}")
     print(f"  Still INFER:            {leaf_counters['infer']}")
     print(f"  Relationship unresolved:{len(leaf_counters['unknown_rel'])}")
