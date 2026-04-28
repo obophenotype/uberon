@@ -23,29 +23,43 @@ import re
 from pathlib import Path
 
 ROOT             = Path(__file__).resolve().parent.parent
-INPUT_LEAF_TSV   = ROOT / "outputs" / "template_initial.tsv"
-INPUT_GROUPS_TSV = ROOT / "outputs" / "template_groups_initial.tsv"
 OUTPUT_DIR       = ROOT / "outputs" / "definitions" / "input"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Leaf template column indices (after the 2 header rows)
-# ID | LABEL | Definition | def_xref | is_a | part_of | ...
-COL_ID       = 0
-COL_LABEL    = 1
-COL_DEF      = 2
-COL_XREF     = 3
-COL_IS_A     = 4
-COL_PART_OF  = 5
+# Discovered at runtime via glob over outputs/template_*_initial.tsv
+LEAF_DEFAULT_TSV = ROOT / "outputs" / "template_initial.tsv"
+INPUT_GROUPS_TSV = ROOT / "outputs" / "template_groups_initial.tsv"
 
-# Groups template column indices — same first 4, then genus + location
-COL_GENUS    = 4
-COL_LOCATION = 5
+# Header column names — looked up per-template via header_indices()
+H_ID, H_LABEL, H_DEF, H_DEFXREF = "ID", "LABEL", "Definition", "def_xref"
+H_IS_A, H_PART_OF = "is_a", "part_of"
+H_GENUS, H_LOCATION = "genus", "location"
 
 
-def extract_parent_info(row: list[str]) -> tuple[str, str]:
+def header_indices(header_row: list[str]) -> dict[str, int]:
+    return {h.strip(): i for i, h in enumerate(header_row)}
+
+
+def discover_leaf_templates() -> list[Path]:
+    """Return all leaf template working files (default + system overlays).
+
+    Convention: outputs/template_initial.tsv (default), outputs/template_<overlay>_initial.tsv.
+    """
+    out_dir = ROOT / "outputs"
+    paths = []
+    if LEAF_DEFAULT_TSV.exists():
+        paths.append(LEAF_DEFAULT_TSV)
+    for p in sorted(out_dir.glob("template_*_initial.tsv")):
+        if p.name in ("template_initial.tsv", "template_groups_initial.tsv"):
+            continue
+        paths.append(p)
+    return paths
+
+
+def extract_parent_info(row: list[str], idx: dict[str, int]) -> tuple[str, str]:
     """Return (parent_id, parent_label) from a leaf template's is_a/part_of cells."""
-    is_a    = row[COL_IS_A].strip()
-    part_of = row[COL_PART_OF].strip()
+    is_a    = row[idx[H_IS_A]].strip()    if H_IS_A    in idx else ""
+    part_of = row[idx[H_PART_OF]].strip() if H_PART_OF in idx else ""
 
     for val in (is_a, part_of):
         m = re.match(r'^(UBERON:\d{7})$', val)
@@ -72,58 +86,75 @@ def make_group_name(parent_id: str, parent_label: str) -> str:
 
 
 def process() -> None:
-    if not INPUT_LEAF_TSV.exists():
-        raise FileNotFoundError(f"Input not found: {INPUT_LEAF_TSV}\nRun generate_template.py first.")
+    leaf_paths = discover_leaf_templates()
+    if not leaf_paths:
+        raise FileNotFoundError(
+            f"No leaf templates found in {ROOT/'outputs'}. Run generate_template.py first."
+        )
 
     groups: dict[str, dict] = {}
 
-    # --- Leaf template: group by parent ---
-    with open(INPUT_LEAF_TSV, newline="", encoding="utf-8") as f:
-        reader = csv.reader(f, delimiter="\t")
-        next(reader)  # header row
-        next(reader)  # directive row
-        for row in reader:
-            if not row or not row[COL_LABEL].strip():
-                continue
-            label = row[COL_LABEL].strip()
-            ntr_id = row[COL_ID].strip()
+    # --- Leaf templates (default + system overlays): group by parent ---
+    # Each row carries the `system` overlay it came from, derived from filename:
+    #   template_initial.tsv         → system='default'
+    #   template_<overlay>_initial.tsv → system='<overlay>'
+    for leaf_path in leaf_paths:
+        if leaf_path.name == "template_initial.tsv":
+            system = "default"
+        else:
+            # template_muscle_initial.tsv → muscle
+            system = leaf_path.stem[len("template_"):-len("_initial")]
 
-            parent_id, _ = extract_parent_info(row)
-            group_key = parent_id
+        with open(leaf_path, newline="", encoding="utf-8") as f:
+            reader = csv.reader(f, delimiter="\t")
+            header_row = next(reader)
+            next(reader)  # directive row
+            idx = header_indices(header_row)
 
-            if group_key not in groups:
-                groups[group_key] = {
-                    "parent_id":   parent_id,
-                    "parent_label": "",
-                    "terms":       [],
-                }
+            for row in reader:
+                if not row or len(row) <= idx[H_LABEL] or not row[idx[H_LABEL]].strip():
+                    continue
+                label = row[idx[H_LABEL]].strip()
+                ntr_id = row[idx[H_ID]].strip()
 
-            groups[group_key]["terms"].append({
-                "ntr_id":     ntr_id,
-                "label":      label,
-                "term_type":  "leaf",
-                "is_a":       row[COL_IS_A].strip(),
-                "part_of":    row[COL_PART_OF].strip(),
-                "def_xref":   row[COL_XREF].strip() if len(row) > COL_XREF else "",
-            })
+                parent_id, _ = extract_parent_info(row, idx)
+                group_key = parent_id
+
+                if group_key not in groups:
+                    groups[group_key] = {
+                        "parent_id":   parent_id,
+                        "parent_label": "",
+                        "terms":       [],
+                    }
+
+                groups[group_key]["terms"].append({
+                    "ntr_id":     ntr_id,
+                    "label":      label,
+                    "term_type":  "leaf",
+                    "system":     system,
+                    "is_a":       row[idx[H_IS_A]].strip()    if H_IS_A    in idx else "",
+                    "part_of":    row[idx[H_PART_OF]].strip() if H_PART_OF in idx else "",
+                    "def_xref":   row[idx[H_DEFXREF]].strip() if H_DEFXREF in idx and len(row) > idx[H_DEFXREF] else "",
+                })
 
     # --- Groups template: all into one bucket; agent determines genus + location per term ---
     if INPUT_GROUPS_TSV.exists():
         with open(INPUT_GROUPS_TSV, newline="", encoding="utf-8") as f:
             reader = csv.reader(f, delimiter="\t")
-            next(reader)  # header row
+            header_row = next(reader)
             next(reader)  # directive row
+            idx = header_indices(header_row)
             grouping_terms = []
             for row in reader:
-                if not row or not row[COL_LABEL].strip():
+                if not row or len(row) <= idx[H_LABEL] or not row[idx[H_LABEL]].strip():
                     continue
                 grouping_terms.append({
-                    "ntr_id":     row[COL_ID].strip(),
-                    "label":      row[COL_LABEL].strip(),
+                    "ntr_id":     row[idx[H_ID]].strip(),
+                    "label":      row[idx[H_LABEL]].strip(),
                     "term_type":  "group",
-                    "genus":      row[COL_GENUS].strip() if len(row) > COL_GENUS else "",
-                    "location":   row[COL_LOCATION].strip() if len(row) > COL_LOCATION else "",
-                    "def_xref":   row[COL_XREF].strip() if len(row) > COL_XREF else "",
+                    "genus":      row[idx[H_GENUS]].strip()    if H_GENUS    in idx and len(row) > idx[H_GENUS]    else "",
+                    "location":   row[idx[H_LOCATION]].strip() if H_LOCATION in idx and len(row) > idx[H_LOCATION] else "",
+                    "def_xref":   row[idx[H_DEFXREF]].strip()  if H_DEFXREF  in idx and len(row) > idx[H_DEFXREF]  else "",
                 })
             if grouping_terms:
                 groups["__grouping_terms__"] = {

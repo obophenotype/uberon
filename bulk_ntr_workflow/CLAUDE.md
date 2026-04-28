@@ -206,12 +206,41 @@ After QC, both templates need to be registered with ODK.
 | def_xref | >A oboInOwl:hasDbXref SPLIT=\| | References + ASCTB-TEMP IRI |
 | is_a | SC % | Genus class (structural type or classification parent) |
 | part_of | SC BFO:0000050 some % | Containing structure |
+| develops_from | SC RO:0002202 some % | Optional. Developmental precursor (stage series) |
 | In_subset | AI oboInOwl:inSubset | `added_by_HRA` subset IRI |
 | Date | AT dcterms:date^^xsd:dateTime | ISO timestamp |
 | Contributor | AI dcterms:contributor | ORCID IRI |
 | Present_in_taxon | AI RO:0002175 | NCBITaxon IRI |
 | Wikipedia_image | A foaf:depiction | Wikipedia image URL |
 | xref | A oboInOwl:hasDbXref SPLIT=\| | Direct term xrefs: Wikipedia article + FMA ID |
+
+### Muscle leaf template (`<name>-muscle.template.tsv`) — Phase 7 overlay
+
+Used automatically when the source `tables` value is `muscular-system`. Adds three
+columns between `develops_from` and `In_subset`:
+
+| Header | ROBOT directive | Notes |
+|---|---|---|
+| has_muscle_origin | SC RO:0002372 some % | Bone/structure the muscle arises from |
+| has_muscle_insertion | SC RO:0002373 some % | Bone/structure the muscle inserts onto |
+| innervated_by | SC RO:0002005 some % | Motor nerve |
+
+All three are OPTIONAL — empty cell ⇒ no axiom. Populate only when Wikipedia +
+UBERON precedent provide a resolvable UBERON ID for the related entity.
+
+### Template variants and partitioning
+
+Stage 1 partitions input rows by source `tables` column → system overlay map:
+
+| Source table value | Overlay | Output template |
+|---|---|---|
+| `muscular-system` | `muscle` | `<name>-muscle.template.tsv` |
+| (anything else) | `default` | `<name>.template.tsv` |
+
+A single Stage 1 run can produce multiple leaf templates if the input has rows from
+mixed tables (each system gets its own clean template — no muscle-specific empty
+columns appear in non-muscle templates). The routing decision is printed at the start
+of Stage 1 as `Step 0 routing: muscle=N, default=M, group=K`.
 
 ### Groups template (`<name>-groups.template.tsv`) — equivalent class
 

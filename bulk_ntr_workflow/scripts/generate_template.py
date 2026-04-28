@@ -41,23 +41,65 @@ REPO_ROOT = NTR_ROOT.parent
 
 WORK_DIR        = NTR_ROOT / "outputs"
 WORK_DIR.mkdir(parents=True, exist_ok=True)
-WORK_TSV        = WORK_DIR / "template_initial.tsv"
-WORK_GROUPS_TSV = WORK_DIR / "template_groups_initial.tsv"
+WORK_TSV        = WORK_DIR / "template_initial.tsv"             # default leaf
+WORK_GROUPS_TSV = WORK_DIR / "template_groups_initial.tsv"       # groups
+# System overlay working files: outputs/template_<overlay>_initial.tsv (created on demand)
 
-# ROBOT template column headers and directives — LEAF template (asserted SC)
+# ROBOT template column headers and directives — DEFAULT LEAF template (asserted SC)
+# Phase 6: develops_from is OPTIONAL — empty cell ⇒ no axiom emitted by ROBOT
 TEMPLATE_HEADERS = [
     "ID", "LABEL", "Definition", "def_xref",
-    "is_a", "part_of",
+    "is_a", "part_of", "develops_from",
     "In_subset", "Date", "Contributor", "Present_in_taxon",
     "Wikipedia_image", "xref",
 ]
 TEMPLATE_DIRECTIVES = [
     "ID", "LABEL", "A IAO:0000115", ">A oboInOwl:hasDbXref SPLIT=|",
-    "SC %", "SC BFO:0000050 some %",
+    "SC %", "SC BFO:0000050 some %", "SC RO:0002202 some %",
     "AI oboInOwl:inSubset", "AT dcterms:date^^xsd:dateTime",
     "AI dcterms:contributor", "AI RO:0002175",
     "A foaf:depiction", "A oboInOwl:hasDbXref SPLIT=|",
 ]
+
+# Phase 7: MUSCLE LEAF template overlay — adds muscle-specific relations.
+# RO IDs: has_muscle_origin=RO:0002372, has_muscle_insertion=RO:0002373, innervated_by=RO:0002005
+# Inserted between develops_from and In_subset (positions 7-9).
+MUSCLE_TEMPLATE_HEADERS = TEMPLATE_HEADERS[:7] + [
+    "has_muscle_origin", "has_muscle_insertion", "innervated_by",
+] + TEMPLATE_HEADERS[7:]
+MUSCLE_TEMPLATE_DIRECTIVES = TEMPLATE_DIRECTIVES[:7] + [
+    "SC RO:0002372 some %", "SC RO:0002373 some %", "SC RO:0002005 some %",
+] + TEMPLATE_DIRECTIVES[7:]
+
+# Map source-table value to a system overlay name. Unmapped tables → 'default'.
+# Future overlays for skeleton, vasculature, nervous-system go here (see ROADMAP).
+SYSTEM_OVERLAYS = {
+    "muscular-system": "muscle",
+}
+
+# Per-overlay header/directive sets
+OVERLAY_TEMPLATES = {
+    "default": (TEMPLATE_HEADERS,        TEMPLATE_DIRECTIVES),
+    "muscle":  (MUSCLE_TEMPLATE_HEADERS, MUSCLE_TEMPLATE_DIRECTIVES),
+}
+
+
+def classify_system(record: dict) -> str:
+    """Return the system overlay name for a row; 'default' if no overlay applies."""
+    return SYSTEM_OVERLAYS.get(record.get("table", ""), "default")
+
+
+def overlay_paths(overlay: str, name: str) -> tuple[Path, Path]:
+    """Return (working_tsv, final_tsv) paths for a given overlay name."""
+    templates_dir = REPO_ROOT / "src" / "templates"
+    if overlay == "default":
+        work  = WORK_DIR / "template_initial.tsv"
+        final = templates_dir / f"{name}.template.tsv"
+    else:
+        work  = WORK_DIR / f"template_{overlay}_initial.tsv"
+        final = templates_dir / f"{name}-{overlay}.template.tsv"
+    return work, final
+
 
 # ROBOT template — GROUPS template (equivalent class: genus + part_of some Y)
 GROUPS_TEMPLATE_HEADERS = [
@@ -291,14 +333,15 @@ def process(input_path: Path, table_filter: str | None, start_id: int, name: str
     # Output paths
     templates_dir    = REPO_ROOT / "src" / "templates"
     reports_dir      = templates_dir / f"{name}-reports"
-    final_tsv        = templates_dir / f"{name}.template.tsv"
     final_groups_tsv = templates_dir / f"{name}-groups.template.tsv"
     input_tsv        = reports_dir / "input.tsv"
     errors_tsv       = reports_dir / "errors.tsv"
     candidates_tsv   = reports_dir / "candidates.tsv"
     reports_dir.mkdir(parents=True, exist_ok=True)
 
-    leaf_rows     = []
+    # Step 0: rows are partitioned by system overlay (default vs muscle vs ...).
+    # leaf_rows_by_overlay[overlay] holds the rows destined for that overlay's template.
+    leaf_rows_by_overlay: dict[str, list] = {}
     group_rows    = []
     error_rows    = []
     candidate_rows = []
@@ -383,29 +426,41 @@ def process(input_path: Path, table_filter: str | None, start_id: int, name: str
                 own_fma,  # xref — FMA from source IRI; subagent appends
             ])
         else:
-            leaf_rows.append([
+            overlay = classify_system(rec)
+            base_row = [
                 f"http://purl.obolibrary.org/obo/UBERON_{counter}",
                 label,
                 "[PENDING]",
                 def_xref,
                 is_a_val,
                 part_of_val,
+                "",       # develops_from — filled by subagent if applicable
+            ]
+            if overlay == "muscle":
+                base_row += ["", "", ""]  # has_muscle_origin, has_muscle_insertion, innervated_by
+            base_row += [
                 SUBSET_IRI,
                 CREATION_DATE,
                 contributor_iri,
                 TAXON_IRI,
                 "",       # Wikipedia_image — filled by subagent
                 own_fma,
-            ])
+            ]
+            leaf_rows_by_overlay.setdefault(overlay, []).append(base_row)
         counter += 1
 
-    # Write LEAF working + final templates
-    for path in (WORK_TSV, final_tsv):
-        with open(path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f, delimiter="\t")
-            writer.writerow(TEMPLATE_HEADERS)
-            writer.writerow(TEMPLATE_DIRECTIVES)
-            writer.writerows(leaf_rows)
+    # Write per-overlay LEAF working + final templates
+    overlay_summary = []
+    for overlay, rows in sorted(leaf_rows_by_overlay.items()):
+        headers, directives = OVERLAY_TEMPLATES[overlay]
+        work_path, final_path = overlay_paths(overlay, name)
+        for path in (work_path, final_path):
+            with open(path, "w", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f, delimiter="\t")
+                writer.writerow(headers)
+                writer.writerow(directives)
+                writer.writerows(rows)
+        overlay_summary.append((overlay, len(rows), final_path))
 
     # Write GROUPS working + final templates
     for path in (WORK_GROUPS_TSV, final_groups_tsv):
@@ -420,19 +475,24 @@ def process(input_path: Path, table_filter: str | None, start_id: int, name: str
     write_tsv(errors_tsv, ERROR_HEADERS, error_rows)
     write_tsv(candidates_tsv, CANDIDATE_HEADERS, candidate_rows)
 
-    print(f"Leaf template (working) → {WORK_TSV}")
-    print(f"Leaf template (final)   → {final_tsv}  ({len(leaf_rows)} rows)")
-    print(f"Groups template (working) → {WORK_GROUPS_TSV}")
-    print(f"Groups template (final)   → {final_groups_tsv}  ({len(group_rows)} rows)")
-    print(f"Reports                  → {reports_dir}/")
-    print(f"  input.tsv        {len(input_rows)} rows")
-    print(f"  errors.tsv       {len(error_rows)} rows")
-    print(f"  candidates.tsv   {len(candidate_rows)} rows")
+    # Routing summary (Step 0)
+    parts = ", ".join(f"{ov}={n}" for ov, n, _ in overlay_summary) or "(none)"
+    print(f"Step 0 routing: {parts}, group={len(group_rows)}")
+    print()
+    for overlay, n, final_path in overlay_summary:
+        work_path, _ = overlay_paths(overlay, name)
+        print(f"Leaf template [{overlay}] → {final_path}  ({n} rows)")
+    print(f"Groups template → {final_groups_tsv}  ({len(group_rows)} rows)")
+    print(f"Reports         → {reports_dir}/")
+    print(f"  input.tsv      {len(input_rows)} rows")
+    print(f"  errors.tsv     {len(error_rows)} rows")
+    print(f"  candidates.tsv {len(candidate_rows)} rows")
 
+    total_leaf = sum(len(r) for r in leaf_rows_by_overlay.values())
     uberon_p = sum(1 for r in records if classify_parent(r["parent_id"]) == "uberon")
     fma_p    = sum(1 for r in records if classify_parent(r["parent_id"]) == "fma")
     asctb_p  = sum(1 for r in records if classify_parent(r["parent_id"]) == "asctb_temp")
-    print(f"\nTemplate rows: leaf={len(leaf_rows)} group={len(group_rows)} | "
+    print(f"\nTemplate rows: leaf={total_leaf} group={len(group_rows)} | "
           f"Parents: UBERON={uberon_p} FMA={fma_p} ASCTB-TEMP={asctb_p}")
     if asctb_p:
         print(f"  ⚠ {asctb_p} terms have ASCTB-TEMP parents — "

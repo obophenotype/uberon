@@ -50,21 +50,37 @@ DEFS_DIR         = NTR_ROOT / "outputs" / "definitions"
 PENDING_PATTERN = re.compile(r'^\[PENDING\]$')
 INFER_PATTERN   = re.compile(r'^INFER')
 
-# Shared column indices for both templates (first 4 + last 2 columns are aligned)
-COL_ID      = 0
-COL_LABEL   = 1
-COL_DEF     = 2
-COL_XREF    = 3
-COL_IMAGE   = 10  # Wikipedia_image
-COL_TERMREF = 11  # xref (direct oboInOwl:hasDbXref on term)
-
+# Header column names. Indices are looked up per-template via header_indices() below
+# so the merge step is robust to additional columns (e.g. develops_from, has_muscle_origin)
+# without having to update hardcoded positions.
+H_ID         = "ID"
+H_LABEL      = "LABEL"
+H_DEF        = "Definition"
+H_DEFXREF    = "def_xref"
+H_IMAGE      = "Wikipedia_image"
+H_TERMREF    = "xref"
 # Leaf template logic columns
-COL_IS_A    = 4
-COL_PART_OF = 5
-
+H_IS_A          = "is_a"
+H_PART_OF       = "part_of"
+H_DEVELOPS_FROM = "develops_from"
+# Optional muscle-overlay logic columns (Phase 7)
+H_MUSCLE_ORIGIN    = "has_muscle_origin"
+H_MUSCLE_INSERTION = "has_muscle_insertion"
+H_INNERVATED_BY    = "innervated_by"
 # Groups template logic columns (EC genus, EC part_of some location)
-COL_GENUS    = 4
-COL_LOCATION = 5
+H_GENUS    = "genus"
+H_LOCATION = "location"
+
+
+def header_indices(header_row: list[str]) -> dict[str, int]:
+    """Return {column_name: index} for a template header row."""
+    return {h.strip(): i for i, h in enumerate(header_row)}
+
+
+def ensure_width(row: list[str], width: int) -> None:
+    """Extend row in-place to at least `width` cells with empty strings."""
+    while len(row) < width:
+        row.append("")
 
 
 def _normalise_matches(raw: list) -> list:
@@ -152,70 +168,87 @@ def extract_parent_id(cell_val: str) -> str:
 
 
 def _apply_common_fields(row: list[str], label: str, lookup_label: str,
-                         sub: dict, counters: dict) -> None:
-    """Update definition / image / xref / def_xref columns. Used for both templates."""
-    while len(row) <= COL_TERMREF:
-        row.append("")
+                         sub: dict, counters: dict, idx: dict[str, int]) -> None:
+    """Update definition / image / xref / def_xref columns. Used for both templates.
+
+    idx is the header→index map for the current template (different leaf variants
+    have different positions for these columns)."""
+    ensure_width(row, max(idx.values()) + 1)
 
     def get(d: dict):
         return d.get(lookup_label) or d.get(label)
 
     new_def = get(sub["definitions"])
     if new_def and new_def.strip():
-        row[COL_DEF] = new_def.strip()
+        row[idx[H_DEF]] = new_def.strip()
         counters["defs"] += 1
 
-    new_img = get(sub["images"])
-    if new_img and new_img.strip():
-        row[COL_IMAGE] = new_img.strip()
-        counters["images"] += 1
+    if H_IMAGE in idx:
+        new_img = get(sub["images"])
+        if new_img and new_img.strip():
+            row[idx[H_IMAGE]] = new_img.strip()
+            counters["images"] += 1
 
-    new_xref = get(sub["xrefs"])
-    if new_xref and new_xref.strip():
-        existing = row[COL_TERMREF].strip()
-        parts = [p for p in existing.split("|") if p] if existing else []
-        for p in new_xref.strip().split("|"):
-            if p and p not in parts:
-                parts.append(p)
-        row[COL_TERMREF] = "|".join(parts)
-        counters["xrefs"] += 1
+    if H_TERMREF in idx:
+        new_xref = get(sub["xrefs"])
+        if new_xref and new_xref.strip():
+            col = idx[H_TERMREF]
+            existing = row[col].strip()
+            parts = [p for p in existing.split("|") if p] if existing else []
+            for p in new_xref.strip().split("|"):
+                if p and p not in parts:
+                    parts.append(p)
+            row[col] = "|".join(parts)
+            counters["xrefs"] += 1
 
-    extra_def_xref = get(sub["def_xrefs_extra"])
-    if extra_def_xref and extra_def_xref.strip():
-        existing = row[COL_XREF].strip()
-        parts = [p for p in existing.split("|") if p] if existing else []
-        for p in extra_def_xref.strip().split("|"):
-            if p and p not in parts:
-                parts.append(p)
-        row[COL_XREF] = "|".join(parts)
-        counters["def_xrefs"] += 1
+    if H_DEFXREF in idx:
+        extra_def_xref = get(sub["def_xrefs_extra"])
+        if extra_def_xref and extra_def_xref.strip():
+            col = idx[H_DEFXREF]
+            existing = row[col].strip()
+            parts = [p for p in existing.split("|") if p] if existing else []
+            for p in extra_def_xref.strip().split("|"):
+                if p and p not in parts:
+                    parts.append(p)
+            row[col] = "|".join(parts)
+            counters["def_xrefs"] += 1
 
 
 def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
                         excluded_labels: set, out_of_scope_labels: set,
                         name_correction_map: dict, manual_curation_labels: set) -> dict:
-    """Merge subagent outputs into the leaf template. Returns a counters dict.
+    """Merge subagent outputs into a leaf template (default OR system overlay).
+
+    Uses header-name lookup so the function works with any leaf template variant
+    (default 13 columns, muscle 16 columns, future overlays).
 
     Resolution priority for is_a / part_of columns:
-      1. leaf_template_rows[label] = {is_a, part_of}  — preferred (both axes)
-      2. resolved_relationships + resolved_parents  — legacy single-column form
+      1. leaf_template_rows[label] = {is_a, part_of, develops_from?, has_muscle_*?}
+      2. resolved_relationships + resolved_parents — legacy single-column form
       3. INFER:/UNRESOLVABLE:/NEEDS_MAPPING: — fall back to blank + curator review
     """
+    # Optional logic columns; populated only if the column exists in this template
+    OPTIONAL_LEAF_COLS = [H_DEVELOPS_FROM, H_MUSCLE_ORIGIN,
+                          H_MUSCLE_INSERTION, H_INNERVATED_BY]
     counters = {"defs": 0, "images": 0, "xrefs": 0, "def_xrefs": 0,
                 "rels": 0, "leaf_rows_used": 0, "relabelled": 0,
-                "pending": 0, "infer": 0, "unknown_rel": []}
+                "pending": 0, "infer": 0, "unknown_rel": [],
+                "optional_filled": 0}
     rows = []
     with open(input_tsv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
-        rows.append(next(reader))  # header row
-        rows.append(next(reader))  # directive row
+        header_row    = next(reader)
+        directive_row = next(reader)
+        rows.append(header_row)
+        rows.append(directive_row)
+        idx = header_indices(header_row)
+        width = max(idx.values()) + 1
         for row in reader:
             if not row:
                 rows.append(row)
                 continue
-            while len(row) <= COL_IMAGE:
-                row.append("")
-            label = row[COL_LABEL].strip()
+            ensure_width(row, width)
+            label = row[idx[H_LABEL]].strip()
 
             if label in excluded_labels or label in out_of_scope_labels:
                 continue
@@ -223,21 +256,27 @@ def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
                 continue
 
             if label in name_correction_map:
-                row[COL_LABEL] = name_correction_map[label]
+                row[idx[H_LABEL]] = name_correction_map[label]
                 counters["relabelled"] += 1
             lookup_label = name_correction_map.get(label, label)
 
-            _apply_common_fields(row, label, lookup_label, sub, counters)
+            _apply_common_fields(row, label, lookup_label, sub, counters, idx)
 
-            is_a_val    = row[COL_IS_A].strip()
-            part_of_val = row[COL_PART_OF].strip()
+            is_a_val    = row[idx[H_IS_A]].strip()
+            part_of_val = row[idx[H_PART_OF]].strip()
 
-            # Priority 1: leaf_template_rows — preferred, populates both columns
+            # Priority 1: leaf_template_rows — preferred, populates both axes + optional cols
             ltr = (sub["leaf_template_rows"].get(lookup_label)
                    or sub["leaf_template_rows"].get(label))
             if ltr:
-                row[COL_IS_A]    = (ltr.get("is_a") or "").strip()
-                row[COL_PART_OF] = (ltr.get("part_of") or "").strip()
+                row[idx[H_IS_A]]    = (ltr.get("is_a") or "").strip()
+                row[idx[H_PART_OF]] = (ltr.get("part_of") or "").strip()
+                # Optional columns — only populate if both the column exists in this
+                # template AND the agent emitted a value
+                for col_name in OPTIONAL_LEAF_COLS:
+                    if col_name in idx and ltr.get(col_name):
+                        row[idx[col_name]] = ltr[col_name].strip()
+                        counters["optional_filled"] += 1
                 counters["leaf_rows_used"] += 1
             else:
                 # Priority 2: legacy resolved_relationships + resolved_parents
@@ -249,23 +288,23 @@ def merge_leaf_template(input_tsv: Path, final_tsv: Path, sub: dict,
                        or sub["relationships"].get(label))
                 if rel and parent_id:
                     if rel == "is_a":
-                        row[COL_IS_A]    = parent_id
-                        row[COL_PART_OF] = ""
+                        row[idx[H_IS_A]]    = parent_id
+                        row[idx[H_PART_OF]] = ""
                     elif rel == "part_of":
-                        row[COL_IS_A]    = ""
-                        row[COL_PART_OF] = parent_id
+                        row[idx[H_IS_A]]    = ""
+                        row[idx[H_PART_OF]] = parent_id
                     counters["rels"] += 1
                 elif parent_id and (is_a_val.startswith("INFER:") or
                                     is_a_val.startswith("UNRESOLVABLE:") or
                                     is_a_val.startswith("NEEDS_MAPPING:")):
-                    row[COL_IS_A]    = ""
-                    row[COL_PART_OF] = ""
-                    counters["unknown_rel"].append(row[COL_LABEL].strip())
+                    row[idx[H_IS_A]]    = ""
+                    row[idx[H_PART_OF]] = ""
+                    counters["unknown_rel"].append(row[idx[H_LABEL]].strip())
 
-            if PENDING_PATTERN.match(row[COL_DEF].strip()):
+            if PENDING_PATTERN.match(row[idx[H_DEF]].strip()):
                 counters["pending"] += 1
-            if INFER_PATTERN.match(row[COL_IS_A].strip()) or \
-               INFER_PATTERN.match(row[COL_PART_OF].strip()):
+            if INFER_PATTERN.match(row[idx[H_IS_A]].strip()) or \
+               INFER_PATTERN.match(row[idx[H_PART_OF]].strip()):
                 counters["infer"] += 1
 
             rows.append(row)
@@ -293,15 +332,18 @@ def merge_groups_template(input_tsv: Path, final_tsv: Path, sub: dict,
     rows = []
     with open(input_tsv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f, delimiter="\t")
-        rows.append(next(reader))
-        rows.append(next(reader))
+        header_row    = next(reader)
+        directive_row = next(reader)
+        rows.append(header_row)
+        rows.append(directive_row)
+        idx = header_indices(header_row)
+        width = max(idx.values()) + 1
         for row in reader:
             if not row:
                 rows.append(row)
                 continue
-            while len(row) <= COL_IMAGE:
-                row.append("")
-            label = row[COL_LABEL].strip()
+            ensure_width(row, width)
+            label = row[idx[H_LABEL]].strip()
 
             if label in excluded_labels or label in out_of_scope_labels:
                 continue
@@ -310,24 +352,24 @@ def merge_groups_template(input_tsv: Path, final_tsv: Path, sub: dict,
                 continue
 
             if label in name_correction_map:
-                row[COL_LABEL] = name_correction_map[label]
+                row[idx[H_LABEL]] = name_correction_map[label]
                 counters["relabelled"] += 1
             lookup_label = name_correction_map.get(label, label)
 
-            _apply_common_fields(row, label, lookup_label, sub, counters)
+            _apply_common_fields(row, label, lookup_label, sub, counters, idx)
 
             # Populate genus + location from the agent
             ec = (sub["group_template_rows"].get(lookup_label)
                   or sub["group_template_rows"].get(label))
             if ec and ec.get("genus") and ec.get("location"):
-                row[COL_GENUS]    = ec["genus"].strip()
-                row[COL_LOCATION] = ec["location"].strip()
+                row[idx[H_GENUS]]    = ec["genus"].strip()
+                row[idx[H_LOCATION]] = ec["location"].strip()
                 counters["ec_resolved"] += 1
             else:
                 # Incomplete EC — agent didn't produce both columns; flag for curator
-                counters["ec_incomplete"].append(row[COL_LABEL].strip())
+                counters["ec_incomplete"].append(row[idx[H_LABEL]].strip())
 
-            if PENDING_PATTERN.match(row[COL_DEF].strip()):
+            if PENDING_PATTERN.match(row[idx[H_DEF]].strip()):
                 counters["pending"] += 1
 
             rows.append(row)
@@ -339,9 +381,44 @@ def merge_groups_template(input_tsv: Path, final_tsv: Path, sub: dict,
     return counters
 
 
+def discover_leaf_partitions(name: str, ntr_root: Path, repo_root: Path) -> list[tuple[str, Path, Path]]:
+    """Find all leaf-template partitions for a given name.
+
+    Returns a list of (partition_label, working_tsv, final_tsv) tuples for every
+    partition that has both a working and final template on disk. Partition_label is
+    'default' for the base template, or the overlay name (e.g. 'muscle') for system
+    overlays.
+
+    Convention:
+      default  → outputs/template_initial.tsv          + src/templates/<name>.template.tsv
+      <system> → outputs/template_<system>_initial.tsv + src/templates/<name>-<system>.template.tsv
+    """
+    out_dir       = ntr_root / "outputs"
+    templates_dir = repo_root / "src" / "templates"
+    partitions = []
+
+    # Default partition
+    work = out_dir / "template_initial.tsv"
+    final = templates_dir / f"{name}.template.tsv"
+    if work.exists() and final.exists():
+        partitions.append(("default", work, final))
+
+    # System overlay partitions — discover by looking for outputs/template_<system>_initial.tsv
+    for work_path in sorted(out_dir.glob("template_*_initial.tsv")):
+        stem = work_path.stem  # 'template_muscle_initial'
+        if stem in ("template_initial", "template_groups_initial"):
+            continue
+        # Extract overlay name from 'template_<overlay>_initial'
+        overlay = stem[len("template_"):-len("_initial")]
+        final = templates_dir / f"{name}-{overlay}.template.tsv"
+        if final.exists():
+            partitions.append((overlay, work_path, final))
+
+    return partitions
+
+
 def process(name: str) -> None:
     templates_dir        = REPO_ROOT / "src" / "templates"
-    final_tsv            = templates_dir / f"{name}.template.tsv"
     final_groups_tsv     = templates_dir / f"{name}-groups.template.tsv"
     reports_dir          = templates_dir / f"{name}-reports"
     candidates_tsv       = reports_dir / "candidates.tsv"
@@ -349,17 +426,17 @@ def process(name: str) -> None:
     name_corrections_tsv = reports_dir / "name_corrections.tsv"
     manual_curation_tsv  = reports_dir / "manual_curation.tsv"
 
-    if not INPUT_TSV.exists():
-        raise FileNotFoundError(f"Input not found: {INPUT_TSV}\nRun generate_template.py first.")
-    if not final_tsv.exists():
+    leaf_partitions = discover_leaf_partitions(name, NTR_ROOT, REPO_ROOT)
+    if not leaf_partitions:
         raise FileNotFoundError(
-            f"Template not found: {final_tsv}\nRun generate_template.py --name {name} first."
+            f"No leaf templates found for '{name}'. Run generate_template.py --name {name} first."
         )
 
     sub = load_subagent_outputs()
     print(f"Loaded: {len(sub['definitions'])} definitions, {len(sub['images'])} images, "
           f"{len(sub['relationships'])} resolved relationships, "
           f"{len(sub['resolved_parents'])} resolved parents, "
+          f"{len(sub['leaf_template_rows'])} leaf rows, "
           f"{len(sub['group_template_rows'])} group EC rows, "
           f"{len(sub['xrefs'])} xrefs, {len(sub['def_xrefs_extra'])} extra def_xrefs, "
           f"{len(sub['confirmed'])} confirmed, {len(sub['possible'])} possible, "
@@ -375,24 +452,26 @@ def process(name: str) -> None:
     out_of_scope_labels   = {o["label"] for o in sub["out_of_scope"]}
     manual_curation_labels = {mc["label"] for mc in sub["manual_curation"]}
 
-    leaf_counters = merge_leaf_template(
-        INPUT_TSV, final_tsv, sub,
-        excluded_labels, out_of_scope_labels, name_correction_map,
-        manual_curation_labels,
-    )
-    print(f"\nLeaf template → {final_tsv}  ({leaf_counters['data_rows']} rows)")
-    print(f"  Definitions updated:    {leaf_counters['defs']}")
-    print(f"  Images added:           {leaf_counters['images']}")
-    print(f"  Xrefs added:            {leaf_counters['xrefs']}")
-    print(f"  def_xref refs appended: {leaf_counters['def_xrefs']}")
-    print(f"  Labels corrected:       {leaf_counters['relabelled']}")
-    print(f"  leaf_template_rows used:{leaf_counters['leaf_rows_used']}")
-    print(f"  Relationships resolved (legacy): {leaf_counters['rels']}")
-    print(f"  Still [PENDING] defs:   {leaf_counters['pending']}")
-    print(f"  Still INFER:            {leaf_counters['infer']}")
-    print(f"  Relationship unresolved:{len(leaf_counters['unknown_rel'])}")
-    for lbl in leaf_counters["unknown_rel"]:
-        print(f"    ⚠ {lbl}")
+    for partition_label, work_tsv, final_tsv in leaf_partitions:
+        leaf_counters = merge_leaf_template(
+            work_tsv, final_tsv, sub,
+            excluded_labels, out_of_scope_labels, name_correction_map,
+            manual_curation_labels,
+        )
+        print(f"\nLeaf template [{partition_label}] → {final_tsv}  ({leaf_counters['data_rows']} rows)")
+        print(f"  Definitions updated:    {leaf_counters['defs']}")
+        print(f"  Images added:           {leaf_counters['images']}")
+        print(f"  Xrefs added:            {leaf_counters['xrefs']}")
+        print(f"  def_xref refs appended: {leaf_counters['def_xrefs']}")
+        print(f"  Labels corrected:       {leaf_counters['relabelled']}")
+        print(f"  leaf_template_rows used:{leaf_counters['leaf_rows_used']}")
+        print(f"  Optional cols filled:   {leaf_counters['optional_filled']}")
+        print(f"  Relationships resolved (legacy): {leaf_counters['rels']}")
+        print(f"  Still [PENDING] defs:   {leaf_counters['pending']}")
+        print(f"  Still INFER:            {leaf_counters['infer']}")
+        print(f"  Relationship unresolved:{len(leaf_counters['unknown_rel'])}")
+        for lbl in leaf_counters["unknown_rel"]:
+            print(f"    ⚠ {lbl}")
 
     if INPUT_GROUPS_TSV.exists() and final_groups_tsv.exists():
         groups_counters = merge_groups_template(

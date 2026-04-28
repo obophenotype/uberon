@@ -302,3 +302,102 @@ Once Phase 2 is implemented, run the complete 75-term muscular-system table. Exp
 Generalise to other ASCTB tables (nervous system, vasculature, etc.). The grouping vs leaf
 distinction will apply across systems (e.g. "artery of X" vs "X artery", "region of cortex" vs
 "X gyrus").
+
+---
+
+## Phase 6: Optional `develops_from` column on default leaf template ✅
+
+**Status:** complete.
+
+Added an optional `develops_from` column with directive `SC RO:0002202 some %` to the
+default leaf template. Empty cell → no axiom emitted by ROBOT. Populated by the agent
+when Wikipedia + UBERON precedent indicate a developmental precursor (stage series:
+follicle stages, embryonic stages, hematopoietic differentiation, etc.).
+
+Agent emits via `leaf_template_rows[label].develops_from` in its JSON output. Merge
+silently drops the field if the column is absent in the current template variant.
+
+---
+
+## Phase 7: System overlays
+
+The default leaf template captures only `is_a`, `part_of`, and (optional) `develops_from`.
+Some anatomical systems benefit substantially from additional axiomatic richness (origin,
+insertion, innervation for muscles; arterial supply / drainage for vasculature; etc.).
+Phase 7 implements per-system template overlays — a system overlay is a leaf template
+variant with extra columns covering system-specific connectivity relations.
+
+Stage 1 routes input rows to the appropriate overlay based on the source `tables`
+column. Per-system separation keeps each output template clean (no muscle-specific
+empty columns in non-muscle templates).
+
+### Phase 7 — Skeletal muscle overlay ✅
+
+**Status:** complete.
+
+For inputs with `tables == muscular-system`, Stage 1 produces
+`<name>-muscle.template.tsv` instead of (or alongside) the default leaf template,
+adding three columns:
+
+| Column | ROBOT directive | Relation |
+|---|---|---|
+| has_muscle_origin | SC RO:0002372 some % | bone/structure muscle arises from |
+| has_muscle_insertion | SC RO:0002373 some % | bone/structure muscle inserts onto |
+| innervated_by | SC RO:0002005 some % | motor nerve |
+
+All three OPTIONAL — populated only with evidence-quoted UBERON IDs. Coverage gaps
+(e.g. "lateral pectoral nerve" not in UBERON) are captured as free-text notes in the
+agent's output rather than guessed UBERON IDs.
+
+### Phase 7 — Future overlays (NOT IMPLEMENTED)
+
+| System | Source table | Suggested fields | Notes |
+|---|---|---|---|
+| Skeletal | `skeletal-system`? | `articulates_with`, `ossifies_via`, `composed_primarily_of` (bone tissue) | Bones often have rich articulation patterns |
+| Vasculature | `vasculature` | `arterial_supply_to`, `drains_into`, `branch_of` | Connectivity is central to vasculature semantics |
+| Nervous system | `nervous-system`, `allen-brain` | `innervates`, `synapsed_to`, `axon_in` | Cell-type heavy; CL ontology integration matters |
+
+Each overlay should be added only when there's a real bulk NTR batch that would benefit
+from it. The skeletal-muscle overlay was justified by the muscle enrichment experiment
+(see `bulk_ntr_workflow/experiments/SUMMARY.md`); future overlays should similarly
+follow an enrichment-experiment validation step before code commits.
+
+---
+
+## Phase 8: Term promotion to direct editing
+
+**Status:** roadmap only.
+
+When a templated term needs richer axiomatisation than its template supports — e.g. a
+follicle stage that requires `has_component UBERON:0005170 minCardinality=2` (cardinality-
+constrained intersection_of), or a complex term needing multiple `has_part` axioms with
+CL: cell-type fillers — the templating system becomes a constraint rather than a help.
+
+The proposed remedy: a "promote to direct editing" agent that:
+
+1. Takes a term ID (or list) plus the desired richer axiom set.
+2. Reads the current template TSV row for that ID.
+3. Converts the row to OBO stanza form (mapping ROBOT directives back to OBO syntax:
+   `SC %` → `is_a`, `SC BFO:0000050 some %` → `relationship: part_of`, etc.).
+4. Augments the stanza with the new axioms (intersection_of, cardinality, additional
+   relationship axioms).
+5. Uses the standard checkout/checkin flow: writes to `terms/UBERON_NNNNNNN.obo`, then
+   `obo-checkin.pl` to merge into `uberon-edit.obo`.
+6. Removes the row from the template TSV.
+7. Runs the reasoner to confirm the new axiomatisation produces the expected
+   classification (no unsatisfiable, no unexpected new is_a).
+
+This solves the templating lock-in concern: any term can be promoted to direct editing
+later without losing its UBERON ID or history.
+
+UX sketch:
+```bash
+bulk_ntr_workflow/scripts/promote_term.py UBERON:9900037 \
+  --add 'intersection_of: UBERON:0001305' \
+  --add 'intersection_of: has_component UBERON:0005170 {minCardinality="2"}' \
+  --add 'relationship: develops_from UBERON:0000035'
+```
+
+Or for batches, a YAML/TSV input listing which terms to promote with which axiom sets.
+The agent should handle is_a-inheritance carefully (the inferred is_a after
+intersection_of must still resolve to the previous genus + the new differentia).

@@ -46,6 +46,7 @@ The file contains:
       "ntr_id": "http://purl.obolibrary.org/obo/UBERON_9900001",
       "label": "term label",
       "term_type": "leaf",
+      "system":  "default | muscle",
       "is_a":    "INFER:UBERON:xxxxxxx | NEEDS_MAPPING:FMA:nnnnn | UNRESOLVABLE:...",
       "part_of": "INFER:UBERON:xxxxxxx | ...",
       "def_xref": "ref1|ref2|..."
@@ -232,6 +233,49 @@ convention typically populates both for specific named anatomical entities — e
    a fallback but `leaf_template_rows` is preferred — it expresses both axes
    simultaneously.
 
+**Optional fields in `leaf_template_rows` (Phase 6 + 7):**
+
+The default leaf template has an OPTIONAL `develops_from` column. The muscular-system
+overlay also has `has_muscle_origin`, `has_muscle_insertion`, `innervated_by` columns.
+Populate any of these in `leaf_template_rows[label]` when you have evidence:
+
+```json
+"leaf_template_rows": {
+  "early antral follicle": {
+    "is_a": "UBERON:0000037",
+    "develops_from": "UBERON:0000036"
+  },
+  "articularis genu muscle": {
+    "is_a": "UBERON:0001630",
+    "part_of": "UBERON:0000376",
+    "has_muscle_origin": "UBERON:0000981",
+    "has_muscle_insertion": "UBERON:0000976",
+    "innervated_by": "UBERON:0001267"
+  }
+}
+```
+
+The merge step writes any of these to the corresponding column IF the column exists in
+the current template variant. Unknown fields are silently dropped — you don't need to
+know which template the row belongs to. Just emit whatever you can populate with
+evidence.
+
+**Stage-series guidance for `develops_from`:**
+
+For terms in a developmental sequence (follicle stages, embryonic stages, hematopoietic
+differentiation), look up the precursor stage via OLS4 / awk and emit `develops_from`.
+Example: `early antral follicle` develops_from `secondary ovarian follicle`
+(UBERON:0000036).
+
+**Muscle-overlay guidance for `has_muscle_origin`/`has_muscle_insertion`/`innervated_by`:**
+
+For `system: "muscle"` terms (the per-group JSON contains a `system` field per term),
+extract origin/insertion/innervation from Wikipedia + UBERON precedent. The bone or
+nerve labels in Wikipedia text typically need OLS4 lookup to resolve to UBERON IDs
+(e.g. "femur" → UBERON:0000981, "femoral nerve" → UBERON:0001267). If a UBERON ID
+cannot be resolved (named bone landmark, specific nerve branch missing from UBERON),
+omit that field rather than guess.
+
 **Worked examples:**
 
 - `clavicular head of pectoralis major muscle`:
@@ -332,7 +376,11 @@ Save to: `bulk_ntr_workflow/outputs/definitions/{group_name}.json`
   "leaf_template_rows": {
     "leaf term label": {
       "is_a":    "UBERON:0011906",
-      "part_of": "UBERON:0002381"
+      "part_of": "UBERON:0002381",
+      "develops_from":         "UBERON:0000036",
+      "has_muscle_origin":     "UBERON:0001105",
+      "has_muscle_insertion":  "UBERON:0000976",
+      "innervated_by":         "UBERON:0003726"
     }
   },
   "resolved_relationships": {
