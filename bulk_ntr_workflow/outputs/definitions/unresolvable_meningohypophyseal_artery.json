@@ -1,18 +1,12 @@
 {
   "definitions": {
-    "dorsal part of intertransversarii laterales lumborum muscle": "A muscle organ that is the posterior (dorsal) subdivision of the lateral intertransversarii lumborum, originating from the accessory process of one lumbar vertebra and inserting onto the transverse process of the consecutive lumbar vertebra; together with the ventral part it acts in ipsilateral lateral flexion and stabilisation of the lumbar spine and is innervated by the anterior rami of the lumbar spinal nerves."
+    "dorsal part of intertransversarii laterales lumborum muscle": "A skeletal muscle bundle that is the posterior (dorsal) portion of the lateral intertransversarii muscles of the lumbar region, connecting the accessory processes of one lumbar vertebra to the transverse process of the adjacent vertebra; it acts to stabilise the lumbar vertebral column and assist lateral flexion."
   },
   "xrefs": {
     "dorsal part of intertransversarii laterales lumborum muscle": "Wikipedia:Intertransversarii"
   },
   "def_xrefs_to_add": {
-    "dorsal part of intertransversarii laterales lumborum muscle": "PMID:6226119"
-  },
-  "leaf_template_rows": {
-    "dorsal part of intertransversarii laterales lumborum muscle": {
-      "is_a": "UBERON:0001630",
-      "part_of": "UBERON:0008242"
-    }
+    "dorsal part of intertransversarii laterales lumborum muscle": "doi:10.1007/BF00518810"
   },
   "resolved_relationships": {
     "dorsal part of intertransversarii laterales lumborum muscle": "part_of"
@@ -23,8 +17,8 @@
   "unresolvable": [
     {
       "label": "dorsal part of intertransversarii laterales lumborum muscle",
-      "reason": "The source-supplied parent label 'meningohypophyseal artery' is wrong-domain (it is a cranial artery, not a back muscle) and clearly a data-entry error in the source mapping. The true direct parent muscle 'intertransversarii laterales lumborum muscle' (a.k.a. 'lateral intertransversarii lumborum muscles') does not exist in UBERON; the only related UBERON terms are amphibian neck intertransversarii (UBERON:3010664, UBERON:3010667).",
-      "suggestion": "Curator may wish to add the parent term 'lateral intertransversarii lumborum muscle' (and possibly its sibling 'medial intertransversarii lumborum muscle' and grouping 'intertransversarii lumborum') as intermediate UBERON terms, with part_of UBERON:0008242 (lower back muscle) or UBERON:0002378 (muscle of abdomen) and is_a UBERON:0001630 (muscle organ). The current row uses UBERON:0001630 as genus and UBERON:0008242 (lower back muscle) as part_of as the closest available containing structure; this should be retargeted to the new 'lateral intertransversarii lumborum muscle' term once it is created."
+      "reason": "Source-supplied parent 'meningohypophyseal artery' is wrong-domain (an artery cannot be parent of a muscle subdivision). No UBERON term exists for the parent muscle 'intertransversarii laterales lumborum muscle' itself - the most specific available ancestor is UBERON:0008242 (lower back muscle). Ideally a parent term 'lateral intertransversarii lumborum muscle' should be added first, with this term as its dorsal subdivision (part_of).",
+      "suggestion": "Use UBERON:0008242 (lower back muscle) as the part_of parent for now. Curator should consider adding intermediate parent term 'lateral intertransversarii lumborum muscle' (FMA:32576 if available) and re-parenting this term as part_of that intermediate term. Note that 'dorsal part of' implies a subdivision, hence part_of relationship rather than is_a."
     }
   ]
 }
