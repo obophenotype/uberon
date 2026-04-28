@@ -1,0 +1,37 @@
+{
+  "label": "transitional primary ovarian follicle",
+  "is_a": {
+    "value": "UBERON:0000035",
+    "label": "primary ovarian follicle",
+    "evidence": "A follicle in transition between primordial and primary stages, with cuboidal granulosa cells appearing among the flat squamous cells of the primordial stage. UBERON:0000035 (primary ovarian follicle) is defined as 'An ovarian follicle that has one layer of granulosa cells.' Existing follicle stage terms (primordial, primary, secondary, tertiary) are subclasses of UBERON:0001305 ovarian follicle directly; however, transitional primary is best treated as a developmental sub-stage of the primary stage because the appearance of cuboidal granulosa cells (the defining hallmark of the primary follicle) has begun.",
+    "source": "UBERON:0000035 def + task brief"
+  },
+  "has_part": {
+    "value": "UBERON:0005170",
+    "label": "granulosa cell layer",
+    "evidence": "UBERON:0000035 (primary) has axiom 'has_component UBERON:0005170 {cardinality=\"1\"}'; UBERON:0000036 (secondary) has 'has_component UBERON:0005170 {minCardinality=\"2\"}'. The transitional primary follicle by definition still has a single granulosa cell layer, but with a mixed flat-squamous and cuboidal population of granulosa cells.",
+    "source": "uberon-edit.obo (UBERON:0000035, UBERON:0000036)",
+    "notes": "Could be encoded as 'has_component UBERON:0005170 {cardinality=\"1\"}' to mirror the primary follicle pattern. The mixed squamous/cuboidal cell composition is a quality of the granulosa cells, not a separable part."
+  },
+  "develops_from": {
+    "value": "UBERON:0003981",
+    "label": "primordial ovarian follicle",
+    "evidence": "Primordial follicles 'develop to primary, secondary, and finally mature vesicular follicles' (UBERON:0003981 def). UBERON:0000035 (primary) carries 'relationship: develops_from UBERON:0003981'. The transitional primary follicle sits on the primordial->primary trajectory and inherits this develops_from from its primary-stage genus.",
+    "source": "uberon-edit.obo (UBERON:0003981 def; UBERON:0000035 develops_from)"
+  },
+  "has_potential_to_develop_into": {
+    "value": "UBERON:0000035",
+    "label": "primary ovarian follicle",
+    "evidence": "By definition the transitional primary follicle is on its way to becoming a fully primary follicle (a single complete layer of cuboidal granulosa cells). This mirrors UBERON:0000036 (secondary) which uses 'intersection_of: has_potential_to_develop_into UBERON:0000037 ! tertiary ovarian follicle'.",
+    "source": "task brief; UBERON:0000036 axiom pattern",
+    "notes": "Only meaningful if the term is treated as a sub-stage distinct from the (fully) primary follicle. If is_a UBERON:0000035 is asserted, has_potential_to_develop_into UBERON:0000035 becomes self-referential via the genus and may be redundant or inconsistent."
+  },
+  "has_quality": {
+    "value": null,
+    "label": "transitional / mixed granulosa cell morphology",
+    "evidence": "Defining feature: 'with cuboidal granulosa cells appearing among the flat squamous cells of the primordial stage' - granulosa cells are heterogeneous in shape (mix of squamous and cuboidal). No clear PATO quality term resolved without an OLS4 lookup.",
+    "source": "task brief",
+    "notes": "Left unresolved; this could be captured with PATO 'mixed' / 'heterogeneous' qualities applied to the granulosa cell layer, but is probably best left implicit in the textual definition."
+  },
+  "notes": "A simple is_a UBERON:0000035 (primary ovarian follicle) plus develops_from UBERON:0003981 (primordial ovarian follicle) is likely sufficient and follows the pattern used for the existing follicle-stage terms in UBERON. The 'has_component UBERON:0005170 {cardinality=\"1\"}' axiom is inherited from primary follicle and need not be re-asserted. The distinguishing feature (mixed flat/cuboidal granulosa cells) is hard to capture as a clean logical axiom without a PATO quality, and is best left in the textual definition. has_potential_to_develop_into UBERON:0000035 only makes sense if the transitional class is taxonomically separated from primary follicle - probably better to drop it and rely on is_a + develops_from. Existing stage terms (primordial, primary, secondary, tertiary) are direct subclasses of UBERON:0001305 ovarian follicle, but treating transitional primary as is_a primary follicle (per task brief) better reflects that cuboidal granulosa cells - the hallmark of the primary stage - have already appeared."
+}

@@ -1,0 +1,35 @@
+{
+  "label": "corpus luteum granulosa lutein layer",
+  "is_a": {
+    "value": "UBERON:0000119",
+    "label": "cell layer",
+    "evidence": "Cell layer: 'Portion of tissue, that consists of single layer of cells connected to each other by cell junctions. Examples: layer of glial cells; epithelium.' Sibling ovarian-follicle layer terms 'granulosa cell layer' (UBERON:0005170) and 'theca cell layer' (UBERON:0000155) both use UBERON:0000119 as their genus via intersection_of, with composed_primarily_of pointing to the constituent cell type.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0000119, UBERON:0005170, UBERON:0000155)"
+  },
+  "part_of": {
+    "value": "UBERON:0002512",
+    "label": "corpus luteum",
+    "evidence": "The granulosa lutein layer is the inner cellular layer of the corpus luteum, derived from the granulosa cells of the ovulated follicle. Corpus luteum stanza: 'A transient endocrine gland that develops from the postovulatory or atretic follicles and secretes progesterone' with relationship: has_part CL:0000175 ! luteal cell.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0002512); user prompt"
+  },
+  "composed_primarily_of": {
+    "value": "CL:0000592",
+    "label": "large luteal cell",
+    "evidence": "CL:0000592 large luteal cell is defined as 'A large, progesterone secreting cell in the corpus luteum that develops from the granulosa cells.' This is the granulosa-derived luteal cell population (granulosa-lutein cells); CL has no separately named 'granulosa-lutein cell' class. CL:0000175 luteal cell is the broader parent already used by UBERON:0002512.",
+    "source": "OLS4 CL:0000592 (https://www.ebi.ac.uk/ols4/ontologies/cl/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000592)",
+    "notes": "CL:0000592 corresponds to granulosa-lutein cells in human/primate corpus luteum. If a curator wants stricter parent semantics, CL:0000175 (luteal cell) is the conservative fallback already used by the parent corpus luteum term."
+  },
+  "has_part": {
+    "value": null,
+    "label": null,
+    "evidence": "No additional has_part component cleanly resolves; composed_primarily_of CL:0000592 already captures the dominant cellular constituent. Sibling layer terms (granulosa cell layer UBERON:0005170, theca cell layer UBERON:0000155) do not assert has_part beyond their composed_primarily_of cell type.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0005170, UBERON:0000155)"
+  },
+  "has_function": {
+    "value": "estrogen biosynthesis / steroidogenesis (granulosa-lutein cells of the corpus luteum produce estrogens; large luteal cells also secrete progesterone)",
+    "evidence": "CL:0000592 large luteal cell definition: 'A large, progesterone secreting cell in the corpus luteum that develops from the granulosa cells.' User prompt: '...produces estrogens'. Theca cell layer function_notes (UBERON:0000155) corroborate the substrate-handoff model: 'theca folliculi are responsible for the production of testosterone from androstenedione in females, and indirectly the production of estrogens by supplying the neighboring granulosa cells with androstenedione that can then be used as a substrate for aromatase.'",
+    "source": "OLS4 CL:0000592 description; src/ontology/uberon-edit.obo (UBERON:0000155 function_notes); user prompt",
+    "notes": "Free-text only — no GO term resolved here. Candidate GO terms for a future curator pass: GO:0006703 (estrogen biosynthetic process) and GO:0006700 (C21-steroid hormone biosynthetic process)."
+  },
+  "notes": "is_a (UBERON:0000119 cell layer) + part_of (UBERON:0002512 corpus luteum) + composed_primarily_of (CL:0000592 large luteal cell) is sufficient to give this term a clean Aristotelian logical definition that mirrors the sibling pattern used by UBERON:0005170 (granulosa cell layer) and UBERON:0000155 (theca cell layer), both of which use intersection_of: cell layer / composed_primarily_of <cell> / part_of <ovarian follicle>. So a parallel intersection_of axiomatisation works here: cell layer AND composed_primarily_of some 'large luteal cell' AND part_of some 'corpus luteum'. The is_a + part_of pair alone (without composed_primarily_of) would NOT distinguish this layer from the theca-lutein layer of the same corpus luteum, so composed_primarily_of is load-bearing. No CL term named 'granulosa-lutein cell' exists; CL:0000592 large luteal cell is the closest match by definition (granulosa-derived, progesterone-secreting). The corpus luteum is a transient gland and is_a endocrine gland — but for the LAYER term, cell layer is the correct genus, not gland."
+}
