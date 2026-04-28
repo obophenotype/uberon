@@ -1,0 +1,46 @@
+{
+  "label": "dorsal part of intertransversarii laterales lumborum muscle",
+  "notes": "Very obscure sub-part of a sub-part. No dedicated Wikipedia article; the parent 'Intertransversarii' Wikipedia article only briefly mentions the lumborum subdivision and does not separately describe the dorsal part. Best primary source online is Kenhub's article on intertransversarii laterales lumborum, which distinguishes the ventral (anterior) and dorsal (posterior) parts. No UBERON term currently exists for the parent muscle 'intertransversarii laterales lumborum' itself, nor for the dorsal subdivision; obo-grep over uberon-edit.obo returned no matches for 'intertransversarii' or 'transversarii'. Likewise no UBERON term exists for 'accessory process of lumbar vertebra' (only the transverse process: UBERON:0018146). is_a (genus = the parent intertransversarii laterales lumborum muscle) is therefore left unpopulated for UBERON ID. part_of falls back to UBERON:0008242 'lower back muscle' as the most specific available containing region. Action could not be sourced separately for the dorsal part — sources describe action only for intertransversarii laterales lumborum (or intertransversarii) collectively.",
+  "is_a": {
+    "value": "",
+    "label": "intertransversarii laterales lumborum muscle",
+    "evidence": "The lateral muscles, intertransversarii laterales lumborum, consist of two parts; anterior (ventral) and posterior (dorsal), referred to as intertransversarii laterales ventrales and intertransversarii laterales dorsales, respectively.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "rationale": "Genus is the parent muscle (intertransversarii laterales lumborum), of which the dorsal part is one of two named subdivisions. No UBERON ID exists for this parent."
+  },
+  "part_of": {
+    "value": "UBERON:0008242",
+    "label": "lower back muscle",
+    "evidence": "The lateral muscles, intertransversarii laterales lumborum, consist of two parts; anterior (ventral) and posterior (dorsal) ... originate from the accessory process of one lumbar vertebra and insert onto the transverse process of the consecutive lumbar vertebra.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "rationale": "Located between adjacent lumbar vertebrae and forms part of the deep musculature of the lower back; UBERON:0008242 (lower back muscle) is the most specific containing region currently available in UBERON."
+  },
+  "has_muscle_origin": {
+    "value": "",
+    "label": "accessory process of lumbar vertebra",
+    "evidence": "The posterior parts originate from the accessory process of one lumbar vertebra and insert onto the transverse process of the consecutive lumbar vertebra.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "notes": "No UBERON term exists for 'accessory process of lumbar vertebra' (verified by grep over uberon-edit.obo). Closest related term is UBERON:0018146 'transverse process of lumbar vertebra', which is anatomically distinct."
+  },
+  "has_muscle_insertion": {
+    "value": "UBERON:0018146",
+    "label": "transverse process of lumbar vertebra",
+    "evidence": "The posterior parts originate from the accessory process of one lumbar vertebra and insert onto the transverse process of the consecutive lumbar vertebra.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "notes": "Specifically the medial third of the transverse process of the consecutive (caudal) lumbar vertebra: 'inserts proximally to the accessory process and distally to the medial third of the adjacent transverse process below.'"
+  },
+  "innervated_by": {
+    "value": "UBERON:0006838",
+    "label": "ventral ramus of spinal nerve",
+    "evidence": "Intertransversarii laterales lumborum are supplied by the anterior rami of spinal nerves, in contrast to intertransversarii mediales lumborum which are innervated by posterior rami.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "notes": "Innervation stated for the parent intertransversarii laterales lumborum (covering both ventral and dorsal parts). UBERON:0006838 'ventral ramus of spinal nerve' is the equivalent term to 'anterior ramus of spinal nerve'. The relevant nerves are the anterior rami of the lumbar spinal nerves (UBERON:0009624 'lumbar nerve'). Some sources note mixed innervation, with dorsal-ramus contributions also reported for the dorsal part specifically."
+  },
+  "has_muscle_action": {
+    "value": "",
+    "label": "lateral flexion / stabilization of lumbar spine",
+    "evidence": "assist lateral flexion of the spine; Stabilizes spine.",
+    "source": "https://www.kenhub.com/en/library/anatomy/intertransversarii-laterales-lumborum-muscles",
+    "notes": "Action is described only for intertransversarii (or intertransversarii laterales lumborum collectively); no source distinguishes the action of the dorsal part from the ventral part. No UBERON ID applies (action, not anatomical entity)."
+  }
+}
