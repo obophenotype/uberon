@@ -1,27 +1,39 @@
 {
   "definitions": {
-    "articularis genu muscle": "A skeletal muscle of the anterior compartment of the thigh that arises from the anterior surface of the lower body of the femur, deep to the vastus intermedius, and inserts onto the synovial membrane of the knee joint, retracting the suprapatellar bursa superiorly during knee extension and preventing impingement of the synovium between the patella and femur."
+    "articularis genu muscle": "A muscle organ of the anterior compartment of the thigh, lying deep to the vastus intermedius, that originates from the anterior surface of the distal femur and inserts into the suprapatellar bursa and synovial membrane of the knee joint, retracting the bursa superiorly during knee extension to prevent its impingement between the patella and femur."
   },
   "wikipedia_images": {
-    "articularis genu muscle": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Gray244.png/512px-Gray244.png"
+    "articularis genu muscle": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Gray244.png"
   },
   "xrefs": {
-    "articularis genu muscle": "Wikipedia:Articularis_genus_muscle|FMA:22437"
+    "articularis genu muscle": "Wikipedia:Articularis_genus_muscle|FMA:22441"
   },
   "def_xrefs_to_add": {
     "articularis genu muscle": "PMID:30229230|PMID:33215156"
   },
+  "leaf_template_rows": {
+    "articularis genu muscle": {
+      "is_a": "UBERON:0001630",
+      "part_of": "UBERON:0000376"
+    }
+  },
+  "resolved_parents": {
+    "articularis genu muscle": {
+      "source_parent": "NEEDS_MAPPING:FMA:22424",
+      "source_parent_label": "muscle of anterior compartment of thigh",
+      "resolved_uberon_parent_for_part_of": "UBERON:0000376",
+      "resolved_uberon_parent_label": "hindlimb stylopod (thigh)",
+      "note": "FMA:22424 (muscle of anterior compartment of thigh) has no direct UBERON equivalent. Closest UBERON grouping is UBERON:0004252 (hindlimb stylopod muscle / muscle of thigh, FMA:22470), one level broader. For part_of we use UBERON:0000376 (hindlimb stylopod / thigh) following the precedent of pectineus (UBERON:0001382), since articularis genu is a separate muscle (not anatomically a part of quadriceps femoris), though it lies deep to vastus intermedius."
+    }
+  },
   "resolved_relationships": {
     "articularis genu muscle": "is_a"
   },
-  "resolved_parents": {
-    "articularis genu muscle": "UBERON:0004252"
-  },
   "unresolvable": [
     {
-      "label": "parent FMA:22424 (muscle of anterior compartment of thigh)",
-      "reason": "No UBERON term exists with FMA:22424 as xref or with 'anterior compartment of thigh' in label/synonyms. OLS4 searches for the FMA ID and for the label text return no hits. Closest UBERON grouping for the anterior thigh compartment specifically is UBERON:0001377 (quadriceps femoris), but articularis genu is anatomically discrete from the quadriceps (sometimes referred to as the 'fifth quadriceps muscle' but not part of the named quadriceps complex).",
-      "suggestion": "Fell back to UBERON:0004252 (hindlimb stylopod muscle; synonyms 'muscle of thigh', 'thigh muscle') as parent per workflow instructions. Curator may consider creating a new UBERON term 'muscle of anterior compartment of thigh' (FMA:22424) as an intermediate parent in a future batch."
+      "label": "FMA:22424 muscle of anterior compartment of thigh",
+      "reason": "No UBERON term exists for the anterior compartment of thigh muscle grouping. Closest existing term is UBERON:0004252 (hindlimb stylopod muscle, FMA:22470), which is the next level up.",
+      "suggestion": "Curator may consider creating a UBERON term for 'muscle of anterior compartment of thigh' (FMA:22424) as a child of UBERON:0004252; for now, the leaf term uses part_of UBERON:0000376 (thigh)."
     }
   ]
 }

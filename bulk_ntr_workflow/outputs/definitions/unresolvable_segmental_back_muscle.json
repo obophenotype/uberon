@@ -1,24 +1,24 @@
 {
   "definitions": {
-    "anterior cervical intertransversarii muscle": "A small segmental back muscle that arises from the anterior tubercle of the transverse process of one cervical vertebra and inserts on the anterior tubercle of the transverse process of the adjacent cervical vertebra, contributing to lateral flexion and proprioceptive stabilisation of the cervical spine."
+    "anterior cervical intertransversarii muscle": "A muscle organ that is one of the small, paired segmental muscles of the neck connecting the anterior tubercles of the transverse processes of two adjacent cervical vertebrae. These muscles span from C1-C2 (or C2-C3) through C7-T1, lying lateral to the longus colli muscle, are innervated by the anterior rami of the cervical spinal nerves, and contribute to lateral flexion and proprioceptive stabilisation of the cervical spine."
   },
   "xrefs": {
-    "anterior cervical intertransversarii muscle": "Wikipedia:Intertransversarii|FMA:71442"
+    "anterior cervical intertransversarii muscle": "Wikipedia:Intertransversarii|FMA:32530"
   },
   "def_xrefs_to_add": {
-    "anterior cervical intertransversarii muscle": "PMID:12650404"
+    "anterior cervical intertransversarii muscle": "PMID:7076562"
   },
-  "resolved_relationships": {
-    "anterior cervical intertransversarii muscle": "is_a"
-  },
-  "resolved_parents": {
-    "anterior cervical intertransversarii muscle": "UBERON:0002324"
+  "leaf_template_rows": {
+    "anterior cervical intertransversarii muscle": {
+      "is_a": "UBERON:0001630",
+      "part_of": "UBERON:0000974"
+    }
   },
   "unresolvable": [
     {
       "label": "segmental back muscle",
-      "reason": "Source parent label 'segmental back muscle' is not present in UBERON as a distinct class. The anterior cervical intertransversarii muscles span the transverse processes of adjacent cervical vertebrae and are classified as deep (segmental) back muscles in standard anatomy; the closest existing UBERON parent is UBERON:0002324 (muscle of back).",
-      "suggestion": "Use UBERON:0002324 (muscle of back) as the is_a parent. A more specific intermediate class such as 'segmental muscle of back' or 'deep muscle of back' could be added in future curation; 'musculature of neck' (UBERON:0004465) would be an alternative grouping for the cervical-region member but the source intent points to back musculature."
+      "reason": "Source ASCTB-TEMP parent label 'segmental back muscle' has no direct UBERON equivalent. The closest UBERON groupings are 'muscle of vertebral column' (UBERON:0004518), 'muscle of back' (UBERON:0002324), and 'muscle of neck' (UBERON:0002377). Since the anterior cervical intertransversarii are anteriorly located paravertebral muscles in the neck (not part of the dorsum), 'muscle of back' is anatomically inappropriate; UBERON convention for similar small named neck muscles (e.g. longus colli UBERON:0001121, rectus capitis anterior UBERON:0008453) uses is_a UBERON:0001630 (muscle organ) plus part_of UBERON:0000974 (neck).",
+      "suggestion": "Use is_a UBERON:0001630 (muscle organ) and part_of UBERON:0000974 (neck) as captured in leaf_template_rows. Curator may optionally re-parent under UBERON:0008549 (prevertebral muscle) or UBERON:0004518 (muscle of vertebral column) if a more specific genus is preferred."
     }
   ]
 }
