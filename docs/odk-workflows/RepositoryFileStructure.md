@@ -48,3 +48,4 @@ These are the components in UBERON
 | hra_subset.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/UB_ASCTB_subset.owl |
 | vasculature_class.owl | None |
 | hra_depiction_3d_images.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl |
+| hra_skeleton.owl | None |

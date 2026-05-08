@@ -1,0 +1,125 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to review"
+        required: true
+        type: number
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number || github.event.inputs.pr_number }}
+  cancel-in-progress: true
+
+jobs:
+  claude-review:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
+      TOOLS_DIR: ${{ github.workspace }}/tools
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Generate ai4c-agent token
+        id: ai4c-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.AI4C_AGENT_APP_ID }}
+          private-key: ${{ secrets.AI4C_AGENT_PRIVATE_KEY }}
+
+      - name: Checkout PR branch (for workflow_dispatch)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ steps.ai4c-token.outputs.token }}
+        run: gh pr checkout "${{ env.PR_NUMBER }}"
+
+      - name: Create tools directory
+        run: mkdir -p "${{ env.TOOLS_DIR }}"
+
+      - name: Add tools to PATH
+        run: echo "${{ env.TOOLS_DIR }}" >> "$GITHUB_PATH"
+
+      - name: Add obo-scripts to PATH
+        run: |
+          git clone --depth 1 https://github.com/cmungall/obo-scripts.git "${{ env.TOOLS_DIR }}/obo-scripts"
+          echo "${{ env.TOOLS_DIR }}/obo-scripts" >> "$GITHUB_PATH"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install Python tools
+        run: |
+          uv venv
+          . .venv/bin/activate
+          uv pip install aurelian "wrapt>=1.17.2"
+          echo "${{ github.workspace }}/.venv/bin" >> "$GITHUB_PATH"
+
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ steps.ai4c-token.outputs.token }}
+          track_progress: ${{ github.event_name == 'pull_request' }}
+          # PRs opened by the ai4c GitHub App should still be reviewable.
+          allowed_bots: "claude,github-actions,ai4c-agent"
+          claude_args: |
+            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr review:*),Bash(gh api:*),Bash(obo-grep.pl:*),Bash(aurelian:*),Bash(cat:*),Bash(sed:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(find:*),Bash(ls:*),Bash(rg:*)"
+
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ env.PR_NUMBER }}
+
+            Review this pull request for the Uberon ontology repository.
+
+            Follow the repository instructions in `CLAUDE.md`.
+
+            When you need to inspect ontology content in `src/ontology/uberon-edit.obo`, use only:
+            - `obo-grep.pl -r 'id: UBERON:NNNNNNN' src/ontology/uberon-edit.obo`
+            - `obo-grep.pl -r 'UBERON:NNNNNNN' src/ontology/uberon-edit.obo`
+
+            Focus on:
+            - Hierarchy and proposed parents being anatomically and logically consistent
+            - Definitions, xrefs, and PMIDs being real and adequately supportive
+            - Obsolete-term handling and replacement or consider tags being safe
+            - OBO and ODK conventions being preserved
+            - Workflow, auth, and repo-configuration regressions when the PR touches `.github` or `.claude`
+
+            Be constructive and specific. For each issue found, indicate severity:
+            - 🔴 CRITICAL: Must fix before merge
+            - 🟡 IMPORTANT: Should fix before merge
+            - 🔵 SUGGESTION: Optional improvement
+
+            Prefer inline comments for concrete file-level issues. Use the overall review summary to explain the main risks and the merge recommendation.
+
+            After reviewing, set the GitHub PR review status:
+
+            If there are any 🔴 CRITICAL or 🟡 IMPORTANT issues, submit a REQUEST_CHANGES review:
+            ```
+            gh pr review ${{ env.PR_NUMBER }} --request-changes --body "<your review summary>"
+            ```
+
+            If there are only 🔵 SUGGESTIONs or no issues, submit an APPROVE review:
+            ```
+            gh pr review ${{ env.PR_NUMBER }} --approve --body "<your review summary>"
+            ```
+
+            Always include a checklist at the top of your review:
+            - [ ] Hierarchy and parents are consistent
+            - [ ] Definitions and supporting references look adequate
+            - [ ] Obsolete or replacement handling is safe
+            - [ ] OBO and ODK conventions appear preserved
+            - [ ] No obvious CI, auth, or workflow regression

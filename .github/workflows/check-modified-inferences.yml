@@ -24,13 +24,13 @@ jobs:
       is_large_scale: ${{ steps.analysis.outputs.is_large_scale }}
     steps:
       - name: Checkout the head of the PR branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
           path: head
 
       - name: Checkout the base of the PR branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ github.base_ref }}
           path: base
