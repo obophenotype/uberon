@@ -1,0 +1,22 @@
+{
+  "confirmed_matches": [
+    {
+      "label": "external anal sphincter muscle",
+      "uberon_id": "UBERON:0001367",
+      "confidence": "high",
+      "uberon_definition": "The Sphincter ani externus (external anal sphincter) is a flat plane of muscular fibers, elliptical in shape and intimately adherent to the integument surrounding the margin of the anus.",
+      "wikipedia_summary": "The external anal sphincter (or sphincter ani externus) is a flat plane of skeletal muscle fibers, elliptical in shape and intimately adherent to the skin surrounding the margin of the anus. It is a voluntary muscle that surrounds the anus and keeps it closed, opening during defecation. It is innervated by the inferior rectal branch of the pudendal nerve (S2-S4).",
+      "note": "Source label 'external anal sphincter muscle' is the same structure as UBERON:0001367 'external anal sphincter' (synonyms include 'musculus sphincter ani externus'). UBERON:0001367 has FMA:21930, MA:0001531, Wikipedia:Sphincter_ani_externus_muscle. Source ASCTB-TEMP IRI should be added as a synonym/xref on UBERON:0001367 rather than a new term being created. Source parent UBERON:0001876 (amygdala) is clearly a spurious/erroneous mapping in the input — the intended parent is a sphincter muscle / anal region skeletal muscle class, which UBERON:0001367 already has (is_a UBERON:0004590 sphincter muscle; is_a UBERON:0004832 anal region skeletal muscle; part_of UBERON:0006867 anal part of perineum; surrounds UBERON:0001245 anus)."
+    }
+  ],
+  "xrefs": {
+    "external anal sphincter muscle": "Wikipedia:Sphincter_ani_externus_muscle|FMA:21930"
+  },
+  "unresolvable": [
+    {
+      "label": "external anal sphincter muscle",
+      "reason": "Source parent_id UBERON:0001876 resolves to 'amygdala' — a brain region, evidently a data-entry error in the ASCTB-TEMP input. Not an issue for output (term is a confirmed_match excluded from template), but flagged for curator awareness.",
+      "suggestion": "Curator should add ASCTB-TEMP source IRI (https://purl.org/ccf/ASCTB-TEMP_external-anal-sphincter-muscle) and 'external anal sphincter muscle' as a synonym to UBERON:0001367. No new term needed."
+    }
+  ]
+}

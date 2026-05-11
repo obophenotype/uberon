@@ -1,24 +1,33 @@
 {
   "definitions": {
-    "dorsal part of intertransversarii laterales lumborum muscle": "A skeletal muscle bundle that is the posterior (dorsal) portion of the lateral intertransversarii muscles of the lumbar region, connecting the accessory processes of one lumbar vertebra to the transverse process of the adjacent vertebra; it acts to stabilise the lumbar vertebral column and assist lateral flexion."
+    "dorsal part of intertransversarii laterales lumborum muscle": "A small skeletal back muscle that originates from the accessory process of one lumbar vertebra and inserts onto the transverse process of the adjacent (next inferior) lumbar vertebra, forming the posterior (dorsal) component of the lateral intertransverse muscles of the lumbar region; it contributes to lateral flexion and segmental stabilisation of the lumbar vertebral column."
   },
   "xrefs": {
     "dorsal part of intertransversarii laterales lumborum muscle": "Wikipedia:Intertransversarii"
   },
   "def_xrefs_to_add": {
-    "dorsal part of intertransversarii laterales lumborum muscle": "doi:10.1007/BF00518810"
+    "dorsal part of intertransversarii laterales lumborum muscle": "ISBN:9780323393225"
+  },
+  "leaf_template_rows": {
+    "dorsal part of intertransversarii laterales lumborum muscle": {
+      "is_a": "UBERON:0001630",
+      "part_of": "UBERON:0001137",
+      "has_muscle_origin": "UBERON:0001077",
+      "has_muscle_insertion": "UBERON:0001077",
+      "innervated_by": "UBERON:0006839"
+    }
   },
   "resolved_relationships": {
     "dorsal part of intertransversarii laterales lumborum muscle": "part_of"
   },
   "resolved_parents": {
-    "dorsal part of intertransversarii laterales lumborum muscle": "UBERON:0008242"
+    "dorsal part of intertransversarii laterales lumborum muscle": "UBERON:0001137"
   },
   "unresolvable": [
     {
       "label": "dorsal part of intertransversarii laterales lumborum muscle",
-      "reason": "Source-supplied parent 'meningohypophyseal artery' is wrong-domain (an artery cannot be parent of a muscle subdivision). No UBERON term exists for the parent muscle 'intertransversarii laterales lumborum muscle' itself - the most specific available ancestor is UBERON:0008242 (lower back muscle). Ideally a parent term 'lateral intertransversarii lumborum muscle' should be added first, with this term as its dorsal subdivision (part_of).",
-      "suggestion": "Use UBERON:0008242 (lower back muscle) as the part_of parent for now. Curator should consider adding intermediate parent term 'lateral intertransversarii lumborum muscle' (FMA:32576 if available) and re-parenting this term as part_of that intermediate term. Note that 'dorsal part of' implies a subdivision, hence part_of relationship rather than is_a."
+      "reason": "Source-supplied parent label 'meningohypophyseal artery' is wrong-domain (a cranial artery cannot parent a lumbar back muscle) and is clearly a data-entry error in the input. The parent muscle 'intertransversarii laterales lumborum' (FMA:32576 / FMA:32577) and the higher class 'intertransversarii lumborum' do not yet exist in UBERON, so no exact named-muscle parent is available; the dorsal part has been placed under genus UBERON:0001630 (muscle organ) and part_of UBERON:0001137 (dorsum/back) by analogy with other deep back muscles such as longissimus, spinalis, and rotator muscle of the vertebral column. The bone-landmark 'accessory process of lumbar vertebra' is not in UBERON, so the more general UBERON:0001077 (transverse process of vertebra) is used for has_muscle_origin (the accessory process is a small projection on the posterior aspect of the transverse process region).",
+      "suggestion": "Curator should: (1) consider adding parent terms 'intertransversarii lumborum muscle group' and 'intertransversarii laterales lumborum muscle' to UBERON (FMA:32576, FMA:32577) so this dorsal part can be made part_of its true named-muscle parent; (2) optionally add 'accessory process of lumbar vertebra' (FMA:34047) for a more precise has_muscle_origin; (3) consider whether a 'muscle of vertebral column' is_a (UBERON:0004518) is preferable to the generic muscle organ once the parent muscle exists."
     }
   ]
 }

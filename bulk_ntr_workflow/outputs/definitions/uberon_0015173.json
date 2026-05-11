@@ -1,0 +1,39 @@
+{
+  "definitions": {
+    "puboperineales muscle": "A muscle of the pelvis that arises from the inner surface of the pubic bone and inserts into the perineal body, forming part of the pubovisceral component of the levator ani muscle and contributing to support of the pelvic floor and elevation of the perineal body."
+  },
+  "xrefs": {
+    "puboperineales muscle": "FMA:74028"
+  },
+  "def_xrefs_to_add": {
+    "puboperineales muscle": "PMID:14990415"
+  },
+  "leaf_template_rows": {
+    "puboperineales muscle": {
+      "is_a": "UBERON:0001325",
+      "part_of": "UBERON:0001326",
+      "has_muscle_origin": "UBERON:0001275",
+      "has_muscle_insertion": "UBERON:0006654"
+    }
+  },
+  "resolved_relationships": {
+    "puboperineales muscle": "part_of"
+  },
+  "resolved_parents": {
+    "puboperineales muscle": "UBERON:0001326"
+  },
+  "name_corrections": [
+    {
+      "label": "puboperineales muscle",
+      "suggested": "puboperinealis muscle",
+      "reason": "TA2 Latin form is 'musculus puboperinealis' (singular); 'puboperineales' is the plural Latin adjective form used inconsistently. The standard English label is 'puboperinealis muscle' or 'puboperineal muscle'. Keep source name as a synonym."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "puboperineales muscle",
+      "reason": "Source parent UBERON:0015173 ('helicine branch of uterine artery') is clearly a misalignment in the input data — it is an artery, not a muscle. Resolved to the anatomically correct parent levator ani muscle (UBERON:0001326) following the precedent of puborectalis (UBERON:0011512) and pubococcygeus (UBERON:0011528), which are also slips of the levator ani with the same is_a/part_of pattern.",
+      "suggestion": "Curator should ignore the source parent_id and use UBERON:0001326 (levator ani muscle) as part_of, UBERON:0001325 (muscle of pelvis) as is_a."
+    }
+  ]
+}

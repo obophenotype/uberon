@@ -1,0 +1,40 @@
+{
+  "definitions": {
+    "interspinales cervicalis muscle": "A muscle of the vertebral column consisting of short paired fascicles that span between the spinous processes of contiguous cervical vertebrae (typically C2 through T1), lying on either side of the interspinous ligament. It assists in extension of the cervical spine and contributes to segmental stabilisation and proprioception of the neck."
+  },
+  "xrefs": {
+    "interspinales cervicalis muscle": "Wikipedia:Interspinales_muscles|FMA:32519"
+  },
+  "def_xrefs_to_add": {
+    "interspinales cervicalis muscle": "Wikipedia:Interspinales_muscles"
+  },
+  "leaf_template_rows": {
+    "interspinales cervicalis muscle": {
+      "is_a": "UBERON:0004518",
+      "part_of": "UBERON:0000974",
+      "has_muscle_origin": "UBERON:0001076",
+      "has_muscle_insertion": "UBERON:0001076",
+      "innervated_by": "UBERON:0006839"
+    }
+  },
+  "resolved_relationships": {
+    "interspinales cervicalis muscle": "is_a"
+  },
+  "resolved_parents": {
+    "interspinales cervicalis muscle": "UBERON:0004518"
+  },
+  "name_corrections": [
+    {
+      "label": "interspinales cervicalis muscle",
+      "suggested": "interspinales cervicis muscle",
+      "reason": "TA2 / standard anatomical nomenclature uses 'musculi interspinales cervicis' (genitive 'cervicis', not 'cervicalis'). 'Cervicalis' is grammatically the adjective form, but the established TA term is 'interspinales cervicis'. Keep 'interspinales cervicalis muscle' as a related synonym."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "interspinales cervicalis muscle",
+      "reason": "Source-supplied parent_id UBERON:0000979 resolves to 'tibia', which is clearly an upstream data error (interspinales cervicis is a deep neck muscle, not a leg bone). Used anatomical knowledge and similar UBERON deep neck muscles (rectus capitis posterior major UBERON:0008454, longus colli UBERON:0001121, semispinalis cervicis precedent) to determine the appropriate genus and part_of.",
+      "suggestion": "Curator should ignore the source UBERON:0000979 parent assignment. The chosen genus 'muscle of vertebral column' (UBERON:0004518) is consistent with other named vertebral-column muscles in UBERON; part_of 'neck' (UBERON:0000974) follows the precedent of rectus capitis posterior major. has_muscle_origin and has_muscle_insertion are both set to UBERON:0001076 (neural spine / spinous process of vertebra) because the muscle spans between adjacent cervical spinous processes; UBERON does not currently have a more specific 'spinous process of cervical vertebra' class. innervated_by is the dorsal ramus of spinal nerve (UBERON:0006839); a more specific 'medial branch of dorsal ramus of cervical spinal nerve' class does not exist in UBERON."
+    }
+  ]
+}

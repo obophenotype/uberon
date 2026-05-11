@@ -1,9 +1,9 @@
 {
   "definitions": {
-    "articularis genu muscle": "A muscle organ of the anterior thigh, often described as a deep, flat, variable accessory of the quadriceps femoris that arises from the anterior surface of the distal femur and inserts onto the suprapatellar bursa and synovial membrane of the knee joint, retracting the joint capsule during knee extension."
+    "articularis genu muscle": "A small skeletal muscle organ of the anterior thigh, lying deep to the vastus intermedius, that arises from the anterior surface of the distal shaft of the femur and inserts onto the proximal wall of the suprapatellar bursa and the synovial membrane of the knee joint, where it retracts the bursa superiorly during knee extension."
   },
   "wikipedia_images": {
-    "articularis genu muscle": "https://upload.wikimedia.org/wikipedia/commons/0/06/Gray434.png"
+    "articularis genu muscle": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Gray244.png"
   },
   "xrefs": {
     "articularis genu muscle": "Wikipedia:Articularis_genus_muscle|FMA:22424"
@@ -27,9 +27,14 @@
   },
   "unresolvable": [
     {
-      "label": "articularis genu muscle",
-      "reason": "has_muscle_insertion omitted: the muscle inserts onto the suprapatellar bursa / synovial membrane of the knee joint; suprapatellar bursa is not in UBERON, and a more specific UBERON ID for that insertion target could not be resolved.",
-      "suggestion": "Curator may add has_muscle_insertion UBERON:0002446 (patella) or a knee-joint synovial membrane term if appropriate, or leave unset."
+      "label": "articularis genu muscle (parent FMA:22424)",
+      "reason": "Source parent FMA:22424 is the articularis genus muscle itself (self-referential mapping in the ASCTB input). No UBERON equivalent exists for this term — it is the new term being created. Genus resolved to UBERON:0001630 (muscle organ) and part_of to UBERON:0000376 (hindlimb stylopod / thigh) by analogy with UBERON:0001379 (vastus lateralis).",
+      "suggestion": "Accept the leaf_template_rows mapping; no further FMA→UBERON parent lookup is needed."
+    },
+    {
+      "label": "articularis genu muscle has_muscle_insertion",
+      "reason": "Anatomical insertion is on the suprapatellar bursa / synovial membrane of the knee joint. UBERON currently lacks specific terms for 'suprapatellar bursa' or 'synovial membrane of knee joint capsule'.",
+      "suggestion": "Omit has_muscle_insertion for now; curator may add later if/when those structures are added to UBERON."
     }
   ]
 }
