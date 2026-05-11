@@ -25,12 +25,12 @@ jobs:
       # Checks-out current branch
       - uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
       # Checks-out master branch under "master" directory
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
@@ -71,12 +71,12 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
           path: branch
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
@@ -104,7 +104,7 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: xt0rted/pull-request-comment-branch@v2
         id: comment-branch
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
@@ -130,7 +130,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
@@ -155,7 +155,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:  
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
       - name: Download classified ontology main branch
         if: steps.check.outputs.triggered == 'true'
@@ -188,7 +188,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
       - name: Download reasoned diff
         if: steps.check.outputs.triggered == 'true'
@@ -205,7 +205,7 @@ jobs:
           file: "../../comment.md"
           identifier: "REASONED"
           github_token: ${{secrets.GITHUB_TOKEN}}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: steps.check.outputs.triggered == 'true'
       - name: Download edit diff
         if: steps.check.outputs.triggered == 'true'
@@ -222,6 +222,5 @@ jobs:
           file: "../../edit-comment.md"
           identifier: "UNREASONED"
           github_token: ${{secrets.GITHUB_TOKEN}}
-
 
 

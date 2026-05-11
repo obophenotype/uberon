@@ -1,14 +1,27 @@
 {
   "permissions": {
     "allow": [
-        "Bash",
-        "Edit",
-        "MultiEdit",
-        "NotebookEdit",
-        "FileEdit",
-        "WebFetch",
-        "WebSearch",
-        "Write"
+      "Bash",
+      "Edit",
+      "MultiEdit",
+      "NotebookEdit",
+      "FileEdit",
+      "WebFetch",
+      "WebSearch",
+      "Write"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "agent",
+            "prompt": "You are a completion verifier for the Uberon AI agent (@dragon-ai-agent). Your job is to check whether the agent actually completed its task before allowing it to stop.\n\nIMPORTANT: First check the stop_hook_active field in $ARGUMENTS. If it is true, respond with {\"ok\": true} immediately.\n\nOtherwise, read the transcript at transcript_path from $ARGUMENTS and determine:\n\n1. What was the user's request?\n2. Did the agent produce an appropriate deliverable?\n3. If the task required ontology or repository edits, did the agent actually push work and create or update a PR?\n4. If the task required only a question, clarification, research summary, or status update, did the agent communicate that back on GitHub?\n5. If the task was a PR review, did the agent leave an actual GitHub review and or inline review comments?\n\nLook for actual tool-use evidence, not text claims. Valid evidence includes commands such as:\n- gh pr create\n- gh pr review\n- gh issue comment\n- gh pr comment\n- git push\n\nIf the agent correctly decided it should not proceed and communicated that via GitHub, that counts as complete.\n\nIf the task appears incomplete, respond with:\n{\"ok\": false, \"reason\": \"<specific description of what is missing>\"}\n\nIf the task is complete, respond with:\n{\"ok\": true}",
+            "timeout": 120
+          }
+        ]
+      }
     ]
   }
 }

@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Check if issue body contains 'Hey ontobot'
         id: check-body
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             const issue = await github.rest.issues.get({
@@ -45,7 +45,7 @@ jobs:
 
       - name: Return issue number
         id: gh-script-issue
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
@@ -55,7 +55,7 @@ jobs:
       
       - name: Return repository name
         id: gh-script-repo
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |

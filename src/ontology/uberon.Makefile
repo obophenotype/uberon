@@ -44,6 +44,7 @@ test: $(REPORTDIR)/uberon-basic-allcycles \
 	obocheck \
 	test_obo_serialisation \
 	test_obsolete \
+	roundtrip_obo \
 	test_owlaxioms
 
 # The other targets are manually triggered.
@@ -1359,6 +1360,16 @@ endif
 # COMPONENTS
 # ----------------------------------------
 
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TEMPLATEDIR)/hra-skeleton-prefixes.owl $(TMPDIR)/stamp-component-hra_skeleton.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-skeleton-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-skeleton.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
@@ -1431,10 +1442,9 @@ aspell:
 # OBO format tricks
 # ----------------------------------------
 .PHONY: roundtrip_obo
-roundtrip_obo: $(SRC)
-	$(ROBOT) convert -i $< -o $(TMPDIR)/roundtrip.obo.tmp.obo && \
-	mv $(TMPDIR)/roundtrip.obo.tmp.obo $(TMPDIR)/roundtrip.obo && \
-	diff -i $< $(TMPDIR)/roundtrip.obo
+roundtrip_obo: $(SRC) $(TMPDIR)/NORMALIZE.obo
+	@diff -i $^ || \
+		{ echo "ERROR: Normalization would add changes — please normalise (sh run.sh make normalize)." >&2; exit 1; }
 
 $(TMPDIR)/NORMALIZE.obo: $(SRC)
 	$(ROBOT) convert -i $< -o $@.tmp.obo && mv $@.tmp.obo $@
