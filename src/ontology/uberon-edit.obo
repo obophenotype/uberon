@@ -185,7 +185,9 @@ property_value: doap-mailing-list "https://lists.sourceforge.net/lists/listinfo/
 property_value: doap-SVNRepository "https://obo.svn.sourceforge.net/svnroot/obo/uberon/" xsd:anyURI
 property_value: foaf-homepage "http://uberon.org" xsd:anyURI
 property_value: has_ontology_root_term UBERON:0000104
+property_value: has_ontology_root_term UBERON:0000105
 property_value: has_ontology_root_term UBERON:0001062
+property_value: has_ontology_root_term UBERON:0035943
 treat-xrefs-as-has-subclass: EHDAA
 treat-xrefs-as-has-subclass: EV
 treat-xrefs-as-has-subclass: NCIT
@@ -226,6 +228,15 @@ relationship: present_in_taxon NCBITaxon:33090 ! Viridiplantae
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751 ! Fungi
 property_value: seeAlso "https://github.com/OBOFoundry/COB/issues/51" xsd:anyURI
+
+[Term]
+id: UBERON:0000001
+name: gross anatomical part
+def: "Anatomical structure that is part of a multicellular organism and is at the gross anatomical level, e.g. above the level of a cell.  Included are portions of organism substances such as blood, multi-cell-part structures such as axon tracts, acellular anatomical structures such as hair, and organism subdivisions such as head. Excluded is the whole organism and more granular parts of the organism, such as atoms, molecules, macromolecular complexes and cells." [CARO:0001008]
+xref: CARO:0001008
+is_a: UBERON:0000465 ! material anatomical entity
+disjoint_from: UBERON:0000468 ! multicellular organism
+relationship: present_in_taxon NCBITaxon:2759 ! Eukaryota
 
 [Term]
 id: UBERON:0000002
@@ -6809,7 +6820,7 @@ xref: TGMA:0001824
 xref: VHOG:0001726
 xref: XAO:0004001
 xref: ZFA:0001487
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
 relationship: has_quality PATO:0002198 ! quality of a substance
 relationship: part_of UBERON:0000468 {notes="this relationship may be too strong and may be weakened in future"} ! multicellular organism
 relationship: present_in_taxon NCBITaxon:33090 ! Viridiplantae
@@ -7223,7 +7234,7 @@ xref: TAO:0000382
 xref: TGMA:0001841
 xref: XAO:0003162
 xref: ZFA:0000382
-is_a: UBERON:0000061 ! anatomical structure
+is_a: UBERON:0000001 ! gross anatomical part
 disjoint_from: UBERON:0010000 {source="CARO"} ! multicellular anatomical structure
 relationship: present_in_taxon NCBITaxon:33090 ! Viridiplantae
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
@@ -28953,7 +28964,7 @@ property_value: homology_notes "Subsequent vertebrate evolution has also involve
 [Term]
 id: UBERON:0001711
 name: eyelid
-def: "A movable anterior covering of the eye composed of skin, muscle, dense connective tissue (tarsal plate) with embedded meibomian glands, and palpebral conjunctiva; functions to protect the eyeball, distribute the tear film, and maintain the eyelash margin." [http://orcid.org/0000-0002-6601-2165, PMID:29493929]
+def: "A movable or semi-movable ocular covering that protects the eye and contributes to surface maintenance; structure and composition vary widely among vertebrate species." [http://orcid.org/0000-0002-6601-2165, PMID:29493929]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "blephara" RELATED OMO:0003004 []
@@ -101334,7 +101345,7 @@ xref: CALOHA:TS-2122
 xref: EHDAA2:0003125
 xref: FMA:292313
 xref: MIAA:0000019
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
 relationship: capable_of GO:0032502 ! developmental process
 relationship: present_in_taxon NCBITaxon:33090 ! Viridiplantae
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
@@ -118084,6 +118095,7 @@ relationship: in_taxon NCBITaxon:9850 ! Cervidae
 id: UBERON:0006972
 name: nephridium
 def: "An exceretory tubule that usually opens to the exterior by a nephridiopore. The inner end of the tubule may be blind, ending in flame cells (protonephridium) or may open into the coelom through a ciliated funnel (metanephridium)." [Wikipedia:Nephridium]
+synonym: "nephridia" EXACT OMO:0003004 [http://orcid.org/0000-0002-6601-2165]
 xref: BTO:0000923
 xref: Wikipedia:Nephridium
 is_a: UBERON:0006555 ! excretory tube
@@ -122007,8 +122019,8 @@ subset: pheno_slim
 synonym: "eye pigment epithelium" RELATED [MESH:A09.371.670]
 xref: GAID:907
 xref: MESH:D010857
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: part_of UBERON:0000970 ! eye
+is_a: UBERON:0000483 ! epithelium
+relationship: part_of UBERON:0000970 ! eye
 
 [Term]
 id: UBERON:0007626
@@ -156283,7 +156295,6 @@ synonym: "midline birth canal" RELATED []
 intersection_of: UBERON:0000996 ! vagina
 intersection_of: connected_to UBERON:0013523 ! lateral vaginal canal
 intersection_of: intersects_midsagittal_plane_of UBERON:0003975 ! internal female genitalia
-relationship: channel_for UBERON:0000922 ! embryo
 relationship: in_taxon NCBITaxon:9263 {editor="cjm"} ! Metatheria
 
 [Term]
@@ -187554,7 +187565,7 @@ def: "Material anatomical entity that forms the outermost boundary of an anatomi
 subset: common_anatomy
 xref: AAO:0010270
 xref: ZFA:0005594
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
 relationship: bounding_layer_of UBERON:0000061 ! anatomical structure
 relationship: present_in_taxon NCBITaxon:33090 ! Viridiplantae
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
@@ -220608,7 +220619,7 @@ relationship: in_taxon NCBITaxon:50557 ! Insecta
 id: UBERON:6040005
 name: insect synaptic neuropil
 def: "The part of the neuropil consisting largely of synapsing neuron projections." [FlyBase:FBrf0224194]
-is_a: UBERON:0000465 ! material anatomical entity
+is_a: UBERON:0000001 ! gross anatomical part
 relationship: in_taxon NCBITaxon:50557 ! Insecta
 relationship: part_of UBERON:0002606 ! neuropil
 
@@ -221430,6 +221441,28 @@ intersection_of: part_of UBERON:0001678 ! temporal bone
 relationship: dc-contributor https://orcid.org/0000-0001-8415-4848 ! Helena Machado
 relationship: dc-contributor https://orcid.org/0000-0003-2699-3066 ! Meghan Balk
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/2882" xsd:anyURI
+
+[Term]
+id: UBERON:7500131
+name: facial crest
+def: "A ridge or similar projection on the lateral side of the cranium that crosses the zygomatic bone and extends to the maxilla and ends on the facial tubercle (tuber faciale)." [https://orcid.org/0000-0001-8415-4848]
+synonym: "crista facialis" EXACT []
+is_a: UBERON:4200133 ! crest
+relationship: part_of UBERON:0002397 ! maxilla
+relationship: part_of UBERON:0004654 ! temporal process of zygomatic bone
+property_value: curator_notes "very prominent in ruminants and equids; short in carnivorans and pigs: https://www.imaios.com/en/vet-anatomy/anatomical-structures/facial-crest-11073890400#" xsd:string
+property_value: dc-contributor "https://orcid.org/0000-0003-2699-3066" xsd:string
+
+[Term]
+id: UBERON:7770000
+name: suprasellar region
+def: "The region of the cranial cavity above the sella turcica." [NCIT:C42602]
+synonym: "entire suprasellar region" EXACT [SNOMEDCT:368554001]
+synonym: "suprasellar part of cranial cavity" EXACT [FMA:322222]
+is_a: UBERON:0034944 ! zone of organ
+relationship: dc-contributor https://orcid.org/0000-0002-0819-0473 ! Paula Duek Roggli
+relationship: located_in UBERON:0013411 ! cranial cavity
+created_by: 0000-0002-0819-0473
 
 [Term]
 id: UBERON:7770005
@@ -224386,6 +224419,24 @@ relationship: dc-contributor https://orcid.org/0000-0001-8415-4848 ! Helena Mach
 relationship: part_of UBERON:0001697 ! orbit of skull
 
 [Term]
+id: UBERON:8500006
+name: nasal notch
+def: "Anatomical point of cranium between nasal process of premaxilla and nasal bone, at the anteriormost end of the suture." [isbn:9783830410690]
+synonym: "nasoincisive notch" EXACT []
+is_a: UBERON:0006983 ! anatomical point
+relationship: part_of UBERON:0001681 ! nasal bone
+relationship: part_of UBERON:0002244 ! premaxilla
+property_value: dc-contributor "https://orcid.org/0000-0001-8415-4848" xsd:string
+
+[Term]
+id: UBERON:8500007
+name: staphylon
+def: "Anatomical point of cranium; the most aboral point of the horizontal part of the palate in the median plane." [isbn:9780873659505]
+is_a: UBERON:0006983 ! anatomical point
+relationship: part_of UBERON:0012071 ! palate bone
+property_value: dc-contributor "https://orcid.org/0000-0001-8415-4848" xsd:string
+
+[Term]
 id: UBERON:8600000
 name: lobular bronchiole
 def: "A conductive airway that branches into terminal bronchioles." [PMID:16543587, PMID:27611890]
@@ -225478,6 +225529,15 @@ relationship: part_of UBERON:0001043 ! esophagus
 property_value: dcterms-date "2024-11-14T15:00:21Z" xsd:dateTime
 
 [Term]
+id: UBERON:8700003
+name: stratum corneum of esophageal epithelium
+def: "The outermost layer of the stratified squamous epithelium lining the esophagus, composed of several layers of flattened epithelial cells that are partially or non-keratinized. This layer provides a protective barrier against mechanical and chemical insults, contributing to tissue integrity and regulating permeability through its apical cell membranes and intercellular junctional complexes." [doi:10.1038/gimo15, doi:10.1152/ajpgi.00088.2015, https://en.wikipedia.org/wiki/Stratified_squamous_epithelium, PMID:21126700, PMID:26019440]
+is_a: UBERON:0010304 ! non-keratinized stratified squamous epithelium
+relationship: dc-contributor https://orcid.org/0009-0005-7919-4905
+relationship: part_of UBERON:0001043 ! esophagus
+property_value: dcterms-date "2024-11-14T15:10:48Z" xsd:dateTime
+
+[Term]
 id: UBERON:8850000
 name: lumen of pulmonary alveolus
 def: "An anatomical cavity that is part of the alveolus of the lung" [PMID:30390118]
@@ -225490,6 +225550,16 @@ intersection_of: UBERON:0002553 ! anatomical cavity
 intersection_of: luminal_space_of UBERON:0002299 ! alveolus of lung
 relationship: dc-contributor https://orcid.org/0009-0000-8480-9277
 property_value: dcterms-date "2024-06-28T10:50:18Z" xsd:dateTime
+
+[Term]
+id: UBERON:8850001
+name: epithelium of anorectum
+def: "The epithelium that lines the anorectum." [PMID:27042391]
+synonym: "anorectal epithelium" EXACT [PMID:27042391]
+intersection_of: UBERON:0000483 ! epithelium
+intersection_of: part_of UBERON:8410050 ! anorectum
+relationship: dc-contributor https://orcid.org/0009-0000-8480-9277
+property_value: dcterms-date "2024-11-18T15:45:29Z" xsd:dateTime
 
 [Term]
 id: UBERON:8900000
@@ -226685,6 +226755,7 @@ is_metadata_tag: true
 id: subdivision_of
 name: subdivision of
 comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B means that X is the mereological sum of A and B
+is_a: part_of ! part of
 
 [Typedef]
 id: superficial_to
