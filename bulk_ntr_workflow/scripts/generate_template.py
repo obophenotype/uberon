@@ -15,9 +15,9 @@ Outputs  (REPO_ROOT = two levels up from this script):
   bulk_ntr_workflow/outputs/template_groups_initial.tsv  — groups working template
   src/templates/<name>.template.tsv                      — leaf final template
   src/templates/<name>-groups.template.tsv               — groups final template
-  src/templates/<name>-reports/input.tsv                 — filtered input rows + term_type
-  src/templates/<name>-reports/errors.tsv                — input problems
-  src/templates/<name>-reports/candidates.tsv            — pre-mapped existing terms
+  bulk_ntr_workflow/outputs/<name>-reports/input.tsv      — filtered input rows + term_type
+  bulk_ntr_workflow/outputs/<name>-reports/errors.tsv     — input problems
+  bulk_ntr_workflow/outputs/<name>-reports/candidates.tsv — pre-mapped existing terms
 
 Usage:
   cd bulk_ntr_workflow
@@ -332,7 +332,7 @@ def process(input_path: Path, table_filter: str | None, start_id: int, name: str
 
     # Output paths
     templates_dir    = REPO_ROOT / "src" / "templates"
-    reports_dir      = templates_dir / f"{name}-reports"
+    reports_dir      = REPO_ROOT / "bulk_ntr_workflow" / "outputs" / f"{name}-reports"
     final_groups_tsv = templates_dir / f"{name}-groups.template.tsv"
     input_tsv        = reports_dir / "input.tsv"
     errors_tsv       = reports_dir / "errors.tsv"

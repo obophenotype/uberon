@@ -23,7 +23,7 @@ Writes back to:
   src/templates/<name>.template.tsv          — leaf, in place
   src/templates/<name>-groups.template.tsv   — groups, in place
 
-Reports written to src/templates/<name>-reports/:
+Reports written to bulk_ntr_workflow/outputs/<name>-reports/:
   candidates.tsv        — confirmed + possible OLS4 matches
   out_of_scope.tsv      — pathological/dysfunctional terms
   name_corrections.tsv  — agent-applied label rewrites
@@ -420,7 +420,7 @@ def discover_leaf_partitions(name: str, ntr_root: Path, repo_root: Path) -> list
 def process(name: str) -> None:
     templates_dir        = REPO_ROOT / "src" / "templates"
     final_groups_tsv     = templates_dir / f"{name}-groups.template.tsv"
-    reports_dir          = templates_dir / f"{name}-reports"
+    reports_dir          = REPO_ROOT / "bulk_ntr_workflow" / "outputs" / f"{name}-reports"
     candidates_tsv       = reports_dir / "candidates.tsv"
     out_of_scope_tsv     = reports_dir / "out_of_scope.tsv"
     name_corrections_tsv = reports_dir / "name_corrections.tsv"

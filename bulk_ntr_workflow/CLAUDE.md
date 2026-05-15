@@ -185,12 +185,12 @@ After QC, both templates need to be registered with ODK.
 | `bulk_ntr_workflow/outputs/template_groups_initial.tsv` | Groups working copy (EC directives) |
 | `src/templates/<name>.template.tsv` | Final leaf template; updated in-place by Stage 4 |
 | `src/templates/<name>-groups.template.tsv` | Final groups template (equivalent class definitions) |
-| `src/templates/<name>-reports/input.tsv` | Filtered input rows + `term_type` classification |
-| `src/templates/<name>-reports/errors.tsv` | Input errors (bad/FMA/ASCTB-TEMP parents) |
-| `src/templates/<name>-reports/candidates.tsv` | Pre-mapped + OLS4-confirmed existing terms |
-| `src/templates/<name>-reports/out_of_scope.tsv` | Pathological/dysfunctional terms |
-| `src/templates/<name>-reports/name_corrections.tsv` | Source-label → corrected-label rewrites |
-| `src/templates/<name>-reports/manual_curation.tsv` | Group terms not fitting simple `part_of` pattern |
+| `bulk_ntr_workflow/outputs/<name>-reports/input.tsv` | Filtered input rows + `term_type` classification |
+| `bulk_ntr_workflow/outputs/<name>-reports/errors.tsv` | Input errors (bad/FMA/ASCTB-TEMP parents) |
+| `bulk_ntr_workflow/outputs/<name>-reports/candidates.tsv` | Pre-mapped + OLS4-confirmed existing terms |
+| `bulk_ntr_workflow/outputs/<name>-reports/out_of_scope.tsv` | Pathological/dysfunctional terms |
+| `bulk_ntr_workflow/outputs/<name>-reports/name_corrections.tsv` | Source-label → corrected-label rewrites |
+| `bulk_ntr_workflow/outputs/<name>-reports/manual_curation.tsv` | Group terms not fitting simple `part_of` pattern |
 | `bulk_ntr_workflow/outputs/definitions/input/*.json` | Per-group input for subagents |
 | `bulk_ntr_workflow/outputs/definitions/*.json` | Per-group subagent output |
 
