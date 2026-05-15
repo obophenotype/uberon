@@ -1370,6 +1370,19 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
 
+# Override ODK-generated rule: supply prefixes stub declaring dcterms:/foaf:
+# annotation properties used in the hra-muscular templates, and declare
+# dcterms:/foaf: prefixes for the template header CURIEs.
+$(COMPONENTSDIR)/hra_muscular.owl: $(TEMPLATEDIR)/hra-muscular-groups.template.tsv $(TEMPLATEDIR)/hra-muscular-muscle.template.tsv $(TEMPLATEDIR)/hra-muscular-prefixes.owl $(TMPDIR)/stamp-component-hra_muscular.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "foaf: http://xmlns.com/foaf/0.1/" \
+		--input $(TEMPLATEDIR)/hra-muscular-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-muscular-groups.template.tsv \
+		--template $(TEMPLATEDIR)/hra-muscular-muscle.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_muscular.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 

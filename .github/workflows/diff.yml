@@ -110,7 +110,7 @@ jobs:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
       - name: Classify ontology PR branch
         if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false uberon-base.owl > TESTLOG.log
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=true uberon-base.owl > TESTLOG.log
       - name: Upload classified ontology in PR branch
         if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v4
@@ -136,7 +136,7 @@ jobs:
           ref: master
       - name: Classify ontology main branch
         if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false uberon-base.owl > TESTLOG.log
+        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=true uberon-base.owl > TESTLOG.log
       - name: Upload classified ontology main branch
         if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v4
