@@ -1370,6 +1370,17 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
 
+# Override ODK-generated rule to add prefix declarations needed by the template (including foaf:depiction)
+$(COMPONENTSDIR)/hra_ovary.owl: $(TEMPLATEDIR)/hra-ovary.template.tsv $(TEMPLATEDIR)/hra-ovary-prefixes.owl $(TMPDIR)/stamp-component-hra_ovary.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--prefix "foaf: http://xmlns.com/foaf/0.1/" \
+		--input $(TEMPLATEDIR)/hra-ovary-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-ovary.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_ovary.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 

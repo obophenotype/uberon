@@ -1,0 +1,48 @@
+{
+  "definitions": {
+    "multilayer ovarian follicle": "A preantral ovarian follicle in which the granulosa cells have proliferated to form multiple complete concentric layers surrounding the oocyte, representing the most advanced preantral stage immediately preceding antrum formation.",
+    "transitional primary ovarian follicle": "A preantral ovarian follicle at an intermediate developmental stage between the primary follicle and the secondary follicle, characterized by granulosa cells forming more than one but not yet multiple complete layers around the oocyte.",
+    "transitional primordial ovarian follicle": "An ovarian follicle at an intermediate developmental stage between the primordial and primary follicle stages, distinguished by a mixture of flat squamous and cuboidal granulosa cells surrounding the oocyte."
+  },
+  "wikipedia_images": {
+    "multilayer ovarian follicle": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Folliculogenesis_chart.gif",
+    "transitional primary ovarian follicle": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Folliculogenesis_chart.gif",
+    "transitional primordial ovarian follicle": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Folliculogenesis_chart.gif"
+  },
+  "xrefs": {
+    "multilayer ovarian follicle": "",
+    "transitional primary ovarian follicle": "",
+    "transitional primordial ovarian follicle": ""
+  },
+  "resolved_relationships": {
+    "multilayer ovarian follicle": "is_a",
+    "transitional primary ovarian follicle": "is_a",
+    "transitional primordial ovarian follicle": "is_a"
+  },
+  "resolved_parents": {
+    "multilayer ovarian follicle": "UBERON:0001305",
+    "transitional primary ovarian follicle": "UBERON:0001305",
+    "transitional primordial ovarian follicle": "UBERON:0001305"
+  },
+  "confirmed_matches": [],
+  "possible_matches": [
+    {
+      "label": "multilayer ovarian follicle",
+      "uberon_id": "UBERON:0000036",
+      "confidence": "medium",
+      "note": "UBERON:0000036 (secondary ovarian follicle, synonym: preantral follicle) is defined as 'a maturing ovarian follicle that has two or more layers of granulosa cells, up to the onset of antrum formation.' The multilayer ovarian follicle as defined by the NICHD Ovarian Nomenclature Workshop (PMID:39549739) is the most advanced preantral stage with multiple complete granulosa layers. These may describe the same structure, but the NICHD classification treats multilayer as a distinct named stage separate from the classical secondary follicle. Human curator review recommended."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "preantral follicle (parent term)",
+      "reason": "The ASCTB-TEMP parent 'preantral follicle' corresponds to UBERON:0000036 (secondary ovarian follicle) as an exact synonym. However, UBERON:0000036 is defined specifically as having two or more granulosa cell layers, which does not encompass transitional primordial or transitional primary follicles. Using UBERON:0000036 as parent for transitional stages would be anatomically incorrect. UBERON:0001305 (ovarian follicle) is used as the broader classification parent for all three terms.",
+      "suggestion": "Consider whether 'preantral follicle' warrants its own UBERON term as an umbrella class for all follicle stages before antrum formation (primordial through multilayer), distinct from the narrower UBERON:0000036 secondary ovarian follicle. Alternatively, assign more specific parents: transitional primordial -> UBERON:0003981 (primordial ovarian follicle) area; transitional primary -> UBERON:0000035 (primary ovarian follicle); multilayer -> UBERON:0000036 (secondary ovarian follicle)."
+    }
+  ],
+  "notes": {
+    "parent_resolution": "The ASCTB-TEMP parent 'preantral follicle' is an exact synonym of UBERON:0000036 (secondary ovarian follicle), confirmed by OLS4. However, as a parent for all three terms it is too narrow: transitional primordial and transitional primary follicles precede the secondary stage. UBERON:0001305 (ovarian follicle) is used as the safe common parent. A curator may assign more specific parents (see unresolvable note above).",
+    "authoritative_source": "The three terms are formally defined in the NICHD Ovarian Nomenclature Workshop consensus statement (Yano Maher et al., Fertil Steril 2025; PMID:39549739), which establishes six preantral follicle stages: primordial, transitional primordial, primary, transitional primary, secondary, and multilayer ovarian follicle.",
+    "relationship_rationale": "All three terms are types of ovarian follicle (classification by developmental stage), not parts of another follicle, so is_a is the correct relationship type."
+  }
+}

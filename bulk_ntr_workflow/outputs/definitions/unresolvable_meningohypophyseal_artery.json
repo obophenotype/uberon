@@ -1,0 +1,18 @@
+{
+  "definitions": {
+    "dorsal part of intertransversarii laterales lumborum muscle": "A lower back muscle that forms the dorsal subdivision of the lateral intertransversarii lumborum, connecting the accessory process of one lumbar vertebra to the transverse process of the adjacent vertebra below, contributing to lateral flexion and stabilization of the lumbar spine."
+  },
+  "resolved_relationships": {
+    "dorsal part of intertransversarii laterales lumborum muscle": "part_of"
+  },
+  "resolved_parents": {
+    "dorsal part of intertransversarii laterales lumborum muscle": "UBERON:0008242"
+  },
+  "unresolvable": [
+    {
+      "label": "dorsal part of intertransversarii laterales lumborum muscle",
+      "reason": "Source data assigned 'meningohypophyseal artery' as parent — clearly wrong (this is a lumbar back muscle, not an artery). The anatomically correct direct parent 'intertransversarii laterales lumborum muscle' exists in HRA (ASCTB-TEMP_intertransversarii-laterales-lumborum-muscle) and FMA (fma22849 Lumbar intertransversarius / fma76449 Set of dorsal parts of intertransversarii laterales lumborum) but has no UBERON ID. A 'part_of' relationship to the parent intertransversarii laterales lumborum muscle cannot be expressed in UBERON until that term is created. Interim is_a placement under UBERON:0008242 (lower back muscle) used.",
+      "suggestion": "Create a new UBERON term for 'intertransversarii laterales lumborum muscle' (FMA:22849, ASCTB-TEMP_intertransversarii-laterales-lumborum-muscle) as a child of UBERON:0008242 (lower back muscle), then update this term's part_of to point to that new UBERON ID."
+    }
+  ]
+}
