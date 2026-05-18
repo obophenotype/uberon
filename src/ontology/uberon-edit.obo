@@ -13311,6 +13311,7 @@ xref: UMLS:C0224362 {source="ncithesaurus:Musculus_Latissimus_Dorsi"}
 xref: VHOG:0000930
 xref: Wikipedia:Latissimus_dorsi_muscle
 is_a: UBERON:0001482 ! muscle of shoulder
+is_a: UBERON:9900063 ! superficial back muscle
 relationship: develops_from UBERON:0010982 {source="EHDAA2"} ! latissimus dorsi pre-muscle mass
 relationship: has_muscle_antagonist UBERON:0001476 {source="dbpedia"} ! deltoid
 relationship: has_muscle_antagonist UBERON:0002380 {source="dbpedia"} ! trapezius muscle
@@ -13636,6 +13637,7 @@ xref: SCTID:244935007
 xref: UMLS:C1710058 {source="ncithesaurus:Serratus_Dorsalis_Cranialis"}
 xref: Wikipedia:Serratus_posterior_superior_muscle
 is_a: UBERON:0011217 {source="FMA"} ! serratus dorsalis muscle
+is_a: UBERON:9900020 ! intermediate back muscle
 relationship: has_muscle_insertion UBERON:0002228 {notes="rib 2 thru 5 in human", source="dbpedia"} ! rib
 relationship: has_muscle_origin UBERON:0000351 ! nuchal ligament
 relationship: has_muscle_origin UBERON:0001076 {notes="C7 thru T3 in human", source="dbpedia"} ! neural spine
@@ -13661,6 +13663,7 @@ xref: SCTID:244936008
 xref: UMLS:C1711277 {source="ncithesaurus:Serratus_Dorsalis_Caudalis"}
 xref: Wikipedia:Serratus_posterior_inferior_muscle
 is_a: UBERON:0011217 {source="FMA"} ! serratus dorsalis muscle
+is_a: UBERON:9900020 ! intermediate back muscle
 relationship: has_muscle_insertion UBERON:0002228 {notes="inferior border of 9th thru 12th in humans", source="dbpedia"} ! rib
 relationship: has_muscle_origin UBERON:0002412 {notes="T11 through L2 in human", source="dbpedia"} ! vertebra
 relationship: innervated_by UBERON:0003727 {notes="T9 through T12 in human", source="dbpedia"} ! intercostal nerve
@@ -49115,6 +49118,7 @@ xref: UMLS:C0224361 {source="ncithesaurus:Trapezius_Muscle"}
 xref: VHOG:0000834
 xref: Wikipedia:Trapezius_muscle
 is_a: UBERON:0001482 ! muscle of shoulder
+is_a: UBERON:9900063 ! superficial back muscle
 relationship: develops_from UBERON:0010955 ! trapezius pre-muscle mass
 relationship: has_muscle_antagonist UBERON:0001112 {source="dbpedia"} ! latissimus dorsi muscle
 relationship: has_muscle_antagonist UBERON:0001125 {source="dbpedia"} ! serratus ventralis
@@ -101905,6 +101909,7 @@ xref: FMA:32519
 xref: SCTID:279236008
 xref: Wikipedia:Levator_scapulae_muscle
 is_a: UBERON:0001482 ! muscle of shoulder
+is_a: UBERON:9900063 ! superficial back muscle
 intersection_of: UBERON:0014892 ! skeletal muscle organ, vertebrate
 intersection_of: attaches_to UBERON:0002413 ! cervical vertebra
 intersection_of: attaches_to UBERON:0006849 ! scapula
@@ -222057,6 +222062,7 @@ synonym: "levatores costarum muscles" EXACT []
 synonym: "musculi levatores costarum" EXACT OMO:0003011 []
 xref: FMA:71312
 is_a: UBERON:0002426 ! chest muscle
+is_a: UBERON:9900055 ! segmental back muscle
 relationship: dc-contributor https://orcid.org/0000-0002-2825-0621 ! Paola Roncaglia
 relationship: has_muscle_insertion UBERON:0002228 ! rib
 relationship: has_muscle_origin UBERON:0001077 ! transverse process of vertebra
@@ -225187,13 +225193,13 @@ relationship: part_of UBERON:0007196 ! tracheobronchial tree
 [Term]
 id: UBERON:9900020
 name: intermediate back muscle
-def: "A grouping of skeletal muscles of the back, intermediate in depth between the superficial appendicular group and the deep intrinsic group, conventionally comprising the serratus posterior superior and serratus posterior inferior muscles. Members are innervated by anterior (ventral) rami of spinal nerves and are traditionally regarded as accessory muscles of respiration." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
-comment: Members of this grouping are extrinsic to the back in the developmental sense - they are not innervated by posterior rami of spinal nerves and do not derive from epaxial musculature. The grouping is by anatomical layer and respiratory function rather than by genus-differentia, and therefore does not have an OWL equivalence axiom.
+def: "A muscle of back that is part of the intermediate layer of the back, lying between the superficial appendicular layer and the deep intrinsic layer. Members of this grouping are the serratus posterior superior and serratus posterior inferior muscles; they are innervated by anterior (ventral) rami of spinal nerves and are traditionally regarded as accessory muscles of respiration." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
+comment: Members of this grouping are extrinsic to the back in the developmental sense - they are not innervated by posterior rami of spinal nerves and do not derive from epaxial musculature. The grouping is by anatomical layer and respiratory function rather than by genus-differentia, and therefore does not have an OWL equivalence axiom; membership is asserted by is_a edges from each member muscle to this class.
 subset: added_by_HRA
 synonym: "intermediate layer of back muscles" RELATED []
 synonym: "intermediate muscle of back" EXACT []
 xref: https://purl.org/ccf/ASCTB-TEMP_intermediate-back-muscle
-is_a: UBERON:0004469 ! musculature of back
+is_a: UBERON:0002324 ! muscle of back
 relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: dcterms-date "2026-05-15T00:00:00Z" xsd:dateTime
@@ -225204,13 +225210,13 @@ created_by: dragon-ai-agent
 [Term]
 id: UBERON:9900055
 name: segmental back muscle
-def: "A grouping of small skeletal muscles of the deep (intrinsic) back that span individual vertebral segments, comprising the interspinales, intertransversarii, and levatores costarum muscles. Members are innervated by posterior (dorsal) rami of spinal nerves and produce minor movements and stabilisation of the vertebral column." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
-comment: This grouping is conventionally treated as a subdivision of the deep (intrinsic) back muscle group, alongside the spinotransversales, erector spinae, and transversospinales subdivisions. The grouping does not have an OWL equivalence axiom because it is differentiated from sibling deep-muscle subdivisions by segmental span rather than by genus + part_of location alone.
+def: "A muscle of back that is one of the small deep (intrinsic) back muscles spanning individual vertebral segments. Members of this grouping are the interspinales, intertransversarii, and levatores costarum muscles; they are innervated by posterior (dorsal) rami of spinal nerves and produce minor movements and stabilisation of the vertebral column." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
+comment: This grouping is conventionally treated as a subdivision of the deep (intrinsic) back muscle group, alongside the spinotransversales, erector spinae, and transversospinales subdivisions. The grouping does not have an OWL equivalence axiom because it is differentiated from sibling deep-muscle subdivisions by segmental span rather than by genus + part_of location alone; membership is asserted by is_a edges from each member muscle to this class.
 subset: added_by_HRA
 synonym: "minor deep layer of back muscles" RELATED []
 synonym: "segmental muscle of back" EXACT []
 xref: https://purl.org/ccf/ASCTB-TEMP_segmental-back-muscle
-is_a: UBERON:0004469 ! musculature of back
+is_a: UBERON:0002324 ! muscle of back
 relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: dcterms-date "2026-05-15T00:00:00Z" xsd:dateTime
@@ -225221,14 +225227,14 @@ created_by: dragon-ai-agent
 [Term]
 id: UBERON:9900063
 name: superficial back muscle
-def: "A grouping of skeletal muscles forming the superficial (appendicular) layer of the back, which attach the upper limb to the trunk and act on the shoulder girdle, comprising the trapezius, latissimus dorsi, levator scapulae, rhomboid major and rhomboid minor muscles. Members are innervated by anterior (ventral) rami of spinal nerves and develop outside the back proper from limb musculature." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
-comment: Although topographically part of the back, members of this grouping are extrinsic muscles in the developmental and functional sense (appendicular group). The grouping is by anatomical layer and shoulder-girdle function rather than by genus-differentia, and therefore does not have an OWL equivalence axiom.
+def: "A muscle of back that is part of the superficial (appendicular) layer of the back, attaching the upper limb to the trunk and acting on the shoulder girdle. Members of this grouping are the trapezius, latissimus dorsi, levator scapulae, rhomboid major, and rhomboid minor muscles; they are innervated by anterior (ventral) rami of spinal nerves and develop outside the back proper from limb musculature." [ISBN:9780323393225, PMID:30571022, Wikipedia:Human_back]
+comment: Although topographically part of the back, members of this grouping are extrinsic muscles in the developmental and functional sense (appendicular group). The grouping is by anatomical layer and shoulder-girdle function rather than by genus-differentia, and therefore does not have an OWL equivalence axiom; membership is asserted by is_a edges from each member muscle to this class.
 subset: added_by_HRA
 synonym: "appendicular back muscle group" RELATED []
 synonym: "superficial layer of back muscles" RELATED []
 synonym: "superficial muscle of back" EXACT []
 xref: https://purl.org/ccf/ASCTB-TEMP_superficial-back-muscle
-is_a: UBERON:0004469 ! musculature of back
+is_a: UBERON:0002324 ! muscle of back
 relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: dcterms-date "2026-05-15T00:00:00Z" xsd:dateTime
