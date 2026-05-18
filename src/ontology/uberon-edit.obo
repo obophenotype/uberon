@@ -16118,6 +16118,7 @@ is_a: UBERON:0002378 ! muscle of abdomen
 relationship: has_muscle_insertion UBERON:0001077 {notes="Last rib and transverse processes of lumbar vertebrae", source="dbpedia"} ! transverse process of vertebra
 relationship: has_muscle_insertion UBERON:0002228 {notes="Last rib and transverse processes of lumbar vertebrae", source="dbpedia"} ! rib
 relationship: has_muscle_insertion UBERON:0002414 {notes="Last rib and transverse processes of lumbar vertebrae", source="dbpedia"} ! lumbar vertebra
+relationship: part_of UBERON:9900100 ! posterior abdominal wall
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/d/de/Gray1124.png" xsd:anyURI
 
 [Term]
@@ -18285,6 +18286,7 @@ is_a: UBERON:0008450 {source="MA"} ! psoas muscle
 relationship: has_muscle_insertion UBERON:0002504 {notes="in the lesser trochanter of the femur", source="dbpedia"} ! lesser trochanter
 relationship: has_muscle_origin UBERON:0001077 {notes="Transverse processes of T12-L5 and the lateral aspects of the discs between them", source="dbpedia"} ! transverse process of vertebra
 relationship: innervated_by UBERON:0009624 {notes="Lumbar plexus via anterior branches of L1-L3 nerves", source="dbpedia"} ! lumbar nerve
+relationship: part_of UBERON:9900100 ! posterior abdominal wall
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/e2/Anterior_Hip_Muscles_2.PNG" xsd:anyURI
 
 [Term]
@@ -19915,6 +19917,7 @@ relationship: has_muscle_antagonist UBERON:0001370 {source="dbpedia"} ! gluteus 
 relationship: has_muscle_insertion UBERON:0002504 {notes="lesser trochanter of femur", source="dbpedia"} ! lesser trochanter
 relationship: has_muscle_origin UBERON:0011015 {source="dbpedia"} ! iliac fossa
 relationship: innervated_by UBERON:0001267 {source="dbpedia"} ! femoral nerve
+relationship: part_of UBERON:9900100 ! posterior abdominal wall
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/e2/Anterior_Hip_Muscles_2.PNG" xsd:anyURI
 property_value: external_ontology_notes "AAO has iliacus major and minor, both of which attach to ilium and femur - consider grouping these somehow" xsd:string {external_ontology="AAO"}
 
@@ -19989,6 +19992,7 @@ xref: Wikipedia:Psoas_minor_muscle
 is_a: UBERON:0008450 {source="MA"} ! psoas muscle
 relationship: has_muscle_insertion UBERON:0001275 {notes="pectineal line", source="dbpedia"} ! pubis
 relationship: has_muscle_origin UBERON:0001075 {notes="Lateral surface bodies of T12 and L1 vertebrae and intervening intervertebral disc", source="dbpedia"} ! bony vertebral centrum
+relationship: part_of UBERON:9900100 ! posterior abdominal wall
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/b2/Gray430.png" xsd:anyURI
 
 [Term]
@@ -225239,6 +225243,22 @@ relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: dcterms-date "2026-05-15T00:00:00Z" xsd:dateTime
 property_value: foaf:depiction "https://upload.wikimedia.org/wikipedia/commons/9/90/Back_Muscles.jpg" xsd:anyURI
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3707" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
+id: UBERON:9900100
+name: posterior abdominal wall
+def: "The posterior subdivision of the abdominal wall, forming its dorsal boundary. Comprises a deep musculoskeletal layer (lumbar vertebrae and associated muscles - psoas major and minor, iliacus, and quadratus lumborum) covered by transversalis fascia and parietal peritoneum, supporting the kidneys, suprarenal glands, and great vessels of the abdomen." [ISBN:9780323393225, Wikipedia:Abdominal_wall]
+subset: added_by_HRA
+synonym: "dorsal abdominal wall" EXACT []
+synonym: "wall of abdomen, posterior part" EXACT []
+xref: Wikipedia:Abdominal_wall
+is_a: UBERON:0000475 ! organism subdivision
+relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
+relationship: part_of UBERON:0003697 ! abdominal wall
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
+property_value: dcterms-date "2026-05-18T00:00:00Z" xsd:dateTime
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3707" xsd:anyURI
 created_by: dragon-ai-agent
 
