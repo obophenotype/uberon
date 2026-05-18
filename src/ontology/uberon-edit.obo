@@ -28874,7 +28874,7 @@ property_value: homology_notes "Subsequent vertebrate evolution has also involve
 [Term]
 id: UBERON:0001711
 name: eyelid
-def: "A fold of skin that covers and protects part of the eyeball. Examples: upper eyelid, lower eyelid, nictitating membrane." [http://orcid.org/0000-0002-6601-2165]
+def: "A movable or semi-movable ocular covering that protects the eye and contributes to surface maintenance; structure and composition vary widely among vertebrate species." [http://orcid.org/0000-0002-6601-2165, PMID:29493929]
 subset: pheno_slim
 subset: uberon_slim
 synonym: "blephara" RELATED OMO:0003004 []
@@ -101963,7 +101963,8 @@ xref: NCIT:C33642
 xref: UMLS:C1518051 {source="ncithesaurus:Lymph_Node_Sinus"}
 xref: UMLS:C1518052 {source="ncithesaurus:Lymph_Node_Subcapsular_Sinus"}
 xref: Wikipedia:Subcapsular_sinus
-intersection_of: UBERON:0000464 ! anatomical space
+is_a: UBERON:1200004 ! sinus of lymph node
+intersection_of: UBERON:0004111 ! anatomical conduit
 intersection_of: adjacent_to UBERON:0002006 ! cortex of lymph node
 intersection_of: adjacent_to UBERON:0002194 ! capsule of lymph node
 intersection_of: part_of UBERON:0000029 ! lymph node
@@ -132926,6 +132927,7 @@ synonym: "medullary sinus" BROAD []
 xref: EMAPA:37898 {source="MA:th"}
 xref: FMA:312359
 is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:1200004 ! sinus of lymph node
 relationship: channel_for UBERON:0002391 ! lymph
 relationship: part_of UBERON:0002007 ! medulla of lymph node
 
@@ -154348,7 +154350,7 @@ relationship: part_of UBERON:0001756 ! middle ear
 [Term]
 id: UBERON:0013191
 name: ovarian cortex
-def: "The layer of the ovarian stroma lying immediately beneath the tunica albuginea, composed of connective tissue cells and fibers, among which are scattered primary and secondary (antral) follicles in various stages of development; the cortex varies in thickness according to the age of the individual, becoming thinner with advancing years; included in the follicles are the cumulus oophorus, membrana granulosa (and the granulosa cells inside it), corona radiata, zona pellucida, and primary oocyte; the zona pellucida, theca of follicle, antrum and liquor folliculi are also contained in the follicle; also in the cortex is the corpus luteum derived from the follicles." [MGI:anna]
+def: "The layer of the ovary lying immediately beneath the tunica albuginea, composed of connective tissue cells and fibers, among which are scattered primary and secondary (antral) follicles in various stages of development; the cortex varies in thickness according to the age of the individual, becoming thinner with advancing years; included in the follicles are the cumulus oophorus, membrana granulosa (and the granulosa cells inside it), corona radiata, zona pellucida, and primary oocyte; the zona pellucida, theca of follicle, antrum and liquor folliculi are also contained in the follicle; also in the cortex is the corpus luteum derived from the follicles." [MGI:anna, PMID:17999378, PMID:22666170, PMID:32716007, PMID:36191605, PMID:36721914, PMID:41256733]
 subset: pheno_slim
 synonym: "cortex of ovary" EXACT [FMA:18613]
 synonym: "cortex ovarii (zona parenchymatosa)" EXACT [FMA:18613]
@@ -154358,7 +154360,6 @@ xref: NCIT:C33243
 xref: UMLS:C0227878 {source="ncithesaurus:Ovarian_Cortex"}
 intersection_of: UBERON:0001851 ! cortex
 intersection_of: part_of UBERON:0000992 ! ovary
-relationship: part_of UBERON:0006960 ! ovary stroma
 
 [Term]
 id: UBERON:0013192
@@ -189906,6 +189907,19 @@ property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues
 created_by: dragon-ai-agent
 
 [Term]
+id: UBERON:1200004
+name: sinus of lymph node
+def: "A sinus located in a lymph node. Lymph nodes have subcapsular, cortical (trabecular) and medullary sinuses." [Wikipedia:Lymph_node]
+synonym: "lymph node sinus" EXACT []
+synonym: "lymphatic sinus" EXACT []
+is_a: UBERON:0004111 ! anatomical conduit
+relationship: dc-contributor https://orcid.org/0000-0001-5858-4393
+relationship: part_of UBERON:0000029 ! lymph node
+property_value: dcterms-date "2025-11-03T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3586" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
 id: UBERON:1500000
 name: scapular blade
 def: "Enlarged and broad extension of the scapula distal to the glenoid region that conforms to the contour of the ribs. Origin for the major shoulder muscles including the deltoid group." [PHENOSCAPE]
@@ -220933,6 +220947,18 @@ property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues
 created_by: dragon-ai-agent
 
 [Term]
+id: UBERON:7770011
+name: episcleral vein
+def: "A vein located between the bulbar conjunctiva and the sclera." [FMA:51800, Wikipedia:Episcleral_layer]
+xref: FMA:51800
+is_a: UBERON:0009141 ! craniocervical region vein
+relationship: dc-contributor https://orcid.org/0000-0002-2825-0621 ! Paola Roncaglia
+relationship: part_of UBERON:0010292 ! episcleral layer of eyeball
+property_value: dcterms-date "2025-07-10T23:55:30Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/1680" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
 id: UBERON:8000000
 name: first instar larva stage
 def: "The first stage of instar larva stage." [IDOMAL:0000656]
@@ -221677,7 +221703,8 @@ id: UBERON:8410032
 name: trabecular sinus of lymph node
 def: "The trabecular sinus is the lymph-filled space outside the trabeculae between lobules of the lymph node. This is a continuation of the subcapsular sinus which receives the afferent vessels and is present beneath the capsule. This space is traversed by both reticular fibers and cells in the lymph." [http://orcid.org/0000-0003-4183-8865, PMID:32491649, WikipediaVersioned:Lymph_node&oldid=1020495758]
 synonym: "lymph node trabecular sinus" EXACT []
-intersection_of: UBERON:0000464 ! anatomical space
+is_a: UBERON:1200004 ! sinus of lymph node
+intersection_of: UBERON:0004111 ! anatomical conduit
 intersection_of: adjacent_to UBERON:0002195 ! trabecula of lymph node
 intersection_of: part_of UBERON:0000029 ! lymph node
 relationship: dc-contributor https://orcid.org/0000-0002-2825-0621 ! Paola Roncaglia
@@ -222113,6 +222140,7 @@ synonym: "lymphatic labyrinth" RELATED []
 synonym: "paracortical sinus" BROAD []
 synonym: "peripheral sinus" RELATED []
 is_a: UBERON:0004111 ! anatomical conduit
+is_a: UBERON:1200004 ! sinus of lymph node
 relationship: dc-contributor https://orcid.org/0000-0002-2825-0621 ! Paola Roncaglia
 relationship: part_of UBERON:8410066 ! lymph node paracortex
 relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
