@@ -1377,6 +1377,7 @@ $(COMPONENTSDIR)/hra_muscular.owl: $(TEMPLATEDIR)/hra-muscular-groups.template.t
 	$(ROBOT) template \
 		--prefix "dcterms: http://purl.org/dc/terms/" \
 		--prefix "foaf: http://xmlns.com/foaf/0.1/" \
+		--prefix "ccf: https://purl.org/ccf/" \
 		--input $(TEMPLATEDIR)/hra-muscular-prefixes.owl \
 		--template $(TEMPLATEDIR)/hra-muscular-groups.template.tsv \
 		--template $(TEMPLATEDIR)/hra-muscular-muscle.template.tsv \
