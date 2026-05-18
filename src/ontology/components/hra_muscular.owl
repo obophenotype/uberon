@@ -45,9 +45,6 @@ Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0002413>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0003726>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0004649>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0004657>))
-Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006072>))
-Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006073>))
-Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006074>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006654>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006670>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0006719>))
@@ -105,6 +102,7 @@ Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002005>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002372>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002373>))
+Declaration(DataProperty(<http://purl.obolibrary.org/obo/RO_0002177>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000233>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/RO_0002175>))
@@ -113,6 +111,10 @@ Declaration(AnnotationProperty(<http://purl.org/dc/terms/date>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#inSubset>))
 Declaration(AnnotationProperty(<http://xmlns.com/foaf/0.1/depiction>))
+Declaration(Datatype(<http://purl.obolibrary.org/obo/UBERON_0006072>))
+Declaration(Datatype(<http://purl.obolibrary.org/obo/UBERON_0006073>))
+Declaration(Datatype(<http://purl.obolibrary.org/obo/UBERON_0006074>))
+
 
 
 
@@ -131,10 +133,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100001> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100001> "anterior cervical intertransversarii muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> <http://purl.obolibrary.org/obo/UBERON_9900055>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006072>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0001780>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0002413>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0002413>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100001> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006072>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100002> (articularis genu muscle)
 
@@ -275,8 +278,9 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100010> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100010> "intertransversarii laterales lumborum muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100010> <http://purl.obolibrary.org/obo/UBERON_9900055>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100010> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006074>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100010> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100010> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0001780>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100010> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006074>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100011> (lateral compartment of leg muscle)
 
@@ -353,8 +357,9 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100015> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100015> "medial lumbar intertransversarii muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100015> <http://purl.obolibrary.org/obo/UBERON_9900055>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006074>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100015> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0001780>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100015> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006074>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100016> (medial posterior cervical intertransversarii muscle)
 
@@ -367,10 +372,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100016> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100016> "medial posterior cervical intertransversarii muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> <http://purl.obolibrary.org/obo/UBERON_9900055>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006072>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0001780>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0002413>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0002413>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100016> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006072>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100017> (middle ear muscle)
 
@@ -395,10 +401,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100018> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100018> "multifidus cervicis muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> <http://purl.obolibrary.org/obo/UBERON_0010990>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006072>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0006839>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0001077>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0001076>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100018> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006072>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100019> (multifidus lumborum muscle)
 
@@ -411,10 +418,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100019> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100019> "multifidus lumborum muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> <http://purl.obolibrary.org/obo/UBERON_0010990>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006074>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0006839>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0001077>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0001076>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100019> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006074>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100020> (multifidus thoracis muscle)
 
@@ -427,10 +435,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100020> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100020> "multifidus thoracis muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> <http://purl.obolibrary.org/obo/UBERON_0010990>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006073>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0006839>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0001077>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0001076>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100020> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006073>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100021> (posterior abdominal wall muscle)
 
@@ -547,10 +556,11 @@ AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <ht
 AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.obolibrary.org/obo/UBERON_1100028> <http://purl.obolibrary.org/obo/uberon/core#added_by_HRA>)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/UBERON_1100028> "thoracic intertransversarii muscle")
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> <http://purl.obolibrary.org/obo/UBERON_9900055>)
-SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0006073>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001137>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002005> <http://purl.obolibrary.org/obo/UBERON_0001780>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002372> <http://purl.obolibrary.org/obo/UBERON_0002347>))
 SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002373> <http://purl.obolibrary.org/obo/UBERON_0002347>))
+SubClassOf(<http://purl.obolibrary.org/obo/UBERON_1100028> DataSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002177> <http://purl.obolibrary.org/obo/UBERON_0006073>))
 
 # Class: <http://purl.obolibrary.org/obo/UBERON_1100029> (thoracic wall muscle)
 
