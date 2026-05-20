@@ -109,7 +109,9 @@ Each subagent:
     confirmed_matches, possible_matches, out_of_scope, name_corrections, manual_curation,
     unresolvable
 
-**Do not launch more than 8 subagents in parallel** (Playwright/Wikipedia rate limits).
+**Do not launch more than 8 subagents in parallel** (Wikimedia per-IP rate limits;
+the `fetch-wiki-info-api` skill retries on 429 with exponential backoff but throughput
+degrades sharply if every worker is being throttled). 6–8 is the validated sweet spot.
 
 ## Stage 4: Merge
 
@@ -153,29 +155,36 @@ Outputs a summary of remaining issues.
     using the similar UBERON terms listed for guidance
 13. Review `<name>-reports/errors.tsv` — input rows with bad/missing parents
 
-## Final Delivery
+## Stage 5: Register Templates with ODK
 
-After QC, both templates need to be registered with ODK.
+After QC, register the generated templates with ODK and regenerate the Makefile:
 
-1. Templates are already in `src/templates/<name>.template.tsv` and
-   `src/templates/<name>-groups.template.tsv` (Stage 4 wrote them in place).
-2. Create `src/templates/<name>-prefixes.owl` declaring `foaf:depiction` and any
-   other annotation properties not already in the standard Uberon prefixes (the same
-   prefixes file works for both templates).
-3. Register both templates in `src/ontology/uberon-odk.yaml` under `components:`:
-   ```yaml
-   - filename: components/<name>.owl
-     use_template: true
-     template: templates/<name>.template.tsv
-     mappings:
-       - templates/<name>-prefixes.owl
-   - filename: components/<name>-groups.owl
-     use_template: true
-     template: templates/<name>-groups.template.tsv
-     mappings:
-       - templates/<name>-prefixes.owl
-   ```
-4. Run `sh run.sh make update_repo` to regenerate the Makefile.
+```bash
+uv run scripts/register_templates.py --name hra-muscular
+```
+
+The script discovers every `src/templates/<name>*.template.tsv` (default
+leaf, `-groups`, and any per-system overlays like `-muscle`), appends a
+component entry per template to `components.products:` in
+`src/ontology/uberon-odk.yaml`, then runs `sh run.sh make update_repo`
+to regenerate the Makefile. Idempotent — already-registered templates
+are skipped.
+
+Component filenames map dashes → underscores (e.g.
+`hra-muscular-groups.template.tsv` → `components/hra_muscular_groups.owl`),
+matching existing precedent (`hra-skeleton.template.tsv` →
+`components/hra_skeleton.owl`).
+
+Each generated entry has the form:
+```yaml
+    - filename: hra_muscular.owl
+      use_template: true
+      templates:
+        - hra-muscular.template.tsv
+```
+
+Use `--skip-update-repo` to edit the yaml without invoking the (slow,
+Docker-based) Makefile regeneration step.
 
 ## Output Files Reference
 
@@ -259,10 +268,11 @@ The two columns together generate
 MCP servers (configured in repo-root `.mcp.json`):
 - `ols4` — OLS4 ontology search (UBERON, FMA, etc.)
 - `artl-mcp` — literature lookup (PMID, DOI)
-- `playwright` — complex web navigation (Wikipedia parent articles)
 
 Skills (`.claude/skills/`):
-- `fetch-wiki-info` — Wikidata + Wikipedia structured fetch
+- `fetch-wiki-info-api` — Wikidata + Wikipedia structured fetch via HTTP APIs
+  (covers both specific-term articles and, when called with a parent label,
+  parent-article passage extraction). See its `VALIDATION.md` for A/B results.
 
 Agents (`.claude/agents/`):
 - `ntr-term-researcher` — Stage 3 subagent (this workflow)

@@ -132,9 +132,12 @@ If the term label contains an obvious naming error (e.g. "dominance antral folli
 
 Apply in order, stop when you have enough for a good definition:
 
-1. **Specific term article**: Use the `fetch-wiki-info` skill with the exact term label.
-2. **Parent term article**: Navigate to the parent term's Wikipedia page via `playwright`.
-   Extract passages mentioning the term label — parent articles usually describe sub-structures.
+1. **Specific term article**: Use the `fetch-wiki-info-api` skill with the exact term label.
+   For images + captions, pass `--images`.
+2. **Parent term article**: Re-invoke `fetch-wiki-info-api` with the **parent term's** label.
+   Parent articles usually describe sub-structures, so the full-text body of the parent
+   article will contain passages about the child term — search the `Wikipedia Full Text`
+   section for occurrences of the child term label.
 3. **WebSearch fallback**: Search `"{term label}" anatomy`.
 
 **Wikipedia article URL**: when you successfully fetch a dedicated Wikipedia article for a term,
@@ -484,8 +487,9 @@ Omit empty lists/dicts. Do NOT include a `fma_resolutions` key — use `resolved
 
 - `ols4` MCP server — ontology term search and lookup
 - `ontology-term-lookup` subagent — structured OLS4 search with quality assessment
-- `fetch-wiki-info` skill — Wikidata + Wikipedia structured fetch
-- `playwright` MCP — navigate Wikipedia for parent articles
+- `fetch-wiki-info-api` skill — Wikidata + Wikipedia structured fetch via HTTP APIs.
+  Use for both the specific term article and (with the parent label) the parent article
+  passage extraction in Step 4.
 - `artl-mcp` — fetch and verify literature (PMID, DOI)
 - `awk` over `src/ontology/uberon-edit.obo` — find existing UBERON terms by name pattern
   and inspect their `intersection_of` axioms (used for group term EC pattern detection).
