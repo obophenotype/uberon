@@ -1,0 +1,81 @@
+{
+  "definitions": {
+    "ifj1": "A regional part of brain that is a subdivision of the inferior frontal junction area, located in the posterior lateral prefrontal cortex.",
+    "ifj2": "A regional part of brain that is a subdivision of the inferior frontal junction area, located in the posterior lateral prefrontal cortex."
+  },
+  "wikipedia_images": {},
+  "xrefs": {},
+  "def_xrefs_to_add": {
+    "ifj1": "PMID:25899707|PMID:15927520",
+    "ifj2": "PMID:25899707|PMID:15927520"
+  },
+  "leaf_template_rows": {},
+  "resolved_relationships": {},
+  "resolved_parents": {},
+  "group_template_rows": {},
+  "manual_curation": [
+    {
+      "label": "ifj1",
+      "definition": "A regional part of brain that is a subdivision of the inferior frontal junction area, located in the posterior lateral prefrontal cortex.",
+      "reason": "The label 'ifj1' is a non-standard abbreviated name. The parent term 'inferior frontal junction' (IFJ) is a well-documented functional brain region (Wikipedia Q28455209, PMIDs 25899707, 15927520) located at the junction of the inferior frontal sulcus and inferior precentral sulcus, but does not yet exist in UBERON. The IFJ should first be added as UBERON:0002616 (regional part of brain) with part_of UBERON:0016525 (frontal lobe). However, 'ifj1' and 'ifj2' as subdivision labels are not found in standard neuroanatomical literature or brain atlases. These abbreviated labels require clarification from the ASCTB data source to determine: (1) what anatomical feature distinguishes ifj1 from ifj2 (anterior/posterior? dorsal/ventral? functional parcellation units?), and (2) what the proper anatomical names should be following standard neuroanatomical nomenclature.",
+      "similar_terms": [
+        {
+          "id": "UBERON:0002616",
+          "label": "regional part of brain",
+          "note": "Appropriate genus class for functionally-defined brain regions like IFJ"
+        },
+        {
+          "id": "UBERON:0002624",
+          "label": "orbital part of inferior frontal gyrus",
+          "note": "Example of how frontal lobe subdivisions are named with descriptive qualifiers"
+        },
+        {
+          "id": "UBERON:0002629",
+          "label": "triangular part of inferior frontal gyrus",
+          "note": "Example of anatomically descriptive subdivision naming"
+        }
+      ],
+      "suggestion": "PREREQUISITE: First add 'inferior frontal junction' to UBERON as a new term (genus: UBERON:0002616 regional part of brain, part_of: UBERON:0016525 frontal lobe, definition from PMID:25899707 and Wikipedia). Then contact the ASCTB data source to clarify: (1) What anatomical or functional feature distinguishes ifj1 from ifj2? (2) Provide proper anatomical names (e.g., 'anterior subdivision of inferior frontal junction', 'posterior subdivision of inferior frontal junction', or names based on specific parcellation scheme). Once clarified, add with appropriate genus (likely UBERON:0002616) and part_of the inferior frontal junction term."
+    },
+    {
+      "label": "ifj2",
+      "definition": "A regional part of brain that is a subdivision of the inferior frontal junction area, located in the posterior lateral prefrontal cortex.",
+      "reason": "The label 'ifj2' is a non-standard abbreviated name. See reasoning for 'ifj1' above - both terms require clarification from the ASCTB data source to determine proper anatomical names and the distinguishing features between these two subdivisions. The parent term 'inferior frontal junction' must be added to UBERON before these subdivisions can be properly integrated.",
+      "similar_terms": [
+        {
+          "id": "UBERON:0002616",
+          "label": "regional part of brain",
+          "note": "Appropriate genus class for functionally-defined brain regions like IFJ"
+        }
+      ],
+      "suggestion": "See suggestion for 'ifj1' - both terms should be handled together once the parent IFJ term is added and the ASCTB source clarifies the distinguishing features and provides proper anatomical names."
+    }
+  ],
+  "confirmed_matches": [],
+  "possible_matches": [],
+  "out_of_scope": [],
+  "name_corrections": [
+    {
+      "label": "ifj1",
+      "suggested": "REQUIRES_CLARIFICATION_FROM_SOURCE",
+      "reason": "The label 'ifj1' is a non-standard abbreviated name. Standard neuroanatomical nomenclature uses descriptive qualifiers (e.g., 'anterior part of...', 'dorsal subdivision of...') rather than numeric codes. Possible alternatives might include: 'anterior subdivision of inferior frontal junction', 'posterior subdivision of inferior frontal junction', 'dorsal part of inferior frontal junction', or 'ventral part of inferior frontal junction' - but the actual anatomical feature that distinguishes ifj1 from ifj2 must be confirmed from the ASCTB data source."
+    },
+    {
+      "label": "ifj2",
+      "suggested": "REQUIRES_CLARIFICATION_FROM_SOURCE",
+      "reason": "The label 'ifj2' is a non-standard abbreviated name. See reasoning for 'ifj1' - both require clarification and proper anatomical naming from the ASCTB data source."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "ifj1",
+      "reason": "Parent term 'inferior frontal junction' is not yet in UBERON (should be added as UBERON:0002616 with part_of UBERON:0016525). Additionally, the subdivision labels 'ifj1' and 'ifj2' are non-standard and not found in published neuroanatomical literature or standard brain atlases (searched Wikipedia, PubMed, Google Scholar). Cannot determine proper anatomical names or distinguishing features without clarification from ASCTB data source.",
+      "suggestion": "Contact ASCTB data providers to: (1) Confirm what anatomical or functional features distinguish ifj1 from ifj2, (2) Provide proper anatomical names following standard nomenclature, (3) Provide literature references for these specific subdivisions if they are from a published parcellation scheme. If these are from the Glasser parcellation, HCP multimodal parcellation, or another specific atlas, the atlas name and region codes should be included in the synonym field."
+    },
+    {
+      "label": "ifj2",
+      "reason": "See reasoning for 'ifj1' - both terms have the same resolution blockers.",
+      "suggestion": "See suggestion for 'ifj1' - both terms should be resolved together with clarification from the ASCTB data source."
+    }
+  ]
+}
