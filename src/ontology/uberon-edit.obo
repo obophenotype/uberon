@@ -189919,6 +189919,36 @@ property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues
 created_by: dragon-ai-agent
 
 [Term]
+id: UBERON:1200340
+name: collagen band
+def: "A band-shaped collection of collagen fibrils forming a distinct layer beneath an epithelium." [PMID:19295410, PMID:37022603]
+synonym: "collagenous band" EXACT [PMID:37022603]
+synonym: "subepithelial collagen band" EXACT [PMID:19295410]
+synonym: "subepithelial collagen layer" EXACT [PMID:30486642]
+synonym: "subepithelial collagenous band" EXACT [PMID:19295410]
+is_a: UBERON:0011860 ! collection of collagen fibrils
+relationship: dc-contributor https://orcid.org/0000-0001-6677-8489 ! Aleix Puig-Barbé
+property_value: dcterms-date "2026-06-03T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3727" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
+id: UBERON:1200341
+name: ganglion cell-inner plexiform layer
+def: "A retinal layer complex consisting of the ganglion cell layer and the inner plexiform layer." [PMID:21917932, PMID:25208547]
+synonym: "ganglion cell and inner plexiform layer" EXACT [PMID:25208547]
+synonym: "GCIPL" RELATED OMO:0003000 [PMID:22365056]
+synonym: "macular ganglion cell-inner plexiform layer" RELATED [PMID:28283025]
+is_a: UBERON:0000481 ! multi-tissue structure
+relationship: dc-contributor https://orcid.org/0000-0001-6677-8489 ! Aleix Puig-Barbé
+relationship: has_part UBERON:0001792 ! ganglionic layer of retina
+relationship: has_part UBERON:0001795 ! inner plexiform layer of retina
+relationship: part_of UBERON:0003902 ! retinal neural layer
+property_value: dcterms-date "2026-06-03T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3729" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
 id: UBERON:1500000
 name: scapular blade
 def: "Enlarged and broad extension of the scapula distal to the glenoid region that conforms to the contour of the ribs. Origin for the major shoulder muscles including the deltoid group." [PHENOSCAPE]
@@ -225210,22 +225240,6 @@ def: "A region of squamous epithelium found in the tracheobronchial tree - conti
 is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
-
-[Term]
-id: UBERON:9900073
-name: ganglion cell-inner plexiform layer
-def: "A retinal layer complex consisting of the ganglion cell layer and the inner plexiform layer." [PMID:25208547]
-synonym: "ganglion cell and inner plexiform layer" EXACT [PMID:25208547]
-synonym: "GCIPL" RELATED OMO:0003000 [PMID:22365056]
-synonym: "macular ganglion cell-inner plexiform layer" RELATED [PMID:28283025]
-is_a: UBERON:0000481 ! multi-tissue structure
-relationship: dc-contributor https://orcid.org/0000-0001-6677-8489 ! Aleix Puig-Barbé
-relationship: has_part UBERON:0001792 ! ganglionic layer of retina
-relationship: has_part UBERON:0001795 ! inner plexiform layer of retina
-relationship: part_of UBERON:0003902 ! retinal neural layer
-property_value: dcterms-date "2026-06-03T00:00:00Z" xsd:dateTime
-property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3729" xsd:anyURI
-created_by: dragon-ai-agent
 
 [Typedef]
 id: aboral_to
