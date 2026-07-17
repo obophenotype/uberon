@@ -1365,6 +1365,16 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
 
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_capillary.owl: $(TEMPLATEDIR)/hra-capillary.template.tsv $(TEMPLATEDIR)/hra-capillary-prefixes.owl $(TMPDIR)/stamp-component-hra_capillary.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-capillary-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-capillary.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_capillary.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
