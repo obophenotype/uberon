@@ -1,0 +1,23 @@
+{
+  "confirmed_matches": [
+    {
+      "label": "respiratory diaphragm muscle",
+      "uberon_id": "UBERON:0001103",
+      "confidence": "high",
+      "uberon_definition": "A thin musculomembranous barrier that separates the abdominal and thoracic cavities. Often used for breathing control.",
+      "wikipedia_summary": "The thoracic diaphragm, or simply the diaphragm, is a sheet of internal skeletal muscle in mammals that extends across the bottom of the thoracic cavity. The diaphragm separates the thoracic cavity, containing the heart and lungs, from the abdominal cavity and performs an important function in respiration: as the diaphragm contracts, the volume of the thoracic cavity increases, creating a negative pressure there, which draws air into the lungs.",
+      "match_evidence": [
+        "UBERON:0001103 has EXACT synonym 'diaphragm muscle' (BTO:0000341).",
+        "UBERON:0001103 is_a UBERON:0014892 (skeletal muscle organ, vertebrate); part_of UBERON:0001004 (respiratory system); innervated_by UBERON:0001884 (phrenic nerve).",
+        "FMA xref on UBERON:0001103 is FMA:13295 (label 'Diaphragm'). The source 'NEEDS_MAPPING:FMA:12252' appears to be an erroneous FMA ID — FMA:12252 resolves to 'Subclavian lymphatic trunk', which is unrelated to the term label 'respiratory diaphragm muscle'. The term label itself is a direct synonym of UBERON:0001103."
+      ]
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "NEEDS_MAPPING:FMA:12252 (parent)",
+      "reason": "The supplied FMA parent ID FMA:12252 resolves to 'Subclavian lymphatic trunk' in FMA, which is not anatomically a parent of a diaphragm muscle. Likely an input data error; the correct FMA ID for diaphragm is FMA:13295.",
+      "suggestion": "Treat as input error. The term itself is a confirmed match for UBERON:0001103, so the parent mapping question is moot — exclude from template."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "term": "early antral follicle",
+  "description": "A follicle stage between secondary follicle and full antral (tertiary) follicle, characterized by the initial formation of an antrum; sometimes called 'secondary follicle with antrum' or 'early tertiary follicle'.",
+  "fields": {
+    "is_a": {
+      "value": "UBERON:0000037",
+      "label": "tertiary ovarian follicle",
+      "evidence": "UBERON:0000037 (tertiary ovarian follicle) is defined as 'A follicle that has reached the most mature stage of folliculogenesis, characterized by the presence of the antrum.' Since 'early antral' is defined by the *initial formation of an antrum*, it sits within the antral (tertiary) class as a sub-stage. UBERON:0000036 (secondary) is explicitly described as 'up to the onset of antrum formation' — i.e. pre-antral — so an early antral follicle is no longer secondary. Tertiary therefore is the appropriate genus.",
+      "source": "src/ontology/uberon-edit.obo (UBERON:0000037 def: 'A follicle that has reached the most mature stage of folliculogenesis, characterized by the presence of the antrum.'; UBERON:0000036 def: '...up to the onset of antrum formation.')"
+    },
+    "has_part": {
+      "value": "UBERON:0000039",
+      "label": "follicular antrum",
+      "evidence": "Tertiary ovarian follicle uses 'intersection_of: has_part UBERON:0000039 ! follicular antrum' as its defining differentia. An early antral follicle, by definition, has a (newly forming) antrum, so the same has_part relation applies. The 'early' qualifier modifies maturity/size of the antrum, not its presence.",
+      "source": "src/ontology/uberon-edit.obo UBERON:0000037 stanza: 'intersection_of: has_part UBERON:0000039 ! follicular antrum'"
+    },
+    "has_component": {
+      "value": "UBERON:0005170",
+      "label": "granulosa cell layer",
+      "evidence": "Both UBERON:0000036 (secondary) and UBERON:0000037 (tertiary) carry 'intersection_of: has_component UBERON:0005170 {minCardinality=\"2\"} ! granulosa cell layer'. An early antral follicle, derived from a secondary follicle that already has multiple granulosa layers, also has multilayered granulosa, so the same minCardinality=2 has_component constraint applies.",
+      "source": "src/ontology/uberon-edit.obo UBERON:0000036 and UBERON:0000037: 'intersection_of: has_component UBERON:0005170 {minCardinality=\"2\"} ! granulosa cell layer'"
+    },
+    "develops_from": {
+      "value": "UBERON:0000036",
+      "label": "secondary ovarian follicle",
+      "evidence": "Existing chain in uberon-edit.obo: primary -> secondary -> tertiary uses 'relationship: develops_from' at each step. UBERON:0000037 (tertiary) has 'relationship: develops_from UBERON:0000036 ! secondary ovarian follicle'. An early antral follicle, as the entry sub-stage of the tertiary/antral phase, develops directly from a secondary (pre-antral) follicle, mirroring the existing developmental edge.",
+      "source": "src/ontology/uberon-edit.obo UBERON:0000037: 'relationship: develops_from UBERON:0000036 ! secondary ovarian follicle'; UBERON:0000036: 'relationship: develops_from UBERON:0000035 ! primary ovarian follicle'"
+    },
+    "has_potential_to_develop_into": {
+      "value": "UBERON:0000037",
+      "label": "tertiary ovarian follicle",
+      "evidence": "UBERON:0000036 already uses 'intersection_of: has_potential_to_develop_into UBERON:0000037 ! tertiary ovarian follicle' to express progression. If 'early antral' is modeled as a sub-stage *within* tertiary (is_a UBERON:0000037), this field is not needed (it would be tautological — a thing has potential to develop into itself). If instead the term were modeled as a separate class between secondary and tertiary, then has_potential_to_develop_into UBERON:0000037 would mirror the secondary->tertiary pattern. Including conditionally; preferred modeling (is_a tertiary) makes this redundant.",
+      "source": "src/ontology/uberon-edit.obo UBERON:0000036: 'intersection_of: has_potential_to_develop_into UBERON:0000037 ! tertiary ovarian follicle'"
+    },
+    "has_quality": {
+      "value": null,
+      "label": null,
+      "evidence": "No PATO/quality term is used on UBERON:0000035/0036/0037 stanzas to denote the 'early/late' stage descriptor — staging is encoded structurally via has_part (antrum present/absent) and has_component cardinality on granulosa layers, plus develops_from chains. There is no in-file quoted evidence supporting a has_quality axiom for follicle stages, so this field is left empty.",
+      "source": "src/ontology/uberon-edit.obo UBERON:0000035, UBERON:0000036, UBERON:0000037 stanzas (no relationship: has_quality ... present)"
+    }
+  },
+  "notes": "Simple is_a + part_of is INSUFFICIENT to express ovarian follicle staging in a logically coherent way. The existing UBERON pattern for primary/secondary/tertiary follicles relies on three coordinated axiom types: (1) has_component UBERON:0005170 (granulosa cell layer) with cardinality / minCardinality constraints (1 for primary, >=2 for secondary and tertiary) to capture cellular maturity; (2) has_part UBERON:0000039 (follicular antrum) to mark the categorical jump into the antral phase (only tertiary has this); and (3) develops_from chains tying the stages into a developmental sequence (primordial -> primary -> secondary -> tertiary), with optional has_potential_to_develop_into projecting the next stage. For 'early antral follicle' specifically, the antrum is the defining feature (so has_part UBERON:0000039 is essential — distinguishing it from secondary), while granulosa multilayering is inherited from secondary (so has_component minCardinality=2 is essential — distinguishing it from primary). Modeling as is_a UBERON:0000037 (tertiary) with develops_from UBERON:0000036 (secondary) is the cleanest fit; an additional qualifier (e.g. 'early' as a stage subset, comment, or PATO quality) would be needed to discriminate early antral from later/Graafian antral stages, since the existing axioms alone do not separate antral sub-stages. No PATO has_quality pattern is currently used by sibling follicle terms, so introducing one would be a modeling extension rather than mirroring existing practice."
+}

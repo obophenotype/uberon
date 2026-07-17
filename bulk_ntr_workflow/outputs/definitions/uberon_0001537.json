@@ -1,0 +1,38 @@
+{
+  "definitions": {
+    "lateral compartment of leg muscle": "A skeletal muscle organ that is part of the lateral (fibular) fascial compartment of the leg, comprising the fibularis longus and fibularis brevis muscles, both arising from the lateral surface of the fibula and innervated by the superficial fibular nerve, acting to evert and weakly plantarflex the foot."
+  },
+  "xrefs": {
+    "lateral compartment of leg muscle": "Wikipedia:Lateral_compartment_of_leg"
+  },
+  "def_xrefs_to_add": {
+    "lateral compartment of leg muscle": "PMID:30137811"
+  },
+  "leaf_template_rows": {
+    "lateral compartment of leg muscle": {
+      "is_a": "UBERON:0014892",
+      "has_muscle_origin": "UBERON:0001446",
+      "innervated_by": "UBERON:0035526"
+    }
+  },
+  "resolved_relationships": {
+    "lateral compartment of leg muscle": "is_a"
+  },
+  "resolved_parents": {
+    "lateral compartment of leg muscle": "UBERON:0014892"
+  },
+  "name_corrections": [
+    {
+      "label": "lateral compartmet of leg muscle",
+      "suggested": "lateral compartment of leg muscle",
+      "reason": "Typo in source label: 'compartmet' -> 'compartment'. Keep source name as related synonym."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "lateral compartment of leg muscle",
+      "reason": "Source-supplied parent UBERON:0001537 refers to 'anterior tibial artery', not an anatomical region containing leg muscles — clearly a wrong mapping in the input. No existing UBERON class for 'lateral compartment of leg' (the fascial compartment) was found via awk over uberon-edit.obo, so no part_of target could be populated. Closest precedent term is UBERON:0002463 'muscle of posterior compartment of hindlimb stylopod' which uses is_a UBERON:0014892 (skeletal muscle organ, vertebrate) plus muscle-overlay relations; this term follows that pattern. Conceptually this is a collective/group class (fibularis longus + fibularis brevis); curator may wish to (a) reroute to the groups template and/or (b) first add a new UBERON term for 'lateral compartment of leg' (subdivision of leg) to serve as a proper part_of target.",
+      "suggestion": "Curator: confirm name correction; consider creating UBERON term for 'lateral compartment of leg' (fascial compartment) before finalising, then add relationship: part_of <new term>. Alternatively, reclassify as group term with genus UBERON:0014892 and location set to the new compartment term."
+    }
+  ]
+}

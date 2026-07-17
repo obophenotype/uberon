@@ -1,0 +1,40 @@
+{
+  "label": "cumulus oophorus oocyte complex",
+  "is_a": {
+    "value": "UBERON:0034922",
+    "label": "cell cluster",
+    "evidence": "The cumulus oophorus itself is classified as a cell cluster: 'is_a: UBERON:0034922 ! cell cluster'. The COC, defined as 'A cluster of cells that project into the cavity of the mature ovarian follicle ... released with the embedded oocyte during ovulation', is likewise a cluster of cells largely surrounded by a morphological boundary, matching cell cluster def: 'A cluster of cells, largely surrounded by a morphological boundary.' [CARO:0020002]",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0001306, UBERON:0034922)"
+  },
+  "part_of": {
+    "value": "UBERON:0000037",
+    "label": "tertiary ovarian follicle",
+    "evidence": "The COC is the structure within an antral follicle. Tertiary ovarian follicle is defined as 'A follicle that has reached the most mature stage of folliculogenesis, characterized by the presence of the antrum.' The cumulus oophorus def states the cells 'project into the cavity of the mature ovarian follicle' (i.e. the antrum of the tertiary follicle), so the COC is part_of the antral/tertiary follicle.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0000037, UBERON:0001306)"
+  },
+  "has_part_oocyte": {
+    "value": "CL:0000023",
+    "label": "oocyte",
+    "evidence": "The cumulus oophorus 'is released with the embedded oocyte during ovulation' (UBERON:0001306 def). The zona pellucida term explicitly relates to the oocyte: 'relationship: bounding_layer_of CL:0000023 ! oocyte'. The COC is by definition the cumulus cells PLUS the embedded oocyte.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0001306, UBERON:0000086)"
+  },
+  "has_part_cumulus": {
+    "value": "UBERON:0001306",
+    "label": "cumulus oophorus",
+    "evidence": "Cumulus oophorus def: 'A cluster of cells that project into the cavity of the mature ovarian follicle. It is released with the embedded oocyte during ovulation.' The COC name itself denotes cumulus oophorus + oocyte, so cumulus oophorus is a constituent part.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0001306)"
+  },
+  "has_part_zona_pellucida": {
+    "value": "UBERON:0000086",
+    "label": "zona pellucida",
+    "evidence": "Zona pellucida is 'A glycoprotein membrane surrounding the plasma membrane of an oocyte ... external but not extraneous to it' and is the 'bounding_layer_of CL:0000023 ! oocyte'. Since the oocyte in the COC carries its zona pellucida (which sperm must penetrate at fertilisation: 'In order for fertilization to occur this layer must be penetrated by the spermatocyte' — UBERON:0001306 def), the zona pellucida is a part of the COC.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0000086, UBERON:0001306)"
+  },
+  "has_function": {
+    "value": null,
+    "label": "oocyte maturation / cumulus-oocyte signaling",
+    "evidence": "No has_function quote-grade evidence in the precedent stanzas examined (UBERON:0001306, UBERON:0000086, UBERON:0000037, UBERON:0034922). UBERON:0001306 describes ovulation release and the requirement that sperm penetrate the cumulus to reach the oocyte, but UBERON does not assert a has_function relationship on these terms — function-class enrichment would need GO term sourcing not present in the inspected stanzas.",
+    "source": "src/ontology/uberon-edit.obo (no has_function asserted on precedent terms)"
+  },
+  "notes": "Simple is_a (UBERON:0034922 cell cluster) + part_of (UBERON:0000037 tertiary ovarian follicle) is INSUFFICIENT to capture this term's compositional nature. The defining feature of a COC versus the cumulus oophorus alone (UBERON:0001306) is that the COC includes the oocyte and its zona pellucida — i.e. it is precisely the cumulus oophorus PLUS oocyte (with zona pellucida) released as a unit at ovulation. Without has_part axioms (oocyte CL:0000023, cumulus oophorus UBERON:0001306, zona pellucida UBERON:0000086), the COC class is logically indistinguishable from cumulus oophorus. So has_part is essential here. A logical definition could be: 'cell cluster' and (has_part some oocyte) and (has_part some cumulus oophorus) and (part_of some tertiary ovarian follicle). Note also UBERON:0001306 has two part_of parents (ovarian follicle, granulosa cell layer); the COC, because it includes the oocyte (which is not part of the granulosa cell layer), should be part_of the follicle/antral follicle but NOT part_of the granulosa cell layer."
+}

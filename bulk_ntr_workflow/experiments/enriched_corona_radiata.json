@@ -1,0 +1,49 @@
+{
+  "label": "corona radiata",
+  "sense": "embryology/oogenesis - the innermost granulosa cell layer of the cumulus oophorus, immediately surrounding the zona pellucida of the oocyte. NOT the brain corona radiata (UBERON:0004682).",
+  "is_a": {
+    "value": "UBERON:0000119",
+    "label": "cell layer",
+    "evidence": "The corona radiata is the innermost layer of the cells of the cumulus oophorus and is directly adjacent to the zona pellucida",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)"
+  },
+  "part_of": {
+    "value": "UBERON:0001306",
+    "label": "cumulus oophorus",
+    "evidence": "The corona radiata is the innermost layer of the cells of the cumulus oophorus and is directly adjacent to the zona pellucida",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)"
+  },
+  "composed_primarily_of": {
+    "value": "CL:0000501",
+    "label": "granulosa cell",
+    "evidence": "These cuboidal granulosa cells, also known as the granulosa radiata, form more layers throughout the maturation process",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)"
+  },
+  "bounding_layer_of": {
+    "value": "UBERON:0000086",
+    "label": "zona pellucida",
+    "evidence": "directly adjacent to the zona pellucida, the inner protective glycoprotein layer of the ovum",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)",
+    "caveat": "The corona radiata is the innermost cell layer immediately external to the zona pellucida; whether 'bounding_layer_of' fits as cleanly here as for zona pellucida->oocyte is debatable. Mirrors the precedent at UBERON:0000086 (relationship: bounding_layer_of CL:0000023 ! oocyte). Could alternatively be modeled as surrounds zona pellucida."
+  },
+  "develops_from": {
+    "value": "UBERON:0005170",
+    "label": "granulosa cell layer",
+    "evidence": "It is formed by follicle cells adhering to the oocyte before it leaves the ovarian follicle, and originates from the squamous granulosa cells present at the primordial stage",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)"
+  },
+  "has_function": {
+    "value": null,
+    "label": "supply of proteins to the oocyte",
+    "evidence": "Its main purpose in many animals is to supply vital proteins to the cell",
+    "source": "https://en.wikipedia.org/wiki/Corona_radiata_(embryology)"
+  },
+  "candidate_xrefs": [
+    {"xref": "FMA:18674", "note": "FMA has a corona radiata of oocyte concept; verify exact ID before use"},
+    {"xref": "Wikipedia:Corona_radiata_(embryology)"}
+  ],
+  "candidate_synonyms": [
+    {"synonym": "granulosa radiata", "scope": "RELATED", "evidence": "These cuboidal granulosa cells, also known as the granulosa radiata"}
+  ],
+  "notes": "Simple is_a (cell layer) + part_of (cumulus oophorus) + composed_primarily_of (granulosa cell) covers the core. The bounding_layer_of zona pellucida and develops_from granulosa cell layer enrichments are well supported by the Wikipedia source but a primary anatomical/embryology textbook citation (e.g. Gray's Anatomy or a PMID review) would be preferable before commit. Disambiguation from UBERON:0004682 (corona radiata of neuraxis) is essential — the brain term already carries 'corona radiata' as an EXACT synonym at NLXANAT:090903, so any new ovarian term should likely use 'corona radiata of oocyte' or 'corona radiata (ovary)' as the primary label to avoid label collisions."
+}

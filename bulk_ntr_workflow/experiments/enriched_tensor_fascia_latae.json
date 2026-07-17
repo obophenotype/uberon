@@ -1,0 +1,43 @@
+{
+  "label": "tensor fascia latae muscle",
+  "existing_uberon_id": "UBERON:0001376",
+  "is_a": {
+    "value": "UBERON:0001630",
+    "label": "muscle organ",
+    "evidence": "The tensor fasciae latae (or tensor fasciae latae or, formerly, tensor vaginae femoris) is a muscle of the thigh.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle"
+  },
+  "part_of": {
+    "value": "UBERON:0000376",
+    "label": "hindlimb stylopod",
+    "evidence": "The tensor fasciae latae (or tensor fasciae latae or, formerly, tensor vaginae femoris) is a muscle of the thigh.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle",
+    "notes": "UBERON:0000376 (hindlimb stylopod) is the OLS4 exact match for 'thigh'."
+  },
+  "has_muscle_origin": {
+    "value": "UBERON:0014437",
+    "label": "iliac crest",
+    "evidence": "The tensor fasciae latae arises from the anterior part of the outer lip of the iliac crest; from the outer surface of the anterior superior iliac spine, and part of the outer border of the notch below it, between the gluteus medius and sartorius; and from the deep surface of the fascia lata.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle"
+  },
+  "has_muscle_insertion": {
+    "value": null,
+    "label": "iliotibial tract (of the fascia lata)",
+    "evidence": "The tensor fasciae latae is inserted between the two layers of the iliotibial tract of the fascia lata about the junction of the middle and upper thirds of the thigh. ... The terminal insertion point lies on the lateral condyle of the tibia.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle",
+    "notes": "No UBERON class found for 'iliotibial tract' / 'iliotibial band' (OLS4 exact and partial searches returned no match). Left unresolved as free text."
+  },
+  "innervated_by": {
+    "value": null,
+    "label": "superior gluteal nerve",
+    "evidence": "Tensor fasciae latae is innervated by the superior gluteal nerve, L5 and S1.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle",
+    "notes": "No UBERON class found for 'superior gluteal nerve' (OLS4 exact search returned no match; only superior gluteal artery UBERON:0001315 and superior gluteal lymph node UBERON:0037548 exist). Left unresolved as free text."
+  },
+  "has_muscle_action": {
+    "value": "Hip flexion, medial rotation, and abduction; lateral rotation of the knee/tibia; tautens the iliotibial tract and braces the knee; stabilizes the pelvis when standing, walking, or running.",
+    "evidence": "Actions: Hip - flexion, medial rotation, abduction, knee - lateral rotation, torso - stabilization. ... It tautens the iliotibial tract and braces the knee, especially when the opposite foot is lifted. ... The muscle assists in keeping the balance of the pelvis while standing, walking, or running.",
+    "source": "https://en.wikipedia.org/wiki/Tensor_fasciae_latae_muscle"
+  },
+  "notes": "Tensor fasciae latae already exists in UBERON as UBERON:0001376 with is_a UBERON:0002000 (gluteal muscle) and an existing has_muscle_origin to UBERON:0010746 (iliac blade). The current iliac-blade origin is consistent with but less specific than the Wikipedia 'iliac crest' (UBERON:0014437) origin description; consider refining. Two key Wikipedia-described relations (insertion onto iliotibial tract, innervation by superior gluteal nerve) cannot be encoded with UBERON IDs because those classes do not currently exist in UBERON (verified via OLS4 exact-match search). 'Thigh' resolved to UBERON:0000376 (hindlimb stylopod) per the OLS4 exact-match alias, matching the precedent set in enriched_articularis_genu.json."
+}

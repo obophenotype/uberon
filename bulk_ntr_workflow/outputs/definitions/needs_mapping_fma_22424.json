@@ -1,0 +1,40 @@
+{
+  "definitions": {
+    "articularis genu muscle": "A small skeletal muscle organ of the anterior thigh, lying deep to the vastus intermedius, that arises from the anterior surface of the distal shaft of the femur and inserts onto the proximal wall of the suprapatellar bursa and the synovial membrane of the knee joint, where it retracts the bursa superiorly during knee extension."
+  },
+  "wikipedia_images": {
+    "articularis genu muscle": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Gray244.png"
+  },
+  "xrefs": {
+    "articularis genu muscle": "Wikipedia:Articularis_genus_muscle|FMA:22424"
+  },
+  "def_xrefs_to_add": {
+    "articularis genu muscle": "PMID:30229230"
+  },
+  "leaf_template_rows": {
+    "articularis genu muscle": {
+      "is_a": "UBERON:0001630",
+      "part_of": "UBERON:0000376",
+      "has_muscle_origin": "UBERON:0000981",
+      "innervated_by": "UBERON:0001267"
+    }
+  },
+  "resolved_relationships": {
+    "articularis genu muscle": "is_a"
+  },
+  "resolved_parents": {
+    "articularis genu muscle": "UBERON:0001630"
+  },
+  "unresolvable": [
+    {
+      "label": "articularis genu muscle (parent FMA:22424)",
+      "reason": "Source parent FMA:22424 is the articularis genus muscle itself (self-referential mapping in the ASCTB input). No UBERON equivalent exists for this term — it is the new term being created. Genus resolved to UBERON:0001630 (muscle organ) and part_of to UBERON:0000376 (hindlimb stylopod / thigh) by analogy with UBERON:0001379 (vastus lateralis).",
+      "suggestion": "Accept the leaf_template_rows mapping; no further FMA→UBERON parent lookup is needed."
+    },
+    {
+      "label": "articularis genu muscle has_muscle_insertion",
+      "reason": "Anatomical insertion is on the suprapatellar bursa / synovial membrane of the knee joint. UBERON currently lacks specific terms for 'suprapatellar bursa' or 'synovial membrane of knee joint capsule'.",
+      "suggestion": "Omit has_muscle_insertion for now; curator may add later if/when those structures are added to UBERON."
+    }
+  ]
+}

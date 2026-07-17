@@ -1,0 +1,180 @@
+{
+  "definitions": {
+    "dorsum of foot muscle": "A group of skeletal muscles located on the dorsal aspect of the foot, comprising the extensor digitorum brevis and extensor hallucis brevis, which act to extend the toes.",
+    "longitudinal pharyngeal muscle": "A group of skeletal muscles oriented longitudinally in the pharyngeal wall that act to elevate the pharynx and larynx during swallowing, comprising the stylopharyngeus, palatopharyngeus, and salpingopharyngeus muscles.",
+    "middle ear muscle": "A group of skeletal muscles located within the middle ear cavity that attenuate sound transmission through the auditory ossicles, comprising the tensor tympani and stapedius muscles.",
+    "pelvic floor muscle": "A group of skeletal muscles that form the floor of the pelvic cavity, supporting the pelvic viscera and surrounding the urogenital and anal openings, comprising the levator ani and coccygeus muscles.",
+    "posterior abdominal wall muscle": "A group of skeletal muscles located in the posterior part of the abdominal wall that support the lumbar spine and act on the trunk and hip, comprising the psoas major, psoas minor, iliacus, and quadratus lumborum muscles.",
+    "segmental back muscle": "A group of small skeletal muscles of the deep back that span individual vertebral segments, comprising the interspinales, intertransversarii, and levatores costarum, which produce minor movements of the vertebral column.",
+    "superficial back muscle": "A group of skeletal muscles forming the superficial layer of the back, which attach the upper limb to the trunk and act on the shoulder girdle, comprising the trapezius, latissimus dorsi, levator scapulae, and rhomboid muscles.",
+    "intermediate back muscle": "A group of skeletal muscles forming the intermediate layer of the back that act as accessory muscles of respiration, comprising the serratus posterior superior and serratus posterior inferior muscles.",
+    "thoracic wall muscle": "A group of skeletal muscles that are part of the thoracic wall and act on the ribs to produce respiratory movements, comprising the external, internal and innermost intercostals, subcostales and transversus thoracis.",
+    "external ear muscle": "A group of skeletal muscles attached to the auricular cartilage that act to move the pinna, comprising the auricularis anterior, auricularis superior, and auricularis posterior.",
+    "intrinsic eye muscle": "A group of smooth muscles located within the eyeball that control pupil diameter and lens accommodation, comprising the ciliary muscle, sphincter pupillae, and dilator pupillae.",
+    "sole of foot muscle": "A group of skeletal muscles located in the plantar part of the foot that act on the toes and support the longitudinal arch, comprising the four layers of plantar intrinsic muscles including the abductor hallucis, flexor digitorum brevis, lumbricals, quadratus plantae, flexor digiti minimi brevis, adductor hallucis, and plantar/dorsal interossei."
+  },
+  "xrefs": {
+    "dorsum of foot muscle": "Wikipedia:Dorsum_of_foot",
+    "longitudinal pharyngeal muscle": "Wikipedia:Pharyngeal_muscles",
+    "middle ear muscle": "Wikipedia:Middle_ear",
+    "pelvic floor muscle": "Wikipedia:Pelvic_floor",
+    "posterior abdominal wall muscle": "Wikipedia:Abdominal_wall",
+    "segmental back muscle": "Wikipedia:Human_back",
+    "superficial back muscle": "Wikipedia:Human_back",
+    "intermediate back muscle": "Wikipedia:Human_back",
+    "thoracic wall muscle": "Wikipedia:Thoracic_wall",
+    "sole of foot muscle": "Wikipedia:Sole_(foot)"
+  },
+  "def_xrefs_to_add": {
+    "dorsum of foot muscle": "PMID:30855843",
+    "longitudinal pharyngeal muscle": "PMID:25821538",
+    "middle ear muscle": "PMID:24379725",
+    "pelvic floor muscle": "PMID:28920577",
+    "posterior abdominal wall muscle": "PMID:30855915",
+    "segmental back muscle": "PMID:30571022",
+    "superficial back muscle": "PMID:30571022",
+    "intermediate back muscle": "PMID:30571022",
+    "thoracic wall muscle": "PMID:30855894",
+    "sole of foot muscle": "PMID:30571022"
+  },
+  "group_template_rows": {
+    "superficial back muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0001137"
+    },
+    "intermediate back muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0001137"
+    },
+    "segmental back muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0001137"
+    },
+    "thoracic wall muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0016403"
+    },
+    "posterior abdominal wall muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0003697"
+    },
+    "external ear muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0001691"
+    },
+    "middle ear muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0001756"
+    },
+    "sole of foot muscle": {
+      "genus": "UBERON:0014892",
+      "location": "UBERON:0008338"
+    }
+  },
+  "manual_curation": [
+    {
+      "label": "pelvic floor muscle",
+      "definition": "A group of skeletal muscles that form the floor of the pelvic cavity, supporting the pelvic viscera and surrounding the urogenital and anal openings, comprising the levator ani and coccygeus muscles.",
+      "reason": "No UBERON term currently exists for 'pelvic floor' or 'pelvic diaphragm' as an anatomical region — only the constituent muscles (levator ani UBERON:0001326, coccygeus UBERON:0001327) and the broader pelvic region (UBERON:0002355) are represented. The simple genus + part_of pattern needs a target term for the pelvic floor itself.",
+      "similar_terms": [
+        {"id": "UBERON:0001325", "label": "muscle of pelvis", "intersection_of": ["UBERON:0014892 ! skeletal muscle organ, vertebrate", "part_of UBERON:0002355 ! pelvic region of trunk"]},
+        {"id": "UBERON:0001326", "label": "levator ani muscle", "intersection_of": ["is_a UBERON:0001325 ! muscle of pelvis"]},
+        {"id": "UBERON:0001327", "label": "coccygeus muscle", "intersection_of": ["is_a UBERON:0001325 ! muscle of pelvis"]}
+      ],
+      "suggestion": "Either (a) add a new region term 'pelvic floor' / 'pelvic diaphragm' and define this group as skeletal muscle organ part_of that, or (b) define as has_part levator_ani and has_part coccygeus, or (c) treat as a subclass of muscle of pelvis (UBERON:0001325) without an EC definition."
+    },
+    {
+      "label": "dorsum of foot muscle",
+      "definition": "A group of skeletal muscles located on the dorsal aspect of the foot, comprising the extensor digitorum brevis and extensor hallucis brevis, which act to extend the toes.",
+      "reason": "No UBERON term exists for 'dorsum of foot' / 'dorsal region of pes' as a region. The only dorsal pes term found is UBERON:0006499 dorsal pes interosseous muscle (a specific muscle, not a region). Simple genus + part_of pattern cannot be applied without a region target.",
+      "similar_terms": [
+        {"id": "UBERON:0008338", "label": "plantar part of pes", "intersection_of": ["UBERON:0008837 ! palmar/plantar part of autopod", "part_of UBERON:0002387 ! pes"]}
+      ],
+      "suggestion": "Add a new region term 'dorsal part of pes' (analogous to UBERON:0008338 plantar part of pes) and define this group as skeletal muscle organ part_of that region. Alternatively define by membership (has_part extensor digitorum brevis, has_part extensor hallucis brevis)."
+    },
+    {
+      "label": "longitudinal pharyngeal muscle",
+      "definition": "A group of skeletal muscles oriented longitudinally in the pharyngeal wall that act to elevate the pharynx and larynx during swallowing, comprising the stylopharyngeus, palatopharyngeus, and salpingopharyngeus muscles.",
+      "reason": "This is a sub-grouping of pharyngeal muscles defined by fibre orientation (longitudinal) within the pharyngeal wall — not a simple part_of-defined subset. UBERON's circular counterpart (UBERON:0001569 constrictor muscle of pharynx) is is_a UBERON:0000933 chordate pharyngeal muscle without an EC axiom on orientation. The simple genus + part_of pattern cannot express fibre orientation.",
+      "similar_terms": [
+        {"id": "UBERON:0001569", "label": "constrictor muscle of pharynx", "intersection_of": ["is_a UBERON:0000933 ! chordate pharyngeal muscle (no EC axiom)"]},
+        {"id": "UBERON:0000933", "label": "chordate pharyngeal muscle", "intersection_of": ["UBERON:0001630 ! muscle organ", "part_of UBERON:0004467 ! musculature of pharynx"]}
+      ],
+      "suggestion": "Either model as subclass of chordate pharyngeal muscle (UBERON:0000933) without an EC, mirroring how UBERON:0001569 is handled, or add a new relation/property for muscle fibre orientation. Note that circular pharyngeal muscle (the sibling) maps directly to UBERON:0001569 — see confirmed_matches."
+    }
+  ],
+  "confirmed_matches": [
+    {
+      "label": "anterior vertebral muscle",
+      "uberon_id": "UBERON:0008549",
+      "confidence": "high",
+      "uberon_definition": "One of the muscles deep to the prevertebral fascia on the anterior surface of the cervical and superior three thoracic vertebrae, symmetrically placed on each side of the median plane, including the longus colli, longus capitis, rectus capitis anterior, and rectus capitis lateralis muscles.",
+      "wikipedia_summary": "The prevertebral muscles (also called anterior vertebral muscles in TA2) are a group of muscles anterior to the vertebral column comprising longus colli, longus capitis, rectus capitis anterior and rectus capitis lateralis. 'flexor muscle of vertebral column' is already an EXACT synonym (FMA:32514).",
+      "synonym_addition_suggested": "Add 'anterior vertebral muscle' as an EXACT synonym (TA2 terminology)."
+    },
+    {
+      "label": "circular pharyngeal muscle",
+      "uberon_id": "UBERON:0001569",
+      "confidence": "high",
+      "uberon_definition": "Pharyngeal constrictor refers to one of the muscles that serves to constrict the pharynx. They include: Superior, Middle, and Inferior pharyngeal constrictor muscle.",
+      "wikipedia_summary": "The three pharyngeal constrictor muscles (superior, middle, inferior) are the circularly-oriented muscles of the pharynx; the longitudinal pharyngeal muscles (stylopharyngeus, palatopharyngeus, salpingopharyngeus) form the complementary group. TA2 names them 'circular pharyngeal muscles'.",
+      "synonym_addition_suggested": "Add 'circular pharyngeal muscle' as an EXACT synonym (TA2 terminology)."
+    },
+    {
+      "label": "lateral vertebral muscle",
+      "uberon_id": "UBERON:0008611",
+      "confidence": "high",
+      "uberon_definition": "Any of the three pairs of muscles in the lateral neck, namely the scalenus anterior, scalenus medius, and scalenus posterior. They are innervated by the spinal nerves C4-C8.",
+      "wikipedia_summary": "The scalene muscles (TA2 'lateral vertebral muscles') are the three paired muscles of the lateral neck. 'lateral vertebral muscle' is already listed as a RELATED synonym on UBERON:0008611.",
+      "synonym_addition_suggested": "Promote existing RELATED synonym 'lateral vertebral muscle' to EXACT (TA2 terminology)."
+    },
+    {
+      "label": "hypothenar hand muscle",
+      "uberon_id": "UBERON:0014377",
+      "confidence": "high",
+      "uberon_definition": "Any of three muscles of the palm that control the motion of the little finger.",
+      "wikipedia_summary": "The hypothenar muscles are the three intrinsic muscles of the hand (abductor digiti minimi, flexor digiti minimi brevis, opponens digiti minimi) controlling the little finger. The TA2 name 'hypothenar hand muscle' is essentially the existing UBERON term.",
+      "synonym_addition_suggested": "Add 'hypothenar hand muscle' as an EXACT synonym."
+    },
+    {
+      "label": "palmar interosseous muscle",
+      "uberon_id": "UBERON:0006505",
+      "confidence": "high",
+      "uberon_definition": "Any of three muscles, the first with its origin from the second metacarpal, and the second and the third with origin from the fourth and fifth metacarpals; adducts the fingers toward the axis of the middle finger.",
+      "wikipedia_summary": "The palmar interossei are three small unipennate hand muscles between the metacarpals. TA2 'palmar interosseous muscle' is the same as UBERON's 'palmar interosseous muscle of manus'.",
+      "synonym_addition_suggested": "Add 'palmar interosseous muscle' as an EXACT synonym."
+    },
+    {
+      "label": "plantar interosseous muscle",
+      "uberon_id": "UBERON:0006502",
+      "confidence": "high",
+      "uberon_definition": "Any of three muscles with origin from the third, fourth, and fifth metatarsal bones, with insertion to the proximal phalanx of the same toes, with nerve supply from the lateral plantar nerve, and whose action adducts the three lateral toes.",
+      "wikipedia_summary": "The plantar interossei are three unipennate muscles of the foot between the metatarsals. TA2 'plantar interosseous muscle' is the same as UBERON's 'plantar interosseous muscle of pes'.",
+      "synonym_addition_suggested": "Add 'plantar interosseous muscle' as an EXACT synonym."
+    },
+    {
+      "label": "spinotransversales muscle",
+      "uberon_id": "UBERON:0002252",
+      "confidence": "high",
+      "uberon_definition": "A superficial postvertebral muscle innervated by the posterior ramus of the cervical spinal nerve with origins in the upper thoracic and lower cervical spinous processes whose actions are to extend and ipsilaterally rotate the head and neck. Examples: splenius capitis, splenius cervicis.",
+      "wikipedia_summary": "The spinotransversales group consists of the two splenius muscles (splenius capitis and splenius cervicis) — origin on spinous processes, insertion on transverse processes — hence the name. Identical scope to UBERON 'splenius'.",
+      "synonym_addition_suggested": "Add 'spinotransversales muscle' and 'spinotransversales muscles' as EXACT synonyms."
+    },
+    {
+      "label": "muscle of facial expression",
+      "uberon_id": "UBERON:0001577",
+      "confidence": "high",
+      "uberon_definition": "A muscle innervated by a facial nerve.",
+      "wikipedia_summary": "The muscles of facial expression are the subcutaneous muscles innervated by the facial nerve (CN VII). UBERON:0001577 already lists 'muscles of facial expression' (RELATED) and 'muscle of facil expression' as synonyms; same scope.",
+      "synonym_addition_suggested": "Add 'muscle of facial expression' as an EXACT synonym (TA2 form)."
+    },
+    {
+      "label": "intrinsic eye muscle",
+      "uberon_id": "UBERON:0011222",
+      "confidence": "high",
+      "uberon_definition": "Muscles within the eye (bulbus oculi). Comprises ciliary muscle and the pupillary muscles.",
+      "wikipedia_summary": "Intrinsic ocular muscles are the smooth muscles within the eyeball: ciliary muscle, sphincter pupillae, dilator pupillae — controlling accommodation and pupil size. Existing synonym 'intrinsic ocular muscle' EXACT.",
+      "synonym_addition_suggested": "Add 'intrinsic eye muscle' as an EXACT synonym."
+    }
+  ]
+}

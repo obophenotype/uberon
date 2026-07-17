@@ -1,0 +1,26 @@
+{
+  "confirmed_matches": [
+    {
+      "label": "rectus capitius posterior minor muscle",
+      "uberon_id": "UBERON:0008455",
+      "confidence": "high",
+      "uberon_definition": "A muscle that arise from the tubercle on the posterior arch of the and is inserted into the medial part of the inferior nuchal line of the occipital bone and the surface between it and the foramen magnum, and also takes some attachment to the spinal dura.",
+      "wikipedia_summary": "The rectus capitis posterior minor is a small muscle of the suboccipital region; it arises from the tubercle on the posterior arch of the atlas (C1) and inserts on the medial inferior nuchal line of the occipital bone; innervated by the suboccipital nerve (dorsal ramus of C1); part of the suboccipital triangle group; extends the head at the atlanto-occipital joint.",
+      "match_evidence": "UBERON:0008455 'rectus capitis posterior minor' already lists 'rectus capitus posterior minor muscle' and 'rectus capitus posterior minor' as RELATED synonyms (Wikipedia:Rectus_capitis_posterior_minor_muscle). The input label is a typo variant ('capitius'/'capitus' for 'capitis') of the same anatomical structure. Confirmed match — exclude from template."
+    }
+  ],
+  "name_corrections": [
+    {
+      "label": "rectus capitius posterior minor muscle",
+      "suggested": "rectus capitis posterior minor",
+      "reason": "Input contains a misspelling: 'capitius' is a typo for 'capitis' (genitive of Latin caput, head). The correctly spelled term already exists in UBERON as UBERON:0008455. The variant 'rectus capitus posterior minor muscle' is already registered there as a RELATED synonym; the input form 'rectus capitius posterior minor muscle' could also be added as an additional misspelling synonym if desired."
+    }
+  ],
+  "unresolvable": [
+    {
+      "label": "rectus capitius posterior minor muscle",
+      "reason": "Input file was named 'unresolvable_submucosal_artery_of_colon.json' and listed parent_id UNRESOLVABLE:'submucosal artery of colon' for both is_a and part_of. That parent is wrong-domain (a colonic artery) for a suboccipital skeletal muscle and appears to be a pipeline mislabel.",
+      "suggestion": "Disregard the bogus 'submucosal artery of colon' parent. The term itself is a confirmed match to UBERON:0008455 (rectus capitis posterior minor); no new term is needed. Had a new term been required, the correct parents would have been: is_a UBERON:0004518 (muscle of vertebral column) and part_of UBERON:0000974 (neck), mirroring the other rectus capitis muscles."
+    }
+  ]
+}

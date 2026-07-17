@@ -1,0 +1,33 @@
+{
+  "definitions": {
+    "levatores costarum longi of levator costarum muscle": "A muscle fasciculus that constitutes the longer subdivision of the four lower levatores costarum, arising from the tip of the transverse process of a thoracic vertebra (typically T8-T11) and passing obliquely downward and laterally to insert on the outer surface of the second rib below its vertebra of origin, between the tubercle and the angle."
+  },
+  "xrefs": {
+    "levatores costarum longi of levator costarum muscle": "Wikipedia:Levatores_costarum_muscles"
+  },
+  "def_xrefs_to_add": {
+    "levatores costarum longi of levator costarum muscle": "PMID:13129167"
+  },
+  "leaf_template_rows": {
+    "levatores costarum longi of levator costarum muscle": {
+      "is_a": "UBERON:0014892",
+      "part_of": "UBERON:8410070",
+      "has_muscle_origin": "UBERON:0001077",
+      "has_muscle_insertion": "UBERON:0002228",
+      "innervated_by": "UBERON:0006839"
+    }
+  },
+  "resolved_relationships": {
+    "levatores costarum longi of levator costarum muscle": "part_of"
+  },
+  "resolved_parents": {
+    "levatores costarum longi of levator costarum muscle": "UBERON:8410070"
+  },
+  "unresolvable": [
+    {
+      "label": "levatores costarum longi of levator costarum muscle",
+      "reason": "Parent 'levator costarum muscle' resolves to UBERON:8410070 (levator costarum). The source label suggests these are a named sub-component (the long fasciculi of the four lower levatores costarum). UBERON has no specific class for this sub-component, but the parent UBERON:8410070 itself already covers the levatores costarum collectively (its definition explicitly references both 'levatores costarum breves' and 'levatores costarum longi' as the two fasciculi of each muscle).",
+      "suggestion": "Curator decision needed: (a) accept this NTR as a part_of subdivision of UBERON:8410070 with genus 'skeletal muscle organ, vertebrate' (UBERON:0014892), as encoded in leaf_template_rows; OR (b) drop the NTR and instead add 'levatores costarum longi' as an EXACT synonym (with a clarifying scope) on UBERON:8410070, since the parent term's textual definition already enumerates the longi/breves fasciculi. Option (b) is more parsimonious if HRA only needs name-level findability. Option (a) is preferred if the longi fasciculus must be addressable as a distinct entity (e.g. for downstream attachment/innervation annotation). Innervation set to dorsal ramus of spinal nerve (UBERON:0006839) following Morrison 1953 (PMID:13129167)."
+    }
+  ]
+}

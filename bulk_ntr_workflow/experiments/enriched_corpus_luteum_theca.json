@@ -1,0 +1,41 @@
+{
+  "label": "corpus luteum granulosa theca layer",
+  "is_a": {
+    "value": "UBERON:0000119",
+    "label": "cell layer",
+    "evidence": "Sibling layered ovarian structures use 'cell layer' as genus: UBERON:0005170 'granulosa cell layer' has intersection_of: UBERON:0000119 ! cell layer; UBERON:0000155 'theca cell layer' has intersection_of: UBERON:0000119 ! cell layer.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0005170, UBERON:0000155)"
+  },
+  "part_of": {
+    "value": "UBERON:0002512",
+    "label": "corpus luteum",
+    "evidence": "The HRA source describes this as a layer of the corpus luteum. UBERON:0002512 corpus luteum is defined as 'A transient endocrine gland that develops from the postovulatory or atretic follicles and secretes progesterone'.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0002512); HRA ASCTB ovary table"
+  },
+  "has_part_granulosa_lutein": {
+    "value": "CL:0000592",
+    "label": "large luteal cell (granulosa-lutein cell)",
+    "evidence": "OLS4 search for 'granulosa lutein cell' in CL returns CL:0000592 'large luteal cell' as the top match; granulosa-lutein cells are the large luteal cells derived from granulosa cells of the ruptured follicle.",
+    "source": "https://www.ebi.ac.uk/ols4/api/search?q=granulosa+lutein+cell&ontology=cl"
+  },
+  "has_part_theca_lutein": {
+    "value": "CL:0000590",
+    "label": "small luteal cell (theca-lutein cell)",
+    "evidence": "OLS4 search for 'theca lutein cell' in CL returns CL:0000590 'small luteal cell' as the top match; theca-lutein cells are the small luteal cells derived from theca interna cells of the ruptured follicle.",
+    "source": "https://www.ebi.ac.uk/ols4/api/search?q=theca+lutein+cell&ontology=cl"
+  },
+  "composed_primarily_of": {
+    "value": "CL:0000175",
+    "label": "luteal cell",
+    "evidence": "Sibling layered ovarian structures use composed_primarily_of for the dominant cell type (UBERON:0000155 theca cell layer: composed_primarily_of CL:0000503 ! theca cell; UBERON:0005170 granulosa cell layer is composed primarily of granulosa cells). The HRA term combines both luteinized cell types, whose common parent is CL:0000175 luteal cell.",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0000155 pattern); CL:0000175 is the luteal cell parent of CL:0000590 and CL:0000592"
+  },
+  "has_function": {
+    "value": null,
+    "label": "steroidogenesis (progesterone and estrogen synthesis)",
+    "evidence": "UBERON:0002512 corpus luteum def: 'A transient endocrine gland that develops from the postovulatory or atretic follicles and secretes progesterone'. UBERON:0000155 theca cell layer function_notes: 'The theca folliculi are responsible for the production of testosterone from androstenedione in females, and indirectly the production of estrogens by supplying the neighboring granulosa cells with androstenedione that can then be used as a substrate for aromatase.' UBERON:0000157 theca interna def notes: 'Androstenedione ultimately gives the granulosa cells the precursor substrate for estrogen manufacturing.'",
+    "source": "src/ontology/uberon-edit.obo (UBERON:0002512, UBERON:0000155, UBERON:0000157)",
+    "notes": "No GO term ID resolved here; steroidogenesis is the recognised function of luteal cells but a specific GO function ID was not looked up in this enrichment."
+  },
+  "notes": "This term is unusual: HRA defines it as a SINGLE layer of the corpus luteum that contains BOTH granulosa-lutein and theca-lutein cells. The standard textbook view of the mature corpus luteum is that granulosa-lutein cells form the bulk of the parenchyma (centrally), while theca-lutein cells are smaller, peripheral cells often interspersed at the margins / along septa rather than forming a discrete second layer. So HRA's 'combined' layer is anatomically defensible but conflicts with the binary split modelled for follicles in UBERON (separate granulosa cell layer UBERON:0005170 and theca cell layer UBERON:0000155). Simple is_a (cell layer) + part_of (corpus luteum) is INSUFFICIENT to capture the term's distinguishing feature — that it co-contains two specific luteinized cell types. Recommended axiomatisation: is_a UBERON:0000119 cell layer; part_of UBERON:0002512 corpus luteum; has_part CL:0000592 (granulosa-lutein/large luteal cell); has_part CL:0000590 (theca-lutein/small luteal cell); composed_primarily_of CL:0000175 luteal cell. The has_part axioms are what give this term its specific identity vs a hypothetical 'cell layer of corpus luteum' grouping class. Curator may wish to consider whether HRA actually means the entire luteal parenchyma rather than a discrete layer — in which case 'parenchyma of corpus luteum' might be a better label. Note also the CL mappings: granulosa-lutein cell = CL:0000592 large luteal cell; theca-lutein cell = CL:0000590 small luteal cell — these synonyms should be confirmed against the CL stanzas before finalising."
+}
