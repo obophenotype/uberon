@@ -60,6 +60,7 @@ jobs:
         with:
           fetch-depth: 1
           token: ${{ secrets.PAT_FOR_PR }}
+          persist-credentials: false
 
       - name: Check for qualifying mention
         id: check
@@ -250,6 +251,7 @@ jobs:
         with:
           fetch-depth: 1
           token: ${{ secrets.PAT_FOR_PR }}
+          persist-credentials: false
 
       - name: Configure Git
         run: |
@@ -277,11 +279,15 @@ jobs:
           uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
           echo "${{ github.workspace }}/.venv/bin" >> "$GITHUB_PATH"
 
-      - name: Export GitHub token for gh CLI
-        run: echo "GH_TOKEN=${{ secrets.PAT_FOR_PR }}" >> "$GITHUB_ENV"
+      - name: Configure GitHub authentication
+        env:
+          GH_TOKEN: ${{ secrets.PAT_FOR_PR }}
+        run: gh auth setup-git --hostname github.com --force
 
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
+        env:
+          GH_TOKEN: ${{ secrets.PAT_FOR_PR }}
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.PAT_FOR_PR }}
