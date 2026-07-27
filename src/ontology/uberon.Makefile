@@ -1365,6 +1365,26 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
 
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube.owl: $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube.owl
+
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
