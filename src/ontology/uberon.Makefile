@@ -892,6 +892,7 @@ subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
 		                              --taxon $(TAXON_ID_$*) \
 		                              --strategy $(TAXON_SUBSET_STRATEGY) \
 		                              --reasoner ELK \
+		                              --prune-taxa \
 		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
 		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
 		                              --subset-name uberon:$*_subset \
