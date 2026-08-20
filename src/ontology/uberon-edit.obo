@@ -225244,6 +225244,34 @@ is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
+[Term]
+id: UBERON:9900001
+name: bone marrow of skull
+def: "A bone marrow that is located within the bones of the skull. In mammals, skull bone marrow is haematopoietically active and communicates directly with the dura mater through osseous skull channels, which permit the exchange of cerebrospinal fluid, central nervous system-derived antigens and immune cells; it acts as a local reservoir of myeloid cells and B cells for the meninges and the central nervous system." [PMID:30150661, PMID:34083447, PMID:35301477, PMID:37996526]
+comment: Distinguished from other bone marrow sites (for example sternal, femoral, tibial or vertebral marrow) by its direct osseous connection to the dura mater. Reported to contain lymphoid structures with germinal-centre-like features that respond to central nervous system-derived antigens (doi:10.1038/s41586-026-10951-4).
+synonym: "cranial bone marrow" RELATED []
+synonym: "skull bone marrow" EXACT []
+synonym: "skull BM" RELATED OMO:0003000 []
+intersection_of: UBERON:0002371 ! bone marrow
+intersection_of: part_of UBERON:0003129 ! skull
+created_by: ai4c-agent
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+property_value: dcterms-date "2026-08-20T04:59:35Z" xsd:dateTime
+
+[Term]
+id: UBERON:9900002
+name: bone marrow of calvaria
+def: "A bone marrow of skull that is located within the diploic spaces of the calvaria (skull vault). It is the principal haematopoietic compartment of the mammalian skull and is connected to the dura mater by transcalvarial channels; its immune composition differs between anterior (frontal, parietal) and posterior (interparietal, occipital) territories." [PMID:35301477, PMID:41389063]
+comment: In the mouse, lymphoid clusters containing follicular helper-like T cells, B cells and follicular dendritic cells are enriched in the marrow of the occipital and interparietal regions and are sparse in the frontal and parietal regions (doi:10.1038/s41586-026-10951-4).
+synonym: "calvarial bone marrow" EXACT []
+synonym: "calvarial marrow" EXACT []
+synonym: "skull cap bone marrow" RELATED []
+intersection_of: UBERON:9900001 ! bone marrow of skull
+intersection_of: part_of UBERON:0004339 ! vault of skull
+created_by: ai4c-agent
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+property_value: dcterms-date "2026-08-20T04:59:35Z" xsd:dateTime
+
 [Typedef]
 id: aboral_to
 name: aboral to
