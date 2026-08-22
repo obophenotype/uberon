@@ -225244,6 +225244,70 @@ is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
+[Term]
+id: UBERON:9900101
+name: diploe
+def: "The layer of trabecular bone tissue that lies between the inner and outer tables of compact bone of the flat bones of the cranial vault, and whose intertrabecular spaces are occupied by bone marrow." [FMA:76630, Wikipedia:Diploe]
+comment: The diploe is the skeletal compartment that houses the bone marrow of the calvaria. It is traversed by diploic veins and by microscopic channels that connect this marrow to the dura mater.
+synonym: "diploe of skull" EXACT []
+synonym: "diploic bone" RELATED []
+synonym: "diploë" EXACT []
+xref: FMA:76630
+xref: Wikipedia:Diploe
+intersection_of: UBERON:0002483 ! trabecular bone tissue
+intersection_of: part_of UBERON:0004339 ! vault of skull
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+property_value: dcterms-date "2026-08-22T01:31:37Z" xsd:dateTime
+created_by: ai4c-agent
+
+[Term]
+id: UBERON:9900102
+name: bone marrow of cranium
+def: "Bone marrow that is part of a cranium. In mammals this marrow remains haematopoietically active throughout life and communicates directly with the dura mater through channels crossing the inner table of the skull, making it a local source of myeloid and lymphoid cells for the meninges and the central nervous system." [PMID:37562402, PMID:39537918]
+comment: In the neuroimmunology literature this compartment is usually called 'skull bone marrow' (sBM) or 'cranial bone marrow'. Note that most experimental and imaging work concerns the subset located in the cranial vault, represented here by 'bone marrow of calvaria'. Compared with marrow of the long bones, cranial marrow has a distinct transcriptomic and proteomic profile, expands rather than involutes with age, and is relatively protected from age-associated adipogenesis and vascular rarefaction.
+synonym: "cranial bone marrow" EXACT []
+synonym: "sBM" RELATED OMO:0003000 []
+synonym: "skull bone marrow" RELATED []
+intersection_of: UBERON:0002371 ! bone marrow
+intersection_of: part_of UBERON:0003128 ! cranium
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+property_value: dcterms-date "2026-08-22T01:31:37Z" xsd:dateTime
+created_by: ai4c-agent
+
+[Term]
+id: UBERON:9900103
+name: bone marrow of calvaria
+def: "Bone marrow that is part of the vault of the skull, occupying the intertrabecular spaces of the diploe. It supplies myeloid and B lymphoid cells to the adjacent meninges through skull-meninges connections, and is exposed to cerebrospinal fluid that reaches it through the same channels." [PMID:30150661, PMID:34083450, PMID:35501382, PMID:39537918]
+comment: Also the site of skull bone marrow lymphoid structures with germinal-centre-like organisation that mount antigen-specific responses to central nervous system antigens [PMID:42618784].
+synonym: "calvarial bone marrow" EXACT []
+synonym: "diploic bone marrow" EXACT []
+synonym: "diploic marrow" EXACT []
+synonym: "skull bone marrow" RELATED []
+intersection_of: UBERON:0002371 ! bone marrow
+intersection_of: part_of UBERON:0004339 ! vault of skull
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+relationship: located_in UBERON:9900101 ! diploe
+property_value: dcterms-date "2026-08-22T01:31:37Z" xsd:dateTime
+created_by: ai4c-agent
+
+[Term]
+id: UBERON:9900104
+name: skull-meninges connection
+def: "A microscopic channel that traverses the inner table of the cranial vault and directly connects the bone marrow of the calvaria with the dura mater. Skull-meninges connections carry blood vessels, provide a route for migration of immune cells from the calvarial marrow into the meninges, and allow cerebrospinal fluid to reach the marrow." [PMID:30150661, PMID:35301477, PMID:35501382, PMID:37562402]
+comment: First described in mouse and subsequently demonstrated in human calvaria by three-dimensional imaging of cleared skull specimens, where they are distinguishable from diploic veins. Their calibre is dynamically regulated by bone remodelling: osteoclast inhibition narrows them and reduces meningeal immune infiltration, whereas increased remodelling widens them [PMID:41468886].
+synonym: "bone marrow-dura mater channel" RELATED []
+synonym: "calvarial channel" RELATED []
+synonym: "skull channel" RELATED []
+synonym: "SMC" RELATED OMO:0003000 []
+is_a: UBERON:0004111 ! anatomical conduit
+relationship: conduit_for UBERON:0001981 ! blood vessel
+relationship: connects UBERON:0002363 ! dura mater
+relationship: connects UBERON:9900103 ! bone marrow of calvaria
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+relationship: part_of UBERON:0004339 ! vault of skull
+property_value: dcterms-date "2026-08-22T01:31:37Z" xsd:dateTime
+created_by: ai4c-agent
+
 [Typedef]
 id: aboral_to
 name: aboral to
