@@ -61,7 +61,7 @@ from Rathke's pouch in tetrapods, we would say:
 
 Note that we do not need to taxonomically scope the target class.
 
-## Examplar Class
+## Exemplar Class
 
 See [thymus primordium](http://purl.obolibrary.org/obo/UBERON_0005562)
 as an example (note: GCIs may not be visible in OntoBee).

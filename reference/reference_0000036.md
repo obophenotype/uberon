@@ -54,7 +54,7 @@ of terms, as we have both 'gastrulation' (GO) and 'gastrula stage'
 ## Relationship types
 
 We use a variety of relationship types for connecting stages to
-eachother, and for connecting stages to structures. These relations
+each other, and for connecting stages to structures. These relations
 are based on work by Fabian Neuhaus and David Osumi-Sutherland and
 will be described in more detail in a subsequent publication. A brief
 overview is provided here.
@@ -118,7 +118,7 @@ In order of preferences, stage ontologies should:
  * use identifiers that are conformant to OBO guidelines
  * isa-complete
  * uses isa vs part_of in the correct way
- * be openly released at a reasonable frequence, and be resposibe to reasonable requests
+ * be openly released at a reasonable frequency, and be resposibe to reasonable requests
  * uses intermediate subdivisions where appropriate (ie isn't a flat list)
  * uses preceded_by relationships to create a temporal ordering - this should be a total order on the leaf nodes
  * use standard naming conventions

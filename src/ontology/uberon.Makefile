@@ -1643,7 +1643,7 @@ docs/releases.md: uberon-odk.yaml
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
 
-### Removing uberon_2 contraints
+### Removing uberon_2 constraints
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
 	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru convert -f obo -o $(SRC)

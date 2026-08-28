@@ -57,7 +57,7 @@ Note that some subdivisions may simultaneously be considered organs
 and tube subdivisions.
 
 Note that the the same 4 terms may also be used in non-chordates for
-analagous structures. We tend to reserve these labels for vertebrates,
+analogous structures. We tend to reserve these labels for vertebrates,
 and use functional grouping classes such as `food storage organ`.
 
 There are variations and subdivisions of this scheme in vertebrates;
