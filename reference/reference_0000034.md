@@ -163,7 +163,7 @@ the genitourinary system. In vertebrates with a cloaca, we consider
 the rectum to be the terminal part of the intestine, emptying into the
 cloacal chamber.
 
-Note that in vertebrates the anus is considere to be the opening at
+Note that in vertebrates the anus is considered to be the opening at
 the end of the rectum. If the DT is considered to extend past the
 rectum and include the cloaca and the cloacal opening, then the anus
 is no longer the end of the DT. For simplicity we may consider the DT
