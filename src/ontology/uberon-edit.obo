@@ -225277,6 +225277,51 @@ is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
+[Term]
+id: UBERON:8930000
+name: inner cortex of lens
+def: "A zone of the lens cortex that lies immediately external to the lens nucleus and internal to the outer cortex of lens. It is composed of older, fully denucleated lens fibre cells whose lamellae remain largely intact but which are more compacted than those of the outer cortex." [PMID:10550792, PMID:20171212]
+comment: Equivalent to the 'deep cortex of lens' (cortex profundus) in FMA. The boundary with the lens nucleus is a continuous gradient of fibre-cell age and compaction but is reliably visible as an optical discontinuity on Scheimpflug/slit-lamp imaging.
+subset: added_by_HRA
+subset: human_reference_atlas
+subset: pheno_slim
+synonym: "cortex profundus lentis" EXACT OMO:0003011 [FMA:280216]
+synonym: "deep cortex of lens" EXACT [FMA:280216]
+xref: FMA:280216
+is_a: UBERON:0034944 ! zone of organ
+relationship: composed_primarily_of CL:0011004 ! lens fiber cell
+relationship: dc-contributor https://orcid.org/0000-0002-2999-0103
+relationship: part_of UBERON:0000389 ! lens cortex
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: surrounded_by UBERON:8930001 ! outer cortex of lens
+relationship: surrounds UBERON:0000390 ! lens nucleus
+property_value: dcterms-date "2026-05-25T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3713" xsd:anyURI
+created_by: dragon-ai-agent
+
+[Term]
+id: UBERON:8930001
+name: outer cortex of lens
+def: "A zone of the lens cortex that lies immediately beneath the lens capsule and epithelium and surrounds the inner cortex of lens. It is composed of the most recently differentiated lens fibre cells, added from the lens epithelium at the equator; it contains the remodelling and transition zones in which fibre cells lose their nuclei." [PMID:10550792, PMID:19357350]
+comment: Equivalent to the 'superficial cortex of lens' (cortex superficialis) in FMA. The outer cortex is the site of ongoing lens fibre cell maturation, including the remodelling zone (RZ) and transition zone (TZ) described by Lim et al. 2009 (PMID:19357350).
+subset: added_by_HRA
+subset: human_reference_atlas
+subset: pheno_slim
+synonym: "cortex superficialis lentis" EXACT OMO:0003011 [FMA:280212]
+synonym: "superficial cortex of lens" EXACT [FMA:280212]
+xref: FMA:280212
+is_a: UBERON:0034944 ! zone of organ
+relationship: adjacent_to UBERON:0001804 ! capsule of lens
+relationship: adjacent_to UBERON:0005614 ! lens anterior epithelium
+relationship: composed_primarily_of CL:0011004 ! lens fiber cell
+relationship: dc-contributor https://orcid.org/0000-0002-2999-0103
+relationship: part_of UBERON:0000389 ! lens cortex
+relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
+relationship: surrounds UBERON:8930000 ! inner cortex of lens
+property_value: dcterms-date "2026-05-25T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3713" xsd:anyURI
+created_by: dragon-ai-agent
+
 [Typedef]
 id: aboral_to
 name: aboral to
