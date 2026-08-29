@@ -10369,7 +10369,7 @@ relationship: part_of UBERON:0002416 ! integumental system
 id: UBERON:0001002
 name: cuticle
 def: "Tough but flexible, non-mineral outer coverings of an organism, or parts of an organism, that provide protection. Cuticles are non-homologous, differing in their origin, structure and chemical composition[WP]." [http://sourceforge.net/tracker/?func=detail&aid=3348965&group_id=36855&atid=440764, Wikipedia:Cuticle]
-comment: EDITOR_NOTE TODO - check cuticle vs exoskeleton. Note that GO has a very generic definition of cuticle. See also arthropod-anatomy ontology. Note in ncit Cuticle is a plant part
+comment: This is a heterogeneous grouping class: cuticles in different clades are non-homologous, differing in their origin, structure and chemical composition. Previously this class carried an in_taxon Eumetazoa constraint, but this was removed because the constraint caused downstream taxon constraint violations (e.g. for plant annotations to GO terms whose logical definitions reference this class - see https://github.com/obophenotype/uberon/issues/3694 and https://github.com/geneontology/go-ontology/issues/30555). Plant cuticle is represented separately in the Plant Ontology (PO). Clade-specific subclasses (e.g. chitin-based cuticle, nematode cuticle) carry their own taxon constraints and should be used in preference to this grouping class wherever possible.
 subset: grouping_class
 subset: non_informative
 subset: uberon_slim
@@ -10379,8 +10379,8 @@ xref: BTO:0001600
 xref: Wikipedia:Cuticle
 is_a: UBERON:0000476 ! acellular anatomical structure
 disjoint_from: UBERON:0004882 ! eponychium
-relationship: in_taxon NCBITaxon:6072 {source="Rieger - Evolution of the Cuticle in the Lower Eumetazoa"} ! Eumetazoa
 property_value: has_relational_adjective "cuticular" xsd:string
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3694" xsd:anyURI
 
 [Term]
 id: UBERON:0001003
