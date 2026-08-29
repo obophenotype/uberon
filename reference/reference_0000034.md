@@ -57,7 +57,7 @@ Note that some subdivisions may simultaneously be considered organs
 and tube subdivisions.
 
 Note that the the same 4 terms may also be used in non-chordates for
-analagous structures. We tend to reserve these labels for vertebrates,
+analogous structures. We tend to reserve these labels for vertebrates,
 and use functional grouping classes such as `food storage organ`.
 
 There are variations and subdivisions of this scheme in vertebrates;
@@ -163,7 +163,7 @@ the genitourinary system. In vertebrates with a cloaca, we consider
 the rectum to be the terminal part of the intestine, emptying into the
 cloacal chamber.
 
-Note that in vertebrates the anus is considere to be the opening at
+Note that in vertebrates the anus is considered to be the opening at
 the end of the rectum. If the DT is considered to extend past the
 rectum and include the cloaca and the cloacal opening, then the anus
 is no longer the end of the DT. For simplicity we may consider the DT

@@ -1128,7 +1128,7 @@ validate-all-tsv: $(ALL_TSV_FILES)
 # ----------------------------------------
 
 # This is an experimental target people that want to use ODK Extended Prefix Map (EPM)
-# can use to pull the (currently inofficial) OBO EPM into the workspace.
+# can use to pull the (currently unofficial) OBO EPM into the workspace.
 # Users are instructed to refer to the EPM only through the variable $(EXTENDED_PREFIX_MAP) as 
 # its location might change in a feature version of ODK.
 $(EXTENDED_PREFIX_MAP): /tools/obo.epm.json
