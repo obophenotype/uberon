@@ -32619,7 +32619,7 @@ xref: MESH:D012463
 xref: NCIT:C13275
 xref: UMLS:C0036087 {source="ncithesaurus:Saliva"}
 xref: Wikipedia:Saliva
-is_a: UBERON:0000456 ! secretion of exocrine gland
+is_a: UBERON:9900001 ! oral fluid
 relationship: capable_of_part_of GO:0007586 ! digestion
 property_value: has_relational_adjective "salivary" xsd:string
 property_value: taxon_notes "We classify a wide variety of not necessarily homologous fluids here. In humans, the saliva is a turbid and slightly viscous fluid, generally of an alkaline reaction, and is secreted by the parotid, submaxillary, and sublingual glands. In the mouth the saliva is mixed with the secretion from the buccal glands. In man and many animals, saliva is an important digestive fluid on account of the presence of the peculiar enzyme, ptyalin" xsd:string {source="GO"}
@@ -225276,6 +225276,17 @@ def: "A region of squamous epithelium found in the tracheobronchial tree - conti
 is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
+
+[Term]
+id: UBERON:9900001
+name: oral fluid
+def: "The liquid present in the oral cavity, consisting of a mixture of saliva and oral mucosal transudate." [DOI:10.1056/NEJMc2007800, https://vetmed.iastate.edu/vdpam/research/disease-topics/swine/oral-fluids]
+is_a: UBERON:0000456 ! secretion of exocrine gland
+relationship: dc-contributor https://orcid.org/0000-0002-9578-0788
+relationship: located_in UBERON:0000167 ! oral cavity
+property_value: dcterms-date "2026-04-24T22:47:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/1603" xsd:anyURI
+created_by: dragon-ai-agent
 
 [Typedef]
 id: aboral_to
