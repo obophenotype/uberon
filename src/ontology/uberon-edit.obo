@@ -1429,6 +1429,7 @@ intersection_of: UBERON:0000045 ! ganglion
 intersection_of: extends_fibers_into UBERON:0001780 ! spinal nerve
 intersection_of: extends_fibers_into UBERON:0002261 ! dorsal root of spinal cord
 relationship: develops_from UBERON:0003083 {source="DOI:10.1101/gr.157586.113", source="ZFA", source="https://github.com/obophenotype/uberon/wiki/The-neural-crest"} ! trunk neural crest
+relationship: has_part CL:1001451 {source="PMID:25420068"} ! sensory neuron of dorsal root ganglion
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/7/71/DRG_Chicken_e7.jpg" xsd:anyURI
 property_value: development_notes "The sensory ganglia of spinal nerves arise only from the neural crest, whereas many sensory ganglia of the 'dorsal' cranial nerves arise from epibranchial placodes as well as the neural crest[DOI:10.1093/icb/icn065]" xsd:string
 property_value: external_definition "Trunk ganglion which is located adjacent to the spine on a dorsal root and contains the cell bodies of afferent sensory nerves.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000200", ontology="TAO", source="ZFIN:curator"}
@@ -2153,6 +2154,9 @@ is_a: UBERON:0000064 ! organ part
 disjoint_from: UBERON:0001047 ! neural glomerulus
 relationship: dc-contributor https://orcid.org/0000-0001-9114-8737 ! Melissa Haendel
 relationship: develops_from UBERON:0005749 ! glomerular tuft
+relationship: has_part CL:0000653 {source="PMID:25918223"} ! podocyte
+relationship: has_part CL:0002188 {source="PMID:25918223"} ! glomerular endothelial cell
+relationship: has_part CL:1000742 {source="PMID:25918223"}
 relationship: part_of UBERON:0001229 {source="FMA", source="MA"} ! renal corpuscle
 relationship: surrounded_by UBERON:0001230 ! glomerular capsule
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/3/30/Gray1130.svg" xsd:anyURI
@@ -5793,6 +5797,7 @@ xref: VHOG:0001183
 xref: Wikipedia:Spiral_ganglion
 intersection_of: UBERON:0001714 ! cranial ganglion
 intersection_of: extends_fibers_into UBERON:0004727 ! cochlear nerve
+relationship: has_part CL:0011113 {source="PMID:30209249"} ! spiral ganglion neuron
 relationship: located_in UBERON:0006723 {notes="cell bodies", source="BTO-modified", source="Wikipedia"} ! cochlear modiolus
 relationship: part_of UBERON:0002827 ! vestibulocochlear ganglion
 relationship: part_of UBERON:0016490 ! auditory system
@@ -29204,6 +29209,7 @@ xref: UMLS:C0152400 {source="BIRNLEX:2650", source="ncithesaurus:Nucleus_Ambiguu
 xref: UMLS:C1281211 {source="BIRNLEX:2650"}
 xref: Wikipedia:Nucleus_ambiguus
 is_a: UBERON:0011775 {source="Wikipedia"} ! vagus nerve nucleus
+relationship: has_part CL:0000100 {source="PMID:3667964"} ! motor neuron
 relationship: immediate_transformation_of UBERON:0010126 {evidence="definitional"} ! future nucleus ambiguus
 relationship: mutually_spatially_disjoint_with UBERON:0002127 {source="ABA"} ! inferior olivary complex
 relationship: mutually_spatially_disjoint_with UBERON:0002154 {source="ABA"} ! lateral reticular nucleus
@@ -31360,6 +31366,7 @@ is_a: UBERON:0001781 ! layer of retina
 relationship: adjacent_to UBERON:0001795 ! inner plexiform layer of retina
 relationship: contributes_to_morphology_of UBERON:0003902 ! retinal neural layer
 relationship: has_part CL:0000561 ! amacrine cell
+relationship: has_part CL:0000636 {source="PMID:16839797"} ! Mueller cell
 relationship: has_part CL:0000745 ! retina horizontal cell
 relationship: has_part CL:0000748 ! retinal bipolar neuron
 relationship: part_of UBERON:0003902 ! retinal neural layer
@@ -31403,6 +31410,7 @@ is_a: UBERON:0001781 {source="FMA"} ! layer of retina
 relationship: adjacent_to UBERON:0001793 ! nerve fiber layer of retina
 relationship: composed_primarily_of CL:0000740 ! retinal ganglion cell
 relationship: contributes_to_morphology_of UBERON:0003902 ! retinal neural layer
+relationship: has_part CL:0000740 {source="PMID:23083731"} ! retinal ganglion cell
 relationship: part_of UBERON:0003902 {source="FMA"} ! retinal neural layer
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png" xsd:anyURI
 property_value: external_definition "a layer of the retina that consists of retinal ganglion cells[WP]. innermost nuclear layer of the retina, which contains neurons that project axons through the optic nerve to the brain[Wikipedia:Ganglion_cell_layer]." xsd:string {source="Wikipedia:Ganglion_cell_layer"}
@@ -33964,6 +33972,7 @@ xref: Wikipedia:Nucleus_accumbens
 is_a: UBERON:0002308 ! nucleus of brain
 disjoint_from: UBERON:0010010 {source="NIFSTD"} ! basal nucleus of telencephalon
 relationship: contributes_to_morphology_of UBERON:0005403 ! ventral striatum
+relationship: has_part CL:1001474 {source="PMID:21469956"}
 relationship: mutually_spatially_disjoint_with UBERON:0001883 {source="ABA"} ! olfactory tubercle
 relationship: part_of UBERON:0000349 {source="FMA", source="GO"} ! limbic system
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
@@ -34840,7 +34849,9 @@ xref: ZFA:0005127
 is_a: UBERON:0001277 ! intestinal epithelium
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002108 ! small intestine
+relationship: has_part CL:0000160 {source="PMID:24326621"} ! goblet cell
 relationship: has_part CL:0000164 {source="FMA"} ! enteroendocrine cell
+relationship: has_part CL:0000584 {source="PMID:24326621"}
 relationship: part_of UBERON:0001204 ! mucosa of small intestine
 property_value: external_definition "Intestinal epithelium which lines the lumen of the mid intestine.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0005127", ontology="TAO", source="ZFIN:curator"}
 
@@ -44830,6 +44841,10 @@ relationship: capable_of GO:0050910 ! detection of mechanical stimulus involved 
 relationship: dubious_for_taxon NCBITaxon:8292 ! Amphibia
 relationship: dubious_for_taxon NCBITaxon:8457 ! Sauropsida
 relationship: has_part CL:0000202 ! auditory hair cell
+relationship: has_part CL:0000589 {source="PMID:28915323"}
+relationship: has_part CL:0000601 {source="PMID:28915323"}
+relationship: has_part CL:0002163 {source="PMID:23545368"}
+relationship: has_part CL:0002164 {source="PMID:23545368"}
 relationship: in_taxon NCBITaxon:32523 {notes="https://github.com/obophenotype/uberon/issues/387"} ! Tetrapoda
 relationship: located_in UBERON:0002295 {source="Wikipedia:Scala_media"} ! scala media
 relationship: part_of UBERON:0001855 {source="MA"} ! cochlear duct of membranous labyrinth
@@ -45852,6 +45867,9 @@ disjoint_from: UBERON:0010010 {source="NIFSTD"} ! basal nucleus of telencephalon
 relationship: capable_of GO:0007608 ! sensory perception of smell
 relationship: contributes_to_morphology_of UBERON:0005366 ! olfactory lobe
 relationship: has_part CL:0000626 {source="ZFA"} ! olfactory granule cell
+relationship: has_part CL:1001435 {source="PMID:25232305"}
+relationship: has_part CL:1001502 {source="PMID:25232305"} ! mitral cell
+relationship: has_part CL:1001503 {source="PMID:25232305"} ! olfactory bulb tufted cell
 relationship: in_lateral_side_of UBERON:0001893 {source="ISBN:0471888893"} ! telencephalon
 relationship: mutually_spatially_disjoint_with UBERON:0001950 {source="ABA"} ! neocortex
 relationship: mutually_spatially_disjoint_with UBERON:0002421 {source="ABA"} ! hippocampal formation
@@ -47122,6 +47140,7 @@ intersection_of: UBERON:0002305 ! layer of hippocampus
 intersection_of: deep_to UBERON:0007637 ! hippocampus stratum lucidum
 intersection_of: immediately_superficial_to UBERON:0005371 ! hippocampus stratum oriens
 relationship: composed_primarily_of CL:0000598 ! pyramidal neuron
+relationship: has_part CL:1001571 {source="PMID:2687721"} ! hippocampal pyramidal neuron
 
 [Term]
 id: UBERON:0002314
@@ -50884,6 +50903,7 @@ xref: UMLS:C0162512 {source="BIRNLEX:1672"}
 xref: Wikipedia:Striatum
 is_a: UBERON:0002020 ! gray matter
 relationship: contributes_to_morphology_of UBERON:0010011 ! collection of basal ganglia
+relationship: has_part CL:1001474 {source="PMID:21469956"}
 relationship: mutually_spatially_disjoint_with UBERON:0006514 {source="ABA"} ! pallidum
 relationship: part_of UBERON:0000204 {source="GO"} ! ventral part of telencephalon
 relationship: part_of UBERON:0000369 {source="BTO"} ! corpus striatum
@@ -82900,6 +82920,7 @@ xref: EMAPA:35611
 xref: MA:0000973
 xref: NLXANAT:100201
 is_a: UBERON:0004001 ! olfactory bulb layer
+relationship: has_part CL:1001502 {source="PMID:25232305"} ! mitral cell
 property_value: external_ontology_notes "NIF divides this into main and accessory" xsd:string {external_ontology="NIF"}
 
 [Term]
@@ -89827,6 +89848,7 @@ intersection_of: UBERON:0000483 ! epithelium
 intersection_of: composed_primarily_of CL:0000065 ! ependymal cell
 relationship: contributes_to_morphology_of UBERON:0001016 ! nervous system
 relationship: develops_from UBERON:0004060 ! neural tube ventricular layer
+relationship: has_part CL:0000065 {source="PMID:20024659"} ! ependymal cell
 relationship: mutually_spatially_disjoint_with GO:0005604 ! basement membrane
 relationship: part_of UBERON:0005358 ! ventricle of nervous system
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/b6/Gray667.png" xsd:anyURI
@@ -100400,6 +100422,7 @@ xref: PBA:294021800
 xref: UMLS:C1517039 {source="ncithesaurus:External_Granular_Layer"}
 is_a: UBERON:0002301 ! layer of neocortex
 relationship: develops_from UBERON:0005343 {source="BRAINSPAN"} ! cortical plate
+relationship: has_part CL:0000598 {source="PMID:25622573"} ! pyramidal neuron
 relationship: immediately_deep_to UBERON:0005390 ! cortical layer I
 
 [Term]
@@ -100535,6 +100558,7 @@ xref: neuronames:2451
 xref: NLXANAT:090812
 xref: PBA:294021896
 is_a: UBERON:0002301 ! layer of neocortex
+relationship: has_part CL:0000598 {source="PMID:25622573"} ! pyramidal neuron
 relationship: immediately_deep_to UBERON:0005394 ! cortical layer V
 
 [Term]
@@ -157970,6 +157994,8 @@ name: base of crypt of Lieberkuhn of small intestine
 def: "The basal portion (further from lumen) of a intestinal crypt that is located in the small intestine." [http://orcid.org/0000-0002-6601-2165]
 intersection_of: UBERON:0013739 ! base of crypt of Lieberkuhn
 intersection_of: part_of UBERON:0002108 ! small intestine
+relationship: has_part CL:0000510 {source="PMID:23398152"}
+relationship: has_part CL:0009017 {source="PMID:24326621"} ! intestinal crypt stem cell of small intestine
 
 [Term]
 id: UBERON:0013744
@@ -160196,6 +160222,7 @@ xref: neuronames:2940
 xref: PBA:10060
 intersection_of: UBERON:0035786 ! layer of CA1 field
 intersection_of: part_of UBERON:0002313 ! hippocampus pyramidal layer
+relationship: has_part CL:1001571 {source="PMID:2687721"} ! hippocampal pyramidal neuron
 relationship: immediately_deep_to UBERON:0005372 {source="NN-text"} ! hippocampus stratum radiatum
 
 [Term]
@@ -160215,6 +160242,7 @@ xref: neuronames:2945
 xref: PBA:10065
 intersection_of: UBERON:0035787 ! layer of CA2 field
 intersection_of: part_of UBERON:0002313 ! hippocampus pyramidal layer
+relationship: has_part CL:1001571 {source="PMID:2687721"} ! hippocampal pyramidal neuron
 relationship: immediately_deep_to UBERON:0005372 {source="NN-text"} ! hippocampus stratum radiatum
 
 [Term]
@@ -160234,6 +160262,7 @@ xref: neuronames:2950
 xref: PBA:10070
 intersection_of: UBERON:0035788 ! layer of CA3 field
 intersection_of: part_of UBERON:0002313 ! hippocampus pyramidal layer
+relationship: has_part CL:1001571 {source="PMID:2687721"} ! hippocampal pyramidal neuron
 relationship: immediately_deep_to UBERON:0007637 {source="NN-text"} ! hippocampus stratum lucidum
 
 [Term]
@@ -181198,6 +181227,7 @@ synonym: "primary lymph sac" RELATED []
 xref: NCIT:C34262
 xref: UMLS:C1514424
 is_a: UBERON:0007499 ! epithelial sac
+relationship: has_part CL:0002138 {source="PMID:22859612"} ! endothelial cell of lymphatic vessel
 relationship: part_of UBERON:0000922 ! embryo
 relationship: part_of UBERON:0006558 {source="VHOG"} ! lymphatic part of lymphoid system
 
