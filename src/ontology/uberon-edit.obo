@@ -225284,6 +225284,41 @@ is_a: UBERON:0006914 ! squamous epithelium
 relationship: has_part CL:4030023 ! respiratory tract hillock cell
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
+[Term]
+id: UBERON:9900001
+name: anterior neural ectoderm
+def: "The rostral subdivision of the neuroectoderm, which arises during gastrulation and is marked by co-expression of SOX2 and OTX2 in the absence of GBX2. It is fated to give rise to the forebrain and midbrain, and is distinguished from the posterior neural ectoderm, which gives rise to the hindbrain." [PMID:42760324]
+comment: In the mouse embryo this domain is detectable by embryonic day 7.5 as the Sox2+ Otx2+ Gbx2- population of the neural ectoderm, positioned where classical fate maps place the prospective forebrain and midbrain. Sparse Sox2-CreER Confetti labelling at E7.5 yields clonal clusters that are almost exclusively confined either to the forebrain/midbrain or to the hindbrain, and human pluripotent stem cell-derived anterior neural ectoderm fails to acquire hindbrain identity when challenged with hindbrain-inducing signals in vitro, indicating that the two domains are already lineage restricted (PMID:42760324).
+synonym: "aNE" RELATED OMO:0003000 [PMID:42760324]
+synonym: "anterior neuroectoderm" EXACT [PMID:42760324]
+is_a: UBERON:0000479 ! tissue
+relationship: anterior_to UBERON:9900002 ! posterior neural ectoderm
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+relationship: has_potential_to_develop_into UBERON:0001890 ! forebrain
+relationship: has_potential_to_develop_into UBERON:0001891 ! midbrain
+relationship: part_of UBERON:0002346 ! neuroectoderm
+property_value: dcterms-date "2026-09-20T04:00:00Z" xsd:dateTime
+property_value: editor_note "Genus is 'tissue' rather than 'presumptive structure' (UBERON:0006598) deliberately. Classifying this class as a presumptive structure makes it a subclass of 'future forebrain' (UBERON:0006240), 'presumptive midbrain' (UBERON:0009616) and 'presumptive hindbrain' (UBERON:0007277), whose equivalence axioms are 'presumptive structure and has_potential_to_develop_into some <brain region>'. Those classes assert develops_from the anterior or posterior neural tube, so the entailment would place this gastrulation-stage domain downstream of the neural tube, which is wrong. The has_potential_to_develop_into relations below therefore record the fate without the presumptive-structure genus." xsd:string
+property_value: homology_notes "Mutually exclusive Otx+ Sox2+ and Gbx+ Sox2+ ectodermal domains have been reported in the gastrulating embryos of mouse, macaque, chicken and zebrafish, and mutually exclusive otx+ versus gbx+ ectoderm arises during blastulation and gastrulation in the hemichordate Saccoglossus kowalevskii, suggesting that this subdivision may be conserved across deuterostomes." xsd:string {source="PMID:42760324"}
+property_value: terminology_notes "This class denotes the gastrulation-stage subdivision of the neural ectoderm, which precedes and should not be conflated with the neural plate and neural tube stage classes 'pre-chordal neural plate' (UBERON:0003056), 'future forebrain' (UBERON:0006240) and 'presumptive midbrain' (UBERON:0009616). PMID:42760324 defines anterior and posterior neural ectoderm as neural ectoderm arising during gastrulation, before the onset of Sox1 and Pax6 expression, and explicitly distinguishes them from the forebrain, midbrain and hindbrain neural progenitors that emerge afterwards." xsd:string
+
+[Term]
+id: UBERON:9900002
+name: posterior neural ectoderm
+def: "The caudal subdivision of the neuroectoderm, which arises during gastrulation and is marked by co-expression of SOX2 and GBX2 with little or no OTX2. It is fated to give rise to the hindbrain, and is distinguished both from the anterior neural ectoderm, which gives rise to the forebrain and midbrain, and from the BRACHYURY+ CDX2+ neuromesodermal progenitors that give rise to the spinal cord." [PMID:42760324]
+comment: In the mouse embryo this domain is detectable by embryonic day 7.5 as the Sox2+ Gbx2+ population of the neural ectoderm; it also expresses Hoxa1 and Hoxb1, lies adjacent to the Aldh1a2/Raldh2 retinoic acid synthesis domain, and lies outside the posterior WNT-responsive domain that contains neuromesodermal and spinal cord progenitors. Acute 4-hydroxytamoxifen labelling of Gbx2-CreER; Rosa26-tdTomato embryos at E7.0-E7.5 gives progeny restricted to the hindbrain from E8.5 through to E18.5, with essentially no contribution to the forebrain or midbrain (PMID:42760324).
+synonym: "pNE" RELATED OMO:0003000 [PMID:42760324]
+synonym: "posterior neuroectoderm" EXACT [PMID:42760324]
+is_a: UBERON:0000479 ! tissue
+relationship: dc-contributor https://orcid.org/0000-0002-6601-2165 ! Christopher J. Mungall
+relationship: has_potential_to_develop_into UBERON:0002028 ! hindbrain
+relationship: part_of UBERON:0002346 ! neuroectoderm
+relationship: posterior_to UBERON:9900001 ! anterior neural ectoderm
+property_value: dcterms-date "2026-09-20T04:00:00Z" xsd:dateTime
+property_value: editor_note "Genus is 'tissue' rather than 'presumptive structure' (UBERON:0006598) deliberately. Classifying this class as a presumptive structure makes it a subclass of 'future forebrain' (UBERON:0006240), 'presumptive midbrain' (UBERON:0009616) and 'presumptive hindbrain' (UBERON:0007277), whose equivalence axioms are 'presumptive structure and has_potential_to_develop_into some <brain region>'. Those classes assert develops_from the anterior or posterior neural tube, so the entailment would place this gastrulation-stage domain downstream of the neural tube, which is wrong. The has_potential_to_develop_into relations below therefore record the fate without the presumptive-structure genus." xsd:string
+property_value: homology_notes "Mutually exclusive Otx+ Sox2+ and Gbx+ Sox2+ ectodermal domains have been reported in the gastrulating embryos of mouse, macaque, chicken and zebrafish, and mutually exclusive otx+ versus gbx+ ectoderm arises during blastulation and gastrulation in the hemichordate Saccoglossus kowalevskii, suggesting that this subdivision may be conserved across deuterostomes." xsd:string {source="PMID:42760324"}
+property_value: terminology_notes "This class denotes the gastrulation-stage subdivision of the neural ectoderm, which precedes and should not be conflated with 'chordal neural plate' (UBERON:0003057) or 'presumptive hindbrain' (UBERON:0007277). Unlike 'chordal neural plate', which covers the whole neural plate posterior to the mid-hindbrain boundary, posterior neural ectoderm as described in PMID:42760324 is hindbrain-restricted: the spinal cord derives from a separate WNT-dependent neuromesodermal progenitor population." xsd:string
+
 [Typedef]
 id: aboral_to
 name: aboral to
