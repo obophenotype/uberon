@@ -892,6 +892,7 @@ subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
 		                              --taxon $(TAXON_ID_$*) \
 		                              --strategy $(TAXON_SUBSET_STRATEGY) \
 		                              --reasoner ELK \
+		                              --prune-taxa \
 		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
 		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
 		                              --subset-name uberon:$*_subset \
@@ -1200,6 +1201,8 @@ composite-diff: reports/release-diff-composite.txt
 # Saves someone the hassle of typing 'make composite-metazoan.obo composite-vertebrate.obo'
 composites: composite-metazoan.obo composite-vertebrate.obo
 
+# So you can run `make biomappings`
+biomappings: $(MAPPINGDIR)/biomappings.sssom.tsv
 
 # ----------------------------------------
 # SSSOM MAPPINGS
@@ -1265,13 +1268,9 @@ $(MAPPINGDIR)/sslso.sssom.tsv: .FORCE
 	wget "https://github.com/obophenotype/developmental-stage-ontologies/releases/latest/download/life-stages.sssom.tsv" -O $@
 
 # Biomappings mapping set. Nominally a simple mirror, but we need a
-# custom rule for two reasons:
-# - the set is provided with the metadata in a separate file, which the
-#   ODK mirroring code does not support;
-# - we want to filter out anything anything that has nothing to do with
-#   Uberon to keep the file to a reasonable size.
-$(MAPPINGDIR)/biomappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
-				     $(TMPDIR)/biomappings.sssom.yml
+# custom rule because we want to filter out anything anything that has nothing
+# to do with Uberon to keep the file to a reasonable size.
+$(MAPPINGDIR)/biomappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv
 	sssom-cli --input $< --prefix 'UBERON=http://purl.obolibrary.org/obo/UBERON_' \
 		  --rule '!(subject==UBERON:* || object==UBERON:*) -> stop()' \
 		  --rule 'object==UBERON:* -> invert()' \
@@ -1281,9 +1280,6 @@ $(MAPPINGDIR)/biomappings.sssom.tsv: $(TMPDIR)/biomappings.sssom.tsv \
 
 $(TMPDIR)/biomappings.sssom.tsv:
 	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.tsv
-
-$(TMPDIR)/biomappings.sssom.yml:
-	wget -O $@ https://w3id.org/biopragmatics/biomappings/sssom/biomappings.sssom.yml
 
 endif
 
@@ -1369,6 +1365,26 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		--template $(TEMPLATEDIR)/hra-skeleton.template.tsv \
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
+
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube.owl: $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube.owl
+
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
 
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
@@ -1627,7 +1643,7 @@ docs/releases.md: uberon-odk.yaml
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
 
-### Removing uberon_2 contraints
+### Removing uberon_2 constraints
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
 	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru convert -f obo -o $(SRC)

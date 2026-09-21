@@ -137,7 +137,7 @@ robot_java_args: '-Xmx20G'
 robot_plugins:
   plugins:
     - name: uberon
-      mirror_from: https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.0/uberon.jar
+      mirror_from: https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.1/uberon.jar
 robot_report:
   release_reports: False
   fail_on: ERROR
@@ -178,5 +178,14 @@ components:
       use_template: true
       templates:
         - hra-skeleton.template.tsv
+    - filename: hra_fallopian_tube_groups.owl
+      use_template: true
+      templates:
+        - hra-fallopian-tube-groups.template.tsv
+    - filename: hra_fallopian_tube.owl
+      use_template: true
+      templates:
+        - hra-fallopian-tube.template.tsv
+
 workflows:
  - docs

@@ -35,8 +35,8 @@ We consider the autopod as consisting of 3 segments, divided according to the fo
 
 Note that in this document and in the ontology we currently use the unambiguous skeletal-prefixed terms, and phenoscape-preferred terms in parentheses.
 
-Hoever, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
-We accomodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
+However, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
+We accommodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
 
 This gives us a second hierarchy (also part-wise JEPD):
 

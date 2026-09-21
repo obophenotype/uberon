@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fma.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2026-04-01/bridge/uberon-bridge-to-fma.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2026-06-19/bridge/uberon-bridge-to-fma.owl"/>
         <terms:contributor>Onard Mejino</terms:contributor>
         <terms:contributor>Terry Hayamizu</terms:contributor>
         <terms:creator>Uberon editors</terms:creator>
@@ -35743,6 +35743,12 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_4200172 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_4200172"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_7770011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_7770011"/>
     
 
 
@@ -105521,6 +105527,31 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000589>central retinal vein (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/sig/ont/fma/fma51800 -->
+
+    <owl:Class rdf:about="http://purl.org/sig/ont/fma/fma51800">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_7770011"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000589>episcleral vein (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -182470,7 +182501,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000589>neurectoderm (post-embryonic human)</obo:IAO_0000589>
+        <obo:IAO_0000589>neuroectoderm (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 

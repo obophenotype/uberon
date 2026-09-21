@@ -2,7 +2,7 @@
 
 This document is intended as a quick checklist that *existing* curators
 can follow to ensure that *new* curators are provided with the
-informations and the access that they need in order to start working
+information and the access that they need in order to start working
 with Uberon.
 
 1. Invite them to the [Anatomy and Cell
