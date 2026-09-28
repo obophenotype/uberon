@@ -121,7 +121,7 @@ The file can be edited in a text editor (the recommended text editor
 emacs plus Phil Lord's omn-mode.el, plus ubref-helper.el). Note that
 the author should be adept in manchester notation.
 
-The prefered route is to open the articles ontology in Protege,
+The preferred route is to open the articles ontology in Protege,
 navigating to the 'individuals by type' tab (insert image here).
 
 ![Screenshot](images/udoc-in-p4.png)
@@ -131,7 +131,7 @@ markdown format. Note that hashes should be used for headings rather
 than underlines.
 
 The format used is a variant called ontology markdown. Class labels
-can be written in backtics - the derived documentation will make PURL
+can be written in backticks - the derived documentation will make PURL
 links from these (*to be implemented*).
 
 In general each article type should follow a certain template (to be
