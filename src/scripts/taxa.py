@@ -4,7 +4,7 @@
 #
 # Uberon bridging and compositing processes require a bit of information
 # about the taxa that are involved. To make it easier to manage those
-# informations, they are centralised in the config/taxa.yaml file.
+# information, they are centralised in the config/taxa.yaml file.
 #
 # The main contents of the config/taxa.yaml file is a list of taxa,
 # where each taxon is represented by a structure that should look like
