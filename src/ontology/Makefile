@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                23f64e7364cdbc45a21eca4308775ac0cfcb2c8a0bbb48cd669fa5223ea38d73
+CONFIG_HASH=                b6ab6149955d341b1e3f78a878c5a076340b7c163e3684830c455581b991ad75
 
 
 # ----------------------------------------
@@ -59,7 +59,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/disjoint_union_over.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/vasculature_class.owl $(COMPONENTSDIR)/hra_depiction_3d_images.owl $(COMPONENTSDIR)/hra_skeleton.owl $(COMPONENTSDIR)/hra_capillary.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/disjoint_union_over.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/vasculature_class.owl $(COMPONENTSDIR)/hra_depiction_3d_images.owl $(COMPONENTSDIR)/hra_skeleton.owl $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl $(COMPONENTSDIR)/hra_fallopian_tube.owl $(COMPONENTSDIR)/hra_capillary.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -183,7 +183,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.0/uberon.jar
+	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.1/uberon.jar
 
 
 # ----------------------------------------
@@ -493,6 +493,8 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-vasculature_class.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_depiction_3d_images.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_skeleton.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_capillary.owl \
 		COMP=true IMP=false MIR=true PAT=true all_components
 
@@ -505,6 +507,8 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-vasculature_class.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_depiction_3d_images.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_skeleton.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_capillary.owl \
 		COMP=true IMP=false MIR=false PAT=true all_components
 
@@ -575,6 +579,18 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TM
 		 --template $(TEMPLATEDIR)/hra-skeleton.template.tsv \
 		 $(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
+
+$(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv $(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
+
+$(COMPONENTSDIR)/hra_fallopian_tube.owl: $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv $(TMPDIR)/stamp-component-hra_fallopian_tube.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube.owl
 
 $(COMPONENTSDIR)/hra_capillary.owl: $(TEMPLATEDIR)/hra-capillary.template.tsv $(TMPDIR)/stamp-component-hra_capillary.owl
 	$(ROBOT) template  \
@@ -1120,7 +1136,7 @@ validate-all-tsv: $(ALL_TSV_FILES)
 # ----------------------------------------
 
 # This is an experimental target people that want to use ODK Extended Prefix Map (EPM)
-# can use to pull the (currently inofficial) OBO EPM into the workspace.
+# can use to pull the (currently unofficial) OBO EPM into the workspace.
 # Users are instructed to refer to the EPM only through the variable $(EXTENDED_PREFIX_MAP) as 
 # its location might change in a feature version of ODK.
 $(EXTENDED_PREFIX_MAP): /tools/obo.epm.json
