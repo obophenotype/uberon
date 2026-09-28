@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                91414c1a5f963a19baa027e134f3e31fdf6ee4b115f70a6cdeec15180d073d89
+CONFIG_HASH=                d12abab42ccf603187deaa68c3c631ab20a1469ceffe0d5e4092d71c12b9dbf3
 
 
 # ----------------------------------------
@@ -183,7 +183,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.0/uberon.jar
+	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.1/uberon.jar
 
 
 # ----------------------------------------
@@ -1128,7 +1128,7 @@ validate-all-tsv: $(ALL_TSV_FILES)
 # ----------------------------------------
 
 # This is an experimental target people that want to use ODK Extended Prefix Map (EPM)
-# can use to pull the (currently inofficial) OBO EPM into the workspace.
+# can use to pull the (currently unofficial) OBO EPM into the workspace.
 # Users are instructed to refer to the EPM only through the variable $(EXTENDED_PREFIX_MAP) as 
 # its location might change in a feature version of ODK.
 $(EXTENDED_PREFIX_MAP): /tools/obo.epm.json
