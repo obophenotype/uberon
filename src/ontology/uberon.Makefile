@@ -1356,6 +1356,13 @@ endif
 # COMPONENTS
 # ----------------------------------------
 
+# The template-component overrides below depend on $(TMPDIR)/stamp-component-*.owl,
+# whose rule the ODK Makefile only defines when COMP=true. Guard them the same way
+# so that COMP=false builds (e.g. the #gogoeditdiff workflow) use the committed
+# components instead of failing on an undefined stamp rule. See #3780.
+# Add any further HRA template-component overrides inside this block.
+ifeq ($(strip $(COMP)),true)
+
 # Override ODK-generated rule to add prefix declarations needed by the template
 $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TEMPLATEDIR)/hra-skeleton-prefixes.owl $(TMPDIR)/stamp-component-hra_skeleton.owl
 	$(ROBOT) template \
@@ -1385,6 +1392,8 @@ $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tub
 		--template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
+
+endif # COMP=true
 
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
