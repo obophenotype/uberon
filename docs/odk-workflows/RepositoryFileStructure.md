@@ -49,3 +49,5 @@ These are the components in UBERON
 | vasculature_class.owl | None |
 | hra_depiction_3d_images.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/hra_uberon_3d_images.owl |
 | hra_skeleton.owl | None |
+| hra_fallopian_tube_groups.owl | None |
+| hra_fallopian_tube.owl | None |

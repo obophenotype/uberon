@@ -892,6 +892,7 @@ subsets/%-view.owl subsets/%-tags.ofn: $(POSTPROCESS_SRC) | all_robot_plugins
 		                              --taxon $(TAXON_ID_$*) \
 		                              --strategy $(TAXON_SUBSET_STRATEGY) \
 		                              --reasoner ELK \
+		                              --prune-taxa \
 		                              $(foreach root,$(TAXON_SUBSET_ROOTS),--root $(root)) \
 		                              --prefix 'uberon: http://purl.obolibrary.org/obo/uberon/core#' \
 		                              --subset-name uberon:$*_subset \
@@ -1365,6 +1366,26 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TE
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
 
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube.owl: $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube.owl
+
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl $(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-fallopian-tube-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
@@ -1622,7 +1643,7 @@ docs/releases.md: uberon-odk.yaml
 	# if http://purl.obolibrary.org/obo/mondo/releases/2021-01-01/mondo.owl exists, include it in overview.
 	# Use Github or obo purls (include switch that we can conficgue with ODK)
 
-### Removing uberon_2 contraints
+### Removing uberon_2 constraints
 ### refer to https://github.com/obophenotype/uberon/discussions/2158
 remove_uberon_two_constraints:
 	$(ROBOT) query -i $(SRC) --update ../sparql/delete_uberon_two_constraints.ru convert -f obo -o $(SRC)
