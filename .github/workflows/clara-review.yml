@@ -252,7 +252,7 @@ jobs:
               else:
                   status = "PASS"
               return {
-                  "cell_id": data["cell_id"],
+                  "term_id": data["term_id"],
                   "name": data["name"],
                   "status": status,
                   "core_total": len(core),
@@ -313,7 +313,7 @@ jobs:
               ])
               for item in verdict_summaries:
                   lines.append(
-                      f"- `{item['cell_id']}` — {item['name']}: **{item['status']}** "
+                      f"- `{item['term_id']}` — {item['name']}: **{item['status']}** "
                       f"(core: {item['core_total']}, fail: {item['core_fail']}, "
                       f"uncertain: {item['core_uncertain']}, background warnings: {item['background_warn']})"
                   )
