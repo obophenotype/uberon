@@ -150,9 +150,18 @@ jobs:
           data=$(gh pr view "$PR_NUM" \
             --repo "${{ github.repository }}" \
             --json baseRefOid,headRefOid,headRefName,baseRefName)
-          echo "base=$(echo "$data" | jq -r .baseRefOid)" >> "$GITHUB_OUTPUT"
+          base_tip=$(echo "$data" | jq -r .baseRefOid)
+          head_sha=$(echo "$data" | jq -r .headRefOid)
+          # Use the merge-base, not the base branch's current tip: if this
+          # branch is behind the base, diffing against the live tip pulls in
+          # every base-branch change since the branch diverged as spurious
+          # reverse-edits. merge_base_commit is the same value `git merge-base`
+          # would give, from the API so no local checkout is needed yet.
+          merge_base=$(gh api "repos/${{ github.repository }}/compare/${base_tip}...${head_sha}" \
+            --jq .merge_base_commit.sha)
+          echo "base=$merge_base" >> "$GITHUB_OUTPUT"
           echo "base_name=$(echo "$data" | jq -r .baseRefName)" >> "$GITHUB_OUTPUT"
-          echo "head=$(echo "$data" | jq -r .headRefOid)" >> "$GITHUB_OUTPUT"
+          echo "head=$head_sha" >> "$GITHUB_OUTPUT"
           echo "head_name=$(echo "$data" | jq -r .headRefName)" >> "$GITHUB_OUTPUT"
 
       - name: Checkout PR head with full history
