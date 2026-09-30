@@ -1,16 +1,17 @@
 name: CLARA Review
 
-# Ported from cell-ontology's clara-review.yml (see issue #3778). Two
-# uberon-specific adjustments vs. the CL original:
+# Ported from cell-ontology's clara-review.yml (see issue #3778). Adjustments
+# vs. the CL original:
 #
 # - --edit-file points at the OBO edit file (uberon-edit.obo), not an OWL
-#   file. `robot diff` detects format from content, not extension, so this
-#   works with clara_workflow's stage-1 extractor unmodified. NOTE:
-#   clara_workflow's definition_refs() fallback (used to justify structural
-#   axioms on terms whose definition wasn't touched by the PR) only
-#   recognises OWL functional-syntax `AnnotationAssertion(...)` lines and
-#   silently returns nothing for OBO input — a known upstream gap, tracked
-#   separately, that degrades routing coverage rather than breaking it.
+#   file, and --catalog passes uberon's own ODK-managed catalog-v001.xml.
+#   `robot diff`/`robot convert` detect format from content, not extension,
+#   so OBO input works with clara_workflow's stage-1 extractor unmodified;
+#   the catalog is what lets ROBOT resolve owl:imports from the locally
+#   committed files it maps to instead of the network -- required here
+#   because one of uberon's import PURLs currently 404s, and it's also what
+#   makes definition_refs() work for OBO input (see
+#   Cellular-Semantics/clara_workflow#8).
 # - The ROBOT wrapper below honors $ROBOT_JAVA_ARGS (set to -Xmx9G), matching
 #   the heap size uberon's own diff.yml/qc.yml use for robot on this
 #   ontology. The CL original's wrapper doesn't parameterize JVM args at
@@ -21,7 +22,7 @@ name: CLARA Review
 
 env:
   CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
-  CLARA_WORKFLOW_REF: 2f5552c8c44058b836dfda7105e89aa695007604
+  CLARA_WORKFLOW_REF: 232e9b4796306101eadc159183981adfff7ff185
 
 on:
   issue_comment:
@@ -126,6 +127,7 @@ jobs:
             --left "${{ steps.refs.outputs.base }}" \
             --right "${{ steps.refs.outputs.head }}" \
             --edit-file src/ontology/uberon-edit.obo \
+            --catalog src/ontology/catalog-v001.xml \
             --output changes.json
 
       - name: Upload changes.json artifact
