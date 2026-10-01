@@ -22,7 +22,7 @@ name: CLARA Review
 
 env:
   CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
-  CLARA_WORKFLOW_REF: 5c61100b0875f47e2b68de1631d2f531dd52aabe
+  CLARA_WORKFLOW_REF: 234ac67ca82b577c5dedf851a17e57ed2b044478
 
 on:
   issue_comment:
@@ -269,21 +269,25 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
-          # Must be false: claude-code-action's mode detector forces "tag"
-          # mode (an interactive @mention comment-responder) whenever
-          # track_progress is true on an issue_comment event, regardless of
-          # whether a custom prompt is supplied. That's the wrong mode for
-          # this batch, file-writing task -- leaving it true made every
-          # issue_comment-triggered run build @claude-mention scaffolding
-          # instead of running our actual prompt, and fail immediately.
-          # false lets the detector's "prompt provided on a comment event"
-          # rule select agent mode instead, which is what this needs.
-          track_progress: false
+          # true for issue_comment forces claude-code-action's "tag" mode
+          # (an interactive @mention responder, with its own scaffolding our
+          # prompt doesn't need) -- but a real historical cell-ontology run
+          # (obophenotype/cell-ontology#3745, run 35205839595) proves tag
+          # mode actually completes this task fine, Write included; Claude
+          # just follows our prompt and ignores the irrelevant scaffolding.
+          # An earlier "always false" change here was based on a
+          # misdiagnosis: the actual instant failures seen while debugging
+          # this were model_not_found (fixed via --model below), not a mode
+          # problem.
+          track_progress: ${{ github.event_name == 'issue_comment' }}
           settings: |
             {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
+          # MCP servers come from clara_workflow's .mcp.json at the pinned ref,
+          # so tool wiring is versioned with agent_instructions.md, same as
+          # cell-ontology (obophenotype/cell-ontology#3773).
           claude_args: |
             --model claude-sonnet-5
-            --mcp-config ${{ github.workspace }}/.github/clara-mcp.json
+            --mcp-config ${{ github.workspace }}/clara_workflow_ref/.mcp.json
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
