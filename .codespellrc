@@ -16,32 +16,102 @@
 #   - src/patterns/definitions.owl (generated from src/patterns/data/**/*.tsv)
 #   - LICENSE (fixed legal wording; do not rewrite even if it has typos)
 #   - .git-meta (author-workflow scratch for commit / PR message drafts)
-#   - src/ontology/uberon-edit.obo -- the ontology edit file. Its contents
-#     will be spell-checked in a separate curator-reviewed PR; skipped here
-#     so that this infrastructure PR does not conflate infrastructure setup
-#     with curator-judgement calls on ~200 biological / anatomical terms.
-skip = .git,.git-meta,.gitignore,.gitattributes,.codespellrc,LICENSE,*.pdf,*.svg,*.graffle,*.tmp*,*.LOG,attic,bulk_ntr_workflow,experimental,ext-mappings,mappings,modules,reports,resources,source-ontologies,subsets,depictions.owl,external-disjoints.owl,homology.owl,homology-relations.owl,musculoskeletal.obo,musculoskeletal.owl,project.owl,reasoner_axioms.owl,rules.owl,ssso-merged-uberon.owl,uberon-base.owl,uberon-simple-rel.obo,uberon-taxmod-amniote.obo,uberon-with-isa.obo,uberon.obo,imports,taxmods,diffs,languages,odk-workflows,ubermacros.el,uberon-edit.obo,uberon-bridge-to-*.owl,cl-bridge-to-*.owl,definitions.owl
+skip = .git,.git-meta,.gitignore,.gitattributes,.codespellrc,LICENSE,*.pdf,*.svg,*.graffle,*.tmp*,*.LOG,attic,bulk_ntr_workflow,experimental,ext-mappings,mappings,modules,reports,resources,source-ontologies,subsets,depictions.owl,external-disjoints.owl,homology.owl,homology-relations.owl,musculoskeletal.obo,musculoskeletal.owl,project.owl,reasoner_axioms.owl,rules.owl,ssso-merged-uberon.owl,uberon-base.owl,uberon-simple-rel.obo,uberon-taxmod-amniote.obo,uberon-with-isa.obo,uberon.obo,imports,taxmods,diffs,languages,odk-workflows,ubermacros.el,uberon-bridge-to-*.owl,cl-bridge-to-*.owl,definitions.owl
 check-hidden = true
-# Protect:
-#   - URLs (short host substrings like bu.edu would otherwise flag "bu")
-#   - camelCase / PascalCase identifiers (Prolog vars in *.pro scripts,
-#     code identifiers)
-#   - Cross-reference values after `PREFIX:` (BAMS:MEnt, BM:Tel-OLT etc.
-#     -- external IDs must not be "corrected")
+# Protect URLs, camelCase/PascalCase identifiers, and PREFIX:CODE cross-references
+# (e.g. BAMS:MEnt, BM:Tel-OLT — external IDs must not be "corrected")
 ignore-regex = https?://\S+|\b[a-z]+[A-Z]\w*\b|\b[A-Z][a-z]+[A-Z]\w*\b|\b[A-Z]{2,}:[\w-]+
-# Domain vocabulary that codespell flags as typos but is legitimate here:
-#   Anatomical / Latin terms recurring in non-uberon-edit content
-#   (bridge/external-disjoints.obo, src/patterns/data/**/*.tsv, etc.):
-#     mater      - dura/pia/arachnoid mater (meninges)
-#     vas        - vas deferens etc.
-#     processus  - Latin "process"
-#     regio      - anatomical region (Latin)
-#     collum     - Latin "neck"
-#   Ontology terminology:
-#     disjointness - "disjointness axiom" (OWL/OBO term)
-#   Curated-data / code noise:
-#     anc          - Prolog predicate name in *.pro scripts
-#     nd           - Prolog predicate (nd/4 in src/scripts/namediff.pro) and
-#                    GO evidence code "ND" (No Data) in uberon.references
-#     heterogenous, homogenous - accepted variants
-ignore-words-list = mater,vas,processus,regio,collum,disjointness,anc,nd,heterogenous,homogenous
+# Domain vocabulary that codespell flags as typos but is legitimate here.
+# Each entry has an inline comment explaining why it is protected.
+ignore-words-list =
+  # dura/pia/arachnoid mater (meninges)
+  mater,
+  # vas deferens etc. (Latin "vessel")
+  vas,
+  # Latin "process" — anatomical processes (processus mastoideus etc.)
+  processus,
+  # anatomical region (Latin regio — regio temporalis etc.)
+  regio,
+  # Latin "neck" — collum femoris, collum mallei, etc.
+  collum,
+  # "disjointness axiom" — OWL/OBO ontology terminology
+  disjointness,
+  # Prolog predicate name in src/scripts/*.pro
+  anc,
+  # ANS (Autonomic Nervous System) abbreviation in comments
+  ans,
+  # Prolog predicate (nd/4) and GO evidence code "ND" (No Data)
+  nd,
+  # accepted variant spellings used in ontology definitions
+  heterogenous,
+  homogenous,
+  # discus intervertebralis (FMA:TA Latin synonym) — not "discuss"
+  discus,
+  # crus horizontale striae diagonalis (FMA:TA) — not "horizontal"
+  horizontale,
+  # s. durae matris (Latin genitive of mater) — not "matrix"
+  matris,
+  # pyramides renales (FMA:TA Latin plural) — not "pyramids"
+  pyramides,
+  # solum anterius (Latin "floor/base") — not "solemn"
+  solum,
+  # in statu nascendi (Latin phrase "in state of being born") — not "status/statue"
+  statu,
+  # stilus columellare (Latin form) — not "stylus"
+  stilus,
+  # citation tag split mid-word: "activit[MP:0009965]y" — not "activist"
+  activit,
+  # undertail covert (ornithological feather term) — not "convert/covet"
+  covert,
+  # interpolar part of spinal trigeminal nucleus — not "interpolator"
+  interpolar,
+  # mane (synonym for pelage / hair coat) — not "main/many"
+  mane,
+  # anatomical landmark on mastoid process (UBERON:7500127, curator-confirmed) — not "option"
+  otion,
+  # thermoregulatory panting in taxon_notes — not "painting"
+  panting,
+  # "ductus remains pervious" (medical: patent/open) — not "previous"
+  pervious,
+  # "not preformed in cartilage" (embryology) — not "performed"
+  preformed,
+  # sweat gland of eyelid / eyelid stye (hordeolum) — not "style"
+  stye,
+  # anatomical trough at base of papillae — not "through"
+  trough,
+  # "auxillery nerve" RELATED syn of axillary nerve — codespell would wrongly fix to "auxiliary"
+  auxillery,
+  # "cementary gland" RELATED from BTO:0002738 (cement-secreting gland) — not "cemetery"
+  cementary,
+  # "collumn dentis" EXACT from ncithesaurus:Collum_Dentis — not "column"
+  collumn,
+  # "scala medias" EXACT from BIRNLEX:2562 — not "media/mediums"
+  medias,
+  # "sement" RELATED (archaic synonym for copulatory plug)
+  sement,
+  # "vermillion" RELATED alternate spelling of lip vermilion
+  vermillion,
+  # "branche ventrale de l'urohyal" (French synonym, PSPUB source)
+  branche,
+  # "Sciences de la vie" (French: "life sciences") in citation title
+  vie,
+  # Apical Ectodermal Ridge (AER, e.g. "aer pectoral fin")
+  aer,
+  # ALLS: ferret visual cortex region abbreviation
+  alls,
+  # Van der Loos (proper name in citations)
+  loos,
+  # P.R. Manger (neuroscientist, proper name in citations)
+  manger,
+  # OLT: olfactory trigone abbreviation (BIRNLEX)
+  olt,
+  # ONL: outer nuclear layer abbreviation
+  onl,
+  # OT: oxytocin/vasopressin; "Ot" = otion landmark abbreviation
+  ot,
+  # TE: author initial (e.g. "Spencer TE") in citations
+  te,
+  # UE: utriculo-endolymphatic valve abbreviation
+  ue,
+  # UES: upper esophageal sphincter abbreviation
+  ues
