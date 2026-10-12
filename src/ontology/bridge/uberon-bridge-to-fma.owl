@@ -9,7 +9,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/uberon/bridge/uberon-bridge-to-fma.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2026-06-19/bridge/uberon-bridge-to-fma.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/uberon/releases/2026-10-01/bridge/uberon-bridge-to-fma.owl"/>
         <terms:contributor>Onard Mejino</terms:contributor>
         <terms:contributor>Terry Hayamizu</terms:contributor>
         <terms:creator>Uberon editors</terms:creator>
@@ -80,12 +80,6 @@
     <!-- http://purl.obolibrary.org/obo/BFO_0000066 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000066"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/RO_0002160 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002160"/>
     
 
 
@@ -35953,6 +35947,18 @@
     <!-- http://purl.obolibrary.org/obo/UBERON_8850000 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8850000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_8930000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8930000"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_8930001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8930001"/>
     
 
 
@@ -79427,6 +79433,56 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000589>lower part of vagina (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/sig/ont/fma/fma280212 -->
+
+    <owl:Class rdf:about="http://purl.org/sig/ont/fma/fma280212">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_8930001"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000589>outer cortex of lens (post-embryonic human)</obo:IAO_0000589>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/sig/ont/fma/fma280216 -->
+
+    <owl:Class rdf:about="http://purl.org/sig/ont/fma/fma280216">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_8930000"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000589>inner cortex of lens (post-embryonic human)</obo:IAO_0000589>
     </owl:Class>
     
 
@@ -187249,7 +187305,7 @@
         </owl:intersectionOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
             </owl:Restriction>
         </rdfs:subClassOf>

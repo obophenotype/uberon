@@ -1,12 +1,12 @@
 format-version: 1.2
-data-version: uberon/releases/2026-06-19/subsets/life-stages-composite.owl
+data-version: uberon/releases/2026-10-01/subsets/life-stages-composite.owl
 idspace: foaf http://xmlns.com/foaf/0.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: pav http://purl.org/pav/ 
 idspace: sssom https://w3id.org/sssom/ 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: uberon/subsets/life-stages-composite
-property_value: owl:versionInfo "2026-06-19" xsd:string
+property_value: owl:versionInfo "2026-10-01" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -10971,6 +10971,7 @@ xref: EHDAA:27
 xref: FBdv:00005288
 xref: HsapDv:0000003 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: IDOMAL:0000302 {sssom:mapping_justification="https://w3id.org/semapv/vocab/ManualMappingCuration", pav:authoredBy="https://orcid.org/0000-0003-4423-4370"}
+xref: MESH:D015053 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: MmusDv:0000003 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: NCIT:C12601
 xref: OariDv:0000009 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
@@ -11292,8 +11293,8 @@ synonym: "neonatal stage" EXACT [OBOL:automatic]
 synonym: "nestling stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 synonym: "newborn stage" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "pouch stage" NARROW SENSU [NCBITaxon:9263]
-synonym: "puggle" NARROW SENSU [NCBITaxon:189497]
-synonym: "puggle stage" NARROW SENSU [NCBITaxon:189497]
+synonym: "puggle" NARROW SENSU [NCBITaxon:9259]
+synonym: "puggle stage" NARROW SENSU [NCBITaxon:9259]
 xref: BTO:0001762
 xref: ChirDv:0000017 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: EV:0300037
@@ -11332,6 +11333,8 @@ xref: GgalDv:0000080 {sssom:mapping_justification="https://w3id.org/semapv/vocab
 xref: GgorDv:0000008 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: HsapDv:0000227 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: MdomDv:0000025 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+xref: MESH:D000368 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
+xref: MESH:D005853 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: MmulDv:0000045 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: MmusDv:0000134 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 xref: NCIT:C16268
@@ -11448,6 +11451,7 @@ name: cysticercus stage
 def: "The larval form of any of the Taenia tapeworms." [BTO:0003168, http://www.medterms.com/]
 synonym: "cysticercus" EXACT [BTO:0003168]
 xref: BTO:0003168
+xref: MESH:D003552 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000069 ! larval stage
 
@@ -11457,6 +11461,7 @@ name: zoea stage
 def: "A crustacean larval stage characterised by the use of the thoracic appendages for swimming." [Wikipedia:Crustacean_larvae#Zoea]
 synonym: "zoea" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
+relationship: never_in_taxon NCBITaxon:6960
 relationship: part_of UBERON:0018378 ! crustacean larval stage
 relationship: preceded_by UBERON:0014406 ! nauplius stage
 
@@ -11497,6 +11502,7 @@ name: glaucothoe stage
 def: "A developmental stage in a hermit crab that has completed the swimming larval stages." [http://www.encyclo.co.uk/define/Copepodite]
 synonym: "glaucothoe" RELATED []
 is_a: UBERON:0000105 ! life cycle stage
+relationship: never_in_taxon NCBITaxon:6960
 relationship: part_of UBERON:0018378 ! crustacean larval stage
 
 [Term]
@@ -11562,6 +11568,7 @@ id: UBERON:0018378
 name: crustacean larval stage
 def: "The larval stage of a crustacean, the stages of which are separated my moults. Typically this goes through a nauplius - zoea - post-larval cycle." [Wikipedia:Crustacean_larvae]
 is_a: UBERON:0000069 ! larval stage
+relationship: never_in_taxon NCBITaxon:6960
 
 [Term]
 id: UBERON:0018685
