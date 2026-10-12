@@ -198,7 +198,7 @@ add_default_parent(X) :-
 add_default_parent(X) :-
         class_categ(X,Z,C),
         !,
-        debug(merge,' assering default: ~w in ~w [~w]',[X,Z,C]),
+        debug(merge,' asserting default: ~w in ~w [~w]',[X,Z,C]),
         assert(ontol_db:subclass(X,Z)).
 add_default_parent(X) :-
         !,

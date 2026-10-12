@@ -162,7 +162,7 @@ Blood and lymphatic vessels are tubes that convey body fluids through the tissue
 
 However, while it is useful to have this wide range of object properties to record relations between branches, it can also lead to selecting a property that does not accurately reflect the relationship between subject and object. An example of this is the misuse of '[branching part of](http://purl.obolibrary.org/obo/RO_0002380)', which is a subclass of 'part of', but it has been used extensively for branches that are no longer part of the stem.
 
-Therefore, we need standarization for how branching relationships should be recorded in Uberon. The object property 'connecting branch of' is a subproperty of 'connected to' and should be used to describe the relation between a branching vessel and the stem vessel. Ex:
+Therefore, we need standardization for how branching relationships should be recorded in Uberon. The object property 'connecting branch of' is a subproperty of 'connected to' and should be used to describe the relation between a branching vessel and the stem vessel. Ex:
 
 ['axillary artery'](http://purl.obolibrary.org/obo/UBERON_0001394) *SubClassOf* ['connected to'](http://purl.obolibrary.org/obo/RO_0002252) some ['subclavian aretery'](http://purl.obolibrary.org/obo/UBERON_0001533)
 

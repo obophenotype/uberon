@@ -154,8 +154,8 @@ We consider the autopod as consisting of 3 segments, divided according to the fo
 
 Note that in this document and in the ontology we currently use the unambiguous skeletal-prefixed terms, and phenoscape-preferred terms in parentheses.
 
-Hoever, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
-We accomodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
+However, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
+We accommodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
 
 This gives us a second hierarchy (also part-wise JEPD):
 
@@ -351,7 +351,7 @@ The file can be edited in a text editor (the recommended text editor
 emacs plus Phil Lord's omn-mode.el, plus ubref-helper.el). Note that
 the author should be adept in manchester notation.
 
-The prefered route is to open the articles ontology in Protege,
+The preferred route is to open the articles ontology in Protege,
 navigating to the 'individuals by type' tab (insert image here).
 
 ![Screenshot](images/udoc-in-p4.png)
@@ -361,7 +361,7 @@ markdown format. Note that hashes should be used for headings rather
 than underlines.
 
 The format used is a variant called ontology markdown. Class labels
-can be written in backtics - the derived documentation will make PURL
+can be written in backticks - the derived documentation will make PURL
 links from these (*to be implemented*).
 
 In general each article type should follow a certain template (to be
@@ -938,8 +938,8 @@ We consider the autopod as consisting of 3 segments, divided according to the fo
 
 Note that in this document and in the ontology we currently use the unambiguous skeletal-prefixed terms, and phenoscape-preferred terms in parentheses.
 
-Hoever, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
-We accomodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
+However, it is also possible to first group the acropodium and metapodium - confusingly, this is sometimes called the acropodium (e.g. Wagner and Chin 2001).
+We accommodate this group, and introduce a new label 'digitopodium' (Ibrahim and Sereno) to group the proximal-most two elements
 
 This gives us a second hierarchy (also part-wise JEPD):
 
@@ -1076,7 +1076,7 @@ from Rathke's pouch in tetrapods, we would say:
 
 Note that we do not need to taxonomically scope the target class.
 
-#### Examplar Class
+#### Exemplar Class
 
 See [thymus primordium](http://purl.obolibrary.org/obo/UBERON_0005562)
 as an example (note: GCIs may not be visible in OntoBee).

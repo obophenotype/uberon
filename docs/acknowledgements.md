@@ -31,7 +31,7 @@ ELK has been created in the Knowledge Representation and Reasoning group at the 
 We are also grateful to the developers of HermiT and FACT++, which are also used during development.
 
 #OWL API
-The OWL API is a Java API and reference implmentation for creating, manipulating and serialising OWL Ontologies. The current Uberon development and build infrastructure relies heavily on the OWLAPI. Many thanks to the OWLAPI developers, especially Ignazio Palmisano and Matt Horridge.
+The OWL API is a Java API and reference implementation for creating, manipulating and serialising OWL Ontologies. The current Uberon development and build infrastructure relies heavily on the OWLAPI. Many thanks to the OWLAPI developers, especially Ignazio Palmisano and Matt Horridge.
 
 In particular, we make use of an in-house library developed for the GO called [owltools](https://github.com/owlcollab/owltools), and the [ROBOT](https://robot.obolibrary.org/) ontology manipulation tool developed for the OBO Foundry. Both are built on top of the OWL API.
 

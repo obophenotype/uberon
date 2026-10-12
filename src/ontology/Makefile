@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                4a0a1ec54c99987a5f925c045d14b90a8cea94072e234dab7b5b4841b16aa062
+CONFIG_HASH=                d12abab42ccf603187deaa68c3c631ab20a1469ceffe0d5e4092d71c12b9dbf3
 
 
 # ----------------------------------------
@@ -59,7 +59,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/disjoint_union_over.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/vasculature_class.owl $(COMPONENTSDIR)/hra_depiction_3d_images.owl $(COMPONENTSDIR)/hra_skeleton.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/disjoint_union_over.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/in-subset.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/vasculature_class.owl $(COMPONENTSDIR)/hra_depiction_3d_images.owl $(COMPONENTSDIR)/hra_skeleton.owl $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl $(COMPONENTSDIR)/hra_fallopian_tube.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -183,7 +183,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.0/uberon.jar
+	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.5.1/uberon.jar
 
 
 # ----------------------------------------
@@ -493,6 +493,8 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-vasculature_class.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_depiction_3d_images.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_skeleton.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube.owl \
 		COMP=true IMP=false MIR=true PAT=true all_components
 
 .PHONY: no-mirror-recreate-components
@@ -504,6 +506,8 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-vasculature_class.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_depiction_3d_images.owl \
 		--assume-new=$(TMPDIR)/stamp-component-hra_skeleton.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl \
+		--assume-new=$(TMPDIR)/stamp-component-hra_fallopian_tube.owl \
 		COMP=true IMP=false MIR=false PAT=true all_components
 
 .PHONY: recreate-%
@@ -573,6 +577,18 @@ $(COMPONENTSDIR)/hra_skeleton.owl: $(TEMPLATEDIR)/hra-skeleton.template.tsv $(TM
 		 --template $(TEMPLATEDIR)/hra-skeleton.template.tsv \
 		 $(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_skeleton.owl
+
+$(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv $(TMPDIR)/stamp-component-hra_fallopian_tube_groups.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/hra-fallopian-tube-groups.template.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
+
+$(COMPONENTSDIR)/hra_fallopian_tube.owl: $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv $(TMPDIR)/stamp-component-hra_fallopian_tube.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/hra-fallopian-tube.template.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube.owl
 
 endif # COMP=true
 # ----------------------------------------
@@ -1112,7 +1128,7 @@ validate-all-tsv: $(ALL_TSV_FILES)
 # ----------------------------------------
 
 # This is an experimental target people that want to use ODK Extended Prefix Map (EPM)
-# can use to pull the (currently inofficial) OBO EPM into the workspace.
+# can use to pull the (currently unofficial) OBO EPM into the workspace.
 # Users are instructed to refer to the EPM only through the variable $(EXTENDED_PREFIX_MAP) as 
 # its location might change in a feature version of ODK.
 $(EXTENDED_PREFIX_MAP): /tools/obo.epm.json

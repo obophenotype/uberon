@@ -154,7 +154,7 @@ The editors version will most likely owl-import other ontologies. Need
 to figure this into release process.
 
 == How to deal with templates ==
-see templates/REAMDE.md
+see templates/README.md
 
 
 == Other matters ==
