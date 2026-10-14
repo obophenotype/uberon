@@ -1386,6 +1386,16 @@ $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl: $(TEMPLATEDIR)/hra-fallopian-tub
 		$(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/hra_fallopian_tube_groups.owl
 
+# Override ODK-generated rule to add prefix declarations needed by the template
+$(COMPONENTSDIR)/hra_uterus.owl: $(TEMPLATEDIR)/hra-uterus.template.tsv $(TEMPLATEDIR)/hra-uterus-prefixes.owl $(TMPDIR)/stamp-component-hra_uterus.owl
+	$(ROBOT) template \
+		--prefix "dcterms: http://purl.org/dc/terms/" \
+		--prefix "dc: http://purl.org/dc/elements/1.1/" \
+		--input $(TEMPLATEDIR)/hra-uterus-prefixes.owl \
+		--template $(TEMPLATEDIR)/hra-uterus.template.tsv \
+		$(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/hra_uterus.owl
+
 $(COMPONENTSDIR)/vasculature_class.owl: $(TEMPLATEDIR)/vasculature_class.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
