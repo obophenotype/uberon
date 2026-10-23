@@ -225900,6 +225900,23 @@ property_value: dcterms-date "2026-05-26T00:00:00Z" xsd:dateTime
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3722" xsd:anyURI
 created_by: dragon-ai-agent
 
+[Term]
+id: UBERON:9900001
+name: respiratory tree (Holothuroidea)
+def: "A respiration organ of a sea cucumber, one of a pair of branching tubular diverticula that arise from the dorsal wall of the anterior part of the cloaca, lie in the body cavity on either side of the intestine, and are ventilated with seawater drawn in through the anus and cloaca." [PMID:19238446, PMID:22160455, Wikipedia:Sea_cucumber]
+comment: Respiratory trees evolved within Holothuroidea and are absent in other echinoderms (PMID:19238446). They are present in Pneumonophora, the clade comprising all holothurians except Apodida and part of the traditional Elasipodida (PMID:28263876); NCBI Taxonomy does not carry Pneumonophora, so the taxon constraint is set at Holothuroidea with Apodida excluded. Besides gas exchange, the respiratory trees act together with the intestine as excretory organs (Wikipedia:Sea_cucumber).
+synonym: "holothurian respiratory tree" EXACT []
+is_a: UBERON:0000171 ! respiration organ
+relationship: connected_to UBERON:1200005 ! holothurian cloaca
+relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
+relationship: develops_from UBERON:1200005 {source="PMID:22160455"} ! holothurian cloaca
+relationship: in_taxon NCBITaxon:7705
+relationship: located_in UBERON:0002323 ! coelemic cavity lumen
+relationship: never_in_taxon NCBITaxon:7701 {source="PMID:28263876"}
+property_value: dcterms-date "2026-10-14T10:58:02Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3774" xsd:anyURI
+property_value: terminology_notes "Labelled 'respiratory tree (Holothuroidea)' rather than 'respiratory tree', and 'respiratory tree' is deliberately not recorded as a synonym, because that phrase is widely used for the branching airways of the vertebrate lung (the tracheobronchial tree) and would otherwise attract vertebrate annotations to this class." xsd:string
+
 [Typedef]
 id: aboral_to
 name: aboral to
