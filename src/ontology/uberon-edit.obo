@@ -4616,20 +4616,13 @@ subset: efo_slim
 subset: pheno_slim
 synonym: "embryo late growth stage" RELATED [BTO:0000449]
 synonym: "embryo late stage" RELATED [BTO:0000449]
-synonym: "fetus" NARROW [BTO:0000449]
 xref: BTO:0000449
 xref: CALOHA:TS-0360
 xref: EFO:0001323
-xref: FMA:63919
 xref: GAID:552
-xref: MESH:D005333
-xref: NCIT:C13235
 xref: SCTID:83418008
-xref: UMLS:C0015965 {source="ncithesaurus:Fetus"}
 intersection_of: UBERON:0000922 ! embryo
 intersection_of: existence_starts_and_ends_during UBERON:0007220 ! late embryonic stage
-property_value: editor_note "TODO - check fetus/embryo. WP: An embryo is a multicellular diploid eukaryote in its earliest stage of development, from the time of first cell division until birth, hatching, or germination. In humans, it is called an embryo until about eight weeks after fertilization (i.e. ten weeks LMP), and from then it is instead called a fetus." xsd:string
-property_value: external_definition "Fetal structure, which is a developmental form of a vertebrate animal at any given time point from 8 weeks of gestation to birth (or hatching). Examples: There is only one fetus[FMA:63919]." xsd:string {source="FMA:63919"}
 
 [Term]
 id: UBERON:0000325
@@ -119426,9 +119419,6 @@ def: "An embryo stage that covers late steps of the embryogenesis with a fully f
 synonym: "embryo late (growth) stage" EXACT [MIAA:0000399]
 synonym: "embryo late growth stage" RELATED [BTO:0000449]
 synonym: "embryo late stage" RELATED [BTO:0000449]
-synonym: "fetal stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
-synonym: "fetus" NARROW [MIAA:0000399]
-synonym: "fetus stage" NARROW SENSU [https://orcid.org/0000-0002-6601-2165]
 xref: EV:0300011
 xref: EVM:2990031
 xref: FBdv:00005333
@@ -225916,6 +225906,38 @@ relationship: present_in_taxon NCBITaxon:9606 ! Homo sapiens
 property_value: dcterms-date "2026-05-26T00:00:00Z" xsd:dateTime
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3722" xsd:anyURI
 created_by: dragon-ai-agent
+
+[Term]
+id: UBERON:9900000
+name: fetus
+def: "A late embryo of a mammal, existing from the completion of organogenesis until birth." [https://github.com/obophenotype/uberon/issues/3793]
+xref: FMA:63919
+xref: MESH:D005333
+xref: NCIT:C13235
+xref: UMLS:C0015965 {source="ncithesaurus:Fetus"}
+intersection_of: UBERON:0000323 ! late embryo
+intersection_of: existence_starts_and_ends_during UBERON:9900001 ! fetal stage
+intersection_of: in_taxon NCBITaxon:40674 ! Mammalia
+relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
+relationship: existence_starts_and_ends_during UBERON:9900001 ! fetal stage
+relationship: in_taxon NCBITaxon:40674 ! Mammalia
+property_value: dcterms-date "2026-10-21T13:04:51Z" xsd:dateTime
+property_value: external_definition "Fetal structure, which is a developmental form of a vertebrate animal at any given time point from 8 weeks of gestation to birth (or hatching). Examples: There is only one fetus[FMA:63919]." xsd:string {source="FMA:63919"}
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3793" xsd:anyURI
+created_by: ai4c-agent
+
+[Term]
+id: UBERON:9900001
+name: fetal stage
+def: "A late embryonic stage of a mammal, extending from the completion of organogenesis until birth." [https://github.com/obophenotype/uberon/issues/3793]
+is_a: UBERON:0007220 ! late embryonic stage
+intersection_of: UBERON:0007220 ! late embryonic stage
+intersection_of: in_taxon NCBITaxon:40674 ! Mammalia
+relationship: dc-contributor https://orcid.org/0000-0002-7073-9172 ! David Osumi-Sutherland
+relationship: in_taxon NCBITaxon:40674 ! Mammalia
+property_value: dcterms-date "2026-10-21T13:04:51Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3793" xsd:anyURI
+created_by: ai4c-agent
 
 [Typedef]
 id: aboral_to
