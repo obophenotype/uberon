@@ -189930,19 +189930,6 @@ property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues
 created_by: dragon-ai-agent
 
 [Term]
-id: UBERON:1200005
-name: holothurian cloaca
-def: "A subdivision of the digestive tract that is the posterior-most region of the gut of a sea cucumber, and from the dorsal wall of whose anterior part the respiratory trees arise." [PMID:19238446, PMID:22160455]
-comment: Distinct from 'cloaca' (UBERON:0000162), which is restricted to vertebrates and is defined as a common chamber receiving both the intestine and the excretory system; the holothurian structure is called a cloaca for its terminal position in the gut, and no homology with the vertebrate cloaca is asserted. After evisceration, the respiratory trees regenerate from cells of the coelomic and luminal epithelia of the cloaca (PMID:19238446).
-synonym: "cloaca" BROAD [PMID:19238446, PMID:22160455]
-is_a: UBERON:0004921 ! subdivision of digestive tract
-relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
-relationship: in_taxon NCBITaxon:7705
-property_value: dcterms-date "2026-10-13T20:58:56Z" xsd:dateTime
-property_value: development_notes "The germ layer of origin is unresolved. The holothurian cloaca is traditionally held to be ectodermal and lined by a cuticular epithelium, but its anterior part has been reported to be lined by enterocytes and to lack a cuticle, suggesting an endodermal origin for that part. No developmental relationships are asserted for this reason." xsd:string {source="PMID:22160455"}
-property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3775" xsd:anyURI
-
-[Term]
 id: UBERON:1200340
 name: collagen band
 def: "A band-shaped collection of collagen fibrils forming a distinct layer beneath an epithelium." [PMID:19295410, PMID:37022603]
@@ -190004,6 +189991,36 @@ property_value: dcterms-date "2026-08-20T04:59:35Z" xsd:dateTime
 property_value: external_ontology_notes "Neither the FMA nor SNOMED has a calvarial marrow grouping class. The FMA covers the same territory with per-bone classes: FMA:303380 (frontal), FMA:303382 (parietal), FMA:303388 (occipital) and FMA:303390 (sutural bone); these are the natural xref targets if regional calvarial marrow terms are added." xsd:string {external_ontology="FMA"}
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3758" xsd:anyURI
 property_value: terminology_notes "The differentia uses 'vault of skull' (UBERON:0004339), whose own comment records that the vault may not be precisely equivalent to the calvaria - sources differ on whether the temporal, ethmoid and sphenoid bones are included. That ambiguity is inherited here rather than introduced: this class is intended as the marrow of whatever 'vault of skull' covers, which is the compartment the calvarial bone marrow literature samples." xsd:string
+
+[Term]
+id: UBERON:1200386
+name: holothurian cloaca
+def: "A subdivision of the digestive tract that is the posterior-most region of the gut of a sea cucumber, and from the dorsal wall of whose anterior part the respiratory trees arise." [PMID:19238446, PMID:22160455]
+comment: Distinct from 'cloaca' (UBERON:0000162), which is restricted to vertebrates and is defined as a common chamber receiving both the intestine and the excretory system; the holothurian structure is called a cloaca for its terminal position in the gut, and no homology with the vertebrate cloaca is asserted. After evisceration, the respiratory trees regenerate from cells of the coelomic and luminal epithelia of the cloaca (PMID:19238446).
+synonym: "cloaca" BROAD [PMID:19238446, PMID:22160455]
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
+relationship: in_taxon NCBITaxon:7705
+property_value: dcterms-date "2026-10-13T20:58:56Z" xsd:dateTime
+property_value: development_notes "The germ layer of origin is unresolved. The holothurian cloaca is traditionally held to be ectodermal and lined by a cuticular epithelium, but its anterior part has been reported to be lined by enterocytes and to lack a cuticle, suggesting an endodermal origin for that part. No developmental relationships are asserted for this reason." xsd:string {source="PMID:22160455"}
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3775" xsd:anyURI
+
+[Term]
+id: UBERON:1200387
+name: respiratory tree (Holothuroidea)
+def: "A respiration organ of a sea cucumber, one of a pair of branching tubular diverticula that arise from the dorsal wall of the anterior part of the cloaca, lie in the body cavity on either side of the intestine, and are ventilated with seawater drawn in through the anus and cloaca." [PMID:19238446, PMID:22160455, Wikipedia:Sea_cucumber]
+comment: Respiratory trees evolved within Holothuroidea and are absent in other echinoderms (PMID:19238446). They are present in Pneumonophora, the clade comprising all holothurians except Apodida and part of the traditional Elasipodida (PMID:28263876); NCBI Taxonomy does not carry Pneumonophora, so the taxon constraint is set at Holothuroidea with Apodida excluded. Besides gas exchange, the respiratory trees act together with the intestine as excretory organs (Wikipedia:Sea_cucumber).
+synonym: "holothurian respiratory tree" EXACT []
+is_a: UBERON:0000171 ! respiration organ
+relationship: connected_to UBERON:1200386 ! holothurian cloaca
+relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
+relationship: develops_from UBERON:1200386 {source="PMID:22160455"} ! holothurian cloaca
+relationship: in_taxon NCBITaxon:7705
+relationship: located_in UBERON:0002323 ! coelemic cavity lumen
+relationship: never_in_taxon NCBITaxon:7701 {source="PMID:28263876"}
+property_value: dcterms-date "2026-10-14T10:58:02Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3774" xsd:anyURI
+property_value: terminology_notes "Labelled 'respiratory tree (Holothuroidea)' rather than 'respiratory tree', and 'respiratory tree' is deliberately not recorded as a synonym, because that phrase is widely used for the branching airways of the vertebrate lung (the tracheobronchial tree) and would otherwise attract vertebrate annotations to this class." xsd:string
 
 [Term]
 id: UBERON:1500000
