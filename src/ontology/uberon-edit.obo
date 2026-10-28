@@ -175139,24 +175139,28 @@ property_value: editor_note "check relationship to gyrus. See https://github.com
 [Term]
 id: UBERON:0022355
 name: basal layer of endometrium
-def: "The layer of endometrial epithelium adjacent to the uterine cavity." [Wikipedia:Endometrium#Histology]
+def: "The layer of the endometrium adjacent to the myometrium, comprising the basal portions of the uterine glands and the surrounding vascularized stroma, and supplied by the basal arteries. In menstruating species it is retained at menstruation and serves as the regenerative source from which the functional layer is restored; it harbours the epithelial and mesenchymal progenitor cell populations responsible for that regeneration." [PMID:26552890, PMID:37288662]
 synonym: "pars basalis of endometrium" EXACT []
 synonym: "stratum basalis of endometrium" EXACT [FMA:86492]
 xref: FMA:86492
 xref: NCIT:C32189
-intersection_of: UBERON:0004811 ! endometrium epithelium
-intersection_of: adjacent_to UBERON:0013769 ! uterine lumen
+intersection_of: UBERON:0004923 ! organ component layer
+intersection_of: adjacent_to UBERON:0001296 ! myometrium
+intersection_of: part_of UBERON:0001295 ! endometrium
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3803" xsd:anyURI
 
 [Term]
 id: UBERON:0022356
-name: outer layer of endometrium
-def: "The layer of endometrial epithelium adjacent to the myometrium." [Wikipedia:Endometrium#Histology]
-synonym: "functional layer of endometrium" EXACT [FMA:86493]
+name: functional layer of endometrium
+def: "The layer of the endometrium adjacent to the uterine lumen, comprising the luminal epithelium, the superficial portions of the uterine glands, and the surrounding vascularized stroma, and supplied by the spiral arterioles. It proliferates and differentiates across the ovarian cycle under the influence of oestrogen and progesterone, and is the site of embryo implantation and decidualization. In menstruating species it is shed at menstruation and regenerated from the basal layer in the following cycle." [PMID:25141152, PMID:26552890, PMID:37288662]
+synonym: "outer layer of endometrium" RELATED []
 synonym: "stratum functionalis of endometrium" EXACT [FMA:86493]
 xref: FMA:86493
 xref: NCIT:C32642
-intersection_of: UBERON:0004811 ! endometrium epithelium
-intersection_of: adjacent_to UBERON:0001296 ! myometrium
+intersection_of: UBERON:0004923 ! organ component layer
+intersection_of: adjacent_to UBERON:0013769 ! uterine lumen
+intersection_of: part_of UBERON:0001295 ! endometrium
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3803" xsd:anyURI
 
 [Term]
 id: UBERON:0022357
