@@ -5898,7 +5898,6 @@ xref: SCTID:57300004
 is_a: UBERON:0001902 {source="BTO"} ! epithelium of small intestine
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002115 ! jejunum
-relationship: part_of UBERON:0008343 {source="FMA"} ! intestinal villus of jejunum
 
 [Term]
 id: UBERON:0000401
@@ -27782,11 +27781,13 @@ is_a: UBERON:0008193 {source="FMA"} ! pneumatized bone
 relationship: overlaps UBERON:0002241 {notes="petrosal"} ! chondrocranium
 relationship: overlaps UBERON:0003113 {notes="squamosal plus angular", notes="temporal series"} ! dermatocranium
 relationship: overlaps UBERON:0008895 {notes="styloid process"} ! splanchnocranium
+relationship: part_of UBERON:0001703 ! neurocranium
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/66/Illu_cranial_bones2.jpg" xsd:anyURI
 property_value: external_ontology_notes "Note the Temporal bone is not explicitly categorized to a part of the cranium in FMA" xsd:string {external_ontology="FMA"}
 property_value: structure_notes "The temporal bone consists of four parts: * Squama temporalis * Mastoid portion * Petrous portion (Petrosal ridge) * Tympanic part[WP]." xsd:string {source="[WP]"}
 property_value: taxon_notes "fusion of squamosal + angular (tympanic annulus) [derm.] + petrosal (prootic + opisthotic)" xsd:string {source="chond."}
 property_value: taxon_notes "In many mammals, as in humans, the petrosal, ectotympanic and squamosal bones synostose to form the temporal bone + styloid process" xsd:string
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3791" xsd:anyURI
 
 [Term]
 id: UBERON:0001679
@@ -42504,7 +42505,6 @@ synonym: "tegmental reticular nucleus, pontine gray" EXACT []
 xref: BAMS:RtTg
 xref: BAMS:TRN
 xref: BIRNLEX:882
-xref: DHBA:12414
 xref: DHBA:12497
 xref: EMAPA:35736
 xref: FMA:72471
@@ -46521,7 +46521,6 @@ xref: BAMS:AQ
 xref: BAMS:Aq
 xref: BIRNLEX:1261
 xref: BM:MB-AQ
-xref: DHBA:10651
 xref: DHBA:12369
 xref: DMBA:126651722
 xref: EFO:0003501
@@ -56248,7 +56247,6 @@ xref: BAMS:PAM
 xref: BAMS:SLG
 xref: BIRNLEX:1291
 xref: BM:Tel-Cx-PAM
-xref: DHBA:10373
 xref: DHBA:12169
 xref: FMA:62485
 xref: neuronames:166 {source="BIRNLEX:1291"}
@@ -57977,7 +57975,6 @@ xref: BAMS:ls
 xref: BIRNLEX:1487
 xref: BM:Tel-Cx-LS
 xref: DHBA:10621
-xref: DHBA:12110
 xref: FMA:77801
 xref: HBA:9402
 xref: NCIT:C32615
@@ -61643,6 +61640,7 @@ xref: BAMS:ACOP
 xref: BAMS:PCo
 xref: BIRNLEX:2700
 xref: BTO:0002703
+xref: DHBA:10373
 xref: EMAPA:35254
 xref: EV:0100193
 xref: FMA:61862
@@ -62685,6 +62683,7 @@ synonym: "columna fornicis anterior" EXACT OMO:0003011 [FMA:61966, FMA:TA]
 synonym: "fornix, crus anterius" EXACT OMO:0003011 [FMA:61966, FMA:TA]
 xref: BAMS:afx
 xref: BIRNLEX:731
+xref: DHBA:10577
 xref: FMA:61966
 xref: HBA:9251
 xref: neuronames:269
@@ -90087,7 +90086,6 @@ synonym: "fornix body" EXACT [FMA:61968]
 xref: BAMS:bfx
 xref: BAMS:fx
 xref: BIRNLEX:739
-xref: DHBA:10577
 xref: DHBA:10578
 xref: FMA:61968
 xref: HBA:9252
@@ -125208,7 +125206,6 @@ xref: MA:0003217
 xref: SCTID:47046000
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002116 ! ileum
-relationship: part_of UBERON:0008344 {source="FMA"} ! intestinal villus of ileum
 
 [Term]
 id: UBERON:0008346
@@ -125222,7 +125219,6 @@ xref: MA:0003208
 xref: SCTID:66036002
 intersection_of: UBERON:0000483 ! epithelium
 intersection_of: part_of UBERON:0002114 ! duodenum
-relationship: part_of UBERON:0008342 {source="FMA"} ! intestinal villus of duodenum
 
 [Term]
 id: UBERON:0008367
@@ -156022,7 +156018,6 @@ synonym: "retrosplenial cortex" RELATED [BTO:0003977, Wikipedia:Retrosplenial_re
 xref: BAMS:RSP
 xref: BTO:0003977
 xref: DHBA:10324
-xref: DHBA:266441669
 xref: DMBA:16093
 xref: MBA:254
 xref: neuronames:2436
@@ -156167,7 +156162,6 @@ synonym: "sulcus rectus" RELATED OMO:0003011 [NeuroNames:76]
 synonym: "sulcus rectus (Krieg)" RELATED OMO:0003011 [NeuroNames:76]
 xref: BAMS:ros
 xref: BIRNLEX:1741
-xref: DHBA:146034836
 xref: FMA:68607
 xref: neuronames:76 {source="BIRNLEX:1741"}
 xref: UMLS:C1272532 {source="BIRNLEX:1741"}
@@ -175139,24 +175133,36 @@ property_value: editor_note "check relationship to gyrus. See https://github.com
 [Term]
 id: UBERON:0022355
 name: basal layer of endometrium
-def: "The layer of endometrial epithelium adjacent to the uterine cavity." [Wikipedia:Endometrium#Histology]
+def: "The layer of the endometrium adjacent to the myometrium, comprising the basal portions of the uterine glands and the surrounding vascularized stroma, and supplied by the basal arteries. In menstruating species it is retained at menstruation and serves as the regenerative source from which the functional layer is restored; it harbours the epithelial and mesenchymal progenitor cell populations responsible for that regeneration." [PMID:26552890, PMID:37288662]
+synonym: "basalis layer" EXACT []
+synonym: "endometrial basal layer" EXACT []
 synonym: "pars basalis of endometrium" EXACT []
+synonym: "stratum basale endometrii" EXACT OMO:0003011 []
 synonym: "stratum basalis of endometrium" EXACT [FMA:86492]
 xref: FMA:86492
 xref: NCIT:C32189
-intersection_of: UBERON:0004811 ! endometrium epithelium
-intersection_of: adjacent_to UBERON:0013769 ! uterine lumen
+intersection_of: UBERON:0004923 ! organ component layer
+intersection_of: adjacent_to UBERON:0001296 ! myometrium
+intersection_of: part_of UBERON:0001295 ! endometrium
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/87/Cells_of_the_uterus_in_different_menstrual_cycle_stages.png" xsd:anyURI {http://purl.org/dc/terms/license="https://creativecommons.org/licenses/by/4.0/", xref="PMID:42853913", comment="Figure 6 from \"Standardizing Cell Ontology terms for cross-study integration in the female reproductive tract\" (Ong et al (2026) Science Advances 12(41): eaef2358)."}
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3803" xsd:anyURI
 
 [Term]
 id: UBERON:0022356
-name: outer layer of endometrium
-def: "The layer of endometrial epithelium adjacent to the myometrium." [Wikipedia:Endometrium#Histology]
-synonym: "functional layer of endometrium" EXACT [FMA:86493]
+name: functional layer of endometrium
+def: "The layer of the endometrium adjacent to the uterine lumen, comprising the luminal epithelium, the superficial portions of the uterine glands, and the surrounding vascularized stroma, and supplied by the spiral arterioles. It proliferates and differentiates across the ovarian cycle under the influence of oestrogen and progesterone, and is the site of embryo implantation and decidualization. In menstruating species it is shed at menstruation and regenerated from the basal layer in the following cycle." [PMID:25141152, PMID:26552890, PMID:37288662]
+synonym: "endometrial functional layer" EXACT []
+synonym: "functionalis layer" EXACT []
+synonym: "outer layer of endometrium" RELATED []
+synonym: "stratum functionale endometrii" EXACT OMO:0003011 []
 synonym: "stratum functionalis of endometrium" EXACT [FMA:86493]
 xref: FMA:86493
 xref: NCIT:C32642
-intersection_of: UBERON:0004811 ! endometrium epithelium
-intersection_of: adjacent_to UBERON:0001296 ! myometrium
+intersection_of: UBERON:0004923 ! organ component layer
+intersection_of: adjacent_to UBERON:0013769 ! uterine lumen
+intersection_of: part_of UBERON:0001295 ! endometrium
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/87/Cells_of_the_uterus_in_different_menstrual_cycle_stages.png" xsd:anyURI {http://purl.org/dc/terms/license="https://creativecommons.org/licenses/by/4.0/", xref="PMID:42853913", comment="Figure 6 from \"Standardizing Cell Ontology terms for cross-study integration in the female reproductive tract\" (Ong et al (2026) Science Advances 12(41): eaef2358)."}
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3803" xsd:anyURI
 
 [Term]
 id: UBERON:0022357
@@ -177427,6 +177433,7 @@ id: UBERON:0025763
 name: rostral sulcus
 synonym: "rostral sulcus" EXACT HUMAN_PREFERRED [BIRNLEX:1012]
 xref: BIRNLEX:1012
+xref: DHBA:146034836
 xref: UMLS:C0262327
 is_a: UBERON:0013118 ! sulcus of brain
 relationship: part_of UBERON:0016525 ! frontal lobe
@@ -180643,12 +180650,10 @@ def: "Agranular region of the insular cortex." [http://orcid.org/0000-0002-6601-
 synonym: "cortex insularis dysgranularis" RELATED OMO:0003011 [NeuroNames:1780]
 synonym: "dysgranular insula" RELATED [NeuroNames:1780]
 synonym: "dysgranular insular area" RELATED [NeuroNames:1780]
-synonym: "dysgranular insular cortex" EXACT [DHBA:10289]
 synonym: "dysgranular insular cortex" RELATED [NeuroNames:1780]
 synonym: "gustatory area" RELATED [NeuroNames:1780]
 synonym: "gustatory cortex" RELATED [NeuroNames:1780]
 xref: BTO:0004342
-xref: DHBA:10289
 xref: DHBA:10328
 xref: neuronames:1780
 is_a: UBERON:0002616 ! regional part of brain
@@ -189928,19 +189933,6 @@ property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues
 created_by: dragon-ai-agent
 
 [Term]
-id: UBERON:1200005
-name: holothurian cloaca
-def: "A subdivision of the digestive tract that is the posterior-most region of the gut of a sea cucumber, and from the dorsal wall of whose anterior part the respiratory trees arise." [PMID:19238446, PMID:22160455]
-comment: Distinct from 'cloaca' (UBERON:0000162), which is restricted to vertebrates and is defined as a common chamber receiving both the intestine and the excretory system; the holothurian structure is called a cloaca for its terminal position in the gut, and no homology with the vertebrate cloaca is asserted. After evisceration, the respiratory trees regenerate from cells of the coelomic and luminal epithelia of the cloaca (PMID:19238446).
-synonym: "cloaca" BROAD [PMID:19238446, PMID:22160455]
-is_a: UBERON:0004921 ! subdivision of digestive tract
-relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
-relationship: in_taxon NCBITaxon:7705
-property_value: dcterms-date "2026-10-13T20:58:56Z" xsd:dateTime
-property_value: development_notes "The germ layer of origin is unresolved. The holothurian cloaca is traditionally held to be ectodermal and lined by a cuticular epithelium, but its anterior part has been reported to be lined by enterocytes and to lack a cuticle, suggesting an endodermal origin for that part. No developmental relationships are asserted for this reason." xsd:string {source="PMID:22160455"}
-property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3775" xsd:anyURI
-
-[Term]
 id: UBERON:1200340
 name: collagen band
 def: "A band-shaped collection of collagen fibrils forming a distinct layer beneath an epithelium." [PMID:19295410, PMID:37022603]
@@ -190002,6 +189994,36 @@ property_value: dcterms-date "2026-08-20T04:59:35Z" xsd:dateTime
 property_value: external_ontology_notes "Neither the FMA nor SNOMED has a calvarial marrow grouping class. The FMA covers the same territory with per-bone classes: FMA:303380 (frontal), FMA:303382 (parietal), FMA:303388 (occipital) and FMA:303390 (sutural bone); these are the natural xref targets if regional calvarial marrow terms are added." xsd:string {external_ontology="FMA"}
 property_value: term_tracker_item "https://github.com/obophenotype/uberon/pull/3758" xsd:anyURI
 property_value: terminology_notes "The differentia uses 'vault of skull' (UBERON:0004339), whose own comment records that the vault may not be precisely equivalent to the calvaria - sources differ on whether the temporal, ethmoid and sphenoid bones are included. That ambiguity is inherited here rather than introduced: this class is intended as the marrow of whatever 'vault of skull' covers, which is the compartment the calvarial bone marrow literature samples." xsd:string
+
+[Term]
+id: UBERON:1200386
+name: holothurian cloaca
+def: "A subdivision of the digestive tract that is the posterior-most region of the gut of a sea cucumber, and from the dorsal wall of whose anterior part the respiratory trees arise." [PMID:19238446, PMID:22160455]
+comment: Distinct from 'cloaca' (UBERON:0000162), which is restricted to vertebrates and is defined as a common chamber receiving both the intestine and the excretory system; the holothurian structure is called a cloaca for its terminal position in the gut, and no homology with the vertebrate cloaca is asserted. After evisceration, the respiratory trees regenerate from cells of the coelomic and luminal epithelia of the cloaca (PMID:19238446).
+synonym: "cloaca" BROAD [PMID:19238446, PMID:22160455]
+is_a: UBERON:0004921 ! subdivision of digestive tract
+relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
+relationship: in_taxon NCBITaxon:7705 ! Holothuroidea
+property_value: dcterms-date "2026-10-13T20:58:56Z" xsd:dateTime
+property_value: development_notes "The germ layer of origin is unresolved. The holothurian cloaca is traditionally held to be ectodermal and lined by a cuticular epithelium, but its anterior part has been reported to be lined by enterocytes and to lack a cuticle, suggesting an endodermal origin for that part. No developmental relationships are asserted for this reason." xsd:string {source="PMID:22160455"}
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3775" xsd:anyURI
+
+[Term]
+id: UBERON:1200387
+name: respiratory tree (Holothuroidea)
+def: "A respiration organ of a sea cucumber, one of a pair of branching tubular diverticula that arise from the dorsal wall of the anterior part of the cloaca, lie in the body cavity on either side of the intestine, and are ventilated with seawater drawn in through the anus and cloaca." [PMID:19238446, PMID:22160455, Wikipedia:Sea_cucumber]
+comment: Respiratory trees evolved within Holothuroidea and are absent in other echinoderms (PMID:19238446). They are present in Pneumonophora, the clade comprising all holothurians except Apodida and part of the traditional Elasipodida (PMID:28263876); NCBI Taxonomy does not carry Pneumonophora, so the taxon constraint is set at Holothuroidea with Apodida excluded. Besides gas exchange, the respiratory trees act together with the intestine as excretory organs (Wikipedia:Sea_cucumber).
+synonym: "holothurian respiratory tree" EXACT []
+is_a: UBERON:0000171 ! respiration organ
+relationship: connected_to UBERON:1200386 ! holothurian cloaca
+relationship: dc-contributor https://orcid.org/0000-0001-5025-5886
+relationship: develops_from UBERON:1200386 {source="PMID:22160455"} ! holothurian cloaca
+relationship: in_taxon NCBITaxon:7705 ! Holothuroidea
+relationship: located_in UBERON:0002323 ! coelemic cavity lumen
+relationship: never_in_taxon NCBITaxon:7701 {source="PMID:28263876"}
+property_value: dcterms-date "2026-10-14T10:58:02Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/uberon/issues/3774" xsd:anyURI
+property_value: terminology_notes "Labelled 'respiratory tree (Holothuroidea)' rather than 'respiratory tree', and 'respiratory tree' is deliberately not recorded as a synonym, because that phrase is widely used for the branching airways of the vertebrate lung (the tracheobronchial tree) and would otherwise attract vertebrate annotations to this class." xsd:string
 
 [Term]
 id: UBERON:1500000

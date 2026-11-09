@@ -1,226 +1,190 @@
 name: 'Create ROBOT diffs on Pull requests'
 
-on: 
+# Comment "#gogoeditdiff" on a PR to get an edit-file diff and a classified (-base) diff
+# posted back to the PR.
 
+on:
   issue_comment:
-        types: [created]
+    types: [created]
+
+permissions:
+  contents: read
+
+# Only trigger comments share a group, so unrelated comments (incl. the report itself) can't
+# cancel a running diff.
+concurrency:
+  group: ${{ contains(github.event.comment.body, '#gogoeditdiff') && format('gogoeditdiff-{0}', github.event.issue.number) || format('ignore-{0}', github.run_id) }}
+  cancel-in-progress: true
+
 env:
   DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  branch_status:
-    if: ${{ github.event.issue.pull_request && github.event.issue.state == 'open' }}
+  check:
+    # Filter at job level so ordinary PR comments don't start any runner or pull the ODK image.
+    # Only people with write access can trigger it: the PR's Makefile gets executed below.
+    if: >-
+      github.event.issue.pull_request &&
+      github.event.issue.state == 'open' &&
+      contains(github.event.comment.body, '#gogoeditdiff') &&
+      contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      pull-requests: read
+      issues: write
+      pull-requests: write
+    outputs:
+      head_sha: ${{ steps.pr.outputs.head_sha }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
     steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
+      - name: Acknowledge the trigger comment
+        run: gh api -X POST "repos/$REPO/issues/comments/${{ github.event.comment.id }}/reactions" -f content=eyes
+      - name: Get PR head
+        id: pr
+        run: echo "head_sha=$(gh pr view "$PR" -R "$REPO" --json headRefOid -q .headRefOid)" >> "$GITHUB_OUTPUT"
+      - name: Check branch is up to date with ${{ env.DEFAULT_BRANCH }}
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      # Checks-out current branch
-      - uses: xt0rted/pull-request-comment-branch@v2
-        id: comment-branch
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-        with:
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
-      # Checks-out master branch under "master" directory
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-        with:
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
-          fetch-depth: 0
-      - name: Check current branch status
-        if: steps.check.outputs.triggered == 'true'
-        id: info
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
         run: |
-          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')"
-          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')" >> $GITHUB_OUTPUT
-      - name: Warn users with a comment
-        if: steps.info.outputs.status >= 1
-        run: echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch." > warncomment.md
-      - name: Post comment
-        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        uses: NejcZdovc/comment-pr@v2
-        with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          file: "../../warncomment.md"
-      - name: Fail step if branch is behind
-        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
-        run: |
-          echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch."
-          exit 1
-  edit_file:
-    needs: [branch_status]
-    if: ${{ github.event.issue.pull_request }}
-    runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.6
-    steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: xt0rted/pull-request-comment-branch@v2
-        id: comment-branch
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-        with:
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
-          path: branch
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-        with:
-          ref: master
-          path: master
-      - name: Diff classification
-        if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; robot diff --labels True --left master/src/ontology/uberon-edit.obo --left-catalog master/src/ontology/catalog-v001.xml --right branch/src/ontology/uberon-edit.obo --right-catalog branch/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
-      - name: Upload diff
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/upload-artifact@v4
-        with:
-          name: edit-diff.md
-          path: edit-diff.md
+          behind=$(gh api "repos/$REPO/compare/$DEFAULT_BRANCH...$HEAD_SHA" -q .behind_by)
+          echo "Branch is $behind commit(s) behind $DEFAULT_BRANCH"
+          if [ "$behind" -ge 1 ]; then
+            # Use the same marker as the diff report so it replaces any previous report.
+            printf '<!-- GOGOEDITDIFF -->\nYour branch is %s commit/s behind, please update your branch and comment `#gogoeditdiff` again.\n' "$behind" > comment.md
+            # Post first, then delete the older reports, so a failed post never leaves the PR without one.
+            new_id=$(gh api -X POST "repos/$REPO/issues/$PR/comments" -F body=@comment.md -q .id)
+            gh api --paginate "repos/$REPO/issues/$PR/comments" \
+              -q ".[] | select(.user.login == \"github-actions[bot]\" and .id != $new_id and (.body | test(\"^<!-- (GOGOEDITDIFF|REASONED|UNREASONED) -->\"))) | .id" |
+              while read -r id; do gh api -X DELETE "repos/$REPO/issues/comments/$id"; done
+            exit 1
+          fi
+
   classify_branch:
-    needs: [branch_status]
-    if: ${{ github.event.issue.pull_request }}
+    needs: check
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
     steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: xt0rted/pull-request-comment-branch@v2
-        id: comment-branch
       - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
         with:
-          ref: ${{ steps.comment-branch.outputs.head_ref }}
-      - name: Classify ontology PR branch
-        if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false uberon-base.owl > TESTLOG.log
-      - name: Upload classified ontology in PR branch
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/upload-artifact@v4
+          ref: ${{ needs.check.outputs.head_sha }}
+          path: branch
+          persist-credentials: false
+      - uses: actions/checkout@v6
         with:
-          name: uberon-base-pr.owl
-          path: src/ontology/uberon-base.owl
+          ref: ${{ env.DEFAULT_BRANCH }}
+          path: master
+          persist-credentials: false
+      - name: Diff edit file
+        run: export ROBOT_JAVA_ARGS=-Xmx9G; robot diff --labels True --left master/src/ontology/uberon-edit.obo --left-catalog master/src/ontology/catalog-v001.xml --right branch/src/ontology/uberon-edit.obo --right-catalog branch/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
+      # TODO: back to COMP=false once the HRA component rules are fixed (#3809).
+      - name: Classify ontology
+        run: export ROBOT_JAVA_ARGS=-Xmx9G; cd branch/src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=true uberon-base.owl
+      - uses: actions/upload-artifact@v6
+        with:
+          name: edit-diff
+          path: edit-diff.md
+      - uses: actions/upload-artifact@v6
+        with:
+          name: uberon-base-pr
+          path: branch/src/ontology/uberon-base.owl
           retention-days: 1
+
   classify_main:
-    needs: [branch_status]
-    if: ${{ github.event.issue.pull_request }}
+    needs: check
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
     steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
         with:
-          ref: master
-      - name: Classify ontology main branch
-        if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=false uberon-base.owl > TESTLOG.log
-      - name: Upload classified ontology main branch
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/upload-artifact@v4
+          ref: ${{ env.DEFAULT_BRANCH }}
+          persist-credentials: false
+      # TODO: back to COMP=false once the HRA component rules are fixed (#3809).
+      - name: Classify ontology
+        run: export ROBOT_JAVA_ARGS=-Xmx9G; cd src/ontology; make BRI=false MIR=false PAT=false IMP=false COMP=true uberon-base.owl
+      - uses: actions/upload-artifact@v6
         with:
-          name: uberon-base-main.owl
+          name: uberon-base-master
           path: src/ontology/uberon-base.owl
           retention-days: 1
+
   diff_classification:
     needs: [classify_branch, classify_main]
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
     steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
-        env:  
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-      - name: Download classified ontology main branch
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4
         with:
-          name: uberon-base-main.owl
-          path: src/ontology/uberon-base-main.owl
-      - name: Download classified ontology in PR branch
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4
+          ref: ${{ env.DEFAULT_BRANCH }}
+          persist-credentials: false
+      - uses: actions/download-artifact@v7
         with:
-          name: uberon-base-pr.owl
-          path: src/ontology/uberon-base-pr.owl
+          name: uberon-base-master
+          path: master-base
+      - uses: actions/download-artifact@v7
+        with:
+          name: uberon-base-pr
+          path: pr-base
       - name: Diff classification
-        if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS='-Xmx9G'; cd src/ontology; robot diff --labels True --left uberon-base-main.owl/uberon-base.owl --left-catalog catalog-v001.xml --right uberon-base-pr.owl/uberon-base.owl --right-catalog catalog-v001.xml -f markdown -o classification-diff.md
-      - name: Upload diff
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/upload-artifact@v4
+        run: export ROBOT_JAVA_ARGS=-Xmx9G; robot diff --labels True --left master-base/uberon-base.owl --left-catalog src/ontology/catalog-v001.xml --right pr-base/uberon-base.owl --right-catalog src/ontology/catalog-v001.xml -f markdown -o classification-diff.md
+      - uses: actions/upload-artifact@v6
         with:
-          name: classification-diff.md
-          path: src/ontology/classification-diff.md
+          name: classification-diff
+          path: classification-diff.md
+
   post_comment:
-    needs: [edit_file, diff_classification]
+    needs: [check, classify_branch, diff_classification]
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.issue.number }}
+      HEAD_SHA: ${{ needs.check.outputs.head_sha }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
+      - uses: actions/download-artifact@v7
         with:
-          trigger: '#gogoeditdiff'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-      - name: Download reasoned diff
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4
+          name: classification-diff
+      - uses: actions/download-artifact@v7
         with:
-          name: classification-diff.md
-      - name: Prepare reasoned comment
-        if: steps.check.outputs.triggered == 'true'
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -base file): </summary> \n\" > comment.md; cat classification-diff.md >> comment.md"
-      - name: Post reasoned comment
-        if: steps.check.outputs.triggered == 'true'
-        uses: NejcZdovc/comment-pr@v2.0.0
-        with:
-          file: "../../comment.md"
-          identifier: "REASONED"
-          github_token: ${{secrets.GITHUB_TOKEN}}
-      - uses: actions/checkout@v6
-        if: steps.check.outputs.triggered == 'true'
-      - name: Download edit diff
-        if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4
-        with:
-          name: edit-diff.md
-      - name: Prepare edit file comment
-        if: steps.check.outputs.triggered == 'true'
-        run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" > edit-comment.md; cat edit-diff.md >> edit-comment.md"
-      - name: Post comment
-        if: steps.check.outputs.triggered == 'true'
-        uses: NejcZdovc/comment-pr@v2.0.0
-        with:
-          file: "../../edit-comment.md"
-          identifier: "UNREASONED"
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          name: edit-diff
+      - name: Post diffs
+        run: |
+          # GitHub rejects comments over 65536 characters; two capped sections plus headers stay below it.
+          MAX=30000
+          section() {
+            summary="$1"; diff="$2"
+            echo "<details>"
+            echo "<summary>$summary</summary>"
+            echo
+            if [ "$(wc -c < "$diff")" -gt "$MAX" ]; then
+              head -c "$MAX" "$diff" | iconv -f utf-8 -t utf-8 -c
+              echo
+              echo "**Diff truncated** – download the full file from the [workflow run]($RUN_URL)."
+            else
+              cat "$diff"
+            fi
+            echo
+            echo "</details>"
+            echo
+          }
+          {
+            echo "<!-- GOGOEDITDIFF -->"
+            echo "### ROBOT diff report for ${HEAD_SHA:0:7}"
+            echo
+            section "Here's a diff of how these changes impact the classified ontology (on -base file)" classification-diff.md
+            section "Here's a diff of your edit file (unreasoned)" edit-diff.md
+            echo "_Generated by [workflow run]($RUN_URL)._"
+          } > comment.md
 
-
+          # Post the new report, then delete previous ones (including the older REASONED/UNREASONED
+          # pair), so the PR always has a single report at the bottom and never loses it on failure.
+          new_id=$(gh api -X POST "repos/$REPO/issues/$PR/comments" -F body=@comment.md -q .id)
+          gh api --paginate "repos/$REPO/issues/$PR/comments" \
+            -q ".[] | select(.user.login == \"github-actions[bot]\" and .id != $new_id and (.body | test(\"^<!-- (GOGOEDITDIFF|REASONED|UNREASONED) -->\"))) | .id" |
+            while read -r id; do gh api -X DELETE "repos/$REPO/issues/comments/$id"; done
