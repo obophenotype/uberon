@@ -152874,14 +152874,15 @@ intersection_of: has_quality PATO:0000608 ! closed
 [Term]
 id: UBERON:0012468
 name: anal tooth
-def: "Triangular calcified papillae (often five) placed radially around the anus of some Holothuriidae." [http://species-identification.org/species.php?species_group=nasc&selected=definitie&menuentry=woordenlijst&record=Anal%20teeth, https://orcid.org/0000-0002-6601-2165, https://www.karger.com/Article/Pdf/142845]
+def: "A heavily calcified tube foot, typically one of five, placed radially around the anus of some Holothuriidae, such as Actinopyga." [doi:10.11646/zootaxa.1138.1.3, http://species-identification.org/species.php?species_group=nasc&selected=definitie&menuentry=woordenlijst&record=Anal%20teeth, https://orcid.org/0000-0002-6601-2165, https://www.karger.com/Article/Pdf/142845]
 synonym: "anal teeth" EXACT OMO:0003004 []
 synonym: "calcified anal papilla" RELATED []
 synonym: "cloacal tooth" RELATED []
 synonym: "perianal tooth" RELATED []
-intersection_of: UBERON:0003913 ! tooth-like structure
-intersection_of: part_of UBERON:1200386 ! holothurian cloaca
-relationship: in_taxon NCBITaxon:7586 ! Echinodermata
+is_a: UBERON:0008247 ! tube foot
+relationship: in_taxon NCBITaxon:7705 ! Holothuroidea
+relationship: part_of UBERON:0001353 ! anal region
+property_value: terminology_notes "Despite the name, anal teeth are calcified terminal tube feet (doi:10.11646/zootaxa.1138.1.3), not tooth-like structures of the mouth or pharynx, and they play no part in feeding. They are therefore not classified under 'tooth-like structure'." xsd:string
 
 [Term]
 id: UBERON:0012469
