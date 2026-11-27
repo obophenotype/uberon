@@ -9,18 +9,55 @@ on:
     branches: [ master ]
     paths:
       - 'src/**'
+  # No `paths` filter here: ontology_qc is a required check on master, and a
+  # workflow skipped by a paths filter never reports a status, which would
+  # block PRs that don't touch src/ forever. The `changes` job decides
+  # instead; a job skipped through `if:` counts as passed.
   pull_request:
     branches: [ master ]
-    paths:
-      - 'src/**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "ontology_qc"
+  # Does this run need the ontology QC? Always yes for push and manual runs;
+  # for PRs, only if a file under src/ changed.
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+    steps:
+      - name: Check whether src/ changed
+        id: filter
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "src=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # If the file list can't be fetched, run QC rather than skip it.
+          if ! files=$(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq '.[].filename'); then
+            echo "src=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if grep -q '^src/' <<< "$files"; then
+            echo "src=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "src=false" >> "$GITHUB_OUTPUT"
+          fi
+
   ontology_qc:
+    needs: changes
+    # Skip only when `changes` positively reported that src/ is untouched.
+    # If `changes` failed, its output is empty and QC still runs.
+    if: ${{ !cancelled() && needs.changes.outputs.src != 'false' }}
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: obolibrary/odkfull:v1.6
