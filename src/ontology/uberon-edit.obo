@@ -30584,7 +30584,7 @@ is_a: UBERON:0004923 {source="FMA"} ! organ component layer
 relationship: has_part UBERON:0001769 ! iris
 relationship: has_part UBERON:0001775 ! ciliary body
 relationship: has_part UBERON:0001776 ! optic choroid
-relationship: part_of UBERON:0000019 ! camera-type eye
+relationship: part_of UBERON:0010230 ! eyeball of camera-type eye
 relationship: present_in_taxon NCBITaxon:7955 {source="DOI:10.1177/0192623311409597"} ! Danio rerio
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/eb/Gray869.png" xsd:anyURI
 property_value: editor_note "TODO - check child terms, isa vs partof. See also MA:0001284 ! tunica vasculosa plexus" xsd:string
@@ -221474,6 +221474,17 @@ intersection_of: UBERON:0000353 ! parenchyma
 intersection_of: adjacent_to UBERON:0016479 ! capsule of liver
 intersection_of: part_of UBERON:0002107 ! liver
 relationship: dc-contributor https://orcid.org/0000-0003-2034-601X ! Maria C Keays
+
+[Term]
+id: UBERON:8400025
+name: interfollicular epidermis
+def: "The part of the skin epidermis that lies between hair follicles. It is continuous with the epithelium of the hair follicles." [PMID:29807713, PMID:35938157]
+synonym: "IFE" EXACT OMO:0003000 [PMID:29807713]
+is_a: UBERON:0000483 ! epithelium
+relationship: dc-contributor https://orcid.org/0000-0003-2034-601X ! Maria C Keays
+relationship: part_of UBERON:0001003 ! skin epidermis
+property_value: dcterms-date "2026-11-24T00:00:00Z" xsd:dateTime
+property_value: term_tracker_item "https://github.com/obophenotype/cell-ontology/issues/3879" xsd:anyURI
 
 [Term]
 id: UBERON:8410000
